@@ -1,18 +1,15 @@
-<h1 align="center">:file_cabinet: Front-end template</h1>
+<h1 align="center">:file_cabinet: Portfolio</h1>
 
 <br>
 
 ## :memo: Description
-This is the default template for my front-end projects.
-
-This template includes folder structure, components using Shadcn/UI best practices, tests, and a default configuration for tawiindCSS.
+My portfolio.
 
 <br>
 
 ## :wrench: Technologies used
 * Next.js
 * Jest.js
-* RadixUI
 * TailwindCSS
 * JavaScript
 
