@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    @apply [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)];
+
+    --base: 237 76% 5%;
+    --content: 236 76% 92%;
+
+    --muted: 237 76% 5%;
+    --muted-content: 236 76% 92%;
+
+    --primary: 266 76% 34%;
+    --primary-c: 266 60% 90%;
+
+    --secondary: 296 77% 12%;
+    --secondary-c: 296 60% 90%;
+
+    --accent: 296 76% 52%;
+    --accent-c: 64 70% 7%;
+
+    --info: 64 69% 46%;
+    --info-c: 222.2 47.4% 95%;
+
+    --warning: 64 69% 46%;
+    --warning-c: 222.2 47.4% 95%;
+
+    --danger: 64 69% 46%;
+    --danger-c: 222.2 47.4% 95%;
+
+    --radius-sm: 1.8rem;
+    --radius-md: 1.9rem;
+    --radius-lg: 2rem;
+  }
+
+  body {
+    @apply bg-base text-content;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-current;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6, p, span, button) {
+    @apply w-fit;
+  }
+
+  :where(span, a) {
+    @apply inline-block;
+  }
+}

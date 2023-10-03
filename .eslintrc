@@ -1,0 +1,14 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:react/recommended", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/jsx-sort-props": "warn",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}
