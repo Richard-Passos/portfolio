@@ -6,37 +6,58 @@
   :root {
     @apply [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)];
 
-    --base: 237 76% 5%;
-    --content: 236 76% 92%;
+    --base: 333.8 61.5% 94.9%;
+    --content: 0 0% 0%;
 
-    --muted: 237 76% 5%;
-    --muted-content: 236 76% 92%;
+    --muted: 0 20% 95%;
+    --muted-content: 0 60% 19%;
 
-    --primary: 266 76% 34%;
-    --primary-c: 266 60% 90%;
+    --primary: 335.3 94.8% 45.7%;
+    --primary-c: 341 69.2% 98%;
 
-    --secondary: 296 77% 12%;
-    --secondary-c: 296 60% 90%;
+    --secondary: 334.8 61% 83.9%;
+    --secondary-c: 340 60% 15.1%;
 
-    --accent: 296 76% 52%;
-    --accent-c: 64 70% 7%;
+    --accent: 215 61.8% 44.1%;
+    --accent-c: 250.9 64% 84.9%;
 
     --info: 64 69% 46%;
-    --info-c: 222.2 47.4% 95%;
+    --info-c: 64 69% 86%;
 
     --warning: 64 69% 46%;
-    --warning-c: 222.2 47.4% 95%;
+    --warning-c: 64 69% 86%;
 
     --danger: 64 69% 46%;
-    --danger-c: 222.2 47.4% 95%;
+    --danger-c: 64 69% 86%;
 
     --radius-sm: 1.8rem;
     --radius-md: 1.9rem;
     --radius-lg: 2rem;
   }
 
+  .dark {
+    --base: 333.8 51.5% 3.1%;
+    --content: 0 0% 100%;
+
+    --muted: 0 20% 99%;
+    --muted-content: 0 60% 19%;
+
+    --primary: 341.4 87.5% 47.1%;
+    --primary-c: 341.4 67.5% 97.1%;
+
+    --secondary: 340 12% 4.9%;
+    --secondary-c: 340 62% 84.9%;
+
+    --accent: 251.1 22.1% 62.2%;
+    --accent-c: 251.1 62.1% 82.2%;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
-    @apply bg-base text-content;
+    @apply bg-base text-content transition-bg [&::-webkit-scrollbar-thumb:hover]:bg-content/20 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-content/10 [&::-webkit-scrollbar]:w-1.5;
   }
 
   *:focus-visible {
@@ -49,5 +70,28 @@
 
   :where(span, a) {
     @apply inline-block;
+  }
+}
+
+@layer utilities {
+  .max-w {
+    @apply max-w-bounds;
+  }
+
+  .transition-color {
+    transition-duration: 300ms;
+  }
+
+  .transition-bg {
+    transition-duration: 300ms;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+  }
+
+  .outline-text {
+    @apply [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:2px];
   }
 }

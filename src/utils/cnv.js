@@ -1,5 +1,5 @@
-import { cva } from 'class-variance-authority';
+import { tv } from 'tailwind-variants';
 
-const cnv = cva;
+const cnv = tv;
 
 export default cnv;

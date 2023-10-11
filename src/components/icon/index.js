@@ -1,1 +1,3 @@
-export { default as Icon } from './Root';
+import Icon from './Root'
+
+export default Icon

@@ -1,25 +1,36 @@
 'use client';
 
 import { Slot } from '@radix-ui/react-slot';
-import { forwardRef } from 'react';
+import { forwardRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { setVariant } from '@/redux';
+import { isFunctionThanCall } from '@/utils';
 
-const CursorHover = ({ disabled, variant, children, ...props }, ref) => {
+const CursorHover = ({ disabled, variant, ...props }, ref) => {
   const dispatch = useDispatch();
 
-  return !disabled ? (
+  const updateCursor = () => dispatch(setVariant(variant)),
+    resetCursor = () => dispatch(setVariant());
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => resetCursor, []);
+
+  return (
     <Slot
-      onMouseEnter={() => dispatch(setVariant({ variant }))}
-      onMouseLeave={() => dispatch(setVariant({ variant: null }))}
       ref={ref}
       {...props}
-    >
-      {children}
-    </Slot>
-  ) : (
-    <>{children}</>
+      onMouseEnter={(ev) => {
+        isFunctionThanCall(props.onMouseEnter, ev);
+
+        !disabled && updateCursor();
+      }}
+      onMouseLeave={(ev) => {
+        isFunctionThanCall(props.onMouseLeave, ev);
+
+        !disabled && resetCursor();
+      }}
+    />
   );
 };
 

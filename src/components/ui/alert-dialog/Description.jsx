@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 const AlertDialogDescription = ({ className, ...props }, ref) => {
   return (
     <Description
-      className={cn('text-sm text-muted-foreground', className)}
+      className={cn('text-sm text-muted-content', className)}
       ref={ref}
       {...props}
     />

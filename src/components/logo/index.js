@@ -1,1 +1,3 @@
-export { default as Logo } from './Root';
+import Logo from './Root'
+
+export default Logo

@@ -1,18 +1,20 @@
-import Accordion from '@/components/ui/accordion';
-import { cn } from '@/utils';
+import { Lines } from '@/components';
 
-const Root = ({ className, ...props }) => {
+import Section from './section';
+
+const Root = () => {
   return (
-    <main
-      className={cn(className)}
-      {...props}
-    >
-      <Accordion>
-        <Accordion.Item>
-          <Accordion.Header />
-        </Accordion.Item>
-      </Accordion>
-    </main>
+    <>
+      <Lines />
+
+      <main>
+        <Section.Hero />
+
+        <Section.Work />
+
+        <Section.About />
+      </main>
+    </>
   );
 };
 

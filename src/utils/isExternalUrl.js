@@ -1,9 +1,11 @@
-const isExternalUrl = (url) => {
-  const a = document.createElement('a');
+const _checkDomain = (url) => {
+  if (url.indexOf('//') === 0) url = location.protocol + url;
 
-  a.href = url;
-
-  return a.host !== location.host;
+  return url.toLowerCase().replace('//', '').replace(/\/.*/, '');
 };
+
+const isExternalUrl = (url) =>
+  (url.indexOf(':') > -1 || url.indexOf('//') > -1) &&
+  _checkDomain(location.href) !== _checkDomain(url);
 
 export default isExternalUrl;

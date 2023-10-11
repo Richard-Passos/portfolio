@@ -1,6 +1,6 @@
 import { cn, normalizeCompName } from '@/utils';
 
-import { Svg } from '../ui/svg';
+import Svg from '../ui/svg';
 
 const Root = ({ name = '', className, ...props }) => {
   const Tag = Svg[normalizeCompName(name)] || Svg.QuestionMark;

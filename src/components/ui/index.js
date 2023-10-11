@@ -5,3 +5,8 @@ export { default as AspectRatio } from './aspect-ratio';
 export { default as Avatar } from './avatar';
 export { default as Badge } from './badge';
 export { default as Button } from './button';
+export { default as Image } from './image';
+export { default as Link } from './link';
+export { default as NavigationMenu } from './navigation-menu';
+export { default as Svg } from './svg';
+export { default as Text } from './text';

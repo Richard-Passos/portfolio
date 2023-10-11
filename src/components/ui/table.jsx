@@ -34,7 +34,7 @@ TableBody.displayName = 'TableBody';
 const TableFooter = ({ className, ...props }, ref) => (
   <tfoot
     ref={ref}
-    className={cn('bg-primary font-medium text-primary-foreground', className)}
+    className={cn('bg-primary font-medium text-primary-content', className)}
     {...props}
   />
 ));
@@ -56,7 +56,7 @@ const TableHead = ({ className, ...props }, ref) => (
   <th
     ref={ref}
     className={cn(
-      'h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0',
+      'h-12 px-4 text-left align-middle font-medium text-muted-content [&:has([role=checkbox])]:pr-0',
       className,
     )}
     {...props}
@@ -76,7 +76,7 @@ TableCell.displayName = 'TableCell';
 const TableCaption = ({ className, ...props }, ref) => (
   <caption
     ref={ref}
-    className={cn('mt-4 text-sm text-muted-foreground', className)}
+    className={cn('mt-4 text-sm text-muted-content', className)}
     {...props}
   />
 ));

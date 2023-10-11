@@ -1,1 +1,3 @@
-export { default as Home } from './Root';
+import Home from './Root';
+
+export default Home;

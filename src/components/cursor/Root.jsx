@@ -11,53 +11,56 @@ import FollowPointer from '../follow-pointer';
 const VARIANTS_DEFAULT = {
   width: 32,
   height: 32,
-  scale: 0,
+  borderRadius: 999,
+  scaleX: 1,
+  scaleY: 1,
   x: null,
   y: null,
+  zIndex: 99,
 };
 
-const Cursor = ({ className, ...props }) => {
-  const reduxVariant = useSelector((data) => data.cursor.variant),
-    width = useSmooth(VARIANTS_DEFAULT.width),
-    height = useSmooth(VARIANTS_DEFAULT.height),
-    scale = useSmooth(VARIANTS_DEFAULT.scale),
-    x = useMotionValue(VARIANTS_DEFAULT.x),
-    y = useMotionValue(VARIANTS_DEFAULT.y);
+const Cursor = ({ className, children, style, ...props }) => {
+  const { variant } = useSelector((data) => data.cursor),
+    smoothVariant = {
+      width: useSmooth(VARIANTS_DEFAULT.width),
+      height: useSmooth(VARIANTS_DEFAULT.height),
+      borderRadius: useSmooth(VARIANTS_DEFAULT.borderRadius),
+      scaleX: useMotionValue(VARIANTS_DEFAULT.scaleX),
+      scaleY: useMotionValue(VARIANTS_DEFAULT.scaleY),
+      x: useMotionValue(VARIANTS_DEFAULT.x),
+      y: useMotionValue(VARIANTS_DEFAULT.y),
+      zIndex: useMotionValue(VARIANTS_DEFAULT.zIndex),
+    };
 
-  const variant = { width, height, scale, x, y };
-
-  if (reduxVariant) {
-    updateVariant(reduxVariant, variant);
-  } else {
-    resetVariant(variant);
-  }
+  resetVariant(smoothVariant);
+  updateVariant(variant, smoothVariant);
 
   return (
     <FollowPointer
-      className={cn('-z-10 rounded-full bg-primary', className)}
-      transition={{ duration: 300 }}
-      variant={variant}
+      className={cn('z-0 bg-primary', className)}
+      id='follow-pointer-cursor'
+      style={{ ...smoothVariant, ...style }}
       {...props}
     >
-      <span aria-label='Cursor' />
+      <span aria-label='Cursor'>{children}</span>
     </FollowPointer>
   );
 };
 
-const updateVariant = (reduxVariant, variant) => {
-    Object.entries(reduxVariant).forEach(([key, value]) => {
-      const prop = variant[key];
+const updateVariant = (variant, smoothVariant) => {
+    Object.entries(variant).forEach(([key, value]) => {
+      const prop = smoothVariant[key];
 
       if (prop) {
         prop.set(value);
       } else {
-        variant[key] = value;
+        smoothVariant[key] = value;
       }
     });
   },
-  resetVariant = (variant) => {
-    Object.keys(variant).forEach((key) => {
-      variant[key].set(VARIANTS_DEFAULT[key]);
+  resetVariant = (smoothVariant) => {
+    Object.keys(smoothVariant).forEach((key) => {
+      smoothVariant[key].set(VARIANTS_DEFAULT[key]);
     });
   };
 

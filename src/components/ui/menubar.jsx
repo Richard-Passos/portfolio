@@ -19,7 +19,7 @@ const MenubarRadioGroup = MenubarPrimitive.RadioGroup;
 const Menubar = ({ className, ...props }, ref) => (
   <MenubarPrimitive.Root
     className={cn(
-      'flex h-10 items-center space-x-1 rounded-md border bg-background p-1',
+      'flex h-10 items-center space-x-1 rounded-md border bg-base p-1',
       className,
     )}
     ref={ref}
@@ -31,7 +31,7 @@ Menubar.displayName = MenubarPrimitive.Root.displayName;
 const MenubarTrigger = ({ className, ...props }, ref) => (
   <MenubarPrimitive.Trigger
     className={cn(
-      'data-open:bg-accent data-open:text-accent-foreground flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground',
+      'data-open:bg-accent data-open:text-accent-content flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none focus:bg-accent focus:text-accent-content',
       className,
     )}
     ref={ref}
@@ -44,7 +44,7 @@ const MenubarSubTrigger =
   ({ className, inset, children, ...props }, ref) => (
     <MenubarPrimitive.SubTrigger
       className={cn(
-        'data-open:bg-accent data-open:text-accent-foreground flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground',
+        'data-open:bg-accent data-open:text-accent-content flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-content',
         inset && 'pl-8',
         className,
       )}
@@ -61,7 +61,7 @@ MenubarSubTrigger.displayName = MenubarPrimitive.SubTrigger.displayName;
 const MenubarSubContent = ({ className, ...props }, ref) => (
   <MenubarPrimitive.SubContent
     className={cn(
-      'data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+      'data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-content data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
       className,
     )}
     ref={ref}
@@ -80,7 +80,7 @@ const MenubarContent =
         align={align}
         alignOffset={alignOffset}
         className={cn(
-          'data-closed:fade-out-0 data-closed:zoom-out-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+          'data-closed:fade-out-0 data-closed:zoom-out-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-content shadow-md data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
           className,
         )}
         ref={ref}
@@ -95,7 +95,7 @@ MenubarContent.displayName = MenubarPrimitive.Content.displayName;
 const MenubarItem = ({ className, inset, ...props }, ref) => (
   <MenubarPrimitive.Item
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-content data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       inset && 'pl-8',
       className,
     )}
@@ -110,7 +110,7 @@ const MenubarCheckboxItem =
     <MenubarPrimitive.CheckboxItem
       checked={checked}
       className={cn(
-        'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+        'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-content data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
         className,
       )}
       ref={ref}
@@ -131,7 +131,7 @@ const MenubarRadioItem =
   ({ className, children, ...props }, ref) => (
     <MenubarPrimitive.RadioItem
       className={cn(
-        'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+        'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-content data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
         className,
       )}
       ref={ref}
@@ -174,7 +174,7 @@ const MenubarShortcut = ({ className, ...props }) => {
   return (
     <span
       className={cn(
-        'ml-auto text-xs tracking-widest text-muted-foreground',
+        'ml-auto text-xs tracking-widest text-muted-content',
         className,
       )}
       {...props}

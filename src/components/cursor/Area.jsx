@@ -1,17 +1,9 @@
-'use client';
-
-import { Slot } from '@radix-ui/react-slot';
-import { useDispatch } from 'react-redux';
-
-import { setVariant } from '@/redux';
+import FollowPointer from '../follow-pointer';
 
 const CursorArea = (props) => {
-  const dispatch = useDispatch();
-
   return (
-    <Slot
-      onMouseLeave={() => dispatch(setVariant({ variant: { scale: 0 } }))}
-      onMouseOver={() => dispatch(setVariant({ variant: { scale: 1 } }))}
+    <FollowPointer.Area
+      id='follow-pointer-cursor'
       {...props}
     />
   );
