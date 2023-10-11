@@ -14,7 +14,7 @@ const ListItem = ({ className, reverse, children, ...props }) => {
   return (
     <li
       className={cn(
-        'group border-t border-content px-24 py-12 [mask-image:linear-gradient(to_right,_transparent_0%,_#000_10%,_#000_90%,_transparent_100%)] last:border-b',
+        'group border-t border-content px-24 py-12 [mask-image:linear-gradient(to_right,_transparent_0%,_#000_5%,_#000_95%,_transparent_100%)] last:border-b',
         className,
       )}
       {...props}

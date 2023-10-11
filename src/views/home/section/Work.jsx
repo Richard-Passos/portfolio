@@ -13,14 +13,16 @@ const HomeSectionWork = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'mt-24 flex h-auto max-h-none flex-col items-center justify-around gap-12 p-24',
+        'mt-24 flex h-auto max-h-none flex-col gap-12 p-24',
         className,
       )}
       theme='dark'
       {...props}
     >
-      <Text.Title className='text-lg font-bold'>
-        Work things, like...
+      <Text.Title className='max-w-xl text-2xl font-normal leading-normal'>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis
+        repellat voluptates tempora dicta fugiat optio necessitatibus ea nihil,
+        ab doloremque.
       </Text.Title>
 
       <Cursor.Hover variant={{ scaleX: 2.5, scaleY: 2.5 }}>
@@ -31,13 +33,10 @@ const HomeSectionWork = ({ className, ...props }) => {
           >
             <List>
               {ListContent.map(({ title, description }) => (
-                <List.Item
-                  className='text-xl'
-                  key={`Work list ${title} ${description}`}
-                >
+                <List.Item key={`Work list ${title} ${description}`}>
                   <Text.Title
                     asChild
-                    className='text-7xl'
+                    className='text-7xl font-medium'
                     cursorProps={{
                       disabled: true,
                     }}
