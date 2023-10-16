@@ -6,20 +6,8 @@
   :root {
     @apply [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)];
 
-    --base: 333.8 61.5% 94.9%;
-    --content: 0 0% 0%;
-
-    --muted: 0 20% 95%;
-    --muted-content: 0 60% 19%;
-
     --primary: 335.3 94.8% 45.7%;
     --primary-c: 341 69.2% 98%;
-
-    --secondary: 334.8 61% 83.9%;
-    --secondary-c: 340 60% 15.1%;
-
-    --accent: 215 61.8% 44.1%;
-    --accent-c: 250.9 64% 84.9%;
 
     --info: 64 69% 46%;
     --info-c: 64 69% 86%;
@@ -35,15 +23,32 @@
     --radius-lg: 2rem;
   }
 
-  .dark {
-    --base: 333.8 51.5% 3.1%;
-    --content: 0 0% 100%;
+  .light {
+    --main: 333.8 61.5% 94.9%;
+    --content: 0 0% 0%;
 
-    --muted: 0 20% 99%;
+    --inverted: 0 0% 0%;
+    --inverted-content: 333.8 61.5% 94.9%;
+
+    --muted: 0 20% 95%;
     --muted-content: 0 60% 19%;
 
-    --primary: 341.4 87.5% 47.1%;
-    --primary-c: 341.4 67.5% 97.1%;
+    --secondary: 334.8 61% 83.9%;
+    --secondary-c: 340 60% 15.1%;
+
+    --accent: 215 61.8% 44.1%;
+    --accent-c: 250.9 64% 84.9%;
+  }
+
+  .dark {
+    --main: 333.8 51.5% 3.1%;
+    --content: 0 0% 100%;
+
+    --inverted: 0 0% 100%;
+    --inverted-content: 333.8 51.5% 3.1%;
+
+    --muted: 333.8 51.5% 7.1%;
+    --muted-content: 0 0% 70%;
 
     --secondary: 340 12% 4.9%;
     --secondary-c: 340 62% 84.9%;
@@ -57,7 +62,7 @@
   }
 
   body {
-    @apply bg-base text-content transition-bg [&::-webkit-scrollbar-thumb:hover]:bg-content/20 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-content/10 [&::-webkit-scrollbar]:w-1.5;
+    @apply bg-main text-content transition-bg [&::-webkit-scrollbar-thumb:hover]:bg-content/20 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-content/10 [&::-webkit-scrollbar]:w-1.5;
   }
 
   *:focus-visible {

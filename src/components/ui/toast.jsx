@@ -23,7 +23,7 @@ const toastVariants = cnva(
   {
     variants: {
       variant: {
-        default: 'border bg-base text-content',
+        default: 'border bg-main text-content',
         destructive:
           'destructive group border-destructive bg-destructive text-destructive-content',
       },
@@ -48,7 +48,7 @@ Toast.displayName = ToastPrimitives.Root.displayName;
 const ToastAction = ({ className, ...props }, ref) => (
   <ToastPrimitives.Action
     className={cn(
-      'inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium ring-offset-base transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:border-muted/40 group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-content group-[.destructive]:focus:ring-destructive',
+      'inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium ring-offset-main transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:border-muted/40 group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-content group-[.destructive]:focus:ring-destructive',
       className,
     )}
     ref={ref}

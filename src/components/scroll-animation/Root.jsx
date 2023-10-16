@@ -2,7 +2,9 @@
 
 import { Slot } from '@radix-ui/react-slot';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { forwardRef } from 'react';
+import { forwardRef, useRef } from 'react';
+
+import { setRefs } from '@/utils';
 
 /* 
 config = {
@@ -15,9 +17,9 @@ config = {
 }
  */
 
-const MotionChild = motion(Slot);
-
 const ScrollAnimation = ({ config, style, ...props }, ref) => {
+  const innerRef = useRef(null);
+
   const {
     useScrollConfig,
     useScrollRes,
@@ -27,7 +29,10 @@ const ScrollAnimation = ({ config, style, ...props }, ref) => {
     useTransformConfig,
   } = config;
 
-  const scroll = useScroll(useScrollConfig),
+  const scroll = useScroll({
+      target: innerRef,
+      ...useScrollConfig,
+    }),
     propValue = useTransform(
       scroll[useScrollRes],
       scrollPoints,
@@ -37,11 +42,13 @@ const ScrollAnimation = ({ config, style, ...props }, ref) => {
 
   return (
     <MotionChild
-      ref={ref}
+      ref={setRefs(ref, innerRef)}
       style={{ [prop]: propValue, ...style }}
       {...props}
     />
   );
 };
+
+const MotionChild = motion(Slot);
 
 export default forwardRef(ScrollAnimation);

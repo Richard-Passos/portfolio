@@ -5,9 +5,7 @@ import { motion } from 'framer-motion';
 import { forwardRef, useRef } from 'react';
 
 import { useSmooth } from '@/hooks';
-import { isFunctionThanCall, transformTemplate } from '@/utils';
-
-const MotionChild = motion(Slot);
+import { isFunctionThanCall, setRefs, transformTemplate } from '@/utils';
 
 const Magnetic = (props, ref) => {
   const innerRef = useRef(null),
@@ -20,11 +18,11 @@ const Magnetic = (props, ref) => {
       position.x.set(0);
       position.y.set(0);
     },
-    updatePosition = (ev) => {
+    updatePosition = ({ clientX, clientY }) => {
       const LIMIT = 0.5;
 
-      const { clientX, clientY } = ev,
-        { left, top, width, height } = innerRef.current.getBoundingClientRect();
+      const { left, top, width, height } =
+        innerRef.current.getBoundingClientRect();
 
       const center = { x: left + width / 2, y: top + height / 2 };
 
@@ -32,12 +30,7 @@ const Magnetic = (props, ref) => {
       position.y.set((clientY - center.y) * LIMIT);
     };
 
-  const setRefs = (el) => {
-      isFunctionThanCall(ref, el);
-
-      innerRef.current = el;
-    },
-    onMouseLeave = (ev) => {
+  const onMouseLeave = (ev) => {
       isFunctionThanCall(props.onMouseLeave, ev);
 
       resetPosition();
@@ -50,7 +43,7 @@ const Magnetic = (props, ref) => {
 
   return (
     <MotionChild
-      ref={setRefs}
+      ref={setRefs(ref, innerRef)}
       style={{
         x: position.x,
         y: position.y,
@@ -62,5 +55,8 @@ const Magnetic = (props, ref) => {
     />
   );
 };
+
+const MotionChild = motion(Slot);
+
 
 export default forwardRef(Magnetic);

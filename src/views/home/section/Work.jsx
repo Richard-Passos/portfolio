@@ -2,7 +2,7 @@ import { Cursor, FollowPointer, List, Section } from '@/components';
 import { Link, Svg, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const ListContent = [
+const listContent = [
   { title: 'Work method', description: 'How I manage to solve problems' },
   { title: 'Skills', description: 'My soft and hard skills' },
   { title: 'Projects', description: 'Projects I built' },
@@ -32,7 +32,7 @@ const HomeSectionWork = ({ className, ...props }) => {
             href='/work'
           >
             <List>
-              {ListContent.map(({ title, description }) => (
+              {listContent.map(({ title, description }) => (
                 <List.Item key={`Work list ${title} ${description}`}>
                   <Text.Title
                     asChild

@@ -21,7 +21,7 @@ const Link = ({ className, children, ...props }) => {
         {children}
 
         <span
-          className='absolute bottom-0 aspect-square w-[.3em] translate-y-[250%] rounded-full text-base focus-visible:outline-none'
+          className='text-main absolute bottom-0 aspect-square w-[.3em] translate-y-[250%] rounded-full focus-visible:outline-none'
           ref={stickyElement}
         />
       </LinkUi>

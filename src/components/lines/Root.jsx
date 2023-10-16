@@ -6,7 +6,10 @@ const Lines = ({ className, ...props }) => {
   return (
     <div
       aria-label='Lines'
-      className={cn('fixed inset-0 flex justify-around', className)}
+      className={cn(
+        'pointer-events-none fixed inset-0 flex justify-around',
+        className,
+      )}
       {...props}
     >
       {[...Array(LINES_NUM)].map((_, i) => (

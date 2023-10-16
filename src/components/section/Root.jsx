@@ -1,15 +1,16 @@
 'use client';
 
+import { Slot } from '@radix-ui/react-slot';
 import { useInView } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import { useEffect, useRef } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 
-import { cn } from '@/utils';
+import { cn, setRefs } from '@/utils';
 
-const Section = ({ theme, asChild, className, ...props }) => {
-  const ref = useRef(null),
-    { setTheme } = useTheme(),
-    isInView = useInView(ref, { amount: 0.51 });
+const Section = ({ theme, asChild, className, ...props }, ref) => {
+  const innerRef = useRef(null),
+    isInView = useInView(innerRef, { amount: 0.51 }),
+    { setTheme } = useTheme();
 
   useEffect(() => {
     if (isInView && theme) setTheme(theme);
@@ -19,11 +20,11 @@ const Section = ({ theme, asChild, className, ...props }) => {
 
   return (
     <Tag
-      className={cn('max-h-bounds relative h-screen', className)}
-      ref={ref}
+      className={cn('relative h-screen max-h-bounds', className)}
+      ref={setRefs(ref, innerRef)}
       {...props}
     />
   );
 };
 
-export default Section;
+export default forwardRef(Section);

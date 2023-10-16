@@ -1,5 +1,11 @@
-import { tv } from 'tailwind-variants';
+import { cva } from 'class-variance-authority';
 
-const cnv = tv;
+import cn from './cn';
+
+const cnv = ({ base, ...rest }) => {
+  const className = cva(base, rest);
+
+  return (variants) => cn(className(variants));
+};
 
 export default cnv;

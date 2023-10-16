@@ -6,7 +6,7 @@ import { forwardRef } from 'react';
 
 import { cn, cnv } from '@/utils';
 
-const MotionChild = motion(Slot);
+import variantsColor from '../variantsColor';
 
 const Button = ({ asChild, variants, className, ...props }, ref) => {
   const Tag = asChild ? MotionChild : motion.button;
@@ -15,27 +15,21 @@ const Button = ({ asChild, variants, className, ...props }, ref) => {
     <Tag
       className={cn(buttonVariants(variants), className)}
       ref={ref}
-      whileTap={{ '--tw-scale-x': 0.95, '--tw-scale-y': 0.95 }}
+      whileTap={{ '--tw-scale-x': 0.9, '--tw-scale-y': 0.9 }}
       {...props}
     />
   );
 };
 
 const buttonVariants = cnv({
-  base: 'inline-flex transform items-center justify-center rounded-md border border-transparent font-medium transition-colors',
+  base: 'inline-flex items-center justify-center rounded-lg border border-transparent font-medium transition-all active:scale-[.98] disabled:pointer-events-none disabled:opacity-50',
   variants: {
-    color: {
-      primary: '[--base:--primary] [--content:--primary-c]',
-      secondary: '[--base:--secondary] [--content:--secondary-c]',
-      danger: '[--base:--danger] [--content:--danger-c]',
-      base: '[--base:--base] [--content:--content]',
-    },
+    color: variantsColor,
     variant: {
-      default: 'bg-base text-content hover:bg-base/80',
-      outline: 'border-base text-base hover:bg-base hover:text-content',
-      ghost: 'text-base hover:bg-base/20 hover:text-content',
-      link: 'text-base font-bold underline-offset-4 hover:underline',
-      disabled: 'opacity-50',
+      filled: 'hover:bg-main/80 bg-main text-content',
+      outline: 'border-main text-main hover:bg-main hover:text-content',
+      ghost: 'text-main hover:bg-main/20',
+      link: 'text-main font-bold underline-offset-4 hover:underline',
     },
     size: {
       sm: 'h-10 px-4 text-sm',
@@ -45,10 +39,12 @@ const buttonVariants = cnv({
   },
   defaultVariants: {
     color: 'primary',
-    variant: 'default',
+    variant: 'filled',
     size: 'md',
   },
 });
+
+const MotionChild = motion(Slot);
 
 export default forwardRef(Button);
 export { buttonVariants };

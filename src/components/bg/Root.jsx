@@ -9,7 +9,7 @@ const Bg = ({ asChild, className, ...props }) => {
     <Tag
       aria-label='Background'
       className={cn(
-        'absolute inset-0 -z-20 w-auto bg-base transition-colors',
+        'bg-main absolute inset-0 -z-20 w-auto transition-colors',
         className,
       )}
       {...props}

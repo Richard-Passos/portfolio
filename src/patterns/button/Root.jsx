@@ -1,10 +1,10 @@
 import { Cursor, Magnetic } from '@/components';
 import { Button as ButtonUi } from '@/components/ui';
 
-const Button = ({ className, ...props }) => {
+const Button = ({ magneticProps, stickyProps, className, ...props }) => {
   return (
-    <Magnetic>
-      <Cursor.Sticky>
+    <Magnetic {...magneticProps}>
+      <Cursor.Sticky {...stickyProps}>
         <ButtonUi {...props} />
       </Cursor.Sticky>
     </Magnetic>

@@ -37,12 +37,12 @@ const Cursor = ({ className, children, style, ...props }) => {
 
   return (
     <FollowPointer
-      className={cn('z-0 bg-primary', className)}
+      className={cn('bg-primary', className)}
       id='follow-pointer-cursor'
       style={{ ...smoothVariant, ...style }}
       {...props}
     >
-      <span aria-label='Cursor'>{children}</span>
+      <span aria-label='Custom cursor'>{children}</span>
     </FollowPointer>
   );
 };

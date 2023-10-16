@@ -19,7 +19,7 @@ const MenubarRadioGroup = MenubarPrimitive.RadioGroup;
 const Menubar = ({ className, ...props }, ref) => (
   <MenubarPrimitive.Root
     className={cn(
-      'flex h-10 items-center space-x-1 rounded-md border bg-base p-1',
+      'flex h-10 items-center space-x-1 rounded-md border bg-main p-1',
       className,
     )}
     ref={ref}

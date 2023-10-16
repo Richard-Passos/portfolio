@@ -5,4 +5,5 @@ export { default as isExternalUrl } from './isExternalUrl';
 export { default as isFunctionThanCall } from './isFunctionThanCall';
 export { default as isPointerInBoundings } from './isPointerInBoundings';
 export { default as normalizeCompName } from './normalizeCompName';
+export { default as setRefs } from './setRefs';
 export { default as transformTemplate } from './transformTemplate';

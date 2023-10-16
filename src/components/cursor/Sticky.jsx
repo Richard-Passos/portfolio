@@ -5,36 +5,30 @@ import { forwardRef, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { setVariant } from '@/redux';
-import { cn, isFunctionThanCall } from '@/utils';
+import { cn, isFunctionThanCall, setRefs } from '@/utils';
 
-const CursorSticky = ({ className, element, variant, ...props }, ref) => {
+const CursorSticky = ({ className, element, ...props }, ref) => {
   const innerRef = useRef(null),
     dispatch = useDispatch();
 
-  const updateCursor = () => {
+  const resetCursor = () => dispatch(setVariant()),
+    updateCursor = () => {
       const { left, top, width, height } = (
         element || innerRef
       ).current.getBoundingClientRect();
 
-      variant = {
+      const variant = {
         width,
         height,
         x: left,
         y: top,
-        zIndex: -1,
-        ...variant,
+        zIndex: 0,
       };
 
       dispatch(setVariant(variant));
-    },
-    resetCursor = () => dispatch(setVariant());
+    };
 
-  const setRefs = (el) => {
-      isFunctionThanCall(ref, el);
-
-      innerRef.current = el;
-    },
-    onMouseLeave = (ev) => {
+  const onMouseLeave = (ev) => {
       isFunctionThanCall(props.onMouseLeave, ev);
 
       resetCursor();
@@ -48,10 +42,10 @@ const CursorSticky = ({ className, element, variant, ...props }, ref) => {
   return (
     <Slot
       className={cn(
-        'transform hover:border-transparent hover:bg-transparent hover:text-primary-content hover:[transition:color_0ms_100ms,background-color_0ms_100ms,border-color_0ms_100ms,]',
+        'hover:border-transparent hover:bg-transparent hover:text-primary-content hover:[transition:color_0ms_100ms,background-color_0ms_100ms,border-color_0ms_100ms,]',
         className,
       )}
-      ref={setRefs}
+      ref={setRefs(ref, innerRef)}
       {...props}
       onMouseLeave={onMouseLeave}
       onMouseMove={onMouseMove}

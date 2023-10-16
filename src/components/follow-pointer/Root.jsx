@@ -8,8 +8,6 @@ import { useSelector } from 'react-redux';
 import { useFollowPointer, useSmooth } from '@/hooks';
 import { cn, transformTemplate } from '@/utils';
 
-const MotionChild = motion(Slot);
-
 const FollowPointer = ({ id, className, style, ...props }) => {
   const ref = useRef(null),
     pointerPos = useFollowPointer(ref),
@@ -28,7 +26,7 @@ const FollowPointer = ({ id, className, style, ...props }) => {
 
   return (
     <MotionChild
-      className={cn('pointer-events-none fixed left-0 top-0 z-[99]', className)}
+      className={cn('pointer-events-none fixed z-[99]', className)}
       ref={ref}
       style={{
         ...style,
@@ -42,5 +40,7 @@ const FollowPointer = ({ id, className, style, ...props }) => {
     />
   );
 };
+
+const MotionChild = motion(Slot);
 
 export default FollowPointer;

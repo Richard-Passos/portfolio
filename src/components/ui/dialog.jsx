@@ -21,7 +21,7 @@ DialogPortal.displayName = DialogPrimitive.Portal.displayName;
 const DialogOverlay = ({ className, ...props }, ref) => (
   <DialogPrimitive.Overlay
     className={cn(
-      'data-closed:animate-out data-closed:fade-out-0 data-open:animate-in data-open:fade-in-0 fixed inset-0 z-50 bg-base/80 backdrop-blur-sm',
+      'data-closed:animate-out data-closed:fade-out-0 data-open:animate-in data-open:fade-in-0 fixed inset-0 z-50 bg-main/80 backdrop-blur-sm',
       className,
     )}
     ref={ref}
@@ -36,14 +36,14 @@ const DialogContent =
       <DialogOverlay />
       <DialogPrimitive.Content
         className={cn(
-          'data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 data-closed:slide-out-to-left-1/2 data-closed:slide-out-to-top-[48%] data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-open:slide-in-from-left-1/2 data-open:slide-in-from-top-[48%] fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-base p-6 shadow-lg duration-200 sm:rounded-lg md:w-full',
+          'data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 data-closed:slide-out-to-left-1/2 data-closed:slide-out-to-top-[48%] data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-open:slide-in-from-left-1/2 data-open:slide-in-from-top-[48%] fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-main p-6 shadow-lg duration-200 sm:rounded-lg md:w-full',
           className,
         )}
         ref={ref}
         {...props}
       >
         {children}
-        <DialogPrimitive.Close className='data-open:bg-accent data-open:text-muted-content absolute right-4 top-4 rounded-sm opacity-70 ring-offset-base transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none'>
+        <DialogPrimitive.Close className='data-open:bg-accent data-open:text-muted-content absolute right-4 top-4 rounded-sm opacity-70 ring-offset-main transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none'>
           <X className='h-4 w-4' />
           <span className='sr-only'>Close</span>
         </DialogPrimitive.Close>

@@ -19,7 +19,7 @@ const alertVariants = cnv({
   base: 'relative w-full rounded-lg border p-4',
   variants: {
     variant: {
-      default: 'bg-base text-content ',
+      default: 'bg-main text-content ',
       destructive:
         'border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive',
     },

@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   variant: {},
-  variantsDefault: {},
 };
 
 const cursorSlice = createSlice({
@@ -12,13 +11,10 @@ const cursorSlice = createSlice({
     setVariant: (state, { payload }) => {
       state.variant = payload ?? {};
     },
-    setVariantsDefault: (state, { payload }) => {
-      state.variantsDefault = payload ?? {};
-    },
   },
 });
 
-const { setVariant, setVariantsDefault } = cursorSlice.actions;
+const { setVariant } = cursorSlice.actions;
 
 export default cursorSlice;
-export { setVariant, setVariantsDefault };
+export { setVariant };
