@@ -7,7 +7,7 @@ const Header = ({ className, ...props }) => {
   return (
     <header
       className={cn(
-        'absolute top-0 z-10 flex w-full items-center justify-between px-12 py-8',
+        'absolute top-0 z-10 flex w-full items-center justify-between px-12 pt-8',
         className,
       )}
       {...props}

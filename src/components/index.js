@@ -1,3 +1,4 @@
+export { default as Animation } from './animation';
 export { default as Bg } from './bg';
 export { default as Cursor } from './cursor';
 export { default as FollowPointer } from './follow-pointer';
@@ -7,6 +8,8 @@ export { default as List } from './list';
 export { default as Logo } from './logo';
 export { default as Magnetic } from './magnetic';
 export { default as Provider } from './provider';
+export { default as ScrollAnimation } from './scroll-animation';
 export { default as ScrollIndicator } from './scroll-indicator';
 export { default as Section } from './section';
+export { default as SocialNav } from './social-nav';
 export { default as ThemeProvider } from './theme-provider';

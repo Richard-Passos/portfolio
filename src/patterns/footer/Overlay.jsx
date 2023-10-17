@@ -1,38 +1,30 @@
-import ScrollAnimation from '@/components/scroll-animation';
+import { ScrollAnimation } from '@/components';
 import { cn } from '@/utils';
 
 const FooterOverlay = ({ className, ...props }) => {
   const animationConfig = {
-    y: {
+    height: {
       useScrollConfig: {
-        offset: ['0 1', '1 1'],
-      },
-      propPoints: ['0', '-105%'],
-    },
-    borderRadius: {
-      useScrollConfig: {
-        offset: ['0 1', '1.05 1'],
+        offset: ['0 1', '1 0'],
       },
       useScrollRes: 'scrollYProgress',
-      prop: '--radius',
+      prop: 'height',
       scrollPoints: [0, 1],
-      propPoints: ['150rem', '0%'],
+      propPoints: ['79px', '0px'],
     },
   };
 
   return (
-    <ScrollAnimation.Translate
-      className={cn('bg-main z-10 h-full w-[150%] shadow-2xl', className)}
-      config={animationConfig.y}
+    <ScrollAnimation
+      className={cn('absolute top-0 z-10 w-full -translate-y-px', className)}
+      config={animationConfig.height}
+      layout
       {...props}
     >
-      <ScrollAnimation
-        className='rounded-b-[--radius]'
-        config={animationConfig.borderRadius}
-      >
-        <span />
-      </ScrollAnimation>
-    </ScrollAnimation.Translate>
+      <div>
+        <span className='absolute left-1/2 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] rounded-[50%] bg-main shadow-2xl' />
+      </div>
+    </ScrollAnimation>
   );
 };
 

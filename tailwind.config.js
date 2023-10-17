@@ -81,6 +81,9 @@ module.exports = {
         open: 'state=open',
         disabled: 'disabled',
       },
+      boxShadow: {
+        '2xl': '0 50px 75px hsl(0 0% 0% / .15)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

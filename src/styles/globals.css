@@ -28,10 +28,10 @@
     --content: 0 0% 0%;
 
     --inverted: 0 0% 0%;
-    --inverted-content: 333.8 61.5% 94.9%;
+    --inverted-c: 333.8 61.5% 94.9%;
 
     --muted: 0 20% 95%;
-    --muted-content: 0 60% 19%;
+    --muted-c: 0 60% 19%;
 
     --secondary: 334.8 61% 83.9%;
     --secondary-c: 340 60% 15.1%;
@@ -41,14 +41,14 @@
   }
 
   .dark {
-    --main: 333.8 51.5% 3.1%;
+    --main: 333.8 51.5% 2.1%;
     --content: 0 0% 100%;
 
     --inverted: 0 0% 100%;
-    --inverted-content: 333.8 51.5% 3.1%;
+    --inverted-c: 333.8 51.5% 3.1%;
 
     --muted: 333.8 51.5% 7.1%;
-    --muted-content: 0 0% 70%;
+    --muted-c: 0 0% 70%;
 
     --secondary: 340 12% 4.9%;
     --secondary-c: 340 62% 84.9%;
@@ -62,7 +62,7 @@
   }
 
   body {
-    @apply bg-main text-content transition-bg [&::-webkit-scrollbar-thumb:hover]:bg-content/20 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-content/10 [&::-webkit-scrollbar]:w-1.5;
+    @apply transition-bg bg-main text-content [&::-webkit-scrollbar-thumb:hover]:bg-content/20 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-content/10 [&::-webkit-scrollbar]:w-1.5;
   }
 
   *:focus-visible {

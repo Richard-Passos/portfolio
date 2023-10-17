@@ -1,28 +1,31 @@
 import { Slot } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
 
-import { Cursor } from '@/components';
+import Cursor from '@/components/cursor';
 import { cn } from '@/utils';
 
 import cursorVariant from './cursorVariant';
 
-const Text = ({ cursorProps, asChild, className, ...props }, ref) => {
+const TextSubtitle = ({ cursorProps, asChild, className, ...props }, ref) => {
   cursorProps = {
     ...cursorProps,
     ref,
     variant: { ...cursorVariant, ...cursorProps?.variant },
   };
 
-  const Tag = asChild ? Slot : 'p';
+  const Tag = asChild ? Slot : 'h3';
 
   return (
     <Cursor.Hover {...cursorProps}>
       <Tag
-        className={cn('text-content transition-color', className)}
+        className={cn(
+          'text-lg font-semibold text-content transition-color',
+          className,
+        )}
         {...props}
       />
     </Cursor.Hover>
   );
 };
 
-export default forwardRef(Text);
+export default forwardRef(TextSubtitle);

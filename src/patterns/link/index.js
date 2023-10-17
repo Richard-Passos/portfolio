@@ -1,3 +1,8 @@
-import Link from './Root'
+import Arrow from './Arrow';
+import Root from './Root';
 
-export default Link
+const Link = Root;
+
+Link.Arrow = Arrow;
+
+export default Link;

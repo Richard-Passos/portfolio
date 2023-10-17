@@ -9,7 +9,7 @@ const Footer = ({ className, ...props }) => {
     <Section
       asChild
       className={cn(
-        'relative flex items-center justify-center overflow-hidden',
+        'relative mt-36 flex items-center justify-center overflow-hidden',
         className,
       )}
       {...props}

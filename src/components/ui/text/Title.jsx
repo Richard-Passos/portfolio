@@ -9,16 +9,14 @@ import cursorVariant from './cursorVariant';
 const TextTitle = ({ cursorProps, asChild, className, ...props }, ref) => {
   cursorProps = {
     ...cursorProps,
+    ref,
     variant: { ...cursorVariant, ...cursorProps?.variant },
   };
 
   const Tag = asChild ? Slot : 'h2';
 
   return (
-    <Cursor.Hover
-      ref={ref}
-      {...cursorProps}
-    >
+    <Cursor.Hover {...cursorProps}>
       <Tag
         className={cn(
           'text-xl font-bold text-content transition-color',

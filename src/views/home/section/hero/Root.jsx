@@ -1,6 +1,5 @@
 import { ScrollIndicator, Section } from '@/components';
 import { Text } from '@/components/ui';
-import { Button } from '@/patterns';
 import { cn } from '@/utils';
 
 import Title from './Title';
@@ -22,8 +21,6 @@ const HomeSectionHero = ({ className, ...props }) => {
         </Text>
 
         <ScrollIndicator className='-bottom-24 right-0' />
-
-        <Button>Testing</Button>
       </div>
     </Section>
   );

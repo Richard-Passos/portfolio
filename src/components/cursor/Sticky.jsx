@@ -42,7 +42,7 @@ const CursorSticky = ({ className, element, ...props }, ref) => {
   return (
     <Slot
       className={cn(
-        'hover:border-transparent hover:bg-transparent hover:text-primary-content hover:[transition:color_0ms_100ms,background-color_0ms_100ms,border-color_0ms_100ms,]',
+        'duration-0 hover:border-transparent hover:bg-transparent hover:text-primary-content hover:[transition:color_0ms_100ms,background-color_0ms_100ms,border-color_0ms_100ms,]',
         className,
       )}
       ref={setRefs(ref, innerRef)}

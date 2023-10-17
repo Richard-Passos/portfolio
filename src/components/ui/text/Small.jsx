@@ -6,23 +6,23 @@ import { cn } from '@/utils';
 
 import cursorVariant from './cursorVariant';
 
-const Text = ({ cursorProps, asChild, className, ...props }, ref) => {
+const TextSmall = ({ cursorProps, asChild, className, ...props }, ref) => {
   cursorProps = {
     ...cursorProps,
     ref,
     variant: { ...cursorVariant, ...cursorProps?.variant },
   };
 
-  const Tag = asChild ? Slot : 'p';
+  const Tag = asChild ? Slot : 'small';
 
   return (
     <Cursor.Hover {...cursorProps}>
       <Tag
-        className={cn('text-content transition-color', className)}
+        className={cn('text-gray-tertiary text-sm', className)}
         {...props}
       />
     </Cursor.Hover>
   );
 };
 
-export default forwardRef(Text);
+export default forwardRef(TextSmall);

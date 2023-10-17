@@ -8,12 +8,17 @@ import { useSelector } from 'react-redux';
 import { useFollowPointer, useSmooth } from '@/hooks';
 import { cn, transformTemplate } from '@/utils';
 
-const FollowPointer = ({ id, className, style, ...props }) => {
+const FollowPointer = ({ id, smoothConfig, className, style, ...props }) => {
   const ref = useRef(null),
     pointerPos = useFollowPointer(ref),
     { showList } = useSelector((data) => data['follow-pointer']);
 
   const isShowing = showList.includes(id);
+
+  smoothConfig = {
+    mass: 0.5,
+    ...smoothConfig,
+  };
 
   const scaleX = useSmooth(
       useTransform(() => (isShowing ? style?.scaleX.get() ?? 1 : 0)),
@@ -21,8 +26,14 @@ const FollowPointer = ({ id, className, style, ...props }) => {
     scaleY = useSmooth(
       useTransform(() => (isShowing ? style?.scaleY.get() ?? 1 : 0)),
     ),
-    x = useSmooth(useTransform(() => style?.x.get() ?? pointerPos.x.get())),
-    y = useSmooth(useTransform(() => style?.y.get() ?? pointerPos.y.get()));
+    x = useSmooth(
+      useTransform(() => style?.x.get() ?? pointerPos.x.get()),
+      smoothConfig,
+    ),
+    y = useSmooth(
+      useTransform(() => style?.y.get() ?? pointerPos.y.get()),
+      smoothConfig,
+    );
 
   return (
     <MotionChild

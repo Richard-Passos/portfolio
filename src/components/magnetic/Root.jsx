@@ -7,11 +7,11 @@ import { forwardRef, useRef } from 'react';
 import { useSmooth } from '@/hooks';
 import { isFunctionThanCall, setRefs, transformTemplate } from '@/utils';
 
-const Magnetic = (props, ref) => {
+const Magnetic = ({ limit = 0.5, style, ...props }, ref) => {
   const innerRef = useRef(null),
     position = {
-      x: useSmooth(0, { damping: 7 }),
-      y: useSmooth(0, { damping: 7 }),
+      x: useSmooth(0, { damping: 7, mass: 0.5 }),
+      y: useSmooth(0, { damping: 7, mass: 0.5 }),
     };
 
   const resetPosition = () => {
@@ -19,15 +19,13 @@ const Magnetic = (props, ref) => {
       position.y.set(0);
     },
     updatePosition = ({ clientX, clientY }) => {
-      const LIMIT = 0.5;
-
       const { left, top, width, height } =
         innerRef.current.getBoundingClientRect();
 
       const center = { x: left + width / 2, y: top + height / 2 };
 
-      position.x.set((clientX - center.x) * LIMIT);
-      position.y.set((clientY - center.y) * LIMIT);
+      position.x.set((clientX - center.x) * limit);
+      position.y.set((clientY - center.y) * limit);
     };
 
   const onMouseLeave = (ev) => {
@@ -45,6 +43,7 @@ const Magnetic = (props, ref) => {
     <MotionChild
       ref={setRefs(ref, innerRef)}
       style={{
+        ...style,
         x: position.x,
         y: position.y,
       }}
@@ -57,6 +56,5 @@ const Magnetic = (props, ref) => {
 };
 
 const MotionChild = motion(Slot);
-
 
 export default forwardRef(Magnetic);

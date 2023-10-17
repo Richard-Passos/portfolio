@@ -2,10 +2,10 @@
 
 import { useSpring } from 'framer-motion';
 
-const useSmooth = (prop, options) => {
-  return useSpring(prop, { ...smoothOptions, ...options });
+const useSmooth = (prop, config) => {
+  return useSpring(prop, { ...smoothConfig, ...config });
 };
 
-const smoothOptions = { damping: 10, stiffness: 150, mass: 0.3 };
+const smoothConfig = { damping: 10, stiffness: 150, mass: 0.3 };
 
 export default useSmooth;
