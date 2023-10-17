@@ -1,22 +1,9 @@
 import { cn } from '@/utils';
 
-import Animation from '../animation';
-
-const SocialNav = ({ variants, className, ...props }) => {
-  variants = variants || [
-    {},
-    {
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  ];
-
+const SocialNav = ({ className, ...props }) => {
   return (
-    <Animation.InView
-      as='nav'
+    <nav
       className={cn('flex gap-6', className)}
-      variants={variants}
       {...props}
     />
   );
