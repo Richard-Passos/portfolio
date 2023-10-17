@@ -1,14 +1,12 @@
 import { Button, Link, Svg } from '@/components/ui';
-import { cn } from '@/utils';
 
-const LinkArrow = ({ pointerProps, href, ...props }) => {
+const LinkArrow = ({ cursorProps, href, ...props }) => {
   return (
     <Button
       asChild
-      
-      pointerProps={{
+      cursorProps={{
         content: { text: 'Show me' },
-        ...pointerProps,
+        ...cursorProps,
       }}
       {...props}
     >

@@ -36,19 +36,11 @@ const HomeSectionAbout = ({ className, ...props }) => {
                   <Text.Title
                     asChild
                     className='text-7xl font-medium'
-                    cursorProps={{
-                      disabled: true,
-                    }}
                   >
                     <h3>{title}</h3>
                   </Text.Title>
 
-                  <Text
-                    className='opacity-0 transition-opacity group-hover:opacity-100'
-                    cursorProps={{
-                      disabled: true,
-                    }}
-                  >
+                  <Text className='opacity-0 transition-opacity group-hover:opacity-100'>
                     {description}
                   </Text>
                 </List.Item>

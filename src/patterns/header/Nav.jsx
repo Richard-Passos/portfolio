@@ -1,8 +1,7 @@
 import { NavigationMenu } from '@/components/ui';
 import { pages } from '@/constants';
+import Link from '@/patterns/link';
 import { cn } from '@/utils';
-
-import Link from '../link';
 
 const HeaderNav = ({ className, ...props }) => {
   return (

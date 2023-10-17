@@ -1,4 +1,4 @@
-import { Link } from '@/patterns';
+import { Link } from '@/components/ui';
 import { capitalize, cn } from '@/utils';
 
 const SocialNavItem = ({ name, className, href, ...props }) => {
