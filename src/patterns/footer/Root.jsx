@@ -1,4 +1,4 @@
-import { Section } from '@/components';
+import { Bg, Section } from '@/components';
 import { cn } from '@/utils';
 
 import Content from './Content';
@@ -9,15 +9,19 @@ const Footer = ({ className, ...props }) => {
     <Section
       asChild
       className={cn(
-        'relative mt-36 flex items-center justify-center overflow-hidden',
+        'relative flex h-auto min-h-0 items-center justify-center overflow-hidden pt-36',
         className,
       )}
       {...props}
     >
       <footer>
-        <Overlay />
+        <span className='absolute top-0 z-10 h-36 w-full bg-main' />
 
-        <Content />
+        <Overlay className='top-36' />
+
+        <Bg className='light' />
+
+        <Content className='light' />
       </footer>
     </Section>
   );

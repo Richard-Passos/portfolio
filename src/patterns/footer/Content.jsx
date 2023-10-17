@@ -1,5 +1,5 @@
-import { Bg, ScrollAnimation, SocialNav } from '@/components';
-import { Text } from '@/components/ui';
+import { ScrollAnimation, SocialNav } from '@/components';
+import { Link, Text } from '@/components/ui';
 import { socialMedias } from '@/constants';
 import { cn } from '@/utils';
 
@@ -12,47 +12,43 @@ const FooterContent = ({ className, ...props }) => {
       offset: ['0 1', '1 1'],
     },
     scrollPoints: [0, 1],
-    propPoints: ['-50%', '0%'],
+    propPoints: ['-60%', '0%'],
   };
 
   return (
-    <ScrollAnimation.Translate config={animationConfig}>
-      <div
-        className={cn(
-          'max-h-bounds light flex h-screen w-full flex-col items-center text-content',
-          className,
-        )}
-        {...props}
-      >
-        <Bg />
-
+    <ScrollAnimation.Translate
+      className={cn(
+        'max-h-bounds relative flex h-screen w-full flex-col items-center text-content',
+        className,
+      )}
+      config={animationConfig}
+      {...props}
+    >
+      <div>
         <Header className='relative z-0' />
 
-        <div className='my-auto flex w-full items-end justify-between px-48'>
-          <h2 className='shrink-0'>
+        <Link
+          className='my-auto'
+          href='/contact'
+        >
+          <h2 className='flex gap-[.25em] text-9xl'>
             <Text.Title
               asChild
-              className='text-8xl'
+              className='text-9xl'
             >
               <span>Let&apos;s work</span>
             </Text.Title>
 
-            <br />
-
             <Text.Title
               asChild
-              className='outline-text text-8xl'
+              className='outline-text text-9xl'
             >
               <span>together</span>
             </Text.Title>
           </h2>
+        </Link>
 
-          <span className='mr-8 h-px w-full bg-muted-content' />
-
-          <Button className='shrink-0 '>Get in touch</Button>
-        </div>
-
-        <section className='relative flex w-full items-end gap-24 px-24 py-12'>
+        <section className='relative flex w-full items-end gap-12 px-12 py-12'>
           <article className='space-y-4'>
             <Text.Subtitle
               asChild
@@ -69,10 +65,10 @@ const FooterContent = ({ className, ...props }) => {
               asChild
               className='mb-2 text-xs uppercase opacity-50'
             >
-              <h4>Socials</h4>
+              <h4>Local time</h4>
             </Text.Subtitle>
 
-            <Social />
+            <Text.Small className='font-bold'>11:25 PM GMT+2</Text.Small>
           </article>
 
           <div className='absolute left-1/2 flex -translate-x-1/2 gap-6'>
@@ -80,6 +76,17 @@ const FooterContent = ({ className, ...props }) => {
 
             <Text className='font-bold opacity-25'>Pt</Text>
           </div>
+
+          <article className='ml-auto space-y-4'>
+            <Text.Subtitle
+              asChild
+              className='mb-2 text-xs uppercase opacity-50'
+            >
+              <h4>Socials</h4>
+            </Text.Subtitle>
+
+            <Social />
+          </article>
         </section>
       </div>
     </ScrollAnimation.Translate>
