@@ -1,8 +1,8 @@
 import { Bg, Section } from '@/components';
 import { cn } from '@/utils';
 
-import Content from './Content';
 import Overlay from './Overlay';
+import Content from './content';
 
 const Footer = ({ className, ...props }) => {
   return (
