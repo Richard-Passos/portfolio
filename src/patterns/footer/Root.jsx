@@ -9,7 +9,7 @@ const Footer = ({ className, ...props }) => {
     <Section
       asChild
       className={cn(
-        'relative flex h-auto min-h-0 items-center justify-center overflow-hidden pt-36',
+        'max-w-bounds relative mx-auto flex h-auto items-center justify-center overflow-hidden pt-36',
         className,
       )}
       {...props}
@@ -19,7 +19,7 @@ const Footer = ({ className, ...props }) => {
 
         <Overlay className='top-36' />
 
-        <Bg className='light' />
+        <Bg className='light top-36' />
 
         <Content className='light' />
       </footer>
