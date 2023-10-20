@@ -1,4 +1,5 @@
 import { ScrollAnimation, SocialNav } from '@/components';
+import { smoothScrollConfig } from '@/components/smooth-scroll';
 import { Text } from '@/components/ui';
 import { socialMedias } from '@/constants';
 import Header from '@/patterns/header';
@@ -23,6 +24,7 @@ const FooterContent = ({ className, ...props }) => {
         className,
       )}
       config={animationConfig}
+      smoothConfig={smoothScrollConfig}
       {...props}
     >
       <div>

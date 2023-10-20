@@ -1,4 +1,5 @@
 import { ScrollAnimation } from '@/components';
+import { smoothScrollConfig } from '@/components/smooth-scroll';
 import { Link, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -17,12 +18,13 @@ const FooterContentTitle = ({ className, ...props }) => {
       href='/contact'
       {...props}
     >
-      <Text.Title className='flex gap-[.25em] text-9xl'>
+      <Text.Title className='flex space-x-[--font-blank-space] text-9xl'>
         <span>Let&apos;s work</span>
 
         <ScrollAnimation.Translate
           className='outline-text relative'
           config={animationConfig}
+          smoothConfig={smoothScrollConfig}
         >
           <span>together</span>
         </ScrollAnimation.Translate>
