@@ -2,21 +2,15 @@ import { Text } from '@/components/ui';
 
 const HomeSectionHeroTitle = () => {
   return (
-    <h1 className='mt-12'>
-      <Text.Title
-        asChild
-        className='text-9xl'
-      >
-        <span> I create</span>
-      </Text.Title>
-
-      <Text.Title
-        asChild
-        className='text-9xl'
-      >
-        <span className='outline-text ml-40 block'>experiences</span>
-      </Text.Title>
-    </h1>
+    <Text.Title
+      asChild
+      className='mt-12 w-full max-w-4xl flex-col items-start text-9xl'
+    >
+      <h1>
+        I create
+        <span className='outline-text ml-auto'>experiences</span>
+      </h1>
+    </Text.Title>
   );
 };
 
