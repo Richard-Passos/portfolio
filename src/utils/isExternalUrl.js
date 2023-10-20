@@ -1,3 +1,5 @@
+'use client';
+
 const _checkDomain = (url) => {
   if (url.indexOf('//') === 0) url = location.protocol + url;
 
@@ -6,6 +8,6 @@ const _checkDomain = (url) => {
 
 const isExternalUrl = (url) =>
   (url.indexOf(':') > -1 || url.indexOf('//') > -1) &&
-  _checkDomain(location.href) !== _checkDomain(url);
+  _checkDomain(window.location.href) !== _checkDomain(url);
 
 export default isExternalUrl;
