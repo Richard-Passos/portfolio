@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    @apply [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)];
+    @apply [--font-blank-space:.25em] [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)];
 
     --primary: 335.3 94.8% 45.7%;
     --primary-c: 341 69.2% 98%;
@@ -30,8 +30,8 @@
     --inverted: 0 0% 0%;
     --inverted-c: 333.8 61.5% 94.9%;
 
-    --muted: 333.8 51.5% 84.9%;
-    --muted-c: 0 10% 24.9%;
+    --muted: 333.8 41.5% 74.9%;
+    --muted-c: 0 30% 30%;
 
     --secondary: 334.8 61% 83.9%;
     --secondary-c: 340 60% 15.1%;
@@ -47,7 +47,7 @@
     --inverted: 0 0% 100%;
     --inverted-c: 333.8 51.5% 3.1%;
 
-    --muted: 333.8 51.5% 7.1%;
+    --muted: 333.8 31.5% 4.1%;
     --muted-c: 0 0% 70%;
 
     --secondary: 340 12% 4.9%;
@@ -84,11 +84,15 @@
   }
 
   .transition-color {
-    transition-duration: 300ms;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
   }
 
   .transition-bg {
-    transition-duration: 300ms;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
   }
 
   .vertical-text {
