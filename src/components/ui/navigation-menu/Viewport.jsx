@@ -10,7 +10,7 @@ const NavigationMenuViewport = ({ className, ...props }, ref) => {
     <div className={cn('absolute left-0 top-full flex justify-center')}>
       <Viewport
         className={cn(
-          'origin-top-center text-main-content bg-main relative mt-1.5 h-[--radix-navigation-menu-viewport-height] w-full overflow-hidden rounded-md border shadow-lg data-closed:animate-out data-closed:zoom-out-95 data-open:animate-in data-open:zoom-in-90 md:w-[--radix-navigation-menu-viewport-width]',
+          'origin-top-center text-main-content relative mt-1.5 h-[--radix-navigation-menu-viewport-height] w-full overflow-hidden rounded-md border bg-main shadow-lg data-closed:animate-out data-closed:zoom-out-95 data-open:animate-in data-open:zoom-in-90 md:w-[--radix-navigation-menu-viewport-width]',
           className,
         )}
         ref={ref}

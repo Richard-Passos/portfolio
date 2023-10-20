@@ -1,3 +1,3 @@
-import About from './Root'
+import About from './Root';
 
-export default About
+export default About;

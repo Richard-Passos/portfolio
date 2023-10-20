@@ -20,7 +20,7 @@ const FooterContent = ({ className, ...props }) => {
   return (
     <ScrollAnimation.Translate
       className={cn(
-        'max-h-bounds relative flex h-screen w-full flex-col items-center text-content',
+        'relative flex h-screen w-full flex-col items-center text-content 2xl:max-h-bounds',
         className,
       )}
       config={animationConfig}

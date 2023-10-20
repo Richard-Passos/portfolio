@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
         <Cursor.Area>
           <body
             className={cn(
-              'max-w-bounds font-app relative mx-auto min-h-screen overflow-x-clip',
+              'font-app relative mx-auto min-h-screen',
               font.variable,
             )}
           >

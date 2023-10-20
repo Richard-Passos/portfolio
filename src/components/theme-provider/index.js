@@ -1,3 +1,3 @@
-import ThemeProvider from './Root'
+import ThemeProvider from './Root';
 
-export default ThemeProvider
+export default ThemeProvider;

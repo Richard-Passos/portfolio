@@ -1,3 +1,3 @@
-import Content from './Root'
+import Content from './Root';
 
-export default Content
+export default Content;

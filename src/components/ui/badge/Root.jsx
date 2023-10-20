@@ -19,7 +19,7 @@ const badgeVariants = cnv({
       secondary:
         'border-transparent bg-secondary text-secondary-content hover:bg-secondary/80',
       destructive:
-        'border-transparent bg-destructive text-destructive-content hover:bg-destructive/80',
+        'bg-destructive text-destructive-content hover:bg-destructive/80 border-transparent',
       outline: 'text-content',
     },
   },

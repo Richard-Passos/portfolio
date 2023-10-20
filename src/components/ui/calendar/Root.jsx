@@ -31,7 +31,7 @@ const Calendar = ({
         table: 'w-full border-collapse space-y-1',
         head_row: 'flex',
         head_cell:
-          'text-muted-content w-9 rounded-md text-[0.8rem] font-normal',
+          'w-9 rounded-md text-[0.8rem] font-normal text-muted-content',
         row: 'mt-2 flex w-full',
         cell: 'relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md',
         day: cn(
@@ -39,12 +39,12 @@ const Calendar = ({
           'h-9 w-9 p-0 font-normal aria-selected:opacity-100',
         ),
         day_selected:
-          'text-primary-content hover:text-primary-content focus:text-primary-content bg-primary hover:bg-primary focus:bg-primary',
-        day_today: 'text-accent-content bg-accent',
+          'bg-primary text-primary-content hover:bg-primary hover:text-primary-content focus:bg-primary focus:text-primary-content',
+        day_today: 'bg-accent text-accent-content',
         day_outside: 'text-muted-content opacity-50',
         day_disabled: 'text-muted-content opacity-50',
         day_range_middle:
-          'aria-selected:text-accent-content aria-selected:bg-accent',
+          'aria-selected:bg-accent aria-selected:text-accent-content',
         day_hidden: 'invisible',
         ...classNames,
       }}

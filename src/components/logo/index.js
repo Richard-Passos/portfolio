@@ -1,3 +1,3 @@
-import Logo from './Root'
+import Logo from './Root';
 
-export default Logo
+export default Logo;

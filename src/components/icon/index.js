@@ -1,3 +1,3 @@
-import Icon from './Root'
+import Icon from './Root';
 
-export default Icon
+export default Icon;

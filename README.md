@@ -3,24 +3,28 @@
 <br>
 
 ## :memo: Description
+
 My portfolio.
 
 <br>
 
 ## :wrench: Technologies used
-* Next.js
-* Jest.js
-* TailwindCSS
-* JavaScript
+
+- Next.js
+- Jest.js
+- TailwindCSS
+- JavaScript
 
 <br>
 
 ## :rocket: Run project
+
 It is recommended to clone the project.
 
 <br>
 
 ## :handshake: Team
+
 <table>
   <tr>
     <td align="center">
@@ -37,4 +41,5 @@ It is recommended to clone the project.
 <br>
 
 ## :dart: Status
+
 In progress

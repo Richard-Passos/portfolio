@@ -1,3 +1,3 @@
-import Link from './Root'
+import Link from './Root';
 
-export default Link
+export default Link;

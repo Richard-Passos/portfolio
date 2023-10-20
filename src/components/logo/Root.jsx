@@ -33,7 +33,7 @@ const Donut = ({ className, ...props }) => {
     >
       <span
         aria-label='Inner'
-        className='bg-main absolute inset-[30%] w-auto rounded-inherit transition-colors'
+        className='absolute inset-[30%] w-auto rounded-inherit bg-main transition-colors'
       />
     </div>
   );

@@ -1,3 +1,3 @@
-import Work from './Root'
+import Work from './Root';
 
-export default Work
+export default Work;

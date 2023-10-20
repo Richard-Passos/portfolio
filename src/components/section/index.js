@@ -1,3 +1,3 @@
-import Section from './Root'
+import Section from './Root';
 
-export default Section
+export default Section;
