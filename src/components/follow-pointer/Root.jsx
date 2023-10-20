@@ -15,16 +15,13 @@ const FollowPointer = ({ id, smoothConfig, className, style, ...props }) => {
 
   const isShowing = showList.includes(id);
 
-  smoothConfig = {
-    mass: 0.5,
-    ...smoothConfig,
-  };
-
   const scaleX = useSmooth(
       useTransform(() => (isShowing ? style?.scaleX.get() ?? 1 : 0)),
+      smoothConfig,
     ),
     scaleY = useSmooth(
       useTransform(() => (isShowing ? style?.scaleY.get() ?? 1 : 0)),
+      smoothConfig,
     ),
     x = useSmooth(
       useTransform(() => style?.x.get() ?? pointerPos.x.get()),
