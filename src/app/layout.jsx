@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google';
 
-import { Cursor, Provider, ThemeProvider } from '@/components';
+import { Cursor, Provider, SmoothScroll, ThemeProvider } from '@/components';
 import { Footer, Header } from '@/patterns';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
@@ -22,18 +22,20 @@ const Layout = ({ children }) => {
         <Cursor.Area>
           <body
             className={cn(
-              'relative isolate mx-auto min-h-screen max-w-bounds overflow-x-clip font-app',
+              'max-w-bounds font-app relative mx-auto min-h-screen overflow-x-clip',
               font.variable,
             )}
           >
             <ThemeProvider>
               <Cursor />
 
-              <Header />
+              <SmoothScroll>
+                <Header />
 
-              {children}
+                {children}
 
-              <Footer />
+                <Footer />
+              </SmoothScroll>
             </ThemeProvider>
           </body>
         </Cursor.Area>
