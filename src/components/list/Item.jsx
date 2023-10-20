@@ -1,6 +1,7 @@
 import { cn } from '@/utils';
 
 import ScrollAnimation from '../scroll-animation';
+import { smoothScrollConfig } from '../smooth-scroll';
 
 const ListItem = ({ className, reverse, children, ...props }) => {
   const animationConfig = {
@@ -22,6 +23,7 @@ const ListItem = ({ className, reverse, children, ...props }) => {
       <ScrollAnimation.Translate
         className='relative flex w-full items-center justify-between gap-6'
         config={animationConfig}
+        smoothConfig={smoothScrollConfig}
       >
         <div>{children}</div>
       </ScrollAnimation.Translate>
