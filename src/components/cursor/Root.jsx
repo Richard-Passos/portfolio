@@ -9,8 +9,8 @@ import { cn } from '@/utils';
 import FollowPointer from '../follow-pointer';
 
 const VARIANTS_DEFAULT = {
-  width: 32,
-  height: 32,
+  width: 9.6,
+  height: 9.6,
   borderRadius: 999,
   scaleX: 1,
   scaleY: 1,
