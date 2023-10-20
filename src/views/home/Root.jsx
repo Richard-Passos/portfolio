@@ -2,7 +2,7 @@ import Section from './section';
 
 const Root = () => {
   return (
-    <main>
+    <main className='max-w-bounds mx-auto'>
       <Section.Hero />
 
       <Section.Work />
