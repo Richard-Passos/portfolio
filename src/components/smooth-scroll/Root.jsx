@@ -11,7 +11,7 @@ const SmoothScroll = (props) => {
   );
 };
 
-const smoothScrollConfig = { damping: 25, stiffness: 100, mass: 0.1 };
+const smoothScrollConfig = { damping: 10, stiffness: 100, mass: 0.2 };
 
 export default SmoothScroll;
 export { smoothScrollConfig };
