@@ -57,15 +57,12 @@
     --accent-c: 251.1 62.1% 82.2%;
   }
 
-  html {
-    @apply scroll-smooth;
-  }
-
   body {
     @apply transition-bg bg-main text-content [&::-webkit-scrollbar-thumb:hover]:bg-content/20 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-content/10 [&::-webkit-scrollbar]:w-1.5;
   }
 
-  *:focus-visible {
+  *:focus-visible,
+  .outline {
     @apply outline-2 outline-offset-2 outline-current;
   }
 
@@ -79,10 +76,6 @@
 }
 
 @layer utilities {
-  .max-w {
-    @apply max-w-bounds;
-  }
-
   .transition-color {
     transition-property: color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
