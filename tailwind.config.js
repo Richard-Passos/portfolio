@@ -84,6 +84,12 @@ module.exports = {
       boxShadow: {
         '2xl': '0 50px 75px hsl(0 0% 0% / .15)',
       },
+      maxHeight: {
+        bounds: 'var(--max-h)',
+      },
+      maxWidth: {
+        bounds: 'var(--max-w)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
