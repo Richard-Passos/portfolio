@@ -8,6 +8,7 @@ export { default as List } from './list';
 export { default as Logo } from './logo';
 export { default as Magnetic } from './magnetic';
 export { default as Provider } from './provider';
+export { default as SmoothScroll } from './smooth-scroll';
 export { default as ScrollAnimation } from './scroll-animation';
 export { default as ScrollIndicator } from './scroll-indicator';
 export { default as Section } from './section';
