@@ -1,5 +1,5 @@
-import { Cursor, FollowPointer, List, Section } from '@/components';
-import { Link, Svg, Text } from '@/components/ui';
+import { Cursor, List, Section } from '@/components';
+import { Link, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const listContent = [
@@ -25,36 +25,35 @@ const HomeSectionWork = ({ className, ...props }) => {
         ab doloremque.
       </Text.Title>
 
-      <Cursor.Hover variant={{ scaleX: 2.5, scaleY: 2.5 }}>
-        <FollowPointer.Area id='follow-pointer-link-arrow'>
-          <Link
-            className='w-full'
-            href='/work'
-          >
-            <List>
-              {listContent.map(({ title, description }) => (
-                <List.Item key={`Work list ${title} ${description}`}>
-                  <Text.Title
-                    asChild
-                    className='text-7xl font-medium'
-                  >
-                    <h3>{title}</h3>
-                  </Text.Title>
+      <Cursor.Hover
+        content={{
+          type: 'icon',
+          name: 'Arrow',
+          className: '-rotate-45',
+        }}
+        variant={{ scaleX: 1, scaleY: 1 }}
+      >
+        <Link
+          className='w-full'
+          href='/work'
+        >
+          <List>
+            {listContent.map(({ title, description }) => (
+              <List.Item key={`Work list ${title} ${description}`}>
+                <Text.Title
+                  asChild
+                  className='text-7xl font-medium'
+                >
+                  <h3>{title}</h3>
+                </Text.Title>
 
-                  <Text className='opacity-0 transition-opacity group-hover:opacity-100'>
-                    {description}
-                  </Text>
-                </List.Item>
-              ))}
-            </List>
-
-            <FollowPointer id='follow-pointer-link-arrow'>
-              <div>
-                <Svg.Arrow className='w-12 -rotate-45 text-primary-content' />
-              </div>
-            </FollowPointer>
-          </Link>
-        </FollowPointer.Area>
+                <Text className='opacity-0 transition-opacity group-hover:opacity-100'>
+                  {description}
+                </Text>
+              </List.Item>
+            ))}
+          </List>
+        </Link>
       </Cursor.Hover>
     </Section>
   );
