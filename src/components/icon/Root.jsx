@@ -1,8 +1,8 @@
 import { cn, normalizeCompName } from '@/utils';
 
-import Svg from '../ui/svg';
+import { Svg } from '../ui';
 
-const Root = ({ name = '', className, ...props }) => {
+const Icon = ({ name = '', className, ...props }) => {
   const Tag = Svg[normalizeCompName(name)] || Svg.QuestionMark;
 
   return (
@@ -13,4 +13,4 @@ const Root = ({ name = '', className, ...props }) => {
   );
 };
 
-export default Root;
+export default Icon;
