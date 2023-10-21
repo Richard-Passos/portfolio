@@ -1,4 +1,4 @@
-import { ScrollAnimation } from '@/components';
+import { Cursor, ScrollAnimation } from '@/components';
 import { smoothScrollConfig } from '@/components/smooth-scroll';
 import { Link, Text } from '@/components/ui';
 import { cn } from '@/utils';
@@ -13,23 +13,28 @@ const FooterContentTitle = ({ className, ...props }) => {
   };
 
   return (
-    <Link
-      className={cn('my-auto', className)}
-      href='/contact'
-      {...props}
+    <Cursor.Hover
+      content={{ type: 'icon', name: 'Arrow', className: '-rotate-45' }}
+      variant={{ scaleX: 1, scaleY: 1 }}
     >
-      <Text.Title className='flex space-x-[--font-blank-space] text-9xl'>
-        <span>Let&apos;s work</span>
+      <Link
+        className={cn('my-auto', className)}
+        href='/contact'
+        {...props}
+      >
+        <Text.Title className='flex space-x-[--font-blank-space] text-9xl'>
+          <span>Let&apos;s work</span>
 
-        <ScrollAnimation.Translate
-          className='outline-text relative'
-          config={animationConfig}
-          smoothConfig={smoothScrollConfig}
-        >
-          <span>together</span>
-        </ScrollAnimation.Translate>
-      </Text.Title>
-    </Link>
+          <ScrollAnimation.Translate
+            className='outline-text relative'
+            config={animationConfig}
+            smoothConfig={smoothScrollConfig}
+          >
+            <span>together</span>
+          </ScrollAnimation.Translate>
+        </Text.Title>
+      </Link>
+    </Cursor.Hover>
   );
 };
 
