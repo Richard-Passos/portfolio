@@ -4,14 +4,20 @@ import { Slot } from '@radix-ui/react-slot';
 import { forwardRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { setVariant } from '@/redux';
+import { setContent, setVariant } from '@/redux';
 import { isFunctionThanCall } from '@/utils';
 
-const CursorHover = ({ disabled, variant, ...props }, ref) => {
+const CursorHover = ({ variant, content, disabled, ...props }, ref) => {
   const dispatch = useDispatch();
 
-  const updateCursor = () => dispatch(setVariant(variant)),
-    resetCursor = () => dispatch(setVariant());
+  const updateCursor = () => {
+      dispatch(setVariant(variant));
+      dispatch(setContent(content));
+    },
+    resetCursor = () => {
+      dispatch(setVariant());
+      dispatch(setContent());
+    };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => resetCursor, []);
