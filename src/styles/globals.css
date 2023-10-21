@@ -18,9 +18,9 @@
     --danger: 64 69% 46%;
     --danger-c: 64 69% 86%;
 
-    --radius-sm: 1.8rem;
-    --radius-md: 1.9rem;
-    --radius-lg: 2rem;
+    --radius-sm: 0.75rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.25rem;
   }
 
   .light {
@@ -31,7 +31,7 @@
     --inverted-c: 333.8 61.5% 94.9%;
 
     --muted: 333.8 41.5% 74.9%;
-    --muted-c: 0 30% 30%;
+    --muted-c: 0 10% 20%;
 
     --secondary: 334.8 61% 83.9%;
     --secondary-c: 340 60% 15.1%;
