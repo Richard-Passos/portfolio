@@ -4,11 +4,12 @@ const HomeSectionHeroTitle = () => {
   return (
     <Text.Title
       asChild
-      className='mt-12 w-full max-w-4xl flex-col items-start text-9xl'
+      className='mt-12 flex flex-col text-xl'
     >
       <h1>
-        I create
-        <span className='outline-text ml-auto'>experiences</span>
+        <span className='text-9xl uppercase'>experiences</span>
+
+        <span className='ml-auto'>that&apos;s what I create</span>
       </h1>
     </Text.Title>
   );
