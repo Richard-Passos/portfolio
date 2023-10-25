@@ -27,9 +27,9 @@ const Layout = ({ children }) => {
             )}
           >
             <ThemeProvider>
-              <Cursor />
-
               <SmoothScroll>
+                <Cursor />
+
                 <Header />
 
                 {children}
