@@ -39,10 +39,7 @@ const Cursor = ({ className, style, ...props }) => {
 
   return (
     <FollowPointer
-      className={cn(
-        'fixed flex items-center justify-center bg-primary',
-        className,
-      )}
+      className={cn('flex items-center justify-center bg-primary', className)}
       id='follow-pointer-cursor'
       style={{ ...smoothVariant, ...style }}
       {...props}
