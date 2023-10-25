@@ -9,7 +9,7 @@ const TextTitle = ({ asChild, className, ...props }, ref) => {
   return (
     <Tag
       className={cn(
-        'transition-color text-xl font-bold text-content',
+        'transition-color text-xl font-bold',
         className,
       )}
       ref={ref}

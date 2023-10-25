@@ -8,7 +8,7 @@ const Text = ({ asChild, className, ...props }, ref) => {
 
   return (
     <Tag
-      className={cn('transition-color text-content', className)}
+      className={cn('transition-color', className)}
       ref={ref}
       {...props}
     />
