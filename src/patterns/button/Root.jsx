@@ -4,27 +4,17 @@ import { Cursor, Magnetic } from '@/components';
 import { Button as ButtonUi } from '@/components/ui';
 import { cn } from '@/utils';
 
-const Button = (
-  { magneticProps, stickyProps, className, children, ...props },
-  ref,
-) => {
+const Button = ({ magneticProps, stickyProps, className, ...props }, ref) => {
   return (
-    <Magnetic {...{ ...magneticProps, limit: 0.25 }}>
+    <Magnetic
+      ref={ref}
+      {...magneticProps}
+    >
       <Cursor.Sticky {...stickyProps}>
         <ButtonUi
-          className={cn(
-            'relative aspect-square h-40 rounded-full px-0 text-lg',
-            className,
-          )}
-          ref={ref}
+          className={cn('aspect-square h-40 px-0 text-lg', className)}
           {...props}
-        >
-          <Magnetic {...magneticProps}>
-            <span className='flex h-full w-full items-center justify-center'>
-              {children}
-            </span>
-          </Magnetic>
-        </ButtonUi>
+        />
       </Cursor.Sticky>
     </Magnetic>
   );
