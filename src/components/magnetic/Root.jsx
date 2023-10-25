@@ -10,8 +10,8 @@ import { isFunctionThanCall, setRefs, transformTemplate } from '@/utils';
 const Magnetic = ({ limit = 0.5, style, ...props }, ref) => {
   const innerRef = useRef(null),
     position = {
-      x: useSmooth(0, { damping: 7, mass: 0.5 }),
-      y: useSmooth(0, { damping: 7, mass: 0.5 }),
+      x: useSmooth(0, { damping: 7, stiffness: 100, mass: 0.5 }),
+      y: useSmooth(0, { damping: 7, stiffness: 100, mass: 0.5 }),
     };
 
   const resetPosition = () => {
