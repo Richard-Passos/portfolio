@@ -24,14 +24,14 @@
   }
 
   .light {
-    --main: 333.8 61.5% 94.9%;
-    --content: 0 0% 0%;
+    --main: 335 2% 98%;
+    --content: 335 2% 2%;
 
-    --inverted: 0 0% 0%;
-    --inverted-c: 333.8 61.5% 94.9%;
+    --inverted: 335 2% 5%;
+    --inverted-c: 335 2% 98%;
 
-    --muted: 333.8 41.5% 74.9%;
-    --muted-c: 0 10% 20%;
+    --muted: 335 5% 94%;
+    --muted-c: 335 5% 32%;
 
     --secondary: 334.8 61% 83.9%;
     --secondary-c: 340 60% 15.1%;
@@ -41,14 +41,14 @@
   }
 
   .dark {
-    --main: 333.8 51.5% 2.1%;
-    --content: 0 0% 100%;
+    --main: 335 2% 5%;
+    --content: 335 2% 98%;
 
-    --inverted: 0 0% 100%;
-    --inverted-c: 333.8 51.5% 3.1%;
+    --inverted: 335 2% 98%;
+    --inverted-c: 335 2% 2%;
 
-    --muted: 333.8 31.5% 4.1%;
-    --muted-c: 0 0% 70%;
+    --muted: 335 5% 9%;
+    --muted-c: 335 5% 68%;
 
     --secondary: 340 12% 4.9%;
     --secondary-c: 340 62% 84.9%;
@@ -57,8 +57,8 @@
     --accent-c: 251.1 62.1% 82.2%;
   }
 
-  body {
-    @apply transition-bg bg-main text-content [&::-webkit-scrollbar-thumb:hover]:bg-content/20 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-content/10 [&::-webkit-scrollbar]:w-1.5;
+  * {
+    @apply [&::-webkit-scrollbar-thumb:hover]:bg-muted-content [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted-content/50 [&::-webkit-scrollbar]:w-2.5;
   }
 
   *:focus-visible,
@@ -76,18 +76,6 @@
 }
 
 @layer utilities {
-  .transition-color {
-    transition-property: color;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 200ms;
-  }
-
-  .transition-bg {
-    transition-property: background-color;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 200ms;
-  }
-
   .vertical-text {
     writing-mode: vertical-lr;
     text-orientation: upright;
