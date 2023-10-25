@@ -1,3 +1,3 @@
 export { default as store } from './store';
-export { setVariant } from './cursorSlice';
+export { setVariant, setContent } from './cursorSlice';
 export { showFollowPointer, hideFollowPointer } from './followPointerSlice';
