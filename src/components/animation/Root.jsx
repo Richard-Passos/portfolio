@@ -1,8 +1,9 @@
 'use client';
 
+import { Slot } from '@radix-ui/react-slot';
 import { motion } from 'framer-motion';
 
-const Root = ({ variants, type, animation, as, ...props }) => {
+const Animation = ({ variants, type, animation, ...props }) => {
   const [hidden, visible] = variants || [];
 
   const defaultAnimation = {
@@ -16,14 +17,14 @@ const Root = ({ variants, type, animation, as, ...props }) => {
 
   animation = animation || defaultAnimation;
 
-  const Tag = motion[as || 'div'];
-
   return (
-    <Tag
+    <MotionChild
       {...animation}
       {...props}
     />
   );
 };
 
-export default Root;
+const MotionChild = motion(Slot)
+
+export default Animation;

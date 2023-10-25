@@ -1,12 +1,12 @@
-import Root from './Root';
+import Animation from './Root';
 
-const InView = (props) => {
+const AnimationInView = (props) => {
   return (
-    <Root
+    <Animation
       type='whileInView'
       {...props}
     />
   );
 };
 
-export default InView;
+export default AnimationInView;

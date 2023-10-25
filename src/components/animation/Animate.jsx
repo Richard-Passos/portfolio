@@ -1,12 +1,12 @@
-import Root from './Root';
+import Animation from './Root';
 
-const Animate = (props) => {
+const AnimationAnimate = (props) => {
   return (
-    <Root
+    <Animation
       type='animate'
       {...props}
     />
   );
 };
 
-export default Animate;
+export default AnimationAnimate;
