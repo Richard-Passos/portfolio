@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
         <Cursor.Area>
           <body
             className={cn(
-              'font-app relative min-h-screen overflow-x-clip',
+              'font-app relative min-h-screen overflow-x-clip bg-main text-content transition-bg',
               font.variable,
             )}
           >
