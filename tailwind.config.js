@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       spacing: {
         px: 0.8,
+        'font-blank-space': 'var(--font-blank-space)',
       },
       colors: {
         main: getColor('--main'),
@@ -89,6 +90,17 @@ module.exports = {
       },
       maxWidth: {
         bounds: 'var(--max-w)',
+      },
+      transitionProperty: {
+        color: 'color',
+        bg: 'background-color',
+        border: 'border',
+      },
+      transitionDuration: {
+        DEFAULT: '200ms',
+      },
+      fontFamily: {
+        app: 'var(--font-app)',
       },
     },
   },
