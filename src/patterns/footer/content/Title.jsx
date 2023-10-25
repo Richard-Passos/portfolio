@@ -22,7 +22,7 @@ const FooterContentTitle = ({ className, ...props }) => {
         href='/contact'
         {...props}
       >
-        <Text.Title className='flex space-x-[--font-blank-space] text-9xl'>
+        <Text.Title className='flex space-x-font-blank-space text-9xl'>
           <span>Let&apos;s work</span>
 
           <ScrollAnimation.Translate
