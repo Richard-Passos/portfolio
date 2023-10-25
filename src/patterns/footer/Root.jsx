@@ -8,10 +8,7 @@ const Footer = ({ className, ...props }) => {
   return (
     <Section
       asChild
-      className={cn(
-        'max-w-bounds relative mx-auto flex h-auto items-center justify-center overflow-hidden pt-36',
-        className,
-      )}
+      className={cn('mx-auto max-w-bounds overflow-hidden pt-36', className)}
       {...props}
     >
       <footer>
