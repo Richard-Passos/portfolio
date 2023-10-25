@@ -1,5 +1,5 @@
 const variantsColor = {
-  base: '[--main] [--content]',
+  main: '[--main] [--content]',
   inverted: '[--main:--inverted] [--content:--inverted-c]',
   muted: '[--main:--muted] [--content:--muted-c]',
   primary: '[--main:--primary] [--content:--primary-c]',
