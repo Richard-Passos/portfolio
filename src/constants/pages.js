@@ -1,16 +1,14 @@
 const pages = [
-  { href: '/', text: 'Home', description: 'Back to the home page.' },
+  { href: '/', text: 'Home' },
   {
     href: '/work',
     text: 'Work',
-    description: 'My approach to development.',
   },
   {
     href: '/about',
     text: 'About',
-    description: 'A little about me and my background.',
   },
-  { href: '/contact', text: 'Contact', description: 'Get in touch with me.' },
+  { href: '/contact', text: 'Contact' },
 ];
 
 export default pages;
