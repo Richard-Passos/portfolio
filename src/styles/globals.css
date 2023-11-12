@@ -6,32 +6,35 @@
   :root {
     @apply [--font-blank-space:.25em] [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)];
 
-    --primary: 335.3 94.8% 45.7%;
-    --primary-c: 341 69.2% 98%;
+    --info: 199 77% 54%;
+    --info-c: 199 67% 94%;
 
-    --info: 64 69% 46%;
-    --info-c: 64 69% 86%;
+    --success: 120 49% 44%;
+    --success-c: 120 69% 94%;
 
-    --warning: 64 69% 46%;
-    --warning-c: 64 69% 86%;
+    --warning: 48 79% 47%;
+    --warning-c: 48 69% 97%;
 
-    --danger: 64 69% 46%;
-    --danger-c: 64 69% 86%;
+    --danger: 354 70% 53%;
+    --danger-c: 354 60% 93%;
 
-    --radius-sm: 0.75rem;
-    --radius-md: 1rem;
-    --radius-lg: 1.25rem;
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
   }
 
   .light {
     --main: 335 2% 98%;
-    --content: 335 2% 2%;
+    --content: 335 2% 5%;
 
     --inverted: 335 2% 5%;
     --inverted-c: 335 2% 98%;
 
     --muted: 335 5% 94%;
     --muted-c: 335 5% 32%;
+
+    --primary: 335 2% 5%;
+    --primary-c: 335 2% 98%;
 
     --secondary: 334.8 61% 83.9%;
     --secondary-c: 340 60% 15.1%;
@@ -45,10 +48,13 @@
     --content: 335 2% 98%;
 
     --inverted: 335 2% 98%;
-    --inverted-c: 335 2% 2%;
+    --inverted-c: 335 2% 5%;
 
     --muted: 335 5% 9%;
     --muted-c: 335 5% 68%;
+
+    --primary: 335 2% 98%;
+    --primary-c: 335 2% 5%;
 
     --secondary: 340 12% 4.9%;
     --secondary-c: 340 62% 84.9%;
@@ -58,30 +64,33 @@
   }
 
   * {
-    @apply [&::-webkit-scrollbar-thumb:hover]:bg-muted-content [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted-content/50 [&::-webkit-scrollbar]:w-2.5;
+    @apply outline-none [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted-content/25 hover:[&::-webkit-scrollbar-thumb]:bg-muted-content/50 [&::-webkit-scrollbar]:w-2.5;
   }
 
-  *:focus-visible,
-  .outline {
-    @apply outline-2 outline-offset-2 outline-current;
+  *:focus-visible {
+    @apply outline;
   }
 
   :where(h1, h2, h3, h4, h5, h6, p, span, button) {
     @apply w-fit;
   }
 
-  :where(span, a, small) {
+  :where(span, a, small, label) {
     @apply inline-block;
   }
 }
 
 @layer utilities {
-  .vertical-text {
-    writing-mode: vertical-lr;
-    text-orientation: upright;
+  .hide-scrollbar {
+    @apply [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
   }
 
   .outline-text {
     @apply [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:2px];
+  }
+
+  .vertical-text {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
   }
 }
