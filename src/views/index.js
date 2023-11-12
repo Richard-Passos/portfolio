@@ -1,4 +1,4 @@
-export { default as About } from './about';
-export { default as Contact } from './contact';
-export { default as Home } from './home';
-export { default as Work } from './work';
+export { default as AboutView } from './about';
+export { default as ContactView } from './contact';
+export { default as HomeView } from './home';
+export { default as WorkView } from './work';
