@@ -1,13 +1,13 @@
-'use client';
-
 import { forwardRef } from 'react';
 
 import { cn, cnv } from '@/utils';
 
-const Alert = ({ className, variant, ...props }, ref) => {
+import variantColors from '../variantColors';
+
+const Alert = ({ variants, className, ...props }, ref) => {
   return (
     <section
-      className={cn(alertVariants({ variant }), className)}
+      className={cn(alertVariants(variants), className)}
       ref={ref}
       role='alert'
       {...props}
@@ -15,18 +15,22 @@ const Alert = ({ className, variant, ...props }, ref) => {
   );
 };
 
+const alertStyles = {
+  solid: 'bg-main text-content',
+  outline: 'border-main text-main',
+};
+
 const alertVariants = cnv({
-  base: 'relative w-full rounded-lg border p-4',
+  base: 'relative w-full max-w-md rounded-md border border-transparent p-5',
   variants: {
-    variant: {
-      default: 'bg-main text-content ',
-      destructive:
-        'border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive',
-    },
+    color: variantColors,
+    style: alertStyles,
   },
   defaultVariants: {
-    variant: 'default',
+    color: 'main',
+    style: 'solid',
   },
 });
 
 export default forwardRef(Alert);
+export { alertStyles, alertVariants };

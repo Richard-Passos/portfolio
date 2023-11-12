@@ -2,16 +2,20 @@ import { render, screen } from '@testing-library/react';
 
 import Image from '../Root';
 
-const QUERY_OBJ = { altText: 'Testing image', options: {} },
+const QUERY_OBJ = { alt: 'Testing image', options: {} },
   QUERY = Object.values(QUERY_OBJ);
 
-const defaultProps = { height: 0, src: '/images/placeholder.png', width: 0 };
+const defaultProps = {
+  height: 350,
+  src: '/images/placeholder.png',
+  width: 556,
+};
 
 describe('<Image />', () => {
   it('should render properly', () => {
     render(
       <Image
-        alt={QUERY_OBJ.altText}
+        alt={QUERY_OBJ.alt}
         {...defaultProps}
       />,
     );

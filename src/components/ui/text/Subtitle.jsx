@@ -8,10 +8,7 @@ const TextSubtitle = ({ asChild, className, ...props }, ref) => {
 
   return (
     <Tag
-      className={cn(
-        'transition-color text-lg font-semibold',
-        className,
-      )}
+      className={cn('text-lg font-semibold', className)}
       ref={ref}
       {...props}
     />

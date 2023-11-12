@@ -1,14 +1,21 @@
-import Content from './Content';
-import Header from './Header';
-import Item from './Item';
-import Root from './Root';
-import Trigger from './Trigger';
+import AccordionContent from './Content';
+import AccordionHeader from './Header';
+import AccordionItem from './Item';
+import AccordionRoot from './Root';
+import AccordionTrigger from './Trigger';
 
-const Accordion = Root;
+const Accordion = AccordionRoot;
 
-Accordion.Content = Content;
-Accordion.Header = Header;
-Accordion.Item = Item;
-Accordion.Trigger = Trigger;
+Accordion.Content = AccordionContent;
+Accordion.Header = AccordionHeader;
+Accordion.Item = AccordionItem;
+Accordion.Trigger = AccordionTrigger;
 
 export default Accordion;
+export {
+  AccordionRoot as Accordion,
+  AccordionContent,
+  AccordionHeader,
+  AccordionItem,
+  AccordionTrigger,
+};

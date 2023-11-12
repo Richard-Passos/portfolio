@@ -1,10 +1,11 @@
-import Fallback from './Fallback';
-import Image from './Image';
-import Root from './Root';
+import AvatarFallback from './Fallback';
+import AvatarImage from './Image';
+import AvatarRoot from './Root';
 
-const Avatar = Root;
+const Avatar = AvatarRoot;
 
-Avatar.Fallback = Fallback;
-Avatar.Image = Image;
+Avatar.Fallback = AvatarFallback;
+Avatar.Image = AvatarImage;
 
 export default Avatar;
+export { AvatarRoot as Avatar, AvatarFallback, AvatarImage };

@@ -8,10 +8,7 @@ import { cn } from '@/utils';
 const Avatar = ({ className, ...props }, ref) => {
   return (
     <Root
-      className={cn(
-        'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
-        className,
-      )}
+      className={cn('h-10 w-10 shrink-0 rounded-full', className)}
       ref={ref}
       {...props}
     />

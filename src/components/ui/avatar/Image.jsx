@@ -1,22 +1,23 @@
 'use client';
 
-import { Image } from '@radix-ui/react-avatar';
-import NextImage from 'next/image';
+import { Image as RadixImage } from '@radix-ui/react-avatar';
 import { forwardRef } from 'react';
 
 import { cn } from '@/utils';
 
+import Image from '../image';
+
 const AvatarImage = ({ asChild, className, children, ...props }, ref) => {
   return (
-    // eslint-disable-next-line jsx-a11y/alt-text
-    <Image
+    <RadixImage
       asChild
-      className={cn('aspect-square h-full w-full', className)}
+      className={cn('h-full w-full rounded-inherit', className)}
       ref={ref}
       {...props}
     >
-      {asChild ? children : <NextImage />}
-    </Image>
+      {/* eslint-disable-next-line jsx-a11y/alt-text */}
+      {asChild ? children : <Image />}
+    </RadixImage>
   );
 };
 

@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 const AlertDialogAction = ({ className, ...props }, ref) => {
   return (
     <Action
-      className={cn(className)}
+      className={cn('max-sm:w-full', className)}
       ref={ref}
       {...props}
     />

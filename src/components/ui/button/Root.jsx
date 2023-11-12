@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import { cn, cnv } from '@/utils';
 
-import variantsColor from '../variantsColor';
+import variantColors from '../variantColors';
 
 const Button = ({ asChild, variants, className, ...props }, ref) => {
   const Tag = asChild ? Slot : 'button';
@@ -17,28 +17,34 @@ const Button = ({ asChild, variants, className, ...props }, ref) => {
   );
 };
 
+const buttonStyles = {
+    basic: 'bg-main text-content',
+    invert:
+      'bg-main text-content hover:border-main hover:bg-content hover:text-main',
+  },
+  buttonSizes = {
+    sm: 'h-10 sm:h-12 md:h-14 lg:h-16 text-sm md:text-base',
+    md: 'h-12 sm:h-14 md:h-16 lg:h-20 ',
+    lg: 'h-36 sm:h-40 md:h-46 lg:h-52',
+  };
+
 const buttonVariants = cnv({
-  base: 'inline-flex items-center justify-center gap-x-font-blank-space rounded-full border border-transparent font-medium transition-colors disabled:pointer-events-none disabled:opacity-50',
+  base: 'inline-flex aspect-square items-center justify-center gap-font-blank-space rounded-full border font-medium transition-colors disabled:pointer-events-none disabled:opacity-50',
   variants: {
-    color: variantsColor,
-    variant: {
-      filled: 'bg-main text-content hover:bg-main/80',
-      outline: 'border-main text-main hover:bg-main hover:text-content',
-      ghost: 'text-main hover:bg-main/20',
-      link: 'font-bold text-main underline-offset-4 hover:underline',
-    },
+    color: variantColors,
+    style: buttonStyles,
     size: {
-      sm: 'h-10 px-4 text-sm',
-      md: 'h-12 px-6',
-      lg: 'h-14 px-8 text-lg',
+      sm: 'h-10 max-md:text-sm sm:h-12 md:h-14 lg:h-16',
+      md: 'h-12 sm:h-14 md:h-16 md:text-lg lg:h-20',
+      lg: 'h-36 text-lg sm:h-40 md:h-44 md:text-xl lg:h-52',
     },
   },
   defaultVariants: {
     color: 'primary',
-    variant: 'filled',
+    style: 'invert',
     size: 'md',
   },
 });
 
 export default forwardRef(Button);
-export { buttonVariants };
+export { buttonSizes, buttonStyles, buttonVariants };

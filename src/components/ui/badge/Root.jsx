@@ -1,8 +1,14 @@
+import { Slot } from '@radix-ui/react-slot';
+
 import { cn, cnv } from '@/utils';
 
-const Badge = ({ variants, className, ...props }) => {
+import variantColors from '../variantColors';
+
+const Badge = ({ asChild, variants, className, ...props }) => {
+  const Tag = asChild ? Slot : 'div';
+
   return (
-    <div
+    <Tag
       aria-label='Badge'
       className={cn(badgeVariants(variants), className)}
       {...props}
@@ -10,23 +16,23 @@ const Badge = ({ variants, className, ...props }) => {
   );
 };
 
+const badgeStyles = {
+  solid: 'bg-main text-content',
+  outline: 'border-main text-main',
+  ghost: 'bg-main/20 text-main',
+};
+
 const badgeVariants = cnv({
-  base: 'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors',
+  base: 'inline-flex items-center rounded-full border border-transparent px-2.5 py-1 text-xs font-semibold',
   variants: {
-    variant: {
-      default:
-        'border-transparent bg-primary text-primary-content hover:bg-primary/80',
-      secondary:
-        'border-transparent bg-secondary text-secondary-content hover:bg-secondary/80',
-      destructive:
-        'bg-destructive text-destructive-content hover:bg-destructive/80 border-transparent',
-      outline: 'text-content',
-    },
+    color: variantColors,
+    style: badgeStyles,
   },
   defaultVariants: {
-    variant: 'default',
+    color: 'primary',
+    style: 'solid',
   },
 });
 
 export default Badge;
-export { badgeVariants };
+export { badgeStyles, badgeVariants };

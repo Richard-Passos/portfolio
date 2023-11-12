@@ -3,19 +3,21 @@
 import { Trigger } from '@radix-ui/react-navigation-menu';
 import { forwardRef } from 'react';
 
-import { cn } from '@/utils';
+import { cn, cnv } from '@/utils';
 
 const NavigationMenuTrigger = ({ className, ...props }, ref) => {
   return (
     <Trigger
-      className={cn(
-        'group inline-flex h-10 w-max items-center justify-center rounded-md bg-main px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-content focus:bg-accent focus:text-accent-content focus:outline-none disabled:opacity-50 data-open:bg-accent/50',
-        className,
-      )}
+      className={cn(navigationMenuTriggerVariants(), className)}
       ref={ref}
       {...props}
     />
   );
 };
 
+const navigationMenuTriggerVariants = cnv({
+  base: 'group inline-flex h-10 items-center justify-center gap-2 rounded-sm px-4 text-sm font-medium transition-colors hover:bg-muted disabled:pointer-events-none disabled:opacity-50 data-open:bg-muted',
+});
+
 export default forwardRef(NavigationMenuTrigger);
+export { navigationMenuTriggerVariants };

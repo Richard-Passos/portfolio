@@ -1,13 +1,12 @@
-import { Slot } from '@radix-ui/react-slot';
-
 import { cn } from '@/utils';
 
-const AlertDialogHeader = ({ asChild, className, ...props }) => {
-  const Tag = asChild ? Slot : 'div';
-
+const AlertDialogHeader = ({ className, ...props }) => {
   return (
-    <Tag
-      className={cn('flex flex-col space-y-2 max-sm:text-center', className)}
+    <header
+      className={cn(
+        'flex flex-col gap-y-2 max-sm:items-center max-sm:text-center',
+        className,
+      )}
       {...props}
     />
   );

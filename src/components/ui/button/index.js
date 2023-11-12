@@ -1,4 +1,4 @@
-import Button, { buttonVariants } from './Root';
+import Button, { buttonSizes, buttonStyles, buttonVariants } from './Root';
 
 export default Button;
-export { buttonVariants };
+export { buttonSizes, buttonStyles, buttonVariants };

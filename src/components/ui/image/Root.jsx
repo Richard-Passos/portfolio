@@ -1,30 +1,26 @@
 import NextImage from 'next/image';
+import { forwardRef } from 'react';
 
-import { cn } from '@/utils';
-
-const Image = ({ alt, src, className, ...props }) => {
+const Image = ({ src, alt, fill, ...props }, ref) => {
   const placeholderProps = {
-    ...props,
     src: '/images/placeholder.png',
     alt: 'A black and white image with the word image on it.',
-    width: 556,
-    height: 350,
+    ...(!fill && { width: 556, height: 350 }),
   };
 
-  props = src
-    ? {
-        src,
-        alt: alt || 'Missing alt property.',
-        ...props,
-      }
-    : placeholderProps;
+  props = {
+    ref,
+    fill,
+    ...props,
+    ...(src
+      ? {
+          src,
+          alt: alt || 'Missing alt property.',
+        }
+      : placeholderProps),
+  };
 
-  return (
-    <NextImage
-      className={cn('h-full w-full', className)}
-      {...props}
-    />
-  );
+  return <NextImage {...props} />;
 };
 
-export default Image;
+export default forwardRef(Image);

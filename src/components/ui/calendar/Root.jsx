@@ -1,65 +1,80 @@
 'use client';
 
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { DayPicker } from 'react-day-picker';
 
 import { cn } from '@/utils';
 
 import { buttonVariants } from '../button';
 
-const Calendar = ({
-  className,
-  classNames,
-  showOutsideDays = true,
-  ...props
-}) => {
+const Calendar = ({ className, classNames = {}, ...props }) => {
+  const mergedClassNames = Object.entries(calendarClassNames).reduce(
+    (obj, [key, value]) => ({ ...obj, [key]: cn(value, classNames[key]) }),
+    {},
+  );
+
   return (
     <DayPicker
-      className={cn('p-3', className)}
-      classNames={{
-        months: 'flex max-sm:flex-col max-sm:space-y-4 sm:space-x-4',
-        month: 'space-y-4',
-        caption: 'relative flex items-center justify-center pt-1',
-        caption_label: 'text-sm font-medium',
-        nav: 'flex items-center space-x-1',
-        nav_button: cn(
-          buttonVariants({ color: 'base', variant: 'outline' }),
-          'h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100',
-        ),
-        nav_button_previous: 'absolute left-1',
-        nav_button_next: 'absolute right-1',
-        table: 'w-full border-collapse space-y-1',
-        head_row: 'flex',
-        head_cell:
-          'w-9 rounded-md text-[0.8rem] font-normal text-muted-content',
-        row: 'mt-2 flex w-full',
-        cell: 'relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md',
-        day: cn(
-          buttonVariants({ variant: 'ghost' }),
-          'h-9 w-9 p-0 font-normal aria-selected:opacity-100',
-        ),
-        day_selected:
-          'bg-primary text-primary-content hover:bg-primary hover:text-primary-content focus:bg-primary focus:text-primary-content',
-        day_today: 'bg-accent text-accent-content',
-        day_outside: 'text-muted-content opacity-50',
-        day_disabled: 'text-muted-content opacity-50',
-        day_range_middle:
-          'aria-selected:bg-accent aria-selected:text-accent-content',
-        day_hidden: 'invisible',
-        ...classNames,
-      }}
-      components={{
-        IconLeft: () => <ChevronLeft className='h-4 w-4' />,
-        IconRight: () => <ChevronRight className='h-4 w-4' />,
-      }}
-      showOutsideDays={showOutsideDays}
+      className={cn('w-fit rounded-md border bg-main p-4 text-sm', className)}
+      classNames={{ ...classNames, ...mergedClassNames }}
+      fixedWeeks
+      showOutsideDays
       {...props}
     />
   );
 };
 
-const getClassNames = (classNames) => {
-  return {};
+const calendarClassNames = {
+  caption: 'relative flex h-7 items-center justify-center',
+  caption_dropdowns: 'flex h-full gap-2 first:[&>div]:hidden',
+  caption_label: 'flex h-full items-center gap-1 rounded-sm px-2 font-medium',
+
+  cell: 'p-0',
+
+  day: buttonVariants({
+    color: 'inverted',
+    style: 'ghost',
+    size: 'sm',
+    className:
+      'aspect-square h-9 px-0 disabled:opacity-10 [&:not(button)]:pointer-events-none',
+  }),
+  day_hidden: 'invisible',
+  day_outside: 'opacity-25 hover:opacity-100 aria-selected:opacity-100',
+  day_range_end: 'rounded-l-none [&.rounded-r-none]:rounded-l-full',
+  day_range_middle: 'rounded-none',
+  day_range_start: 'rounded-r-none [&.rounded-l-none]:rounded-r-full',
+  day_selected: 'bg-primary text-primary-content hover:bg-primary/80',
+
+  dropdown:
+    'absolute inset-0 cursor-pointer bg-main opacity-0 [&:focus+div]:outline',
+  dropdown_month: 'relative [&>div]:border [&>span]:hidden',
+  dropdown_year: 'relative [&>div]:border [&>span]:hidden',
+  dropdown_icon: 'h-3.5 w-3.5',
+
+  head_cell:
+    'inline-flex w-9 items-center justify-center font-normal text-muted-content',
+
+  month: 'space-y-4',
+  months: 'flex w-min flex-wrap justify-center gap-4 min-[553px]:w-fit',
+
+  nav_button: buttonVariants({
+    color: 'inverted',
+    style: 'outline',
+    size: 'sm',
+    className: 'absolute top-0 aspect-square h-full rounded-sm px-0',
+  }),
+  nav_button_next: 'right-0',
+  nav_button_previous: 'left-0',
+  nav_icon: 'h-4 w-4',
+
+  row: 'mt-2 flex',
+
+  weeknumber: buttonVariants({
+    color: 'inverted',
+    style: 'ghost',
+    size: 'sm',
+    className:
+      'aspect-square h-9 px-0 font-normal text-muted-content disabled:opacity-10 [&:not(button)]:pointer-events-none',
+  }),
 };
 
 export default Calendar;

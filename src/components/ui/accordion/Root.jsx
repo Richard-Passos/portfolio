@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 const Accordion = ({ className, ...props }, ref) => {
   return (
     <Root
-      className={cn(className)}
+      className={cn('w-full rounded-md border bg-main', className)}
       ref={ref}
       {...props}
     />

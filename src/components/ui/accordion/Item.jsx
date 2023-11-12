@@ -8,7 +8,10 @@ import { cn } from '@/utils';
 const AccordionItem = ({ className, ...props }, ref) => {
   return (
     <Item
-      className={cn('border-b', className)}
+      className={cn(
+        'overflow-hidden border-b first:rounded-t-inherit last:rounded-b-inherit last:border-b-0 focus-within:z-10 focus-within:outline',
+        className,
+      )}
       ref={ref}
       {...props}
     />

@@ -1,16 +1,13 @@
-'use client';
-
-import { Slot } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
 
 import { cn } from '@/utils';
 
-const AlertTitle = ({ asChild, className, ...props }, ref) => {
-  const Tag = asChild ? Slot : 'h5';
+import { TextTitle } from '../text';
 
+const AlertTitle = ({ className, ...props }, ref) => {
   return (
-    <Tag
-      className={cn('mb-1 font-medium leading-none tracking-tight', className)}
+    <TextTitle
+      className={cn('mb-1 text-base leading-none', className)}
       ref={ref}
       {...props}
     />

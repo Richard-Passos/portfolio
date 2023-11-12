@@ -1,10 +1,20 @@
-import Description from './Description';
-import Root from './Root';
-import Title from './Title';
+import AlertDescription from './Description';
+import AlertIcon from './Icon';
+import AlertRoot, { alertStyles, alertVariants } from './Root';
+import AlertTitle from './Title';
 
-const Alert = Root;
+const Alert = AlertRoot;
 
-Alert.Description = Description;
-Alert.Title = Title;
+Alert.Description = AlertDescription;
+Alert.Icon = AlertIcon;
+Alert.Title = AlertTitle;
 
 export default Alert;
+export {
+  AlertRoot as Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+  alertStyles,
+  alertVariants,
+};

@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 const AlertDialogCancel = ({ className, ...props }, ref) => {
   return (
     <Cancel
-      className={cn(className)}
+      className={cn('max-sm:w-full', className)}
       ref={ref}
       {...props}
     />

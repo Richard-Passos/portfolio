@@ -1,4 +1,4 @@
-import Badge, { badgeVariants } from './Root';
+import Badge, { badgeStyles, badgeVariants } from './Root';
 
 export default Badge;
-export { badgeVariants };
+export { badgeStyles, badgeVariants };

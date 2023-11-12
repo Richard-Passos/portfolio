@@ -1,12 +1,13 @@
-import Root from './Root';
-import Small from './Small';
-import Subtitle from './Subtitle';
-import Title from './Title';
+import TextRoot from './Root';
+import TextSmall from './Small';
+import TextSubtitle from './Subtitle';
+import TextTitle from './Title';
 
-const Text = Root;
+const Text = TextRoot;
 
-Text.Small = Small;
-Text.Subtitle = Subtitle;
-Text.Title = Title;
+Text.Small = TextSmall;
+Text.Subtitle = TextSubtitle;
+Text.Title = TextTitle;
 
 export default Text;
+export { TextRoot as Text, TextSmall, TextSubtitle, TextTitle };

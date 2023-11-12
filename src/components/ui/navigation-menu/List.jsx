@@ -9,7 +9,7 @@ const NavigationMenuList = ({ className, ...props }, ref) => {
   return (
     <List
       className={cn(
-        'group flex flex-1 list-none items-center justify-center space-x-1',
+        'flex items-center justify-center gap-1 rounded-md border bg-main p-1',
         className,
       )}
       ref={ref}
