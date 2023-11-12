@@ -1,10 +1,10 @@
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const Contact = ({ className, ...props }) => {
+const ContactView = ({ className, ...props }) => {
   return (
     <main
-      className={cn('flex items-center justify-center', className)}
+      className={cn('flex min-h-screen items-center justify-center', className)}
       {...props}
     >
       <Text.Title>Contact page</Text.Title>
@@ -12,4 +12,4 @@ const Contact = ({ className, ...props }) => {
   );
 };
 
-export default Contact;
+export default ContactView;

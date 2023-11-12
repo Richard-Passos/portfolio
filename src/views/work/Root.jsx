@@ -1,10 +1,10 @@
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const Work = ({ className, ...props }) => {
+const WorkView = ({ className, ...props }) => {
   return (
     <main
-      className={cn('flex items-center justify-center', className)}
+      className={cn('flex min-h-screen items-center justify-center', className)}
       {...props}
     >
       <Text.Title>Work page</Text.Title>
@@ -12,4 +12,4 @@ const Work = ({ className, ...props }) => {
   );
 };
 
-export default Work;
+export default WorkView;

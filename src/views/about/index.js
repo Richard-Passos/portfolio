@@ -1,3 +1,3 @@
-import About from './Root';
+import AboutView from './Root';
 
-export default About;
+export default AboutView;
