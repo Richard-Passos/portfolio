@@ -21,7 +21,6 @@ const followPointerSlice = createSlice({
   },
 });
 
-const { showFollowPointer, hideFollowPointer } = followPointerSlice.actions;
-
 export default followPointerSlice;
-export { showFollowPointer, hideFollowPointer };
+export const { showFollowPointer, hideFollowPointer } =
+  followPointerSlice.actions;
