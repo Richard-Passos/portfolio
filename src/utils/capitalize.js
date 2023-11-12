@@ -1,8 +1,6 @@
 const capitalize = (value) =>
-  isString(value)
+  typeof value === 'string'
     ? value.charAt(0).toUpperCase() + value.slice(1).toLowerCase()
     : value.map(capitalize);
-
-const isString = (value) => typeof value === 'string';
 
 export default capitalize;
