@@ -3,15 +3,14 @@
 import { useMotionValue } from 'framer-motion';
 import { useEffect } from 'react';
 
-const useFollowPointer = (ref) => {
+const useFollowPointer = ({ current }) => {
   const x = useMotionValue(0),
     y = useMotionValue(0);
 
   useEffect(() => {
-    if (ref.current) {
+    if (current) {
       const onPointerMove = ({ clientX, clientY }) => {
-        const { offsetLeft, offsetTop, offsetWidth, offsetHeight } =
-          ref.current;
+        const { offsetLeft, offsetTop, offsetWidth, offsetHeight } = current;
 
         const center = {
           x: offsetLeft + offsetWidth / 2,
@@ -26,7 +25,7 @@ const useFollowPointer = (ref) => {
 
       return () => window.removeEventListener('pointermove', onPointerMove);
     }
-  }, [ref, x, y]);
+  }, [current, x, y]);
 
   return { x, y };
 };
