@@ -6,8 +6,7 @@ module.exports = {
   content: [
     './src/app/**/*.jsx',
     './src/components/**/*.jsx',
-    './src/components/ui/variantsColor.js',
-    './src/patterns/**/*.jsx',
+    './src/components/ui/variantColors.js',
     './src/views/**/*.jsx',
   ],
   theme: {
@@ -16,6 +15,7 @@ module.exports = {
         px: 0.8,
         'font-blank-space': 'var(--font-blank-space)',
       },
+
       colors: {
         main: getColor('--main'),
         content: getColor('--content'),
@@ -43,6 +43,10 @@ module.exports = {
           DEFAULT: getColor('--info'),
           content: getColor('--info-c'),
         },
+        success: {
+          DEFAULT: getColor('--success'),
+          content: getColor('--success-c'),
+        },
         warning: {
           DEFAULT: getColor('--warning'),
           content: getColor('--warning-c'),
@@ -51,7 +55,11 @@ module.exports = {
           DEFAULT: getColor('--danger'),
           content: getColor('--danger-c'),
         },
+        border: 'hsl(var(--muted-c)/.2)',
         current: 'currentColor',
+      },
+      borderColor: {
+        DEFAULT: 'hsl(var(--muted-c)/.2)',
       },
       borderRadius: {
         sm: 'var(--radius-sm)',
@@ -59,16 +67,28 @@ module.exports = {
         lg: 'var(--radius-lg)',
         inherit: 'inherit',
       },
-      borderColor: {
-        DEFAULT: 'hsl(var(--muted-c)/.5)',
+      outlineColor: {
+        DEFAULT: 'currentColor',
+      },
+      outlineOffset: {
+        DEFAULT: '2',
+      },
+      outlineWidth: {
+        DEFAULT: 2,
+      },
+      maxHeight: {
+        bounds: 'var(--max-h)',
+      },
+      maxWidth: {
+        bounds: 'var(--max-w)',
       },
       keyframes: {
         'slide-down': {
           from: { height: 0 },
-          to: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 'var(--height, 0)' },
         },
         'slide-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
+          from: { height: 'var(--height, 0)' },
           to: { height: 0 },
         },
       },
@@ -76,17 +96,14 @@ module.exports = {
         'slide-down': 'slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         'slide-up': 'slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)',
       },
+      fontFamily: {
+        app: 'var(--font-app)',
+      },
       data: {
         checked: 'state=checked',
         closed: 'state=closed',
         open: 'state=open',
         disabled: 'disabled',
-      },
-      maxHeight: {
-        bounds: 'var(--max-h)',
-      },
-      maxWidth: {
-        bounds: 'var(--max-w)',
       },
       transitionProperty: {
         color: 'color',
@@ -95,9 +112,6 @@ module.exports = {
       },
       transitionDuration: {
         DEFAULT: '200ms',
-      },
-      fontFamily: {
-        app: 'var(--font-app)',
       },
     },
   },
