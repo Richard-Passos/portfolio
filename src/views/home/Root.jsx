@@ -1,15 +1,15 @@
-import Section from './section';
+import Sections from './sections';
 
-const Root = () => {
+const HomeView = () => {
   return (
-    <main className='max-w-bounds mx-auto'>
-      <Section.Hero />
+    <main className='relative mx-auto max-w-bounds'>
+      <Sections.Hero />
 
-      <Section.Work />
+      <Sections.Work />
 
-      <Section.About />
+      <Sections.About />
     </main>
   );
 };
 
-export default Root;
+export default HomeView;
