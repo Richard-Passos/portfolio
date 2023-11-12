@@ -1,45 +1,51 @@
 import { Inter } from 'next/font/google';
 
-import { Cursor, Provider, SmoothScroll, ThemeProvider } from '@/components';
-import { Footer, Header } from '@/patterns';
+import { Footer, Header, Menu, Providers, SmoothScroll } from '@/components';
+import { Cursor } from '@/components/ui';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
 
-const font = Inter({ subsets: ['latin'], variable: '--font-app' });
+const font = Inter({
+  subsets: ['latin'],
+  variable: '--font-app',
+});
 
 const metadata = {
-  title: 'Richard Passos — portfolio — home',
-  description: 'My portfolio.',
+  title: 'Richard Passos — home',
+  description: 'Portfolio of Richard Passos an awesome full stack developer.',
 };
 
 const Layout = ({ children }) => {
   return (
     <html
+      className='scroll-smooth'
       lang='en'
       suppressHydrationWarning
     >
-      <Provider>
-        <Cursor.Area>
-          <body
-            className={cn(
-              'font-app relative min-h-screen overflow-x-clip bg-main text-content transition-bg',
-              font.variable,
-            )}
-          >
-            <ThemeProvider>
-              <SmoothScroll>
-                <Cursor />
+      <Providers.GlobalState>
+        <body
+          className={cn(
+            'relative min-h-screen overflow-x-clip bg-main font-app text-content transition-bg',
+            font.variable,
+          )}
+        >
+          <Providers.Theme>
+            <Cursor>
+              <Cursor.Content />
+            </Cursor>
 
-                <Header />
+            <SmoothScroll>
+              <Header />
 
-                {children}
+              <Menu />
 
-                <Footer />
-              </SmoothScroll>
-            </ThemeProvider>
-          </body>
-        </Cursor.Area>
-      </Provider>
+              {children}
+
+              <Footer />
+            </SmoothScroll>
+          </Providers.Theme>
+        </body>
+      </Providers.GlobalState>
     </html>
   );
 };

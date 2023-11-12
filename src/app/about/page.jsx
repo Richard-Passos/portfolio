@@ -1,7 +1,7 @@
-import { About } from '@/views';
+import { AboutView } from '@/views';
 
 const AboutPage = () => {
-  return <About />;
+  return <AboutView />;
 };
 
 export default AboutPage;

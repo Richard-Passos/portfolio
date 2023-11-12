@@ -1,7 +1,7 @@
-import { Work } from '@/views';
+import { WorkView } from '@/views';
 
 const WorkPage = () => {
-  return <Work />;
+  return <WorkView />;
 };
 
 export default WorkPage;

@@ -1,7 +1,7 @@
-import { Contact } from '@/views';
+import { ContactView } from '@/views';
 
 const ContactPage = () => {
-  return <Contact />;
+  return <ContactView />;
 };
 
 export default ContactPage;
