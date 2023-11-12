@@ -2,9 +2,10 @@
 
 import { Slot } from '@radix-ui/react-slot';
 import { motion } from 'framer-motion';
+import { forwardRef } from 'react';
 
-const Animation = ({ variants, type, animation, ...props }) => {
-  const [hidden, visible] = variants || [];
+const Animation = ({ variants = [], type, animation, ...props }, ref) => {
+  const [hidden, visible] = variants;
 
   const defaultAnimation = {
     variants: {
@@ -19,12 +20,13 @@ const Animation = ({ variants, type, animation, ...props }) => {
 
   return (
     <MotionChild
+      ref={ref}
       {...animation}
       {...props}
     />
   );
 };
 
-const MotionChild = motion(Slot)
+const MotionChild = motion(Slot);
 
-export default Animation;
+export default forwardRef(Animation);

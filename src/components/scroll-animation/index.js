@@ -1,8 +1,9 @@
-import Root from './Root';
-import Translate from './Translate';
+import ScrollAnimationRoot from './Root';
+import ScrollAnimationTransform from './Transform';
 
-const ScrollAnimation = Root;
+const ScrollAnimation = ScrollAnimationRoot;
 
-ScrollAnimation.Translate = Translate;
+ScrollAnimation.Transform = ScrollAnimationTransform;
 
 export default ScrollAnimation;
+export { ScrollAnimationRoot as ScrollAnimation, ScrollAnimationTransform };

@@ -1,12 +1,15 @@
+import { forwardRef } from 'react';
+
 import Animation from './Root';
 
-const AnimationInView = (props) => {
+const AnimationInView = (props, ref) => {
   return (
     <Animation
+      ref={ref}
       type='whileInView'
       {...props}
     />
   );
 };
 
-export default AnimationInView;
+export default forwardRef(AnimationInView);

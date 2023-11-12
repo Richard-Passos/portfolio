@@ -1,15 +1,15 @@
-import { Link } from '@/components/ui';
 import { capitalize, cn } from '@/utils';
 
-const SocialNavItem = ({ name, className, href, ...props }) => {
+import { MagneticLink } from '../link';
+
+const SocialNavItem = ({ name, className, ...props }) => {
   return (
-    <Link
-      className={cn('px-3 text-sm', className)}
-      href={href}
+    <MagneticLink
+      className={cn('rounded-sm px-3 py-1.5 text-sm', className)}
       {...props}
     >
       {capitalize(name)}
-    </Link>
+    </MagneticLink>
   );
 };
 

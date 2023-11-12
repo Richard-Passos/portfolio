@@ -7,10 +7,14 @@ import { forwardRef, useEffect, useRef } from 'react';
 
 import { cn, setRefs } from '@/utils';
 
-const Section = ({ theme, asChild, className, ...props }, ref) => {
+const Section = (
+  { isInViewAmount = 0.51, theme, asChild, className, ...props },
+  ref,
+) => {
   const innerRef = useRef(null),
-    isInView = useInView(innerRef, { amount: 0.51 }),
     { setTheme } = useTheme();
+
+  const isInView = useInView(innerRef, { amount: isInViewAmount });
 
   useEffect(() => {
     if (isInView && theme) setTheme(theme);
@@ -20,10 +24,7 @@ const Section = ({ theme, asChild, className, ...props }, ref) => {
 
   return (
     <Tag
-      className={cn(
-        'relative max-2xl:min-h-screen 2xl:max-h-bounds',
-        className,
-      )}
+      className={cn('max-2xl:min-h-screen 2xl:max-h-bounds', className)}
       ref={setRefs(ref, innerRef)}
       {...props}
     />

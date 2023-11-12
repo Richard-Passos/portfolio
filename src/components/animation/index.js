@@ -1,10 +1,11 @@
-import Animate from './Animate';
-import InView from './InView';
-import Root from './Root';
+import AnimationAnimate from './Animate';
+import AnimationInView from './InView';
+import AnimationRoot from './Root';
 
-const Animation = Root;
+const Animation = AnimationRoot;
 
-Animation.Animate = Animate;
-Animation.InView = InView;
+Animation.Animate = AnimationAnimate;
+Animation.InView = AnimationInView;
 
 export default Animation;
+export { AnimationRoot as Animation, AnimationAnimate, AnimationInView };

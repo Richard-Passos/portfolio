@@ -1,54 +1,118 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { ArrowDownIcon } from '@radix-ui/react-icons';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 
-import { Text } from '@/components/ui';
+import { useSmooth } from '@/hooks';
 import { cn } from '@/utils';
 
-const ScrollIndicator = ({ className, ...props }) => {
-  const transition = {
-      duration: 1.25,
-      ease: 'backInOut',
-      repeat: Infinity,
-      repeatType: 'loop',
+import { MagneticLink } from '../link';
+import { magneticSmoothConfig } from '../magnetic/Root';
+import { buttonSizes } from '../ui/button';
+
+const ScrollIndicator = ({ className, href, ...props }) => {
+  const { x, y } = {
+    x: useMotionValue(0),
+    y: useMotionValue(0),
+  };
+
+  const resetPosition = () => {
+      x.set(0);
+      y.set(0);
     },
-    animations = [
-      {
-        animate: {
-          y: ['-500%', '0%'],
-        },
-        transition,
-      },
-      {
-        animate: {
-          y: ['0%', '500%'],
-        },
-        transition,
-      },
-    ];
+    updatePosition = ({ clientX, clientY, target }) => {
+      const { left, top, width, height } = target.getBoundingClientRect();
+
+      const center = { x: left + width / 2, y: top + height / 2 };
+
+      x.set(clientX - center.x);
+      y.set(clientY - center.y);
+    };
 
   return (
-    <section
+    <div
       className={cn(
-        'absolute bottom-0 flex flex-col items-center gap-6 opacity-25 dark:opacity-10',
+        'relative aspect-square rounded-full [--icon-dimen:theme(spacing.4)] sm:[--icon-dimen:theme(spacing.5)] md:[--icon-dimen:theme(spacing.6)]',
+        buttonSizes.md,
         className,
       )}
-      {...props}
     >
-      <Text className='vertical-text font-bold'>Scroll</Text>
+      <Border
+        className='opacity-10 dark:opacity-5'
+        limit={0}
+        style={{
+          x,
+          y,
+        }}
+      />
 
-      <div className='relative h-28 overflow-hidden text-content [mask-image:linear-gradient(to_bottom,_transparent_0%,_#000_10%,_#000_90%,_transparent_100%)]'>
-        <motion.span
-          className='absolute top-0 h-1/5 w-0.5 bg-current'
-          {...animations[0]}
-        />
+      <Border
+        className='opacity-40 dark:opacity-25'
+        limit={0.2}
+        style={{
+          x,
+          y,
+        }}
+      />
 
-        <motion.span
-          className='relative h-1/5 w-0.5 bg-current'
-          {...animations[1]}
-        />
-      </div>
-    </section>
+      <Border
+        className='opacity-70 dark:opacity-50'
+        limit={0.4}
+        style={{
+          x,
+          y,
+        }}
+      />
+
+      <Border
+        style={{
+          x,
+          y,
+        }}
+      />
+
+      <MagneticLink
+        className='h-full w-full rounded-inherit hover:no-underline'
+        href={href}
+        limit={0.55}
+        onClick={() => {
+          const el = document.getElementById(href.slice(1));
+
+          if (el) window.scrollTo(0, el.offsetTop);
+        }}
+        onMouseLeave={resetPosition}
+        onMouseMove={updatePosition}
+        {...props}
+      >
+        <ArrowDownIcon className='h-[--icon-dimen] w-[--icon-dimen]' />
+      </MagneticLink>
+    </div>
+  );
+};
+
+const Border = ({ limit = 0.6, style, className, ...props }) => {
+  const x = useSmooth(
+      useTransform(style.x, (val) => val * limit),
+      magneticSmoothConfig,
+    ),
+    y = useSmooth(
+      useTransform(style.y, (val) => val * limit),
+      magneticSmoothConfig,
+    );
+
+  return (
+    <motion.span
+      className={cn(
+        'absolute inset-0 w-auto rounded-inherit border border-content',
+        className,
+      )}
+      style={{
+        ...style,
+        x,
+        y,
+      }}
+      {...props}
+    />
   );
 };
 

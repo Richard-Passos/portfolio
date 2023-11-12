@@ -17,7 +17,10 @@ config = {
 }
  */
 
-const ScrollAnimation = ({ config, smoothConfig, style, ...props }, ref) => {
+const ScrollAnimation = (
+  { config = {}, smoothConfig = {}, style, ...props },
+  ref,
+) => {
   const {
     useScrollConfig,
     useScrollRes,
@@ -27,26 +30,31 @@ const ScrollAnimation = ({ config, smoothConfig, style, ...props }, ref) => {
     useTransformConfig,
   } = config;
 
-  const innerRef = useRef(null),
-    scroll = useScroll({
-      target: innerRef,
-      ...useScrollConfig,
-    });
+  const innerRef = useRef(null);
+
+  const scroll = useScroll({
+    target: innerRef,
+    ...useScrollConfig,
+  });
 
   const defaultScroll = scroll[useScrollRes],
-    smoothScroll = useSpring(defaultScroll, smoothConfig);
+    smoothScroll = useSpring(defaultScroll, smoothConfig.scroll);
 
   const propValue = useTransform(
-    smoothConfig ? smoothScroll : defaultScroll,
-    scrollPoints,
-    propPoints,
-    useTransformConfig,
-  );
+      smoothConfig.scroll ? smoothScroll : defaultScroll,
+      scrollPoints,
+      propPoints,
+      useTransformConfig,
+    ),
+    smoothPropValue = useSpring(propValue, smoothConfig.prop);
 
   return (
     <MotionChild
       ref={setRefs(ref, innerRef)}
-      style={{ [prop]: propValue, ...style }}
+      style={{
+        [prop]: smoothConfig.prop ? smoothPropValue : propValue,
+        ...style,
+      }}
       {...props}
     />
   );

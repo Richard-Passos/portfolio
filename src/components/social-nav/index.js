@@ -1,10 +1,9 @@
-import Item from './Item';
-import Root from './Root';
-import Title from './Title';
+import SocialNavItem from './Item';
+import SocialNavRoot from './Root';
 
-const SocialNav = Root;
+const SocialNav = SocialNavRoot;
 
-SocialNav.Item = Item;
-SocialNav.Title = Title;
+SocialNav.Item = SocialNavItem;
 
 export default SocialNav;
+export { SocialNavRoot as SocialNav, SocialNavItem };

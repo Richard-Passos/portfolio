@@ -2,16 +2,16 @@
 
 import { ScrollerMotion } from 'scroller-motion';
 
-const SmoothScroll = (props) => {
+const SmoothScroll = ({ spring, ...props }) => {
   return (
     <ScrollerMotion
-      spring={smoothScrollConfig}
+      spring={{ ...scrollSmoothConfig, ...spring }}
       {...props}
     />
   );
 };
 
-const smoothScrollConfig = { damping: 10, stiffness: 100, mass: 0.2 };
+const scrollSmoothConfig = { damping: 10, stiffness: 100, mass: 0.2 };
 
 export default SmoothScroll;
-export { smoothScrollConfig };
+export { scrollSmoothConfig };

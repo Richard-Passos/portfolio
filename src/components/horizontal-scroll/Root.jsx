@@ -13,7 +13,7 @@ import { forwardRef, useEffect, useRef, useState } from 'react';
 
 import { cn } from '@/utils';
 
-import { smoothScrollConfig } from '../smooth-scroll';
+import { scrollSmoothConfig } from '../smooth-scroll';
 
 const HorizontalScroll = ({
   className,
@@ -25,7 +25,7 @@ const HorizontalScroll = ({
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, smoothScrollConfig);
+  const smoothVelocity = useSpring(scrollVelocity, scrollSmoothConfig);
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
     clamp: false,
   });

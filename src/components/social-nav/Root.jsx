@@ -3,7 +3,7 @@ import { cn } from '@/utils';
 const SocialNav = ({ className, ...props }) => {
   return (
     <nav
-      className={cn('relative right-3 flex', className)}
+      className={cn('flex gap-3', className)}
       {...props}
     />
   );

@@ -10,8 +10,8 @@ import { isFunctionThanCall, setRefs, transformTemplate } from '@/utils';
 const Magnetic = ({ limit = 0.5, style, ...props }, ref) => {
   const innerRef = useRef(null),
     position = {
-      x: useSmooth(0, { damping: 7, stiffness: 100, mass: 0.5 }),
-      y: useSmooth(0, { damping: 7, stiffness: 100, mass: 0.5 }),
+      x: useSmooth(0, magneticSmoothConfig),
+      y: useSmooth(0, magneticSmoothConfig),
     };
 
   const resetPosition = () => {
@@ -29,14 +29,14 @@ const Magnetic = ({ limit = 0.5, style, ...props }, ref) => {
     };
 
   const onMouseLeave = (ev) => {
-      isFunctionThanCall(props.onMouseLeave, ev);
-
-      resetPosition();
+    resetPosition();
+    
+    isFunctionThanCall(props.onMouseLeave, ev);
     },
     onMouseMove = (ev) => {
-      isFunctionThanCall(props.onMouseMove, ev);
-
       updatePosition(ev);
+      
+      isFunctionThanCall(props.onMouseMove, ev);
     };
 
   return (
@@ -55,6 +55,9 @@ const Magnetic = ({ limit = 0.5, style, ...props }, ref) => {
   );
 };
 
+const magneticSmoothConfig = { damping: 7, stiffness: 100, mass: 0.5 };
+
 const MotionChild = motion(Slot);
 
 export default forwardRef(Magnetic);
+export { magneticSmoothConfig };
