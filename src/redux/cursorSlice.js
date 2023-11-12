@@ -18,7 +18,5 @@ const cursorSlice = createSlice({
   },
 });
 
-const { setVariant, setContent } = cursorSlice.actions;
-
 export default cursorSlice;
-export { setVariant, setContent };
+export const { setContent, setVariant } = cursorSlice.actions;
