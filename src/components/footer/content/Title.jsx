@@ -14,25 +14,24 @@ import { CONTENT_THEME } from '../Root';
 const FooterContentTitle = ({ className, ...props }) => {
   const animationConfig = {
     useScrollConfig: {
-      offset: ['0 .75', '0 .5'],
+      offset: ['1 1', '3 1'],
     },
     prop: 'x',
-    propPoints: ['150%', '0%'],
+    propPoints: ['200%', '0%'],
   };
 
   const dispatch = useDispatch();
 
   return (
     <CursorLink
-      className={cn('my-auto', className)}
+      className={cn('my-auto text-center', className)}
       href='/contact'
       onMouseLeave={() => dispatch(setVariant({ theme: CONTENT_THEME }))}
       variant={{ theme: CONTENT_THEME }}
       {...props}
     >
-      <TextTitle className='flex gap-x-font-blank-space text-9xl'>
-        <span>Let&apos;s work</span>
-
+      <TextTitle className='flex flex-wrap justify-center gap-x-font-blank-space text-9xl'>
+        Let&apos;s work
         <ScrollAnimationTransform
           className='outline-text'
           config={animationConfig}
