@@ -1,5 +1,5 @@
 import { ScrollIndicator, Section } from '@/components';
-import { Text } from '@/components/ui';
+import { Link, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const HomeHeroSection = ({ className, ...props }) => {
@@ -9,7 +9,16 @@ const HomeHeroSection = ({ className, ...props }) => {
       {...props}
     >
       <div className='relative my-auto flex items-center justify-center'>
-        <Circles />
+        <Text className='absolute bottom-[125%] right-2/3 flex w-max items-center text-sm text-muted-content'>
+          I&apos;m Richard Passos{' '}
+          <span className='mx-8 h-px w-20 bg-current opacity-25 dark:opacity-10' />{' '}
+          <Link
+            className='font-normal'
+            href='/contact'
+          >
+            Available for work
+          </Link>
+        </Text>
 
         <Title asChild>
           <h1>
@@ -36,6 +45,8 @@ const HomeHeroSection = ({ className, ...props }) => {
             user experience, that&apos;s what I build.
           </span>
         </Text>
+
+        <Circles />
       </div>
 
       <ScrollIndicator
