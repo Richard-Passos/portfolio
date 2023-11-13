@@ -24,7 +24,10 @@ const Section = (
 
   return (
     <Tag
-      className={cn('max-2xl:min-h-screen 2xl:max-h-bounds', className)}
+      className={cn(
+        'max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds',
+        className,
+      )}
       ref={setRefs(ref, innerRef)}
       {...props}
     />
