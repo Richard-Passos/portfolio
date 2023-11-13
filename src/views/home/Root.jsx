@@ -15,11 +15,10 @@ const HomeView = () => {
         theme='light'
       >
         <div>
-          <Text className='w-[86%] text-center text-5xl'>
-            When it comes to frontend, attention to detail is the name of the
-            game. I got that eagle eye that can spot even the smallest
-            imperfections and make sure your user experience is smooth like
-            butter.
+          <Text className='w-[86%] text-center text-5xl leading-tight'>
+            When it comes to full stack, attention to details is the main
+            requirement. I got that eagle eye that can spot even the smallest
+            imperfections and make sure your project works perfectly.
           </Text>
         </div>
       </Section>
@@ -32,11 +31,11 @@ const HomeView = () => {
         theme='light'
       >
         <div>
-          <Text className='flex w-[86%] items-center justify-center text-center text-8xl'>
-            <span className='outline-text absolute text-[16rem] uppercase'>
+          <Text className='flex w-[86%] items-center justify-center text-center text-8xl leading-tight'>
+            <span className='absolute text-[24rem] font-bold uppercase opacity-10 dark:opacity-5'>
               but
             </span>{' '}
-            it&apos;s not just about tech.
+            it&apos;s not just about the tech.
           </Text>
         </div>
       </Section>
@@ -48,9 +47,16 @@ const HomeView = () => {
         className='flex items-center justify-center'
       >
         <div>
-          <Text className='w-[86%] text-center text-5xl'>
+          <Text className='w-[86%] text-center text-5xl leading-tight'>
             If you&apos;re looking for a developer who&apos;s got the skills,
-            the creativity, and the style. Then you need to work with me.
+            the passion, and a problem solving mindset to make your ideas come
+            true.{' '}
+            <span className='group relative'>
+              Then ...{''}
+              <span className='absolute left-1/2 top-full w-max -translate-x-1/2 -translate-y-2 scale-95 text-sm opacity-0 transition-all group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100'>
+                Keep scrolling.
+              </span>
+            </span>
           </Text>
         </div>
       </Section>
