@@ -6,7 +6,6 @@ const HomeHeroSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn('flex h-screen flex-col items-center', className)}
-      theme='light'
       {...props}
     >
       <div className='relative my-auto flex items-center justify-center'>
@@ -41,7 +40,7 @@ const HomeHeroSection = ({ className, ...props }) => {
 
       <ScrollIndicator
         className='-translate-y-24'
-        href='#work'
+        href='#scroll-down-to'
       />
     </Section>
   );
