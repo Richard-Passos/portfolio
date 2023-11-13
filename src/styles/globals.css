@@ -24,17 +24,17 @@
   }
 
   .light {
-    --main: 335 2% 98%;
-    --content: 335 2% 5%;
+    --main: 0 0% 98%;
+    --content: 0 0% 4.7%;
 
-    --inverted: 335 2% 5%;
-    --inverted-c: 335 2% 98%;
+    --inverted: 0 0% 4.7%;
+    --inverted-c: 0 0% 98%;
 
-    --muted: 335 5% 94%;
-    --muted-c: 335 5% 32%;
+    --muted: 0 0% 94%;
+    --muted-c: 0 0% 32%;
 
-    --primary: 335 2% 5%;
-    --primary-c: 335 2% 98%;
+    --primary: 0 0% 4.7%;
+    --primary-c: 0 0% 98%;
 
     --secondary: 334.8 61% 83.9%;
     --secondary-c: 340 60% 15.1%;
@@ -44,17 +44,17 @@
   }
 
   .dark {
-    --main: 335 2% 5%;
-    --content: 335 2% 98%;
+    --main: 0 0% 4.7%;
+    --content: 0 0% 98%;
 
-    --inverted: 335 2% 98%;
-    --inverted-c: 335 2% 5%;
+    --inverted: 0 0% 98%;
+    --inverted-c: 0 0% 4.7%;
 
-    --muted: 335 5% 9%;
-    --muted-c: 335 5% 68%;
+    --muted: 0 0% 9%;
+    --muted-c: 0 0% 68%;
 
-    --primary: 335 2% 98%;
-    --primary-c: 335 2% 5%;
+    --primary: 0 0% 98%;
+    --primary-c: 0 0% 4.7%;
 
     --secondary: 340 12% 4.9%;
     --secondary-c: 340 62% 84.9%;
