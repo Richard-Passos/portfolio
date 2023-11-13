@@ -4,7 +4,7 @@ import { ArrowDownIcon } from '@radix-ui/react-icons';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 
 import { useSmooth } from '@/hooks';
-import { cn } from '@/utils';
+import { cn, scrollTo } from '@/utils';
 
 import { MagneticLink } from '../link';
 import { magneticSmoothConfig } from '../magnetic/Root';
@@ -75,11 +75,7 @@ const ScrollIndicator = ({ className, href, ...props }) => {
         className='h-full w-full rounded-inherit hover:no-underline'
         href={href}
         limit={0.55}
-        onClick={() => {
-          const el = document.getElementById(href.slice(1));
-
-          if (el) window.scrollTo(0, el.offsetTop);
-        }}
+        onClick={() => scrollTo(href.slice(1))}
         onMouseLeave={resetPosition}
         onMouseMove={updatePosition}
         {...props}
