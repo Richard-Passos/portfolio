@@ -63,9 +63,12 @@ const FooterContent = ({ className, ...props }) => {
   );
 };
 
-const Social = () => {
+const Social = ({ className, ...props }) => {
   return (
-    <SocialNav>
+    <SocialNav
+      className={cn('-translate-x-3', className)}
+      {...props}
+    >
       {socialMedias.map((socialMedia) => (
         <SocialNav.Item
           className='text-muted-content'
