@@ -11,7 +11,7 @@ const ListHorizontalScrollItem = ({
   return (
     <li
       className={cn(
-        'border-t py-8 text-[2.5rem] font-medium leading-none last:border-b',
+        'border-t py-8 text-[2.5rem] font-medium uppercase leading-none last:border-b',
         className,
       )}
       {...props}
