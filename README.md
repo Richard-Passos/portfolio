@@ -18,8 +18,9 @@ My portfolio.
 <br>
 
 ## :rocket: Run project
-
-It is recommended to clone the project.
+```
+https://richard-passos.vercel.app
+```
 
 <br>
 
