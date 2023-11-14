@@ -13,15 +13,11 @@ const HeaderLink = ({ isActive, className, children, ...props }) => {
   return (
     <MagneticLink
       asChild
-      className={cn(
-        'relative h-10 rounded-sm font-semibold',
-        isActive && '-z-10',
-        className,
-      )}
+      className={cn('relative h-10 rounded-sm', isActive && '-z-10', className)}
       {...props}
     >
       <NavigationMenuLink>
-        <Magnetic limit={0.2}>
+        <Magnetic limit={0.15}>
           <span className='flex h-full items-center rounded-inherit px-4'>
             {children}
           </span>
