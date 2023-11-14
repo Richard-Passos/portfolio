@@ -16,7 +16,7 @@ const CursorLink = ({ content, variant, asChild, children, ...props }, ref) => {
         variant={{ scaleX: 1, scaleY: 1, ...variant }}
         {...props}
       >
-        {asChild ? children : <Link>{children}</Link>}
+        <Link asChild={asChild}>{children}</Link>
       </CursorHover>
     </CursorArea>
   );

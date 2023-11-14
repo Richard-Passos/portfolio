@@ -10,7 +10,7 @@ const MagneticLink = ({ asChild, children, ...props }, ref) => {
       ref={ref}
       {...props}
     >
-      {asChild ? children : <Link>{children}</Link>}
+      <Link asChild={asChild}>{children}</Link>
     </Magnetic>
   );
 };
