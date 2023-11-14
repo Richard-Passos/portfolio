@@ -41,7 +41,7 @@ const HomeHeroSection = ({ className, ...props }) => {
           </Title>
 
           <span className='absolute left-1.5 max-w-[345px] font-medium'>
-            that&apos;s what I am — Solid and scalable products with a great
+            that&apos;s what I am — solid and scalable products with a great
             user experience, that&apos;s what I build.
           </span>
         </Text>
