@@ -111,7 +111,7 @@ module.exports = {
         border: 'border',
       },
       transitionDuration: {
-        DEFAULT: '200ms',
+        DEFAULT: '300ms',
       },
     },
   },
