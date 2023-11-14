@@ -14,3 +14,4 @@ export { default as ScrollAnimation } from './scroll-animation';
 export { default as ScrollIndicator } from './scroll-indicator';
 export { default as Section } from './section';
 export { default as SocialNav } from './social-nav';
+export { default as TextRing } from './text-ring';
