@@ -1,16 +1,12 @@
-import HomeSectionsAbout from './About';
-import HomeSectionsHero from './Hero';
-import HomeSectionsWork from './Work';
+import HomeAboutSection from './About';
+import HomeHeroSection from './Hero';
+import HomeWorkSection from './Work';
 
 const HomeSections = {
-  About: HomeSectionsAbout,
-  Hero: HomeSectionsHero,
-  Work: HomeSectionsWork,
+  About: HomeAboutSection,
+  Hero: HomeHeroSection,
+  Work: HomeWorkSection,
 };
 
 export default HomeSections;
-export {
-  HomeSectionsAbout,
-  HomeSectionsHero,
-  HomeSectionsWork,
-}
+export { HomeAboutSection, HomeHeroSection, HomeWorkSection };
