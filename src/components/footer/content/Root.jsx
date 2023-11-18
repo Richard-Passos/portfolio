@@ -1,4 +1,6 @@
-import { socialMedias } from '@/constants';
+import { ArrowUpIcon, ChevronUpIcon } from '@radix-ui/react-icons';
+
+import { availabilityMessage, socialMedias } from '@/constants';
 import { cn } from '@/utils';
 
 import { ScrollAnimationTransform } from '../../scroll-animation';
@@ -29,15 +31,21 @@ const FooterContent = ({ className, ...props }) => {
       {...props}
     >
       <div>
-        <Logo className='ml-12 mr-auto mt-8' />
+        <Logo className='absolute left-12 top-8' />
 
-        <Title />
+        <div className='my-auto flex -translate-y-6 flex-col items-center gap-14 text-center'>
+          <Title />
 
-        <section className='relative flex w-full items-end gap-12 px-20 py-12'>
+          <Text className='text-xl font-semibold'>
+            to build it the right way
+          </Text>
+        </div>
+
+        <section className='absolute bottom-12 flex w-full items-end gap-12 px-20'>
           <article className='space-y-4'>
             <Subtitle>Availability</Subtitle>
 
-            <Small>Available for work.</Small>
+            <Small>{availabilityMessage}</Small>
           </article>
 
           <article className='space-y-4'>
@@ -46,17 +54,12 @@ const FooterContent = ({ className, ...props }) => {
             <Small>00:49 AM GMT+2</Small>
           </article>
 
-          <div className='absolute left-1/2 flex -translate-x-1/2 gap-6'>
-            <Text className='font-bold'>En</Text>
-
-            <Text className='font-bold opacity-25'>Pt</Text>
+          <div className='absolute left-1/2 flex -translate-x-1/2 gap-4'>
+            <ChevronUpIcon className='h-6 w-6 [stroke-width:1rem]' />
+            Back top
           </div>
 
-          <article className='ml-auto space-y-4'>
-            <Subtitle>Socials</Subtitle>
-
-            <Social />
-          </article>
+          <Social />
         </section>
       </div>
     </ScrollAnimationTransform>
@@ -66,13 +69,12 @@ const FooterContent = ({ className, ...props }) => {
 const Social = ({ className, ...props }) => {
   return (
     <SocialNav
-      className={cn('-translate-x-3', className)}
+      className={cn('ml-auto', className)}
       {...props}
     >
       {socialMedias.map((socialMedia) => (
         <SocialNav.Item
-          className='text-muted-content'
-          key={`Footer social ${socialMedia.href}`}
+          key={socialMedia.href}
           {...socialMedia}
         />
       ))}

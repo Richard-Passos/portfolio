@@ -24,16 +24,13 @@ const FooterContentTitle = ({ className, ...props }) => {
 
   return (
     <CursorLink
-      className={cn(
-        'my-auto text-center underline-offset-2 hover:underline-offset-8',
-        className,
-      )}
+      className={cn('leading-[.9] no-underline', className)}
       href='/contact'
       onMouseLeave={() => dispatch(setVariant({ theme: CONTENT_THEME }))}
       variant={{ theme: CONTENT_THEME }}
       {...props}
     >
-      <TextTitle className='flex flex-wrap justify-center gap-x-font-blank-space text-9xl'>
+      <TextTitle className='flex flex-col items-center gap-x-font-blank-space text-9xl leading-[-2]'>
         Let&apos;s work
         <ScrollAnimationTransform
           className='outline-text'
