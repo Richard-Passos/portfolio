@@ -1,17 +1,16 @@
-import Char from './Char';
+import Line from './Line';
 
-const TextScrollAnimation = ({ text, ...props }) => {
-  const chars = text.split('');
-
-  return chars.map((char, i) => (
-    <Char
-      index={i}
-      key={i}
+const TextScrollAnimation = ({ lines = [], ...props }) => {
+  return (
+    <span
+      aria-label={lines.join(' ')}
       {...props}
     >
-      {char}
-    </Char>
-  ));
+      {lines.map((line, i) => (
+        <Line key={i}>{line}</Line>
+      ))}
+    </span>
+  );
 };
 
 export default TextScrollAnimation;
