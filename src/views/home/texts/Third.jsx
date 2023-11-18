@@ -10,18 +10,14 @@ const HomeThirdText = ({ className, ...props }) => {
       {...props}
     >
       <div>
-        <Text className='w-[86%] text-center text-5xl leading-tight'>
+        <Text className='w-[86%] text-center text-[clamp(1rem,3.3vw,3rem)] leading-tight'>
           <TextScrollAnimation
-            text="If you're looking for a developer who's got the skills, the
-          passion, and a problem solving mindset to make your ideas come true."
-          />{' '}
-          <span className='group relative'>
-            <TextScrollAnimation text='Then ...' />
-            {''}
-            <span className='absolute left-1/2 top-full w-max -translate-x-1/2 -translate-y-2 scale-95 text-sm opacity-0 transition-all group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100'>
-              Keep scrolling.
-            </span>
-          </span>
+            lines={[
+              "If you're looking for a developer who's got the skills,",
+              'the passion, and a problem solving mindset to make',
+              'your ideas come true. Then...',
+            ]}
+          />
         </Text>
       </div>
     </Section>

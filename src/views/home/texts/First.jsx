@@ -10,8 +10,15 @@ const HomeFirstText = ({ className, ...props }) => {
       {...props}
     >
       <div>
-        <Text className='w-[86%] text-center text-5xl leading-tight'>
-          <TextScrollAnimation text='When it comes to full stack, attention to details is the main requirement. I got that eagle eye that can spot even the smallest imperfections and make sure your project works perfectly.' />
+        <Text className='w-[86%] text-center text-[clamp(1rem,3.3vw,3rem)] leading-tight'>
+          <TextScrollAnimation
+            lines={[
+              'When it comes to full stack, attention to details is the',
+              'main requirement. I got that eagle eye that can spot',
+              'even the smallest imperfections and make sure your',
+              'project works perfectly.',
+            ]}
+          />
         </Text>
       </div>
     </Section>
