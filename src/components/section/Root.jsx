@@ -7,14 +7,11 @@ import { forwardRef, useEffect, useRef } from 'react';
 
 import { cn, setRefs } from '@/utils';
 
-const Section = (
-  { isInViewAmount = 0.51, theme, asChild, className, ...props },
-  ref,
-) => {
+const Section = ({ theme, asChild, className, ...props }, ref) => {
   const innerRef = useRef(null),
     { setTheme } = useTheme();
 
-  const isInView = useInView(innerRef, { amount: isInViewAmount });
+  const isInView = useInView(innerRef, { amount: 0.51 });
 
   useEffect(() => {
     if (isInView && theme) setTheme(theme);
