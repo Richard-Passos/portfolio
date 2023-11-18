@@ -10,7 +10,7 @@ const ScrollIndicator = ({ className, ...props }) => {
   return (
     <ScrollToLink
       className={cn(
-        'aspect-square rounded-full text-content [--icon-dimen:theme(spacing.4)] sm:[--icon-dimen:theme(spacing.5)] md:[--icon-dimen:theme(spacing.6)]',
+        'aspect-square rounded-full [--icon-dimen:theme(spacing.4)] hover:bg-content/10 sm:[--icon-dimen:theme(spacing.5)] md:[--icon-dimen:theme(spacing.6)]',
         buttonSizes.md,
         className,
       )}
