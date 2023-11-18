@@ -11,17 +11,14 @@ import {
 } from 'framer-motion';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
-import { cn } from '@/utils';
+import { cn, setRefs } from '@/utils';
 
 import { scrollSmoothConfig } from '../smooth-scroll';
 
-const HorizontalScroll = ({
-  className,
-  children,
-  direction = 1,
-  baseVelocity = 100,
-  ...props
-}) => {
+const HorizontalScroll = (
+  { className, children, baseVelocity = 100, ...props },
+  ref,
+) => {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -77,30 +74,31 @@ const HorizontalScroll = ({
 
   return (
     <div
-      className='w-full overflow-x-clip'
-      ref={containerRef}
+      className={cn('w-full overflow-x-clip', className)}
+      ref={setRefs(ref, containerRef)}
+      {...props}
     >
       <motion.div
-        className={cn('flex items-center', className)}
+        className='flex items-center'
         style={{
           x: baseX,
         }}
-        {...props}
       >
-        <Children ref={childrenRef}>{children}</Children>
+        <HorizontalScrollChildren ref={childrenRef}>
+          {children}
+        </HorizontalScrollChildren>
 
         {[...Array(numberOfSiblings)].map((_, i) => (
-          <Children key={`Horizontal scroll sibling ${i}`}>{children}</Children>
+          <HorizontalScrollChildren key={i}>
+            {children}
+          </HorizontalScrollChildren>
         ))}
       </motion.div>
     </div>
   );
 };
 
-const Children = forwardRef(function HoriontalScrollChildren(
-  { className, ...props },
-  ref,
-) {
+const HorizontalScrollChildren = forwardRef(({ className, ...props }, ref) => {
   return (
     <div
       className={cn('shrink-0', className)}
@@ -109,5 +107,6 @@ const Children = forwardRef(function HoriontalScrollChildren(
     />
   );
 });
+HorizontalScrollChildren.displayName = 'HorizontalScrollChildren';
 
-export default HorizontalScroll;
+export default forwardRef(HorizontalScroll);
