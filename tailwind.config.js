@@ -110,9 +110,6 @@ module.exports = {
         bg: 'background-color',
         border: 'border',
       },
-      transitionDuration: {
-        DEFAULT: '300ms',
-      },
     },
   },
   plugins: [require('tailwindcss-animate')],
