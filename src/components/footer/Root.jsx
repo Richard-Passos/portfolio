@@ -28,6 +28,7 @@ const Footer = ({ className, ...props }) => {
             CONTENT_THEME,
           )}
         />
+
         <CursorHover variant={{ theme: CONTENT_THEME }}>
           <Content className={CONTENT_THEME} />
         </CursorHover>
