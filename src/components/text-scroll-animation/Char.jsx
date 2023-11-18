@@ -16,7 +16,7 @@ const TextScrollAnimationChar = ({ className, index, children, ...props }) => {
       x: 0,
       scaleY: 1,
       transition: {
-        delay: 0.01 * i,
+        delay: 0.0075 * i,
       },
     }),
   ];
