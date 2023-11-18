@@ -7,22 +7,22 @@ const HomeSecondText = ({ className, theme, ...props }) => {
   const animationConfig = {
       opacity: {
         useScrollConfig: {
-          offset: ['1 1', '1.25 1'],
+          offset: ['1 1', '1.5 1'],
         },
         useScrollRes: 'scrollYProgress',
         prop: 'opacity',
         scrollPoints: [0, 1],
-        propPoints: [1, 0.1],
+        propPoints: [1, 0.05],
       },
       y: {
         useScrollConfig: {
-          offset: ['1 1', '1.25 1'],
+          offset: ['1 1', '1.5 1'],
         },
-        propPoints: ['0%', '25%'],
+        propPoints: ['0%', '50%'],
       },
       x: {
         useScrollConfig: {
-          offset: ['0 1', '0.75 1'],
+          offset: ['0 1', '.75 1'],
         },
         prop: 'x',
         propPoints: ['-100%', '0%'],
@@ -33,24 +33,25 @@ const HomeSecondText = ({ className, theme, ...props }) => {
   return (
     <div
       className={cn(
-        'relative flex h-[125vh] flex-col items-center justify-end',
+        'relative flex h-[150vh] flex-col items-center justify-end',
         className,
-        { ...props },
       )}
+      {...props}
     >
-      <Section
-        asChild
-        theme={theme}
+      <ScrollAnimation
+        className='absolute top-0 flex items-center overflow-hidden'
+        config={animationConfig.opacity}
+        smoothConfig={animationSmoothConfig}
       >
-        <ScrollAnimation
-          config={animationConfig.opacity}
+        <ScrollAnimation.Transform
+          config={animationConfig.y}
           smoothConfig={animationSmoothConfig}
         >
-          <ScrollAnimation.Transform
-            config={animationConfig.y}
-            smoothConfig={animationSmoothConfig}
+          <Section
+            asChild
+            theme={theme}
           >
-            <div className='absolute top-0 flex items-center overflow-hidden'>
+            <div>
               <ScrollAnimation.Transform
                 config={animationConfig.x}
                 smoothConfig={animationSmoothConfig}
@@ -58,15 +59,16 @@ const HomeSecondText = ({ className, theme, ...props }) => {
                 <Text className='text-[24rem] font-bold uppercase'>but</Text>
               </ScrollAnimation.Transform>
             </div>
-          </ScrollAnimation.Transform>
-        </ScrollAnimation>
-      </Section>
+          </Section>
+        </ScrollAnimation.Transform>
+      </ScrollAnimation>
 
       <Section
         asChild
+        className='flex w-[86%] items-center justify-center'
         theme={theme}
       >
-        <div className='flex w-[86%] items-center justify-center'>
+        <div>
           <Text className='text-center text-8xl leading-tight'>
             <TextScrollAnimation text="it's not just about the tech." />
           </Text>
