@@ -9,28 +9,24 @@ const TextScrollAnimationLine = ({ className, children, ...props }) => {
       offset: ['1.5 1', '3 1'],
     },
     useScrollRes: 'scrollYProgress',
-    prop: 'clipPath',
+    prop: '--bg-x-size',
     scrollPoints: [0, 1],
-    propPoints: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)'],
+    propPoints: ['0%', '100%'],
   };
 
   return (
-    <span
+    <ScrollAnimation
       aria-hidden
-      className={cn('relative', className)}
+      className={cn(
+        'bg-[linear-gradient(hsl(var(--content)),hsl(var(--content)))] bg-no-repeat [--text-opacity:.1] [-webkit-text-fill-color:hsl(var(--content)/var(--text-opacity))] [background-clip:text] [background-size:var(--bg-x-size)_100%] dark:[--text-opacity:0.05]',
+        className,
+      )}
+      config={animationConfig}
+      smoothConfig={{ scroll: scrollSmoothConfig }}
       {...props}
     >
-      <ScrollAnimation
-        config={animationConfig}
-        smoothConfig={{ scroll: scrollSmoothConfig }}
-      >
-        <span>{children}</span>
-      </ScrollAnimation>
-
-      <span className='pointer-events-none absolute left-0 top-0 opacity-10 dark:opacity-5'>
-        {children}
-      </span>
-    </span>
+      <span>{children}</span>
+    </ScrollAnimation>
   );
 };
 
