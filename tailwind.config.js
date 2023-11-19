@@ -12,7 +12,7 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        px: 0.8,
+        px: '0.8px',
         'font-blank-space': 'var(--font-blank-space)',
       },
 
