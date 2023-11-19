@@ -1,5 +1,3 @@
-import { ArrowUpIcon, ChevronUpIcon } from '@radix-ui/react-icons';
-
 import { availabilityMessage, socialMedias } from '@/constants';
 import { cn } from '@/utils';
 
@@ -54,9 +52,10 @@ const FooterContent = ({ className, ...props }) => {
             <Small>00:49 AM GMT+2</Small>
           </article>
 
-          <div className='absolute left-1/2 flex -translate-x-1/2 gap-4'>
-            <ChevronUpIcon className='h-6 w-6 [stroke-width:1rem]' />
-            Back top
+          <div className='absolute left-1/2 flex -translate-x-1/2 gap-6'>
+            <Text className='font-bold'>En</Text>
+
+            <Text className='font-bold opacity-25'>Pt</Text>
           </div>
 
           <Social />
