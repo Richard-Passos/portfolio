@@ -1,11 +1,12 @@
 import { ScrollIndicator, Section } from '@/components';
 import { Link, Text } from '@/components/ui';
+import { availabilityMessage } from '@/constants';
 import { cn } from '@/utils';
 
 const HomeHeroSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn('flex h-screen flex-col items-center', className)}
+      className={cn('relative flex h-screen flex-col items-center', className)}
       {...props}
     >
       <div className='relative my-auto flex items-center justify-center'>
@@ -16,7 +17,7 @@ const HomeHeroSection = ({ className, ...props }) => {
             className='font-normal'
             href='/contact'
           >
-            Available for work
+            {availabilityMessage}
           </Link>
         </Text>
 
@@ -45,14 +46,14 @@ const HomeHeroSection = ({ className, ...props }) => {
             user experience, that&apos;s what I build.
           </span>
         </Text>
-
-        <Circles />
       </div>
 
       <ScrollIndicator
         className='-translate-y-24'
         href='#scroll-down-to'
       />
+
+      <Squares />
     </Section>
   );
 };
@@ -66,14 +67,14 @@ const Title = ({ className, ...props }) => {
   );
 };
 
-const Circles = () => {
-  const amount = 28;
+const Squares = () => {
+  const amount = 312;
 
   return (
-    <div className='absolute -z-10 grid w-screen max-w-5xl grid-cols-7'>
+    <div className='absolute -z-10 grid h-screen w-screen grid-cols-[repeat(24,minmax(0,1fr))] opacity-25'>
       {[...Array(amount)].map((_, i) => (
         <span
-          className='aspect-square w-full rounded-full border border-content opacity-10 transition-opacity hover:opacity-50'
+          className='aspect-square w-full border border-content opacity-5 transition-opacity'
           key={i}
         />
       ))}
