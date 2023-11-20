@@ -7,11 +7,11 @@ import { forwardRef, useRef } from 'react';
 import { useSmooth } from '@/hooks';
 import { isFunctionThanCall, setRefs, transformTemplate } from '@/utils';
 
-const Magnetic = ({ limit = 0.5, style, ...props }, ref) => {
+const Magnetic = ({ smoothConfig, limit = 0.5, style, ...props }, ref) => {
   const innerRef = useRef(null),
     position = {
-      x: useSmooth(0, magneticSmoothConfig),
-      y: useSmooth(0, magneticSmoothConfig),
+      x: useSmooth(0, { ...magneticSmoothConfig, ...smoothConfig }),
+      y: useSmooth(0, { ...magneticSmoothConfig, ...smoothConfig }),
     };
 
   const resetPosition = () => {
@@ -29,13 +29,13 @@ const Magnetic = ({ limit = 0.5, style, ...props }, ref) => {
     };
 
   const onMouseLeave = (ev) => {
-    resetPosition();
-    
-    isFunctionThanCall(props.onMouseLeave, ev);
+      resetPosition();
+
+      isFunctionThanCall(props.onMouseLeave, ev);
     },
     onMouseMove = (ev) => {
       updatePosition(ev);
-      
+
       isFunctionThanCall(props.onMouseMove, ev);
     };
 
