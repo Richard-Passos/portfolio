@@ -5,7 +5,7 @@ const Root = ({ className, ...props }) => {
   return (
     <Link
       className={cn(
-        'items-end gap-0 text-3xl font-bold uppercase leading-none -tracking-widest no-underline',
+        'items-end gap-0 text-5xl font-bold uppercase leading-none -tracking-widest no-underline',
         className,
       )}
       href='/'
@@ -13,7 +13,7 @@ const Root = ({ className, ...props }) => {
     >
       <span className='flex items-end tracking-normal'>
         R{''}
-        <span className='-translate-y-px text-xs lowercase'>
+        <span className='-translate-y-px text-sm lowercase'>
           {['ich', 'ard'].map((letters, i) => (
             <span
               className={cn(
