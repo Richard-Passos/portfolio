@@ -1,4 +1,5 @@
 export { default as Animation } from './animation';
+export { default as BackTop } from './back-top';
 export { default as Button } from './button';
 export { default as Footer } from './footer';
 export { default as Header } from './header';
@@ -6,6 +7,7 @@ export { default as HorizontalScroll } from './horizontal-scroll';
 export { default as Icon } from './ui/icon';
 export { default as Link } from './link';
 export { default as ListHorizontalScroll } from './list-horizontal-scroll';
+export { default as LocalTime } from './local-time';
 export { default as Magnetic } from './magnetic';
 export { default as Menu } from './menu';
 export { default as Providers } from './providers';
