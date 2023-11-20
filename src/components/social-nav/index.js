@@ -1,9 +1,3 @@
-import SocialNavItem from './Item';
-import SocialNavRoot from './Root';
-
-const SocialNav = SocialNavRoot;
-
-SocialNav.Item = SocialNavItem;
+import SocialNav from './Root';
 
 export default SocialNav;
-export { SocialNavRoot as SocialNav, SocialNavItem };

@@ -1,13 +1,15 @@
 'use client';
 
-import { Share1Icon } from '@radix-ui/react-icons';
+import { Link2Icon } from '@radix-ui/react-icons';
 
+import { socialMedias } from '@/constants';
 import { cn, transformTemplate } from '@/utils';
 
 import { Animation } from '../animation';
 import { Text } from '../ui/text';
+import Item from './Item';
 
-const SocialNav = ({ className, children, ...props }) => {
+const SocialNav = ({ className, ...props }) => {
   const variants = [
     { y: '4.5rem' },
     { y: '1rem', transition: { staggerChildren: 0.1 } },
@@ -25,12 +27,23 @@ const SocialNav = ({ className, children, ...props }) => {
       variants={variants}
     >
       <div>
-        <Text className='ml-auto flex items-center gap-4 text-xs font-bold uppercase text-content transition-transform group-hover:translate-x-[1.875rem]'>
-          Follow me{' '}
-          <Share1Icon className='h-3.5 w-3.5 transition-opacity group-hover:opacity-0' />
+        <Text className='ml-auto flex items-center gap-6 text-xs font-bold uppercase'>
+          <span className='transition-transform group-hover:translate-x-[2.375rem]'>
+            Get in touch
+          </span>{' '}
+          <span className='origin-right rounded-full bg-content p-1.5 text-main transition-transform group-hover:scale-x-0'>
+            <Link2Icon className='h-3.5 w-3.5' />
+          </span>{' '}
         </Text>
 
-        <nav className='flex w-max gap-3'>{children}</nav>
+        <nav className='flex gap-3'>
+          {socialMedias.map((socialMedia) => (
+            <Item
+              key={socialMedia.href}
+              {...socialMedia}
+            />
+          ))}
+        </nav>
       </div>
     </Animation>
   );
