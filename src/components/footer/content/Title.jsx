@@ -30,7 +30,7 @@ const FooterContentTitle = ({ className, ...props }) => {
       variant={{ theme: CONTENT_THEME }}
       {...props}
     >
-      <TextTitle className='flex flex-col items-center gap-x-font-blank-space text-9xl leading-[.9]'>
+      <TextTitle className='flex flex-wrap justify-center gap-x-font-blank-space text-[7rem] leading-none'>
         Let&apos;s work
         <ScrollAnimationTransform
           className='outline-text'
