@@ -24,7 +24,7 @@ const FooterContentTitle = ({ className, ...props }) => {
 
   return (
     <CursorLink
-      className={cn('no-underline', className)}
+      className={cn('underline-offset-4 hover:underline-offset-8', className)}
       href='/contact'
       onMouseLeave={() => dispatch(setVariant({ theme: CONTENT_THEME }))}
       variant={{ theme: CONTENT_THEME }}
