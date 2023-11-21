@@ -10,7 +10,7 @@ const SocialNav = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'group translate-x-4 translate-y-[4.5rem] space-y-4 p-4 transition-transform [--icon-scale-x:1] [--item-opacity:0] [--item-y:100%] [title-x:0] focus-within:translate-y-4 focus-within:[--icon-scale-x:0] focus-within:[--item-opacity:1] focus-within:[--item-y:0%] focus-within:[--title-x:2.375rem] hover:translate-y-4',
+        'group translate-x-4 translate-y-[4.5rem] space-y-4 p-4 transition-transform [--icon-scale-x:1] [--item-opacity:0] [--item-y:100%] [--title-x:0%] focus-within:translate-y-4 focus-within:[--icon-scale-x:0] focus-within:[--item-opacity:1] focus-within:[--item-y:0%] focus-within:[--title-x:2.375rem] hover:translate-y-4',
         className,
       )}
       {...props}
