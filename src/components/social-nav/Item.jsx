@@ -1,32 +1,24 @@
 import { capitalize, cn } from '@/utils';
 
-import { AnimationInView } from '../animation';
 import { MagneticLink } from '../link';
 
-const SocialNavItem = ({ name, className, href, ...props }) => {
-  const animation = {
-    variants: {
-      hidden: { opacity: 0, y: '100%' },
-      visible: {
-        opacity: 1,
-        y: '0%',
-      },
-    },
-  };
-
+const SocialNavItem = ({ className, index, href, name, ...props }) => {
   return (
-    <AnimationInView
-      animation={animation}
+    <div
       className={cn(
-        'text-sm focus-within:!translate-y-0 focus-within:!opacity-100',
+        'ease-backOut aspect-square h-10 translate-y-[--item-y] rounded-sm text-sm opacity-[--item-opacity] transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-hover:[transition-delay:--delay]',
         className,
       )}
+      style={{ '--delay': 0.1 * index + 's' }}
       {...props}
     >
-      <div>
-        <MagneticLink className='aspect-square h-10 rounded-sm' href={href}>{capitalize(name)}</MagneticLink>
-      </div>
-    </AnimationInView>
+      <MagneticLink
+        className='h-full w-full rounded-inherit'
+        href={href}
+      >
+        {capitalize(name)}
+      </MagneticLink>
+    </div>
   );
 };
 

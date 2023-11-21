@@ -1,51 +1,39 @@
-'use client';
-
 import { Link2Icon } from '@radix-ui/react-icons';
 
 import { socialMedias } from '@/constants';
-import { cn, transformTemplate } from '@/utils';
+import { cn } from '@/utils';
 
-import { Animation } from '../animation';
 import { Text } from '../ui/text';
 import Item from './Item';
 
 const SocialNav = ({ className, ...props }) => {
-  const variants = [
-    { y: '4.5rem' },
-    { y: '1rem', transition: { staggerChildren: 0.1 } },
-  ];
-
   return (
-    <Animation
+    <section
       className={cn(
-        'group translate-x-4 space-y-4 p-4 focus-within:!translate-y-4',
+        'group translate-x-4 translate-y-[4.5rem] space-y-4 p-4 transition-transform [--icon-scale-x:1] [--item-opacity:0] [--item-y:100%] [title-x:0] focus-within:translate-y-4 focus-within:[--icon-scale-x:0] focus-within:[--item-opacity:1] focus-within:[--item-y:0%] focus-within:[--title-x:2.375rem] hover:translate-y-4',
         className,
       )}
       {...props}
-      transformTemplate={transformTemplate}
-      type='whileHover'
-      variants={variants}
     >
-      <div>
-        <Text className='ml-auto flex items-center gap-6 text-xs font-bold uppercase'>
-          <span className='transition-transform group-hover:translate-x-[2.375rem]'>
-            Get in touch
-          </span>{' '}
-          <span className='origin-right rounded-full bg-content p-1.5 text-main transition-transform group-hover:scale-x-0'>
-            <Link2Icon className='h-3.5 w-3.5' />
-          </span>{' '}
-        </Text>
+      <Text className='ml-auto flex items-center gap-6 text-xs font-bold uppercase'>
+        <span className='translate-x-[--title-x] transition-transform group-hover:translate-x-[2.375rem]'>
+          Get in touch
+        </span>{' '}
+        <span className='origin-right scale-x-[--icon-scale-x] rounded-full bg-content p-1.5 text-main transition-transform group-hover:scale-x-0'>
+          <Link2Icon className='h-3.5 w-3.5' />
+        </span>{' '}
+      </Text>
 
-        <nav className='flex gap-3'>
-          {socialMedias.map((socialMedia) => (
-            <Item
-              key={socialMedia.href}
-              {...socialMedia}
-            />
-          ))}
-        </nav>
-      </div>
-    </Animation>
+      <nav className='flex gap-3'>
+        {socialMedias.map((socialMedia, i) => (
+          <Item
+            index={i}
+            key={socialMedia.href}
+            {...socialMedia}
+          />
+        ))}
+      </nav>
+    </section>
   );
 };
 export default SocialNav;
