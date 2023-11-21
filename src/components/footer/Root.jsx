@@ -1,5 +1,6 @@
 import { cn } from '@/utils';
 
+import Lines from '../lines';
 import Section from '../section';
 import { CursorHover } from '../ui/cursor';
 import Overlay from './Overlay';
@@ -18,7 +19,9 @@ const Footer = ({ className, ...props }) => {
       {...props}
     >
       <footer>
-        <span className='absolute top-0 z-10 h-36 w-full bg-main' />
+        <div className='absolute top-0 z-20 h-36 w-full overflow-hidden bg-main'>
+          <Lines className='absolute' />
+        </div>
 
         <Overlay className='top-36' />
 
