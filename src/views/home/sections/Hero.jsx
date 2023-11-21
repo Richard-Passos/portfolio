@@ -52,8 +52,6 @@ const HomeHeroSection = ({ className, ...props }) => {
         className='-translate-y-24'
         href='#scroll-down-to'
       />
-
-      <Squares />
     </Section>
   );
 };
@@ -64,21 +62,6 @@ const Title = ({ className, ...props }) => {
       className={cn('text-9xl uppercase', className)}
       {...props}
     />
-  );
-};
-
-const Squares = () => {
-  const amount = 312;
-
-  return (
-    <div className='absolute -z-10 grid h-screen w-screen grid-cols-[repeat(24,minmax(0,1fr))] opacity-25'>
-      {[...Array(amount)].map((_, i) => (
-        <span
-          className='aspect-square w-full border border-content opacity-5 transition-opacity'
-          key={i}
-        />
-      ))}
-    </div>
   );
 };
 
