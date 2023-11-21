@@ -1,6 +1,13 @@
 import { Inter } from 'next/font/google';
 
-import { Footer, Header, Menu, Providers, SmoothScroll } from '@/components';
+import {
+  Footer,
+  Header,
+  Lines,
+  Menu,
+  Providers,
+  SmoothScroll,
+} from '@/components';
 import { Cursor } from '@/components/ui';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
@@ -30,6 +37,8 @@ const Layout = ({ children }) => {
           )}
         >
           <Providers.Theme>
+            <Lines />
+
             <Cursor>
               <Cursor.Content />
             </Cursor>
