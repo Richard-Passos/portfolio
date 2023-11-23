@@ -32,7 +32,8 @@ const FooterContent = ({ className, ...props }) => {
           <Title />
 
           <Text className='text-xl font-semibold'>
-            to build it the right way
+            <span className='opacity-50 dark:opacity-25'>to</span> build it the
+            right way
           </Text>
         </div>
 
@@ -41,7 +42,7 @@ const FooterContent = ({ className, ...props }) => {
             <BackTop />
           </div>
 
-          <Text.Small className='group text-xs'>
+          <Text.Small className='group text-xs text-content'>
             Made with{' '}
             <span className='text-red-500 transition-transform group-hover:-translate-y-1/4'>
               ❤
