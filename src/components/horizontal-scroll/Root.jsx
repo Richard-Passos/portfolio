@@ -8,6 +8,7 @@ import {
   useSpring,
   useTransform,
   useVelocity,
+  wrap,
 } from 'framer-motion';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
@@ -30,6 +31,10 @@ const HorizontalScroll = (
   const containerRef = useRef(null),
     childrenRef = useRef(null);
 
+  const [numberOfSiblings, setNumberOfSiblings] = useState(0);
+
+  const x = useTransform(baseX, (v) => wrap(-90, -10, v) + '%');
+
   const directionFactor = useRef(1);
   useAnimationFrame((_, delta) => {
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
@@ -42,34 +47,28 @@ const HorizontalScroll = (
 
     moveBy += directionFactor.current * moveBy * velocityFactor.get();
 
-    const containerWidth = containerRef.current.getBoundingClientRect().width;
-
-    if (
-      baseX.get() > 0 &&
-      ((baseVelocity > 0 && directionFactor.current === 1) ||
-        (baseVelocity < 0 && directionFactor.current === -1))
-    ) {
-      baseX.set(containerWidth * -1);
-    } else if (
-      baseX.get() < containerWidth * -1 &&
-      ((baseVelocity > 0 && directionFactor.current === -1) ||
-        (baseVelocity < 0 && directionFactor.current === 1))
-    ) {
-      baseX.set(0);
-    } else {
-      baseX.set(baseX.get() + moveBy);
-    }
+    baseX.set(baseX.get() + moveBy);
   });
 
-  const [numberOfSiblings, setNumberOfSiblings] = useState(1);
-
   useEffect(() => {
-    if (containerRef.current && childrenRef.current) {
-      const containerWidth = containerRef.current.getBoundingClientRect().width,
-        childrenWidht = childrenRef.current.getBoundingClientRect().width;
+    const handleSetNumberOfSiblings = () => {
+      if (containerRef.current && childrenRef.current) {
+        const containerWidth =
+            containerRef.current.getBoundingClientRect().width,
+          childrenWidht = childrenRef.current.getBoundingClientRect().width;
 
-      setNumberOfSiblings(Math.round((containerWidth * 2) / childrenWidht));
-    }
+        setNumberOfSiblings(
+          Math.round((containerWidth * 2) / childrenWidht) - 1,
+        );
+      }
+    };
+
+    handleSetNumberOfSiblings();
+
+    window.addEventListener('resize', handleSetNumberOfSiblings);
+
+    return () =>
+      window.removeEventListener('resize', handleSetNumberOfSiblings);
   }, []);
 
   return (
@@ -79,10 +78,8 @@ const HorizontalScroll = (
       {...props}
     >
       <motion.div
-        className='flex items-center'
-        style={{
-          x: baseX,
-        }}
+        className='flex whitespace-nowrap'
+        style={{ x }}
       >
         <HorizontalScrollChildren ref={childrenRef}>
           {children}
@@ -98,10 +95,10 @@ const HorizontalScroll = (
   );
 };
 
-const HorizontalScrollChildren = forwardRef(({ className, ...props }, ref) => {
+const HorizontalScrollChildren = forwardRef((props, ref) => {
   return (
     <div
-      className={cn('shrink-0', className)}
+      className='flex items-center'
       ref={ref}
       {...props}
     />
