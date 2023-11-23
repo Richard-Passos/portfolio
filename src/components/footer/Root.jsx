@@ -13,21 +13,21 @@ const Footer = ({ className, ...props }) => {
     <Section
       asChild
       className={cn(
-        'relative mx-auto max-w-bounds overflow-hidden pt-36',
+        'relative mx-auto max-w-bounds overflow-hidden pt-24',
         className,
       )}
       {...props}
     >
       <footer>
-        <div className='absolute top-0 z-20 h-36 w-full overflow-hidden bg-main'>
+        <div className='absolute top-0 z-20 h-24 w-full overflow-hidden bg-main'>
           <Lines className='absolute' />
         </div>
 
-        <Overlay className='top-36' />
+        <Overlay className='top-24' />
 
         <span
           className={cn(
-            'absolute inset-0 top-36 -z-10 w-auto bg-main',
+            'absolute inset-0 top-24 -z-10 w-auto bg-main',
             CONTENT_THEME,
           )}
         />
