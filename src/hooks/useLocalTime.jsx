@@ -11,7 +11,6 @@ const useLocalTime = (options) => {
       hour12: true,
       minute: '2-digit',
       timeZone: 'America/Sao_Paulo',
-      timeZoneName: 'shortOffset',
       ...options,
     };
 
