@@ -20,12 +20,12 @@ const Button = ({ asChild, variants, className, ...props }, ref) => {
 const buttonStyles = {
     basic: 'bg-main text-content',
     invert:
-      'bg-main text-content hover:border-main hover:bg-content hover:text-main',
+      'bg-main text-content hover:border-main hover:bg-content hover:text-main focus-visible:outline-main',
   },
   buttonSizes = {
-    sm: 'h-10 sm:h-12 md:h-14 lg:h-16 text-sm md:text-base',
-    md: 'h-12 sm:h-14 md:h-16 lg:h-20 ',
-    lg: 'h-36 sm:h-40 md:h-46 lg:h-52',
+    sm: 'h-10 max-md:text-sm sm:h-12 md:h-14 lg:h-16',
+    md: 'h-12 sm:h-14 md:h-16 md:text-lg lg:h-20',
+    lg: 'h-36 text-lg sm:h-40 md:h-44 md:text-xl lg:h-52',
   };
 
 const buttonVariants = cnv({
@@ -33,11 +33,7 @@ const buttonVariants = cnv({
   variants: {
     color: variantColors,
     style: buttonStyles,
-    size: {
-      sm: 'h-10 max-md:text-sm sm:h-12 md:h-14 lg:h-16',
-      md: 'h-12 sm:h-14 md:h-16 md:text-lg lg:h-20',
-      lg: 'h-36 text-lg sm:h-40 md:h-44 md:text-xl lg:h-52',
-    },
+    size: buttonSizes,
   },
   defaultVariants: {
     color: 'primary',
