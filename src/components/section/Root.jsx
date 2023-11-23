@@ -1,33 +1,21 @@
-'use client';
+import { forwardRef } from 'react';
 
-import { Slot } from '@radix-ui/react-slot';
-import { useInView } from 'framer-motion';
-import { useTheme } from 'next-themes';
-import { forwardRef, useEffect, useRef } from 'react';
+import { cn } from '@/utils';
 
-import { cn, setRefs } from '@/utils';
+import ChangeTheme from '../change-theme';
 
-const Section = ({ theme, asChild, className, ...props }, ref) => {
-  const innerRef = useRef(null),
-    { setTheme } = useTheme();
-
-  const isInView = useInView(innerRef, { amount: 0.51 });
-
-  useEffect(() => {
-    if (isInView && theme) setTheme(theme);
-  }, [isInView, theme, setTheme]);
-
-  const Tag = asChild ? Slot : 'section';
-
+const Section = ({ className, asChild, children, ...props }, ref) => {
   return (
-    <Tag
+    <ChangeTheme
       className={cn(
         'max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds',
         className,
       )}
-      ref={setRefs(ref, innerRef)}
+      ref={ref}
       {...props}
-    />
+    >
+      {asChild ? children : <section>{children}</section>}
+    </ChangeTheme>
   );
 };
 
