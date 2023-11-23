@@ -86,7 +86,7 @@
   }
 
   .outline-text {
-    @apply [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:2px];
+    @apply [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:2px] [background-clip:text];
   }
 
   .vertical-text {
