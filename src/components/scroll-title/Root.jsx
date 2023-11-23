@@ -27,7 +27,7 @@ const ScrollTitle = ({ className, title, ...props }) => {
             {title} {title} {title}
           </SecondaryTitle>
 
-          <span>title</span>
+          <span>{title}</span>
 
           <SecondaryTitle>
             {title} {title} {title}
