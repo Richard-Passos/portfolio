@@ -12,21 +12,10 @@ const Lines = ({ className, ...props }) => {
       {...props}
     >
       {[...Array(LINES_AMOUNT)].map((_, i) => (
-        <div
-          className='relative h-full w-full overflow-hidden'
+        <span
+          className='h-full w-full border-l opacity-40 last:border-r dark:opacity-20'
           key={i}
-        >
-          <div
-            className={cn(
-              '[.dark_&]:animate-slide-dark [.light_&]:animate-slide-light absolute right-0 flex h-full w-[200%] gap-px',
-            )}
-          >
-            <span className='[.dark_&]:light dark h-full w-1/2 bg-main delay-150' />
-            <span className='light [.dark_&]:dark h-full w-1/2 bg-main delay-150' />
-          </div>
-
-          <span className='absolute inset-0 w-auto border-l opacity-20 transition-opacity dark:opacity-10' />
-        </div>
+        />
       ))}
     </div>
   );
