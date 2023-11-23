@@ -1,41 +1,47 @@
 import { cn } from '@/utils';
 
 import HorizontalScroll from '../horizontal-scroll';
-import { ScrollAnimationTransform } from '../scroll-animation';
+import ScrollAnimation from '../scroll-animation';
 import { scrollSmoothConfig } from '../smooth-scroll';
 
 const ListHorizontalScrollItem = ({
   className,
-  baseVelocity = 100,
+  baseVelocity = 5,
   children,
   ...props
 }) => {
+  const clipPaths = {
+    fromRight: ['inset(0 0 0 100%)', 'inset(0 0 0 0%)'],
+    fromLeft: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)'],
+  };
+
   const animationConfig = {
     useScrollConfig: {
-      offset: ['1 1', '5 1'],
+      offset: ['0 1', '2 1'],
     },
-    propPoints: ['-100%', '0%'],
+    useScrollRes: 'scrollYProgress',
+    prop: 'clipPath',
+    scrollPoints: [0, 1],
+    propPoints: clipPaths[baseVelocity >= 0 ? 'fromLeft' : 'fromRight'],
   };
 
   return (
-    <li
-      className={cn(
-        'border-t bg-main py-4 text-[2.5rem] font-medium uppercase leading-none transition-bg last:border-b',
-        className,
-      )}
-      {...props}
+    <ScrollAnimation
+      config={animationConfig}
+      smoothConfig={{ scroll: scrollSmoothConfig }}
     >
-      <div className='h-full overflow-hidden py-4'>
-        <ScrollAnimationTransform
-          config={animationConfig}
-          smoothConfig={{ scroll: scrollSmoothConfig }}
-        >
-          <HorizontalScroll baseVelocity={baseVelocity}>
-            {children}
-          </HorizontalScroll>
-        </ScrollAnimationTransform>
-      </div>
-    </li>
+      <li
+        className={cn(
+          'border-y bg-main py-8 text-[2.5rem] font-bold uppercase leading-none text-muted-content transition-bg odd:-rotate-[.5deg] even:rotate-[.5deg]',
+          className,
+        )}
+        {...props}
+      >
+        <HorizontalScroll baseVelocity={baseVelocity}>
+          {children}
+        </HorizontalScroll>
+      </li>
+    </ScrollAnimation>
   );
 };
 
