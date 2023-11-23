@@ -58,9 +58,6 @@ module.exports = {
         border: 'hsl(var(--muted-c)/.2)',
         current: 'currentColor',
       },
-      borderWidth: {
-        DEFAULT: '0.8px',
-      },
       borderColor: {
         DEFAULT: 'hsl(var(--muted-c)/.2)',
       },
@@ -94,20 +91,10 @@ module.exports = {
           from: { height: 'var(--height, 0)' },
           to: { height: 0 },
         },
-        'slide-dark': {
-          from: { transform: 'translateX(0%)' },
-          to: { transform: 'translateX(50%)' },
-        },
-        'slide-light': {
-          from: { transform: 'translateX(0%)' },
-          to: { transform: 'translateX(50%)' },
-        },
       },
       animation: {
         'slide-down': 'slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         'slide-up': 'slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)',
-        'slide-dark': 'slide-dark 150ms cubic-bezier(0.87, 0, 0.13, 1)',
-        'slide-light': 'slide-light 150ms cubic-bezier(0.87, 0, 0.13, 1)',
       },
       fontFamily: {
         app: 'var(--font-app)',
