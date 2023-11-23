@@ -1,3 +1,3 @@
-import ChangeTheme from './Root'
+import ChangeTheme from './Root';
 
-export default ChangeTheme
+export default ChangeTheme;

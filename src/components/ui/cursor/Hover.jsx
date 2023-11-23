@@ -32,12 +32,12 @@ const CursorHover = ({ disabled, variant, content, ...props }, ref) => {
       {...props}
       onMouseEnter={(ev) => {
         updateCursor();
-        
+
         isFunctionThanCall(props.onMouseEnter, ev);
       }}
       onMouseLeave={(ev) => {
         resetCursor();
-        
+
         isFunctionThanCall(props.onMouseLeave, ev);
       }}
     />

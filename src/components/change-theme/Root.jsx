@@ -5,9 +5,9 @@ import { useInView } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { forwardRef, useEffect, useRef } from 'react';
 
-import {  setRefs } from '@/utils';
+import { setRefs } from '@/utils';
 
-const ChangeTheme = ({ amount = .51, theme, ...props }, ref) => {
+const ChangeTheme = ({ amount = 0.51, theme, ...props }, ref) => {
   const innerRef = useRef(null),
     { setTheme } = useTheme();
 

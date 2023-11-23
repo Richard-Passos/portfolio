@@ -24,21 +24,25 @@ const FooterContentTitle = ({ className, ...props }) => {
 
   return (
     <CursorLink
-      className={cn('underline-offset-4 hover:underline-offset-8', className)}
+      className={cn('group no-underline', className)}
       href='/contact'
       onMouseLeave={() => dispatch(setVariant({ theme: CONTENT_THEME }))}
       variant={{ theme: CONTENT_THEME }}
       {...props}
     >
-      <TextTitle className='flex flex-wrap justify-center gap-x-font-blank-space text-[7rem] leading-none'>
-        Let&apos;s work
-        <ScrollAnimationTransform
-          className='outline-text'
-          config={animationConfig}
-          smoothConfig={{ scroll: scrollSmoothConfig }}
-        >
-          <span>together</span>
-        </ScrollAnimationTransform>
+      <TextTitle className='flex flex-col items-center gap-x-font-blank-space text-9xl uppercase'>
+        Let&apos;s work{' '}
+        <span>
+          to{''}
+          <ScrollAnimationTransform
+            className='outline-text relative before:pointer-events-none before:absolute before:w-0 before:overflow-hidden before:transition-[width] before:content-[attr(data-text)] before:[-webkit-text-fill-color:currentColor] group-hover:before:w-full'
+            config={animationConfig}
+            data-text='gether'
+            smoothConfig={{ scroll: scrollSmoothConfig }}
+          >
+            <span>gether</span>
+          </ScrollAnimationTransform>
+        </span>
       </TextTitle>
     </CursorLink>
   );

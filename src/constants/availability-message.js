@@ -1,3 +1,3 @@
-const availabilityMessage = 'Available to work'
+const availabilityMessage = 'Available to work';
 
-export default availabilityMessage
+export default availabilityMessage;
