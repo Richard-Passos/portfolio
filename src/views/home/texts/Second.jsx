@@ -33,7 +33,7 @@ const HomeSecondText = ({ className, theme, ...props }) => {
   return (
     <div
       className={cn(
-        'relative flex h-[150vh] flex-col items-center justify-end',
+        'relative my-[25vh] flex h-[150vh] flex-col items-center justify-end',
         className,
       )}
       {...props}
