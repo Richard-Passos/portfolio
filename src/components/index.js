@@ -1,5 +1,6 @@
 export { default as Animation } from './animation';
 export { default as BackTop } from './back-top';
+export { default as BentoGrid } from './bento-grid';
 export { default as Button } from './button';
 export { default as ChangeTheme } from './change-theme';
 export { default as Footer } from './footer';
