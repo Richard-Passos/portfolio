@@ -91,10 +91,15 @@ module.exports = {
           from: { height: 'var(--height, 0)' },
           to: { height: 0 },
         },
+        'scroll-x': {
+          from: { transform: 'translateX(var(--initial-x, 0%))' },
+          to: { transform: 'translateX(var(--final-x, -50%))' },
+        },
       },
       animation: {
         'slide-down': 'slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         'slide-up': 'slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        'scroll-x': 'scroll-x 15s linear infinite',
       },
       fontFamily: {
         app: 'var(--font-app)',
