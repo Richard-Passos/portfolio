@@ -1,19 +1,12 @@
-import Arrow from './Arrow';
-import Chevron from './Chevron';
-import Close from './Close';
-import HandHorns from './HandHorns';
-import Logo from './Logo';
-import Menu from './Menu';
-import QuestionMark from './QuestionMark';
+import CoffeeSvg from './Coffee';
+import GameControllerSvg from './GameController';
+import HandHornsSvg from './HandHorns';
 
 const Svg = {
-  Arrow,
-  Chevron,
-  Close,
-  HandHorns,
-  Logo,
-  Menu,
-  QuestionMark,
+  Coffee: CoffeeSvg,
+  GameController: GameControllerSvg,
+  HandHorns: HandHornsSvg,
 };
 
 export default Svg;
+export { CoffeeSvg, GameControllerSvg, HandHornsSvg };
