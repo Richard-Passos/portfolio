@@ -92,8 +92,14 @@ module.exports = {
           to: { height: 0 },
         },
         'scroll-x': {
-          from: { transform: 'translateX(var(--initial-x, 0%))' },
-          to: { transform: 'translateX(var(--final-x, -50%))' },
+          from: {
+            transform:
+              'translate(var(--initial-x, 0%), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
+          },
+          to: {
+            transform:
+              'translate(var(--final-x, -50%), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
+          },
         },
       },
       animation: {
