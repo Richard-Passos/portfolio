@@ -13,18 +13,26 @@ import { selectedProjects } from '@/constants';
 import { cn } from '@/utils';
 
 const HomeWorkSection = ({ className, theme, ...props }) => {
+  const projects = selectedProjects.reduce(
+    (obj, { img, ...item }) => ({
+      img: [...obj.img, img],
+      item: [...obj.item, item],
+    }),
+    { img: [], item: [] },
+  );
+
   return (
     <Section
       className={cn(
-        'relative flex flex-col items-center gap-24 2xl:h-auto 2xl:max-h-none',
+        'relative flex flex-col items-center gap-28 2xl:h-auto 2xl:max-h-none',
         className,
       )}
       {...props}
     >
       <ScrollTitle title='WORK' />
 
-      <ListProjects>
-        {selectedProjects.map((project, i) => (
+      <ListProjects images={projects.img}>
+        {projects.item.map((project, i) => (
           <ListProjects.Item
             index={i}
             key={project.href}
@@ -34,7 +42,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
       </ListProjects>
 
       <Button
-        className='relative -mt-12'
+        className='relative -mt-9'
         href='/projects'
         isLink
       >
