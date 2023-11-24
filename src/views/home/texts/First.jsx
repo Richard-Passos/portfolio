@@ -10,16 +10,18 @@ const HomeFirstText = ({ className, ...props }) => {
       {...props}
     >
       <div>
-        <Text className='w-[86%] text-center text-[clamp(1rem,3.3vw,3rem)] leading-tight'>
-          <TextScrollAnimation
-            lines={[
-              'When it comes to full stack, attention to details is the',
-              'main requirement. I got that eagle eye that can spot',
-              'even the smallest imperfections and make sure your',
-              'project works perfectly.',
-            ]}
-          />
-        </Text>
+        <div className='flex w-[90%] max-w-screen-xl justify-end'>
+          <Text className='text-[clamp(1rem,2.2vw,2rem)] leading-tight'>
+            <TextScrollAnimation
+              lines={[
+                'Helping brands achieve digital prominence.',
+                'I bring a passion for cutting-edge technology',
+                'and a commitment to transforming ideas into',
+                'impactful, user-centric solutions.',
+              ]}
+            />
+          </Text>
+        </div>
       </div>
     </Section>
   );
