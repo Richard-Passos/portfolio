@@ -1,9 +1,12 @@
+import { cn } from '@/utils';
+
 import Line from './Line';
 
-const TextScrollAnimation = ({ lines = [], ...props }) => {
+const TextScrollAnimation = ({ lines = [], className, ...props }) => {
   return (
     <span
       aria-label={lines.join(' ')}
+      className={cn('flex flex-col', className)}
       {...props}
     >
       {lines.map((line, i) => (
