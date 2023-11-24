@@ -13,7 +13,7 @@ const HomeFirstText = ({ className, ...props }) => {
     >
       <div>
         <div className='flex w-[90%] max-w-screen-xl justify-between'>
-          <Text className='mb-auto flex -translate-y-12 items-center font-semibold'>
+          <Text className='mb-auto flex -translate-y-6 items-center font-semibold'>
             Richard Passos — developer
           </Text>
 
