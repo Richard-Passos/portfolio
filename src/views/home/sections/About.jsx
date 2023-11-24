@@ -55,8 +55,8 @@ const Grid = ({ className, ...props }) => {
         </Badge>
 
         <Text>
-          <Svg.HandHorns className='-translate-y-.5 w-4git c inline-block h-4' />{' '}
-          Hi — I&apos;m Richard Passos, a full stack developer based in Brazil.
+          <Svg.HandHorns className='inline-block h-4 w-4 -translate-y-0.5' /> Hi
+          — I&apos;m Richard Passos, a full stack developer based in Brazil.
           When I&apos;m not coding, you can catch me in the gaming world —
           I&apos;m a huge fan, especially when it comes to rogue-like games.
         </Text>
