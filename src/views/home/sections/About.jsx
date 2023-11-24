@@ -1,28 +1,29 @@
-import { ClockIcon, GlobeIcon } from '@radix-ui/react-icons';
+import { GlobeIcon, RocketIcon } from '@radix-ui/react-icons';
 
 import {
+  BentoGrid,
   ChangeTheme,
   ListHorizontalScroll,
   LocalTime,
   ScrollTitle,
   Section,
 } from '@/components';
-import { Badge } from '@/components/ui';
-import { Text, TextTitle } from '@/components/ui/text';
+import { Badge, Link, Svg, Text } from '@/components/ui';
+import { selectedSkills } from '@/constants';
 import { cn } from '@/utils';
 
 const HomeAboutSection = ({ className, theme, ...props }) => {
   return (
     <Section
       className={cn(
-        'relative flex flex-col items-center gap-24 2xl:h-auto 2xl:max-h-none',
+        'relative flex flex-col items-center gap-28 2xl:h-auto 2xl:max-h-none',
         className,
       )}
       {...props}
     >
       <ScrollTitle title='ABOUT' />
 
-      <BentoGrids />
+      <Grid />
 
       <ListContactPage />
 
@@ -36,16 +37,16 @@ const HomeAboutSection = ({ className, theme, ...props }) => {
   );
 };
 
-const BentoGrids = ({ className, ...props }) => {
+const Grid = ({ className, ...props }) => {
   return (
-    <ul
+    <BentoGrid
       className={cn(
-        'grid w-full max-w-screen-lg grid-cols-3 gap-4 [grid-template-areas:"._item-1_item-1""item-2_item-3_item-4""item-5_item-5_item-4"]',
+        '[grid-template-areas:"._item-1_item-1""._item-1_item-1""item-2_item-3_item-4""item-2_item-3_item-5""item-6_item-6_item-7""item-6_item-6_item-7"]',
         className,
       )}
       {...props}
     >
-      <BentoGridsItem className='flex-col justify-between [grid-area:item-1]'>
+      <BentoGrid.Item className='justify-between [grid-area:item-1]'>
         <Badge
           className='w-fit'
           variants={{ color: 'inverted', style: 'outline' }}
@@ -54,48 +55,90 @@ const BentoGrids = ({ className, ...props }) => {
         </Badge>
 
         <Text>
-          👋 Hi — I&apos;m Richard Passos, a full stack developer based in
-          Brazil. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum,
-          consequatur? Distinctio deserunt iure repudiandae ducimus!.
+          <Svg.HandHorns className='-translate-y-.5 w-4git c inline-block h-4' />{' '}
+          Hi — I&apos;m Richard Passos, a full stack developer based in Brazil.
+          When I&apos;m not coding, you can catch me in the gaming world —
+          I&apos;m a huge fan, especially when it comes to rogue-like games.
         </Text>
-      </BentoGridsItem>
+      </BentoGrid.Item>
 
-      <BentoGridsItem className='flex-col justify-between [grid-area:item-2]'>
+      <BentoGrid.Item className='justify-between [grid-area:item-2]'>
         <GlobeIcon className='h-8 w-8' />
 
         <Text className='text-4xl'>Based in Brazil, GMT-3</Text>
-      </BentoGridsItem>
+      </BentoGrid.Item>
 
-      <BentoGridsItem className='[grid-area:item-3]' />
+      <BentoGrid.Item className='items-center justify-around [grid-area:item-3]'>
+        <Text className='text-center text-2xl'>
+          A pinch of
+          <br />
+          soft & hard skills
+        </Text>
 
-      <BentoGridsItem className='h-full [grid-area:item-4]' />
+        <div className='w-full overflow-hidden'>
+          <ul className='flex w-fit animate-[scroll-x_7.5s_linear_infinite] gap-3 whitespace-nowrap hover:paused'>
+            {selectedSkills.map((skill, i) => (
+              <li
+                className='first:ml-3'
+                key={i}
+              >
+                <Badge
+                  className='px-3.5 py-1.5 text-sm'
+                  variants={{ style: i % 2 === 0 ? 'solid' : 'outline' }}
+                >
+                  {skill}
+                </Badge>
+              </li>
+            ))}
+            {selectedSkills.map((skill, i) => (
+              <li key={i}>
+                <Badge
+                  className='px-3.5 py-1.5 text-sm'
+                  variants={{ style: i % 2 === 0 ? 'solid' : 'outline' }}
+                >
+                  {skill}
+                </Badge>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </BentoGrid.Item>
 
-      <BentoGridsItem className='items-center justify-center gap-24 [grid-area:item-5]'>
-        <ClockIcon className='h-40 w-40 [stroke:theme(spacing.px)]' />
+      <BentoGrid.Item className='h-full justify-between p-5 [grid-area:item-4]'>
+        <RocketIcon className='h-5 w-5' />
 
-        <section className='flex flex-col items-center gap-2 text-center'>
-          <Text>my local time</Text>
+        <Text className='text-lg'>Improving a little bit every day.</Text>
+      </BentoGrid.Item>
 
-          <TextTitle className='text-4xl font-bold'>
-            <LocalTime />
-          </TextTitle>
+      <BentoGrid.Item className='h-full justify-between p-5 [grid-area:item-5]'>
+        <Svg.GameController className='h-5 w-5' />
 
-          <Text>22/11/2023</Text>
-        </section>
-      </BentoGridsItem>
-    </ul>
-  );
-};
+        <Text className='text-lg'>I love to play games.</Text>
+      </BentoGrid.Item>
 
-const BentoGridsItem = ({ className, ...props }) => {
-  return (
-    <li
-      className={cn(
-        'flex h-60 rounded-md border bg-main p-6 transition-bg',
-        className,
-      )}
-      {...props}
-    />
+      <BentoGrid.Item className='items-center [grid-area:item-6]'>
+        <Text.Title className='text-base'>my local time</Text.Title>
+
+        <Text className='text-8xl font-bold'>
+          <LocalTime />
+        </Text>
+      </BentoGrid.Item>
+
+      <BentoGrid.Item className='border-none p-0 [grid-area:item-7]'>
+        <Link
+          className='group flex h-full w-full flex-col gap-2 rounded-inherit border p-6 no-underline transition-colors hover:border-transparent hover:bg-content/10'
+          href='https://www.buymeacoffee.com/richardp.dev'
+        >
+          <div className='mb-4 flex aspect-square h-10 items-center justify-center rounded-sm border transition-colors group-hover:border-transparent group-hover:bg-content/20'>
+            <Svg.Coffee className='h-6 w-6' />
+          </div>
+
+          <Text>Buy me a coffee</Text>
+
+          <Text.Small>buymeacoffee.com</Text.Small>
+        </Link>
+      </BentoGrid.Item>
+    </BentoGrid>
   );
 };
 
