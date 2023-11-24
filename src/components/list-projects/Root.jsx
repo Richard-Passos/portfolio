@@ -34,22 +34,18 @@ const ListProjects = ({ className, children, images, ...props }) => {
         >
           <div>
             <ul
-              className='flex h-full w-full transform flex-col gap-[--gap] bg-main transition-all delay-75 duration-500 [--gap:theme(spacing.1)]'
-              style={{
-                '--tw-translate-y': `calc(${
-                  -100 * activeIdx
-                }% - var(--gap) * ${activeIdx})`,
-              }}
+              className='h-full w-full transform transition-transform duration-500 [--gap:theme(spacing.1)]'
+              style={{ '--tw-translate-y': -100 * activeIdx + '%' }}
             >
-              {images.map((img, i) => (
+              {images.map((img) => (
                 <li
-                  className={cn(
-                    'relative flex h-full w-full shrink-0 items-center justify-center bg-main',
-                    i % 2 === 0 ? 'light' : 'dark',
-                  )}
+                  className='relative h-full w-full'
                   key={img.src}
                 >
-                  <Image {...img} />
+                  <Image
+                    className='h-full w-full object-cover object-center'
+                    {...img}
+                  />
                 </li>
               ))}
             </ul>
