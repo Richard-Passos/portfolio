@@ -35,11 +35,11 @@ const ListProjectsItem = ({
         }}
         variant={{ scaleX: 0.75, scaleY: 0.75 }}
       >
-        <span className='text-6xl uppercase leading-none transition-transform group-hover:-translate-x-6'>
+        <span className='text-6xl uppercase leading-none transition-transform duration-300 group-hover:-translate-x-6'>
           {title}
         </span>
 
-        <span className='text-center capitalize text-muted-content transition-transform group-hover:translate-x-6'>
+        <span className='text-center capitalize text-muted-content transition-transform duration-300 group-hover:translate-x-6'>
           {role}
         </span>
       </CursorLink>
