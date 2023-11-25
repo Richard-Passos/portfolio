@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 import { CursorLink } from '../../link';
 import { CONTENT_THEME } from '../Root';
 
-const FooterContentTitle = ({ className, ...props }) => {
+const FooterContentLink = ({ className, ...props }) => {
   const dispatch = useDispatch();
 
   return (
@@ -37,4 +37,4 @@ const FooterContentTitle = ({ className, ...props }) => {
   );
 };
 
-export default FooterContentTitle;
+export default FooterContentLink;
