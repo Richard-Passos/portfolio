@@ -7,7 +7,7 @@ import { ScrollAnimationTransform } from '../../scroll-animation';
 import { scrollSmoothConfig } from '../../smooth-scroll';
 import SocialNav from '../../social-nav';
 import { Logo, Text } from '../../ui';
-import Title from './Title';
+import Link from './Link';
 
 const FooterContent = ({ className, ...props }) => {
   const animationConfig = {
@@ -38,7 +38,7 @@ const FooterContent = ({ className, ...props }) => {
           <ArrowBottomLeftIcon className='absolute bottom-0 right-0 h-28 w-28 translate-y-[12.5%] opacity-10 dark:opacity-5' />
         </div>
 
-        <Title />
+        <Link />
 
         <section className='absolute bottom-8 flex w-full flex-col px-12'>
           <div className='flex items-end justify-between overflow-y-clip'>
