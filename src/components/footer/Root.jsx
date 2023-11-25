@@ -25,12 +25,14 @@ const Footer = ({ className, ...props }) => {
 
         <Overlay className='top-24' />
 
-        <span
+        <div
           className={cn(
-            'absolute inset-0 top-24 -z-10 w-auto bg-main',
+            'absolute inset-0 top-24 -z-10 w-auto overflow-hidden bg-main',
             CONTENT_THEME,
           )}
-        />
+        >
+          <Lines className='absolute' />
+        </div>
 
         <CursorHover variant={{ theme: CONTENT_THEME }}>
           <Content className={CONTENT_THEME} />
