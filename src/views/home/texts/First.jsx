@@ -1,7 +1,5 @@
 import { Section, TextScrollAnimation } from '@/components';
-import { Link } from '@/components/ui';
 import { Text } from '@/components/ui/text';
-import { availabilityMessage } from '@/constants';
 import { cn } from '@/utils';
 
 const HomeFirstText = ({ className, ...props }) => {
