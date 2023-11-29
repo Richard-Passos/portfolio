@@ -20,7 +20,7 @@ const FooterContent = ({ className, ...props }) => {
   return (
     <ScrollAnimationTransform
       className={cn(
-        'flex h-screen w-full flex-col items-center justify-center gap-12 text-content 2xl:max-h-bounds',
+        'flex h-screen w-full flex-col items-center justify-between gap-12 py-8 text-content 2xl:max-h-bounds',
         className,
       )}
       config={animationConfig}
@@ -28,23 +28,26 @@ const FooterContent = ({ className, ...props }) => {
       {...props}
     >
       <div>
-        <Logo className='absolute left-12 top-8' />
+        <Logo className='ml-12 mr-auto' />
 
         <div className='relative mt-20 flex w-full max-w-screen-xl'>
           <Text.Title className='text-5xl uppercase'>
             Let&apos;s work <br /> together
+            {/* Let me take you further than you&apos;ve ever been. */}
           </Text.Title>
 
-          <ArrowBottomLeftIcon className='absolute bottom-0 right-0 h-28 w-28 translate-y-[12.5%] opacity-10 dark:opacity-5' />
+          <ArrowBottomLeftIcon className='absolute bottom-0 right-0 h-28 w-28 translate-y-[12.5%] opacity-20 dark:opacity-10' />
         </div>
 
         <Link />
 
-        <section className='absolute bottom-8 flex w-full flex-col px-12'>
-          <div className='flex items-end justify-between overflow-y-clip'>
-            <BackTop className='mb-6' />
+        <section className='relative flex w-full flex-col px-12'>
+          <div className='relative w-full'>
+            <BackTop className='mb-4' />
 
-            <SocialNav className='pb-10' />
+            <div className='absolute bottom-0 right-0 overflow-y-clip'>
+              <SocialNav className='pb-9' />
+            </div>
           </div>
 
           <div className='flex justify-between border-t pt-3'>
