@@ -1,65 +1,117 @@
-import { ScrollIndicator, Section } from '@/components';
-import { Link, Text } from '@/components/ui';
-import { availabilityMessage } from '@/constants';
+import { InfinityScroll, Section } from '@/components';
+import ScrollAnimation from '@/components/scroll-animation';
+import { scrollSmoothConfig } from '@/components/smooth-scroll';
+import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
+const ANIMATION_OFFSET = ['1 1', '1.5 1'];
+
 const HomeHeroSection = ({ className, ...props }) => {
+  const animationConfig = {
+      height: {
+        useScrollConfig: { offset: ANIMATION_OFFSET },
+        useScrollRes: 'scrollYProgress',
+        prop: '--h',
+        scrollPoints: [0, 1],
+        propPoints: [0.95, 0.5],
+      },
+      y: {
+        useScrollConfig: { offset: ANIMATION_OFFSET },
+        propPoints: ['-7.5%', '25%'],
+      },
+    },
+    animationSmoothConfig = {
+      scroll: scrollSmoothConfig,
+    };
+
   return (
-    <Section
-      className={cn('relative flex h-screen flex-col items-center', className)}
-      {...props}
+    <ScrollAnimation
+      config={animationConfig.height}
+      smoothConfig={animationSmoothConfig}
     >
-      <div className='relative my-auto flex items-center justify-center'>
-        <Text className='absolute bottom-[125%] right-2/3 flex w-max items-center text-sm text-muted-content'>
-          I&apos;m Richard Passos{' '}
-          <span className='mx-8 h-px w-20 bg-current opacity-25 dark:opacity-10' />{' '}
-          <Link
-            className='font-normal'
-            href='/contact'
-          >
-            {availabilityMessage}
-          </Link>
-        </Text>
-
-        <Title asChild>
-          <h1>
-            Full stack
-            <br />
-            dev
-            <span className='outline-text opacity-10 dark:opacity-5'>
-              eloper
-            </span>
-          </h1>
-        </Title>
-
-        <Text className='absolute bottom-0 right-0 flex items-center'>
+      <Section
+        className={cn(
+          'relative isolate -mb-[(var(--height)_-_var(--height)*var(--h))] flex items-center justify-center overflow-hidden bg-main transition-bg [--height:100vh] 2xl:[--height:--max-height]',
+          className,
+        )}
+        {...props}
+      >
+        <div className='relative w-full max-w-screen-xl'>
           <Title
-            aria-hidden
             asChild
-            className='pointer-events-none invisible'
+            className='flex w-full flex-col'
           >
-            <span>stack</span>
+            <h1>
+              <div className='flex items-center justify-between'>
+                <div className='shrink-0'>
+                  <div className='w-full max-w-md overflow-hidden rounded-full border'>
+                    <InfinityScroll
+                      as='ul'
+                      className='bg-content text-main transition-colors [--duration:25s] [--gap:--font-blank-space] hover:paused'
+                    >
+                      {[
+                        '•',
+                        'full stack',
+                        '•',
+                        'front end',
+                        '•',
+                        'back end',
+                      ].map((content, i) => (
+                        <li
+                          key={i}
+                          role={i % 2 === 0 ? 'separator' : 'listitem'}
+                        >
+                          {content}
+                        </li>
+                      ))}
+                    </InfinityScroll>
+                  </div>
+                  developer
+                </div>
+
+                <span className='text-base font-semibold lowercase'>
+                  — that&apos;s what I build —
+                </span>
+              </div>
+
+              <div className='flex items-center justify-between'>
+                <span className='text-base font-semibold lowercase'>
+                  — that&apos;s what I am —
+                </span>
+
+                <div className='shrink-0'>
+                  <div className='w-full max-w-md overflow-hidden rounded-full border'>
+                    <InfinityScroll
+                      as='ul'
+                      className='bg-content text-main transition-colors [--duration:25s] [--gap:--font-blank-space] hover:paused'
+                    >
+                      {['•', 'solid', '•', 'scalable', '•', 'accesible'].map(
+                        (content, i) => (
+                          <li
+                            key={i}
+                            role={i % 2 === 0 ? 'separator' : 'listitem'}
+                          >
+                            {content}
+                          </li>
+                        ),
+                      )}
+                    </InfinityScroll>
+                  </div>
+                  products
+                </div>
+              </div>
+            </h1>
           </Title>
-
-          <span className='absolute left-1.5 max-w-[345px] font-medium'>
-            that&apos;s what I am — solid and scalable products with a great
-            user experience, that&apos;s what I build.
-          </span>
-        </Text>
-      </div>
-
-      <ScrollIndicator
-        className='-translate-y-24'
-        href='#scroll-down-to'
-      />
-    </Section>
+        </div>
+      </Section>
+    </ScrollAnimation>
   );
 };
 
 const Title = ({ className, ...props }) => {
   return (
     <Text.Title
-      className={cn('text-9xl uppercase', className)}
+      className={cn('text-9xl font-bold uppercase', className)}
       {...props}
     />
   );
