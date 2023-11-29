@@ -18,7 +18,7 @@ const ListProjects = ({ className, children, images, ...props }) => {
   return (
     <ListProjectsContext.Provider value={{ activeIdx, setActiveIdx }}>
       <div
-        className={cn('w-full max-w-screen-lg', className)}
+        className={cn('w-full max-w-screen-lg md:w-[90%]', className)}
         {...props}
       >
         <FollowPointer.Area id={followPointerId}>
@@ -28,13 +28,13 @@ const ListProjects = ({ className, children, images, ...props }) => {
         </FollowPointer.Area>
 
         <FollowPointer
-          className='z-40 aspect-square w-full max-w-xs overflow-hidden'
+          className='z-40 aspect-square w-[min(50vw,50vh)] max-w-sm overflow-hidden'
           id={followPointerId}
-          smoothConfig={{ stiffness: 75 }}
+          smoothConfig={{ stiffness: 100 }}
         >
           <div>
             <ul
-              className='h-full w-full transform transition-transform duration-500 [--gap:theme(spacing.1)]'
+              className='h-full w-full transform transition-transform duration-500'
               style={{ '--tw-translate-y': -100 * activeIdx + '%' }}
             >
               {images.map((img) => (

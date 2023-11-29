@@ -32,12 +32,15 @@ const ListHorizontalScrollItem = ({
     >
       <li
         className={cn(
-          'border-y bg-main py-8 text-[2.5rem] font-bold uppercase leading-none text-muted-content transition-bg odd:-rotate-[.5deg] even:rotate-[.5deg]',
+          'border-y bg-main py-8 text-[clamp(1.5rem,4.5vw,2.5rem)] font-bold uppercase leading-none text-muted-content transition-colors odd:-rotate-[.5deg] even:rotate-[.5deg]',
           className,
         )}
         {...props}
       >
-        <HorizontalScroll baseVelocity={baseVelocity}>
+        <HorizontalScroll
+          baseVelocity={baseVelocity}
+          className='outline-text [-webkit-text-stroke-width:theme(spacing.px)]'
+        >
           {children}
         </HorizontalScroll>
       </li>

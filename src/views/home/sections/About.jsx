@@ -17,7 +17,7 @@ const HomeAboutSection = ({ className, theme, ...props }) => {
   return (
     <Section
       className={cn(
-        'relative flex flex-col items-center gap-28 2xl:h-auto 2xl:max-h-none',
+        'relative mb-20 flex flex-col items-center gap-20 md:gap-28 2xl:h-auto 2xl:max-h-none',
         className,
       )}
       {...props}
@@ -42,12 +42,12 @@ const Grid = ({ className, ...props }) => {
   return (
     <BentoGrid
       className={cn(
-        '[grid-template-areas:"._item-1_item-1""._item-1_item-1""item-2_item-3_item-4""item-2_item-3_item-5""item-6_item-6_item-7""item-6_item-6_item-7"]',
+        '[grid-template-areas:"item-1""item-2""item-3""item-4""item-5""item-6""item-7"] sm:[grid-template-areas:"item-1_item-1""item-2_item-3""item-4_item-5""item-6_item-7"] lg:[grid-template-areas:"._item-1_item-1""._item-1_item-1""item-2_item-3_item-4""item-2_item-3_item-5""item-6_item-6_item-7""item-6_item-6_item-7"]',
         className,
       )}
       {...props}
     >
-      <BentoGrid.Item className='justify-between [grid-area:item-1]'>
+      <BentoGrid.Item className='justify-between gap-3 [grid-area:item-1]'>
         <Badge
           className='w-fit'
           variants={{ color: 'inverted', style: 'outline' }}
@@ -93,32 +93,36 @@ const Grid = ({ className, ...props }) => {
         </InfinityScroll>
       </BentoGrid.Item>
 
-      <BentoGrid.Item className='h-full justify-between p-5 [grid-area:item-4]'>
+      <BentoGrid.Item className='min-h-0 justify-between gap-3 p-5 [grid-area:item-4]'>
         <RocketIcon className='h-5 w-5' />
 
-        <Text className='text-lg'>Improving a little bit every day.</Text>
+        <Text className='font-semibold leading-tight'>
+          Improving a little bit every day.
+        </Text>
       </BentoGrid.Item>
 
-      <BentoGrid.Item className='h-full justify-between p-5 [grid-area:item-5]'>
+      <BentoGrid.Item className='min-h-0 justify-between gap-3 p-5 [grid-area:item-5]'>
         <Svg.GameController className='h-5 w-5' />
 
-        <Text className='text-lg'>I love to play games.</Text>
+        <Text className='font-semibold leading-tight'>
+          I love to play games.
+        </Text>
       </BentoGrid.Item>
 
       <BentoGrid.Item className='items-center [grid-area:item-6]'>
         <Text.Title className='text-base'>my local time</Text.Title>
 
-        <Text className='text-8xl font-bold'>
+        <Text className='text-[clamp(1rem,var(--font-size),6rem)] font-bold [--font-size:15vw] sm:[--font-size:7vw]'>
           <LocalTime />
         </Text>
       </BentoGrid.Item>
 
-      <BentoGrid.Item className='border-none p-0 [grid-area:item-7]'>
+      <BentoGrid.Item className='border-none p-0 text-center [grid-area:item-7]'>
         <Link
-          className='group flex h-full w-full flex-col gap-2 rounded-inherit border p-6 no-underline transition-colors hover:border-transparent hover:bg-content/10'
+          className='group flex h-full w-full flex-col gap-1.5 rounded-inherit border p-5 no-underline transition-colors hover:border-transparent hover:bg-content/10'
           href='https://www.buymeacoffee.com/richardp.dev'
         >
-          <div className='mb-4 flex aspect-square h-10 items-center justify-center rounded-sm border transition-colors group-hover:border-transparent group-hover:bg-content/20'>
+          <div className='mb-3 flex aspect-square h-10 items-center justify-center rounded-sm border transition-colors group-hover:border-transparent group-hover:bg-content/20'>
             <Svg.Coffee className='h-6 w-6' />
           </div>
 
@@ -149,11 +153,7 @@ const ListContactPage = ({ className, ...props }) => {
             className='odd:rotate-[.5deg] even:-rotate-[.5deg] [&>div>div]:gap-8'
             key={content}
           >
-            <Text className='outline-text mr-8 [-webkit-text-stroke-width:theme(spacing.px)]'>
-              {content}
-            </Text>
-
-            <span className='aspect-square w-[.2em] rounded-full border border-current' />
+            <span className='mr-8'>{content}</span>•
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll>

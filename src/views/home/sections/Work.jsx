@@ -8,7 +8,6 @@ import {
   Section,
 } from '@/components';
 import { MagneticButton } from '@/components/button';
-import { Text } from '@/components/ui/text';
 import { selectedProjects } from '@/constants';
 import { cn } from '@/utils';
 
@@ -24,7 +23,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
   return (
     <Section
       className={cn(
-        'relative flex flex-col items-center gap-28 2xl:h-auto 2xl:max-h-none',
+        'relative flex flex-col items-center gap-20 md:gap-28 2xl:h-auto 2xl:max-h-none',
         className,
       )}
       {...props}
@@ -48,7 +47,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
       >
         <PlusIcon
           aria-hidden
-          className='h-10 w-10'
+          className='h-1/2 w-1/2'
         />
 
         <span className='sr-only'>More projects</span>
@@ -91,11 +90,7 @@ const ListWorkPage = ({ className, ...props }) => {
             className='[&>div>div]:gap-8'
             key={content}
           >
-            <Text className='outline-text mr-8 [-webkit-text-stroke-width:theme(spacing.px)]'>
-              {content}
-            </Text>
-
-            <span className='aspect-square w-[.2em] rounded-full border border-current' />
+            <span className='mr-8'>{content}</span>•
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll>

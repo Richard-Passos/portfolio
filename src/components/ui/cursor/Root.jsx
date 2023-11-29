@@ -8,15 +8,16 @@ import { cn } from '@/utils';
 
 import { FollowPointer } from '../follow-pointer';
 
-const VARIANTS_DEFAULT = {
-  width: 91,
-  height: 91,
-  borderRadius: 999,
-  scaleX: 0.1,
-  scaleY: 0.1,
-  x: null,
-  y: null,
-};
+const CURSOR_ID = 'follow-pointer-cursor',
+  VARIANTS_DEFAULT = {
+    width: 91,
+    height: 91,
+    borderRadius: 999,
+    scaleX: 0.1,
+    scaleY: 0.1,
+    x: null,
+    y: null,
+  };
 
 const Cursor = ({ className, style, children, ...props }) => {
   const { theme, ...variant } = useSelector((data) => data.cursor.variant),
@@ -40,7 +41,7 @@ const Cursor = ({ className, style, children, ...props }) => {
         theme,
         className,
       )}
-      id='follow-pointer-cursor'
+      id={CURSOR_ID}
       style={{ ...smoothVariant, ...style }}
       {...props}
     >
@@ -67,3 +68,4 @@ const resetVariant = (smoothVariant) => {
   };
 
 export default Cursor;
+export { CURSOR_ID };

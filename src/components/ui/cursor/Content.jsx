@@ -23,7 +23,10 @@ const getContent = (content = {}) => {
     text: (
       <span
         {...content}
-        className={cn('p-1 text-center leading-none', content.className)}
+        className={cn(
+          'p-1 text-center font-semibold leading-none',
+          content.className,
+        )}
       >
         {content.text}
       </span>

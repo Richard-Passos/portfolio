@@ -4,21 +4,15 @@ import { scrollSmoothConfig } from '@/components/smooth-scroll';
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const ANIMATION_OFFSET = ['1 1', '1.5 1'];
+const ANIMATION_OFFSET = ['0 0', '0.5 0'];
 
 const HomeHeroSection = ({ className, ...props }) => {
   const animationConfig = {
-      height: {
-        useScrollConfig: { offset: ANIMATION_OFFSET },
-        useScrollRes: 'scrollYProgress',
-        prop: '--h',
-        scrollPoints: [0, 1],
-        propPoints: [0.95, 0.5],
-      },
-      y: {
-        useScrollConfig: { offset: ANIMATION_OFFSET },
-        propPoints: ['-7.5%', '25%'],
-      },
+      useScrollConfig: { offset: ANIMATION_OFFSET },
+      useScrollRes: 'scrollYProgress',
+      prop: '--h',
+      scrollPoints: [0, 1],
+      propPoints: [0.95, 0.5],
     },
     animationSmoothConfig = {
       scroll: scrollSmoothConfig,
@@ -26,12 +20,12 @@ const HomeHeroSection = ({ className, ...props }) => {
 
   return (
     <ScrollAnimation
-      config={animationConfig.height}
+      config={animationConfig}
       smoothConfig={animationSmoothConfig}
     >
       <Section
         className={cn(
-          'relative isolate -mb-[(var(--height)_-_var(--height)*var(--h))] flex items-center justify-center overflow-hidden bg-main transition-bg [--height:100vh] 2xl:[--height:--max-height]',
+          'relative isolate -mb-[(var(--height)_-_var(--height)*var(--h))] flex items-center justify-center overflow-hidden bg-main transition-bg [--height:100vh] 2xl:[--height:--max-h]',
           className,
         )}
         {...props}

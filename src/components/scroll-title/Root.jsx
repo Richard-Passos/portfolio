@@ -13,7 +13,7 @@ const ScrollTitle = ({ className, title, ...props }) => {
   return (
     <TextTitle
       className={cn(
-        'w-full max-w-bounds overflow-hidden text-9xl uppercase',
+        'w-full max-w-bounds overflow-hidden text-[clamp(4rem,8.8vw,8rem)] uppercase',
         className,
       )}
       {...props}

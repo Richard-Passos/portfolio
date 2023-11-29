@@ -49,7 +49,7 @@ const BentoGridItem = ({ className, ...props }) => {
         >
           <li
             className={cn(
-              'flex h-60 flex-col justify-center rounded-md border bg-main p-6 transition-bg',
+              'flex min-h-[theme(spacing.60)] flex-col justify-center gap-3 rounded-md border bg-main p-5 transition-bg',
               className,
             )}
             {...props}

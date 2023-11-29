@@ -58,7 +58,7 @@ const HorizontalScroll = (
           childrenWidht = childrenRef.current.getBoundingClientRect().width;
 
         setNumberOfSiblings(
-          Math.round((containerWidth * 2) / childrenWidht) - 1,
+          Math.max(Math.round((containerWidth * 2) / childrenWidht) - 1, 1),
         );
       }
     };
