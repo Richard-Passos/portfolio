@@ -5,7 +5,7 @@ import { forwardRef } from 'react';
 import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
-import Button from '../button';
+import { MagneticButton } from '../button';
 import { ScrollAnimation } from '../scroll-animation';
 import { SheetTrigger } from '../ui/sheet';
 
@@ -25,7 +25,7 @@ const MenuTrigger = ({ className, variants, ...props }, ref) => {
       {...props}
     >
       <SheetTrigger asChild>
-        <Button
+        <MagneticButton
           className={cn(
             'group [--tw-scale-y:--tw-scale-x] data-open:!pointer-events-auto',
             className,
@@ -39,7 +39,7 @@ const MenuTrigger = ({ className, variants, ...props }, ref) => {
           <Icon>
             <HamburgerMenuIcon className='group-data-open:pointer-events-none group-data-open:opacity-0' />
           </Icon>
-        </Button>
+        </MagneticButton>
       </SheetTrigger>
     </ScrollAnimation>
   );
