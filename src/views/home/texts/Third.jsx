@@ -10,14 +10,10 @@ const HomeThirdText = ({ className, ...props }) => {
       {...props}
     >
       <div>
-        <Text className='w-[86%] text-center text-[clamp(1rem,3.3vw,3rem)] leading-tight'>
+        <Text className='w-[86%] text-[clamp(1rem,3.3vw,3rem)] leading-tight'>
           <TextScrollAnimation
-            className='mx-auto items-center'
-            lines={[
-              "If you're looking for a developer who's got the skills,",
-              'the passion, and a problem solving mindset to make',
-              'your ideas come true. Then...',
-            ]}
+            className='mx-auto justify-center'
+            text="If you're looking for a developer who's got the skills, the passion, and a problem solving mindset to make your ideas come true. Then..."
           />
         </Text>
       </div>
