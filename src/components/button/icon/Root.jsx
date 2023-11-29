@@ -1,0 +1,39 @@
+import { cn, cnv } from '@/utils';
+
+import { Button } from '../../ui';
+
+const IconButton = ({ variants = {}, className, ...props }) => {
+  return (
+    <Button
+      className={cn(iconButtonVariants(variants), className)}
+      variants={{ color: variants.color, size: variants.size }}
+      {...props}
+    />
+  );
+};
+
+const iconButtonStyles = {
+    solid: 'hover:bg-main [--svg-color:hsl(var(--main))]',
+    transparent:
+      'bg-transparent hover:bg-transparent text-main [--svg-color:hsl(var(--content))]',
+  },
+  iconButtonSizes = {
+    sm: 'gap-x-2',
+    md: 'gap-x-4',
+    lg: 'gap-x-6',
+  };
+
+const iconButtonVariants = cnv({
+  base: 'group',
+  variants: {
+    style: iconButtonStyles,
+    size: iconButtonSizes,
+  },
+  defaultVariants: {
+    style: 'solid',
+    size: 'md',
+  },
+});
+
+export default IconButton;
+export { iconButtonSizes, iconButtonStyles, iconButtonVariants };
