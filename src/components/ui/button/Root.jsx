@@ -18,18 +18,19 @@ const Button = ({ asChild, variants, className, ...props }, ref) => {
 };
 
 const buttonStyles = {
-    basic: 'bg-main text-content',
-    invert:
-      'bg-main text-content hover:border-main hover:bg-content hover:text-main focus-visible:outline-main',
+    solid: 'bg-main text-content hover:bg-main/80',
+    ghost: 'text-main hover:bg-main/20',
+    outline:
+      'border-main/20 text-main hover:border-transparent hover:bg-main/20',
   },
   buttonSizes = {
-    sm: 'h-10 max-md:text-sm sm:h-12 md:h-14 lg:h-16',
-    md: 'h-12 sm:h-14 md:h-16 md:text-lg lg:h-20',
-    lg: 'h-36 text-lg sm:h-40 md:h-44 md:text-xl lg:h-52',
+    sm: 'h-10 px-4 text-sm',
+    md: 'h-12 px-6',
+    lg: 'h-14 px-8 text-lg',
   };
 
 const buttonVariants = cnv({
-  base: 'inline-flex aspect-square items-center justify-center gap-font-blank-space rounded-full border font-medium transition-colors disabled:pointer-events-none disabled:opacity-50',
+  base: 'inline-flex items-center justify-center gap-font-blank-space rounded-full border border-transparent font-medium transition-colors focus-visible:outline-main disabled:pointer-events-none disabled:opacity-50',
   variants: {
     color: variantColors,
     style: buttonStyles,
@@ -37,7 +38,7 @@ const buttonVariants = cnv({
   },
   defaultVariants: {
     color: 'primary',
-    style: 'invert',
+    style: 'solid',
     size: 'md',
   },
 });
