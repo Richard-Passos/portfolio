@@ -74,8 +74,11 @@ const HomeSecondText = ({ className, theme, ...props }) => {
         theme={theme}
       >
         <div>
-          <Text className='text-center text-[clamp(2rem,6.6vw,6rem)] font-bold leading-tight'>
-            <TextScrollAnimation lines={["it's not just about the tech."]} />
+          <Text className='text-[clamp(2rem,6.6vw,6rem)] font-bold leading-tight'>
+            <TextScrollAnimation
+              className='justify-center'
+              text="it's not just about the tech."
+            />
           </Text>
         </div>
       </Section>
