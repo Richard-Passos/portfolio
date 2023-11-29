@@ -6,6 +6,7 @@ export { default as ChangeTheme } from './change-theme';
 export { default as Footer } from './footer';
 export { default as Header } from './header';
 export { default as HorizontalScroll } from './horizontal-scroll';
+export { default as InfinityScroll } from './infinity-scroll';
 export { default as Lines } from './lines';
 export { default as Link } from './link';
 export { default as ListHorizontalScroll } from './list-horizontal-scroll';
