@@ -1,13 +1,13 @@
 import { PlusIcon } from '@radix-ui/react-icons';
 
 import {
-  Button,
   ChangeTheme,
   ListHorizontalScroll,
   ListProjects,
   ScrollTitle,
   Section,
 } from '@/components';
+import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui/text';
 import { selectedProjects } from '@/constants';
 import { cn } from '@/utils';
@@ -41,7 +41,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
         ))}
       </ListProjects>
 
-      <Button
+      <MagneticButton
         className='relative -mt-9'
         href='/projects'
         isLink
@@ -52,7 +52,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
         />
 
         <span className='sr-only'>More projects</span>
-      </Button>
+      </MagneticButton>
 
       <ListWorkPage />
 
