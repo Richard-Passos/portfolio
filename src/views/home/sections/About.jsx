@@ -1,6 +1,7 @@
 import { GlobeIcon, RocketIcon } from '@radix-ui/react-icons';
 
 import {
+  InfinityScroll,
   BentoGrid,
   ChangeTheme,
   ListHorizontalScroll,
@@ -75,33 +76,21 @@ const Grid = ({ className, ...props }) => {
           soft & hard skills
         </Text>
 
-        <div className='w-full overflow-hidden'>
-          <ul className='flex w-fit animate-[scroll-x_7.5s_linear_infinite] gap-3 whitespace-nowrap hover:paused'>
-            {selectedSkills.map((skill, i) => (
-              <li
-                className='first:ml-3'
-                key={i}
+        <InfinityScroll
+          as='ul'
+          className='[--duration:7.5s] [--gap:theme(spacing.3)] hover:paused'
+        >
+          {selectedSkills.map((skill, i) => (
+            <li key={skill}>
+              <Badge
+                className='px-3.5 py-1.5 text-sm'
+                variants={{ style: i % 2 === 0 ? 'solid' : 'outline' }}
               >
-                <Badge
-                  className='px-3.5 py-1.5 text-sm'
-                  variants={{ style: i % 2 === 0 ? 'solid' : 'outline' }}
-                >
-                  {skill}
-                </Badge>
-              </li>
-            ))}
-            {selectedSkills.map((skill, i) => (
-              <li key={i}>
-                <Badge
-                  className='px-3.5 py-1.5 text-sm'
-                  variants={{ style: i % 2 === 0 ? 'solid' : 'outline' }}
-                >
-                  {skill}
-                </Badge>
-              </li>
-            ))}
-          </ul>
-        </div>
+                {skill}
+              </Badge>
+            </li>
+          ))}
+        </InfinityScroll>
       </BentoGrid.Item>
 
       <BentoGrid.Item className='h-full justify-between p-5 [grid-area:item-4]'>

@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { setVariant } from '@/redux';
 import { cn } from '@/utils';
 
+import InfinityScroll from '../../infinity-scroll';
 import { CursorLink } from '../../link';
 import { CONTENT_THEME } from '../Root';
 
@@ -22,17 +23,10 @@ const FooterContentLink = ({ className, ...props }) => {
       variant={{ theme: CONTENT_THEME }}
       {...props}
     >
-      <span className='relative flex animate-[scroll-x_25s_linear_infinite] whitespace-nowrap [--final-x:-100%]'>
-        <span className='ml-font-blank-space'>
-          <span className='outline-text'>CONTACT ME</span>{' '}
-          <span>• CONTACT ME •</span>
-        </span>
-
-        <span className='absolute left-full ml-font-blank-space'>
-          <span className='outline-text'>CONTACT ME</span>{' '}
-          <span>• CONTACT ME •</span>
-        </span>
-      </span>
+      <InfinityScroll className='[--duration:25s] [--gap:--font-blank-space]'>
+        <span className='outline-text'>CONTACT ME</span>{' '}
+        <span>• CONTACT ME •</span>
+      </InfinityScroll>
     </CursorLink>
   );
 };
