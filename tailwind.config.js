@@ -15,7 +15,6 @@ module.exports = {
         px: '0.8px',
         'font-blank-space': 'var(--font-blank-space)',
       },
-
       colors: {
         main: getColor('--main'),
         content: getColor('--content'),
@@ -105,7 +104,7 @@ module.exports = {
       animation: {
         'slide-down': 'slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         'slide-up': 'slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)',
-        'scroll-x': 'scroll-x 15s linear infinite',
+        'scroll-x': 'scroll-x var(--duration, 15s) linear infinite',
       },
       fontFamily: {
         app: 'var(--font-app)',
@@ -119,7 +118,7 @@ module.exports = {
       transitionProperty: {
         color: 'color',
         bg: 'background-color',
-        border: 'border',
+        border: 'border-color',
       },
       transitionTimingFunction: {
         backOut: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
