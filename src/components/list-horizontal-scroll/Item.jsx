@@ -37,12 +37,12 @@ const ListHorizontalScrollItem = ({
         )}
         {...props}
       >
-        <HorizontalScroll
+        {/* <HorizontalScroll
           baseVelocity={baseVelocity}
           className='outline-text [-webkit-text-stroke-width:theme(spacing.px)]'
         >
-          {children}
-        </HorizontalScroll>
+      </HorizontalScroll> */}
+        {children}
       </li>
     </ScrollAnimation>
   );
