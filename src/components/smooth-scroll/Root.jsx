@@ -5,6 +5,7 @@ import { ScrollerMotion } from 'scroller-motion';
 const SmoothScroll = ({ spring, ...props }) => {
   return (
     <ScrollerMotion
+      disabled
       spring={{ ...scrollSmoothConfig, ...spring }}
       {...props}
     />
