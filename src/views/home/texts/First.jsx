@@ -14,7 +14,7 @@ const HomeFirstText = ({ className, ...props }) => {
     >
       <div>
         <div className='absolute inset-0 overflow-hidden bg-main transition-bg'>
-          <span className='absolute inset-x-[5%] top-0 h-px w-auto bg-content transition-bg' />
+          <span className='absolute left-1/2 top-0 h-px w-full max-w-screen-xl -translate-x-1/2 bg-content transition-bg' />
 
           <Lines className='absolute z-0' />
         </div>
