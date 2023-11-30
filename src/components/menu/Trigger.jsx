@@ -27,7 +27,7 @@ const MenuTrigger = ({ className, variants, ...props }, ref) => {
       <SheetTrigger asChild>
         <MagneticButton
           className={cn(
-            'group [--tw-scale-y:--tw-scale-x] data-open:!pointer-events-auto',
+            'group [--tw-scale-y:--tw-scale-x] data-open:!pointer-events-auto data-open:!scale-100',
             className,
           )}
           variants={{ color: 'main', ...variants }}
@@ -48,10 +48,7 @@ const MenuTrigger = ({ className, variants, ...props }, ref) => {
 const Icon = ({ className, ...props }) => {
   return (
     <Slot
-      className={cn(
-        'absolute h-[--dimen] w-[--dimen] transition-opacity [--dimen:theme(spacing.4)] sm:[--dimen:theme(spacing.5)] md:[--dimen:theme(spacing.6)]',
-        className,
-      )}
+      className={cn('absolute h-1/3 w-1/3 transition-opacity', className)}
       {...props}
     />
   );

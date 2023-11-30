@@ -2,9 +2,11 @@ import { Portal, Sheet } from '../ui';
 import Content from './Content';
 import Trigger from './Trigger';
 
-const Menu = (props) => {
+const Menu = ({ children, ...props }) => {
   return (
     <Sheet {...props}>
+      {children}
+
       <Portal
         asChild
         className='fixed right-6 top-6 z-[60]'
