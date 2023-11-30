@@ -112,7 +112,7 @@ const Grid = ({ className, ...props }) => {
       <BentoGrid.Item className='items-center [grid-area:item-6]'>
         <Text.Title className='text-base'>my local time</Text.Title>
 
-        <Text className='text-[clamp(1rem,var(--font-size),6rem)] font-bold [--font-size:15vw] sm:[--font-size:7vw]'>
+        <Text className='text-[clamp(1rem,var(--font-size),6rem)] font-bold leading-none [--font-size:15vw] sm:[--font-size:7vw]'>
           <LocalTime />
         </Text>
       </BentoGrid.Item>
