@@ -1,6 +1,7 @@
 'use client';
 
 import { Slot } from '@radix-ui/react-slot';
+import { deviceType } from 'detect-it';
 import { motion } from 'framer-motion';
 import { forwardRef, useRef } from 'react';
 
@@ -34,7 +35,7 @@ const Magnetic = ({ smoothConfig, limit = 0.5, style, ...props }, ref) => {
       isFunctionThanCall(props.onMouseLeave, ev);
     },
     onMouseMove = (ev) => {
-      updatePosition(ev);
+      deviceType !== 'touchOnly' && updatePosition(ev);
 
       isFunctionThanCall(props.onMouseMove, ev);
     };

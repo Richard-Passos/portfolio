@@ -1,6 +1,7 @@
 'use client';
 
 import { Slot } from '@radix-ui/react-slot';
+import { deviceType } from 'detect-it';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { forwardRef, useRef } from 'react';
 
@@ -41,7 +42,7 @@ const ScrollAnimation = (
     smoothScroll = useSpring(defaultScroll, smoothConfig.scroll);
 
   const propValue = useTransform(
-      smoothConfig.scroll ? smoothScroll : defaultScroll,
+      defaultScroll,
       scrollPoints,
       propPoints,
       useTransformConfig,

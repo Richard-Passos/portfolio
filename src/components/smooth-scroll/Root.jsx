@@ -1,18 +1,27 @@
 'use client';
 
-import { ScrollerMotion } from 'scroller-motion';
+import Lenis from '@studio-freight/lenis';
+import { useEffect } from 'react';
 
-const SmoothScroll = ({ spring, ...props }) => {
-  return (
-    <ScrollerMotion
-      disabled
-      spring={{ ...scrollSmoothConfig, ...spring }}
-      {...props}
-    />
-  );
+const SmoothScroll = ({ children }) => {
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    const raf = (time) => {
+      lenis.raf(time);
+
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
+  }, []);
+
+  return <>{children}</>;
 };
 
-const scrollSmoothConfig = { damping: 10, stiffness: 100, mass: 0.2 };
+const scrollSmoothConfig = {};
 
 export default SmoothScroll;
 export { scrollSmoothConfig };
