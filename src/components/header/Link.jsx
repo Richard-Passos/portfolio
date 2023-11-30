@@ -17,7 +17,7 @@ const HeaderLink = ({ isActive, className, children, ...props }) => {
       {...props}
     >
       <NavigationMenuLink>
-        <Magnetic limit={0.25}>
+        <Magnetic limit={0.15}>
           <span className='flex h-full items-center rounded-inherit px-4'>
             {children}
           </span>

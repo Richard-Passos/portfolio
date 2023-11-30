@@ -22,7 +22,7 @@ const Header = ({ className, ...props }) => {
       <Menu>
         <Magnetic limit={0.35}>
           <SheetTrigger className='h-10 rounded-sm transition-colors hover:bg-muted sm:hidden'>
-            <Magnetic limit={0.25}>
+            <Magnetic limit={0.15}>
               <span className='flex h-full items-center rounded-inherit px-4'>
                 Menu
               </span>
