@@ -19,7 +19,7 @@ const FooterContent = ({ className, ...props }) => {
   return (
     <ScrollAnimationTransform
       className={cn(
-        'flex h-screen w-full flex-col items-center justify-between gap-12 py-8 text-content 2xl:max-h-bounds',
+        'flex min-h-screen w-full flex-col items-center justify-between gap-12 py-8 text-content 2xl:h-screen 2xl:max-h-bounds',
         className,
       )}
       config={animationConfig}
