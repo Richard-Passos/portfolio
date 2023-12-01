@@ -1,4 +1,3 @@
-import SmoothScroll, { scrollSmoothConfig } from './Root';
+import SmoothScroll from './Root';
 
 export default SmoothScroll;
-export { scrollSmoothConfig };

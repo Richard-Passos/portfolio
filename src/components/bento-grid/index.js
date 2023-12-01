@@ -1,12 +1,9 @@
-import BentoGridRoot from './Root';
 import BentoGridItem from './Item';
+import BentoGridRoot from './Root';
 
-const BentoGrid = BentoGridRoot
+const BentoGrid = BentoGridRoot;
 
 BentoGrid.Item = BentoGridItem;
 
 export default BentoGrid;
-export {
-BentoGridRoot as BentoGrid,
-BentoGridItem
-}
+export { BentoGridRoot as BentoGrid, BentoGridItem };

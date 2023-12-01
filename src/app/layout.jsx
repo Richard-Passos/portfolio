@@ -18,7 +18,6 @@ const metadata = {
 const Layout = ({ children }) => {
   return (
     <html
-      className='scroll-smooth'
       lang='en'
       suppressHydrationWarning
     >
@@ -30,13 +29,13 @@ const Layout = ({ children }) => {
           )}
         >
           <Providers.Theme>
-            <Lines />
-
-            <Cursor>
-              <Cursor.Content />
-            </Cursor>
-
             <SmoothScroll>
+              <Lines />
+
+              <Cursor>
+                <Cursor.Content />
+              </Cursor>
+
               <Header />
 
               {children}

@@ -5,7 +5,6 @@ import {
   useAnimationFrame,
   useMotionValue,
   useScroll,
-  useSpring,
   useTransform,
   useVelocity,
   wrap,
@@ -14,8 +13,6 @@ import { forwardRef, useEffect, useRef, useState } from 'react';
 
 import { cn, setRefs } from '@/utils';
 
-import { scrollSmoothConfig } from '../smooth-scroll';
-
 const HorizontalScroll = (
   { className, children, baseVelocity = 100, ...props },
   ref,
@@ -23,8 +20,7 @@ const HorizontalScroll = (
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, scrollSmoothConfig);
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+  const velocityFactor = useTransform(scrollVelocity, [0, 1000], [0, 5], {
     clamp: false,
   });
 
@@ -33,7 +29,7 @@ const HorizontalScroll = (
 
   const [numberOfSiblings, setNumberOfSiblings] = useState(0);
 
-  const x = useTransform(baseX, (v) => wrap(-90, -10, v) + '%');
+  const x = useTransform(baseX, (v) => wrap(-50, 0, v) + '%');
 
   const directionFactor = useRef(1);
   useAnimationFrame((_, delta) => {
@@ -57,8 +53,17 @@ const HorizontalScroll = (
             containerRef.current.getBoundingClientRect().width,
           childrenWidht = childrenRef.current.getBoundingClientRect().width;
 
+        const numberOfChildren = Math.round(
+          (containerWidth * 2) / childrenWidht,
+        );
+
         setNumberOfSiblings(
-          Math.max(Math.round((containerWidth * 2) / childrenWidht) - 1, 1),
+          Math.max(
+            numberOfChildren % 2 === 0
+              ? numberOfChildren - 1
+              : numberOfChildren,
+            1,
+          ),
         );
       }
     };
@@ -78,10 +83,13 @@ const HorizontalScroll = (
       {...props}
     >
       <motion.div
-        className='flex whitespace-nowrap'
+        className='flex w-fit gap-[--gap] whitespace-nowrap'
         style={{ x }}
       >
-        <HorizontalScrollChildren ref={childrenRef}>
+        <HorizontalScrollChildren
+          className='first:ml-[--gap]'
+          ref={childrenRef}
+        >
           {children}
         </HorizontalScrollChildren>
 

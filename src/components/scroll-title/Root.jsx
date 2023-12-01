@@ -1,7 +1,6 @@
 import { cn } from '@/utils';
 
 import { ScrollAnimationTransform } from '../scroll-animation';
-import { scrollSmoothConfig } from '../smooth-scroll';
 import { TextTitle } from '../ui/text';
 
 const ScrollTitle = ({ className, title, ...props }) => {
@@ -18,10 +17,7 @@ const ScrollTitle = ({ className, title, ...props }) => {
       )}
       {...props}
     >
-      <ScrollAnimationTransform
-        config={animationConfig}
-        smoothConfig={{ scroll: scrollSmoothConfig }}
-      >
+      <ScrollAnimationTransform config={animationConfig}>
         <span className='flex w-full justify-center gap-font-blank-space whitespace-nowrap'>
           <SecondaryTitle>
             {title} {title} {title}

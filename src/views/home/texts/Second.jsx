@@ -3,36 +3,34 @@ import {
   ScrollAnimation,
   TextScrollAnimation,
 } from '@/components';
-import { scrollSmoothConfig } from '@/components/smooth-scroll';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
 const HomeSecondText = ({ className, theme, ...props }) => {
   const animationConfig = {
-      y: {
-        useScrollConfig: {
-          offset: ['1 1', '1.5 1'],
-        },
-        propPoints: ['0%', '50%'],
+    y: {
+      useScrollConfig: {
+        offset: ['1 1', '1.5 1'],
       },
-      clipPath: {
-        useScrollConfig: {
-          offset: ['1 1', '1.5 1'],
-        },
-        useScrollRes: 'scrollYProgress',
-        prop: '--clip-path',
-        scrollPoints: [0, 1],
-        propPoints: ['inset(0% 0 0 0)', 'inset(100% 0 0 0)'],
-      },
-      x: {
-        useScrollConfig: {
-          offset: ['0 1', '.75 1'],
-        },
-        prop: 'x',
-        propPoints: ['-100%', '0%'],
-      },
+      propPoints: ['0%', '50%'],
     },
-    animationSmoothConfig = { scroll: scrollSmoothConfig };
+    clipPath: {
+      useScrollConfig: {
+        offset: ['1 1', '1.5 1'],
+      },
+      useScrollRes: 'scrollYProgress',
+      prop: '--clip-path',
+      scrollPoints: [0, 1],
+      propPoints: ['inset(0% 0 0 0)', 'inset(100% 0 0 0)'],
+    },
+    x: {
+      useScrollConfig: {
+        offset: ['0 1', '.75 1'],
+      },
+      prop: 'x',
+      propPoints: ['-100%', '0%'],
+    },
+  };
 
   return (
     <div
@@ -45,17 +43,10 @@ const HomeSecondText = ({ className, theme, ...props }) => {
       <ScrollAnimation.Transform
         className='absolute top-0 flex h-2/3 items-center overflow-hidden'
         config={animationConfig.y}
-        smoothConfig={animationSmoothConfig}
       >
         <div>
-          <ScrollAnimation
-            config={animationConfig.clipPath}
-            smoothConfig={animationSmoothConfig}
-          >
-            <ScrollAnimation.Transform
-              config={animationConfig.x}
-              smoothConfig={animationSmoothConfig}
-            >
+          <ScrollAnimation config={animationConfig.clipPath}>
+            <ScrollAnimation.Transform config={animationConfig.x}>
               <Text
                 className='outline-text relative text-[clamp(1rem,44vw,24rem)] font-bold before:pointer-events-none before:absolute before:origin-bottom before:overflow-hidden before:content-[attr(data-text)] before:[-webkit-text-fill-color:currentColor] before:[clip-path:--clip-path]'
                 data-text='BUT'

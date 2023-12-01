@@ -1,11 +1,9 @@
 'use client';
 
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
 import { cn } from '@/utils';
-
-import { scrollSmoothConfig } from '../smooth-scroll';
 
 const TextScrollAnimation = ({ text, className, ...props }) => {
   const ref = useRef(null);
@@ -14,8 +12,6 @@ const TextScrollAnimation = ({ text, className, ...props }) => {
     target: ref,
     offset: ['0 .95', '0 .25'],
   });
-
-  const smoothScroll = useSpring(scrollYProgress, scrollSmoothConfig);
 
   const words = text.split(' ');
 
@@ -33,7 +29,7 @@ const TextScrollAnimation = ({ text, className, ...props }) => {
         return (
           <Word
             key={i}
-            progress={smoothScroll}
+            progress={scrollYProgress}
             range={[start, end]}
           >
             {word}

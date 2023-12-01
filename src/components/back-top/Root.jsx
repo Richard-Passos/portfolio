@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowUpIcon } from '@radix-ui/react-icons';
+import Lenis from '@studio-freight/lenis';
 
 import { cn, isFunctionThanCall } from '@/utils';
 
@@ -13,7 +14,9 @@ const BackTop = ({ className, ...props }) => {
       variants={{ color: 'inverted', style: 'transparent', size: 'sm' }}
       {...props}
       onClick={(ev) => {
-        window.scrollTo(0, 0);
+        const lenis = new Lenis();
+
+        lenis.scrollTo(0);
 
         isFunctionThanCall(props.onClick, ev);
       }}

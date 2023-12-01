@@ -149,11 +149,11 @@ const ListContactPage = ({ className, ...props }) => {
       <ListHorizontalScroll>
         {content.map((content, i) => (
           <ListHorizontalScroll.Item
-            baseVelocity={i % 2 === 1 ? 5 : -5}
-            className='odd:rotate-[.5deg] even:-rotate-[.5deg] [&>div>div]:gap-8'
+            baseVelocity={i % 2 === 1 ? 3 : -3}
+            className='[--gap:theme(spacing.8)] odd:rotate-[.5deg] even:-rotate-[.5deg]'
             key={content}
           >
-            <span className='mr-8'>{content}</span>•
+            <span className='mr-[--gap]'>{content}</span>•
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll>

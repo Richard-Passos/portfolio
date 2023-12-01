@@ -1,6 +1,12 @@
 import { cn } from '@/utils';
 
-const InfinityScroll = ({ as, direction, className, children, ...props }) => {
+const InfinityScroll = ({
+  as,
+  direction = 'toRight',
+  className,
+  children,
+  ...props
+}) => {
   const Tag = as ?? 'div';
 
   const directions = {

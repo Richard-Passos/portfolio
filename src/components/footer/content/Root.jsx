@@ -4,7 +4,6 @@ import BackTop from '@/components/back-top';
 import { cn } from '@/utils';
 
 import { ScrollAnimationTransform } from '../../scroll-animation';
-import { scrollSmoothConfig } from '../../smooth-scroll';
 import SocialNav from '../../social-nav';
 import { Logo, Text } from '../../ui';
 import Link from './Link';
@@ -12,7 +11,7 @@ import Link from './Link';
 const FooterContent = ({ className, ...props }) => {
   const animationConfig = {
     useScrollConfig: {
-      offset: ['0 1', '1 1'],
+      offset: ['0 1', '.95 1'],
     },
     propPoints: ['-60%', '0%'],
   };
@@ -24,7 +23,6 @@ const FooterContent = ({ className, ...props }) => {
         className,
       )}
       config={animationConfig}
-      smoothConfig={{ scroll: scrollSmoothConfig }}
       {...props}
     >
       <div>

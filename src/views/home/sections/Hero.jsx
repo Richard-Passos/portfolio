@@ -1,6 +1,5 @@
 import { InfinityScroll, Section } from '@/components';
 import ScrollAnimation from '@/components/scroll-animation';
-import { scrollSmoothConfig } from '@/components/smooth-scroll';
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -8,21 +7,15 @@ const ANIMATION_OFFSET = ['0 0', '0.5 0'];
 
 const HomeHeroSection = ({ className, ...props }) => {
   const animationConfig = {
-      useScrollConfig: { offset: ANIMATION_OFFSET },
-      useScrollRes: 'scrollYProgress',
-      prop: '--h',
-      scrollPoints: [0, 1],
-      propPoints: [0.95, 0.5],
-    },
-    animationSmoothConfig = {
-      scroll: scrollSmoothConfig,
-    };
+    useScrollConfig: { offset: ANIMATION_OFFSET },
+    useScrollRes: 'scrollYProgress',
+    prop: '--h',
+    scrollPoints: [0, 1],
+    propPoints: [0.95, 0.5],
+  };
 
   return (
-    <ScrollAnimation
-      config={animationConfig}
-      smoothConfig={animationSmoothConfig}
-    >
+    <ScrollAnimation config={animationConfig}>
       <Section
         className={cn(
           'relative isolate -mb-[(var(--height)_-_var(--height)*var(--h))] flex items-center justify-center overflow-hidden bg-main transition-bg [--height:100vh] 2xl:[--height:--max-h]',

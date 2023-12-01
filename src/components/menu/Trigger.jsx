@@ -21,7 +21,7 @@ const MenuTrigger = ({ className, variants, ...props }, ref) => {
     <ScrollAnimation
       config={animationConfig}
       ref={ref}
-      smoothConfig={{ prop: smoothConfig }}
+      smoothConfig={smoothConfig}
       {...props}
     >
       <SheetTrigger asChild>

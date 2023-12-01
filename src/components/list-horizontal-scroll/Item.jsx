@@ -2,7 +2,6 @@ import { cn } from '@/utils';
 
 import HorizontalScroll from '../horizontal-scroll';
 import ScrollAnimation from '../scroll-animation';
-import { scrollSmoothConfig } from '../smooth-scroll';
 
 const ListHorizontalScrollItem = ({
   className,
@@ -26,10 +25,7 @@ const ListHorizontalScrollItem = ({
   };
 
   return (
-    <ScrollAnimation
-      config={animationConfig}
-      smoothConfig={{ scroll: scrollSmoothConfig }}
-    >
+    <ScrollAnimation config={animationConfig}>
       <li
         className={cn(
           'border-y bg-main py-8 text-[clamp(1.5rem,4.5vw,2.5rem)] font-bold uppercase leading-none text-muted-content transition-colors odd:-rotate-[.5deg] even:rotate-[.5deg]',
@@ -37,12 +33,12 @@ const ListHorizontalScrollItem = ({
         )}
         {...props}
       >
-        {/* <HorizontalScroll
+        <HorizontalScroll
           baseVelocity={baseVelocity}
           className='outline-text [-webkit-text-stroke-width:theme(spacing.px)]'
         >
-      </HorizontalScroll> */}
-        {children}
+          {children}
+        </HorizontalScroll>
       </li>
     </ScrollAnimation>
   );

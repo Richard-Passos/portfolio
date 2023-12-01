@@ -13,7 +13,7 @@ const Footer = ({ className, ...props }) => {
     <Section
       asChild
       className={cn(
-        'relative mx-auto max-w-bounds overflow-hidden pt-24',
+        'relative mx-auto max-w-bounds overflow-hidden pt-24 2xl:h-auto 2xl:max-h-none',
         className,
       )}
       {...props}
