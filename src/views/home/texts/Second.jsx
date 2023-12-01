@@ -8,15 +8,21 @@ import { cn } from '@/utils';
 
 const HomeSecondText = ({ className, theme, ...props }) => {
   const animationConfig = {
-    y: {
+    y1: {
       useScrollConfig: {
         offset: ['1 1', '1.5 1'],
       },
       propPoints: ['0%', '50%'],
     },
+    y2: {
+      useScrollConfig: {
+        offset: ['0 1', '1 1'],
+      },
+      propPoints: ['0%', '-50%'],
+    },
     clipPath: {
       useScrollConfig: {
-        offset: ['1 1', '1.5 1'],
+        offset: ['.75 1', '1.1 1'],
       },
       useScrollRes: 'scrollYProgress',
       prop: '--clip-path',
@@ -35,17 +41,17 @@ const HomeSecondText = ({ className, theme, ...props }) => {
   return (
     <div
       className={cn(
-        'relative my-[16.6667%] flex h-[min(150vh,150vw)] flex-col items-center justify-end 2xl:max-h-[calc(var(--max-h)*1.5)]',
+        'relative my-[16.666%] flex h-[150vh] flex-col items-center 2xl:max-h-[calc(var(--max-h)*1.5)]',
         className,
       )}
       {...props}
     >
       <ScrollAnimation.Transform
-        className='absolute top-0 flex h-2/3 items-center overflow-hidden'
-        config={animationConfig.y}
+        className='flex h-[66.666%] items-center overflow-hidden'
+        config={animationConfig.y1}
       >
-        <div>
-          <ScrollAnimation config={animationConfig.clipPath}>
+        <ScrollAnimation config={animationConfig.clipPath}>
+          <div>
             <ScrollAnimation.Transform config={animationConfig.x}>
               <Text
                 className='outline-text relative text-[clamp(1rem,44vw,24rem)] font-bold before:pointer-events-none before:absolute before:origin-bottom before:overflow-hidden before:content-[attr(data-text)] before:[-webkit-text-fill-color:currentColor] before:[clip-path:--clip-path]'
@@ -54,17 +60,19 @@ const HomeSecondText = ({ className, theme, ...props }) => {
                 BUT
               </Text>
             </ScrollAnimation.Transform>
-          </ScrollAnimation>
-        </div>
+          </div>
+        </ScrollAnimation>
       </ScrollAnimation.Transform>
 
-      <div className='flex h-2/3 w-[86%] items-center justify-center'>
-        <Text className='text-[clamp(2rem,6.6vw,6rem)] font-bold leading-tight'>
-          <TextScrollAnimation
-            className='justify-center'
-            text="it's not just about the tech."
-          />
-        </Text>
+      <div className='h-[33.333%] w-[90%]'>
+        <ScrollAnimation.Transform config={animationConfig.y2}>
+          <Text className='text-[clamp(2rem,6.6vw,6rem)] font-bold leading-tight'>
+            <TextScrollAnimation
+              className='justify-center'
+              text="it's not just about the tech."
+            />
+          </Text>
+        </ScrollAnimation.Transform>
       </div>
 
       <ChangeTheme
