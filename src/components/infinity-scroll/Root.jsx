@@ -1,3 +1,7 @@
+'use client';
+
+import { forwardRef, useEffect, useRef, useState } from 'react';
+
 import { cn } from '@/utils';
 
 const InfinityScroll = ({
@@ -7,6 +11,41 @@ const InfinityScroll = ({
   children,
   ...props
 }) => {
+  const containerRef = useRef(null),
+    childrenRef = useRef(null);
+
+  const [numberOfSiblings, setNumberOfSiblings] = useState(0);
+
+  useEffect(() => {
+    const handleSetNumberOfSiblings = () => {
+      if (containerRef.current && childrenRef.current) {
+        const containerWidth =
+            containerRef.current.getBoundingClientRect().width,
+          childrenWidht = childrenRef.current.getBoundingClientRect().width;
+
+        const numberOfChildren = Math.round(
+          (containerWidth * 2) / childrenWidht,
+        );
+
+        setNumberOfSiblings(
+          Math.max(
+            numberOfChildren % 2 === 0
+              ? numberOfChildren - 1
+              : numberOfChildren,
+            1,
+          ),
+        );
+      }
+    };
+
+    handleSetNumberOfSiblings();
+
+    window.addEventListener('resize', handleSetNumberOfSiblings);
+
+    return () =>
+      window.removeEventListener('resize', handleSetNumberOfSiblings);
+  }, []);
+
   const Tag = as ?? 'div';
 
   const directions = {
@@ -15,21 +54,47 @@ const InfinityScroll = ({
   };
 
   return (
-    <div className='w-full overflow-hidden'>
+    <div
+      className='w-full overflow-hidden'
+      ref={containerRef}
+    >
       <Tag
         className={cn(
-          'relative flex w-fit animate-scroll-x items-center gap-[--gap] whitespace-nowrap first:[&>*]:ml-[--gap]',
+          'relative flex w-fit animate-scroll-x items-center gap-[--gap] whitespace-nowrap',
           directions[direction],
           className,
         )}
         {...props}
       >
-        {children}
+        <InfinityScrollChildren
+          className='first:ml-[--gap]'
+          ref={childrenRef}
+        >
+          {children}
+        </InfinityScrollChildren>
 
-        {children}
+        {[...Array(numberOfSiblings)].map((_, i) => (
+          <InfinityScrollChildren
+            aria-hidden
+            key={i}
+          >
+            {children}
+          </InfinityScrollChildren>
+        ))}
       </Tag>
     </div>
   );
 };
+
+const InfinityScrollChildren = forwardRef(({className, ...props}, ref) => {
+  return (
+    <div
+      className={cn('flex items-center gap-[--gap]', className)}
+      ref={ref}
+      {...props}
+    />
+  );
+});
+InfinityScrollChildren.displayName = 'InfinityScrollChildren';
 
 export default InfinityScroll;
