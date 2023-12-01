@@ -103,10 +103,10 @@ const HorizontalScroll = (
   );
 };
 
-const HorizontalScrollChildren = forwardRef((props, ref) => {
+const HorizontalScrollChildren = forwardRef(({ className, ...props }, ref) => {
   return (
     <div
-      className='flex items-center'
+      className={cn('flex items-center gap-[--gap]', className)}
       ref={ref}
       {...props}
     />
