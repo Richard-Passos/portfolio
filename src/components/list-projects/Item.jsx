@@ -39,11 +39,11 @@ const ListProjectsItem = ({
         }}
         variant={{ scaleX: 0.75, scaleY: 0.75 }}
       >
-        <span className='overflow-hidden overflow-ellipsis whitespace-nowrap text-[clamp(1.5rem,4.4vw,4rem)] uppercase leading-none transition-transform duration-300 group-hover:translate-x-6 group-hover:sm:-translate-x-6'>
+        <span className='overflow-hidden overflow-ellipsis whitespace-nowrap text-[clamp(1.5rem,4.4vw,4rem)] uppercase leading-none transition-transform duration-300 group-hover:translate-x-1 group-hover:sm:-translate-x-6'>
           {title}
         </span>
 
-        <span className='text-center text-[clamp(.75rem,1.3vw,1rem)] capitalize text-muted-content transition-transform duration-300 group-hover:-translate-x-6 group-hover:sm:translate-x-6'>
+        <span className='text-center text-[clamp(.75rem,1.3vw,1rem)] capitalize text-muted-content transition-transform duration-300 group-hover:-translate-x-1 group-hover:sm:translate-x-6'>
           {role}
         </span>
       </CursorLink>
