@@ -5,7 +5,7 @@ import { ReactLenis } from '@studio-freight/react-lenis';
 const SmoothScroll = (props) => {
   return (
     <ReactLenis
-      options={{ smoothTouch: true, touchMultiplier: 1 }}
+      options={{ smoothTouch: false, touchMultiplier: 1 }}
       root
       {...props}
     />
