@@ -27,7 +27,7 @@ const MenuTrigger = ({ className, variants, ...props }, ref) => {
       <SheetTrigger asChild>
         <MagneticButton
           className={cn(
-            'group [--tw-scale-y:--tw-scale-x] data-open:!pointer-events-auto data-open:!scale-100',
+            'group [--tw-scale-y:--tw-scale-x] data-open:!pointer-events-auto data-open:![--tw-scale-x:1]',
             className,
           )}
           variants={{ color: 'main', ...variants }}
