@@ -90,7 +90,7 @@ const ListWorkPage = ({ className, ...props }) => {
             className='[--gap:theme(spacing.8)]'
             key={content}
           >
-            <span className='mr-[--gap]'>{content}</span>•
+            <span>{content}</span> •
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll>

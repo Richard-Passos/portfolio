@@ -153,7 +153,7 @@ const ListContactPage = ({ className, ...props }) => {
             className='[--gap:theme(spacing.8)] odd:rotate-[.5deg] even:-rotate-[.5deg]'
             key={content}
           >
-            <span className='mr-[--gap]'>{content}</span>•
+            <span>{content}</span> •
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll>
