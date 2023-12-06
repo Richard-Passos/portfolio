@@ -1,5 +1,5 @@
 import HomeFirstText from './First';
-import HomeSecondText from './First';
+import HomeSecondText from './Second';
 
 const HomeTexts = {
   First: HomeFirstText,

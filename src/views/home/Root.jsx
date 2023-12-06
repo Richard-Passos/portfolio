@@ -8,11 +8,11 @@ const HomeView = () => {
 
       <Sections.Work theme='dark' />
 
-      <Texts.Second theme='light' />
+      <Texts.First theme='light' />
 
       <Sections.About theme='dark' />
 
-      <Texts.Third />
+      <Texts.Second />
     </main>
   );
 };
