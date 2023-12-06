@@ -1,38 +1,94 @@
-import { Lines, Section, TextScrollAnimation } from '@/components';
+import {
+  ChangeTheme,
+  ScrollAnimation,
+  TextScrollAnimation,
+} from '@/components';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
-const HomeFirstText = ({ className, ...props }) => {
+const HomeFirstText = ({ className, theme, ...props }) => {
+  const animationConfig = {
+    y1: {
+      useScrollConfig: {
+        offset: ['1 1', '1.5 1'],
+      },
+      propPoints: ['0%', '50%'],
+    },
+    y2: {
+      useScrollConfig: {
+        offset: ['0 1', '1 1'],
+      },
+      propPoints: ['0%', '-50%'],
+    },
+    clipPath: {
+      useScrollConfig: {
+        offset: ['.75 1', '1.1 1'],
+      },
+      useScrollRes: 'scrollYProgress',
+      prop: '--clip-path',
+      scrollPoints: [0, 1],
+      propPoints: ['inset(0% 0 0 0)', 'inset(100% 0 0 0)'],
+    },
+    x: {
+      useScrollConfig: {
+        offset: ['0 1', '.75 1'],
+      },
+      prop: 'x',
+      propPoints: ['-100%', '0%'],
+    },
+  };
+
   return (
-    <Section
-      asChild
+    <div
       className={cn(
-        'relative flex items-center justify-center py-6',
+        'relative my-[16.666%] flex h-[150vh] flex-col items-center 2xl:max-h-[calc(var(--max-h)*1.5)]',
         className,
       )}
       {...props}
     >
-      <div>
-        <div className='absolute inset-0 overflow-hidden bg-main transition-bg'>
-          <span className='absolute left-1/2 top-0 h-px w-full max-w-screen-xl -translate-x-1/2 bg-content transition-bg' />
+      <ScrollAnimation.Transform
+        className='flex h-[66.666%] items-center overflow-hidden'
+        config={animationConfig.y1}
+      >
+        <ScrollAnimation config={animationConfig.clipPath}>
+          <div>
+            <ScrollAnimation.Transform config={animationConfig.x}>
+              <Text
+                className='outline-text relative text-[clamp(1rem,44vw,24rem)] font-bold before:pointer-events-none before:absolute before:origin-bottom before:overflow-hidden before:content-[attr(data-text)] before:[-webkit-text-fill-color:currentColor] before:[clip-path:--clip-path]'
+                data-text='BUT'
+              >
+                BUT
+              </Text>
+            </ScrollAnimation.Transform>
+          </div>
+        </ScrollAnimation>
+      </ScrollAnimation.Transform>
 
-          <Lines className='absolute z-0' />
-        </div>
-
-        <div className='relative z-10 flex w-[90%] max-w-screen-xl flex-col items-center gap-6'>
-          <Text className='font-semibold max-md:text-sm max-sm:text-center sm:mr-auto'>
-            Richard Passos — developer
-          </Text>
-
-          <Text className='max-w-2xl text-2xl leading-tight sm:ml-auto md:text-3xl'>
+      <div className='h-[33.333%] w-[90%]'>
+        <ScrollAnimation.Transform config={animationConfig.y2}>
+          <Text className='mx-auto text-[clamp(2rem,6.6vw,6rem)] font-bold leading-tight'>
             <TextScrollAnimation
-              className='max-sm:justify-center'
-              text='Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.'
+              className='justify-center'
+              text="it's not just about the tech."
             />
           </Text>
-        </div>
+        </ScrollAnimation.Transform>
       </div>
-    </Section>
+
+      <ChangeTheme
+        className='pointer-events-none absolute left-0 top-0 h-1/2 max-h-screen w-full'
+        theme={theme}
+      >
+        <span />
+      </ChangeTheme>
+
+      <ChangeTheme
+        className='pointer-events-none absolute bottom-0 left-0 h-1/2 max-h-screen w-full'
+        theme={theme}
+      >
+        <span />
+      </ChangeTheme>
+    </div>
   );
 };
 

@@ -1,106 +1,128 @@
-import { InfinityScroll, Section } from '@/components';
-import ScrollAnimation from '@/components/scroll-animation';
+import { InfinityScroll, Section, TextRing } from '@/components';
+import { ScrollAnimationTransform } from '@/components/scroll-animation';
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const ANIMATION_OFFSET = ['0 0', '0.5 0'];
+const ANIMATION_OFFSET = ['0 0', '1 0'];
 
 const HomeHeroSection = ({ className, ...props }) => {
   const animationConfig = {
-    useScrollConfig: { offset: ANIMATION_OFFSET },
-    useScrollRes: 'scrollYProgress',
-    prop: '--h',
-    scrollPoints: [0, 1],
-    propPoints: [0.95, 0.5],
+    x: {
+      useScrollConfig: {
+        offset: ANIMATION_OFFSET,
+      },
+      prop: '--x',
+      propPoints: ['0vw', '10vw'],
+    },
+    rotate: {
+      useScrollConfig: {
+        offset: ANIMATION_OFFSET,
+      },
+      prop: '--rotate',
+      propPoints: ['0deg', '360deg'],
+    },
   };
 
   return (
-    <ScrollAnimation config={animationConfig}>
-      <Section
-        className={cn(
-          'relative isolate -mb-[(var(--height)_-_var(--height)*var(--h))] flex items-center justify-center overflow-hidden bg-main transition-bg [--height:100vh] 2xl:[--height:--max-h]',
-          className,
-        )}
-        {...props}
-      >
-        <div className='relative w-full max-w-screen-xl'>
+    <ScrollAnimationTransform config={animationConfig.x}>
+      <ScrollAnimationTransform config={animationConfig.rotate}>
+        <Section
+          className={cn(
+            'relative flex items-center justify-center pb-10 pt-20',
+            className,
+          )}
+          {...props}
+        >
           <Title
             asChild
-            className='flex w-full flex-col'
+            className='flex w-[90%] max-w-screen-xl flex-col items-center md:-translate-y-6'
           >
             <h1>
-              <div className='flex items-center justify-between'>
-                <div className='shrink-0'>
-                  <div className='w-full max-w-md overflow-hidden rounded-full border'>
-                    <InfinityScroll
-                      as='ul'
-                      className='bg-content text-main transition-colors [--duration:25s] [--gap:--font-blank-space] hover:paused'
-                    >
-                      {[
-                        '•',
-                        'full stack',
-                        '•',
-                        'front end',
-                        '•',
-                        'back end',
-                      ].map((content, i) => (
-                        <li
-                          key={i}
-                          role={i % 2 === 0 ? 'separator' : 'listitem'}
-                        >
-                          {content}
-                        </li>
-                      ))}
-                    </InfinityScroll>
-                  </div>
-                  developer
-                </div>
+              <span className='translate-x-[--x]'>Richard P.</span>
 
-                <span className='text-base font-semibold lowercase'>
-                  — that&apos;s what I build —
-                </span>
-              </div>
-
-              <div className='flex items-center justify-between'>
-                <span className='text-base font-semibold lowercase'>
-                  — that&apos;s what I am —
+              <span className='flex w-full items-center justify-center gap-font-blank-space md:justify-between'>
+                <span className='shrink-0 translate-x-[calc(var(--x)*-1)]'>
+                  full stack
                 </span>
 
-                <div className='shrink-0'>
-                  <div className='w-full max-w-md overflow-hidden rounded-full border'>
-                    <InfinityScroll
-                      as='ul'
-                      className='bg-content text-main transition-colors [--duration:25s] [--gap:--font-blank-space] hover:paused'
-                    >
-                      {['•', 'solid', '•', 'scalable', '•', 'accesible'].map(
-                        (content, i) => (
-                          <li
-                            key={i}
-                            role={i % 2 === 0 ? 'separator' : 'listitem'}
-                          >
-                            {content}
-                          </li>
-                        ),
-                      )}
-                    </InfinityScroll>
-                  </div>
-                  products
-                </div>
-              </div>
+                <span
+                  aria-hidden
+                  className='flex max-w-xs flex-col text-[.125em] font-semibold normal-case leading-normal text-muted-content max-md:hidden'
+                >
+                  <span className='ml-[2em]'>
+                    that&apos;s what I am — solid and
+                  </span>
+                  <span>scalable products with a great user</span>
+                  <span>experience, that&apos;s what I build.</span>
+                </span>
+              </span>
+
+              <span className='flex translate-x-[--x] items-center gap-[calc(var(--font-blank-space)*3)]'>
+                <span>developer</span>
+
+                <span
+                  aria-hidden
+                  className='relative flex items-center justify-center text-[.2em]'
+                >
+                  ✦{' '}
+                  <TextRing
+                    className='rotate-[--rotate] animate-none text-[.5em]'
+                    text='made with ❤ made with ❤ '
+                  />
+                </span>
+              </span>
+
+              <span className='mt-4 max-w-xs text-center text-base font-semibold normal-case text-muted-content md:hidden'>
+                that&apos;s what I am — solid and scalable products with a great
+                user experience, that&apos;s what I build.
+              </span>
             </h1>
           </Title>
-        </div>
-      </Section>
-    </ScrollAnimation>
+
+          <div className='absolute inset-0 bottom-0 -z-10 w-auto bg-main transition-bg md:bottom-[5%]'>
+            <span className='absolute bottom-0 left-1/2 h-px w-[90%] max-w-screen-xl -translate-x-1/2 bg-border transition-bg' />
+          </div>
+        </Section>
+      </ScrollAnimationTransform>
+    </ScrollAnimationTransform>
   );
 };
 
 const Title = ({ className, ...props }) => {
   return (
     <Text.Title
-      className={cn('text-9xl font-bold uppercase', className)}
+      className={cn(
+        'text-[clamp(1rem,9vw,8rem)] font-bold uppercase leading-none',
+        className,
+      )}
       {...props}
     />
+  );
+};
+
+const List = ({ className, content, ...props }) => {
+  return (
+    <div
+      className={cn(
+        'w-full max-w-md overflow-hidden rounded-full text-[clamp(1rem,7.5vw,6rem)]',
+        className,
+      )}
+      {...props}
+    >
+      <InfinityScroll
+        as='ul'
+        className='bg-content py-4 text-main transition-colors [--duration:25s] [--gap:--font-blank-space] hover:paused'
+      >
+        {content.map((content, i) => (
+          <li
+            key={i}
+            role={i % 2 === 0 ? 'separator' : 'listitem'}
+          >
+            {content}
+          </li>
+        ))}
+      </InfinityScroll>
+    </div>
   );
 };
 

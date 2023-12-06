@@ -6,8 +6,6 @@ const HomeView = () => {
     <main className='mx-auto max-w-bounds'>
       <Sections.Hero theme='light' />
 
-      <Texts.First theme='light' />
-
       <Sections.Work theme='dark' />
 
       <Texts.Second theme='light' />

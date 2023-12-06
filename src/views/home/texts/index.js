@@ -1,12 +1,10 @@
 import HomeFirstText from './First';
-import HomeSecondText from './Second';
-import HomeThirdText from './Third';
+import HomeSecondText from './First';
 
 const HomeTexts = {
   First: HomeFirstText,
   Second: HomeSecondText,
-  Third: HomeThirdText,
 };
 
 export default HomeTexts;
-export { HomeFirstText, HomeSecondText, HomeThirdText };
+export { HomeFirstText, HomeSecondText };

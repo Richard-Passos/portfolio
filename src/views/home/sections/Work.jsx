@@ -6,8 +6,10 @@ import {
   ListProjects,
   ScrollTitle,
   Section,
+  TextScrollAnimation,
 } from '@/components';
 import { MagneticButton } from '@/components/button';
+import { Text } from '@/components/ui';
 import { selectedProjects } from '@/constants';
 import { cn } from '@/utils';
 
@@ -23,22 +25,40 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
   return (
     <Section
       className={cn(
-        'relative flex flex-col items-center gap-20 md:gap-28 2xl:h-auto 2xl:max-h-none',
+        'relative mt-20 flex flex-col items-center gap-20 md:mt-28 md:gap-28 2xl:h-auto 2xl:max-h-none',
         className,
       )}
       {...props}
     >
       <ScrollTitle title='WORK' />
 
-      <ListProjects images={projects.img}>
-        {projects.item.map((project, i) => (
-          <ListProjects.Item
-            index={i}
-            key={project.href}
-            {...project}
+      <div className='w-[90%] max-w-screen-xl'>
+        <Text className='max-w-2xl text-2xl leading-tight sm:ml-auto md:text-3xl'>
+          <TextScrollAnimation
+            className='max-sm:justify-center'
+            text='Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.'
           />
-        ))}
-      </ListProjects>
+        </Text>
+      </div>
+
+      <div className='w-[90%] max-w-screen-lg'>
+        <Text.Small className='mb-10 text-xs uppercase md:mb-14'>
+          Selected work
+        </Text.Small>
+
+        <ListProjects
+          className='w-full'
+          images={projects.img}
+        >
+          {projects.item.map((project, i) => (
+            <ListProjects.Item
+              index={i}
+              key={project.href}
+              {...project}
+            />
+          ))}
+        </ListProjects>
+      </div>
 
       <MagneticButton
         className='relative -mt-9'
