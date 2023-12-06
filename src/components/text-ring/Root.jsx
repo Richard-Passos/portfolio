@@ -8,7 +8,7 @@ const TextRing = ({ text, side = 1.15, className, style, ...props }) => {
   return (
     <div
       className={cn(
-        'relative flex animate-[spin_6s_linear_infinite] items-center justify-center rounded-full text-xs font-semibold uppercase tracking-widest',
+        'absolute flex animate-[spin_6s_linear_infinite] items-center justify-center rounded-full text-xs font-semibold uppercase tracking-widest',
         className,
       )}
       style={{
@@ -32,7 +32,7 @@ const TextRing = ({ text, side = 1.15, className, style, ...props }) => {
         </span>
       ))}
 
-      <span className='sr-only'>Your text here!</span>
+      <span className='sr-only'>{text}</span>
     </div>
   );
 };
