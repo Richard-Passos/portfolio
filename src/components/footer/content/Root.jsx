@@ -1,4 +1,7 @@
-import { ArrowBottomLeftIcon } from '@radix-ui/react-icons';
+import {
+  ArrowBottomLeftIcon,
+  ArrowBottomRightIcon,
+} from '@radix-ui/react-icons';
 
 import BackTop from '@/components/back-top';
 import { cn } from '@/utils';
@@ -28,18 +31,28 @@ const FooterContent = ({ className, ...props }) => {
       <div>
         <Logo className='ml-12 mr-auto' />
 
-        <div className='relative mt-20 flex w-full max-w-screen-xl'>
-          <Text.Title className='text-5xl uppercase'>
-            Let&apos;s work <br /> together
-            {/* Let me take you further than you&apos;ve ever been. */}
+        <div className='relative mt-20 flex w-[90%] max-w-screen-xl justify-center'>
+          <RotateArrowOnScroll
+            className='left-0'
+            config={{ propPoints: ['-180deg', '0deg'] }}
+          >
+            <ArrowBottomRightIcon />
+          </RotateArrowOnScroll>
+
+          <Text.Title className='text-center text-5xl uppercase'>
+            Let me take you further
+            <br />
+            than you&apos;ve ever been
           </Text.Title>
 
-          <ArrowBottomLeftIcon className='absolute bottom-0 right-0 h-28 w-28 translate-y-[12.5%] opacity-20 dark:opacity-10' />
+          <RotateArrowOnScroll className='right-0'>
+            <ArrowBottomLeftIcon />
+          </RotateArrowOnScroll>
         </div>
 
         <Link />
 
-        <section className='relative flex w-full flex-col px-12'>
+        <section className='relative flex w-[90%] flex-col'>
           <div className='relative w-full'>
             <BackTop className='mb-4' />
 
@@ -48,7 +61,7 @@ const FooterContent = ({ className, ...props }) => {
             </div>
           </div>
 
-          <div className='flex justify-between border-t pt-3'>
+          <div className='flex gap-1 border-t pt-3 text-center max-sm:flex-col-reverse max-sm:items-center sm:justify-between'>
             <Text.Small className='group text-xs text-content'>
               <span className='group-hover:rotate-[360deg] group-hover:transition-transform group-hover:duration-500 group-hover:ease-backOut'>
                 &copy;
@@ -67,6 +80,28 @@ const FooterContent = ({ className, ...props }) => {
         </section>
       </div>
     </ScrollAnimationTransform>
+  );
+};
+
+const RotateArrowOnScroll = ({ config, className, ...props }) => {
+  const animationConfig = {
+    useScrollConfig: {
+      offset: ['0 1', '4 1'],
+    },
+    prop: 'rotate',
+    propPoints: ['180deg', '0deg'],
+    ...config,
+  };
+
+  return (
+    <ScrollAnimationTransform
+      className={cn(
+        'absolute bottom-0 -z-10 h-28 w-28 translate-y-[12.5%] opacity-20 dark:opacity-10',
+        className,
+      )}
+      config={animationConfig}
+      {...props}
+    />
   );
 };
 
