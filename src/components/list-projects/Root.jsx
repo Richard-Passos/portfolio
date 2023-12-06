@@ -18,7 +18,7 @@ const ListProjects = ({ className, children, images, ...props }) => {
   return (
     <ListProjectsContext.Provider value={{ activeIdx, setActiveIdx }}>
       <div
-        className={cn('w-full max-w-screen-lg md:w-[90%]', className)}
+        className={cn('w-[90%] max-w-screen-lg', className)}
         {...props}
       >
         <FollowPointer.Area id={followPointerId}>
