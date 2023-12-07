@@ -10,11 +10,18 @@ const MagneticButton = (
   ref,
 ) => {
   const content = (
-    <Magnetic limit={limit - 0.1}>
-      <span className='flex h-full w-full items-center justify-center rounded-inherit'>
-        {children}
-      </span>
-    </Magnetic>
+    <>
+      <Magnetic
+        className='relative z-10 flex h-full w-full items-center justify-center rounded-inherit'
+        limit={limit * 0.8}
+      >
+        <span>{children}</span>
+      </Magnetic>
+
+      <div className='absolute h-full w-full translate-y-[101%] rounded-[50%_50%_0_0] transition-[transform,border-radius] duration-500 group-hover:translate-y-0 group-hover:rounded-[0%_0%_0_0]'>
+        <span className='h-full w-full rounded-inherit bg-variant-active transition-bg' />
+      </div>
+    </>
   );
 
   return (
@@ -34,27 +41,21 @@ const MagneticButton = (
   );
 };
 
-const magneticButtonStyles = {
-    basic: 'hover:bg-main focus-visible:outline-current',
-    invert: 'hover:border-main hover:bg-content hover:text-main',
-  },
-  magneticButtonSizes = {
-    sm: 'h-10 max-md:text-sm sm:h-12 md:h-14 lg:h-16',
-    md: 'h-12 sm:h-14 md:h-16 md:text-lg lg:h-20',
-    lg: 'h-36 sm:h-40 md:text-lg md:h-44 lg:text-xl lg:h-52',
-  };
+const magneticButtonSizes = {
+  sm: 'h-10 max-md:text-sm sm:h-12 md:h-14 lg:h-16',
+  md: 'h-12 sm:h-14 md:h-16 md:text-lg lg:h-20',
+  lg: 'h-36 sm:h-40 md:text-lg md:h-44 lg:text-xl lg:h-52',
+};
 
 const magneticButtonVariants = cnv({
-  base: 'aspect-square border-border px-0',
+  base: 'group relative aspect-square overflow-hidden border-border px-0 hover:bg-variant',
   variants: {
-    style: magneticButtonStyles,
     size: magneticButtonSizes,
   },
   defaultVariants: {
-    style: 'invert',
     size: 'md',
   },
 });
 
 export default forwardRef(MagneticButton);
-export { magneticButtonSizes, magneticButtonStyles, magneticButtonVariants };
+export { magneticButtonSizes, magneticButtonVariants };

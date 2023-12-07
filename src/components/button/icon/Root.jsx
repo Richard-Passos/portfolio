@@ -13,9 +13,9 @@ const IconButton = ({ variants = {}, className, ...props }) => {
 };
 
 const iconButtonStyles = {
-    solid: 'hover:bg-main [--svg-color:hsl(var(--main))]',
+    solid: 'hover:bg-variant [--svg-color:hsl(var(--variant))]',
     transparent:
-      'bg-transparent hover:bg-transparent text-main [--svg-color:hsl(var(--content))]',
+      'bg-transparent hover:bg-transparent text-variant [--svg-color:hsl(var(--variant-c))]',
   },
   iconButtonSizes = {
     sm: 'gap-x-2',

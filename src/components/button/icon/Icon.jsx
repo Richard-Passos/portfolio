@@ -28,10 +28,12 @@ const IconButtonIcon = ({ className, animation, children, ...props }) => {
 const iconButtonIconAnimations = {
   opacity: 'opacity-0 transition-opacity group-hover:opacity-100',
   slideUp: 'translate-y-full transition-transform group-hover:translate-y-0',
+  slideUpRight:
+    '-translate-x-full translate-y-full transition-transform group-hover:translate-x-0 group-hover:translate-y-0',
 };
 
 const iconButtonIconAnimationVariants = cnv({
-  base: 'duration-500 ease-backOut',
+  base: 'duration-500 ease-backOut ',
   variants: {
     animation: iconButtonIconAnimations,
   },
