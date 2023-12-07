@@ -14,14 +14,6 @@ import { selectedProjects } from '@/constants';
 import { cn } from '@/utils';
 
 const HomeWorkSection = ({ className, theme, ...props }) => {
-  const projects = selectedProjects.reduce(
-    (obj, { img, ...item }) => ({
-      img: [...obj.img, img],
-      item: [...obj.item, item],
-    }),
-    { img: [], item: [] },
-  );
-
   return (
     <Section
       className={cn(
@@ -33,7 +25,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
       <ScrollTitle title='WORK' />
 
       <div className='w-[90%] max-w-screen-xl'>
-        <Text className='max-w-2xl text-2xl leading-tight sm:ml-auto md:text-3xl'>
+        <Text className='max-w-xl text-xl sm:ml-auto md:text-2xl'>
           <TextScrollAnimation
             className='max-sm:justify-center'
             text='Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.'
@@ -48,9 +40,9 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
 
         <ListProjects
           className='w-full'
-          images={projects.img}
+          images={selectedProjects.map(({ img }) => img)}
         >
-          {projects.item.map((project, i) => (
+          {selectedProjects.map((project, i) => (
             <ListProjects.Item
               index={i}
               key={project.href}
