@@ -13,7 +13,6 @@ const SocialNavItem = ({ className, index, href, name, ...props }) => {
       {...props}
     >
       <MagneticLink
-        git
         href={href}
       >
         {capitalize(name)}
