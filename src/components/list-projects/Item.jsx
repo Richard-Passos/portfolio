@@ -9,7 +9,7 @@ import { cn, isFunctionThanCall } from '@/utils';
 import { IconButton } from '../button';
 import { CursorLink } from '../link';
 import { ScrollAnimationTransform } from '../scroll-animation';
-import { Image, Link } from '../ui';
+import { Image, Link, Text } from '../ui';
 
 const ListProjectsItem = ({
   className,
@@ -74,21 +74,19 @@ const SmallDeviceContent = ({
         </ScrollAnimationTransform>
       </span>
 
-      <section className='ml-4 flex flex-col gap-2'>
-        <span className='text-2xl font-semibold uppercase'>{title}</span>
+      <section className='mb-4 ml-2 flex flex-col gap-2'>
+        <Text.Subtitle className='text-3xl uppercase'>{title}</Text.Subtitle>
 
-        <span className='text-center text-xs capitalize text-muted-content'>
-          {role}
-        </span>
+        <Text className='text-xs capitalize text-muted-content'>{role}</Text>
       </section>
 
       <IconButton
         asChild
-        className='w-fit'
+        className='ml-2 w-fit'
         variants={{ size: 'sm' }}
       >
         <Link
-          className='gap-x-0 no-underline'
+          className='!gap-x-2 no-underline'
           href={href}
         >
           view project
