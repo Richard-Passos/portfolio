@@ -12,7 +12,7 @@ const ProgressIndicator = ({ className, style, ...props }, ref) => {
   return (
     <Indicator
       className={cn(
-        'h-full w-full transform bg-main transition-transform',
+        'h-full w-full transform bg-variant transition-transform',
         className,
       )}
       ref={ref}

@@ -17,9 +17,9 @@ const Badge = ({ asChild, variants, className, ...props }) => {
 };
 
 const badgeStyles = {
-  solid: 'bg-main text-content',
-  outline: 'border-main text-main',
-  ghost: 'bg-main/20 text-main',
+  solid: 'bg-variant text-variant-content',
+  outline: 'border-variant text-variant',
+  ghost: 'bg-variant/20 text-variant',
 };
 
 const badgeVariants = cnv({

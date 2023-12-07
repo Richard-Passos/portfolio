@@ -16,7 +16,7 @@ const Link = ({ href, asChild, className, ...props }, ref) => {
   return (
     <Tag
       className={cn(
-        'inline-flex cursor-pointer items-center justify-center gap-font-blank-space font-semibold underline decoration-transparent underline-offset-0 transition-[color,background-color,border-color,text-decoration-color,text-underline-offset] hover:decoration-current hover:underline-offset-4',
+        'inline-flex cursor-pointer items-center justify-center gap-x-font-blank-space font-semibold underline decoration-transparent underline-offset-0 transition-[color,background-color,border-color,text-decoration-color,text-underline-offset] hover:decoration-current hover:underline-offset-4',
         className,
       )}
       href={href}

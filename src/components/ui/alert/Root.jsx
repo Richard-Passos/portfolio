@@ -16,8 +16,8 @@ const Alert = ({ variants, className, ...props }, ref) => {
 };
 
 const alertStyles = {
-  solid: 'bg-main text-content',
-  outline: 'border-main text-main',
+  solid: 'bg-variant text-variant-content',
+  outline: 'border-variant text-variant',
 };
 
 const alertVariants = cnv({

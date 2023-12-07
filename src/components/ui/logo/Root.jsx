@@ -5,28 +5,19 @@ const Root = ({ className, ...props }) => {
   return (
     <Link
       className={cn(
-        'items-end gap-0 text-4xl font-bold uppercase leading-none -tracking-widest no-underline',
+        'flex-col items-start text-xl font-semibold uppercase leading-none no-underline',
         className,
       )}
       href='/'
       {...props}
     >
-      <span className='flex items-end tracking-normal'>
-        R{''}
-        <span className='-translate-y-px text-xs lowercase'>
-          {['ich', 'ard'].map((letters, i) => (
-            <span
-              className={cn(
-                'flex gap-font-blank-space first:translate-y-[40%]',
-              )}
-              key={i}
-            >
-              {letters}
-            </span>
-          ))}
-        </span>
-      </span>{' '}
-      P.
+      <span className='flex items-center gap-2'>
+        Richard <span className='h-px w-[1.125em] bg-current transition-bg' />
+      </span>
+
+      <span className='ml-auto'>
+        <span className='ml-[.75em]'>Passos</span>
+      </span>
     </Link>
   );
 };

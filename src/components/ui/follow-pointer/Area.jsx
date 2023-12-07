@@ -1,6 +1,7 @@
 'use client';
 
 import { Slot } from '@radix-ui/react-slot';
+import { deviceType } from 'detect-it';
 import { forwardRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -26,7 +27,7 @@ const FollowPointerArea = ({ id, ...props }, ref) => {
         isFunctionThanCall(props.onMouseLeave, ev);
       }}
       onMouseMove={(ev) => {
-        show();
+        deviceType !== 'touchOnly' && show();
 
         isFunctionThanCall(props.onMouseMove, ev);
       }}

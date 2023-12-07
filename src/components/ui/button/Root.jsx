@@ -18,10 +18,10 @@ const Button = ({ asChild, variants, className, ...props }, ref) => {
 };
 
 const buttonStyles = {
-    solid: 'bg-main text-content hover:bg-main/80',
-    ghost: 'text-main hover:bg-main/20',
+    solid: 'bg-variant text-variant-content hover:bg-variant-active',
+    ghost: 'text-variant hover:bg-variant/20',
     outline:
-      'border-main/20 text-main hover:border-transparent hover:bg-main/20',
+      'border-variant/20 text-variant hover:border-transparent hover:bg-variant/20',
   },
   buttonSizes = {
     sm: 'h-10 px-4 text-sm',
@@ -30,7 +30,7 @@ const buttonStyles = {
   };
 
 const buttonVariants = cnv({
-  base: 'inline-flex items-center justify-center gap-font-blank-space rounded-full border border-transparent font-medium transition-colors focus-visible:outline-main disabled:pointer-events-none disabled:opacity-50',
+  base: 'focus-visible:outline-variant inline-flex items-center justify-center gap-font-blank-space rounded-full border border-transparent font-medium transition-colors disabled:pointer-events-none disabled:opacity-50',
   variants: {
     color: variantColors,
     style: buttonStyles,
