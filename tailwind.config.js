@@ -17,42 +17,57 @@ module.exports = {
       },
       colors: {
         main: getColor('--main'),
+        active: getColor('--active'),
         content: getColor('--content'),
         inverted: {
           DEFAULT: getColor('--inverted'),
+          active: getColor('--inverted-a'),
           content: getColor('--inverted-c'),
         },
         muted: {
           DEFAULT: getColor('--muted'),
+          active: getColor('--muted-a'),
           content: getColor('--muted-c'),
         },
         primary: {
           DEFAULT: getColor('--primary'),
+          active: getColor('--primary-a'),
           content: getColor('--primary-c'),
         },
         secondary: {
           DEFAULT: getColor('--secondary'),
+          active: getColor('--secondary-a'),
           content: getColor('--secondary-c'),
         },
         accent: {
           DEFAULT: getColor('--accent'),
+          active: getColor('--accent-a'),
           content: getColor('--accent-c'),
         },
         info: {
           DEFAULT: getColor('--info'),
+          active: getColor('--info-a'),
           content: getColor('--info-c'),
         },
         success: {
           DEFAULT: getColor('--success'),
+          active: getColor('--success-a'),
           content: getColor('--success-c'),
         },
         warning: {
           DEFAULT: getColor('--warning'),
+          active: getColor('--warning-a'),
           content: getColor('--warning-c'),
         },
         danger: {
           DEFAULT: getColor('--danger'),
+          active: getColor('--danger-a'),
           content: getColor('--danger-c'),
+        },
+        variant: {
+          DEFAULT: getColor('--variant'),
+          active: getColor('--variant-a'),
+          content: getColor('--variant-c'),
         },
         border: 'hsl(var(--muted-c)/.2)',
         current: 'currentColor',
