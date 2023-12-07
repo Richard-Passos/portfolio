@@ -1,5 +1,6 @@
 'use client';
 
+import { deviceType } from 'detect-it';
 import { useMotionValue } from 'framer-motion';
 import { useEffect } from 'react';
 
@@ -8,7 +9,7 @@ const useFollowPointer = ({ current }) => {
     y = useMotionValue(0);
 
   useEffect(() => {
-    if (current) {
+    if (current && deviceType !== 'touchOnly') {
       const onPointerMove = ({ clientX, clientY }) => {
         const { offsetLeft, offsetTop, offsetWidth, offsetHeight } = current;
 
