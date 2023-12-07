@@ -36,7 +36,7 @@ const BentoGridItem = ({ className, ...props }) => {
         <ScrollAnimation.Transform config={animationConfig.rotate}>
           <li
             className={cn(
-              'flex min-h-[theme(spacing.60)] flex-col justify-center gap-3 rounded-md border bg-main p-5 transition-bg',
+              'flex min-h-[theme(spacing.60)] max-w-full flex-col justify-center gap-3 rounded-md border bg-main p-5 transition-bg',
               className,
             )}
             {...props}
