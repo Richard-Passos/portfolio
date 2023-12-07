@@ -9,7 +9,7 @@ const Menu = ({ children, ...props }) => {
 
       <Portal
         asChild
-        className='fixed right-6 top-6 z-[60]'
+        className='!fixed right-6 top-6 z-[60]'
       >
         <Trigger />
       </Portal>
