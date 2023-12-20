@@ -9,7 +9,7 @@ const SliderRange = ({ className, ...props }, ref) => {
   return (
     <Range
       className={cn(
-        'absolute rounded-inherit bg-inverted data-[orientation=horizontal]:h-full data-[orientation=horizontal]:w-auto data-[orientation=vertical]:w-full',
+        'absolute rounded-inherit bg-inverted data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full',
         className,
       )}
       ref={ref}
