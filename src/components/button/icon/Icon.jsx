@@ -11,7 +11,7 @@ const IconButtonIcon = ({ className, animation, children, ...props }) => {
       )}
       {...props}
     >
-      <span className='absolute inset-0 w-auto bg-current transition-bg' />
+      <span className='absolute inset-0 bg-current transition-bg' />
 
       <div
         className={cn(
