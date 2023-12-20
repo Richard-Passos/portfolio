@@ -1,22 +1,20 @@
 import { Link2Icon } from '@radix-ui/react-icons';
 
-import { socialMedias } from '@/constants';
 import { cn } from '@/utils';
 
 import { IconButton } from '../button';
-import Item from './Item';
 
-const SocialNav = ({ className, ...props }) => {
+const SocialNav = ({ className, children, ...props }) => {
   return (
     <section
       className={cn(
-        'group flex translate-x-4 translate-y-[4.5rem] flex-col items-end gap-4 p-4 transition-transform duration-300 [--item-opacity:0] [--item-y:100%] focus-within:translate-y-4 focus-within:[--item-opacity:1] focus-within:[--item-y:0%] hover:translate-y-4',
+        'group flex flex-col items-end gap-2 pb-4 transition-transform duration-300 [--item-opacity:1] [--item-y:0%] focus-within:translate-y-0 focus-within:[--item-opacity:1] focus-within:[--item-y:0%] hover:translate-y-0 sm:translate-x-4 sm:translate-y-12 sm:px-4 sm:[--item-opacity:0] sm:[--item-y:100%]',
         className,
       )}
       {...props}
     >
       <IconButton
-        className='pointer-events-none ml-auto h-fit text-xs font-bold uppercase'
+        className='pointer-events-none text-xs font-bold uppercase max-sm:hidden'
         tabIndex={-1}
         variants={{ color: 'inverted', style: 'transparent', size: 'sm' }}
       >
@@ -26,15 +24,7 @@ const SocialNav = ({ className, ...props }) => {
         </IconButton.Icon>
       </IconButton>
 
-      <nav className='flex gap-3'>
-        {socialMedias.map((socialMedia, i) => (
-          <Item
-            index={i}
-            key={socialMedia.href}
-            {...socialMedia}
-          />
-        ))}
-      </nav>
+      <nav className='flex gap-3 sm:mr-4'>{children}</nav>
     </section>
   );
 };
