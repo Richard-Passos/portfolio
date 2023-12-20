@@ -8,8 +8,8 @@ import { cn } from '@/utils';
 
 import { FollowPointer } from '../follow-pointer';
 
-const CURSOR_ID = 'follow-pointer-cursor',
-  VARIANTS_DEFAULT = {
+const CURSOR_ID = 'fp-cursor',
+  CURSOR_VARIANTS_DEFAULT = {
     width: 91,
     height: 91,
     borderRadius: 999,
@@ -19,16 +19,16 @@ const CURSOR_ID = 'follow-pointer-cursor',
     y: null,
   };
 
-const Cursor = ({ className, style, children, ...props }) => {
+const Cursor = ({ className, smoothConfig, style, children, ...props }) => {
   const { theme, ...variant } = useSelector((data) => data.cursor.variant),
     smoothVariant = {
-      width: useSmooth(VARIANTS_DEFAULT.width),
-      height: useSmooth(VARIANTS_DEFAULT.height),
-      borderRadius: useSmooth(VARIANTS_DEFAULT.borderRadius),
-      scaleX: useMotionValue(VARIANTS_DEFAULT.scaleX),
-      scaleY: useMotionValue(VARIANTS_DEFAULT.scaleY),
-      x: useMotionValue(VARIANTS_DEFAULT.x),
-      y: useMotionValue(VARIANTS_DEFAULT.y),
+      width: useSmooth(CURSOR_VARIANTS_DEFAULT.width),
+      height: useSmooth(CURSOR_VARIANTS_DEFAULT.height),
+      borderRadius: useSmooth(CURSOR_VARIANTS_DEFAULT.borderRadius),
+      scaleX: useMotionValue(CURSOR_VARIANTS_DEFAULT.scaleX),
+      scaleY: useMotionValue(CURSOR_VARIANTS_DEFAULT.scaleY),
+      x: useMotionValue(CURSOR_VARIANTS_DEFAULT.x),
+      y: useMotionValue(CURSOR_VARIANTS_DEFAULT.y),
     };
 
   resetVariant(smoothVariant);
@@ -36,23 +36,25 @@ const Cursor = ({ className, style, children, ...props }) => {
 
   return (
     <FollowPointer
+      aria-label='Custom cursor'
       className={cn(
-        'flex items-center justify-center bg-primary text-primary-content transition-colors',
+        'z-[99] flex items-center justify-center bg-primary text-primary-content transition-colors',
         theme,
         className,
       )}
       id={CURSOR_ID}
+      smoothConfig={{ stiffness: 125, ...smoothConfig }}
       style={{ ...smoothVariant, ...style }}
       {...props}
     >
-      <div aria-label='Custom cursor'>{children}</div>
+      <div>{children}</div>
     </FollowPointer>
   );
 };
 
 const resetVariant = (smoothVariant) => {
     Object.keys(smoothVariant).forEach((key) => {
-      smoothVariant[key].set(VARIANTS_DEFAULT[key]);
+      smoothVariant[key].set(CURSOR_VARIANTS_DEFAULT[key]);
     });
   },
   updateVariant = (variant, smoothVariant) => {
@@ -68,4 +70,4 @@ const resetVariant = (smoothVariant) => {
   };
 
 export default Cursor;
-export { CURSOR_ID };
+export { CURSOR_ID, CURSOR_VARIANTS_DEFAULT, resetVariant, updateVariant };
