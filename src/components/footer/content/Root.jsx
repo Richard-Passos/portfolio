@@ -1,107 +1,102 @@
-import {
-  ArrowBottomLeftIcon,
-  ArrowBottomRightIcon,
-} from '@radix-ui/react-icons';
-
 import BackTop from '@/components/back-top';
+import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
+import { MagneticButton } from '../../button';
 import { ScrollAnimationTransform } from '../../scroll-animation';
 import SocialNav from '../../social-nav';
 import { Logo, Text } from '../../ui';
-import Link from './Link';
+
+const ANIMATION_OFFSET = ['0 1', '.95 1'];
 
 const FooterContent = ({ className, ...props }) => {
   const animationConfig = {
-    useScrollConfig: {
-      offset: ['0 1', '.95 1'],
+    y: {
+      useScrollConfig: {
+        offset: ANIMATION_OFFSET,
+      },
+      propPoints: ['-60%', '0%'],
     },
-    propPoints: ['-60%', '0%'],
+    linkY: {
+      useScrollConfig: {
+        offset: ANIMATION_OFFSET,
+      },
+      prop: '--link-y',
+      propPoints: ['100%', '0%'],
+    },
   };
 
   return (
     <ScrollAnimationTransform
       className={cn(
-        'flex min-h-screen w-full flex-col items-center justify-between gap-12 py-8 text-content 2xl:h-screen 2xl:max-h-bounds',
+        'flex w-full flex-col items-center justify-between gap-12 py-8 text-content max-2xl:min-h-screen max-sm:!translate-y-0 2xl:h-screen 2xl:max-h-bounds',
         className,
       )}
-      config={animationConfig}
+      config={animationConfig.y}
       {...props}
     >
-      <div>
-        <Logo className='ml-12 mr-auto' />
+      <ScrollAnimationTransform config={animationConfig.linkY}>
+        <div>
+          <Logo className='ml-12 mr-auto' />
 
-        <div className='relative mt-20 flex w-[90%] max-w-screen-xl justify-center'>
-          <RotateArrowOnScroll
-            className='left-0'
-            config={{ propPoints: ['-180deg', '0deg'] }}
-          >
-            <ArrowBottomRightIcon />
-          </RotateArrowOnScroll>
+          <div className='relative flex w-[90%] max-w-screen-xl flex-col items-center gap-4'>
+            <Text className='text-muted-content'>
+              let me take you further than you&apos;ve ever been
+            </Text>
 
-          <Text.Title className='text-center text-5xl uppercase'>
-            Let me take you further
-            <br />
-            than you&apos;ve ever been
-          </Text.Title>
+            <Text.Title className='text-center text-[14vw] uppercase leading-none sm:text-[min(10vw,8rem)]'>
+              Let&apos;s work together!
+            </Text.Title>
 
-          <RotateArrowOnScroll className='right-0'>
-            <ArrowBottomLeftIcon />
-          </RotateArrowOnScroll>
-        </div>
-
-        <Link />
-
-        <section className='relative flex w-[90%] flex-col'>
-          <div className='relative w-full'>
-            <BackTop className='mb-4' />
-
-            <div className='absolute bottom-0 right-0 overflow-y-clip'>
-              <SocialNav className='pb-9' />
+            <div className='translate-y-[--link-y]'>
+              <MagneticButton
+                className='-mt-[50%] uppercase'
+                href='/contact'
+                isLink
+                variants={{ size: 'lg' }}
+              >
+                Contact me
+              </MagneticButton>
             </div>
           </div>
 
-          <div className='flex gap-1 border-t pt-3 text-center max-sm:flex-col-reverse max-sm:items-center sm:justify-between'>
-            <Text.Small className='group text-xs text-content'>
-              <span className='group-hover:rotate-[360deg] group-hover:transition-transform group-hover:duration-500 group-hover:ease-backOut'>
-                &copy;
-              </span>{' '}
-              2023 Richard Passos
-            </Text.Small>
+          <section className='relative flex w-full flex-col px-12'>
+            <div className='relative flex w-full max-sm:flex-col max-sm:items-start'>
+              <BackTop className='mb-4 max-sm:hidden' />
 
-            <Text.Small className='group text-xs text-content'>
-              Made with{' '}
-              <span className='text-red-500 transition-transform group-hover:-translate-y-1/4'>
-                ❤
-              </span>{' '}
-              by Richard Passos
-            </Text.Small>
-          </div>
-        </section>
-      </div>
+              <div className='bottom-0 right-0 mx-auto overflow-y-clip sm:absolute'>
+                <SocialNav>
+                  {personalInfo.socials.map((socialMedia, i) => (
+                    <SocialNav.Item
+                      index={i}
+                      key={socialMedia.href}
+                      {...socialMedia}
+                    />
+                  ))}
+                </SocialNav>
+              </div>
+            </div>
+
+            <div className='flex items-center justify-between gap-x-6 gap-y-1.5 border-t pt-3 max-sm:flex-col'>
+              <Text.Small className='group text-xs text-content'>
+                <span className='group-hover:rotate-[360deg] group-hover:transition-transform group-hover:duration-500 group-hover:ease-backOut'>
+                  &copy;
+                </span>{' '}
+                2023 Richard Passos
+              </Text.Small>
+
+              <Text.Small className='group text-xs text-content'>
+                Made with{' '}
+                <span className='text-red-500 transition-transform group-hover:-translate-y-1/4'>
+                  ❤
+                </span>{' '}
+                by Richard
+              </Text.Small>
+            </div>
+          </section>
+        </div>
+      </ScrollAnimationTransform>
     </ScrollAnimationTransform>
-  );
-};
-
-const RotateArrowOnScroll = ({ config, className, ...props }) => {
-  const animationConfig = {
-    useScrollConfig: {
-      offset: ['0 1', '4 1'],
-    },
-    prop: 'rotate',
-    propPoints: ['180deg', '0deg'],
-    ...config,
-  };
-
-  return (
-    <ScrollAnimationTransform
-      className={cn(
-        'absolute bottom-0 -z-10 h-28 w-28 translate-y-[12.5%] opacity-20 dark:opacity-10',
-        className,
-      )}
-      config={animationConfig}
-      {...props}
-    />
   );
 };
 
