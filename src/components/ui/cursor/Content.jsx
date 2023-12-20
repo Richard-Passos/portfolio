@@ -5,11 +5,24 @@ import { useSelector } from 'react-redux';
 import { cn } from '@/utils';
 
 import Icon from '../icon';
+import Cursor from './Root';
 
-const CursorContent = () => {
+const CURSOR_CONTENT_ID = 'fp-cursor-content';
+
+const CursorContent = ({ className, smoothConfig, ...props }) => {
   const { content } = useSelector((data) => data.cursor);
 
-  return getContent(content);
+  return (
+    <Cursor
+      aria-label='Custom cursor content'
+      className={cn('z-[100] !bg-transparent', className)}
+      id={CURSOR_CONTENT_ID}
+      smoothConfig={{ stiffness: 150, ...smoothConfig }}
+      {...props}
+    >
+      {getContent(content)}
+    </Cursor>
+  );
 };
 
 const getContent = (content = {}) => {
@@ -39,3 +52,4 @@ const getContent = (content = {}) => {
 };
 
 export default CursorContent;
+export { CURSOR_CONTENT_ID };
