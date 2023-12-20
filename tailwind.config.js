@@ -15,6 +15,16 @@ module.exports = {
         px: '0.8px',
         'font-blank-space': 'var(--font-blank-space)',
       },
+      gap: {
+        sm: 'var(--gap-sm)',
+        md: 'var(--gap-md)',
+        lg: 'var(--gap-lg)',
+      },
+      space: {
+        sm: 'var(--gap-sm)',
+        md: 'var(--gap-md)',
+        lg: 'var(--gap-lg)',
+      },
       colors: {
         main: getColor('--main'),
         active: getColor('--active'),
