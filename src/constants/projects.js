@@ -1,4 +1,4 @@
-const selectedProjects = [
+const projects = [
   {
     href: '#0',
     title: 'PROJECT-00',
@@ -46,7 +46,7 @@ const selectedProjects = [
   {
     href: '#4',
     title: 'PROJECT-04',
-    roles: ['design', 'development'],
+    roles: ['design', 'Development'],
     img: {
       src: '/images/project-04.jpg',
       alt: 'Project 04 image',
@@ -56,4 +56,4 @@ const selectedProjects = [
   },
 ];
 
-export default selectedProjects;
+export default projects;

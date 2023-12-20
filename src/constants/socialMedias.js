@@ -1,15 +1,15 @@
 const socialMedias = [
   {
     href: 'https://github.com/Richard-Passos',
-    name: 'Github',
+    name: 'GH',
   },
   {
     href: 'https://www.instagram.com/richardp.dev',
-    name: 'Instagram',
+    name: 'IG',
   },
   {
     href: 'https://www.linkedin.com/in/richardp-dev',
-    name: 'Linkedin',
+    name: 'IN',
   },
 ];
 
