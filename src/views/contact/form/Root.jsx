@@ -1,0 +1,86 @@
+import { PaperPlaneIcon } from '@radix-ui/react-icons';
+
+import { MagneticButton } from '@/components/button';
+import { Form, Input, Textarea } from '@/components/ui';
+import { cn } from '@/utils';
+
+import ClientForm from './Client';
+
+const ContactForm = ({ className, ...props }) => {
+  return (
+    <ClientForm
+      className={cn('grid gap-x-6 gap-y-4 space-y-0 sm:grid-cols-4', className)}
+      {...props}
+    >
+      <Form.Field
+        className='sm:col-span-2'
+        name='name'
+      >
+        <Form.Label>Name</Form.Label>
+
+        <Form.Control>
+          <Input
+            className='h-14'
+            placeholder='John Doe'
+          />
+        </Form.Control>
+
+        <Form.Description>Your name.</Form.Description>
+
+        <Form.Message />
+      </Form.Field>
+
+      <Form.Field
+        className='sm:col-span-2'
+        name='email'
+      >
+        <Form.Label>Email</Form.Label>
+
+        <Form.Control>
+          <Input
+            className='h-14'
+            placeholder='johndoe@example.com'
+          />
+        </Form.Control>
+
+        <Form.Description>Your professional email.</Form.Description>
+
+        <Form.Message />
+      </Form.Field>
+
+      <Form.Field
+        className='sm:col-span-3'
+        name='message'
+      >
+        <Form.Label>Message</Form.Label>
+
+        <Form.Control>
+          <Textarea
+            className='h-28 resize-y'
+            placeholder='👋 Hey there! I would love to team up and build awesome projects with you.'
+          />
+        </Form.Control>
+
+        <Form.Description>Your message.</Form.Description>
+
+        <Form.Message />
+      </Form.Field>
+
+      <Form.Submit asChild>
+        <MagneticButton
+          className='place-self-center max-sm:aspect-auto max-sm:px-6'
+          id='submit-btn'
+        >
+          <PaperPlaneIcon
+            aria-hidden
+            className='h-[30%] w-[30%] translate-x-px -rotate-45 scale-90 max-sm:hidden'
+          />
+
+          <span className='sm:sr-only'>Submit</span>
+        </MagneticButton>
+      </Form.Submit>
+    </ClientForm>
+  );
+};
+
+export default ContactForm;
