@@ -22,7 +22,7 @@ const TextRing = ({ text, side = 1.15, className, style, ...props }) => {
       {text.split('').map((char, i) => (
         <span
           aria-hidden
-          className='absolute -translate-y-[calc(var(--radius)*var(--side))] rotate-[calc(360deg/var(--total-chars)*var(--char-idx))] [transform:rotate(var(--tw-rotate))translate(var(--tw-translate-x),var(--tw-translate-y))skewX(var(--tw-skew-x))skewY(var(--tw-skew-y))scaleX(var(--tw-scale-x))scaleY(var(--tw-scale-y))]'
+          className='absolute -translate-y-[var(--radius)*var(--side)] rotate-[calc(360deg/var(--total-chars)*var(--char-idx))] [transform:rotate(var(--tw-rotate))translate(var(--tw-translate-x),var(--tw-translate-y))skewX(var(--tw-skew-x))skewY(var(--tw-skew-y))scaleX(var(--tw-scale-x))scaleY(var(--tw-scale-y))]'
           key={i}
           style={{
             '--char-idx': i,
