@@ -46,6 +46,7 @@
     "date-fns": "^2.30.0",
     "detect-it": "^4.0.1",
     "framer-motion": "^10.16.4",
+    "geist": "^1.2.0",
     "next": "13.4.19",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
@@ -74,5 +75,6 @@
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
     "tailwindcss": "^3.3.3"
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }
