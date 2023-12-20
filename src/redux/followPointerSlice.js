@@ -9,14 +9,32 @@ const followPointerSlice = createSlice({
   initialState,
   reducers: {
     showFollowPointer: (state, { payload }) => {
-      const isShowing = state.showList.find((id) => id === payload.id);
+      const show = (id) => {
+        if (id) {
+          const isShowing = state.showList.includes(id);
 
-      if (payload.id && !isShowing) state.showList.push(payload.id);
+          if (!isShowing) state.showList.push(id);
+        }
+      };
+
+      if (typeof payload.id === 'object') {
+        payload.id.map(show);
+      } else {
+        show(payload.id);
+      }
     },
     hideFollowPointer: (state, { payload }) => {
-      const idx = state.showList.findIndex((id) => id === payload.id);
+      const hide = (id) => {
+        const idx = state.showList.findIndex((showingId) => showingId === id);
 
-      if (idx >= 0) state.showList.splice(idx, 1);
+        if (idx >= 0) state.showList.splice(idx, 1);
+      };
+
+      if (typeof payload.id === 'object') {
+        payload.id.map(hide);
+      } else {
+        hide(payload.id);
+      }
     },
   },
 });
