@@ -3,7 +3,7 @@ import { PlusIcon } from '@radix-ui/react-icons';
 import {
   ChangeTheme,
   ListHorizontalScroll,
-  ListProjects,
+  Projects,
   ScrollTitle,
   Section,
   TextScrollAnimation,
@@ -38,18 +38,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
           Selected work
         </Text.Small>
 
-        <ListProjects
-          className='w-full'
-          images={selectedProjects.map(({ img }) => img)}
-        >
-          {selectedProjects.map((project, i) => (
-            <ListProjects.Item
-              index={i}
-              key={project.href}
-              {...project}
-            />
-          ))}
-        </ListProjects>
+        <ShowProjects />
       </div>
 
       <MagneticButton
@@ -81,6 +70,43 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
         <span />
       </ChangeTheme>
     </Section>
+  );
+};
+
+const ShowProjects = () => {
+  const projects = selectedProjects.reduce(
+    (obj, { img, ...data }) => ({
+      data: [...obj.data, data],
+      images: [...obj.images, img],
+    }),
+    { data: [], images: [] },
+  );
+
+  return (
+    <Projects
+      className='w-full'
+      images={projects.images}
+    >
+      <Projects.List className='max-sm:hidden'>
+        {projects.data.map((project, i) => (
+          <Projects.List.Item
+            data={project}
+            index={i}
+            key={'projects-list-' + project.href}
+          />
+        ))}
+      </Projects.List>
+
+      <Projects.Grid className='sm:hidden'>
+        {projects.data.map((project, i) => (
+          <Projects.Grid.Item
+            data={project}
+            index={i}
+            key={'projects-grid-' + project.href}
+          />
+        ))}
+      </Projects.Grid>
+    </Projects>
   );
 };
 
