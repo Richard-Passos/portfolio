@@ -5,19 +5,13 @@ const Root = ({ className, ...props }) => {
   return (
     <Link
       className={cn(
-        'flex-col items-start text-xl font-semibold uppercase leading-none no-underline',
+        'gap-2 text-xl font-semibold uppercase no-underline',
         className,
       )}
       href='/'
       {...props}
     >
-      <span className='flex items-center gap-2'>
-        Richard <span className='h-px w-[1.125em] bg-current transition-bg' />
-      </span>
-
-      <span className='ml-auto'>
-        <span className='ml-[.75em]'>Passos</span>
-      </span>
+      R <span className='h-[.1em] w-[1.5em] bg-current transition-bg' /> P
     </Link>
   );
 };
