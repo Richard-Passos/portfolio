@@ -1,12 +1,10 @@
 import { LocalTime, Section } from '@/components';
 import { SocialNavItem } from '@/components/social-nav';
 import { Link, Separator, Text } from '@/components/ui';
-import { availabilityMessage, email, name, socialMedias } from '@/constants';
+import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
 import Services from './Services';
-
-
 import Form from './form';
 
 const ContactView = ({ className, ...props }) => {
@@ -39,9 +37,9 @@ const ContactView = ({ className, ...props }) => {
 
               <Link
                 className='h-10 rounded-sm px-2'
-                href={`mailto:${email}?subject=👋 Hey ${name.split(' ')[0]}, I'd like to hire you!`}
+                href={`mailto:${personalInfo.email}?subject=👋 Hey ${personalInfo.name.first}, I'd like to hire you!`}
               >
-                {email}
+                {personalInfo.email}
               </Link>
             </li>
 
@@ -51,7 +49,7 @@ const ContactView = ({ className, ...props }) => {
               </Text.Subtitle>
 
               <nav className='flex gap-3'>
-                {socialMedias.map((socialMedia) => (
+                {personalInfo.socials.map((socialMedia) => (
                   <SocialNavItem
                     key={socialMedia.href}
                     {...socialMedia}
@@ -80,7 +78,7 @@ const ContactView = ({ className, ...props }) => {
                 Availability
               </Text.Subtitle>
 
-              <Text>{availabilityMessage}</Text>
+              <Text>{personalInfo.availabilityMessage}</Text>
             </li>
 
             <li className='space-y-1.5 rounded-md border bg-main p-5 transition-bg'>
@@ -88,7 +86,9 @@ const ContactView = ({ className, ...props }) => {
                 Location
               </Text.Subtitle>
 
-              <Text>Brazil, RS</Text>
+              <Text>
+                {personalInfo.location.country}, {personalInfo.location.state}
+              </Text>
             </li>
 
             <li className='space-y-1.5 rounded-md border bg-main p-5 transition-bg'>
@@ -103,7 +103,7 @@ const ContactView = ({ className, ...props }) => {
           </ul>
         </div>
 
-        <Services/>
+        <Services />
       </main>
     </Section>
   );
