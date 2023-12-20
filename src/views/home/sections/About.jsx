@@ -10,7 +10,7 @@ import {
   Section,
 } from '@/components';
 import { Badge, Link, Svg, Text } from '@/components/ui';
-import { selectedSkills } from '@/constants';
+import { aboutText, personalInfo, selectedSkills } from '@/constants';
 import { cn } from '@/utils';
 
 const HomeAboutSection = ({ className, theme, ...props }) => {
@@ -56,17 +56,17 @@ const Grid = ({ className, ...props }) => {
         </Badge>
 
         <Text>
-          <Svg.HandHorns className='inline-block h-4 w-4 -translate-y-0.5' /> Hi
-          — I&apos;m Richard Passos, a full stack developer based in Brazil.
-          When I&apos;m not coding, you can catch me in the gaming world —
-          I&apos;m a huge fan, especially when it comes to rogue-like games.
+          <Svg.HandHorns className='inline-block h-4 w-4 -translate-y-0.5' />{' '}
+          {aboutText}
         </Text>
       </BentoGrid.Item>
 
       <BentoGrid.Item className='justify-between [grid-area:item-2]'>
         <GlobeIcon className='h-8 w-8' />
 
-        <Text className='text-4xl'>Based in Brazil, GMT-3</Text>
+        <Text className='text-4xl'>
+          Based in {personalInfo.location.country}, {personalInfo.location.gmt}
+        </Text>
       </BentoGrid.Item>
 
       <BentoGrid.Item className='items-center justify-around [grid-area:item-3]'>
@@ -120,7 +120,7 @@ const Grid = ({ className, ...props }) => {
       <BentoGrid.Item className='border-none p-0 text-center [grid-area:item-7]'>
         <Link
           className='group flex h-full w-full flex-col gap-1.5 rounded-inherit border p-5 no-underline transition-colors hover:border-transparent hover:bg-content/10'
-          href='https://www.buymeacoffee.com/richardp.dev'
+          href={personalInfo.buyMeACoffeHref}
         >
           <div className='mb-3 flex aspect-square h-10 items-center justify-center rounded-sm border transition-colors group-hover:border-transparent group-hover:bg-content/20'>
             <Svg.Coffee className='h-6 w-6' />
