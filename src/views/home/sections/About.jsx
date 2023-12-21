@@ -22,7 +22,7 @@ const HomeAboutSection = ({ className, theme, ...props }) => {
       )}
       {...props}
     >
-      <h2 className='flex flex-col'>
+      <h2 className='flex w-full flex-col'>
         <ScrollTitle title='ABOUT' />
         <ScrollTitle
           dir='toLeft'
@@ -155,7 +155,7 @@ const ListContactPage = ({ className, ...props }) => {
       <ListHorizontalScroll>
         {content.map((content, i) => (
           <ListHorizontalScroll.Item
-            baseVelocity={i % 2 === 1 ? 3 : -3}
+            baseVelocity={i % 2 === 1 ? 2 : -2}
             className='[--gap:theme(spacing.8)] odd:rotate-[.5deg] even:-rotate-[.5deg]'
             key={content}
           >
