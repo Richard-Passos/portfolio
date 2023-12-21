@@ -7,7 +7,8 @@ import { cn } from '@/utils';
 
 import { CursorLink } from '../../link';
 import ScrollAnimation from '../../scroll-animation';
-import { Badge, Image, Text } from '../../ui';
+import { Badge, Image } from '../../ui';
+import Title from './Title';
 
 const ANIMATION_OFFSET = ['-.25 1', '0 1'];
 
@@ -35,7 +36,7 @@ const ProjectsGridItem = ({ index, className, style, data, ...props }) => {
   return (
     <li
       className={cn(
-        'relative flex w-full flex-col gap-6 max-sm:items-center max-sm:text-center sm:w-[calc(50%_-_var(--gap)/2)] sm:even:ml-auto sm:first:[&:not(:first-child)>*]:-mt-[37.5%]',
+        'w-full space-y-6 sm:w-[calc(50%_-_var(--gap)/2)] sm:even:ml-auto sm:first:[&:not(:first-child)>*]:-mt-[45%]',
         className,
       )}
       style={{
@@ -49,7 +50,7 @@ const ProjectsGridItem = ({ index, className, style, data, ...props }) => {
         smoothConfig={{ stiffness: 50 }}
       >
         <CursorLink
-          className='aspect-square w-full overflow-hidden rounded-lg bg-muted'
+          className='group relative aspect-square w-full overflow-hidden rounded-lg bg-muted'
           href={data.href}
         >
           <ScrollAnimation
@@ -58,32 +59,30 @@ const ProjectsGridItem = ({ index, className, style, data, ...props }) => {
           >
             {/* eslint-disable-next-line jsx-a11y/alt-text */}
             <Image
-              className='h-full w-full object-cover [clip-path:inset(0_0_calc(var(--clip-path)*100%)_0)]'
+              className='h-full w-full object-cover transition-transform duration-300 [clip-path:inset(0_0_calc(var(--clip-path)*100%)_0)] group-hover:scale-105'
               {...img}
             />
           </ScrollAnimation>
+
+          <span className='pointer-events-none absolute inset-0 bg-main/75 opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100' />
+
+          <Title text={data.title} />
         </CursorLink>
       </ScrollAnimation.Transform>
 
-      <section className='ml-2 flex flex-col gap-2 max-sm:items-center'>
-        <Text.Subtitle className='text-3xl uppercase'>
-          {data.title}
-        </Text.Subtitle>
-
-        <div className='flex flex-wrap gap-1.5'>
-          {data.roles
-            .sort((a, b) => a.localeCompare(b))
-            .map((role) => (
-              <Badge
-                className='lowercase [--variant:--muted-c]'
-                key={role}
-                variants={{ style: 'outline' }}
-              >
-                {role}
-              </Badge>
-            ))}
-        </div>
-      </section>
+      <div className='flex flex-wrap gap-1.5'>
+        {data.roles
+          .sort((a, b) => a.localeCompare(b))
+          .map((role) => (
+            <Badge
+              className='lowercase [--variant:--muted-c]'
+              key={role}
+              variants={{ style: 'outline' }}
+            >
+              {role}
+            </Badge>
+          ))}
+      </div>
     </li>
   );
 };
