@@ -11,7 +11,7 @@ const FormField = ({ name, className, ...props }, ref) => {
   return (
     <FormFieldContext.Provider value={{ id, name }}>
       <section
-        className={cn('flex flex-col gap-3', className)}
+        className={cn('flex flex-col', className)}
         ref={ref}
         {...props}
       />
