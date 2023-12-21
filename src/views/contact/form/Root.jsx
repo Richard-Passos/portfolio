@@ -9,7 +9,7 @@ import ClientForm from './Client';
 const ContactForm = ({ className, ...props }) => {
   return (
     <ClientForm
-      className={cn('grid gap-x-6 gap-y-4 space-y-0 sm:grid-cols-4', className)}
+      className={cn('grid gap-x-6 gap-y-4 h-fit space-y-0 sm:grid-cols-4', className)}
       {...props}
     >
       <Form.Field
@@ -19,10 +19,7 @@ const ContactForm = ({ className, ...props }) => {
         <Form.Label>Name</Form.Label>
 
         <Form.Control>
-          <Input
-            className='h-14'
-            placeholder='John Doe'
-          />
+          <Input placeholder='John Doe' />
         </Form.Control>
 
         <Form.Description>Your name.</Form.Description>
@@ -37,13 +34,27 @@ const ContactForm = ({ className, ...props }) => {
         <Form.Label>Email</Form.Label>
 
         <Form.Control>
-          <Input
-            className='h-14'
-            placeholder='johndoe@example.com'
-          />
+          <Input placeholder='johndoe@example.com' />
         </Form.Control>
 
         <Form.Description>Your professional email.</Form.Description>
+
+        <Form.Message />
+      </Form.Field>
+
+      <Form.Field
+        className='sm:col-span-full'
+        name='subject'
+      >
+        <Form.Label>
+          Subject <span className='text-xs text-muted-content'>(optional)</span>
+        </Form.Label>
+
+        <Form.Control>
+          <Input placeholder='I wanna hire you!' />
+        </Form.Control>
+
+        <Form.Description>Subject you wanna talk about.</Form.Description>
 
         <Form.Message />
       </Form.Field>
@@ -56,7 +67,7 @@ const ContactForm = ({ className, ...props }) => {
 
         <Form.Control>
           <Textarea
-            className='h-28 resize-y'
+            className='resize-y'
             placeholder='👋 Hey there! I would love to team up and build awesome projects with you.'
           />
         </Form.Control>
@@ -67,10 +78,7 @@ const ContactForm = ({ className, ...props }) => {
       </Form.Field>
 
       <Form.Submit asChild>
-        <MagneticButton
-          className='place-self-center max-sm:aspect-auto max-sm:px-6'
-          id='submit-btn'
-        >
+        <MagneticButton className='place-self-center max-sm:aspect-auto max-sm:px-6'>
           <PaperPlaneIcon
             aria-hidden
             className='h-[30%] w-[30%] translate-x-px -rotate-45 scale-90 max-sm:hidden'
