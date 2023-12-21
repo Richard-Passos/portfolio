@@ -6,7 +6,7 @@ import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
 const ProjectsShow = ({ className, ...props }) => {
-  const [data, setData] = useState({ role: 'all', type: 'list' });
+  const [data, setData] = useState({ role: undefined, type: 'list' });
 
   const handleSetData = (id, content) =>
     setData((data) => ({ ...data, [id]: content }));
