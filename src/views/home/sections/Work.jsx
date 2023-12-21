@@ -22,7 +22,13 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
       )}
       {...props}
     >
-      <ScrollTitle title='WORK' />
+      <h2 className='flex flex-col'>
+        <ScrollTitle title='ABOUT' />
+        <ScrollTitle
+          dir='toLeft'
+          title='WORK'
+        />
+      </h2>
 
       <div className='w-[90%] max-w-screen-xl'>
         <Text className='max-w-xl text-xl sm:ml-auto md:text-2xl'>
