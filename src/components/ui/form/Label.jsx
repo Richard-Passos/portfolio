@@ -12,7 +12,7 @@ const FormLabel = ({ className, ...props }, ref) => {
 
   return (
     <Label
-      className={cn(error && 'text-danger', className)}
+      className={cn('w-fit translate-x-4 translate-y-1/2 bg-main px-2.5 transition-colors', error && 'text-danger', className)}
       htmlFor={id}
       ref={ref}
       {...props}
