@@ -1,7 +1,8 @@
 'use client';
 
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import { forwardRef, useRef } from 'react';
 
+import { useGetNumberOfSiblings } from '@/hooks';
 import { cn } from '@/utils';
 
 const InfinityScroll = ({
@@ -14,37 +15,12 @@ const InfinityScroll = ({
   const containerRef = useRef(null),
     childrenRef = useRef(null);
 
-  const [numberOfSiblings, setNumberOfSiblings] = useState(0);
-
-  useEffect(() => {
-    const handleSetNumberOfSiblings = () => {
-      if (containerRef.current && childrenRef.current) {
-        const containerWidth =
-            containerRef.current.getBoundingClientRect().width,
-          childrenWidht = childrenRef.current.getBoundingClientRect().width;
-
-        const numberOfChildren = Math.round(
-          (containerWidth * 2) / childrenWidht,
-        );
-
-        setNumberOfSiblings(
-          Math.max(
-            numberOfChildren % 2 === 0
-              ? numberOfChildren - 1
-              : numberOfChildren,
-            1,
-          ),
-        );
-      }
-    };
-
-    handleSetNumberOfSiblings();
-
-    window.addEventListener('resize', handleSetNumberOfSiblings);
-
-    return () =>
-      window.removeEventListener('resize', handleSetNumberOfSiblings);
-  }, []);
+  const numberOfSiblings = useGetNumberOfSiblings(
+    containerRef,
+    childrenRef,
+    2,
+    true,
+  );
 
   const Tag = as ?? 'div';
 
@@ -86,7 +62,7 @@ const InfinityScroll = ({
   );
 };
 
-const InfinityScrollChildren = forwardRef(({className, ...props}, ref) => {
+const InfinityScrollChildren = forwardRef(({ className, ...props }, ref) => {
   return (
     <div
       className={cn('flex items-center gap-[--gap]', className)}
