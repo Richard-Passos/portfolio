@@ -8,7 +8,7 @@ import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
 const ProjectsShowContent = ({ className, ...props }) => {
-  const { type = 'list', role = 'all' } = useContext(ProjectsShowContext);
+  const { type = 'list', role } = useContext(ProjectsShowContext);
 
   const projectsObj = projects.reduce(
     (obj, project) => getByRole(role, obj, project),
@@ -53,7 +53,7 @@ const ProjectsShowContent = ({ className, ...props }) => {
 
 const getByRole = (role, obj1, { img, ...data }) => {
   const isValid =
-    role === 'all'
+    role === 'all' || role === undefined
       ? true
       : !!data.roles.find((data) => data.toLowerCase() === role.toLowerCase());
 
