@@ -22,7 +22,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
       )}
       {...props}
     >
-      <h2 className='flex flex-col'>
+      <h2 className='flex w-full flex-col'>
         <ScrollTitle title='ABOUT' />
         <ScrollTitle
           dir='toLeft'
@@ -130,7 +130,7 @@ const ListWorkPage = ({ className, ...props }) => {
       <ListHorizontalScroll>
         {content.map((content, i) => (
           <ListHorizontalScroll.Item
-            baseVelocity={i % 2 === 0 ? 3 : -3}
+            baseVelocity={i % 2 === 0 ? 2 : -2}
             className='[--gap:theme(spacing.8)]'
             key={content}
           >
