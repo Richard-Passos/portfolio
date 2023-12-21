@@ -1,6 +1,6 @@
 import { LocalTime, Section } from '@/components';
 import { SocialNavItem } from '@/components/social-nav';
-import { Link, Separator, Text } from '@/components/ui';
+import { Link, Text } from '@/components/ui';
 import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
@@ -12,14 +12,14 @@ const ContactView = ({ className, ...props }) => {
     <Section
       asChild
       className={cn(
-        'mx-auto flex max-w-bounds flex-col items-center gap-lg py-28 2xl:h-auto 2xl:max-h-none',
+        'mx-auto flex max-w-bounds flex-col items-center gap-lg py-[min(28vh,theme(spacing.28))] 2xl:h-auto 2xl:max-h-none',
         className,
       )}
       theme='dark'
       {...props}
     >
       <main>
-        <div className='flex items-center justify-between gap-10 max-md:flex-col sm:gap-14 md:w-[90%] md:items-end'>
+        <div className='w-[90%] space-y-3.5'>
           <Text.Title
             asChild
             className='text-[14vw] font-bold uppercase leading-none md:text-[min(10vw,8rem)]'
@@ -29,78 +29,83 @@ const ContactView = ({ className, ...props }) => {
             </h1>
           </Text.Title>
 
-          <ul className='flex flex-wrap-reverse gap-x-12 gap-y-6'>
-            <li className='space-y-1.5'>
-              <Text.Subtitle className='text-xs uppercase text-muted-content'>
-                Email
-              </Text.Subtitle>
-
-              <Link
-                className='h-10 rounded-sm px-2'
-                href={`mailto:${personalInfo.email}?subject=👋 Hey ${personalInfo.name.first}, I'd like to hire you!`}
-              >
-                {personalInfo.email}
-              </Link>
-            </li>
-
-            <li className='space-y-1.5'>
-              <Text.Subtitle className='text-xs uppercase text-muted-content'>
-                Socials
-              </Text.Subtitle>
-
-              <nav className='flex gap-3'>
-                {personalInfo.socials.map((socialMedia) => (
-                  <SocialNavItem
-                    key={socialMedia.href}
-                    {...socialMedia}
-                  />
-                ))}
-              </nav>
-            </li>
-          </ul>
+          <Text className='max-w-screen-sm text-muted-content'>
+            Fell free to reach me out — even if it is for a chat, build a
+            project, or even hire me.
+          </Text>
         </div>
 
-        <Separator />
+        <div className='flex w-[90%] justify-between gap-md max-md:flex-col'>
+          <div className='grow space-y-8'>
+            <ul className='flex flex-wrap-reverse gap-x-12 gap-y-6'>
+              <li className='space-y-1.5'>
+                <Text.Subtitle className='text-xs uppercase text-muted-content'>
+                  Email
+                </Text.Subtitle>
 
-        <div className='flex justify-between gap-x-10 gap-y-20 max-md:flex-col max-md:items-center sm:gap-14 md:w-[90%]'>
-          <div className='w-fit space-y-12'>
-            <Text>
+                <Link
+                  className='h-10 rounded-sm px-2'
+                  href={`mailto:${personalInfo.email}?subject=👋 Hey ${personalInfo.name.first}, I'd like to hire you!`}
+                >
+                  {personalInfo.email}
+                </Link>
+              </li>
+
+              <li className='space-y-1.5'>
+                <Text.Subtitle className='text-xs uppercase text-muted-content'>
+                  Socials
+                </Text.Subtitle>
+
+                <nav className='flex gap-3'>
+                  {personalInfo.socials.map((socialMedia) => (
+                    <SocialNavItem
+                      key={socialMedia.href}
+                      {...socialMedia}
+                    />
+                  ))}
+                </nav>
+              </li>
+            </ul>
+
+            <ul className='grid h-fit w-full gap-6 sm:max-md:grid-cols-3'>
+              <li className='space-y-1.5 rounded-md border bg-main p-5 transition-bg'>
+                <Text.Subtitle className='text-xs uppercase text-muted-content'>
+                  Availability
+                </Text.Subtitle>
+
+                <Text>{personalInfo.availabilityMessage}</Text>
+              </li>
+
+              <li className='space-y-1.5 rounded-md border bg-main p-5 transition-bg'>
+                <Text.Subtitle className='text-xs uppercase text-muted-content'>
+                  Location
+                </Text.Subtitle>
+
+                <Text>
+                  {personalInfo.location.country}, {personalInfo.location.state}
+                </Text>
+              </li>
+
+              <li className='space-y-1.5 rounded-md border bg-main p-5 transition-bg'>
+                <Text.Subtitle className='text-xs uppercase text-muted-content'>
+                  Local time
+                </Text.Subtitle>
+
+                <Text>
+                  <LocalTime />
+                </Text>
+              </li>
+            </ul>
+          </div>
+
+          <div className='grow-[2] space-y-8'>
+            <Text className='text-sm text-muted-content'>
               Fill up the form with your info to contact me. I&apos;ll return
               immediately (except when I don&apos;t)
             </Text>
 
             <Form />
           </div>
-
-          <ul className='grid h-fit w-full gap-6 sm:max-md:grid-cols-3 md:max-w-[25%]'>
-            <li className='space-y-1.5 rounded-md border bg-main p-5 transition-bg'>
-              <Text.Subtitle className='text-xs uppercase text-muted-content'>
-                Availability
-              </Text.Subtitle>
-
-              <Text>{personalInfo.availabilityMessage}</Text>
-            </li>
-
-            <li className='space-y-1.5 rounded-md border bg-main p-5 transition-bg'>
-              <Text.Subtitle className='text-xs uppercase text-muted-content'>
-                Location
-              </Text.Subtitle>
-
-              <Text>
-                {personalInfo.location.country}, {personalInfo.location.state}
-              </Text>
-            </li>
-
-            <li className='space-y-1.5 rounded-md border bg-main p-5 transition-bg'>
-              <Text.Subtitle className='text-xs uppercase text-muted-content'>
-                Local time
-              </Text.Subtitle>
-
-              <Text>
-                <LocalTime />
-              </Text>
-            </li>
-          </ul>
         </div>
 
         <Services />
