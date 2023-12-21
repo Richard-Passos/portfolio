@@ -10,7 +10,8 @@ import { capitalize } from '@/utils';
 
 const contactFormClientSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
-  email: z.string().email('Email adress looks a bit weird'),
+  email: z.string().email('Email adress looks a bit weird.'),
+  subject: z.string().optional(),
   message: z.string().min(2, 'Message must be at least 2 characters.'),
 });
 
