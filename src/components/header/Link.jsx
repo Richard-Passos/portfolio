@@ -26,7 +26,7 @@ const HeaderLink = ({ isActive, className, children, ...props }) => {
         {isActive && (
           <motion.span
             className={cn('absolute inset-0 -z-10 rounded-inherit bg-muted')}
-            layoutId='HeaderLinkActiveIndicator'
+            layoutId='headerLinkActiveIndicator'
             transition={{
               type: 'spring',
               ...smoothConfig,
