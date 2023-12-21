@@ -22,7 +22,13 @@ const HomeAboutSection = ({ className, theme, ...props }) => {
       )}
       {...props}
     >
-      <ScrollTitle title='ABOUT' />
+      <h2 className='flex flex-col'>
+        <ScrollTitle title='ABOUT' />
+        <ScrollTitle
+          dir='toLeft'
+          title='ME'
+        />
+      </h2>
 
       <Grid />
 
