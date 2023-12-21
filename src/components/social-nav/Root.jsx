@@ -18,7 +18,7 @@ const SocialNav = ({ className, children, ...props }) => {
         tabIndex={-1}
         variants={{ color: 'inverted', style: 'transparent', size: 'sm' }}
       >
-        Get in touch{' '}
+        Socials{' '}
         <IconButton.Icon>
           <Link2Icon />
         </IconButton.Icon>
