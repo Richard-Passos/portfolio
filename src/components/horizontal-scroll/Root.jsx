@@ -9,8 +9,9 @@ import {
   useVelocity,
   wrap,
 } from 'framer-motion';
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import { forwardRef, useRef } from 'react';
 
+import { useGetNumberOfSiblings } from '@/hooks';
 import { cn, setRefs } from '@/utils';
 
 const HorizontalScroll = (
@@ -27,7 +28,12 @@ const HorizontalScroll = (
   const containerRef = useRef(null),
     childrenRef = useRef(null);
 
-  const [numberOfSiblings, setNumberOfSiblings] = useState(0);
+  const numberOfSiblings = useGetNumberOfSiblings(
+    containerRef,
+    childrenRef,
+    2,
+    true,
+  );
 
   const x = useTransform(baseX, (v) => wrap(-50, 0, v) + '%');
 
@@ -35,46 +41,12 @@ const HorizontalScroll = (
   useAnimationFrame((_, delta) => {
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
-    if (velocityFactor.get() < 0) {
-      directionFactor.current = -1;
-    } else if (velocityFactor.get() > 0) {
-      directionFactor.current = 1;
-    }
+    directionFactor.current = velocityFactor.get() < 0 ? -1 : 1;
 
     moveBy += directionFactor.current * moveBy * velocityFactor.get();
 
     baseX.set(baseX.get() + moveBy);
   });
-
-  useEffect(() => {
-    const handleSetNumberOfSiblings = () => {
-      if (containerRef.current && childrenRef.current) {
-        const containerWidth =
-            containerRef.current.getBoundingClientRect().width,
-          childrenWidht = childrenRef.current.getBoundingClientRect().width;
-
-        const numberOfChildren = Math.round(
-          (containerWidth * 2) / childrenWidht,
-        );
-
-        setNumberOfSiblings(
-          Math.max(
-            numberOfChildren % 2 === 0
-              ? numberOfChildren - 1
-              : numberOfChildren,
-            1,
-          ),
-        );
-      }
-    };
-
-    handleSetNumberOfSiblings();
-
-    window.addEventListener('resize', handleSetNumberOfSiblings);
-
-    return () =>
-      window.removeEventListener('resize', handleSetNumberOfSiblings);
-  }, []);
 
   return (
     <div
