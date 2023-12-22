@@ -17,7 +17,7 @@ const FooterOverlay = ({ className, ...props }) => {
   return (
     <ScrollAnimation
       className={cn(
-        'pointer-events-none absolute inset-0 z-10 max-h-screen',
+        'pointer-events-none absolute inset-y-0 z-10 max-h-screen w-screen',
         className,
       )}
       config={animationConfig}
