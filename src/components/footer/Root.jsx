@@ -13,7 +13,7 @@ const Footer = ({ className, ...props }) => {
     <Section
       asChild
       className={cn(
-        'relative mx-auto max-w-bounds overflow-hidden pt-24 2xl:h-auto 2xl:max-h-none',
+        'relative mx-auto flex max-w-bounds flex-col items-center overflow-y-clip pt-24 2xl:h-auto 2xl:max-h-none',
         className,
       )}
       {...props}
@@ -27,7 +27,7 @@ const Footer = ({ className, ...props }) => {
 
         <span
           className={cn(
-            'absolute inset-0 top-24 -z-10 overflow-hidden bg-main',
+            'absolute bottom-0 top-24 -z-10 w-screen bg-main transition-bg',
             CONTENT_THEME,
           )}
         />
