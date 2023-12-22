@@ -40,7 +40,7 @@ const FooterContent = ({ className, ...props }) => {
           <Logo className='ml-12 mr-auto' />
 
           <div className='relative flex w-[90%] max-w-screen-xl flex-col items-center gap-4'>
-            <Text className='text-muted-content'>
+            <Text className='text-center text-muted-content'>
               let me take you further than you&apos;ve ever been
             </Text>
 
@@ -55,7 +55,7 @@ const FooterContent = ({ className, ...props }) => {
                 isLink
                 variants={{ size: 'lg' }}
               >
-                Contact me
+                Get in <br /> touch
               </MagneticButton>
             </div>
           </div>
