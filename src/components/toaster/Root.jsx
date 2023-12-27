@@ -4,7 +4,8 @@ import { Cross2Icon } from '@radix-ui/react-icons';
 import { useState } from 'react';
 
 import { Timerbar, Toast } from '@/components/ui';
-import { TOAST_DURATION, useToast } from '@/hooks';
+import { useToast } from '@/hooks';
+import { TOAST_DURATION } from '@/hooks/useToast';
 import { cn } from '@/utils';
 
 const Toaster = () => {
