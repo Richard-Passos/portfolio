@@ -26,7 +26,7 @@ const ProjectsShowRoles = ({ className, ...props }) => {
         isFunctionThanCall(props.onValueChange, val);
       }}
     >
-      <Select.Trigger className={cn('max-w-xs', className)}>
+      <Select.Trigger className={cn('h-10 max-w-xs', className)}>
         <Select.Value placeholder='Select a role...' />
 
         <Select.Icon
@@ -41,12 +41,12 @@ const ProjectsShowRoles = ({ className, ...props }) => {
         <Select.Content>
           <Select.Viewport>
             {ROLES.map((role) => (
-              <SelectItem
+              <ProjectsShowRolesSelectItem
                 key={role}
                 value={role.toLowerCase()}
               >
                 {role}
-              </SelectItem>
+              </ProjectsShowRolesSelectItem>
             ))}
           </Select.Viewport>
 
@@ -63,7 +63,7 @@ const ProjectsShowRoles = ({ className, ...props }) => {
   );
 };
 
-const SelectItem = ({ className, children, ...props }) => {
+const ProjectsShowRolesSelectItem = ({ className, children, ...props }) => {
   return (
     <Select.Item
       className={cn('lowercase', className)}
