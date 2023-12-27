@@ -8,7 +8,7 @@ const GET = async (req) => {
   let log = 'GET';
   try {
     log += ' TRY';
-    const page = req.nextUrl.searchParams.get('page') || 1;
+    const page = 1;
     log += ` ${page}`;
 
     log += ` ${JSON.stringify(projects)}`;
