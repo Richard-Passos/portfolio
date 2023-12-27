@@ -52,10 +52,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
         href='/projects'
         isLink
       >
-        <PlusIcon
-          aria-hidden
-          className='h-1/2 w-1/2'
-        />
+        <PlusIcon aria-hidden />
 
         <span className='sr-only'>More projects</span>
       </MagneticButton>
