@@ -23,14 +23,12 @@ const GET = async (req) => {
       results,
       totalPages: Math.ceil(totalResults / RES_PER_PAGE),
       totalResults,
-      log,
     });
   } catch {
     return NextResponse.json({
       status: 400,
       message: 'Failed to fetch data.',
       results: [],
-      log,
     });
   }
 };
