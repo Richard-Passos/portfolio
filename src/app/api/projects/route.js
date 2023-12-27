@@ -6,13 +6,13 @@ const RES_PER_PAGE = 5;
 
 const GET = async (req) => {
   let log = '';
-  log += ` ${req.url}`;
+  log += `- req.url - ${req.url}`;
   try {
     const { searchParams } = new URL(req.url);
-    log += ` ${searchParams}`;
+    log += `- searchParams - ${searchParams}`;
 
     const page = searchParams.get('page') || 1;
-    log += ` ${page}`;
+    log += `- page - ${page}`;
 
     const results = projects.slice(
         (page - 1) * RES_PER_PAGE,
