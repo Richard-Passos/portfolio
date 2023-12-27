@@ -9,6 +9,7 @@ const GET = async (req) => {
   log += ` ${req.url}`;
   try {
     const { searchParams } = new URL(req.url);
+    log += ` ${searchParams}`;
 
     const page = searchParams.get('page') || 1;
     log += ` ${page}`;
