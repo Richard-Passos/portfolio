@@ -38,10 +38,7 @@ const ProjectsView = async ({ className, ...props }) => {
         <Show.Content initialData={projects} />
 
         <Show.LoadMore>
-          <PlusIcon
-            aria-hidden
-            className='h-[40%] w-[40%]'
-          />
+          <PlusIcon aria-hidden />
 
           <span className='sr-only'>More projects</span>
         </Show.LoadMore>
