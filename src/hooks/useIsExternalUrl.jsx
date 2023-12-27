@@ -6,7 +6,7 @@ const useIsExternalUrl = (url) => {
   const [isExternal, setIsExternal] = useState(false);
 
   useEffect(() => {
-    setIsExternal(isExternalUrl(url));
+    url && setIsExternal(isExternalUrl(url));
   }, [url]);
 
   return isExternal;
