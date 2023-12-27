@@ -5,18 +5,18 @@ import { projects } from '@/constants';
 const RES_PER_PAGE = 5;
 
 const GET = async (req) => {
-  console.log('GET');
+  let log = 'GET';
   try {
-    console.log('GET TRY');
+    log += ' TRY';
     const page = req.nextUrl.searchParams.get('page') || 1;
-    console.log('-  page   -', page);
+    log += ' ' + page;
 
     const results = projects.slice(
         (page - 1) * RES_PER_PAGE,
         page * RES_PER_PAGE,
       ),
       totalResults = projects.length;
-    console.log('-  results   -', results);
+    log += ' ' + JSON.stringify(results);
 
     return NextResponse.json({
       status: 200,
