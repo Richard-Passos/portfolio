@@ -18,9 +18,9 @@ const iconButtonStyles = {
       'bg-transparent hover:bg-transparent text-variant [--svg-color:hsl(var(--variant-c))]',
   },
   iconButtonSizes = {
-    sm: 'gap-x-2',
-    md: 'gap-x-4',
-    lg: 'gap-x-6',
+    sm: 'gap-x-4',
+    md: 'gap-x-6',
+    lg: 'gap-x-8',
   };
 
 const iconButtonVariants = cnv({
