@@ -37,7 +37,6 @@ const ProjectsShowTypes = ({ className, ...props }) => {
         >
           <Icon
             aria-hidden
-            className='h-[35%] w-[35%]'
             name={icon}
           />
         </MagneticButton>
