@@ -9,10 +9,11 @@ import { Form, FormProvider } from '@/components/ui/form';
 import { capitalize } from '@/utils';
 
 const contactFormClientSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters.'),
+  name: z.string().min(2, "Please, that can't be your name."),
   email: z.string().email('Email adress looks a bit weird.'),
+  service: z.string().optional(),
   subject: z.string().optional(),
-  message: z.string().min(2, 'Message must be at least 2 characters.'),
+  message: z.string().min(2, 'Come on... you can do better than that.'),
 });
 
 const ContactFormClient = (props) => {
@@ -21,6 +22,8 @@ const ContactFormClient = (props) => {
     defaultValues: {
       name: '',
       email: '',
+      service: '',
+      subject: '',
       message: '',
     },
   });
