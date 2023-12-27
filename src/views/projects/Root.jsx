@@ -10,8 +10,8 @@ import Show from './show';
 const PROJECTS_VIEW_THEME = 'dark';
 
 const ProjectsView = async ({ className, ...props }) => {
-  /*   const projects = (await getProjects()).results;
-   */
+  const projects = (await getProjects()).results;
+
   return (
     <main
       className={cn(
@@ -35,7 +35,7 @@ const ProjectsView = async ({ className, ...props }) => {
           <Show.Roles /> <Show.Types />
         </div>
 
-        <Show.Content initialData={[]} />
+        <Show.Content initialData={projects} />
 
         <Show.LoadMore>
           <PlusIcon
