@@ -41,7 +41,7 @@ const FooterContent = ({ className, ...props }) => {
 
           <div className='relative flex w-[90%] max-w-screen-xl flex-col items-center gap-4'>
             <Text className='text-center text-muted-content'>
-              let me take you further than you&apos;ve ever been
+              lemme take you further than you&apos;ve ever been
             </Text>
 
             <Text.Title className='text-center text-[14vw] uppercase leading-none sm:text-[min(10vw,8rem)]'>
@@ -66,11 +66,11 @@ const FooterContent = ({ className, ...props }) => {
 
               <div className='bottom-0 right-0 mx-auto overflow-y-clip sm:absolute'>
                 <SocialNav>
-                  {personalInfo.socials.map((socialMedia, i) => (
+                  {personalInfo.socials.map((social, i) => (
                     <SocialNav.Item
                       index={i}
-                      key={socialMedia.href}
-                      {...socialMedia}
+                      key={social.href}
+                      {...social}
                     />
                   ))}
                 </SocialNav>
