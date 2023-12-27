@@ -5,8 +5,8 @@ import { projects } from '@/constants';
 const RES_PER_PAGE = 5;
 
 const GET = async (req) => {
-  let log = '';
-  log += `- req.url - ${req.url}`;
+  let log = `- req.url - ${req.url}`;
+
   try {
     const { searchParams } = new URL(req.url);
     log += `- searchParams - ${searchParams}`;
