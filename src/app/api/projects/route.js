@@ -9,7 +9,7 @@ const GET = async (req) => {
   try {
     const { searchParams } = new URL(req.url);
 
-    const page = searchParams.get('page') || 1;
+    const page = searchParams.get('page') ?? 1;
     log += ` ${page}`;
 
     const results = projects.slice(
