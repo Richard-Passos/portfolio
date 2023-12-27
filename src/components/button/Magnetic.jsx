@@ -48,7 +48,7 @@ const magneticButtonSizes = {
 };
 
 const magneticButtonVariants = cnv({
-  base: 'group relative aspect-square overflow-hidden border-border px-0 hover:bg-variant',
+  base: 'group relative aspect-square overflow-hidden border-border px-0 hover:bg-variant [&_svg]:h-1/3 [&_svg]:w-1/3',
   variants: {
     size: magneticButtonSizes,
   },
