@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-const TOAST_REMOVE_DELAY_FOR_ANIMATIONS = 150;
+const TOAST_DURATION = 5000,
+  TOAST_REMOVE_DELAY_FOR_ANIMATIONS = 150;
 
 let count = 0;
 
@@ -158,4 +159,4 @@ const useToast = () => {
 };
 
 export default useToast;
-export { toast, TOAST_REMOVE_DELAY_FOR_ANIMATIONS, reducer };
+export { toast, TOAST_DURATION, TOAST_REMOVE_DELAY_FOR_ANIMATIONS, reducer };
