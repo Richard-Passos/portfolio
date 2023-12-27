@@ -48,7 +48,7 @@ const MenuTrigger = ({ className, variants, ...props }, ref) => {
 const Icon = ({ className, ...props }) => {
   return (
     <Slot
-      className={cn('absolute h-1/3 w-1/3 transition-opacity', className)}
+      className={cn('absolute transition-opacity', className)}
       {...props}
     />
   );
