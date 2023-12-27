@@ -1,4 +1,5 @@
 export { default as aboutText } from './aboutText';
+export { default as baseUrl } from './baseUrl';
 export { default as pages } from './pages';
 export { default as personalInfo } from './personalInfo';
 export { default as projects } from './projects';
