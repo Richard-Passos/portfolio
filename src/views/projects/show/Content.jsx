@@ -3,14 +3,13 @@
 import { useContext } from 'react';
 
 import { Projects } from '@/components';
-import { projects } from '@/constants';
 import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
-const ProjectsShowContent = ({ className, ...props }) => {
-  const { type = 'list', role } = useContext(ProjectsShowContext);
+const ProjectsShowContent = ({ initialData = [], className, ...props }) => {
+  const { type, role, projects } = useContext(ProjectsShowContext);
 
-  const projectsObj = projects.reduce(
+  const projectsObj = [...initialData, ...projects].reduce(
     (obj, project) => getByRole(role, obj, project),
     { data: [], images: [] },
   );
