@@ -10,7 +10,7 @@ import Show from './show';
 const PROJECTS_VIEW_THEME = 'dark';
 
 const ProjectsView = async ({ className, ...props }) => {
-  const projects = await getProjects();
+  const projects = (await getProjects()).results;
 
   return (
     <main

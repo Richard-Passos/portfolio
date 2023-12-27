@@ -7,10 +7,9 @@ import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
 const ProjectsShowContent = ({ initialData = [], className, ...props }) => {
-  console.log('-  initialData   -', initialData);
   const { type, role, projects } = useContext(ProjectsShowContext);
 
-  const projectsObj = [...(initialData.results || []), ...projects].reduce(
+  const projectsObj = [...initialData, ...projects].reduce(
     (obj, project) => getByRole(role, obj, project),
     { data: [], images: [] },
   );
