@@ -23,3 +23,4 @@ export { default as Section } from './section';
 export { default as SocialNav } from './social-nav';
 export { default as TextRing } from './text-ring';
 export { default as TextScrollAnimation } from './text-scroll-animation';
+export { default as Toaster } from './toaster';
