@@ -7,10 +7,11 @@ const RES_PER_PAGE = 5;
 const GET = async (req) => {
   let log = '';
   try {
-    const page = 1;
+    const { searchParams } = new URL(req.url);
+
+    const page = searchParams.get('page') || 1;
     log += ` ${page}`;
 
-    log += ` ${JSON.stringify(req.nextUrl.searchParams)}`;
     const results = projects.slice(
         (page - 1) * RES_PER_PAGE,
         page * RES_PER_PAGE,
