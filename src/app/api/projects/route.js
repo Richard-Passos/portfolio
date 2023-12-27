@@ -30,7 +30,7 @@ const GET = async (req) => {
   } catch {
     return NextResponse.json({
       status: 400,
-      message: 'Failed to fetch data',
+      message: 'Failed to fetch data.',
       results: [],
       log,
     });
