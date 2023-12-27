@@ -5,6 +5,7 @@ import { projects } from '@/constants';
 const RES_PER_PAGE = 5;
 
 const GET = async (req) => {
+  let log = 'Hello';
   try {
     const { searchParams } = new URL(req.url);
 
