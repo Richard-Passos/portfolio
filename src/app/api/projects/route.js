@@ -9,14 +9,15 @@ const GET = async (req) => {
   try {
     log += ' TRY';
     const page = req.nextUrl.searchParams.get('page') || 1;
-    log += ' ' + page;
+    log += ` ${page}`;
 
+    log += ` ${JSON.stringify(projects)}`;
     const results = projects.slice(
         (page - 1) * RES_PER_PAGE,
         page * RES_PER_PAGE,
       ),
       totalResults = projects.length;
-    log += ' ' + JSON.stringify(results);
+    log += ` ${JSON.stringify(results)}`;
 
     return NextResponse.json({
       status: 200,
