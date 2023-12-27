@@ -8,6 +8,7 @@ import { cn, isFunctionThanCall } from '@/utils';
 import { CursorLink } from '../../link';
 import ScrollAnimation from '../../scroll-animation';
 import { Badge } from '../../ui';
+import Title from '../Title';
 
 const ProjectsListItem = ({ className, data, index, img, ...props }) => {
   const { setActiveIdx } = useContext(ProjectsContext);
@@ -27,11 +28,10 @@ const ProjectsListItem = ({ className, data, index, img, ...props }) => {
       >
         <CursorLink
           className={cn(
-            'group flex h-full w-full justify-around gap-x-6 py-12 no-underline hover:bg-muted',
+            'group relative flex h-full w-full justify-around gap-x-6 overflow-hidden py-12 no-underline',
             className,
           )}
           content={{
-            type: 'icon',
             name: 'EyeOpen',
           }}
           href={data.href}
@@ -42,9 +42,10 @@ const ProjectsListItem = ({ className, data, index, img, ...props }) => {
           }}
           {...props}
         >
-          <span className='overflow-hidden overflow-ellipsis whitespace-nowrap text-[clamp(1.5rem,3.3vw,3rem)] uppercase leading-none'>
-            {data.title}
-          </span>
+          <Title
+            className='overflow-hidden overflow-ellipsis whitespace-nowrap text-[clamp(1.5rem,3.3vw,3rem)] leading-none'
+            text={data.title}
+          />
 
           <div className='flex flex-wrap gap-1.5'>
             {data.roles
@@ -58,6 +59,12 @@ const ProjectsListItem = ({ className, data, index, img, ...props }) => {
                   {role}
                 </Badge>
               ))}
+          </div>
+
+          <div className='absolute inset-0 -z-10 translate-y-full overflow-hidden transition-transform group-hover:translate-y-0 group-hover:duration-0'>
+            <div className='h-full -translate-y-full transition-transform delay-150 group-hover:translate-y-0 group-hover:delay-0'>
+              <span className='h-full w-full bg-muted transition-bg' />
+            </div>
           </div>
         </CursorLink>
       </li>
