@@ -5,15 +5,12 @@ import { cn } from '@/utils';
 const ContactViewServices = ({ className, ...props }) => {
   return (
     <section
-      className={cn(
-        'gap-md flex w-[90%] max-w-screen-xl flex-col items-center',
-        className,
-      )}
+      className={cn('flex w-full flex-col items-center gap-md', className)}
       {...props}
     >
       <Text.Title className='text-center text-2xl'>Services</Text.Title>
 
-      <ul className='gap-sm grid md:grid-cols-3'>
+      <ul className='grid gap-sm md:grid-cols-3'>
         {services.map(({ icon, title, description }) => (
           <li
             className='space-y-2 rounded-md border bg-main p-6 transition-bg'
