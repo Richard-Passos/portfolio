@@ -6,8 +6,8 @@ const RES_PER_PAGE = 5;
 
 const GET = async (req) => {
   let log = '';
+  log += ` ${req.url}`;
   try {
-    log += ` ${req.url}`;
     const { searchParams } = new URL(req.url);
 
     const page = searchParams.get('page') ?? 1;
