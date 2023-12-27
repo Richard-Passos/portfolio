@@ -5,11 +5,15 @@ import { Form, Input, Textarea } from '@/components/ui';
 import { cn } from '@/utils';
 
 import ClientForm from './Client';
+import Select from './Select';
 
 const ContactForm = ({ className, ...props }) => {
   return (
     <ClientForm
-      className={cn('grid gap-x-6 gap-y-4 h-fit space-y-0 sm:grid-cols-4', className)}
+      className={cn(
+        'grid h-fit gap-x-6 gap-y-4 space-y-0 sm:grid-cols-4',
+        className,
+      )}
       {...props}
     >
       <Form.Field
@@ -43,7 +47,7 @@ const ContactForm = ({ className, ...props }) => {
       </Form.Field>
 
       <Form.Field
-        className='sm:col-span-full'
+        className='sm:col-span-2'
         name='subject'
       >
         <Form.Label>
@@ -60,16 +64,28 @@ const ContactForm = ({ className, ...props }) => {
       </Form.Field>
 
       <Form.Field
+        className='sm:col-span-2'
+        name='service'
+      >
+        <Form.Label>
+          Service <span className='text-xs text-muted-content'>(optional)</span>
+        </Form.Label>
+
+        <Select />
+
+        <Form.Description>Select the service you want.</Form.Description>
+
+        <Form.Message />
+      </Form.Field>
+
+      <Form.Field
         className='sm:col-span-3'
         name='message'
       >
         <Form.Label>Message</Form.Label>
 
         <Form.Control>
-          <Textarea
-            className='resize-y'
-            placeholder='👋 Hey there! I would love to team up and build awesome projects with you.'
-          />
+          <Textarea placeholder='👋 Hey there! I would love to team up and build awesome projects with you.' />
         </Form.Control>
 
         <Form.Description>Your message.</Form.Description>
@@ -78,10 +94,10 @@ const ContactForm = ({ className, ...props }) => {
       </Form.Field>
 
       <Form.Submit asChild>
-        <MagneticButton className='place-self-center max-sm:aspect-auto max-sm:px-6'>
+        <MagneticButton className='place-self-center max-sm:aspect-auto max-sm:px-6 sm:!h-[75%]'>
           <PaperPlaneIcon
             aria-hidden
-            className='h-[30%] w-[30%] translate-x-px -rotate-45 scale-90 max-sm:hidden'
+            className='translate-x-px -rotate-45 scale-90 max-sm:hidden'
           />
 
           <span className='sm:sr-only'>Submit</span>
