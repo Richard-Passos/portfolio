@@ -30,6 +30,7 @@ const GET = async (req) => {
       status: 400,
       message: 'Failed to fetch data',
       results: [],
+      log,
     });
   }
 };
