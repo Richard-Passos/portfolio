@@ -2,7 +2,7 @@ import { capitalize, cn } from '@/utils';
 
 import { MagneticLink } from '../link';
 
-const SocialNavItem = ({ className, index, href, name, ...props }) => {
+const SocialNavItem = ({ className, index, href, limit, name, ...props }) => {
   return (
     <div
       className={cn(
@@ -15,6 +15,7 @@ const SocialNavItem = ({ className, index, href, name, ...props }) => {
       <MagneticLink
         className='h-full w-full rounded-inherit hover:bg-muted'
         href={href}
+        limit={limit}
       >
         {capitalize(name)}
       </MagneticLink>
