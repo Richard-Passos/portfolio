@@ -13,7 +13,6 @@ const useLoadMore = (setState, getFn) => {
 
       const data = await getFn(`page=${page.current + 1}`);
 
-      console.log('-  data   -', data);
       page.current++;
       isLastPage.current = page.current >= data.totalPages;
 
