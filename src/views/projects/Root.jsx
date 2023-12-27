@@ -11,7 +11,6 @@ const PROJECTS_VIEW_THEME = 'dark';
 
 const ProjectsView = async ({ className, ...props }) => {
   const projects = (await getProjects()).results;
-  console.log('-  projects   -', projects);
 
   return (
     <main
