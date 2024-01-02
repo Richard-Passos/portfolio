@@ -16,7 +16,7 @@ const ProjectsList = ({ className, ...props }) => {
   return (
     <ProjectsContext.Provider value={{ activeIdx, setActiveIdx }}>
       <FollowPointer.Area id={followPointerId}>
-        <ul
+        <nav
           className={cn('w-full', className)}
           {...props}
         />
