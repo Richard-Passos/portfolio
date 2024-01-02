@@ -1,19 +1,22 @@
 'use client';
 
+import { useLenis } from '@studio-freight/react-lenis';
 import { forwardRef } from 'react';
 
-import { isFunctionThanCall, scrollTo } from '@/utils';
+import { isFunctionThanCall } from '@/utils';
 
 import { Link } from '../ui';
 
 const ScrollToLink = ({ href, ...props }, ref) => {
+  const lenis = useLenis();
+
   return (
     <Link
       href={href}
       ref={ref}
       {...props}
       onClick={(ev) => {
-        scrollTo(href.slice(1));
+        lenis.scrollTo(href);
 
         isFunctionThanCall(props.onClick, ev);
       }}
