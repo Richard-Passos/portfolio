@@ -11,7 +11,7 @@ const ProjectsTitle = ({ text, className, animationType, ...props }) => {
   return (
     <TextSubtitle
       aria-label={text}
-      className={cn('max-w-[90%] text-center uppercase', className)}
+      className={cn('uppercase', className)}
       {...props}
     >
       {chars.map((char, i) => (
