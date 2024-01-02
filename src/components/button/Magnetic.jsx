@@ -44,7 +44,7 @@ const MagneticButton = (
 const magneticButtonSizes = {
   sm: 'h-10 max-md:text-sm sm:h-12 md:h-14 lg:h-16',
   md: 'h-12 sm:h-14 md:h-16 md:text-lg lg:h-20',
-  lg: 'h-36 sm:h-40 md:text-lg md:h-44 lg:text-xl lg:h-52',
+  lg: 'h-24 text-lg sm:h-28 md:h-32 lg:h-40',
 };
 
 const magneticButtonVariants = cnv({
