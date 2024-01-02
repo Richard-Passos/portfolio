@@ -147,7 +147,7 @@ const ListContactPage = ({ className, ...props }) => {
   return (
     <div
       className={cn(
-        'relative flex w-full items-center justify-center',
+        'flex w-full flex-col items-center gap-md',
         className,
       )}
       {...props}
@@ -164,10 +164,7 @@ const ListContactPage = ({ className, ...props }) => {
         ))}
       </ListHorizontalScroll>
 
-      <ListHorizontalScroll.Link
-        className='absolute'
-        href='/contact'
-      >
+      <ListHorizontalScroll.Link href='/contact'>
         Explore
       </ListHorizontalScroll.Link>
     </div>
