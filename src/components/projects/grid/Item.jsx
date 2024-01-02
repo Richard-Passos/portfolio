@@ -57,7 +57,7 @@ const ProjectsGridItem = ({ index, className, data, ...props }) => {
 
             <Title
               animationType='onGroupHover'
-              className='absolute text-[9vw] sm:text-[min(4vw,2.25rem)]'
+              className='absolute max-w-[90%] text-center text-[9vw] sm:text-[min(4vw,2.25rem)]'
               text={data.title}
             />
           </CursorLink>
