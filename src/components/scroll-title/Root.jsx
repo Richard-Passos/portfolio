@@ -62,7 +62,7 @@ const SecondaryTitle = ({ className, ...props }) => {
   return (
     <span
       aria-hidden
-      className={cn('outline-text opacity-40 dark:opacity-10', className)}
+      className={cn('outline-text opacity-30 dark:opacity-10', className)}
       {...props}
     />
   );
