@@ -3,25 +3,21 @@ import { ArrowDownIcon } from '@radix-ui/react-icons';
 import { cn } from '@/utils';
 
 import { ScrollToLink } from '../link';
-import TextRing from '../text-ring';
-import { buttonSizes } from '../ui/button';
 
 const ScrollIndicator = ({ className, ...props }) => {
   return (
     <ScrollToLink
       className={cn(
-        'aspect-square rounded-full [--icon-dimen:theme(spacing.4)] hover:bg-content/10 sm:[--icon-dimen:theme(spacing.5)] md:[--icon-dimen:theme(spacing.6)]',
-        buttonSizes.md,
+        'flex h-8 w-8 items-center justify-center overflow-hidden text-muted-content',
         className,
       )}
       {...props}
     >
-      <TextRing
-        className='absolute'
-        text='scroll down • scroll down • '
-      />
+      <div className='animate-scroll-indicator relative'>
+        <ArrowDownIcon className='absolute h-4 w-4 -translate-y-[200%]' />
 
-      <ArrowDownIcon className='h-[--icon-dimen] w-[--icon-dimen]' />
+        <ArrowDownIcon className='h-4 w-4' />
+      </div>
     </ScrollToLink>
   );
 };
