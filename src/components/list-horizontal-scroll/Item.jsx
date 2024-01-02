@@ -16,7 +16,7 @@ const ListHorizontalScrollItem = ({
 
   const animationConfig = {
     useScrollConfig: {
-      offset: ['0 1', '2 1'],
+      offset: ['0 1', '3 1'],
     },
     useScrollRes: 'scrollYProgress',
     prop: 'clipPath',
