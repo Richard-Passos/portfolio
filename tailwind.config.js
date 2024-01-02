@@ -125,6 +125,12 @@ module.exports = {
               'translate(var(--final-x, 0%), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
           },
         },
+        'scroll-indicator': {
+          to: {
+            transform:
+              'translate(var(--tw-translate-y), var(--final-y, 200%)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
+          },
+        },
         loader: {
           to: {
             transform:
@@ -136,6 +142,8 @@ module.exports = {
         'slide-down': 'slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         'slide-up': 'slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         'scroll-x': 'scroll-x var(--duration, 15s) linear infinite',
+        'scroll-indicator':
+          'scroll-indicator var(--duration, 2s) cubic-bezier(0.87, 0, 0.13, 1) infinite',
         loader: 'loader var(--duration, .6s) infinite alternate',
       },
       fontFamily: {
