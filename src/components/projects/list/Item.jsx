@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { useContext } from 'react';
 
 import { ProjectsContext } from '@/contexts';
@@ -22,28 +23,25 @@ const ProjectsListItem = ({ className, data, index, img, ...props }) => {
 
   return (
     <ScrollAnimation.Transform config={animationConfig}>
-      <li
-        className={cn('border-t last:border-b focus-within:outline', className)}
+      <CursorLink
+        className={cn(
+          'group relative flex w-full justify-between gap-x-12 gap-y-6 overflow-hidden border-t p-12 no-underline last:border-b max-sm:px-6 lg:px-24',
+          className,
+        )}
+        content={{
+          name: 'EyeOpen',
+        }}
+        href={data.href}
+        onMouseEnter={(ev) => {
+          setActiveIdx(index);
+
+          isFunctionThanCall(props.onMouseEnter, ev);
+        }}
         {...props}
       >
-        <CursorLink
-          className={cn(
-            'group relative flex h-full w-full justify-around gap-x-6 overflow-hidden py-12 no-underline',
-            className,
-          )}
-          content={{
-            name: 'EyeOpen',
-          }}
-          href={data.href}
-          onMouseEnter={(ev) => {
-            setActiveIdx(index);
-
-            isFunctionThanCall(props.onMouseEnter, ev);
-          }}
-          {...props}
-        >
+        <section className='space-y-1.5 overflow-hidden'>
           <Title
-            className='overflow-hidden overflow-ellipsis whitespace-nowrap text-[clamp(1.5rem,3.3vw,3rem)] leading-none'
+            className='text-4xl sm:text-5xl'
             text={data.title}
           />
 
@@ -60,14 +58,16 @@ const ProjectsListItem = ({ className, data, index, img, ...props }) => {
                 </Badge>
               ))}
           </div>
+        </section>
 
-          <div className='absolute inset-0 -z-10 translate-y-full overflow-hidden transition-transform group-hover:translate-y-0 group-hover:duration-0'>
-            <div className='h-full -translate-y-full transition-transform delay-150 group-hover:translate-y-0 group-hover:delay-0'>
-              <span className='h-full w-full bg-muted transition-bg' />
-            </div>
+        <ArrowRightIcon className='h-8 w-8 shrink-0 -translate-x-1/2 opacity-0 transition-[transform,opacity] group-hover:translate-x-0 group-hover:opacity-100 max-sm:hidden' />
+
+        <div className='absolute inset-0 -z-10 translate-y-full overflow-hidden transition-transform group-hover:translate-y-0 group-hover:duration-0'>
+          <div className='h-full -translate-y-full transition-transform delay-150 group-hover:translate-y-0 group-hover:delay-0'>
+            <span className='h-full w-full bg-muted transition-bg' />
           </div>
-        </CursorLink>
-      </li>
+        </div>
+      </CursorLink>
     </ScrollAnimation.Transform>
   );
 };
