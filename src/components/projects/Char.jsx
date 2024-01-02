@@ -32,7 +32,7 @@ const ProjectsChar = ({
       <span
         aria-hidden
         className={cn(
-          'translate-y-full transition-transform duration-300',
+          'min-w-[--font-blank-space] translate-y-full transition-transform duration-300',
           animations[animationType],
         )}
         data-inview={isInView}
