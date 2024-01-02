@@ -9,7 +9,7 @@ import { ProjectsShowContext } from '@/contexts';
 import { useLoadMore } from '@/hooks';
 import { cn, isFunctionThanCall } from '@/utils';
 
-const ProjectsShowLoadMore = ({ variants, children, ...props }) => {
+const ProjectsShowLoadMore = ({ className, variants, children, ...props }) => {
   const { setProjects } = useContext(ProjectsShowContext);
 
   const { loadMore, isFetching, isLastPage } = useLoadMore(
@@ -19,6 +19,7 @@ const ProjectsShowLoadMore = ({ variants, children, ...props }) => {
 
   return !isLastPage.current ? (
     <MagneticButton
+      className={cn('focus-visible:outline-content', className)}
       disabled={isFetching}
       variants={{ color: 'main', ...variants }}
       {...props}
@@ -49,7 +50,7 @@ const ProjectsShowLoadMoreDot = ({ className, ...props }) => {
   return (
     <span
       className={cn(
-        'animate-loader aspect-square w-[.25em] rounded-full bg-current',
+        'aspect-square w-[.25em] animate-loader rounded-full bg-current',
         className,
       )}
       {...props}
