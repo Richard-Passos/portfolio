@@ -17,7 +17,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
   return (
     <Section
       className={cn(
-        'relative mt-20 flex flex-col items-center gap-20 md:mt-28 md:gap-28 2xl:h-auto 2xl:max-h-none',
+        'relative flex flex-col items-center gap-lg 2xl:h-auto 2xl:max-h-none',
         className,
       )}
       {...props}
@@ -39,23 +39,23 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
         </Text>
       </div>
 
-      <div className='w-[90%] max-w-screen-lg'>
-        <Text.Small className='mb-10 text-xs uppercase md:mb-14'>
-          Selected work
-        </Text.Small>
+      <div className='flex w-[90%] max-w-screen-lg flex-col items-center gap-md'>
+        <Text.Subtitle className='mr-auto text-xs uppercase text-muted-content'>
+          Selected works
+        </Text.Subtitle>
 
         <ShowProjects />
+
+        <MagneticButton
+          aria-label='More works'
+          className='focus-visible:outline-variant-content'
+          href='/projects'
+          isLink
+          variants={{ color: 'main' }}
+        >
+          <PlusIcon aria-hidden />
+        </MagneticButton>
       </div>
-
-      <MagneticButton
-        className='relative -mt-9'
-        href='/projects'
-        isLink
-      >
-        <PlusIcon aria-hidden />
-
-        <span className='sr-only'>More projects</span>
-      </MagneticButton>
 
       <ListWorkPage />
 
@@ -118,10 +118,7 @@ const ListWorkPage = ({ className, ...props }) => {
 
   return (
     <div
-      className={cn(
-        'relative flex w-full items-center justify-center',
-        className,
-      )}
+      className={cn('flex w-full flex-col items-center gap-md', className)}
       {...props}
     >
       <ListHorizontalScroll>
@@ -136,10 +133,7 @@ const ListWorkPage = ({ className, ...props }) => {
         ))}
       </ListHorizontalScroll>
 
-      <ListHorizontalScroll.Link
-        className='absolute'
-        href='/work'
-      >
+      <ListHorizontalScroll.Link href='/work'>
         Explore
       </ListHorizontalScroll.Link>
     </div>
