@@ -1,19 +1,34 @@
+import { ArrowTopRightIcon } from '@radix-ui/react-icons';
+
 import { cn } from '@/utils';
 
-import { MagneticButton } from '../button';
+import { IconButton } from '../button';
+import { Link } from '../ui';
 
-const ListHorizontalScrollLink = ({ className, variants, ...props }) => {
+const ListHorizontalScrollLink = ({
+  className,
+  variants,
+  children,
+  ...props
+}) => {
   return (
-    <MagneticButton
+    <IconButton
+      asChild
       className={cn(
-        'uppercase shadow-[0_0_50px_-15px_var(--tw-shadow-color)] shadow-[hsl(0_0%_80%/.25)] transition-[color,background-color,border-color,text-decoration-color,box-shadow,text-underline-offset] focus-visible:outline-variant-content dark:shadow-[hsl(0_0%_5%/.25)]',
+        'border-border focus-visible:outline-variant-content',
         className,
       )}
-      isLink
-      limit={0.4}
-      variants={{ color: 'main', size: 'lg', ...variants }}
+      variants={{ color: 'main', ...variants }}
       {...props}
-    />
+    >
+      <Link className='no-underline'>
+        {children}
+
+        <IconButton.Icon animation='slideUpRight'>
+          <ArrowTopRightIcon />
+        </IconButton.Icon>
+      </Link>
+    </IconButton>
   );
 };
 
