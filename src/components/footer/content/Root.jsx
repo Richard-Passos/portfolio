@@ -1,3 +1,5 @@
+import { ArrowTopRightIcon } from '@radix-ui/react-icons';
+
 import BackTop from '@/components/back-top';
 import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
@@ -39,24 +41,25 @@ const FooterContent = ({ className, ...props }) => {
         <div>
           <Logo className='ml-12 mr-auto' />
 
-          <div className='relative flex w-[90%] max-w-screen-xl flex-col items-center gap-4'>
+          <div className='flex w-[90%] max-w-screen-xl flex-col items-center gap-1.5'>
             <Text className='text-center text-muted-content'>
-              lemme take you further than you&apos;ve ever been
+              got a project?
             </Text>
 
-            <Text.Title className='text-center text-[14vw] uppercase leading-none sm:text-[min(10vw,8rem)]'>
-              Let&apos;s work together!
-            </Text.Title>
+            <div className='group/link relative flex w-fit items-center justify-center'>
+              <Text.Title className='text-center text-[14vw] font-bold uppercase leading-none sm:text-[min(10vw,8rem)]'>
+                Let&apos;s work <br /> together
+              </Text.Title>
 
-            <div className='translate-y-[--link-y]'>
-              <MagneticButton
-                className='-mt-[50%] uppercase'
-                href='/contact'
-                isLink
-                variants={{ size: 'lg' }}
-              >
-                Get in <br /> touch
-              </MagneticButton>
+              <div className='absolute scale-0 transition-transform duration-300 focus-within:scale-100 focus-within:duration-500 focus-within:ease-backOut group-hover/link:scale-100 group-hover/link:duration-500 group-hover/link:ease-backOut'>
+                <MagneticButton
+                  href='/contact'
+                  isLink
+                  variants={{ size: 'lg' }}
+                >
+                  <ArrowTopRightIcon />
+                </MagneticButton>
+              </div>
             </div>
           </div>
 
@@ -87,13 +90,15 @@ const FooterContent = ({ className, ...props }) => {
 
               <Text.Small className='group text-xs text-content'>
                 Made with{' '}
-                <span className='text-red-500 transition-transform group-hover:-translate-y-1/4'>
+                <span className='transition-transform group-hover:-translate-y-1/4'>
                   ❤
                 </span>{' '}
                 by Richard
               </Text.Small>
             </div>
           </section>
+
+          <span className='absolute inset-0 -z-10 bg-[linear-gradient(theme(colors.border)_1px,_transparent_1px),_linear-gradient(to_right,_theme(colors.border)_1px,__transparent_1px_1px)] bg-center opacity-50 [background-size:25px_25px] [mask-image:radial-gradient(#000,transparent_75%)] dark:opacity-20' />
         </div>
       </ScrollAnimationTransform>
     </ScrollAnimationTransform>
