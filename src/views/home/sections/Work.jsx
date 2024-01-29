@@ -1,7 +1,5 @@
-import { PlusIcon } from '@radix-ui/react-icons';
-
 import {
-  ChangeTheme,
+  Lines,
   ListHorizontalScroll,
   Projects,
   ScrollTitle,
@@ -10,16 +8,14 @@ import {
 } from '@/components';
 import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui';
+import { PlusIcon } from '@/components/ui/icon/icons';
 import { selectedProjects } from '@/constants';
 import { cn } from '@/utils';
 
-const HomeWorkSection = ({ className, theme, ...props }) => {
+const HomeWorkSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn(
-        'relative flex flex-col items-center gap-lg 2xl:h-auto 2xl:max-h-none',
-        className,
-      )}
+      className={cn('relative flex flex-col items-center gap-lg', className)}
       {...props}
     >
       <h2 className='flex w-full flex-col'>
@@ -31,7 +27,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
       </h2>
 
       <div className='w-[90%] max-w-screen-xl'>
-        <Text className='max-w-xl text-xl sm:ml-auto md:text-2xl'>
+        <Text className='max-w-xl text-xl font-medium sm:ml-auto md:text-2xl'>
           <TextScrollAnimation
             className='max-sm:justify-center'
             text='Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.'
@@ -59,19 +55,7 @@ const HomeWorkSection = ({ className, theme, ...props }) => {
 
       <ListWorkPage />
 
-      <ChangeTheme
-        className='pointer-events-none absolute left-0 top-0 h-1/2 max-h-screen w-full'
-        theme={theme}
-      >
-        <span />
-      </ChangeTheme>
-
-      <ChangeTheme
-        className='pointer-events-none absolute bottom-0 left-0 h-1/2 max-h-screen w-full'
-        theme={theme}
-      >
-        <span />
-      </ChangeTheme>
+      <Lines />
     </Section>
   );
 };
@@ -124,11 +108,14 @@ const ListWorkPage = ({ className, ...props }) => {
       <ListHorizontalScroll>
         {content.map((content, i) => (
           <ListHorizontalScroll.Item
-            baseVelocity={i % 2 === 0 ? 2 : -2}
+            baseVelocity={i % 2 === 0 ? 1 : -1}
             className='[--gap:theme(spacing.8)]'
             key={content}
           >
-            <span>{content}</span> •
+            <span>{content}</span> •{' '}
+            <span className='opacity-30 dark:opacity-10'>{content}</span>{' '}
+            <span className='opacity-30 dark:opacity-10'>•</span>{' '}
+            <span className='opacity-30 dark:opacity-10'>{content}</span> •
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll>

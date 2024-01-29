@@ -23,7 +23,7 @@ const ProjectsList = ({ className, ...props }) => {
       </FollowPointer.Area>
 
       <FollowPointer
-        className='aspect-square w-[50vmin] max-w-sm overflow-hidden'
+        className='aspect-square w-[50vmin] max-w-sm overflow-hidden rounded-lg'
         id={followPointerId}
         smoothConfig={{ stiffness: 100 }}
       >

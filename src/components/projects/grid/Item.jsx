@@ -7,10 +7,8 @@ import { cn } from '@/utils';
 
 import { CursorLink } from '../../link';
 import { ScrollAnimationTransform } from '../../scroll-animation';
-import { Badge, Image } from '../../ui';
-import Title from '../Title';
-
-const ANIMATION_OFFSET = ['0 1', '.25 1'];
+import { Badge, Image, Text } from '../../ui';
+import Title from '../title';
 
 const ProjectsGridItem = ({ index, className, data, ...props }) => {
   const { images } = useContext(ProjectsContext);
@@ -18,7 +16,7 @@ const ProjectsGridItem = ({ index, className, data, ...props }) => {
   const img = images[index];
 
   const animationConfig = {
-    useScrollConfig: { offset: ANIMATION_OFFSET },
+    useScrollConfig: { offset: ['0 1', '.25 1'] },
     prop: '--y',
     propPoints: [0.25, 0],
   };
@@ -26,7 +24,7 @@ const ProjectsGridItem = ({ index, className, data, ...props }) => {
   return (
     <li
       className={cn(
-        'w-full sm:w-[calc(50%_-_var(--gap)/2)] sm:even:ml-auto sm:[&:not(:first-child)>div]:-mt-[60%]',
+        'w-full sm:w-[calc(50%_-_var(--gap)/2)] sm:even:ml-auto sm:[&:not(:first-child)>div]:-mt-[45%]',
         className,
       )}
       {...props}
@@ -35,14 +33,19 @@ const ProjectsGridItem = ({ index, className, data, ...props }) => {
         config={animationConfig}
         smoothConfig={{ stiffness: 75 }}
       >
-        <div className='translate-y-[calc(var(--y)*100%)] space-y-6'>
+        <div className='space-y-6 sm:translate-y-[calc(var(--y)*100%)]'>
           <CursorLink
-            className='group relative aspect-[1/1.25] w-full overflow-hidden rounded-lg'
+            className='group relative aspect-square w-full rounded-lg'
             content={{
-              name: 'EyeOpen',
+              name: 'Eye',
+              className: 'w-[45%] h-[45%]',
             }}
             href={data.href}
           >
+            <Text className='outline-text pointer-events-none absolute bottom-0 right-0 translate-y-1/2 text-[14vw] text-muted-content opacity-50 dark:opacity-20 sm:text-[min(10vw,8rem)]/[1]'>
+              {`${index + 1}`.padStart(2, '0')}/
+            </Text>
+
             <div className='relative h-full w-full overflow-hidden rounded-inherit border border-transparent transition-transform duration-300 group-hover:scale-[.98]'>
               {/* eslint-disable-next-line jsx-a11y/alt-text */}
               <Image
@@ -50,7 +53,7 @@ const ProjectsGridItem = ({ index, className, data, ...props }) => {
                 {...img}
               />
 
-              <span className='absolute inset-0 -z-10 bg-muted transition-bg' />
+              <span className='absolute inset-0 -z-10 rounded-inherit bg-muted transition-bg' />
             </div>
 
             <span className='absolute inset-0 bg-main/75 opacity-0 backdrop-blur-sm transition-[background-color,opacity] group-hover:opacity-100' />

@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google';
 
-import { Footer, Header, Lines, Providers, SmoothScroll } from '@/components';
+import { Footer, Header, Providers, SmoothScroll } from '@/components';
 import { Cursor } from '@/components/ui';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
@@ -18,8 +18,8 @@ const metadata = {
 const Layout = ({ children }) => {
   return (
     <html
+      className='light'
       lang='en'
-      suppressHydrationWarning
     >
       <Providers.GlobalState>
         <body
@@ -28,21 +28,17 @@ const Layout = ({ children }) => {
             font.variable,
           )}
         >
-          <Providers.Theme>
-            <SmoothScroll>
-              <Lines />
+          <SmoothScroll>
+            <Cursor>
+              <Cursor.Content />
+            </Cursor>
 
-              <Cursor>
-                <Cursor.Content />
-              </Cursor>
+            <Header />
 
-              <Header />
+            {children}
 
-              {children}
-
-              <Footer />
-            </SmoothScroll>
-          </Providers.Theme>
+            <Footer />
+          </SmoothScroll>
         </body>
       </Providers.GlobalState>
     </html>

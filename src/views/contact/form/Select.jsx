@@ -1,14 +1,14 @@
 'use client';
 
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from '@radix-ui/react-icons';
 import { useFormContext } from 'react-hook-form';
 
 import { Select } from '@/components/ui';
 import { FormControl } from '@/components/ui/form';
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from '@/components/ui/icon/icons';
 import { services } from '@/constants';
 import { useChangeKeyWhenFalsy, useFormField } from '@/hooks';
 import { capitalize } from '@/utils';

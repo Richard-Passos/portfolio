@@ -5,8 +5,9 @@ import { forwardRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 
 import { useFormField } from '@/hooks';
+import { cn } from '@/utils';
 
-const FormControl = ({ customRegister, ...props }, ref) => {
+const FormControl = ({ className, customRegister, ...props }, ref) => {
   const { error, descriptionId, messageId, id, name } = useFormField(),
     { register } = useFormContext();
 
@@ -16,6 +17,7 @@ const FormControl = ({ customRegister, ...props }, ref) => {
         !error ? descriptionId : `${descriptionId} ${messageId}`
       }
       aria-invalid={!!error}
+      className={cn(error && 'focus-visible:outline-danger', className)}
       id={id}
       ref={ref}
       {...(customRegister || register(name))}

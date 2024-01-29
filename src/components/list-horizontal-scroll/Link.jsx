@@ -1,9 +1,8 @@
-import { ArrowTopRightIcon } from '@radix-ui/react-icons';
-
 import { cn } from '@/utils';
 
 import { IconButton } from '../button';
 import { Link } from '../ui';
+import { ArrowUpIcon } from '../ui/icon/icons';
 
 const ListHorizontalScrollLink = ({
   className,
@@ -25,7 +24,7 @@ const ListHorizontalScrollLink = ({
         {children}
 
         <IconButton.Icon animation='slideUpRight'>
-          <ArrowTopRightIcon />
+          <ArrowUpIcon className='rotate-45' />
         </IconButton.Icon>
       </Link>
     </IconButton>

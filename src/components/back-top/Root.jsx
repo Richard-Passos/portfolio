@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowUpIcon } from '@radix-ui/react-icons';
+import { ArrowUpIcon } from '../ui/icon/icons';
 import { useLenis } from '@studio-freight/react-lenis';
 
 import { cn, isFunctionThanCall } from '@/utils';

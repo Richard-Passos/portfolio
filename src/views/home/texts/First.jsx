@@ -1,12 +1,13 @@
 import {
-  ChangeTheme,
+  Lines,
   ScrollAnimation,
+  Section,
   TextScrollAnimation,
 } from '@/components';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
-const HomeFirstText = ({ className, theme, ...props }) => {
+const HomeFirstText = ({ className, ...props }) => {
   const animationConfig = {
     y1: {
       useScrollConfig: {
@@ -39,15 +40,16 @@ const HomeFirstText = ({ className, theme, ...props }) => {
   };
 
   return (
-    <div
+    <Section
+      as='div'
       className={cn(
-        'relative my-[16.666%] flex h-[150vh] flex-col items-center 2xl:max-h-[calc(var(--max-h)*1.5)]',
+        'relative flex h-[150vh] flex-col items-center 2xl:max-h-[calc(var(--max-h)*1.5)]',
         className,
       )}
       {...props}
     >
       <ScrollAnimation.Transform
-        className='flex h-[66.666%] items-center overflow-hidden'
+        className='flex h-[66.666%] items-center overflow-x-clip'
         config={animationConfig.y1}
       >
         <ScrollAnimation config={animationConfig.clipPath}>
@@ -75,20 +77,8 @@ const HomeFirstText = ({ className, theme, ...props }) => {
         </ScrollAnimation.Transform>
       </div>
 
-      <ChangeTheme
-        className='pointer-events-none absolute left-0 top-0 h-1/2 max-h-screen w-full'
-        theme={theme}
-      >
-        <span />
-      </ChangeTheme>
-
-      <ChangeTheme
-        className='pointer-events-none absolute bottom-0 left-0 h-1/2 max-h-screen w-full'
-        theme={theme}
-      >
-        <span />
-      </ChangeTheme>
-    </div>
+      <Lines />
+    </Section>
   );
 };
 

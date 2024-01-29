@@ -35,7 +35,6 @@ export { default as Separator } from './separator';
 export { default as Sheet } from './sheet';
 export { default as Skeleton } from './skeleton';
 export { default as Slider } from './slider';
-export { default as Svg } from './svg';
 export { default as Switch } from './switch';
 export { default as Table } from './table';
 export { default as Tabs } from './tabs';

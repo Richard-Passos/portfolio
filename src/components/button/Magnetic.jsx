@@ -18,7 +18,7 @@ const MagneticButton = (
         <span>{children}</span>
       </Magnetic>
 
-      <div className='absolute h-full w-full translate-y-[101%] rounded-[50%_50%_0_0] transition-[transform,border-radius] duration-500 group-hover:translate-y-0 group-hover:rounded-[0%_0%_0_0]'>
+      <div className='absolute inset-0 translate-y-[101%] rounded-[50%_50%_0_0] transition-[transform,border-radius] duration-500 group-hover:translate-y-0 group-hover:rounded-[0%_0%_0_0]'>
         <span className='h-full w-full rounded-inherit bg-variant-active transition-bg' />
       </div>
     </>
@@ -48,7 +48,7 @@ const magneticButtonSizes = {
 };
 
 const magneticButtonVariants = cnv({
-  base: 'group relative aspect-square overflow-hidden border-border px-0 hover:bg-variant [&_svg]:h-1/3 [&_svg]:w-1/3',
+  base: 'group relative aspect-square overflow-hidden border-border px-0 [clip-path:circle(100%)] hover:bg-variant [&_svg]:h-1/3 [&_svg]:w-1/3',
   variants: {
     size: magneticButtonSizes,
   },

@@ -8,8 +8,8 @@ import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
 const TYPES = [
-  { data: 'list', icon: 'Rows' },
-  { data: 'grid', icon: 'Dashboard' },
+  { data: 'list', icon: 'List' },
+  { data: 'grid', icon: 'Grid' },
 ];
 
 const ProjectsShowTypes = ({ className, ...props }) => {
@@ -27,7 +27,7 @@ const ProjectsShowTypes = ({ className, ...props }) => {
         <MagneticButton
           aria-label={`Toggle to ${data}`}
           className={cn(
-            'hover:z-10',
+            'hover:z-10 [&_svg]:h-[40%] [&_svg]:w-[40%]',
             type !== data && 'focus-visible:outline-variant-content',
           )}
           key={data}

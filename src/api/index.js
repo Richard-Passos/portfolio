@@ -1,1 +1,1 @@
-export {default as getProjects} from './getProjects'
+export { default as getProjects } from './getProjects';

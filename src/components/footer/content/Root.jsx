@@ -1,13 +1,15 @@
-import { ArrowTopRightIcon } from '@radix-ui/react-icons';
-
-import BackTop from '@/components/back-top';
 import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
+import BackTop from '../../back-top';
 import { MagneticButton } from '../../button';
+import GridPattern from '../../grid-pattern';
 import { ScrollAnimationTransform } from '../../scroll-animation';
 import SocialNav from '../../social-nav';
 import { Logo, Text } from '../../ui';
+import { CursorHover } from '../../ui/cursor';
+import { ArrowUpIcon, HandHornsIcon, HeartIcon } from '../../ui/icon/icons';
+import { FOOTER_CONTENT_THEME } from '../Root';
 
 const ANIMATION_OFFSET = ['0 1', '.95 1'];
 
@@ -17,57 +19,74 @@ const FooterContent = ({ className, ...props }) => {
       useScrollConfig: {
         offset: ANIMATION_OFFSET,
       },
-      propPoints: ['-60%', '0%'],
+      prop: '--smooth-y',
+      propPoints: [-0.4, 0],
     },
-    linkY: {
+    x: {
       useScrollConfig: {
         offset: ANIMATION_OFFSET,
       },
-      prop: '--link-y',
-      propPoints: ['100%', '0%'],
+      prop: '--x',
+      propPoints: ['0%', '27.5%'],
     },
   };
 
   return (
-    <ScrollAnimationTransform
-      className={cn(
-        'flex w-full flex-col items-center justify-between gap-12 py-8 text-content max-2xl:min-h-screen max-sm:!translate-y-0 2xl:h-screen 2xl:max-h-bounds',
-        className,
-      )}
-      config={animationConfig.y}
-      {...props}
-    >
-      <ScrollAnimationTransform config={animationConfig.linkY}>
-        <div>
-          <Logo className='ml-12 mr-auto' />
+    <CursorHover variant={{ theme: FOOTER_CONTENT_THEME }}>
+      <ScrollAnimationTransform config={animationConfig.y}>
+        <ScrollAnimationTransform config={animationConfig.x}>
+          <div
+            className={cn(
+              'flex w-[90%] max-w-screen-xl flex-col pt-[--padding] text-content [--h:100vh] [--padding:min(20vh,theme(spacing.20))] max-2xl:min-h-screen sm:[--y:calc(var(--smooth-y)*var(--h))] 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
+              FOOTER_CONTENT_THEME,
+              className,
+            )}
+            {...props}
+          >
+            <div className='relative z-10 flex flex-col gap-1.5 pb-12 sm:translate-y-[--y]'>
+              <Text className='text-muted-content'>ready to go wild?</Text>
 
-          <div className='flex w-[90%] max-w-screen-xl flex-col items-center gap-1.5'>
-            <Text className='text-center text-muted-content'>
-              got a project?
-            </Text>
-
-            <div className='group/link relative flex w-fit items-center justify-center'>
-              <Text.Title className='text-center text-[14vw] font-bold uppercase leading-none sm:text-[min(10vw,8rem)]'>
+              <Text.Title className='text-[12vw]/[1] font-bold uppercase sm:text-[min(10vw,7rem)]/[1]'>
+                <HandHornsIcon className='my-auto inline-block h-[.65em] w-[.65em]' />{' '}
                 Let&apos;s work <br /> together
               </Text.Title>
 
-              <div className='absolute scale-0 transition-transform duration-300 focus-within:scale-100 focus-within:duration-500 focus-within:ease-backOut group-hover/link:scale-100 group-hover/link:duration-500 group-hover/link:ease-backOut'>
+              <div className='absolute bottom-0 left-1/2 translate-x-[--x] translate-y-1/2 sm:translate-x-[calc(var(--x)*4)]'>
                 <MagneticButton
                   href='/contact'
                   isLink
                   variants={{ size: 'lg' }}
                 >
-                  <ArrowTopRightIcon />
+                  <ArrowUpIcon className='rotate-45' />
                 </MagneticButton>
               </div>
             </div>
-          </div>
 
-          <section className='relative flex w-full flex-col px-12'>
-            <div className='relative flex w-full max-sm:flex-col max-sm:items-start'>
-              <BackTop className='mb-4 max-sm:hidden' />
+            <div className='relative flex grow items-center overflow-y-clip border-t py-[--padding] sm:translate-y-[--y]'>
+              <div className='flex w-full justify-between gap-md p-5 max-sm:flex-col sm:translate-y-[--y]'>
+                <div className='flex flex-col items-start gap-4'>
+                  <Logo className='w-fit' />
 
-              <div className='bottom-0 right-0 mx-auto overflow-y-clip sm:absolute'>
+                  <Text className='-mt-2 max-w-[14rem] text-sm font-medium'>
+                    An awesome {personalInfo.job.toLowerCase()} to fit your
+                    needs.
+                  </Text>
+
+                  <section className='flex flex-col gap-1.5'>
+                    <Text.Small className='text-xs'>
+                      Made with{' '}
+                      <HeartIcon className='inline-block h-3.5 w-3.5 fill-red-500' />{' '}
+                      by Richard
+                    </Text.Small>
+
+                    <Text.Small className='text-xs'>
+                      &copy; 2024 Richard Passos
+                    </Text.Small>
+                  </section>
+
+                  <BackTop className='mt-auto -translate-x-6 max-sm:hidden' />
+                </div>
+
                 <SocialNav>
                   {personalInfo.socials.map((social, i) => (
                     <SocialNav.Item
@@ -78,30 +97,16 @@ const FooterContent = ({ className, ...props }) => {
                   ))}
                 </SocialNav>
               </div>
+
+              <GridPattern
+                className='-top-px bottom-[--padding] -z-10 sm:translate-y-[--y]'
+                rows={4}
+              />
             </div>
-
-            <div className='flex items-center justify-between gap-x-6 gap-y-1.5 border-t pt-3 max-sm:flex-col'>
-              <Text.Small className='group text-xs text-content'>
-                <span className='group-hover:rotate-[360deg] group-hover:transition-transform group-hover:duration-500 group-hover:ease-backOut'>
-                  &copy;
-                </span>{' '}
-                2023 Richard Passos
-              </Text.Small>
-
-              <Text.Small className='group text-xs text-content'>
-                Made with{' '}
-                <span className='transition-transform group-hover:-translate-y-1/4'>
-                  ❤
-                </span>{' '}
-                by Richard
-              </Text.Small>
-            </div>
-          </section>
-
-          <span className='absolute inset-0 -z-10 bg-[linear-gradient(theme(colors.border)_1px,_transparent_1px),_linear-gradient(to_right,_theme(colors.border)_1px,__transparent_1px_1px)] bg-center opacity-50 [background-size:25px_25px] [mask-image:radial-gradient(#000,transparent_75%)] dark:opacity-20' />
-        </div>
+          </div>
+        </ScrollAnimationTransform>
       </ScrollAnimationTransform>
-    </ScrollAnimationTransform>
+    </CursorHover>
   );
 };
 

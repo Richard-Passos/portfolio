@@ -1,25 +1,22 @@
-import { GlobeIcon, RocketIcon } from '@radix-ui/react-icons';
-
 import {
   InfinityScroll,
   BentoGrid,
-  ChangeTheme,
+  Lines,
   ListHorizontalScroll,
   LocalTime,
   ScrollTitle,
   Section,
 } from '@/components';
-import { Badge, Link, Svg, Text } from '@/components/ui';
-import { aboutText, personalInfo, selectedSkills } from '@/constants';
+import { Badge, Link, Text } from '@/components/ui';
+import Icons from '@/components/ui/icon/icons';
+import { personalInfo, selectedSkills } from '@/constants';
+import { aboutText } from '@/constants/texts';
 import { cn } from '@/utils';
 
-const HomeAboutSection = ({ className, theme, ...props }) => {
+const HomeAboutSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn(
-        'relative mb-20 flex flex-col items-center gap-20 md:gap-28 2xl:h-auto 2xl:max-h-none',
-        className,
-      )}
+      className={cn('relative flex flex-col items-center gap-lg', className)}
       {...props}
     >
       <h2 className='flex w-full flex-col'>
@@ -34,12 +31,7 @@ const HomeAboutSection = ({ className, theme, ...props }) => {
 
       <ListContactPage />
 
-      <ChangeTheme
-        className='pointer-events-none absolute left-0 top-0 h-full max-h-screen w-full'
-        theme={theme}
-      >
-        <span />
-      </ChangeTheme>
+      <Lines />
     </Section>
   );
 };
@@ -62,13 +54,13 @@ const Grid = ({ className, ...props }) => {
         </Badge>
 
         <Text>
-          <Svg.HandHorns className='inline-block h-4 w-4 -translate-y-0.5' />{' '}
+          <Icons.HandHorns className='inline-block h-4 w-4 -translate-y-0.5' />{' '}
           {aboutText}
         </Text>
       </BentoGrid.Item>
 
       <BentoGrid.Item className='justify-between [grid-area:item-2]'>
-        <GlobeIcon className='h-8 w-8' />
+        <Icons.Globe className='h-8 w-8' />
 
         <Text className='text-4xl'>
           Based in {personalInfo.location.country}, {personalInfo.location.gmt}
@@ -100,7 +92,7 @@ const Grid = ({ className, ...props }) => {
       </BentoGrid.Item>
 
       <BentoGrid.Item className='min-h-0 justify-between gap-3 p-5 [grid-area:item-4]'>
-        <RocketIcon className='h-5 w-5' />
+        <Icons.Rocket className='h-5 w-5' />
 
         <Text className='font-semibold leading-tight'>
           Improving a little bit every day.
@@ -108,7 +100,7 @@ const Grid = ({ className, ...props }) => {
       </BentoGrid.Item>
 
       <BentoGrid.Item className='min-h-0 justify-between gap-3 p-5 [grid-area:item-5]'>
-        <Svg.GameController className='h-5 w-5' />
+        <Icons.GameController className='h-5 w-5' />
 
         <Text className='font-semibold leading-tight'>
           I love to play games.
@@ -129,7 +121,7 @@ const Grid = ({ className, ...props }) => {
           href={personalInfo.buyMeACoffeHref}
         >
           <div className='mb-3 flex aspect-square h-10 items-center justify-center rounded-sm border transition-colors group-hover:border-transparent group-hover:bg-content/20'>
-            <Svg.Coffee className='h-6 w-6' />
+            <Icons.Coffee className='h-6 w-6' />
           </div>
 
           <Text>Buy me a coffee</Text>
@@ -146,20 +138,20 @@ const ListContactPage = ({ className, ...props }) => {
 
   return (
     <div
-      className={cn(
-        'flex w-full flex-col items-center gap-md',
-        className,
-      )}
+      className={cn('flex w-full flex-col items-center gap-md', className)}
       {...props}
     >
       <ListHorizontalScroll>
         {content.map((content, i) => (
           <ListHorizontalScroll.Item
-            baseVelocity={i % 2 === 1 ? 2 : -2}
+            baseVelocity={i % 2 === 1 ? 1 : -1}
             className='[--gap:theme(spacing.8)] odd:rotate-[.5deg] even:-rotate-[.5deg]'
             key={content}
           >
-            <span>{content}</span> •
+            <span>{content}</span> •{' '}
+            <span className='opacity-30 dark:opacity-10'>{content}</span>{' '}
+            <span className='opacity-30 dark:opacity-10'>•</span>{' '}
+            <span className='opacity-30 dark:opacity-10'>{content}</span> •
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll>

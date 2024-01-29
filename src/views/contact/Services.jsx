@@ -5,7 +5,10 @@ import { cn } from '@/utils';
 const ContactViewServices = ({ className, ...props }) => {
   return (
     <section
-      className={cn('flex w-full flex-col items-center gap-md', className)}
+      className={cn(
+        'flex w-[90%] max-w-screen-xl flex-col items-center gap-md',
+        className,
+      )}
       {...props}
     >
       <Text.Title className='text-center text-2xl'>Services</Text.Title>

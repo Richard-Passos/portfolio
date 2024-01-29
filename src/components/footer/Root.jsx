@@ -1,44 +1,40 @@
-import { cn } from '@/utils';
+import { cn, getOpstTheme } from '@/utils';
 
+import Bg from '../bg';
 import Lines from '../lines';
-import Section from '../section';
-import { CursorHover } from '../ui/cursor';
 import Overlay from './Overlay';
 import Content from './content';
 
-const CONTENT_THEME = 'light';
+const FOOTER_CONTENT_THEME = 'light';
 
 const Footer = ({ className, ...props }) => {
   return (
-    <Section
-      asChild
+    <footer
       className={cn(
-        'relative mx-auto flex max-w-bounds flex-col items-center overflow-y-clip pt-24 2xl:h-auto 2xl:max-h-none',
+        'relative mx-auto flex max-w-bounds flex-col items-center overflow-y-clip pt-[--spacing-t] [--spacing-t:theme(spacing.24)]',
         className,
       )}
       {...props}
     >
-      <footer>
-        <div className='absolute top-0 z-20 h-24 w-full overflow-hidden bg-main'>
-          <Lines className='absolute' />
-        </div>
+      <div
+        className={cn(
+          'absolute top-0 z-20 h-[--spacing-t] w-screen overflow-hidden bg-main',
+          getOpstTheme(FOOTER_CONTENT_THEME),
+        )}
+      >
+        <Lines className='absolute' />
+      </div>
 
-        <Overlay className='top-24' />
+      <Overlay
+        className={cn('top-[--spacing-t]', getOpstTheme(FOOTER_CONTENT_THEME))}
+      />
 
-        <span
-          className={cn(
-            'absolute bottom-0 top-24 -z-10 w-screen bg-main transition-bg',
-            CONTENT_THEME,
-          )}
-        />
+      <Bg className={cn('top-[--spacing-t] -z-10', FOOTER_CONTENT_THEME)} />
 
-        <CursorHover variant={{ theme: CONTENT_THEME }}>
-          <Content className={CONTENT_THEME} />
-        </CursorHover>
-      </footer>
-    </Section>
+      <Content />
+    </footer>
   );
 };
 
 export default Footer;
-export { CONTENT_THEME };
+export { FOOTER_CONTENT_THEME };

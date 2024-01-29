@@ -1,16 +1,9 @@
-import * as Icons from '@radix-ui/react-icons';
+import Icons from './icons';
 
-import { cn } from '@/utils';
+const Icon = ({ name, ...props }) => {
+  const Tag = Icons[name] || Icons.Question;
 
-const Icon = ({ name, className, ...props }) => {
-  const Tag = Icons[name + 'Icon'] || Icons.QuestionMarkIcon;
-
-  return (
-    <Tag
-      className={cn('h-5 w-5', className)}
-      {...props}
-    />
-  );
+  return <Tag {...props} />;
 };
 
 export default Icon;

@@ -10,14 +10,14 @@ const Header = ({ className, ...props }) => {
   return (
     <header
       className={cn(
-        'relative z-10 mx-auto flex w-[90%] max-w-bounds flex-wrap items-center justify-between py-4 sm:py-6',
+        'relative z-10 mx-auto flex w-[90%] max-w-bounds flex-wrap items-center justify-between py-[min(6vw,theme(spacing.6))]',
         className,
       )}
       {...props}
     >
       <Logo />
 
-      <Nav className='max-sm:hidden' />
+      <Nav className='-mr-4 max-sm:hidden' />
 
       <Menu>
         <MagneticLink asChild>

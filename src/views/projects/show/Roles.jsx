@@ -1,13 +1,13 @@
 'use client';
 
+import { useContext } from 'react';
+
+import { Select } from '@/components/ui';
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-} from '@radix-ui/react-icons';
-import { useContext } from 'react';
-
-import { Select } from '@/components/ui';
+} from '@/components/ui/icon/icons';
 import { ProjectsShowContext } from '@/contexts';
 import { cn, isFunctionThanCall } from '@/utils';
 

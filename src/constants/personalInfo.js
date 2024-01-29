@@ -16,15 +16,18 @@ const personalInfo = {
   socials: [
     {
       href: 'https://github.com/Richard-Passos',
-      name: 'Gh',
+      icon: 'Github',
+      name: 'Github',
     },
     {
       href: 'https://www.instagram.com/richardp.dev',
-      name: 'Ig',
+      icon: 'Instagram',
+      name: 'Instagram',
     },
     {
       href: 'https://www.linkedin.com/in/richardp-dev',
-      name: 'In',
+      icon: 'Linkedin',
+      name: 'Linkedin',
     },
   ],
   buyMeACoffeHref: 'https://www.buymeacoffee.com/richardp.dev',

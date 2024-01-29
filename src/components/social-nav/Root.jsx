@@ -1,30 +1,25 @@
-import { Link2Icon } from '@radix-ui/react-icons';
-
 import { cn } from '@/utils';
 
-import { IconButton } from '../button';
+import { TextTitle } from '../ui/text';
 
 const SocialNav = ({ className, children, ...props }) => {
   return (
     <section
-      className={cn(
-        'group flex flex-col items-end gap-2 pb-4 transition-transform duration-300 [--item-opacity:1] [--item-y:0%] focus-within:translate-y-0 focus-within:[--item-opacity:1] focus-within:[--item-y:0%] hover:translate-y-0 sm:translate-x-4 sm:translate-y-12 sm:px-4 sm:[--item-opacity:0] sm:[--item-y:100%]',
-        className,
-      )}
+      className={cn('relative flex flex-col gap-sm', className)}
       {...props}
     >
-      <IconButton
-        className='pointer-events-none text-xs font-bold uppercase max-sm:hidden'
-        tabIndex={-1}
-        variants={{ color: 'inverted', style: 'transparent', size: 'sm' }}
-      >
-        Socials{' '}
-        <IconButton.Icon>
-          <Link2Icon />
-        </IconButton.Icon>
-      </IconButton>
+      <TextTitle className='text-xs uppercase text-muted-content sm:absolute sm:left-4 sm:top-4'>
+        Socials
+      </TextTitle>
 
-      <nav className='flex gap-3 sm:mr-4'>{children}</nav>
+      <nav className='grid gap-sm sm:grid-cols-2'>
+        <span
+          aria-hidden
+          className='max-sm:hidden'
+        />
+
+        {children}
+      </nav>
     </section>
   );
 };

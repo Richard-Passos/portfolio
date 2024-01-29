@@ -25,7 +25,7 @@ const FooterOverlay = ({ className, ...props }) => {
     >
       <div>
         <div className='relative h-[--h] w-full -translate-y-px'>
-          <div className='pointer-events-auto absolute left-1/2 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] overflow-hidden rounded-[50%] bg-main shadow-[0_50px_75px_-15px_var(--tw-shadow-color)] shadow-[hsl(0_0%_80%/.15)] transition-[background-color,box-shadow] dark:shadow-[hsl(0_0%_5%/.15)]'>
+          <div className='pointer-events-auto absolute left-1/2 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] overflow-hidden rounded-[50%] bg-main shadow-[0_50px_75px_-15px] shadow-[hsl(0_0%_90%/.2)] transition-[background-color,box-shadow] dark:shadow-[hsl(0_0%_10%/.2)]'>
             <Lines className='absolute' />
           </div>
         </div>

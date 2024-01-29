@@ -1,4 +1,3 @@
-import { Cross2Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { Slot } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
 
@@ -7,6 +6,7 @@ import { cn } from '@/utils';
 
 import { MagneticButton } from '../button';
 import { ScrollAnimation } from '../scroll-animation';
+import { MenuIcon, TimesIcon } from '../ui/icon/icons';
 import { SheetTrigger } from '../ui/sheet';
 
 const MenuTrigger = ({ className, variants, ...props }, ref) => {
@@ -33,11 +33,11 @@ const MenuTrigger = ({ className, variants, ...props }, ref) => {
           variants={{ color: 'main', ...variants }}
         >
           <Icon>
-            <Cross2Icon className='group-data-closed:pointer-events-none group-data-closed:opacity-0' />
+            <TimesIcon className='group-data-closed:pointer-events-none group-data-closed:opacity-0' />
           </Icon>
 
           <Icon>
-            <HamburgerMenuIcon className='group-data-open:pointer-events-none group-data-open:opacity-0' />
+            <MenuIcon className='group-data-open:pointer-events-none group-data-open:opacity-0' />
           </Icon>
         </MagneticButton>
       </SheetTrigger>

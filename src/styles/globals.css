@@ -22,9 +22,9 @@
     --danger-a: 354 70% 57%;
     --danger-c: 354 60% 93%;
 
-    --variant: 199 77% 54%;
-    --variant-a: 199 77% 50%;
-    --variant-c: 199 67% 94%;
+    --variant: 0 0% 0%;
+    --variant-a: 0 0% 0%;
+    --variant-c: 0 0% 0%;
 
     --radius-sm: 0.5rem;
     --radius-md: 0.75rem;
@@ -45,7 +45,7 @@
     --muted-c: 0 0% 32%;
 
     --primary: 0 0% 4.7%;
-    --primary-a: 0 0% 5.7%;
+    --primary-a: 0 0% 6.7%;
     --primary-c: 0 0% 98%;
 
     --secondary: 334.8 61% 83.9%;
@@ -55,9 +55,14 @@
     --accent: 215 61.8% 44.1%;
     --accent-a: 0 0% 48.1%;
     --accent-c: 250.9 64% 84.9%;
+
+    --border: 0 0% 85%;
   }
 
-  .dark {
+  .dark,
+  body:has(.dark-layout) {
+    @apply text-content;
+
     --main: 0 0% 4.7%;
     --active: 0 0% 5.7%;
     --content: 0 0% 98%;
@@ -68,10 +73,10 @@
 
     --muted: 0 0% 9%;
     --muted-a: 0 0% 13%;
-    --muted-c: 0 0% 68%;
+    --muted-c: 0 0% 50%;
 
     --primary: 0 0% 98%;
-    --primary-a: 0 0% 90%;
+    --primary-a: 0 0% 94%;
     --primary-c: 0 0% 4.7%;
 
     --secondary: 340 12% 4.9%;
@@ -81,6 +86,8 @@
     --accent: 251.1 22.1% 62.2%;
     --accent-a: 251.1 22.1% 58.2%;
     --accent-c: 251.1 62.1% 82.2%;
+
+    --border: 0 0% 18%;
   }
 
   * {
@@ -127,7 +134,7 @@
   }
 
   .outline-text {
-    @apply [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:2px] [background-clip:text];
+    @apply [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:theme(spacing[0.5])] [background-clip:text];
   }
 
   .vertical-text {

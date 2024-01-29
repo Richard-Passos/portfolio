@@ -79,11 +79,11 @@ module.exports = {
           active: getColor('--variant-a'),
           content: getColor('--variant-c'),
         },
-        border: 'hsl(var(--muted-c)/.2)',
+        border: getColor('--border'),
         current: 'currentColor',
       },
       borderColor: {
-        DEFAULT: 'hsl(var(--muted-c)/.2)',
+        DEFAULT: getColor('--border'),
       },
       borderRadius: {
         sm: 'var(--radius-sm)',

@@ -12,7 +12,7 @@ const FormMessage = ({ className, children, ...props }, ref) => {
 
   return (
     <Text
-      className={cn('mt-3 text-sm font-medium text-danger', className)}
+      className={cn('text-sm font-medium text-danger mt-2', className)}
       id={messageId}
       ref={ref}
       {...props}

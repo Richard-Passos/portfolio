@@ -4,18 +4,26 @@ import { cn } from '@/utils';
 
 import ChangeTheme from '../change-theme';
 
-const Section = ({ className, asChild, children, ...props }, ref) => {
+const Section = (
+  { as = 'section', theme, className, children, ...props },
+  ref,
+) => {
+  const Tag = as;
+
   return (
-    <ChangeTheme
+    <Tag
       className={cn(
-        'max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds',
+        'relative pb-[--spacing-y] pt-[calc(var(--spacing-y)*1.5)] [--spacing-y:min(28vh,theme(spacing.28))] max-2xl:min-h-screen',
+        theme,
         className,
       )}
       ref={ref}
       {...props}
     >
-      {asChild ? children : <section>{children}</section>}
-    </ChangeTheme>
+      {children}
+
+      <ChangeTheme theme={theme} />
+    </Tag>
   );
 };
 

@@ -1,13 +1,9 @@
-import { PlusIcon } from '@radix-ui/react-icons';
-
 import { getProjects } from '@/api';
-import { ChangeTheme } from '@/components';
 import { Badge, Text } from '@/components/ui';
+import { PlusIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
 
 import Show from './show';
-
-const PROJECTS_VIEW_THEME = 'dark';
 
 const ProjectsView = async ({ className, ...props }) => {
   const projects = (await getProjects()).results;
@@ -15,7 +11,7 @@ const ProjectsView = async ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'mx-auto flex max-w-bounds flex-col items-center gap-lg py-[min(48vh,theme(spacing.48))]',
+        'dark-layout mx-auto flex max-w-bounds flex-col items-center gap-lg py-[min(28vh,theme(spacing.28))]',
         className,
       )}
       {...props}
@@ -43,20 +39,6 @@ const ProjectsView = async ({ className, ...props }) => {
           <span className='sr-only'>More projects</span>
         </Show.LoadMore>
       </Show>
-
-      <ChangeTheme
-        className='pointer-events-none absolute top-0 h-1/2 max-h-screen w-full'
-        theme={PROJECTS_VIEW_THEME}
-      >
-        <span />
-      </ChangeTheme>
-
-      <ChangeTheme
-        className='pointer-events-none absolute bottom-0 h-1/2 max-h-screen w-full'
-        theme={PROJECTS_VIEW_THEME}
-      >
-        <span />
-      </ChangeTheme>
     </main>
   );
 };

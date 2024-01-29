@@ -1,9 +1,9 @@
 'use client';
 
-import { Cross2Icon } from '@radix-ui/react-icons';
 import { useState } from 'react';
 
 import { Timerbar, Toast } from '@/components/ui';
+import { TimesIcon } from '@/components/ui/icon/icons';
 import { useToast } from '@/hooks';
 import { TOAST_DURATION } from '@/hooks/useToast';
 import { cn } from '@/utils';
@@ -48,7 +48,7 @@ const ToasterClose = ({ variants, className, ...props }) => {
       className={cn(style === 'outline' && 'hover:bg-variant/20', className)}
       {...props}
     >
-      <Cross2Icon />
+      <TimesIcon />
     </Toast.Close>
   );
 };

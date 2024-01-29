@@ -30,7 +30,7 @@ const getContent = (content = {}) => {
     icon: (
       <Icon
         {...content}
-        className={cn('h-[40%] w-[40%]', content.className)}
+        className={cn('h-1/3 w-1/3', content.className)}
       />
     ),
     text: (

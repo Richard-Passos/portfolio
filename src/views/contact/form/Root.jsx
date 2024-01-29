@@ -1,7 +1,6 @@
-import { PaperPlaneIcon } from '@radix-ui/react-icons';
-
 import { MagneticButton } from '@/components/button';
 import { Form, Input, Textarea } from '@/components/ui';
+import { PaperPlaneIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
 
 import ClientForm from './Client';
@@ -94,10 +93,10 @@ const ContactForm = ({ className, ...props }) => {
       </Form.Field>
 
       <Form.Submit asChild>
-        <MagneticButton className='place-self-center max-sm:aspect-auto max-sm:px-6 sm:!h-[75%] [&_svg]:h-[30%] [&_svg]:w-[30%]'>
+        <MagneticButton className='place-self-center max-sm:aspect-auto max-sm:px-6 sm:!h-28'>
           <PaperPlaneIcon
             aria-hidden
-            className='translate-x-px -rotate-45 scale-90 max-sm:hidden'
+            className='translate-x-px scale-90 max-sm:hidden'
           />
 
           <span className='sm:sr-only'>Submit</span>

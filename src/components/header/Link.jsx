@@ -25,9 +25,10 @@ const HeaderLink = ({ isActive, className, children, ...props }) => {
         {isActive && (
           <motion.span
             className={cn(
-              'absolute inset-x-4 bottom-1.5 h-px bg-current transition-bg',
+              'absolute bottom-1.5 h-0.5 w-[calc(50%-theme(spacing.4))] bg-current transition-bg',
             )}
             layoutId='headerLinkActiveIndicator'
+            style={{ borderRadius: '9999px' }}
             transition={{
               type: 'spring',
               ...smoothConfig,

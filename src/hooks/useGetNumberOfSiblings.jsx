@@ -17,7 +17,7 @@ const useGetNumberOfSiblings = (
             containerRef.current.getBoundingClientRect().width,
           childrenWidht = childrenRef.current.getBoundingClientRect().width;
 
-        const numberOfChildren = Math.round(
+        const numberOfChildren = Math.ceil(
           (containerWidth * containerTimes) / childrenWidht,
         );
 
