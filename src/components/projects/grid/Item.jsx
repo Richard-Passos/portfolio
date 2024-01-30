@@ -16,7 +16,7 @@ const ProjectsGridItem = ({ index, className, data, ...props }) => {
   const img = images[index];
 
   const animationConfig = {
-    useScrollConfig: { offset: ['0 1', '.25 1'] },
+    useScrollConfig: { offset: ['0 1', '0 .8'] },
     prop: '--y',
     propPoints: [0.25, 0],
   };
