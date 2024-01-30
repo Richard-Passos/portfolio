@@ -17,7 +17,7 @@ const ListHorizontalScrollItem = ({
 }) => {
   const animationConfig = {
     useScrollConfig: {
-      offset: ['0 1', '3 1'],
+      offset: ['0 1', '0 .6'],
     },
     useScrollRes: 'scrollYProgress',
     prop: '--size',

@@ -12,7 +12,7 @@ const TextScrollAnimation = ({ text, className, ...props }) => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['0 .95', '0 .25'],
+    offset: ['0 .95', '1 .6'],
   });
 
   const words = text.split(' ');
