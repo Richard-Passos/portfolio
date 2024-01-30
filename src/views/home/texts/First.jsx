@@ -10,14 +10,14 @@ const HomeFirstText = (props) => {
   const animationConfig = {
     x: {
       useScrollConfig: {
-         ['-.5 .5', '0 .5'],
+        offset: ['-.5 .5', '0 .5'],
       },
       prop: '--x',
       propPoints: ['-100%', '0%'],
     },
     clipPath: {
       useScrollConfig: {
-         ['0 .5', '.5 .5'],
+        offset: ['0 .5', '.5 .5'],
       },
       useScrollRes: 'scrollYProgress',
       prop: '--clip-path',
@@ -26,13 +26,13 @@ const HomeFirstText = (props) => {
     },
     y: {
       useScrollConfig: {
-         ['.5 .5', '1 .5'],
+        offset: ['.5 .5', '1 .5'],
       },
       propPoints: ['0%', '50%'],
     },
     top: {
       useScrollConfig: {
-         ['-1 .5', '0 .5'],
+        offset: ['-1 .5', '0 .5'],
       },
       useScrollRes: 'scrollYProgress',
       prop: '--top',
