@@ -13,10 +13,10 @@ const ProjectsChar = ({
   children,
   ...props
 }) => {
-  const start = _getCharIdx(chars, idx) / chars.length,
+  const start = (_getCharIdx(chars, idx) / chars.length) * 2,
     end = start + 1 / chars.length;
 
-  const y = useTransform(progress, [start * 2, end * 2], ['100%', '0%']);
+  const y = useTransform(progress, [start, end], ['100%', '0%']);
 
   const animations = {
     onScroll: 'translate-y-[--y]',

@@ -7,15 +7,12 @@ import { cn, isFunctionThanCall } from '@/utils';
 
 import { CursorLink } from '../../link';
 import { ScrollAnimationTransform } from '../../scroll-animation';
-import { Badge, Text } from '../../ui';
-import { ArrowUpIcon } from '../../ui/icon/icons';
-import Title from '../title';
 
-const ProjectsListItem = ({ className, data, index, img, ...props }) => {
+const ProjectsListItem = ({ className, index, children, ...props }) => {
   const { setActiveIdx } = useContext(ProjectsContext);
 
   const animationConfig = {
-    useScrollConfig: { offset: ['0 1', '3 1'] },
+    useScrollConfig: { offset: ['0 1', '0 .55'] },
     prop: 'scaleX',
     scrollPoints: [0, 0.5, 1],
     propPoints: [1, 1.05, 1],
@@ -25,14 +22,13 @@ const ProjectsListItem = ({ className, data, index, img, ...props }) => {
     <ScrollAnimationTransform config={animationConfig}>
       <CursorLink
         className={cn(
-          'group relative flex w-full justify-between gap-x-12 gap-y-6 overflow-hidden border-t p-12 no-underline last:border-b max-sm:px-6 lg:px-24',
+          'group relative flex w-full items-start gap-4 overflow-hidden border-t px-[7.5%] py-12 no-underline last:border-b',
           className,
         )}
         content={{
           name: 'Eye',
           className: 'w-[45%] h-[45%]',
         }}
-        href={data.href}
         onMouseEnter={(ev) => {
           setActiveIdx(index);
 
@@ -40,34 +36,7 @@ const ProjectsListItem = ({ className, data, index, img, ...props }) => {
         }}
         {...props}
       >
-        <section className='flex gap-4 overflow-hidden'>
-          <Text className='translate-y-0.5 text-sm text-muted-content opacity-50 dark:opacity-20'>
-            {`${index + 1}`.padStart(2, '0')}/
-          </Text>
-
-          <div className='space-y-1.5'>
-            <Title
-              className='text-4xl sm:text-5xl'
-              text={data.title}
-            />
-
-            <div className='flex flex-wrap gap-1.5'>
-              {data.roles
-                .sort((a, b) => a.localeCompare(b))
-                .map((role) => (
-                  <Badge
-                    className='lowercase [--variant:--muted-c]'
-                    key={role}
-                    variants={{ style: 'outline' }}
-                  >
-                    {role}
-                  </Badge>
-                ))}
-            </div>
-          </div>
-        </section>
-
-        <ArrowUpIcon className='shrink-0 -translate-x-full translate-y-full rotate-45 opacity-0 transition-[transform,opacity] duration-500 ease-backOut group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 max-sm:hidden' />
+        {children}
 
         <div className='absolute inset-0 -z-10 translate-y-full overflow-hidden transition-transform group-hover:translate-y-0 group-hover:duration-0'>
           <div className='h-full -translate-y-full transition-transform delay-150 group-hover:translate-y-0 group-hover:delay-0'>
