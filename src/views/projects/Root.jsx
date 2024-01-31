@@ -1,4 +1,5 @@
 import { getProjects } from '@/api';
+import { Lines } from '@/components';
 import { Badge, Text } from '@/components/ui';
 import { PlusIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
@@ -11,7 +12,7 @@ const ProjectsView = async ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout mx-auto flex max-w-bounds flex-col items-center gap-lg py-[min(28vh,theme(spacing.28))]',
+        'dark-layout relative mx-auto flex max-w-bounds flex-col items-center gap-lg py-[min(28vh,theme(spacing.28))]',
         className,
       )}
       {...props}
@@ -39,6 +40,9 @@ const ProjectsView = async ({ className, ...props }) => {
           <span className='sr-only'>More projects</span>
         </Show.LoadMore>
       </Show>
+
+      <Lines />
+      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-bg dark:opacity-30' />
     </main>
   );
 };
