@@ -68,25 +68,25 @@ const Grid = ({ className, ...props }) => {
       </BentoGrid.Item>
 
       <BentoGrid.Item className='items-center justify-around [grid-area:item-3]'>
-        <Text className='text-center text-2xl'>
+        <Text.Subtitle className='text-center text-2xl font-medium'>
           A pinch of
           <br />
           soft & hard skills
-        </Text>
+        </Text.Subtitle>
 
         <InfinityScroll
           as='ul'
           className='[--duration:7.5s] [--gap:theme(spacing.3)] hover:paused'
         >
           {selectedSkills.map((skill, i) => (
-            <li key={skill}>
-              <Badge
-                className='px-3.5 py-1.5 text-sm'
-                variants={{ style: i % 2 === 0 ? 'solid' : 'outline' }}
-              >
-                {skill}
-              </Badge>
-            </li>
+            <Badge
+              asChild
+              className='px-3.5 py-1.5 text-sm'
+              key={skill}
+              variants={{ style: i % 2 === 0 ? 'solid' : 'outline' }}
+            >
+              <li>{skill}</li>
+            </Badge>
           ))}
         </InfinityScroll>
       </BentoGrid.Item>
@@ -94,7 +94,7 @@ const Grid = ({ className, ...props }) => {
       <BentoGrid.Item className='min-h-0 justify-between gap-3 p-5 [grid-area:item-4]'>
         <Icons.Rocket className='h-5 w-5' />
 
-        <Text className='font-semibold leading-tight'>
+        <Text className='font-medium leading-tight'>
           Improving a little bit every day.
         </Text>
       </BentoGrid.Item>
@@ -102,15 +102,15 @@ const Grid = ({ className, ...props }) => {
       <BentoGrid.Item className='min-h-0 justify-between gap-3 p-5 [grid-area:item-5]'>
         <Icons.GameController className='h-5 w-5' />
 
-        <Text className='font-semibold leading-tight'>
-          I love to play games.
-        </Text>
+        <Text className='font-medium leading-tight'>I love to play games.</Text>
       </BentoGrid.Item>
 
       <BentoGrid.Item className='items-center [grid-area:item-6]'>
-        <Text.Title className='text-base'>my local time</Text.Title>
+        <Text.Subtitle className='text-base font-medium'>
+          my local time
+        </Text.Subtitle>
 
-        <Text className='text-[clamp(1rem,var(--font-size),6rem)] font-bold leading-none [--font-size:15vw] sm:[--font-size:7vw]'>
+        <Text className='text-[14vw]/[1] font-bold sm:text-[min(8vw,6rem)]/[1]'>
           <LocalTime />
         </Text>
       </BentoGrid.Item>
