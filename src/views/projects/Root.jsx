@@ -42,7 +42,7 @@ const ProjectsView = async ({ className, ...props }) => {
       </Show>
 
       <Lines />
-      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-bg dark:opacity-30' />
+      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-30' />
     </main>
   );
 };
