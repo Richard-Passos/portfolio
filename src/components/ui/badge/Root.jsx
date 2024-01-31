@@ -9,7 +9,6 @@ const Badge = ({ asChild, variants, className, ...props }) => {
 
   return (
     <Tag
-      aria-label='Badge'
       className={cn(badgeVariants(variants), className)}
       {...props}
     />
