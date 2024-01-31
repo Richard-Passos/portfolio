@@ -20,7 +20,10 @@ const TextScrollAnimation = ({ text, className, ...props }) => {
   return (
     <span
       aria-label={text}
-      className={cn('flex flex-wrap gap-x-font-blank-space', className)}
+      className={cn(
+        'flex flex-wrap gap-x-font-blank-space [--color:--content]',
+        className,
+      )}
       ref={ref}
       {...props}
     >
