@@ -19,21 +19,42 @@ const ProjectsShowContent = ({ initialData = [], className, ...props }) => {
       <Projects.List>
         {projectsObj.data.map((project, i) => (
           <Projects.List.Item
-            data={project}
+            href={project.href}
             index={i}
             key={'projects-list-' + project.href}
-          />
+          >
+            <Projects.List.Number index={i} />
+
+            <Projects.List.Content className='grid-cols-4 sm:grid-cols-4'>
+              <Projects.List.Title text={project.title} />
+
+              <Projects.List.Roles
+                className='max-sm:col-span-3 sm:justify-center'
+                data={project.roles}
+              />
+
+              <Projects.List.Year>{project.year}</Projects.List.Year>
+            </Projects.List.Content>
+          </Projects.List.Item>
         ))}
       </Projects.List>
     ),
     grid: (
       <Projects.Grid>
         {projectsObj.data.map((project, i) => (
-          <Projects.Grid.Item
-            data={project}
-            index={i}
-            key={'projects-grid-' + project.href}
-          />
+          <Projects.Grid.Item key={'projects-grid-' + project.href}>
+            <Projects.Grid.Link href={project.href}>
+              <Projects.Grid.Number index={i} />
+
+              <Projects.Grid.Image index={i} />
+
+              <Projects.Grid.Title text={project.title} />
+            </Projects.Grid.Link>
+
+            <Projects.Grid.Roles data={project.roles} />
+
+            <Projects.Grid.Year>{project.year}</Projects.Grid.Year>
+          </Projects.Grid.Item>
         ))}
       </Projects.Grid>
     ),
