@@ -29,7 +29,7 @@ const ScrollTitle = ({ dir = 'toRight', className, title, ...props }) => {
     <TextTitle
       asChild
       className={cn(
-        'w-full max-w-bounds overflow-hidden text-[14vw] uppercase leading-none sm:text-[min(10vw,8rem)]',
+        'w-full max-w-bounds overflow-hidden text-[14vw]/[1] uppercase sm:text-[min(10vw,8rem)]/[1]',
         className,
       )}
       ref={containerRef}
@@ -62,7 +62,7 @@ const SecondaryTitle = ({ className, ...props }) => {
   return (
     <span
       aria-hidden
-      className={cn('outline-text opacity-30 dark:opacity-10', className)}
+      className={cn('outline-text opacity-20 dark:opacity-5', className)}
       {...props}
     />
   );
