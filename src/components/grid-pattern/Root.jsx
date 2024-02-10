@@ -16,7 +16,7 @@ const GridPattern = ({ cols = 14, rows = 7, className, style, ...props }) => {
     >
       {[...Array(cols * rows)].map((_, i) => (
         <span
-          className='relative left-px top-px -ml-px -mt-px border opacity-60 transition-all dark:opacity-30'
+          className='relative left-px top-px -ml-px -mt-px border opacity-60 transition-all dark:opacity-20'
           key={i}
         />
       ))}
