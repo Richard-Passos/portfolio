@@ -5,7 +5,7 @@ const projects = [
     roles: ['design', 'development'],
     year: 2024,
     img: {
-      src: '/images/project-00.cleber',
+      src: '/images/project-00.jpg',
       alt: 'Project 00 image',
       width: 1200,
       height: 782,
