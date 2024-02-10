@@ -4,10 +4,10 @@ const selectedProjects = [
     title: 'PROJECT-00',
     roles: ['design', 'development'],
     img: {
-      src: '/images/project-00.png',
+      src: '/images/project-00.jpg',
       alt: 'Project 00 image',
-      width: 500,
-      height: 563,
+      width: 1200,
+      height: 782,
     },
   },
   {
@@ -50,8 +50,8 @@ const selectedProjects = [
     img: {
       src: '/images/project-04.jpg',
       alt: 'Project 04 image',
-      width: 400,
-      height: 300,
+      width: 1200,
+      height: 782,
     },
   },
 ];
