@@ -15,7 +15,7 @@ import { useGetNumberOfSiblings } from '@/hooks';
 import { cn, setRefs } from '@/utils';
 
 const HorizontalScroll = (
-  { className, children, baseVelocity = 100, ...props },
+  { className, children, baseVelocity = 2, ...props },
   ref,
 ) => {
   const baseX = useMotionValue(0);
