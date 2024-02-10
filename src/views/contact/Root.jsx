@@ -1,4 +1,4 @@
-import { LocalTime, SocialNav } from '@/components';
+import { Lines, LocalTime, SocialNav } from '@/components';
 import { Link, Text } from '@/components/ui';
 import { PaperPlaneIcon } from '@/components/ui/icon/icons';
 import { personalInfo } from '@/constants';
@@ -11,22 +11,27 @@ const ContactView = ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout mx-auto flex w-full max-w-bounds flex-col items-center gap-lg py-[min(28vh,theme(spacing.28))]',
+        'dark-layout dark relative mx-auto flex w-full max-w-bounds flex-col items-center gap-lg py-[min(28vh,theme(spacing.28))]',
         className,
       )}
       {...props}
     >
       <Text.Title
         asChild
-        className='w-[90%] max-w-screen-lg text-[14vw]/[1] font-bold uppercase md:text-[min(8vw,6rem)]/[1]'
+        className='w-[90%] max-w-screen-xl text-[12vw]/[1] font-bold uppercase max-md:text-center md:text-[min(8vw,6rem)]/[1]'
       >
         <h1>
-          Let&apos;s make <br /> ideas fly!
+          Let&apos;s make some <br className='max-md:hidden' /> ideas{' '}
+          <PaperPlaneIcon
+            aria-hidden
+            className='inline-block h-[.9em] w-[.9em]'
+          />{' '}
+          fly!
         </h1>
       </Text.Title>
 
-      <section className='grid w-[90%] max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-12'>
-        <div className='space-y-md md:col-span-7 md:col-end-13'>
+      <section className='relative z-10 grid w-[90%] max-w-screen-xl gap-md md:grid-cols-2 md:grid-rows-2'>
+        <div className='light space-y-md rounded-lg border bg-main p-9 shadow-md md:row-span-2'>
           <section className='space-y-6'>
             <Text.Title>Send me a message</Text.Title>
 
@@ -53,15 +58,15 @@ const ContactView = ({ className, ...props }) => {
           </section>
         </div>
 
-        <section className='space-y-sm md:col-span-2 md:row-start-1'>
+        <section className='space-y-sm md:self-end'>
           <Text.Title className='text-xs uppercase text-muted-content'>
             Socials
           </Text.Title>
 
-          <nav className='grid gap-sm sm:max-md:grid-cols-3'>
+          <nav className='grid gap-sm sm:grid-cols-3'>
             {personalInfo.socials.map((social, i) => (
               <SocialNav.Item
-                className='md:w-24'
+                className='hover:light'
                 index={i}
                 key={social.href}
                 {...social}
@@ -70,7 +75,7 @@ const ContactView = ({ className, ...props }) => {
           </nav>
         </section>
 
-        <ul className='grid h-fit gap-sm max-md:grid-cols-3 max-md:place-items-center md:col-span-3 md:row-start-1'>
+        <ul className='grid h-fit gap-sm max-md:grid-cols-3 max-md:place-items-center md:row-start-1'>
           <li className='space-y-1.5'>
             <Text.Subtitle className='text-xs uppercase text-muted-content'>
               Availability
@@ -102,6 +107,9 @@ const ContactView = ({ className, ...props }) => {
       </section>
 
       <Services />
+
+      <Lines />
+      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-20' />
     </main>
   );
 };
