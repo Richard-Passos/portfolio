@@ -1,6 +1,7 @@
 import { MagneticButton } from '@/components/button';
 import { Form, Input, Textarea } from '@/components/ui';
 import { PaperPlaneIcon } from '@/components/ui/icon/icons';
+import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
 import ClientForm from './Client';
@@ -37,7 +38,7 @@ const ContactForm = ({ className, ...props }) => {
         <Form.Label>Email</Form.Label>
 
         <Form.Control>
-          <Input placeholder='johndoe@example.com' />
+          <Input placeholder='john@doe.com' />
         </Form.Control>
 
         <Form.Description>Your professional email.</Form.Description>
@@ -84,7 +85,9 @@ const ContactForm = ({ className, ...props }) => {
         <Form.Label>Message</Form.Label>
 
         <Form.Control>
-          <Textarea placeholder='👋 Hey there! I would love to team up and build awesome projects with you.' />
+          <Textarea
+            placeholder={`👋 Hey ${personalInfo.name.first}! I would love if you could help me with...`}
+          />
         </Form.Control>
 
         <Form.Description>Your message.</Form.Description>
