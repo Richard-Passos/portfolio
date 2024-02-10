@@ -1,9 +1,12 @@
 'use client';
 
+import { useSearchParams } from 'next/navigation';
 import { useRef, useState } from 'react';
 
 const useLoadMore = (setState, getFn) => {
-  const page = useRef(1),
+  const initialPage = +useSearchParams().get('page') || 1;
+
+  const page = useRef(initialPage),
     isLastPage = useRef(false),
     [isFetching, setIsFetching] = useState(false);
 
