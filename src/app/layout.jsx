@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
       <Providers.GlobalState>
         <body
           className={cn(
-            'relative min-h-screen overflow-x-clip bg-main font-app text-content transition-bg',
+            'relative min-h-screen overflow-x-clip bg-main font-app text-content',
             font.variable,
           )}
         >
