@@ -7,7 +7,7 @@ import { cn } from '@/utils';
 import Show from './show';
 
 const ProjectsView = async ({ className, ...props }) => {
-  const projects = await getProjects();
+  const projects = (await getProjects()).results;
 
   return (
     <main
