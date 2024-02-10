@@ -9,6 +9,8 @@ import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
 const ProjectsShowContent = ({ initialData = [], className, ...props }) => {
+  console.log('-  initialData   -', initialData);
+
   const page = useSearchParams().get('page') || 1,
     [data, setData] = useState(initialData);
 
