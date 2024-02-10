@@ -13,7 +13,7 @@ const ProjectsTitle = ({ text, className, animationType, ...props }) => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['0 1', '0 .7'],
+    offset: ['0 .9', '0 .7'],
   });
 
   const chars = text.split('');
