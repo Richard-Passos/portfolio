@@ -1,7 +1,6 @@
 import {
   InfinityScroll,
   BentoGrid,
-  Lines,
   ListHorizontalScroll,
   LocalTime,
   ScrollTitle,
@@ -9,7 +8,7 @@ import {
 } from '@/components';
 import { Badge, Link, Text } from '@/components/ui';
 import Icons from '@/components/ui/icon/icons';
-import { personalInfo, selectedSkills } from '@/constants';
+import { personalInfo, values } from '@/constants';
 import { aboutText } from '@/constants/texts';
 import { cn } from '@/utils';
 
@@ -30,8 +29,6 @@ const HomeAboutSection = ({ className, ...props }) => {
       <Grid />
 
       <ListContactPage />
-
-      <Lines />
     </Section>
   );
 };
@@ -54,47 +51,52 @@ const Grid = ({ className, ...props }) => {
         </Badge>
 
         <Text>
-          <Icons.HandHorns className='inline-block h-4 w-4 -translate-y-0.5' />{' '}
-          {aboutText}
+          <Icons.HandHorns
+            aria-hidden
+            className='inline-block h-4 w-4 -translate-y-0.5'
+          />{' '}
+          Hey — <span className='inline text-muted-content'>{aboutText}</span>
         </Text>
       </BentoGrid.Item>
 
       <BentoGrid.Item className='justify-between [grid-area:item-2]'>
-        <Icons.Globe className='h-8 w-8' />
+        <Icons.Globe />
 
-        <Text className='text-4xl'>
+        <Text className='text-4xl font-medium'>
           Based in {personalInfo.location.country}, {personalInfo.location.gmt}
         </Text>
       </BentoGrid.Item>
 
-      <BentoGrid.Item className='items-center justify-around [grid-area:item-3]'>
-        <Text.Subtitle className='text-center text-2xl font-medium'>
-          A pinch of
-          <br />
-          soft & hard skills
-        </Text.Subtitle>
+      <BentoGrid.Item className='gap-0 [grid-area:item-3]'>
+        <Icons.Fingerprint />
 
-        <InfinityScroll
-          as='ul'
-          className='[--duration:7.5s] [--gap:theme(spacing.3)] hover:paused'
-        >
-          {selectedSkills.map((skill, i) => (
-            <Badge
-              asChild
-              className='px-3.5 py-1.5 text-sm'
-              key={skill}
-              variants={{ style: i % 2 === 0 ? 'solid' : 'outline' }}
-            >
-              <li>{skill}</li>
-            </Badge>
-          ))}
-        </InfinityScroll>
+        <div className='my-auto flex flex-col items-center justify-center gap-sm'>
+          <Text.Subtitle className='text-center text-3xl font-bold'>
+            My values
+          </Text.Subtitle>
+
+          <InfinityScroll
+            as='ul'
+            className='[--duration:7.5s] [--gap:theme(spacing.3)] hover:paused'
+          >
+            {values.map(({ title }, i) => (
+              <Badge
+                asChild
+                className='px-3.5 py-1.5 text-sm'
+                key={title}
+                variants={{ color: i % 2 === 0 ? 'primary' : 'muted' }}
+              >
+                <li>{title}</li>
+              </Badge>
+            ))}
+          </InfinityScroll>
+        </div>
       </BentoGrid.Item>
 
       <BentoGrid.Item className='min-h-0 justify-between gap-3 p-5 [grid-area:item-4]'>
         <Icons.Rocket className='h-5 w-5' />
 
-        <Text className='font-medium leading-tight'>
+        <Text className='font-medium leading-tight text-muted-content'>
           Improving a little bit every day.
         </Text>
       </BentoGrid.Item>
@@ -102,11 +104,13 @@ const Grid = ({ className, ...props }) => {
       <BentoGrid.Item className='min-h-0 justify-between gap-3 p-5 [grid-area:item-5]'>
         <Icons.GameController className='h-5 w-5' />
 
-        <Text className='font-medium leading-tight'>I love to play games.</Text>
+        <Text className='font-medium leading-tight text-muted-content'>
+          I love to play games.
+        </Text>
       </BentoGrid.Item>
 
       <BentoGrid.Item className='items-center [grid-area:item-6]'>
-        <Text.Subtitle className='text-base font-medium'>
+        <Text.Subtitle className='text-xs uppercase text-muted-content'>
           my local time
         </Text.Subtitle>
 
@@ -115,18 +119,20 @@ const Grid = ({ className, ...props }) => {
         </Text>
       </BentoGrid.Item>
 
-      <BentoGrid.Item className='border-none p-0 text-center [grid-area:item-7]'>
+      <BentoGrid.Item className='hover:light border-none p-0 text-center [grid-area:item-7]'>
         <Link
-          className='group flex h-full w-full flex-col gap-1.5 rounded-inherit border p-5 no-underline transition-colors hover:border-transparent hover:bg-content/10'
+          className='flex h-full w-full flex-col gap-1.5 rounded-inherit border p-5 no-underline transition-all hover:focus-visible:outline-main '
           href={personalInfo.buyMeACoffeHref}
         >
-          <div className='mb-3 flex aspect-square h-10 items-center justify-center rounded-sm border transition-colors group-hover:border-transparent group-hover:bg-content/20'>
+          <div className='mb-3 flex aspect-square h-10 items-center justify-center rounded-sm border transition-border'>
             <Icons.Coffee className='h-6 w-6' />
           </div>
 
           <Text>Buy me a coffee</Text>
 
-          <Text.Small>buymeacoffee.com</Text.Small>
+          <Text.Small className='font-normal transition-colors'>
+            buymeacoffee.com
+          </Text.Small>
         </Link>
       </BentoGrid.Item>
     </BentoGrid>
@@ -144,7 +150,7 @@ const ListContactPage = ({ className, ...props }) => {
       <ListHorizontalScroll>
         {content.map((content, i) => (
           <ListHorizontalScroll.Item
-            baseVelocity={i % 2 === 1 ? 1 : -1}
+            baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? -1 : 1)}
             className='[--gap:theme(spacing.8)] odd:rotate-[.5deg] even:-rotate-[.5deg]'
             key={content}
           >
@@ -156,7 +162,7 @@ const ListContactPage = ({ className, ...props }) => {
         ))}
       </ListHorizontalScroll>
 
-      <ListHorizontalScroll.Link href='/contact'>
+      <ListHorizontalScroll.Link href='/about'>
         Explore
       </ListHorizontalScroll.Link>
     </div>
