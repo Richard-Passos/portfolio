@@ -1,6 +1,6 @@
 import personalInfo from '../personalInfo';
 
-const aboutText = `Hey — I'm ${
+const aboutText = `I'm ${
   personalInfo.name.first
 } an awesome ${personalInfo.job.toLowerCase()} based in ${
   personalInfo.location.country
