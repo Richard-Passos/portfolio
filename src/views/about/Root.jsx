@@ -1,13 +1,34 @@
-import { Text } from '@/components/ui';
+import { NextPage, Section } from '@/components';
 import { cn } from '@/utils';
+
+import Sections from './sections';
 
 const AboutView = ({ className, ...props }) => {
   return (
     <main
-      className={cn('flex min-h-screen items-center justify-center', className)}
+      className={cn(
+        'dark-layout dark mx-auto flex max-w-bounds flex-col items-center justify-center',
+        className,
+      )}
       {...props}
     >
-      <Text.Title>About page</Text.Title>
+      <Sections.Hero />
+
+      <Sections.Background />
+
+      <Sections.Extra theme='light' />
+
+      <Sections.Values theme='light' />
+
+      <Section
+        className='flex w-full items-center justify-center'
+        theme='dark'
+      >
+        <NextPage
+          href='/contact'
+          text='Contact'
+        />
+      </Section>
     </main>
   );
 };
