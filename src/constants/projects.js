@@ -5,10 +5,10 @@ const projects = [
     roles: ['design', 'development'],
     year: 2024,
     img: {
-      src: '/images/project-00.png',
+      src: '/images/project-00.jpg',
       alt: 'Project 00 image',
-      width: 500,
-      height: 563,
+      width: 1200,
+      height: 782,
     },
   },
   {
@@ -55,8 +55,8 @@ const projects = [
     img: {
       src: '/images/project-04.jpg',
       alt: 'Project 04 image',
-      width: 400,
-      height: 300,
+      width: 1200,
+      height: 782,
     },
   },
   {
@@ -65,10 +65,10 @@ const projects = [
     roles: ['design', 'development'],
     year: 2024,
     img: {
-      src: '/images/project-05.png',
+      src: '/images/project-05.jpg',
       alt: 'Project 05 image',
-      width: 500,
-      height: 563,
+      width: 1200,
+      height: 782,
     },
   },
   {
@@ -115,8 +115,8 @@ const projects = [
     img: {
       src: '/images/project-09.jpg',
       alt: 'Project 09 image',
-      width: 400,
-      height: 300,
+      width: 1200,
+      height: 782,
     },
   },
 ];
