@@ -6,6 +6,7 @@ import ChevronDownIcon from './ChevronDown';
 import ChevronUpIcon from './ChevronUp';
 import CoffeeIcon from './Coffee';
 import EyeIcon from './Eye';
+import FingerprintIcon from './Fingerprint';
 import GameControllerIcon from './GameController';
 import GithubIcon from './Github';
 import GlobeIcon from './Globe';
@@ -31,6 +32,7 @@ const Icons = {
   ChevronUp: ChevronUpIcon,
   Coffee: CoffeeIcon,
   Eye: EyeIcon,
+  Fingerprint: FingerprintIcon,
   GameController: GameControllerIcon,
   Github: GithubIcon,
   Globe: GlobeIcon,
@@ -58,6 +60,7 @@ export {
   ChevronUpIcon,
   CoffeeIcon,
   EyeIcon,
+  FingerprintIcon,
   GameControllerIcon,
   GithubIcon,
   GlobeIcon,
