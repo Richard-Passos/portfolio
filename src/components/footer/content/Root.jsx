@@ -47,7 +47,7 @@ const FooterContent = ({ className, ...props }) => {
               <Text className='text-muted-content'>ready to go wild?</Text>
 
               <Text.Title className='text-[12vw]/[1] font-bold uppercase sm:text-[min(10vw,7rem)]/[1]'>
-                <HandHornsIcon className='my-auto inline-block h-[.65em] w-[.65em]' />{' '}
+                <HandHornsIcon className='inline-block h-[.65em] w-[.65em]' />{' '}
                 Let&apos;s work <br /> together
               </Text.Title>
 
@@ -84,12 +84,13 @@ const FooterContent = ({ className, ...props }) => {
                     </Text.Small>
                   </section>
 
-                  <BackTop className='mt-auto -translate-x-6 max-sm:hidden' />
+                  <BackTop className='mt-auto -translate-x-4 max-sm:hidden' />
                 </div>
 
                 <SocialNav>
                   {personalInfo.socials.map((social, i) => (
                     <SocialNav.Item
+                      className='hover:dark'
                       index={i}
                       key={social.href}
                       {...social}
