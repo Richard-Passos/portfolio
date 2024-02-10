@@ -13,7 +13,7 @@ const HeaderLink = ({ isActive, className, children, ...props }) => {
     <MagneticLink
       asChild
       className={cn(
-        'relative h-10 rounded-sm px-4 no-underline hover:z-10',
+        'relative h-10 rounded-sm px-4 no-underline transition-none hover:z-10',
         isActive && '-z-10',
         className,
       )}
@@ -25,7 +25,7 @@ const HeaderLink = ({ isActive, className, children, ...props }) => {
         {isActive && (
           <motion.span
             className={cn(
-              'absolute bottom-1.5 h-0.5 w-[calc(50%-theme(spacing.4))] bg-current transition-bg',
+              'absolute bottom-1.5 h-0.5 w-[calc(50%-theme(spacing.4))] bg-current',
             )}
             layoutId='headerLinkActiveIndicator'
             style={{ borderRadius: '9999px' }}
