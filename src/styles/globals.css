@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    @apply [--font-blank-space:.25em] [--gap-lg:clamp(theme(spacing.14),24vh,theme(spacing.28))] [--gap-md:clamp(theme(spacing.7),16vh,theme(spacing.14))] [--gap-sm:clamp(theme(spacing[3.5]),8vh,theme(spacing.7))] [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)];
+    @apply [--font-blank-space:.25em] [--gap-lg:clamp(theme(spacing.14),28vh,theme(spacing.28))] [--gap-md:clamp(theme(spacing.7),14vh,theme(spacing.14))] [--gap-sm:clamp(theme(spacing[3.5]),7vh,theme(spacing.7))] [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)];
 
     --info: 199 77% 54%;
     --info-a: 199 77% 50%;
@@ -18,10 +18,6 @@
     --warning-a: 48 79% 51%;
     --warning-c: 48 69% 97%;
 
-    --danger: 354 70% 53%;
-    --danger-a: 354 70% 57%;
-    --danger-c: 354 60% 93%;
-
     --variant: 0 0% 0%;
     --variant-a: 0 0% 0%;
     --variant-c: 0 0% 0%;
@@ -32,6 +28,8 @@
   }
 
   .light {
+    @apply text-content;
+
     --main: 0 0% 98%;
     --active: 0 0% 96%;
     --content: 0 0% 4.7%;
@@ -56,6 +54,10 @@
     --accent-a: 0 0% 48.1%;
     --accent-c: 250.9 64% 84.9%;
 
+    --danger: 354 70% 53%;
+    --danger-a: 354 70% 57%;
+    --danger-c: 354 60% 93%;
+
     --border: 0 0% 90%;
   }
 
@@ -73,7 +75,7 @@
 
     --muted: 0 0% 9%;
     --muted-a: 0 0% 13%;
-    --muted-c: 0 0% 55%;
+    --muted-c: 0 0% 62.5%;
 
     --primary: 0 0% 98%;
     --primary-a: 0 0% 94%;
@@ -87,7 +89,11 @@
     --accent-a: 251.1 22.1% 58.2%;
     --accent-c: 251.1 62.1% 82.2%;
 
-    --border: 0 0% 8%;
+    --danger: 354 80% 57%;
+    --danger-a: 354 80% 60%;
+    --danger-c: 354 70% 93%;
+
+    --border: 0 0% 12%;
   }
 
   * {
