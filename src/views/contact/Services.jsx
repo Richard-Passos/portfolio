@@ -1,4 +1,4 @@
-import { Icon, Text } from '@/components/ui';
+import { Separator, Text } from '@/components/ui';
 import { services } from '@/constants';
 import { cn } from '@/utils';
 
@@ -6,27 +6,34 @@ const ContactViewServices = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'flex w-[90%] max-w-screen-xl flex-col items-center gap-md',
+        'relative flex w-[90%] max-w-screen-xl flex-col gap-md',
         className,
       )}
       {...props}
     >
-      <Text.Title className='text-center text-2xl'>Services</Text.Title>
+      <Text.Title className='text-center text-3xl'>
+        Services I could help you with...
+      </Text.Title>
 
-      <ul className='grid gap-sm md:grid-cols-3'>
-        {services.map(({ icon, title, description }) => (
+      <ul className='grid gap-md sm:grid-cols-3'>
+        {services.map(({ title, description }, i) => (
           <li
-            className='space-y-2 rounded-md border bg-main p-6 transition-bg'
+            className='flex flex-col gap-4'
             key={title}
           >
-            <Icon
-              className='mb-4 h-6 w-6'
-              name={icon}
-            />
+            <Text className='text-xs font-semibold text-muted-content'>
+              • {`${i + 1}`.padStart(2, '0')}
+            </Text>
 
-            <Text.Subtitle className='text-sm uppercase'>{title}</Text.Subtitle>
+            <Separator />
 
-            <Text className='text-sm text-muted-content'>{description}</Text>
+            <Text.Subtitle className='mt-4 text-2xl lowercase first-letter:uppercase'>
+              {title}
+            </Text.Subtitle>
+
+            <Text className='text-sm leading-relaxed text-muted-content'>
+              {description}
+            </Text>
           </li>
         ))}
       </ul>
