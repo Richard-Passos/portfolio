@@ -5,22 +5,23 @@ import { cn, cnv } from '@/utils';
 const IconButtonIcon = ({ className, animation, children, ...props }) => {
   return (
     <div
+      aria-hidden
       className={cn(
-        'relative scale-[.25] overflow-hidden rounded-full transition-transform duration-500 ease-backOut group-hover:scale-100',
+        'relative flex aspect-square w-[1.625rem] items-center justify-center transition-[clip-path] duration-500 ease-backOut [clip-path:inset(37.5%_round_theme(borderRadius.full))] group-hover:[clip-path:inset(0_round_theme(borderRadius.full))]',
         className,
       )}
       {...props}
     >
-      <span className='absolute inset-0 bg-current transition-bg' />
+      <span className='absolute inset-0 rounded-full bg-current transition-bg' />
 
-      <div
+      <Slot
         className={cn(
-          'relative z-10 flex aspect-square w-[1.625rem] items-center justify-center',
+          'relative z-10 h-3.5 w-3.5 text-[--svg-color]',
           iconButtonIconAnimationVariants({ animation }),
         )}
       >
-        <Slot className='h-3.5 w-3.5 text-[--svg-color]'>{children}</Slot>
-      </div>
+        {children}
+      </Slot>
     </div>
   );
 };
