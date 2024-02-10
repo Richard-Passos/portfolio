@@ -13,7 +13,10 @@ const contactFormClientSchema = z.object({
   email: z.string().email('Email adress looks a bit weird.'),
   service: z.string().optional(),
   subject: z.string().optional(),
-  message: z.string().min(2, 'Come on... you can do better than that.'),
+  message: z
+    .string()
+    .min(3, 'Come on... you can do better than that.')
+    .max(300, 'Come on... take it easy.'),
 });
 
 const ContactFormClient = (props) => {
