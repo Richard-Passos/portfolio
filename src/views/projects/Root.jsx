@@ -12,12 +12,12 @@ const ProjectsView = async ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout relative mx-auto flex max-w-bounds flex-col items-center gap-lg py-[min(28vh,theme(spacing.28))]',
+        'dark-layout dark relative mx-auto flex max-w-bounds flex-col items-center gap-lg py-[min(28vh,theme(spacing.28))]',
         className,
       )}
       {...props}
     >
-      <Text.Title className='flex w-[90%] max-w-screen-lg flex-col text-[11vw] font-bold uppercase leading-none max-sm:items-center max-sm:text-center sm:text-[min(8vw,6rem)]'>
+      <Text.Title className='flex w-[90%] max-w-screen-lg flex-col text-[12vw]/[1] font-bold uppercase max-sm:items-center max-sm:text-center sm:text-[min(8vw,6rem)]/[1]'>
         Head turning{' '}
         <div className='relative w-fit'>
           projects{' '}
@@ -42,7 +42,7 @@ const ProjectsView = async ({ className, ...props }) => {
       </Show>
 
       <Lines />
-      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-30' />
+      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-20' />
     </main>
   );
 };
