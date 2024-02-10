@@ -8,7 +8,7 @@ const SocialNavItem = ({ className, icon, name, ...props }) => {
   return (
     <MagneticLink
       className={cn(
-        'hover:dark group h-full w-full flex-col items-start justify-start gap-1.5 rounded-sm border bg-main p-3.5 no-underline sm:aspect-square',
+        'group h-24 w-full flex-col items-start justify-start gap-1.5 rounded-sm border bg-main p-3.5 no-underline',
         className,
       )}
       limit={0.15}
