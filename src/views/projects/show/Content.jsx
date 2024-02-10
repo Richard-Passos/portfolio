@@ -1,15 +1,30 @@
 'use client';
 
-import { useContext } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useContext, useEffect, useState } from 'react';
 
+import { getProjects } from '@/api';
 import { Projects } from '@/components';
 import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
 const ProjectsShowContent = ({ initialData = [], className, ...props }) => {
+  const page = useSearchParams().get('page') || 1,
+    [data, setData] = useState(initialData);
+
+  useEffect(() => {
+    const handleSetData = async () => {
+      const data = await getProjects(`page=${page}`);
+
+      setData(data.results);
+    };
+
+    if (page > 1) handleSetData();
+  }, [page]);
+
   const { type, role, projects } = useContext(ProjectsShowContext);
 
-  const projectsObj = [...initialData, ...projects].reduce(
+  const projectsObj = [...data, ...projects].reduce(
     (obj, project) => getByRole(role, obj, project),
     { data: [], images: [] },
   );
@@ -42,7 +57,10 @@ const ProjectsShowContent = ({ initialData = [], className, ...props }) => {
     grid: (
       <Projects.Grid>
         {projectsObj.data.map((project, i) => (
-          <Projects.Grid.Item key={'projects-grid-' + project.href}>
+          <Projects.Grid.Item
+            index={i}
+            key={'projects-grid-' + project.href}
+          >
             <Projects.Grid.Link href={project.href}>
               <Projects.Grid.Number index={i} />
 
