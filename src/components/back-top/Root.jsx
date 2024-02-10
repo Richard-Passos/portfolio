@@ -1,12 +1,12 @@
 'use client';
 
-import { ArrowUpIcon } from '../ui/icon/icons';
 import { useLenis } from '@studio-freight/react-lenis';
 
 import { cn, isFunctionThanCall } from '@/utils';
 
 import { IconButton } from '../button';
 import { Link } from '../ui';
+import { ArrowUpIcon } from '../ui/icon/icons';
 
 const BackTop = ({ className, ...props }) => {
   const lenis = useLenis();
@@ -22,7 +22,11 @@ const BackTop = ({ className, ...props }) => {
         className='no-underline'
         href='#start'
         onClick={(ev) => {
-          lenis.scrollTo('start');
+          lenis.scrollTo('start', {
+            duration: 2,
+            easing: (x) =>
+              x < 0.5 ? 8 * x ** 4 : 1 - Math.pow(-2 * x + 2, 4) / 2, // easeInOutQuart
+          });
 
           isFunctionThanCall(props.onClick, ev);
         }}
