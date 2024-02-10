@@ -1,5 +1,4 @@
 import {
-  Lines,
   ScrollAnimation,
   Section,
   TextScrollAnimation,
@@ -73,8 +72,6 @@ const HomeFirstText = (props) => {
           </div>
         </ScrollAnimation>
       </div>
-
-      <Lines />
     </Section>
   );
 };
