@@ -9,7 +9,8 @@ const CursorLink = ({ content, variant, asChild, children, ...props }, ref) => {
       <CursorHover
         content={{
           type: 'icon',
-          name: 'ArrowTopRight',
+          name: 'ArrowUp',
+          className: 'rotate-45',
           ...content,
         }}
         ref={ref}
