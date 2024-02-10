@@ -1,8 +1,9 @@
 import { cn } from '@/utils';
 
+import Language from '../language';
 import { MagneticLink } from '../link';
 import Menu from '../menu';
-import { Logo } from '../ui';
+import { Logo, Separator } from '../ui';
 import { SheetTrigger } from '../ui/sheet';
 import Nav from './Nav';
 
@@ -15,9 +16,18 @@ const Header = ({ className, ...props }) => {
       )}
       {...props}
     >
-      <Logo />
+      <Logo className='transition-none' />
 
-      <Nav className='-mr-4 max-sm:hidden' />
+      <div className='flex h-10 items-center max-sm:hidden'>
+        <Nav />
+
+        <Separator
+          className='mr-4'
+          orientation='vertical'
+        />
+
+        <Language />
+      </div>
 
       <Menu>
         <MagneticLink asChild>
