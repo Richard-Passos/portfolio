@@ -1,5 +1,4 @@
 import {
-  Lines,
   ListHorizontalScroll,
   Projects,
   ScrollTitle,
@@ -54,8 +53,6 @@ const HomeWorkSection = ({ className, ...props }) => {
       </div>
 
       <ListWorkPage />
-
-      <Lines />
     </Section>
   );
 };
@@ -94,7 +91,10 @@ const ShowProjects = () => {
 
       <Projects.Grid className='sm:hidden'>
         {projects.data.map((project, i) => (
-          <Projects.Grid.Item key={'projects-grid-' + project.href}>
+          <Projects.Grid.Item
+            index={i}
+            key={'projects-grid-' + project.href}
+          >
             <Projects.Grid.Link href={project.href}>
               <Projects.Grid.Number index={i} />
 
@@ -122,7 +122,7 @@ const ListWorkPage = ({ className, ...props }) => {
       <ListHorizontalScroll>
         {content.map((content, i) => (
           <ListHorizontalScroll.Item
-            baseVelocity={i % 2 === 0 ? 1 : -1}
+            baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
             className='[--gap:theme(spacing.8)]'
             key={content}
           >
