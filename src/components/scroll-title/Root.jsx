@@ -29,7 +29,7 @@ const ScrollTitle = ({ dir = 'toRight', className, title, ...props }) => {
     <TextTitle
       asChild
       className={cn(
-        'w-full max-w-bounds overflow-hidden text-[14vw]/[1] uppercase sm:text-[min(10vw,8rem)]/[1]',
+        'w-full max-w-bounds overflow-hidden text-[13vw]/[1] uppercase sm:text-[min(10vw,8rem)]/[1]',
         className,
       )}
       ref={containerRef}
