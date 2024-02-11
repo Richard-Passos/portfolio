@@ -46,7 +46,7 @@ const FooterContent = ({ className, ...props }) => {
             <div className='relative z-10 flex flex-col gap-1.5 pb-12 sm:translate-y-[--y]'>
               <Text className='text-muted-content'>ready to go wild?</Text>
 
-              <Text.Title className='text-[12vw]/[1] font-bold uppercase sm:text-[min(10vw,7rem)]/[1]'>
+              <Text.Title className='text-[12vw]/[1] font-bold uppercase sm:text-[min(10vw,7.5rem)]/[1]'>
                 <HandHornsIcon className='inline-block h-[.65em] w-[.65em]' />{' '}
                 Let&apos;s work <br /> together
               </Text.Title>
