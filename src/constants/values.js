@@ -1,9 +1,9 @@
 const values = [
   {
     icon: 'Grid',
-    title: 'Lorem ipsum 00',
+    title: 'Integrity',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+      'Lasting relationships count. I establish a partnership approach and through my actions make it clear that I am interested in their success, not just mine.',
   },
   {
     icon: 'Grid',
