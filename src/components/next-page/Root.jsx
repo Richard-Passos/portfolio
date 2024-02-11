@@ -14,7 +14,7 @@ const NextPage = ({ text, href, className, ...props }) => {
       <NextPageLinkHeading />
 
       <div
-        className='relative flex w-full flex-col items-center justify-center gap-[.2em] text-[13vw]/[1] sm:text-[min(10vw,7rem)]/[1]'
+        className='relative flex w-full flex-col items-center justify-center gap-[.2em] text-[13vw]/[1] sm:text-[min(10vw,7.5rem)]/[1]'
         href={href}
       >
         <NextPageLinkContent text={text} />
