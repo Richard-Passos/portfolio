@@ -1,5 +1,6 @@
 import { Lines, ScrollIndicator } from '@/components';
 import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { Badge } from '@/components/ui';
 import { TextTitle } from '@/components/ui/text';
 import { cn } from '@/utils';
 
@@ -52,7 +53,17 @@ const AboutHeroSection = ({ className, ...props }) => {
           asChild
           className='text-[12vw]/[1] font-bold uppercase max-sm:text-center md:text-[min(8vw,6rem)]/[1]'
         >
-          <h1>Helping brands thrive in</h1>
+          <h1>
+            Heart conque
+            <br />
+            ring{' '}
+            <span className='relative inline w-fit'>
+              person{' '}
+              <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case'>
+                Gotta know more
+              </Badge>
+            </span>
+          </h1>
         </TextTitle>
 
         <div className='relative grid grid-cols-2 place-items-center'>
@@ -77,7 +88,7 @@ const AboutHeroSection = ({ className, ...props }) => {
       </div>
 
       <ul
-        className='grid w-[90%] max-w-screen-xl gap-sm sm:grid-cols-3'
+        className='grid w-[90%] max-w-screen-xl gap-x-md gap-y-sm sm:grid-cols-3'
         id='scrollTo'
       >
         {[...Array(3)].map((_, i) => (
@@ -85,7 +96,7 @@ const AboutHeroSection = ({ className, ...props }) => {
             config={animationConfig['y' + (i + 1)]}
             key={i}
           >
-            <li className='aspect-[1/1.35] w-full rounded-[2rem] bg-blue-500 odd:mt-[20%] odd:bg-red-500 max-sm:!translate-y-0 max-sm:last:hidden' />
+            <li className='aspect-[1/1.4] w-full rounded-[2rem] bg-blue-500 odd:mt-[20%] odd:bg-red-500 max-sm:!translate-y-0 max-sm:last:hidden' />
           </ScrollAnimationTransform>
         ))}
       </ul>
