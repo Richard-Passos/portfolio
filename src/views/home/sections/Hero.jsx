@@ -39,7 +39,7 @@ const HomeHeroSection = ({ theme, className, ...props }) => {
               <Text.Title
                 aria-label='Turning heads and conquering hearts.'
                 asChild
-                className='w-full text-center text-[13vw]/[1] font-bold uppercase sm:text-[min(10vw,7rem)]/[1]'
+                className='w-full text-center text-[13vw]/[1] font-bold uppercase sm:text-[min(10vw,7.5rem)]/[1]'
               >
                 <h1>
                   <div aria-hidden>
@@ -58,7 +58,7 @@ const HomeHeroSection = ({ theme, className, ...props }) => {
                     <div className='flex w-full items-end justify-evenly'>
                       <span>hearts</span>
 
-                      <span className='max-w-sm -translate-y-3.5 text-start text-[.14em]/[1.15] font-medium normal-case text-muted-content max-lg:hidden'>
+                      <span className='max-w-sm -translate-y-3.5 text-start text-[.13em]/[1.15] font-medium normal-case text-muted-content max-lg:hidden'>
                         {introText}
                       </span>
                     </div>
@@ -75,7 +75,7 @@ const HomeHeroSection = ({ theme, className, ...props }) => {
           </div>
 
           <ScrollIndicator
-            className='absolute bottom-[min(10vw,theme(spacing.16))] right-[min(10vw,theme(spacing.16))]'
+            className='absolute bottom-[min(9.5vw,3.75rem)] right-[min(10vw,theme(spacing.16))] rounded-sm bg-muted transition-transform duration-300 hover:scale-90 focus-visible:outline-content'
             href='#scrollTo'
           />
         </section>
