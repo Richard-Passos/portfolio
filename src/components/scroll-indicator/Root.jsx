@@ -7,13 +7,13 @@ const ScrollIndicator = ({ className, ...props }) => {
   return (
     <ScrollToLink
       className={cn(
-        'flex h-8 w-8 items-center justify-center overflow-hidden text-muted-content',
+        'flex h-10 w-10 items-center justify-center overflow-hidden text-muted-content',
         className,
       )}
       {...props}
     >
       <div className='relative animate-scroll-indicator'>
-        <ArrowDownIcon className='absolute h-4 w-4 -translate-y-[200%]' />
+        <ArrowDownIcon className='absolute h-4 w-4 -translate-y-[250%]' />
 
         <ArrowDownIcon className='h-4 w-4' />
       </div>
