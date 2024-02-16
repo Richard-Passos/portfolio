@@ -40,6 +40,7 @@
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.6",
     "@reduxjs/toolkit": "^1.9.6",
+    "@splidejs/react-splide": "^0.7.12",
     "@studio-freight/react-lenis": "^0.0.38",
     "class-variance-authority": "^0.7.0",
     "cmdk": "^0.2.0",
