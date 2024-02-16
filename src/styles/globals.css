@@ -147,12 +147,4 @@
     writing-mode: vertical-lr;
     text-orientation: upright;
   }
-
-  .title-xl {
-    @apply text-[14vw]/[1] font-extrabold uppercase tracking-tighter sm:text-[min(10vw,theme(fontSize.9xl))]/[1];
-  }
-
-  .title-lg {
-    @apply text-[12vw]/[1] font-bold uppercase tracking-tight sm:text-[min(8vw,theme(fontSize.8xl))]/[1];
-  }
 }
