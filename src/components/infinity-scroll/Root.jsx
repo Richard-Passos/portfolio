@@ -5,28 +5,23 @@ import { forwardRef, useRef } from 'react';
 import { useGetNumberOfSiblings } from '@/hooks';
 import { cn } from '@/utils';
 
-const InfinityScroll = ({
-  as,
-  direction = 'toRight',
-  className,
-  children,
-  ...props
-}) => {
+const InfinityScroll = ({ as, dir = 'ltr', className, children, ...props }) => {
   const containerRef = useRef(null),
     childrenRef = useRef(null);
 
   const numberOfSiblings = useGetNumberOfSiblings(
     containerRef,
     childrenRef,
-    2,
-    true,
+    dir === 'btt' || dir === 'ttb' ? 'height' : 'width',
   );
 
   const Tag = as ?? 'div';
 
   const directions = {
-    toLeft: '[--initial-x:0%] [--final-x:-50%]',
-    toRight: '[--initial-x:-50%] [--final-x:0%]',
+    btt: '[--initial-y:0%] [--final-y:-50%]',
+    ltr: '[--initial-x:-50%] [--final-x:0%]',
+    ttb: '[--initial-y:-50%] [--final-y:0%]',
+    rtl: '[--initial-x:0%] [--final-x:-50%]',
   };
 
   return (
@@ -36,8 +31,8 @@ const InfinityScroll = ({
     >
       <Tag
         className={cn(
-          'relative flex w-fit animate-scroll-x items-center gap-[--gap] whitespace-nowrap',
-          directions[direction],
+          'relative flex w-fit animate-infinity-scroll items-center gap-[--gap] whitespace-nowrap',
+          directions[dir],
           className,
         )}
         {...props}
