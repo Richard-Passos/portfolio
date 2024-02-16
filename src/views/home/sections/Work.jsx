@@ -11,7 +11,7 @@ import { PlusIcon } from '@/components/ui/icon/icons';
 import { selectedProjects } from '@/constants';
 import { cn } from '@/utils';
 
-const HomeWorkSection = ({ className, ...props }) => {
+const HomeViewWorkSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn('relative flex flex-col items-center gap-lg', className)}
@@ -20,13 +20,13 @@ const HomeWorkSection = ({ className, ...props }) => {
       <h2 className='flex w-full flex-col'>
         <ScrollTitle title='ABOUT' />
         <ScrollTitle
-          dir='toLeft'
+          dir='rtl'
           title='WORK'
         />
       </h2>
 
       <div className='w-[90%] max-w-screen-xl'>
-        <Text className='max-w-xl text-xl font-medium sm:ml-auto md:text-2xl'>
+        <Text className='max-w-xl text-xl sm:ml-auto md:text-2xl'>
           <TextScrollAnimation
             className='max-sm:justify-center'
             text='Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.'
@@ -112,7 +112,7 @@ const ShowProjects = () => {
 };
 
 const ListWorkPage = ({ className, ...props }) => {
-  const content = ['Work method', 'Soft & hard skills', 'Projects'];
+  const content = ['Work method', 'Soft & hard skills', 'Services'];
 
   return (
     <div
@@ -141,4 +141,4 @@ const ListWorkPage = ({ className, ...props }) => {
   );
 };
 
-export default HomeWorkSection;
+export default HomeViewWorkSection;
