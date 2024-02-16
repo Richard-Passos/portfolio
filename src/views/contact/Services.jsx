@@ -1,3 +1,4 @@
+import { Services } from '@/components';
 import { Separator, Text } from '@/components/ui';
 import { services } from '@/constants';
 import { cn } from '@/utils';
@@ -15,28 +16,19 @@ const ContactViewServices = ({ className, ...props }) => {
         Services I could help you with...
       </Text.Title>
 
-      <ul className='grid gap-md sm:grid-cols-3'>
+      <Services>
         {services.map(({ title, description }, i) => (
-          <li
-            className='flex flex-col gap-4'
-            key={title}
-          >
-            <Text className='text-xs font-semibold text-muted-content'>
-              • {`${i + 1}`.padStart(2, '0')}
-            </Text>
+          <Services.Item key={title}>
+            <Services.Number index={i} />
 
             <Separator />
 
-            <Text.Subtitle className='mt-4 text-2xl lowercase first-letter:uppercase'>
-              {title}
-            </Text.Subtitle>
+            <Services.Title>{title}</Services.Title>
 
-            <Text className='text-sm leading-relaxed text-muted-content'>
-              {description}
-            </Text>
-          </li>
+            <Services.Description>{description}</Services.Description>
+          </Services.Item>
         ))}
-      </ul>
+      </Services>
     </section>
   );
 };
