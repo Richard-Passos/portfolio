@@ -7,7 +7,7 @@ const NotFoundView = ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout dark relative flex flex-col items-center justify-center py-[min(28vh,theme(spcaing.28))] [--header-h:88px] max-2xl:min-h-[calc(100svh-var(--header-h))] 2xl:h-screen 2xl:max-h-bounds',
+        'dark-layout dark relative flex flex-col items-center justify-center py-[min(28vh,theme(spacing.28))] [--header-h:88px] max-2xl:min-h-[calc(100svh-var(--header-h))] 2xl:h-screen 2xl:max-h-bounds',
         className,
       )}
       {...props}
