@@ -8,16 +8,16 @@ import { cn } from '@/utils';
 import { ScrollAnimationTransform } from '../scroll-animation';
 import { TextTitle } from '../ui/text';
 
-const ScrollTitle = ({ dir = 'toRight', className, title, ...props }) => {
+const ScrollTitle = ({ dir = 'ltr', className, title, ...props }) => {
   const containerRef = useRef(null),
     childrenRef = useRef(null);
 
   const numberOfSiblings =
-    useGetNumberOfSiblings(containerRef, childrenRef, 1.5, true) + 1;
+    useGetNumberOfSiblings(containerRef, childrenRef, 'width', 1.5) + 1;
 
   const directions = {
-    toLeft: ['25%', '-25%'],
-    toRight: ['-25%', '25%'],
+    rtl: ['25%', '-25%'],
+    ltr: ['-25%', '25%'],
   };
 
   const animationConfig = {
@@ -29,7 +29,7 @@ const ScrollTitle = ({ dir = 'toRight', className, title, ...props }) => {
     <TextTitle
       asChild
       className={cn(
-        'w-full max-w-bounds overflow-hidden text-[13vw]/[1] uppercase sm:text-[min(10vw,7.5rem)]/[1]',
+        'title-xl w-full max-w-bounds overflow-hidden !font-bold',
         className,
       )}
       ref={containerRef}
