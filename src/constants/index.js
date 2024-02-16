@@ -5,5 +5,6 @@ export { default as personalInfo } from './personalInfo';
 export { default as projects } from './projects';
 export { default as selectedProjects } from './selectedProjects';
 export { default as services } from './services';
+export { default as skills } from './skills';
 export { default as values } from './values';
 export { default as texts } from './texts';
