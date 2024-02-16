@@ -1,19 +1,19 @@
-import AboutBackgroundSection from './Background';
-import AboutExtraSection from './Extra';
-import AboutHeroSection from './Hero';
-import AboutValuesSection from './Values';
+import AboutViewBackgroundSection from './Background';
+import AboutViewExtraSection from './Extra';
+import AboutViewHeroSection from './Hero';
+import AboutViewValuesSection from './Values';
 
-const AboutSections = {
-  Background: AboutBackgroundSection,
-  Extra: AboutExtraSection,
-  Hero: AboutHeroSection,
-  Values: AboutValuesSection,
+const AboutViewSections = {
+  Background: AboutViewBackgroundSection,
+  Extra: AboutViewExtraSection,
+  Hero: AboutViewHeroSection,
+  Values: AboutViewValuesSection,
 };
 
-export default AboutSections;
+export default AboutViewSections;
 export {
-  AboutBackgroundSection,
-  AboutExtraSection,
-  AboutHeroSection,
-  AboutValuesSection,
+  AboutViewBackgroundSection,
+  AboutViewExtraSection,
+  AboutViewHeroSection,
+  AboutViewValuesSection,
 };

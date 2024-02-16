@@ -16,7 +16,7 @@ const EXTRA_CONTENT = [
   },
 ];
 
-const AboutExtraSection = ({ className, ...props }) => {
+const AboutViewExtraSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
@@ -57,4 +57,4 @@ const AboutExtraSection = ({ className, ...props }) => {
   );
 };
 
-export default AboutExtraSection;
+export default AboutViewExtraSection;

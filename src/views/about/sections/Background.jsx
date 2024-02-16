@@ -3,7 +3,7 @@ import { Separator, Text } from '@/components/ui';
 import { aboutText } from '@/constants/texts';
 import { cn } from '@/utils';
 
-const AboutBackgroundSection = ({ className, ...props }) => {
+const AboutViewBackgroundSection = ({ className, ...props }) => {
   return (
     <section
       className={cn(
@@ -57,4 +57,4 @@ const AboutBackgroundSection = ({ className, ...props }) => {
   );
 };
 
-export default AboutBackgroundSection;
+export default AboutViewBackgroundSection;

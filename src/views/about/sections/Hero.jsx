@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui';
 import { TextTitle } from '@/components/ui/text';
 import { cn } from '@/utils';
 
-const AboutHeroSection = ({ className, ...props }) => {
+const AboutViewHeroSection = ({ className, ...props }) => {
   const animationConfig = {
     x: {
       useScrollConfig: {
@@ -51,15 +51,15 @@ const AboutHeroSection = ({ className, ...props }) => {
       <div className='w-[90%] max-w-screen-lg space-y-sm'>
         <TextTitle
           asChild
-          className='text-[12vw]/[1] font-bold uppercase max-sm:text-center md:text-[min(8vw,6rem)]/[1]'
+          className='title-lg max-sm:text-center'
         >
           <h1>
-            Heart conque
+            Heart conquer
             <br />
-            ring{' '}
+            -ing{' '}
             <span className='relative inline w-fit'>
               person{' '}
-              <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case'>
+              <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
                 Gotta know more
               </Badge>
             </span>
@@ -88,7 +88,7 @@ const AboutHeroSection = ({ className, ...props }) => {
       </div>
 
       <ul
-        className='grid w-[90%] max-w-screen-xl gap-x-md gap-y-sm sm:grid-cols-3'
+        className='grid w-[90%] max-w-screen-xl gap-sm sm:grid-cols-3 md:gap-x-md'
         id='scrollTo'
       >
         {[...Array(3)].map((_, i) => (
@@ -107,4 +107,4 @@ const AboutHeroSection = ({ className, ...props }) => {
   );
 };
 
-export default AboutHeroSection;
+export default AboutViewHeroSection;
