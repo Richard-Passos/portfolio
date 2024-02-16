@@ -28,12 +28,7 @@ const HorizontalScroll = (
   const containerRef = useRef(null),
     childrenRef = useRef(null);
 
-  const numberOfSiblings = useGetNumberOfSiblings(
-    containerRef,
-    childrenRef,
-    2,
-    true,
-  );
+  const numberOfSiblings = useGetNumberOfSiblings(containerRef, childrenRef);
 
   const x = useTransform(baseX, (v) => wrap(-50, 0, v) + '%');
 
