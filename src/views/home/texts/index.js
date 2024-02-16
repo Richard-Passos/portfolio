@@ -1,10 +1,10 @@
-import HomeFirstText from './First';
-import HomeSecondText from './Second';
+import HomeViewFirstText from './First';
+import HomeViewSecondText from './Second';
 
-const HomeTexts = {
-  First: HomeFirstText,
-  Second: HomeSecondText,
+const HomeViewTexts = {
+  First: HomeViewFirstText,
+  Second: HomeViewSecondText,
 };
 
-export default HomeTexts;
-export { HomeFirstText, HomeSecondText };
+export default HomeViewTexts;
+export { HomeViewFirstText, HomeViewSecondText };
