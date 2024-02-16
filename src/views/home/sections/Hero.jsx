@@ -1,9 +1,10 @@
 import { GridPattern, ScrollAnimation, ScrollIndicator } from '@/components';
 import { Text } from '@/components/ui';
+import { SmileIcon } from '@/components/ui/icon/icons';
 import { introText } from '@/constants/texts';
 import { cn } from '@/utils';
 
-const HomeHeroSection = ({ theme, className, ...props }) => {
+const HomeViewHeroSection = ({ theme, className, ...props }) => {
   const animationConfig = {
     y: {
       useScrollConfig: {
@@ -21,6 +22,16 @@ const HomeHeroSection = ({ theme, className, ...props }) => {
       prop: '--opacity',
       propPoints: [1, 0],
     },
+    rotate: {
+      useScrollConfig: {
+        offset: ['1 1', '1 0'],
+      },
+      useScrollRes: 'scrollY',
+      prop: 'rotate',
+      scrollPoints: [0, 200],
+      propPoints: ['0deg', '360deg'],
+      useTransformConfig: { clamp: false },
+    },
   };
 
   return (
@@ -28,28 +39,26 @@ const HomeHeroSection = ({ theme, className, ...props }) => {
       <ScrollAnimation config={animationConfig.opacity}>
         <section
           className={cn(
-            'relative overflow-hidden [--header-h:88px]',
+            'relative [--header-h:88px] sm:[clip-path:inset(0_-50vw_1px_-50vw)]',
             theme,
             className,
           )}
           {...props}
         >
-          <div className='relative flex justify-center py-[min(28vh,theme(spacing.28))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-[calc(100svh-var(--header-h))] sm:translate-y-[--y] 2xl:h-screen 2xl:max-h-bounds 2xl:[--w:--max-w]'>
-            <div className='flex w-[90%] max-w-screen-xl flex-col items-center justify-center gap-sm pb-[--inset] lg:opacity-[--opacity]'>
+          <div className='relative flex items-center justify-center py-[min(28vh,theme(spacing.28))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-[calc(100svh-var(--header-h))] sm:translate-y-[--y] 2xl:h-screen 2xl:max-h-bounds 2xl:[--w:--max-w]'>
+            <div className='w-[calc(90%-var(--inset)*2)] space-y-sm pb-[--inset] sm:grid-cols-3 lg:opacity-[--opacity]'>
               <Text.Title
                 aria-label='Turning heads and conquering hearts.'
                 asChild
-                className='w-full text-center text-[13vw]/[1] font-bold uppercase sm:text-[min(10vw,7.5rem)]/[1]'
+                className='title-xl w-full text-center [--x:min(20vw,theme(spacing.20))] lg:text-[min(9vw,theme(fontSize.9xl))]/[1]'
               >
                 <h1>
                   <div aria-hidden>
-                    <span className='lg:-translate-x-[min(20vw,theme(spacing.20))]'>
-                      Turning heads
-                    </span>
+                    <span className='lg:-translate-x-[--x]'>Turning heads</span>
 
                     <br />
 
-                    <span className='lg:translate-x-[min(20vw,theme(spacing.20))]'>
+                    <span className='lg:translate-x-[--x]'>
                       <span className='outline-text'>&</span> conquering
                     </span>
 
@@ -58,7 +67,7 @@ const HomeHeroSection = ({ theme, className, ...props }) => {
                     <div className='flex w-full items-end justify-evenly'>
                       <span>hearts</span>
 
-                      <span className='max-w-sm -translate-y-3.5 text-start text-[.13em]/[1.15] font-medium normal-case text-muted-content max-lg:hidden'>
+                      <span className='max-w-sm -translate-y-3.5 text-start text-[.12em]/[1.15] font-normal normal-case tracking-normal text-muted-content max-lg:hidden'>
                         {introText}
                       </span>
                     </div>
@@ -66,12 +75,22 @@ const HomeHeroSection = ({ theme, className, ...props }) => {
                 </h1>
               </Text.Title>
 
-              <Text className='max-w-lg text-center font-medium text-muted-content lg:sr-only'>
-                {introText}
-              </Text>
+              <div className='mx-auto grid max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
+                <Text className='col-span-full max-w-lg text-center text-muted-content sm:col-span-4 lg:sr-only'>
+                  {introText}
+                </Text>
+
+                <ScrollAnimation.Transform config={animationConfig.rotate}>
+                  <SmileIcon className='h-6 w-6 md:-order-1' />
+                </ScrollAnimation.Transform>
+
+                <Text className='justify-self-end text-xs font-semibold md:col-end-7'>
+                  (2024)
+                </Text>
+              </div>
             </div>
 
-            <GridPattern className='inset-[--inset] top-0 -z-50 [&>:nth-child(14)]:rounded-tr-3xl [&>:nth-child(15)]:rounded-tl-3xl [&>:nth-child(2)]:border-transparent [&>:nth-child(3)]:rounded-tl-3xl [&>:nth-child(84)]:rounded-br-3xl [&>:nth-child(85)]:rounded-bl-3xl [&>:nth-child(97)]:rounded-br-3xl first:[&>]:border-transparent last:[&>]:border-transparent' />
+            <GridPattern className='inset-[--inset] top-0 -z-40 [&>:nth-child(14)]:rounded-tr-3xl [&>:nth-child(15)]:rounded-tl-3xl [&>:nth-child(2)]:border-transparent [&>:nth-child(3)]:rounded-tl-3xl [&>:nth-child(84)]:rounded-br-3xl [&>:nth-child(85)]:rounded-bl-3xl [&>:nth-child(97)]:rounded-br-3xl first:[&>]:border-transparent last:[&>]:border-transparent' />
           </div>
 
           <ScrollIndicator
@@ -84,4 +103,4 @@ const HomeHeroSection = ({ theme, className, ...props }) => {
   );
 };
 
-export default HomeHeroSection;
+export default HomeViewHeroSection;
