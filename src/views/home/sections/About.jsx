@@ -12,7 +12,7 @@ import { personalInfo, values } from '@/constants';
 import { aboutText } from '@/constants/texts';
 import { cn } from '@/utils';
 
-const HomeAboutSection = ({ className, ...props }) => {
+const HomeViewAboutSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn('relative flex flex-col items-center gap-lg', className)}
@@ -21,7 +21,7 @@ const HomeAboutSection = ({ className, ...props }) => {
       <h2 className='flex w-full flex-col'>
         <ScrollTitle title='ABOUT' />
         <ScrollTitle
-          dir='toLeft'
+          dir='rtl'
           title='ME'
         />
       </h2>
@@ -169,4 +169,4 @@ const ListContactPage = ({ className, ...props }) => {
   );
 };
 
-export default HomeAboutSection;
+export default HomeViewAboutSection;
