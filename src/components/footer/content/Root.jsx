@@ -37,16 +37,18 @@ const FooterContent = ({ className, ...props }) => {
         <ScrollAnimationTransform config={animationConfig.x}>
           <div
             className={cn(
-              'flex w-[90%] max-w-screen-xl flex-col pt-[--padding] text-content [--h:100vh] [--padding:min(20vh,theme(spacing.20))] max-2xl:min-h-screen sm:[--y:calc(var(--smooth-y)*var(--h))] 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
+              'flex w-[90%] max-w-screen-xl flex-col pt-[--p] text-content [--h:100vh] [--p:min(20vh,theme(spacing.20))] max-2xl:min-h-screen sm:[--y:calc(var(--smooth-y)*var(--h))] 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
               FOOTER_CONTENT_THEME,
               className,
             )}
             {...props}
           >
             <div className='relative z-10 flex flex-col gap-1.5 pb-12 sm:translate-y-[--y]'>
-              <Text className='text-muted-content'>ready to go wild?</Text>
+              <Text className='text-muted-content'>
+                is your big idea ready to fly?
+              </Text>
 
-              <Text.Title className='text-[12vw]/[1] font-bold uppercase sm:text-[min(10vw,7.5rem)]/[1]'>
+              <Text.Title className='title-xl max-sm:text-[13vw]/[1]'>
                 <HandHornsIcon className='inline-block h-[.65em] w-[.65em]' />{' '}
                 Let&apos;s work <br /> together
               </Text.Title>
@@ -62,7 +64,7 @@ const FooterContent = ({ className, ...props }) => {
               </div>
             </div>
 
-            <div className='relative flex grow items-center overflow-y-clip border-t py-[--padding] sm:translate-y-[--y]'>
+            <div className='relative flex grow items-center overflow-y-clip border-t py-[--p] sm:translate-y-[--y]'>
               <div className='flex w-full justify-between gap-md p-5 max-sm:flex-col sm:translate-y-[--y]'>
                 <div className='flex flex-col items-start gap-4'>
                   <Logo className='w-fit' />
@@ -100,7 +102,7 @@ const FooterContent = ({ className, ...props }) => {
               </div>
 
               <GridPattern
-                className='-top-px bottom-[--padding] -z-10 sm:translate-y-[--y]'
+                className='-top-px bottom-[--p] -z-10 sm:translate-y-[--y]'
                 rows={4}
               />
             </div>
