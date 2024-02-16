@@ -5,20 +5,26 @@ import { useEffect, useState } from 'react';
 const useGetNumberOfSiblings = (
   containerRef,
   childrenRef,
+  dimension = 'width',
   containerTimes = 2,
-  returnJustOddNumber = false,
+  returnJustOddNumber = true,
 ) => {
   const [numberOfSiblings, setNumberOfSiblings] = useState(1);
 
   useEffect(() => {
     const handleSetNumberOfSiblings = () => {
       if (containerRef.current && childrenRef.current) {
-        const containerWidth =
-            containerRef.current.getBoundingClientRect().width,
-          childrenWidht = childrenRef.current.getBoundingClientRect().width;
+        const containerDimen =
+            containerRef.current.getBoundingClientRect()[
+              dimension.toLowerCase()
+            ],
+          childrenDimen =
+            childrenRef.current.getBoundingClientRect()[
+              dimension.toLowerCase()
+            ];
 
         const numberOfChildren = Math.ceil(
-          (containerWidth * containerTimes) / childrenWidht,
+          (containerDimen * containerTimes) / childrenDimen,
         );
 
         setNumberOfSiblings(
@@ -38,7 +44,13 @@ const useGetNumberOfSiblings = (
 
     return () =>
       window.removeEventListener('resize', handleSetNumberOfSiblings);
-  }, [containerRef, childrenRef, containerTimes, returnJustOddNumber]);
+  }, [
+    containerRef,
+    childrenRef,
+    dimension,
+    containerTimes,
+    returnJustOddNumber,
+  ]);
 
   return numberOfSiblings;
 };
