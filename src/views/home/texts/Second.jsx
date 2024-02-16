@@ -1,8 +1,9 @@
-import { Bg, Lines, TextScrollAnimation } from '@/components';
+import { Bg, Lines, MultiY, TextScrollAnimation } from '@/components';
+import { SmileIcon } from '@/components/ui/icon/icons';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
-const HomeSecondText = ({ theme, className, ...props }) => {
+const HomeViewSecondText = ({ theme, className, ...props }) => {
   return (
     <div
       className={cn(
@@ -12,7 +13,7 @@ const HomeSecondText = ({ theme, className, ...props }) => {
       )}
       {...props}
     >
-      <Text className='w-[90%] max-w-screen-lg text-4xl font-medium md:text-[2.5rem]/tight'>
+      <Text className='w-[90%] max-w-screen-lg text-4xl/tight md:text-[3.5rem]/tight'>
         <TextScrollAnimation
           className='mx-auto justify-center'
           text="If you're looking for a developer who's got the skills, the passion, and a problem solving mindset to make your ideas come true. Then..."
@@ -22,8 +23,12 @@ const HomeSecondText = ({ theme, className, ...props }) => {
       <Bg />
 
       <Lines />
+
+      <MultiY>
+        <SmileIcon />
+      </MultiY>
     </div>
   );
 };
 
-export default HomeSecondText;
+export default HomeViewSecondText;
