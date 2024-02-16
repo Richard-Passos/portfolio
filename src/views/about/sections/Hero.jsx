@@ -48,7 +48,7 @@ const AboutViewHeroSection = ({ className, ...props }) => {
       )}
       {...props}
     >
-      <div className='w-[90%] max-w-screen-lg space-y-sm'>
+      <div className='w-9/10 max-w-screen-lg space-y-sm'>
         <TextTitle
           asChild
           className='max-sm:text-center'
@@ -89,7 +89,7 @@ const AboutViewHeroSection = ({ className, ...props }) => {
       </div>
 
       <ul
-        className='grid w-[90%] max-w-screen-xl gap-sm sm:grid-cols-3 md:gap-x-md'
+        className='w-9/10 grid max-w-screen-xl gap-sm sm:grid-cols-3 md:gap-x-md'
         id='scrollTo'
       >
         {[...Array(3)].map((_, i) => (

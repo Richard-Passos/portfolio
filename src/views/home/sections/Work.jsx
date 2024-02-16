@@ -25,7 +25,7 @@ const HomeViewWorkSection = ({ className, ...props }) => {
         />
       </h2>
 
-      <div className='w-[90%] max-w-screen-xl'>
+      <div className='w-9/10 max-w-screen-xl'>
         <Text className='max-w-xl text-xl sm:ml-auto md:text-2xl'>
           <TextScrollAnimation
             className='max-sm:justify-center'
@@ -34,7 +34,7 @@ const HomeViewWorkSection = ({ className, ...props }) => {
         </Text>
       </div>
 
-      <div className='flex w-[90%] max-w-screen-lg flex-col items-center gap-md'>
+      <div className='w-9/10 flex max-w-screen-lg flex-col items-center gap-md'>
         <Text.Subtitle className='mr-auto text-xs uppercase text-muted-content'>
           Selected works
         </Text.Subtitle>

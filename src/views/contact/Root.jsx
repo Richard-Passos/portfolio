@@ -18,7 +18,7 @@ const ContactView = ({ className, ...props }) => {
     >
       <Text.Title
         asChild
-        className='w-[90%] max-w-screen-xl text-[12vw]/[1] font-bold uppercase max-md:text-center md:text-[min(8vw,6rem)]/[1]'
+        className='w-9/10 max-w-screen-xl text-[12vw]/[1] font-bold uppercase max-md:text-center md:text-[min(8vw,6rem)]/[1]'
       >
         <h1>
           Let&apos;s make some <br className='max-md:hidden' /> ideas{' '}
@@ -30,7 +30,7 @@ const ContactView = ({ className, ...props }) => {
         </h1>
       </Text.Title>
 
-      <section className='relative z-10 grid w-[90%] max-w-screen-xl gap-md md:grid-cols-2 md:grid-rows-2'>
+      <section className='w-9/10 relative z-10 grid max-w-screen-xl gap-md md:grid-cols-2 md:grid-rows-2'>
         <div className='light space-y-md rounded-lg border bg-main p-9 shadow-md md:row-span-2'>
           <section className='space-y-6'>
             <Text.Title>Send me a message</Text.Title>

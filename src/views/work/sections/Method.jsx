@@ -16,7 +16,7 @@ const WorkViewMethod = ({ theme, className, ...props }) => {
         <ScrollTitle title='METHOD' />
       </h2>
 
-      <section className='flex w-[90%] max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
+      <section className='w-9/10 flex max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
         <Text className='max-w-lg text-4xl/tight font-medium sm:text-5xl/tight'>
           <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
         </Text>

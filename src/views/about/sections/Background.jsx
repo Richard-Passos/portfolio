@@ -7,7 +7,7 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'relative grid w-[90%] max-w-screen-lg grid-cols-12 gap-[--gap] py-[min(42vh,10.5rem)] [--gap:--gap-sm]',
+        'w-9/10 relative grid max-w-screen-lg grid-cols-12 gap-[--gap] py-[min(42vh,10.5rem)] [--gap:--gap-sm]',
         className,
       )}
       {...props}

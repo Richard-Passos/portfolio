@@ -7,7 +7,7 @@ const ContactViewServices = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'relative flex w-[90%] max-w-screen-xl flex-col gap-md',
+        'w-9/10 relative flex max-w-screen-xl flex-col gap-md',
         className,
       )}
       {...props}

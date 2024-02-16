@@ -6,7 +6,7 @@ import { cn } from '@/utils';
 const WorkViewValuesSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn('w-[90%] max-w-screen-xl', className)}
+      className={cn('w-9/10 max-w-screen-xl', className)}
       {...props}
     >
       <Values aria-labelledby='values-heading'>

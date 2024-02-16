@@ -14,6 +14,7 @@ module.exports = {
       spacing: {
         px: '0.8px',
         'font-blank-space': 'var(--font-blank-space)',
+        '9/10': '90%',
       },
       gap: {
         sm: 'var(--gap-sm)',

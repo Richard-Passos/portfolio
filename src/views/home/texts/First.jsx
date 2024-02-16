@@ -62,7 +62,7 @@ const HomeViewFirstText = (props) => {
         </ScrollAnimation.Transform>
 
         <ScrollAnimation config={animationConfig.top}>
-          <div className='flex w-[90%] items-center justify-center'>
+          <div className='w-9/10 flex items-center justify-center'>
             <Text className='relative top-[--top] text-[clamp(2rem,6.6vw,6rem)]/tight font-semibold'>
               <TextScrollAnimation
                 className='justify-center'

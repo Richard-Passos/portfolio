@@ -15,7 +15,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
       className={cn('flex w-full flex-col items-center gap-lg', className)}
       {...props}
     >
-      <section className='flex w-[90%] max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
+      <section className='w-9/10 flex max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
         <Text className='max-w-lg text-4xl/tight font-medium sm:text-5xl/tight'>
           <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
@@ -29,7 +29,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
       </section>
 
       <Carousel aria-labelledby='carousel-skills-heading-0'>
-        <div className='grid w-[90%] max-w-screen-xl grid-cols-2'>
+        <div className='w-9/10 grid max-w-screen-xl grid-cols-2'>
           <div className='space-y-1.5'>
             <Text.Title
               className='text-xs uppercase'
@@ -66,7 +66,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
       </Carousel>
 
       <div className='relative flex w-full items-center justify-center py-[min(28vh,theme(spacing.28))] max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
-        <Text className='w-[90%] max-w-screen-lg text-7xl/tight md:text-8xl/tight'>
+        <Text className='w-9/10 max-w-screen-lg text-7xl/tight md:text-8xl/tight'>
           <TextScrollAnimation
             className='mx-auto justify-center'
             text="But it's not just about the tech."
@@ -79,7 +79,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
       </div>
 
       <Carousel aria-labelledby='carousel-skills-heading-1'>
-        <div className='grid w-[90%] max-w-screen-xl grid-cols-2'>
+        <div className='w-9/10 grid max-w-screen-xl grid-cols-2'>
           <div className='space-y-1.5'>
             <Text.Title
               className='text-xs uppercase'
@@ -129,7 +129,7 @@ const HomeViewSkillsSectionCarouselItem = ({
   return (
     <Carousel.Item
       className={cn(
-        'group grid aspect-[1/.85] w-[90%] max-w-xs grid-rows-3 gap-2 overflow-hidden rounded-md border bg-main p-[--p] [--p:min(8vw,theme(spacing.8))]',
+        'w-9/10 group grid aspect-[1/.85] max-w-xs grid-rows-3 gap-2 overflow-hidden rounded-md border bg-main p-[--p] [--p:min(8vw,theme(spacing.8))]',
         className,
       )}
       index={idx}

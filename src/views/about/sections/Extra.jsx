@@ -20,7 +20,7 @@ const AboutViewExtraSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'grid w-[90%] max-w-screen-lg gap-x-lg gap-y-sm sm:grid-cols-2',
+        'w-9/10 grid max-w-screen-lg gap-x-lg gap-y-sm sm:grid-cols-2',
         className,
       )}
       {...props}

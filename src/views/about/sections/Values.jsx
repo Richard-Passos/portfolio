@@ -7,7 +7,7 @@ const AboutViewValuesSection = ({ theme, className, ...props }) => {
   return (
     <section
       className={cn(
-        'relative w-[90%] max-w-screen-xl pb-[min(28vh,theme(spacing.28))]',
+        'w-9/10 relative max-w-screen-xl pb-[min(28vh,theme(spacing.28))]',
         theme,
         className,
       )}
