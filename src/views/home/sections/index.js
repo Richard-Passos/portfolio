@@ -1,12 +1,12 @@
-import HomeAboutSection from './About';
-import HomeHeroSection from './Hero';
-import HomeWorkSection from './Work';
+import HomeViewAboutSection from './About';
+import HomeViewHeroSection from './Hero';
+import HomeViewWorkSection from './Work';
 
-const HomeSections = {
-  About: HomeAboutSection,
-  Hero: HomeHeroSection,
-  Work: HomeWorkSection,
+const HomeViewSections = {
+  About: HomeViewAboutSection,
+  Hero: HomeViewHeroSection,
+  Work: HomeViewWorkSection,
 };
 
-export default HomeSections;
-export { HomeAboutSection, HomeHeroSection, HomeWorkSection };
+export default HomeViewSections;
+export { HomeViewAboutSection, HomeViewHeroSection, HomeViewWorkSection };
