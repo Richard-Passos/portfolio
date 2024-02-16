@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 import { ScrollAnimationTransform } from '../scroll-animation';
 import { TextTitle } from '../ui/text';
 
-const ScrollTitle = ({ dir = 'ltr', className, title, ...props }) => {
+const ScrollTitle = ({ dir = 'ltr', className, variants, title, ...props }) => {
   const containerRef = useRef(null),
     childrenRef = useRef(null);
 
@@ -28,11 +28,9 @@ const ScrollTitle = ({ dir = 'ltr', className, title, ...props }) => {
   return (
     <TextTitle
       asChild
-      className={cn(
-        'title-xl w-full max-w-bounds overflow-hidden !font-bold',
-        className,
-      )}
+      className={cn('w-full max-w-bounds overflow-hidden font-bold', className)}
       ref={containerRef}
+      variants={{ size: 'xl', ...variants }}
       {...props}
     >
       <span>

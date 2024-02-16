@@ -51,7 +51,8 @@ const AboutViewHeroSection = ({ className, ...props }) => {
       <div className='w-[90%] max-w-screen-lg space-y-sm'>
         <TextTitle
           asChild
-          className='title-lg max-sm:text-center'
+          className='max-sm:text-center'
+          variants={{ size: 'lg' }}
         >
           <h1>
             Heart conquer

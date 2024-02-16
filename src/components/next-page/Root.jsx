@@ -13,10 +13,7 @@ const NextPage = ({ text, href, className, ...props }) => {
     >
       <NextPageLinkHeading />
 
-      <div
-        className='title-xl relative flex w-full flex-col items-center justify-center gap-[.2em] !font-bold'
-        href={href}
-      >
+      <div className='relative flex w-full flex-col items-center justify-center gap-[.2em]'>
         <NextPageLinkContent
           baseVelocity={1}
           text={text}
@@ -62,18 +59,22 @@ const NextPageLinkHeading = ({ className, ...props }) => {
   );
 };
 
-const NextPageLinkContent = ({ className, text, ...props }) => {
+const NextPageLinkContent = ({ className, variants, text, ...props }) => {
   return (
-    <HorizontalScroll
+    <Text.Title
       aria-hidden
+      asChild
       className={cn(
-        'pointer-events-none font-bold uppercase [--gap:--font-blank-space]',
+        'pointer-events-none font-bold [--gap:--font-blank-space]',
         className,
       )}
+      variants={{ size: 'xl', ...variants }}
       {...props}
     >
-      <span>{text}</span> •
-    </HorizontalScroll>
+      <HorizontalScroll>
+        <span>{text}</span> •
+      </HorizontalScroll>
+    </Text.Title>
   );
 };
 

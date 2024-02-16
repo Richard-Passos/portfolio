@@ -50,7 +50,8 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
               <Text.Title
                 aria-label='Turning heads and conquering hearts.'
                 asChild
-                className='title-xl w-full text-center [--x:min(20vw,theme(spacing.20))] lg:text-[min(9vw,theme(fontSize.9xl))]/[1]'
+                className='w-full text-center [--x:min(20vw,theme(spacing.20))] lg:text-[min(9vw,theme(fontSize.9xl))]/[1]'
+                variants={{ size: 'xl' }}
               >
                 <h1>
                   <div aria-hidden>

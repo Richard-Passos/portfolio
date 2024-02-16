@@ -12,7 +12,10 @@ const WorkViewMission = ({ className, ...props }) => {
       {...props}
     >
       <section className='flex w-[90%] flex-col items-center gap-sm'>
-        <Text.Title className='title-xl flex flex-col items-center text-center !font-bold'>
+        <Text.Title
+          className='flex flex-col items-center text-center font-bold'
+          variants={{ size: 'xl' }}
+        >
           <span className='text-[.15em] tracking-normal text-muted-content'>
             My
           </span>{' '}

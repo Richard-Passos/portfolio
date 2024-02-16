@@ -48,7 +48,10 @@ const FooterContent = ({ className, ...props }) => {
                 is your big idea ready to fly?
               </Text>
 
-              <Text.Title className='title-xl max-sm:text-[13vw]/[1]'>
+              <Text.Title
+                className='text-[13vw]/[1]'
+                variants={{ size: 'xl' }}
+              >
                 <HandHornsIcon className='inline-block h-[.65em] w-[.65em]' />{' '}
                 Let&apos;s work <br /> together
               </Text.Title>

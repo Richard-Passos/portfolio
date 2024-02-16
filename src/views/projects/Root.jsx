@@ -19,7 +19,8 @@ const ProjectsView = async ({ className, ...props }) => {
     >
       <Text.Title
         asChild
-        className='title-lg w-[90%] max-w-screen-lg max-sm:text-center'
+        className='w-[90%] max-w-screen-lg max-sm:text-center'
+        variants={{ size: 'lg' }}
       >
         <h1>
           Head turning{' '}
