@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
-const ProjectsShow = ({ className, ...props }) => {
+const ProjectsViewShow = ({ className, ...props }) => {
   const [data, setData] = useState({
     projects: [],
     role: undefined,
@@ -39,4 +39,4 @@ const ProjectsShow = ({ className, ...props }) => {
   );
 };
 
-export default ProjectsShow;
+export default ProjectsViewShow;

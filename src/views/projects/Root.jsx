@@ -19,13 +19,13 @@ const ProjectsView = async ({ className, ...props }) => {
     >
       <Text.Title
         asChild
-        className='w-[90%] max-w-screen-lg text-[12vw]/[1] font-bold uppercase max-sm:text-center sm:text-[min(8vw,6rem)]/[1]'
+        className='title-lg w-[90%] max-w-screen-lg max-sm:text-center'
       >
         <h1>
           Head turning{' '}
           <span className='relative inline w-fit'>
             projects{' '}
-            <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case'>
+            <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
               Gotta see&apos;m all
             </Badge>
           </span>

@@ -12,7 +12,7 @@ const TYPES = [
   { data: 'grid', icon: 'Grid' },
 ];
 
-const ProjectsShowTypes = ({ className, ...props }) => {
+const ProjectsViewShowTypes = ({ className, ...props }) => {
   const { type, setType } = useContext(ProjectsShowContext);
 
   return (
@@ -45,4 +45,4 @@ const ProjectsShowTypes = ({ className, ...props }) => {
   );
 };
 
-export default ProjectsShowTypes;
+export default ProjectsViewShowTypes;

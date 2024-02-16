@@ -9,7 +9,12 @@ import { ProjectsShowContext } from '@/contexts';
 import { useLoadMore } from '@/hooks';
 import { cn, isFunctionThanCall } from '@/utils';
 
-const ProjectsShowLoadMore = ({ className, variants, children, ...props }) => {
+const ProjectsViewShowLoadMore = ({
+  className,
+  variants,
+  children,
+  ...props
+}) => {
   const { setProjects } = useContext(ProjectsShowContext);
 
   const { loadMore, isFetching, isLastPage } = useLoadMore(
@@ -33,9 +38,9 @@ const ProjectsShowLoadMore = ({ className, variants, children, ...props }) => {
         children
       ) : (
         <div className='flex gap-1'>
-          <ProjectsShowLoadMoreDot />
-          <ProjectsShowLoadMoreDot className='delay-200' />
-          <ProjectsShowLoadMoreDot className='[animation-delay:400ms]' />
+          <ProjectsViewShowLoadMoreDot />
+          <ProjectsViewShowLoadMoreDot className='delay-200' />
+          <ProjectsViewShowLoadMoreDot className='[animation-delay:400ms]' />
         </div>
       )}
     </MagneticButton>
@@ -46,7 +51,7 @@ const ProjectsShowLoadMore = ({ className, variants, children, ...props }) => {
   );
 };
 
-const ProjectsShowLoadMoreDot = ({ className, ...props }) => {
+const ProjectsViewShowLoadMoreDot = ({ className, ...props }) => {
   return (
     <span
       className={cn(
@@ -58,4 +63,4 @@ const ProjectsShowLoadMoreDot = ({ className, ...props }) => {
   );
 };
 
-export default ProjectsShowLoadMore;
+export default ProjectsViewShowLoadMore;

@@ -1,21 +1,21 @@
-import ProjectsShowContent from './Content';
-import ProjectsShowLoadMore from './LoadMore';
-import ProjectsShowRoles from './Roles';
-import ProjectsShowRoot from './Root';
-import ProjectsShowTypes from './Types';
+import ProjectsViewShowContent from './Content';
+import ProjectsViewShowLoadMore from './LoadMore';
+import ProjectsViewShowRoles from './Roles';
+import ProjectsViewShowRoot from './Root';
+import ProjectsViewShowTypes from './Types';
 
-const ProjectsShow = ProjectsShowRoot;
+const ProjectsViewShow = ProjectsViewShowRoot;
 
-ProjectsShow.Content = ProjectsShowContent;
-ProjectsShow.LoadMore = ProjectsShowLoadMore;
-ProjectsShow.Roles = ProjectsShowRoles;
-ProjectsShow.Types = ProjectsShowTypes;
+ProjectsViewShow.Content = ProjectsViewShowContent;
+ProjectsViewShow.LoadMore = ProjectsViewShowLoadMore;
+ProjectsViewShow.Roles = ProjectsViewShowRoles;
+ProjectsViewShow.Types = ProjectsViewShowTypes;
 
-export default ProjectsShow;
+export default ProjectsViewShow;
 export {
-  ProjectsShowRoot as ProjectsShow,
-  ProjectsShowContent,
-  ProjectsShowLoadMore,
-  ProjectsShowRoles,
-  ProjectsShowTypes,
+  ProjectsViewShowRoot as ProjectsViewShow,
+  ProjectsViewShowContent,
+  ProjectsViewShowLoadMore,
+  ProjectsViewShowRoles,
+  ProjectsViewShowTypes,
 };

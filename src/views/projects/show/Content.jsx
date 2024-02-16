@@ -8,7 +8,7 @@ import { Projects } from '@/components';
 import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
-const ProjectsShowContent = ({ initialData = [], className, ...props }) => {
+const ProjectsViewShowContent = ({ initialData = [], className, ...props }) => {
   const page = useSearchParams().get('page') || 1,
     [data, setData] = useState(initialData);
 
@@ -101,4 +101,4 @@ const getByRole = (role, obj1, { img, ...data }) => {
   };
 };
 
-export default ProjectsShowContent;
+export default ProjectsViewShowContent;

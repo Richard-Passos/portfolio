@@ -13,7 +13,7 @@ import { cn, isFunctionThanCall } from '@/utils';
 
 const ROLES = ['all', 'design', 'development'];
 
-const ProjectsShowRoles = ({ className, ...props }) => {
+const ProjectsViewShowRoles = ({ className, ...props }) => {
   const { role, setRole } = useContext(ProjectsShowContext);
 
   return (
@@ -41,12 +41,12 @@ const ProjectsShowRoles = ({ className, ...props }) => {
         <Select.Content>
           <Select.Viewport>
             {ROLES.map((role) => (
-              <ProjectsShowRolesSelectItem
+              <ProjectsViewShowRolesSelectItem
                 key={role}
                 value={role.toLowerCase()}
               >
                 {role}
-              </ProjectsShowRolesSelectItem>
+              </ProjectsViewShowRolesSelectItem>
             ))}
           </Select.Viewport>
 
@@ -63,7 +63,7 @@ const ProjectsShowRoles = ({ className, ...props }) => {
   );
 };
 
-const ProjectsShowRolesSelectItem = ({ className, children, ...props }) => {
+const ProjectsViewShowRolesSelectItem = ({ className, children, ...props }) => {
   return (
     <Select.Item
       className={cn('lowercase', className)}
@@ -78,4 +78,4 @@ const ProjectsShowRolesSelectItem = ({ className, children, ...props }) => {
   );
 };
 
-export default ProjectsShowRoles;
+export default ProjectsViewShowRoles;
