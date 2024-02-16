@@ -1,0 +1,32 @@
+import { Section } from '@/components';
+import { Text } from '@/components/ui';
+import { cn } from '@/utils';
+
+const WorkViewMission = ({ className, ...props }) => {
+  return (
+    <Section
+      className={cn(
+        'relative flex w-full flex-col items-center justify-center gap-sm',
+        className,
+      )}
+      {...props}
+    >
+      <section className='flex w-[90%] flex-col items-center gap-sm'>
+        <Text.Title className='title-xl flex flex-col items-center text-center !font-bold'>
+          <span className='text-[.15em] tracking-normal text-muted-content'>
+            My
+          </span>{' '}
+          <span className='ml-auto'>mission</span>
+        </Text.Title>
+
+        <Text className='max-w-lg text-center text-muted-content'>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
+          doloremque aspernatur architecto dolor eos. Harum minima modi deserunt
+          culpa commodi! Facilis eveniet ad illo delectus?
+        </Text>
+      </section>
+    </Section>
+  );
+};
+
+export default WorkViewMission;
