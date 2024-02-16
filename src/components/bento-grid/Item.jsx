@@ -2,7 +2,7 @@ import { cn } from '@/utils';
 
 import ScrollAnimation from '../scroll-animation';
 
-const SCROLL_OFFSET = ['0 1', '1 1'];
+const SCROLL_OFFSET = ['0 1', '0 .55'];
 
 const BentoGridItem = ({ className, ...props }) => {
   const animationConfig = {
