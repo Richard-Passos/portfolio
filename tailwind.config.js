@@ -115,14 +115,14 @@ module.exports = {
           from: { height: 'var(--height, 0)' },
           to: { height: 0 },
         },
-        'scroll-x': {
+        'infinity-scroll': {
           from: {
             transform:
-              'translate(var(--initial-x, -50%), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
+              'translate(var(--initial-x, 0%), var(--initial-y, 0%)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
           },
           to: {
             transform:
-              'translate(var(--final-x, 0%), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
+              'translate(var(--final-x, 0%), var(--final-y, 0%)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
           },
         },
         'scroll-indicator': {
@@ -141,7 +141,8 @@ module.exports = {
       animation: {
         'slide-down': 'slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         'slide-up': 'slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)',
-        'scroll-x': 'scroll-x var(--duration, 15s) linear infinite',
+        'infinity-scroll':
+          'infinity-scroll var(--duration, 15s) linear infinite',
         'scroll-indicator':
           'scroll-indicator var(--duration, 2s) cubic-bezier(0.87, 0, 0.13, 1) infinite',
         loader: 'loader var(--duration, .6s) infinite alternate',
