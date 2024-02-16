@@ -1,27 +1,23 @@
-import {
-  ScrollAnimation,
-  Section,
-  TextScrollAnimation,
-} from '@/components';
+import { ScrollAnimation, Section, TextScrollAnimation } from '@/components';
 import { Text } from '@/components/ui/text';
 
-const HomeFirstText = (props) => {
+const HomeViewFirstText = (props) => {
   const animationConfig = {
     x: {
       useScrollConfig: {
         offset: ['-.5 .5', '0 .5'],
       },
       prop: '--x',
-      propPoints: ['-100%', '0%'],
+      propPoints: ['-101%', '0%'],
     },
     clipPath: {
       useScrollConfig: {
-        offset: ['0 .5', '.5 .5'],
+        offset: ['.5 .5', '.75 .5'],
       },
       useScrollRes: 'scrollYProgress',
       prop: '--clip-path',
       scrollPoints: [0, 1],
-      propPoints: ['inset(0% 0 0 0)', 'inset(100% 0 0 0)'],
+      propPoints: ['inset(0% -1% 0 0)', 'inset(100% -1% 0 0)'],
     },
     y: {
       useScrollConfig: {
@@ -49,12 +45,16 @@ const HomeFirstText = (props) => {
         <ScrollAnimation.Transform config={animationConfig.x}>
           <ScrollAnimation config={animationConfig.clipPath}>
             <ScrollAnimation.Transform config={animationConfig.y}>
-              <div className='row-span-2 flex items-center overflow-hidden py-[--gap]'>
-                <Text
-                  className='outline-text relative translate-x-[--x] text-[clamp(8rem,44vw,24rem)]/[1] font-bold before:pointer-events-none before:absolute before:overflow-hidden before:content-[attr(data-text)] before:[-webkit-text-fill-color:currentColor] before:[clip-path:--clip-path]'
-                  data-text='BUT'
-                >
-                  BUT
+              <div className='row-span-2 flex items-center py-[--gap] [clip-path:inset(0_-1%_0_0)]'>
+                <Text className='relative translate-x-[--x] text-[clamp(8rem,44vw,32rem)]/[1] font-bold tracking-tighter'>
+                  <span className='outline-text text-muted-content'>BUT</span>
+
+                  <span
+                    aria-hidden
+                    className='absolute left-0 [clip-path:--clip-path]'
+                  >
+                    BUT
+                  </span>
                 </Text>
               </div>
             </ScrollAnimation.Transform>
@@ -63,7 +63,7 @@ const HomeFirstText = (props) => {
 
         <ScrollAnimation config={animationConfig.top}>
           <div className='flex w-[90%] items-center justify-center'>
-            <Text className='relative top-[--top] text-[clamp(2rem,6.6vw,6rem)] font-semibold leading-tight'>
+            <Text className='relative top-[--top] text-[clamp(2rem,6.6vw,6rem)]/tight font-semibold'>
               <TextScrollAnimation
                 className='justify-center'
                 text="it's not just about the tech."
@@ -76,4 +76,4 @@ const HomeFirstText = (props) => {
   );
 };
 
-export default HomeFirstText;
+export default HomeViewFirstText;
