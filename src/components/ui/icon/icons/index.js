@@ -1,4 +1,5 @@
 import ArrowDownIcon from './ArrowDown';
+import ArrowLeftIcon from './ArrowLeft';
 import ArrowRightIcon from './ArrowRight';
 import ArrowUpIcon from './ArrowUp';
 import CheckIcon from './Check';
@@ -21,10 +22,13 @@ import PaperPlaneIcon from './PaperPlane';
 import PlusIcon from './Plus';
 import QuestionIcon from './Question';
 import RocketIcon from './Rocket';
+import SmileIcon from './Smile';
 import TimesIcon from './Times';
+import WidthIcon from './Width';
 
 const Icons = {
   ArrowDown: ArrowDownIcon,
+  ArrowLeft: ArrowLeftIcon,
   ArrowRight: ArrowRightIcon,
   ArrowUp: ArrowUpIcon,
   Check: CheckIcon,
@@ -47,12 +51,15 @@ const Icons = {
   Plus: PlusIcon,
   Question: QuestionIcon,
   Rocket: RocketIcon,
+  Smile: SmileIcon,
   Times: TimesIcon,
+  Width: WidthIcon,
 };
 
 export default Icons;
 export {
   ArrowDownIcon,
+  ArrowLeftIcon,
   ArrowRightIcon,
   ArrowUpIcon,
   CheckIcon,
@@ -75,5 +82,7 @@ export {
   PlusIcon,
   QuestionIcon,
   RocketIcon,
+  SmileIcon,
   TimesIcon,
+  WidthIcon,
 };
