@@ -39,18 +39,18 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
       <ScrollAnimation config={animationConfig.opacity}>
         <section
           className={cn(
-            'relative [--header-h:88px] sm:[clip-path:inset(0_-50vw_1px_-50vw)]',
+            'relative [--header-h:96px] sm:[clip-path:inset(0_-50vw_1px_-50vw)]',
             theme,
             className,
           )}
           {...props}
         >
-          <div className='relative flex items-center justify-center py-[min(28vh,theme(spacing.28))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-[calc(100svh-var(--header-h))] sm:translate-y-[--y] 2xl:h-screen 2xl:max-h-bounds 2xl:[--w:--max-w]'>
+          <div className='py-md relative flex items-center justify-center [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-[calc(100svh-var(--header-h))] sm:translate-y-[--y] 2xl:h-screen 2xl:max-h-bounds 2xl:[--w:--max-w]'>
             <div className='w-[calc(90%-var(--inset)*2)] space-y-sm pb-[--inset] sm:grid-cols-3 lg:opacity-[--opacity]'>
               <Text.Title
                 aria-label='Turning heads and conquering hearts.'
                 asChild
-                className='w-full text-center [--x:min(20vw,theme(spacing.20))] lg:text-[min(9vw,theme(fontSize.9xl))]/[1]'
+                className='w-full text-center [--x:--spacing-lg] lg:text-[min(9vw,theme(fontSize.9xl))]/[1]'
                 variants={{ size: 'xl' }}
               >
                 <h1>
