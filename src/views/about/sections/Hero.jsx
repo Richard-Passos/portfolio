@@ -43,7 +43,7 @@ const AboutViewHeroSection = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'relative flex w-full flex-col items-center gap-lg pt-[min(28vh,min(theme(spacing.28)))]',
+        'py-lg relative flex w-full flex-col items-center gap-lg',
         className,
       )}
       {...props}
@@ -89,7 +89,7 @@ const AboutViewHeroSection = ({ className, ...props }) => {
       </div>
 
       <ul
-        className='w-9/10 grid max-w-screen-xl gap-sm sm:grid-cols-3 md:gap-x-md'
+        className='grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-3 md:gap-x-md'
         id='scrollTo'
       >
         {[...Array(3)].map((_, i) => (
