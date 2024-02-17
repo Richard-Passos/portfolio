@@ -45,7 +45,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
           )}
           {...props}
         >
-          <div className='relative flex items-center justify-center py-md [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-[calc(100svh-var(--header-h))] sm:translate-y-[--y] 2xl:h-screen 2xl:max-h-bounds 2xl:[--w:--max-w]'>
+          <div className='relative flex items-center justify-center py-lg [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-[calc(100svh-var(--header-h))] sm:translate-y-[--y] 2xl:h-screen 2xl:max-h-bounds 2xl:[--w:--max-w]'>
             <div className='w-[calc(90%-var(--inset)*2)] space-y-sm pb-[--inset] sm:grid-cols-3 lg:opacity-[--opacity]'>
               <Text.Title
                 aria-label='Turning heads and conquering hearts.'

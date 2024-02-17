@@ -16,7 +16,7 @@ const WorkViewProjects = ({ theme, className, ...props }) => {
   return (
     <section
       className={cn(
-        'relative flex w-full flex-col items-center gap-md pb-md',
+        'pb-lg relative flex w-full flex-col items-center gap-md',
         theme,
         className,
       )}

@@ -11,7 +11,7 @@ const ContactView = ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout dark relative mx-auto flex w-full max-w-bounds flex-col items-center gap-lg py-md',
+        'dark-layout py-lg dark relative mx-auto flex w-full max-w-bounds flex-col items-center gap-lg',
         className,
       )}
       {...props}

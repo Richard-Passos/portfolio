@@ -6,11 +6,11 @@ import { cn } from '@/utils';
 const AboutViewValuesSection = ({ theme, className, ...props }) => {
   return (
     <section
-      className={cn('relative w-9/10 max-w-screen-xl pb-md', theme, className)}
+      className={cn('pb-lg relative w-9/10 max-w-screen-xl', theme, className)}
       {...props}
     >
       <Values aria-labelledby='values-heading'>
-        <li className='h-full space-y-1.5 sm:pt-sm'>
+        <li className='sm:pt-sm h-full space-y-1.5'>
           <Text.Title
             className='text-xs uppercase'
             id='values-heading'

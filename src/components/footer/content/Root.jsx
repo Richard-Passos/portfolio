@@ -37,7 +37,7 @@ const FooterContent = ({ className, ...props }) => {
         <ScrollAnimationTransform config={animationConfig.x}>
           <div
             className={cn(
-              'flex w-9/10 max-w-screen-xl flex-col justify-center py-md [--h:100vh] max-2xl:min-h-screen sm:[--y:calc(var(--smooth-y)*var(--h))] 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
+              'py-lg flex w-9/10 max-w-screen-xl flex-col justify-center [--h:100vh] max-2xl:min-h-screen sm:[--y:calc(var(--smooth-y)*var(--h))] 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
               FOOTER_CONTENT_THEME,
               className,
             )}

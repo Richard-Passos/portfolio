@@ -7,7 +7,7 @@ const HomeViewSecondText = ({ theme, className, ...props }) => {
   return (
     <div
       className={cn(
-        'relative flex items-center justify-center py-md max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds',
+        'py-lg relative flex items-center justify-center max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds',
         theme,
         className,
       )}
