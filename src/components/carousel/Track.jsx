@@ -18,7 +18,10 @@ const CarouselTrack = ({ content, variant, className, ...props }) => {
         variant={{ scaleX: 1, scaleY: 1, ...variant }}
       >
         <SplideTrack
-          className={cn('w-full cursor-grab active:cursor-grabbing', className)}
+          className={cn(
+            'w-full cursor-grab !overflow-x-clip !overflow-y-visible active:cursor-grabbing',
+            className,
+          )}
           {...props}
         />
       </CursorHover>
