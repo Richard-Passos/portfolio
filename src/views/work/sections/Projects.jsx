@@ -1,0 +1,110 @@
+import { PlusIcon } from '@radix-ui/react-icons';
+
+import {
+  Bg,
+  Lines,
+  Projects,
+  ScrollTitle,
+  TextScrollAnimation,
+} from '@/components';
+import { MagneticButton } from '@/components/button';
+import { Text } from '@/components/ui';
+import { selectedProjects } from '@/constants';
+import { cn } from '@/utils';
+
+const WorkViewProjects = ({ theme, className, ...props }) => {
+  return (
+    <section
+      className={cn(
+        'pb-md relative flex w-full flex-col items-center gap-md',
+        theme,
+        className,
+      )}
+      {...props}
+    >
+      <h2 className='w-full'>
+        <ScrollTitle title='PROJECTS' />
+      </h2>
+
+      <div className='w-9/10 max-w-screen-xl'>
+        <Text className='max-w-xl text-xl sm:ml-auto md:text-2xl'>
+          <TextScrollAnimation text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quo id vel recusandae a porro pariatur, aliquid, soluta placeat reprehenderit error velit dolor dicta laborum!' />
+        </Text>
+      </div>
+
+      <div className='mt-md flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
+        <WorkViewProjectsShow />
+
+        <MagneticButton
+          aria-label='More works'
+          className='focus-visible:outline-variant-content'
+          href='/projects'
+          isLink
+          variants={{ color: 'main' }}
+        >
+          <PlusIcon aria-hidden />
+        </MagneticButton>
+      </div>
+
+      <Bg />
+
+      <Lines />
+    </section>
+  );
+};
+
+const WorkViewProjectsShow = () => {
+  const projects = selectedProjects.reduce(
+    (obj, { img, ...data }) => ({
+      data: [...obj.data, data],
+      images: [...obj.images, img],
+    }),
+    { data: [], images: [] },
+  );
+
+  return (
+    <Projects
+      className='w-full'
+      images={projects.images}
+    >
+      <Projects.List className='max-sm:hidden'>
+        {projects.data.map((project, i) => (
+          <Projects.List.Item
+            href={project.href}
+            index={i}
+            key={'projects-list-' + project.href}
+          >
+            <Projects.List.Number index={i} />
+
+            <Projects.List.Content>
+              <Projects.List.Title text={project.title} />
+
+              <Projects.List.Roles data={project.roles} />
+            </Projects.List.Content>
+          </Projects.List.Item>
+        ))}
+      </Projects.List>
+
+      <Projects.Grid className='sm:hidden'>
+        {projects.data.map((project, i) => (
+          <Projects.Grid.Item
+            index={i}
+            key={'projects-grid-' + project.href}
+          >
+            <Projects.Grid.Link href={project.href}>
+              <Projects.Grid.Number index={i} />
+
+              <Projects.Grid.Image index={i} />
+
+              <Projects.Grid.Title text={project.title} />
+            </Projects.Grid.Link>
+
+            <Projects.Grid.Roles data={project.roles} />
+          </Projects.Grid.Item>
+        ))}
+      </Projects.Grid>
+    </Projects>
+  );
+};
+
+export default WorkViewProjects;
