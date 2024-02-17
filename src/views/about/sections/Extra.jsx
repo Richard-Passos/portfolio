@@ -20,7 +20,7 @@ const AboutViewExtraSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'w-9/10 grid max-w-screen-lg gap-x-lg gap-y-sm sm:grid-cols-2',
+        'grid w-9/10 max-w-screen-lg gap-x-lg gap-y-sm sm:grid-cols-2',
         className,
       )}
       {...props}
@@ -28,7 +28,7 @@ const AboutViewExtraSection = ({ className, ...props }) => {
       <ul className='max-w-screen-sm space-y-md pt-8'>
         {EXTRA_CONTENT.map(({ title, content }) => (
           <li
-            className='flex flex-col gap-[--gap] [--gap:theme(spacing.4)] [--half-gap:calc(var(--gap)/2)]'
+            className='flex flex-col gap-4'
             key={title}
           >
             <Text.Subtitle className='text-xs uppercase text-muted-content'>
@@ -37,9 +37,7 @@ const AboutViewExtraSection = ({ className, ...props }) => {
 
             <Separator />
 
-            <Text className='mt-[--half-gap] text-xl font-medium'>
-              {content}
-            </Text>
+            <Text className='mt-2 text-xl font-medium'>{content}</Text>
           </li>
         ))}
       </ul>
