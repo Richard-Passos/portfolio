@@ -27,6 +27,7 @@ export { default as ScrollIndicator } from './scroll-indicator';
 export { default as ScrollTitle } from './scroll-title';
 export { default as Section } from './section';
 export { default as Services } from './services';
+export { default as SkillCard } from './skill-card';
 export { default as SocialNav } from './social-nav';
 export { default as TextRing } from './text-ring';
 export { default as TextScrollAnimation } from './text-scroll-animation';
