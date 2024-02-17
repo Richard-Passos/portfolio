@@ -15,16 +15,11 @@ module.exports = {
         px: '0.8px',
         'font-blank-space': 'var(--font-blank-space)',
         '9/10': '90%',
-      },
-      gap: {
-        sm: 'var(--gap-sm)',
-        md: 'var(--gap-md)',
-        lg: 'var(--gap-lg)',
-      },
-      space: {
-        sm: 'var(--gap-sm)',
-        md: 'var(--gap-md)',
-        lg: 'var(--gap-lg)',
+        xs: 'var(--spacing-xs)',
+        sm: 'var(--spacing-sm)',
+        md: 'var(--spacing-md)',
+        lg: 'var(--spacing-lg)',
+        xl: 'var(--spacing-xl)',
       },
       colors: {
         main: getColor('--main'),
