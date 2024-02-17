@@ -11,7 +11,7 @@ const WorkViewWhyMe = ({ className, ...props }) => {
       )}
       {...props}
     >
-      <section className='w-9/10 flex flex-col items-center gap-sm'>
+      <section className='flex w-9/10 flex-col items-center gap-sm'>
         <Text.Title
           className='flex flex-col items-center text-center font-bold'
           variants={{ size: 'xl' }}

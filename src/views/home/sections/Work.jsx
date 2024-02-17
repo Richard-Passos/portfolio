@@ -34,7 +34,7 @@ const HomeViewWorkSection = ({ className, ...props }) => {
         </Text>
       </div>
 
-      <div className='w-9/10 flex max-w-screen-lg flex-col items-center gap-md'>
+      <div className='flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
         <Text.Subtitle className='mr-auto text-xs uppercase text-muted-content'>
           Selected works
         </Text.Subtitle>

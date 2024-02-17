@@ -30,7 +30,7 @@ const ProjectsViewShow = ({ className, ...props }) => {
     >
       <div
         className={cn(
-          'w-9/10 flex max-w-screen-lg flex-col items-center gap-md',
+          'flex w-9/10 max-w-screen-lg flex-col items-center gap-md',
           className,
         )}
         {...props}

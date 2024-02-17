@@ -74,7 +74,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
         </Carousel.Track>
       </Carousel>
 
-      <div className='py-md relative flex w-full items-center justify-center max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
+      <div className='relative flex w-full items-center justify-center py-md max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
         <Text className='w-9/10 max-w-screen-lg text-7xl/tight md:text-8xl/tight'>
           <TextScrollAnimation
             className='mx-auto justify-center'

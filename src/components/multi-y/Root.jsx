@@ -7,7 +7,7 @@ const AMOUNT = 20;
 const MultiY = ({ className, children, ...props }) => {
   const animationConfig = {
     prop: '--y',
-    propPoints: [-.25, 1.25],
+    propPoints: [-0.25, 1.25],
   };
 
   return (

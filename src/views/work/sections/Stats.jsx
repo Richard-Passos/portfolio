@@ -1,11 +1,13 @@
+import { Bg, Lines } from '@/components';
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const WorkViewStats = ({ className, ...props }) => {
+const WorkViewStats = ({ theme, className, ...props }) => {
   return (
     <section
       className={cn(
         'py-lg relative flex w-full flex-col items-center justify-center gap-md',
+        theme,
         className,
       )}
       {...props}
@@ -47,6 +49,10 @@ const WorkViewStats = ({ className, ...props }) => {
           </li>
         ))}
       </ul>
+
+      <Bg />
+
+      <Lines />
     </section>
   );
 };

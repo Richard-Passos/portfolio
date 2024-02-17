@@ -15,7 +15,7 @@ const SkillCard = ({ asChild, className, ...props }) => {
   return (
     <Tag
       className={cn(
-        'p-sm group isolate grid aspect-[1/.85] w-9/10 max-w-xs grid-rows-4 gap-2 overflow-hidden rounded-md border bg-main',
+        'group isolate grid aspect-[1/.85] w-9/10 max-w-xs grid-rows-4 gap-2 overflow-hidden rounded-md border bg-main p-sm',
         className,
       )}
       data-state={isOpen ? 'open' : 'closed'}

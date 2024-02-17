@@ -11,7 +11,7 @@ const Header = ({ className, ...props }) => {
   return (
     <header
       className={cn(
-        'py-sm relative z-10 mx-auto flex w-9/10 max-w-bounds flex-wrap items-center justify-between',
+        'relative z-10 mx-auto flex w-9/10 max-w-bounds flex-wrap items-center justify-between py-sm',
         className,
       )}
       {...props}

@@ -10,7 +10,7 @@ const WorkViewValuesSection = ({ className, ...props }) => {
       {...props}
     >
       <Values aria-labelledby='values-heading'>
-        <li className='sm:pt-sm h-full space-y-1.5'>
+        <li className='h-full space-y-1.5 sm:pt-sm'>
           <Text.Title
             className='text-xs uppercase'
             id='values-heading'

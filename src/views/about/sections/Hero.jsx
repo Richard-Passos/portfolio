@@ -43,7 +43,7 @@ const AboutViewHeroSection = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'py-lg relative flex w-full flex-col items-center gap-lg',
+        'relative flex w-full flex-col items-center gap-lg py-lg',
         className,
       )}
       {...props}

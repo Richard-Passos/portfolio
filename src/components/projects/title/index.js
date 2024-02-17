@@ -1,3 +1,3 @@
-import Title from './Root'
+import Title from './Root';
 
-export default Title
+export default Title;
