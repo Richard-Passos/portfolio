@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    @apply [--font-blank-space:.25em] [--gap-lg:clamp(theme(spacing.14),28vh,theme(spacing.28))] [--gap-md:clamp(theme(spacing.7),14vh,theme(spacing.14))] [--gap-sm:clamp(theme(spacing[3.5]),7vh,theme(spacing.7))] [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)];
+    @apply [--font-blank-space:.25em] [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)] [--spacing-lg:calc(var(--spacing-md)*2)] [--spacing-md:clamp(theme(spacing.7),14vh,theme(spacing.14))] [--spacing-sm:calc(var(--spacing-md)/2)] [--spacing-xl:calc(var(--spacing-md)*4)] [--spacing-xs:calc(var(--spacing-md)/4)];
 
     --info: 199 77% 54%;
     --info-a: 199 77% 50%;
