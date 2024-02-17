@@ -41,11 +41,11 @@ const HomeViewFirstText = (props) => {
       as='div'
       {...props}
     >
-      <div className='grid grid-rows-3 justify-items-center [--gap:--gap-md] max-2xl:min-h-[150vh] 2xl:min-h-[calc(var(--max-h)*1.5)]'>
+      <div className='grid min-h-[calc(var(--h)*1.5)] grid-rows-3 justify-items-center [--h:100vh] 2xl:[--h:--max-h]'>
         <ScrollAnimation.Transform config={animationConfig.x}>
           <ScrollAnimation config={animationConfig.clipPath}>
             <ScrollAnimation.Transform config={animationConfig.y}>
-              <div className='row-span-2 flex items-center py-[--gap] [clip-path:inset(0_-1%_0_0)]'>
+              <div className='py-md row-span-2 flex items-center [clip-path:inset(0_-1%_0_0)]'>
                 <Text className='relative translate-x-[--x] text-[clamp(8rem,44vw,32rem)]/[1] font-bold tracking-tighter'>
                   <span className='outline-text text-muted-content'>BUT</span>
 
@@ -62,7 +62,7 @@ const HomeViewFirstText = (props) => {
         </ScrollAnimation.Transform>
 
         <ScrollAnimation config={animationConfig.top}>
-          <div className='w-9/10 flex items-center justify-center'>
+          <div className='flex w-9/10 items-center justify-center'>
             <Text className='relative top-[--top] text-[clamp(2rem,6.6vw,6rem)]/tight font-semibold'>
               <TextScrollAnimation
                 className='justify-center'
