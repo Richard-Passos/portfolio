@@ -12,8 +12,7 @@ const Carousel = ({ options, className, ...props }) => {
     focus: 'center',
     trimSpace: false,
     pagination: false,
-    updateOnMove: true,
-    gap: 'var(--gap-sm)',
+    gap: 'var(--spacing-sm)',
     ...options,
   };
 
