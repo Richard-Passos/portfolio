@@ -7,34 +7,26 @@ import { cn, isFunctionThanCall } from '@/utils';
 
 import { CursorLink } from '../../link';
 
-const ProjectsListItem = ({ className, index, children, ...props }) => {
+const ProjectsListItem = ({ className, index, ...props }) => {
   const { setActiveIdx } = useContext(ProjectsContext);
 
   return (
     <CursorLink
       className={cn(
-        'group relative flex w-full items-start gap-4 overflow-hidden border-t px-[7.5%] py-12 no-underline last:border-b',
+        'relative top-px -mt-px flex w-full items-start gap-4 overflow-hidden border-y px-[7.5%] py-12 no-underline transition-[transform,opacity] duration-200 [--opacity:.25] last:border-b hover:z-10 dark:[--opacity:.05] group-hover:[&:not(:hover)]:scale-x-95 group-hover:[&:not(:hover)]:opacity-[--opacity]',
         className,
       )}
       content={{
         name: 'Eye',
         className: 'w-[45%] h-[45%]',
       }}
+      {...props}
       onMouseEnter={(ev) => {
         setActiveIdx(index);
 
         isFunctionThanCall(props.onMouseEnter, ev);
       }}
-      {...props}
-    >
-      {children}
-
-      <div className='absolute inset-0 -z-10 translate-y-full overflow-hidden transition-transform group-hover:translate-y-0 group-hover:duration-0'>
-        <div className='h-full -translate-y-full transition-transform delay-150 group-hover:translate-y-0 group-hover:delay-0'>
-          <span className='h-full w-full bg-muted transition-bg' />
-        </div>
-      </div>
-    </CursorLink>
+    />
   );
 };
 
