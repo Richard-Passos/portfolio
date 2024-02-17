@@ -38,14 +38,14 @@ const WorkViewHeroSection = ({ theme, className, ...props }) => {
       <ScrollAnimationTransform config={animationConfig.scale}>
         <section
           className={cn(
-            'relative w-full [--h:100vh] [--header-h:88px] sm:h-[calc(var(--h)*1.5)] 2xl:[--h:--max-h]',
+            'relative w-full [--h:100vh] [--header-h:96px] sm:h-[calc(var(--h)*1.5)] 2xl:[--h:--max-h]',
             className,
           )}
           {...props}
         >
           <div className='top-0 sm:sticky'>
             <div className='relative mx-auto w-[95%] sm:scale-[--scale]'>
-              <div className='w-9/10 relative mx-auto flex flex-col items-center justify-center gap-sm py-[--p] [--p:min(28vh,theme(spacing.28))] max-2xl:min-h-screen sm:[--p:min(14vh,theme(spacing.14))] lg:-translate-y-[--header-h] 2xl:h-screen 2xl:max-h-bounds'>
+              <div className='py-lg sm:py-md relative mx-auto flex w-9/10 flex-col items-center justify-center gap-sm max-2xl:min-h-screen lg:-translate-y-[--header-h] 2xl:h-screen 2xl:max-h-bounds'>
                 <Text.Title className='overflow-y-clip text-center text-[min(20vw,16rem)]/[1] font-extrabold uppercase tracking-tighter'>
                   <div className='relative sm:translate-y-[--y]'>
                     <span className='sm:absolute sm:bottom-full sm:left-1/2 sm:-translate-x-1/2'>

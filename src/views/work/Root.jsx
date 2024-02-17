@@ -21,7 +21,9 @@ const WorkView = ({ className, ...props }) => {
 
       <Sections.Services theme='light' />
 
-      <Sections.Method />
+      <Sections.Projects />
+
+      <Sections.WhyMe theme='dark' />
 
       <Sections.Stats theme='dark' />
 
@@ -29,7 +31,7 @@ const WorkView = ({ className, ...props }) => {
 
       <Sections.Values theme='dark' />
 
-      <div className='dark relative flex w-full items-center pb-[min(28vh,theme(spacing.28))] max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
+      <div className='pb-md dark relative flex w-full items-center max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
         <NextPage
           href='/about'
           text='About me'

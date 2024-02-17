@@ -1,4 +1,10 @@
-import { Carousel, MultiY, Section, TextScrollAnimation } from '@/components';
+import {
+  Carousel,
+  MultiY,
+  Section,
+  SkillCard,
+  TextScrollAnimation,
+} from '@/components';
 import { Icon, Text } from '@/components/ui';
 import {
   ArrowLeftIcon,
@@ -15,7 +21,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
       className={cn('flex w-full flex-col items-center gap-lg', className)}
       {...props}
     >
-      <section className='w-9/10 flex max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
+      <section className='flex w-9/10 max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
         <Text className='max-w-lg text-4xl/tight font-medium sm:text-5xl/tight'>
           <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
@@ -28,8 +34,11 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
         </Text>
       </section>
 
-      <Carousel aria-labelledby='carousel-skills-heading-0'>
-        <div className='w-9/10 grid max-w-screen-xl grid-cols-2'>
+      <Carousel
+        aria-labelledby='carousel-skills-heading-0'
+        options={{ slideFocus: true }}
+      >
+        <div className='grid w-9/10 max-w-screen-xl grid-cols-2'>
           <div className='space-y-1.5'>
             <Text.Title
               className='text-xs uppercase'
@@ -65,7 +74,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
         </Carousel.Track>
       </Carousel>
 
-      <div className='relative flex w-full items-center justify-center py-[min(28vh,theme(spacing.28))] max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
+      <div className='py-md relative flex w-full items-center justify-center max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
         <Text className='w-9/10 max-w-screen-lg text-7xl/tight md:text-8xl/tight'>
           <TextScrollAnimation
             className='mx-auto justify-center'
@@ -78,8 +87,11 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
         </MultiY>
       </div>
 
-      <Carousel aria-labelledby='carousel-skills-heading-1'>
-        <div className='w-9/10 grid max-w-screen-xl grid-cols-2'>
+      <Carousel
+        aria-labelledby='carousel-skills-heading-1'
+        options={{ slideFocus: true }}
+      >
+        <div className='grid w-9/10 max-w-screen-xl grid-cols-2'>
           <div className='space-y-1.5'>
             <Text.Title
               className='text-xs uppercase'
@@ -127,39 +139,34 @@ const HomeViewSkillsSectionCarouselItem = ({
   ...props
 }) => {
   return (
-    <Carousel.Item
-      className={cn(
-        'w-9/10 group grid aspect-[1/.85] max-w-xs grid-rows-3 gap-2 overflow-hidden rounded-md border bg-main p-[--p] [--p:min(8vw,theme(spacing.8))]',
-        className,
-      )}
-      index={idx}
+    <SkillCard
+      asChild
       {...props}
     >
-      <Text className='text-4xl font-bold text-muted'>
-        {`${idx + 1}`.padStart(2, '0')}/
-      </Text>
+      <Carousel.Item index={idx}>
+        <SkillCard.Number index={idx} />
 
-      <div className='flex aspect-square h-full items-center justify-center place-self-center rounded-md bg-muted/50'>
-        <Icon
-          className='h-2/3 w-2/3 fill-primary'
-          name={icon}
-        />
-      </div>
+        <div className='relative row-span-2 flex size-full items-center justify-center'>
+          <SkillCard.Icon>
+            <Icon name={icon} />
+          </SkillCard.Icon>
 
-      <div className='flex h-fit items-center justify-between self-end'>
-        <Text.Subtitle className='text-sm text-muted-content'>
-          {title}
-        </Text.Subtitle>
+          <SkillCard.Description>{description}</SkillCard.Description>
+        </div>
 
-        <button className='relative flex aspect-square w-6 items-center justify-center bg-muted [clip-path:circle(50%)]'>
-          <PlusIcon className='relative z-10 h-1/2 w-1/2 transition-colors group-hover:fill-primary-content' />
+        <div className='flex items-center justify-between gap-6 self-end'>
+          <SkillCard.Title>{title}</SkillCard.Title>
 
-          <div className='absolute inset-0 translate-y-[101%] rounded-[50%_50%_0_0] transition-[transform,border-radius] duration-500 group-hover:translate-y-0 group-hover:rounded-[0]'>
-            <span className='absolute inset-0 rounded-inherit bg-primary transition-bg' />
-          </div>
-        </button>
-      </div>
-    </Carousel.Item>
+          <SkillCard.Action>
+            <PlusIcon className='size-1/2 transition-transform duration-300 ease-backOut group-data-open:rotate-[135deg]' />
+          </SkillCard.Action>
+        </div>
+
+        <SkillCard.WaterMark>
+          <Icon name={icon} />
+        </SkillCard.WaterMark>
+      </Carousel.Item>
+    </SkillCard>
   );
 };
 

@@ -18,7 +18,7 @@ const WorkViewServices = ({ className, ...props }) => {
         <ScrollTitle title='SERVICES' />
       </h2>
 
-      <section className='w-9/10 flex max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
+      <section className='flex w-9/10 max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
         <Text className='max-w-lg text-4xl/tight font-medium sm:text-5xl/tight'>
           <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
@@ -29,7 +29,7 @@ const WorkViewServices = ({ className, ...props }) => {
         </Text>
       </section>
 
-      <section className='w-9/10 mt-[--gap-lg] max-w-screen-xl space-y-md'>
+      <section className='mt-md w-9/10 max-w-screen-xl space-y-md'>
         <Text.Subtitle className='text-center text-2xl'>
           I could help you with...
         </Text.Subtitle>
