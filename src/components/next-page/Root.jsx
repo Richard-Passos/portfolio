@@ -46,10 +46,7 @@ const NextPage = ({ text, href, className, ...props }) => {
 const NextPageLinkHeading = ({ className, ...props }) => {
   return (
     <div
-      className={cn(
-        'flex items-center gap-[--gap] px-[min(6vw,theme(spacing.12))]',
-        className,
-      )}
+      className={cn('mx-auto flex w-9/10 items-center gap-sm', className)}
       {...props}
     >
       <Text.Title className='shrink-0 text-xs uppercase'>Next page</Text.Title>
