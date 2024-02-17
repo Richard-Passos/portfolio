@@ -11,7 +11,7 @@ const ContactView = ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout dark relative mx-auto flex w-full max-w-bounds flex-col items-center gap-lg py-[min(28vh,theme(spacing.28))]',
+        'dark-layout py-md dark relative mx-auto flex w-full max-w-bounds flex-col items-center gap-lg',
         className,
       )}
       {...props}
@@ -30,7 +30,7 @@ const ContactView = ({ className, ...props }) => {
         </h1>
       </Text.Title>
 
-      <section className='w-9/10 relative z-10 grid max-w-screen-xl gap-md md:grid-cols-2 md:grid-rows-2'>
+      <section className='relative z-10 grid w-9/10 max-w-screen-xl gap-md md:grid-cols-2 md:grid-rows-2'>
         <div className='light space-y-md rounded-lg border bg-main p-9 shadow-md md:row-span-2'>
           <section className='space-y-6'>
             <Text.Title>Send me a message</Text.Title>
