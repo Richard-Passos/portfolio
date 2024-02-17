@@ -7,19 +7,19 @@ const values = [
   },
   {
     icon: 'Grid',
-    title: 'Lorem ipsum 01',
+    title: 'Forward-thinking',
+    description:
+      'I pride myself on pushing the boundaries of development. I combine relevant trends and best practices to build solutions with longevity.',
+  },
+  {
+    icon: 'Grid',
+    title: 'Constant growth',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
   },
   {
     icon: 'Grid',
-    title: 'Lorem ipsum 02',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
-  },
-  {
-    icon: 'Grid',
-    title: 'Lorem ipsum 03',
+    title: 'Detail-oriented',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
   },
