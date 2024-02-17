@@ -37,7 +37,7 @@ const FooterContent = ({ className, ...props }) => {
         <ScrollAnimationTransform config={animationConfig.x}>
           <div
             className={cn(
-              'w-9/10 flex max-w-screen-xl flex-col pt-[--p] text-content [--h:100vh] [--p:min(20vh,theme(spacing.20))] max-2xl:min-h-screen sm:[--y:calc(var(--smooth-y)*var(--h))] 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
+              'py-md flex w-9/10 max-w-screen-xl flex-col justify-center [--h:100vh] max-2xl:min-h-screen sm:[--y:calc(var(--smooth-y)*var(--h))] 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
               FOOTER_CONTENT_THEME,
               className,
             )}
@@ -67,17 +67,17 @@ const FooterContent = ({ className, ...props }) => {
               </div>
             </div>
 
-            <div className='relative flex grow items-center overflow-y-clip border-t py-[--p] sm:translate-y-[--y]'>
+            <div className='relative flex grow items-center overflow-y-clip border-t sm:translate-y-[--y]'>
               <div className='flex w-full justify-between gap-md p-5 max-sm:flex-col sm:translate-y-[--y]'>
-                <div className='flex flex-col items-start gap-4'>
+                <div className='flex flex-col items-start gap-2'>
                   <Logo className='w-fit' />
 
-                  <Text className='-mt-2 max-w-[14rem] text-sm font-medium'>
+                  <Text className='max-w-56 text-sm font-medium'>
                     An awesome {personalInfo.job.toLowerCase()} to fit your
                     needs.
                   </Text>
 
-                  <section className='flex flex-col gap-1.5'>
+                  <section className='my-2 space-y-1.5'>
                     <Text.Small className='text-xs'>
                       Made with{' '}
                       <HeartIcon className='inline-block h-3.5 w-3.5 fill-red-500' />{' '}
@@ -105,7 +105,7 @@ const FooterContent = ({ className, ...props }) => {
               </div>
 
               <GridPattern
-                className='-top-px bottom-[--p] -z-10 sm:translate-y-[--y]'
+                className='-top-px bottom-px -z-10 sm:translate-y-[--y]'
                 rows={4}
               />
             </div>
