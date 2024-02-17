@@ -7,7 +7,7 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'w-9/10 relative grid max-w-screen-lg grid-cols-12 gap-[--gap] py-[min(42vh,10.5rem)] [--gap:--gap-sm]',
+        'pt-md pb-lg relative grid w-9/10 max-w-screen-lg grid-cols-12 gap-sm',
         className,
       )}
       {...props}
@@ -18,11 +18,11 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
 
       <Separator className='col-span-full' />
 
-      <Text className='mt-[--gap] text-4xl/snug font-medium max-sm:col-span-full sm:col-start-2 sm:col-end-13'>
+      <Text className='mt-sm text-4xl/snug font-medium max-sm:col-span-full sm:col-start-2 sm:col-end-13'>
         <TextScrollAnimation text={aboutText} />
       </Text>
 
-      <section className='space-y-[--gap] max-sm:col-span-full sm:col-start-6 sm:col-end-13'>
+      <section className='space-y-sm max-sm:col-span-full sm:col-start-6 sm:col-end-13'>
         <Text className='text-2xl/snug font-medium'>
           <TextScrollAnimation text='Lorem ipsum dolor sit amet consectetur adipisicin elit. Eum, ab illo molestias distinctio dicta impedit numquam, suscipit nisi placeat doloribus modi qui ex cupiditate deserunt!' />
         </Text>
@@ -32,14 +32,14 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
         </Text>
       </section>
 
-      <section className='col-start-5 col-end-13 mt-2 flex flex-col gap-[--_gap] [--_gap:theme(spacing.4)] [--half-gap:calc(var(--_gap)/2)] sm:col-start-2 sm:col-end-6 sm:row-start-4'>
+      <section className='col-start-5 col-end-13 mt-2 flex flex-col gap-4 sm:col-start-2 sm:col-end-6 sm:row-start-4'>
         <Text.Subtitle className='text-xs uppercase text-muted-content'>
           • Background
         </Text.Subtitle>
 
         <Separator />
 
-        <Text className='mt-[--half-gap] text-sm text-muted-content'>
+        <Text className='mt-2 text-sm text-muted-content'>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ipsa
           esse atque eligendi non veniam culpa ipsum minus ipsam, quisquam vero,
           error, optio assumenda aut.
