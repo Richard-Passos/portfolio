@@ -18,7 +18,7 @@ const ProjectsList = ({ className, ...props }) => {
     <ProjectsContext.Provider value={{ activeIdx, setActiveIdx, images }}>
       <FollowPointer.Area id={FOLLOW_POINTER_ID}>
         <nav
-          className={cn('w-full', className)}
+          className={cn('group w-full', className)}
           {...props}
         />
       </FollowPointer.Area>
