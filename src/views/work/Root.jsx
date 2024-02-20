@@ -25,8 +25,6 @@ const WorkView = ({ className, ...props }) => {
 
       <Sections.WhyMe theme='dark' />
 
-      <Sections.Stats theme='dark' />
-
       <Sections.Skills theme='light' />
 
       <Sections.Values theme='dark' />
