@@ -16,10 +16,10 @@ const WorkViewWhyMeSection = ({ className, ...props }) => {
       {...props}
     >
       <h2 className='mb-md flex w-full flex-col'>
-        <ScrollTitle title='WHY' />
+        <ScrollTitle title='WHY PICK' />
         <ScrollTitle
           dir='rtl'
-          title='ME'
+          title='UP ME'
         />
       </h2>
 
@@ -39,7 +39,7 @@ const WorkViewWhyMeSection = ({ className, ...props }) => {
           <IconButton
             asChild
             className='border-border focus-visible:outline-variant-content'
-            variants={{ color: 'main' }}
+            variants={{ color: 'main', size: 'sm' }}
           >
             <Link
               className='no-underline'
