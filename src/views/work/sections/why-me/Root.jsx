@@ -10,7 +10,7 @@ const WorkViewWhyMeSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'flex w-full flex-col items-center justify-center overflow-hidden',
+        'flex w-full flex-col items-center justify-center overflow-x-clip',
         className,
       )}
       {...props}
