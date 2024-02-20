@@ -11,17 +11,17 @@ const WorkViewWhyMeStatsSection = ({ className, ...props }) => {
       className={cn('w-9/10 max-w-screen-lg space-y-md', className)}
       {...props}
     >
-      <section className='flex max-w-xl flex-col gap-sm sm:ml-auto'>
+      <section className='flex max-w-[calc(theme(screens.lg)/2)] flex-col gap-sm sm:ml-auto sm:pl-xs'>
         <Text.Title className='text-xs uppercase text-muted-content'>
           • Stats
         </Text.Title>
 
         <Separator />
 
-        <Text className='text-xl md:text-2xl'>
+        <Text className='text-lg md:text-2xl'>
           <TextScrollAnimation
             className='max-sm:text-center'
-            text='Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.'
+            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestiae voluptatibus tenetur, harum sit minus.'
           />
         </Text>
       </section>
