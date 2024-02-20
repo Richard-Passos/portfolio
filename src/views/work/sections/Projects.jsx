@@ -16,23 +16,30 @@ const WorkViewProjectsSection = ({ theme, className, ...props }) => {
   return (
     <section
       className={cn(
-        'relative flex w-full flex-col items-center gap-md pb-lg',
+        'relative flex w-full flex-col items-center pb-lg',
         theme,
         className,
       )}
       {...props}
     >
-      <h2 className='w-full'>
-        <ScrollTitle title='PROJECTS' />
+      <h2 className='mb-md flex w-full flex-col'>
+        <ScrollTitle title='SELECTED' />
+        <ScrollTitle
+          dir='rtl'
+          title='WORKS'
+        />
       </h2>
 
-      <div className='w-9/10 max-w-screen-xl'>
+      <div className='mb-lg w-9/10 max-w-screen-xl'>
         <Text className='max-w-xl text-xl sm:ml-auto md:text-2xl'>
-          <TextScrollAnimation text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quo id vel recusandae a porro pariatur, aliquid, soluta placeat reprehenderit error velit dolor dicta laborum!' />
+          <TextScrollAnimation
+            className='max-sm:text-center'
+            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quo id vel recusandae a porro pariatur, aliquid, soluta placeat reprehenderit error velit dolor dicta laborum!'
+          />
         </Text>
       </div>
 
-      <div className='mt-md flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
+      <div className='flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
         <WorkViewProjectsShowSection />
 
         <MagneticButton
