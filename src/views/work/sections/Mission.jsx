@@ -2,7 +2,7 @@ import { Section } from '@/components';
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const WorkViewMission = ({ className, ...props }) => {
+const WorkViewMissionSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
@@ -32,4 +32,4 @@ const WorkViewMission = ({ className, ...props }) => {
   );
 };
 
-export default WorkViewMission;
+export default WorkViewMissionSection;

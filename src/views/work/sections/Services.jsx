@@ -11,7 +11,7 @@ import { ArrowUpIcon } from '@/components/ui/icon/icons';
 import { services } from '@/constants';
 import { cn } from '@/utils';
 
-const WorkViewServices = ({ className, ...props }) => {
+const WorkViewServicesSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn('flex w-full flex-col items-center gap-md', className)}
@@ -79,4 +79,4 @@ const WorkViewServices = ({ className, ...props }) => {
   );
 };
 
-export default WorkViewServices;
+export default WorkViewServicesSection;

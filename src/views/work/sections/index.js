@@ -3,9 +3,8 @@ import WorkViewMissionSection from './Mission';
 import WorkViewProjectsSection from './Projects';
 import WorkViewServicesSection from './Services';
 import WorkViewSkillsSection from './Skills';
-import WorkViewStatsSection from './Stats';
 import WorkViewValuesSection from './Values';
-import WorkViewWhyMeSection from './WhyMe';
+import WorkViewWhyMeSection from './why-me';
 
 const WorkViewSections = {
   Hero: WorkViewHeroSection,
@@ -13,7 +12,6 @@ const WorkViewSections = {
   Projects: WorkViewProjectsSection,
   Services: WorkViewServicesSection,
   Skills: WorkViewSkillsSection,
-  Stats: WorkViewStatsSection,
   Values: WorkViewValuesSection,
   WhyMe: WorkViewWhyMeSection,
 };
@@ -25,7 +23,6 @@ export {
   WorkViewProjectsSection,
   WorkViewServicesSection,
   WorkViewSkillsSection,
-  WorkViewStatsSection,
   WorkViewValuesSection,
   WorkViewWhyMeSection,
 };

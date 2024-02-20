@@ -12,11 +12,11 @@ import { Text } from '@/components/ui';
 import { selectedProjects } from '@/constants';
 import { cn } from '@/utils';
 
-const WorkViewProjects = ({ theme, className, ...props }) => {
+const WorkViewProjectsSection = ({ theme, className, ...props }) => {
   return (
     <section
       className={cn(
-        'pb-lg relative flex w-full flex-col items-center gap-md',
+        'relative flex w-full flex-col items-center gap-md pb-lg',
         theme,
         className,
       )}
@@ -33,7 +33,7 @@ const WorkViewProjects = ({ theme, className, ...props }) => {
       </div>
 
       <div className='mt-md flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
-        <WorkViewProjectsShow />
+        <WorkViewProjectsShowSection />
 
         <MagneticButton
           aria-label='More works'
@@ -53,7 +53,7 @@ const WorkViewProjects = ({ theme, className, ...props }) => {
   );
 };
 
-const WorkViewProjectsShow = () => {
+const WorkViewProjectsShowSection = () => {
   const projects = selectedProjects.reduce(
     (obj, { img, ...data }) => ({
       data: [...obj.data, data],
@@ -107,4 +107,4 @@ const WorkViewProjectsShow = () => {
   );
 };
 
-export default WorkViewProjects;
+export default WorkViewProjectsSection;
