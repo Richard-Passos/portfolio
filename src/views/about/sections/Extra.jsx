@@ -47,7 +47,7 @@ const AboutViewExtraSection = ({ className, ...props }) => {
           <span className='aspect-[1/1.35] w-full rounded-3xl bg-blue-500 ' />
         </ScrollAnimationTransform>
 
-        <ScrollAnimationTransform config={{ propPoints: ['20%', '-30%'] }}>
+        <ScrollAnimationTransform config={{ propPoints: ['20%', '-40%'] }}>
           <span className='absolute bottom-0 right-0 aspect-[1/1.35] w-2/3 rounded-3xl bg-red-500 shadow-md [--tw-translate-x:25%] max-sm:hidden' />
         </ScrollAnimationTransform>
       </div>
