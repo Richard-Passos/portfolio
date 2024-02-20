@@ -14,7 +14,7 @@ const MultiY = ({ className, children, ...props }) => {
     <ScrollAnimationTransform config={animationConfig}>
       <div
         className={cn(
-          'pointer-events-none absolute inset-0 flex items-end justify-evenly overflow-hidden [--h:100vh] 2xl:[--h:--max-h]',
+          'pointer-events-none absolute inset-0 flex items-end justify-evenly [--h:100vh] 2xl:[--h:--max-h]',
           className,
         )}
         {...props}
