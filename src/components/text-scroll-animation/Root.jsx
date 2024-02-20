@@ -29,15 +29,13 @@ const TextScrollAnimation = ({ text, className, ...props }) => {
           end = start + 1 / words.length;
 
         return (
-          <>
-            <Word
-              key={i}
-              progress={scrollYProgress}
-              range={[start, end]}
-            >
-              {word}
-            </Word>{' '}
-          </>
+          <Word
+            key={i}
+            progress={scrollYProgress}
+            range={[start, end]}
+          >
+            {word}{' '}
+          </Word>
         );
       })}
     </span>
