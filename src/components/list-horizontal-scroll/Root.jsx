@@ -3,7 +3,7 @@ import { cn } from '@/utils';
 const ListHorizontalScroll = ({ className, ...props }) => {
   return (
     <ul
-      className={cn('w-full max-w-bounds', className)}
+      className={cn('w-full', className)}
       {...props}
     />
   );
