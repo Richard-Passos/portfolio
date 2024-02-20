@@ -1,16 +1,9 @@
-import {
-  Carousel,
-  MultiY,
-  Section,
-  SkillCard,
-  TextScrollAnimation,
-} from '@/components';
-import { Icon, Text } from '@/components/ui';
+import { Section, SkillCard, TextScrollAnimation } from '@/components';
+import { Carousel, Icon, Text } from '@/components/ui';
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
   PlusIcon,
-  SmileIcon,
 } from '@/components/ui/icon/icons';
 import { skills } from '@/constants';
 import { cn } from '@/utils';
@@ -38,7 +31,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
         aria-labelledby='carousel-skills-heading-0'
         options={{ slideFocus: true }}
       >
-        <div className='grid w-9/10 max-w-screen-xl grid-cols-2'>
+        <header className='w-9/10 max-w-screen-xl'>
           <div className='space-y-1.5'>
             <Text.Title
               className='text-xs uppercase'
@@ -51,17 +44,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
               The best in market.
             </Text>
           </div>
-
-          <Carousel.Actions className='place-self-end'>
-            <Carousel.Action type='prev'>
-              <ArrowLeftIcon className='h-[40%] w-[40%]' />
-            </Carousel.Action>
-
-            <Carousel.Action type='next'>
-              <ArrowRightIcon className='h-[40%] w-[40%]' />
-            </Carousel.Action>
-          </Carousel.Actions>
-        </div>
+        </header>
 
         <Carousel.Track>
           {skills.hard.map((data, i) => (
@@ -72,26 +55,34 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             />
           ))}
         </Carousel.Track>
-      </Carousel>
 
-      <div className='py-lg relative flex w-full items-center justify-center max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
-        <Text className='w-9/10 max-w-screen-lg text-7xl/tight md:text-8xl/tight'>
-          <TextScrollAnimation
-            className='mx-auto justify-center'
-            text="But it's not just about the tech."
+        <section className='flex w-9/10 max-w-screen-xl items-center gap-sm'>
+          <Carousel.ActiveIdx
+            className='shrink-0'
+            itemsLength={skills.hard.length}
           />
-        </Text>
 
-        <MultiY>
-          <SmileIcon />
-        </MultiY>
-      </div>
+          <Carousel.Progress variants={{ size: 'sm' }}>
+            <Carousel.Progress.Indicator />
+          </Carousel.Progress>
+
+          <Carousel.Actions>
+            <Carousel.Action type='prev'>
+              <ArrowLeftIcon className='h-[40%] w-[40%]' />
+            </Carousel.Action>
+
+            <Carousel.Action type='next'>
+              <ArrowRightIcon className='h-[40%] w-[40%]' />
+            </Carousel.Action>
+          </Carousel.Actions>
+        </section>
+      </Carousel>
 
       <Carousel
         aria-labelledby='carousel-skills-heading-1'
         options={{ slideFocus: true }}
       >
-        <div className='grid w-9/10 max-w-screen-xl grid-cols-2'>
+        <header className='w-9/10 max-w-screen-xl'>
           <div className='space-y-1.5'>
             <Text.Title
               className='text-xs uppercase'
@@ -101,20 +92,10 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             </Text.Title>
 
             <Text className='text-lg text-muted-content'>
-              Lorem ipsum dolor sit amet.
+              The best in market.
             </Text>
           </div>
-
-          <Carousel.Actions className='place-self-end'>
-            <Carousel.Action type='prev'>
-              <ArrowLeftIcon className='h-[40%] w-[40%]' />
-            </Carousel.Action>
-
-            <Carousel.Action type='next'>
-              <ArrowRightIcon className='h-[40%] w-[40%]' />
-            </Carousel.Action>
-          </Carousel.Actions>
-        </div>
+        </header>
 
         <Carousel.Track>
           {skills.soft.map((data, i) => (
@@ -125,6 +106,27 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             />
           ))}
         </Carousel.Track>
+
+        <section className='flex w-9/10 max-w-screen-xl items-center gap-sm'>
+          <Carousel.ActiveIdx
+            className='shrink-0'
+            itemsLength={skills.soft.length}
+          />
+
+          <Carousel.Progress variants={{ size: 'sm' }}>
+            <Carousel.Progress.Indicator />
+          </Carousel.Progress>
+
+          <Carousel.Actions>
+            <Carousel.Action type='prev'>
+              <ArrowLeftIcon className='h-[40%] w-[40%]' />
+            </Carousel.Action>
+
+            <Carousel.Action type='next'>
+              <ArrowRightIcon className='h-[40%] w-[40%]' />
+            </Carousel.Action>
+          </Carousel.Actions>
+        </section>
       </Carousel>
     </Section>
   );
