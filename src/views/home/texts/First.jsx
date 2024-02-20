@@ -65,7 +65,7 @@ const HomeViewFirstText = (props) => {
           <div className='flex w-9/10 items-center justify-center'>
             <Text className='relative top-[--top] text-[clamp(2rem,6.6vw,6rem)]/tight font-semibold'>
               <TextScrollAnimation
-                className='justify-center'
+                className='text-center'
                 text="it's not just about the tech."
               />
             </Text>

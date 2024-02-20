@@ -17,7 +17,7 @@ const TextScrollAnimationWord = ({
     <motion.span
       aria-hidden
       className={cn(
-        'bg-[linear-gradient(hsl(var(--color)),hsl(var(--color)))] bg-no-repeat [--text-opacity:.1] [-webkit-text-fill-color:hsl(var(--color)/var(--text-opacity))] [background-clip:text] [background-size:var(--bg-x-size)_100%] dark:[--text-opacity:0.05]',
+        'inline bg-[linear-gradient(hsl(var(--color)),hsl(var(--color)))] bg-no-repeat [--text-opacity:.1] [-webkit-text-fill-color:hsl(var(--color)/var(--text-opacity))] [background-clip:text] [background-size:var(--bg-x-size)_100%] dark:[--text-opacity:0.05]',
         className,
       )}
       style={{

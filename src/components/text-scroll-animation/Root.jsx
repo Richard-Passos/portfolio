@@ -20,10 +20,7 @@ const TextScrollAnimation = ({ text, className, ...props }) => {
   return (
     <span
       aria-label={text}
-      className={cn(
-        'flex flex-wrap gap-x-font-blank-space [--color:--content]',
-        className,
-      )}
+      className={cn('[--color:--content]', className)}
       ref={ref}
       {...props}
     >
@@ -32,13 +29,15 @@ const TextScrollAnimation = ({ text, className, ...props }) => {
           end = start + 1 / words.length;
 
         return (
-          <Word
-            key={i}
-            progress={scrollYProgress}
-            range={[start, end]}
-          >
-            {word}
-          </Word>
+          <>
+            <Word
+              key={i}
+              progress={scrollYProgress}
+              range={[start, end]}
+            >
+              {word}
+            </Word>{' '}
+          </>
         );
       })}
     </span>
