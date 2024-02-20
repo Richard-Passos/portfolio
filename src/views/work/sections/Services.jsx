@@ -14,25 +14,28 @@ import { cn } from '@/utils';
 const WorkViewServicesSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn('flex w-full flex-col items-center gap-md', className)}
+      className={cn('flex w-full flex-col items-center', className)}
       {...props}
     >
-      <h2 className='w-full'>
+      <h2 className='mb-md w-full'>
         <ScrollTitle title='SERVICES' />
       </h2>
 
-      <section className='flex w-9/10 max-w-screen-lg justify-between gap-sm max-sm:flex-col'>
-        <Text className='max-w-lg text-4xl/tight font-medium sm:text-5xl/tight'>
-          <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
+      <section className='mb-lg flex w-9/10 max-w-screen-lg justify-between gap-sm max-sm:flex-col'>
+        <Text className='max-w-lg text-4xl/tight font-medium md:text-5xl/tight'>
+          <TextScrollAnimation
+            className='max-sm:text-center'
+            text='We help our clients entertain, inform, and inspire the world.'
+          />
         </Text>
 
-        <Text className='max-w-sm text-muted-content'>
+        <Text className='max-w-sm text-muted-content max-sm:text-center'>
           With a vision for innovation and excellence, we create cohesive brand
           transformations that reflect the values and ethos of your company.
         </Text>
       </section>
 
-      <section className='mt-md flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
+      <section className='flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
         <Text.Subtitle className='mr-auto text-center text-2xl'>
           I could help you with...
         </Text.Subtitle>
