@@ -1,16 +1,12 @@
 import { cn } from '@/utils';
 
-const ProjectsGridItem = ({ className, index, style, ...props }) => {
+const ProjectsGridItem = ({ className, index, ...props }) => {
   return (
     <li
       className={cn(
-        'grid grid-cols-4 gap-6 sm:row-span-2 sm:even:col-start-2 sm:even:row-start-[calc(var(--idx)+1)]',
+        'grid grid-cols-4 gap-6 sm:even:mt-xl sm:[&:not(:last-child)]:even:-mb-xl',
         className,
       )}
-      style={{
-        '--idx': index,
-        ...style,
-      }}
       {...props}
     />
   );
