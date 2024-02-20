@@ -7,6 +7,7 @@ export { default as Badge } from './badge';
 export { default as Button } from './button';
 export { default as Calendar } from './calendar';
 export { default as Card } from './card';
+export { default as Carousel } from './carousel';
 export { default as Checkbox } from './checkbox';
 export { default as Collapsible } from './collapsible';
 export { default as Command } from './command';

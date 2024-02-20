@@ -3,7 +3,6 @@ export { default as BackTop } from './back-top';
 export { default as BentoGrid } from './bento-grid';
 export { default as Bg } from './bg';
 export { default as Button } from './button';
-export { default as Carousel } from './carousel';
 export { default as ChangeTheme } from './change-theme';
 export { default as Footer } from './footer';
 export { default as GridPattern } from './grid-pattern';

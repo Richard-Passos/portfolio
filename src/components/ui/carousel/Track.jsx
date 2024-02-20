@@ -4,7 +4,7 @@ import { SplideTrack } from '@splidejs/react-splide';
 
 import { cn } from '@/utils';
 
-import { CursorArea, CursorHover } from '../ui/cursor';
+import { CursorArea, CursorHover } from '../cursor';
 
 const CarouselTrack = ({ content, variant, className, ...props }) => {
   return (
