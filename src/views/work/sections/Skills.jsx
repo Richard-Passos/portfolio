@@ -14,18 +14,14 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
       className={cn('flex w-full flex-col items-center gap-lg', className)}
       {...props}
     >
-      <section className='flex w-9/10 max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
+      <div className='w-9/10 max-w-screen-xl'>
         <Text className='max-w-lg text-4xl/tight font-medium sm:text-5xl/tight'>
-          <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
+          <TextScrollAnimation
+            className='max-sm:text-center'
+            text='We help our clients entertain, inform, and inspire the world.'
+          />
         </Text>
-
-        <Text className='max-w-lg text-muted-content'>
-          We represent storytellers who shape culture and drive the future. From
-          artists and creators to athletes and brands, our deep expertise and
-          broad capabilities enable talent and companies to confidently grow
-          their careers and businesses.
-        </Text>
-      </section>
+      </div>
 
       <Carousel
         aria-labelledby='carousel-skills-heading-0'
@@ -92,7 +88,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             </Text.Title>
 
             <Text className='text-lg text-muted-content'>
-              The best in market.
+              The best as person.
             </Text>
           </div>
         </header>
