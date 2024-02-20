@@ -38,7 +38,7 @@ const WorkViewHeroSection = ({ theme, className, ...props }) => {
       <ScrollAnimationTransform config={animationConfig.scale}>
         <section
           className={cn(
-            'relative w-full [--h:100vh] [--header-h:88px] sm:h-[calc(var(--h)*1.5)] 2xl:[--h:--max-h]',
+            'relative w-full [--h:100vh] [--header-h:88px] sm:min-h-[calc(var(--h)*1.5)] 2xl:[--h:--max-h]',
             className,
           )}
           {...props}
@@ -78,7 +78,7 @@ const WorkViewHeroSection = ({ theme, className, ...props }) => {
               </div>
 
               <GridPattern
-                className='-z-40 [&>*]:bg-main [&>:nth-child(14)]:rounded-tr-3xl [&>:nth-child(99)]:rounded-bl-3xl first:[&>]:rounded-tl-3xl last:[&>]:rounded-br-3xl'
+                className='bottom-px -z-40 [&>*]:bg-main [&>:nth-child(14)]:rounded-tr-3xl [&>:nth-child(99)]:rounded-bl-3xl first:[&>]:rounded-tl-3xl last:[&>]:rounded-br-3xl'
                 rows={8}
               />
             </div>
