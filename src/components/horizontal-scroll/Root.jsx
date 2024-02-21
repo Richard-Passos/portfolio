@@ -30,7 +30,7 @@ const HorizontalScroll = (
 
   const numberOfSiblings = useGetNumberOfSiblings(containerRef, childrenRef);
 
-  const x = useTransform(baseX, (v) => wrap(-50, 0, v) + '%');
+  const x = useTransform(baseX, (v) => wrap(-50, 0, v));
 
   const directionFactor = useRef(1);
   useAnimationFrame((_, delta) => {
@@ -54,8 +54,8 @@ const HorizontalScroll = (
       {...props}
     >
       <motion.div
-        className='flex w-fit gap-[--gap] whitespace-nowrap'
-        style={{ x }}
+        className='flex w-fit translate-x-[calc(var(--x)*1%)] gap-[--gap] whitespace-nowrap'
+        style={{ '--x': x }}
       >
         <HorizontalScrollChildren
           className='first:ml-[--gap]'
