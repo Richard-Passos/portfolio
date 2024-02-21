@@ -7,7 +7,7 @@ const NotFoundView = ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout py-lg dark relative flex flex-col items-center justify-center [--header-h:88px] max-2xl:min-h-[calc(100svh-var(--header-h))] 2xl:h-screen 2xl:max-h-bounds',
+        'dark-layout dark relative flex flex-col items-center justify-center py-lg [--header-h:88px] max-2xl:min-h-[calc(100svh-var(--header-h))] 2xl:h-screen 2xl:max-h-bounds',
         className,
       )}
       {...props}
@@ -22,9 +22,9 @@ const NotFoundView = ({ className, ...props }) => {
         >
           4
           <MagneticButton
-            className='!h-[.8em] text-[1em] no-underline [&>span]:text-[.1em]'
+            asLink
+            className='!h-[.8em] text-[1em] [&>span]:text-[.1em]'
             href='/'
-            isLink
             limit={0.2}
             variants={{ size: 'lg' }}
           >
