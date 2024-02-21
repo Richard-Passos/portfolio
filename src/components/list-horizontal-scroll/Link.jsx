@@ -1,33 +1,19 @@
-import { cn } from '@/utils';
-
-import { IconButton } from '../button';
-import { Link } from '../ui';
+import Button from '../button';
 import { ArrowUpIcon } from '../ui/icon/icons';
 
-const ListHorizontalScrollLink = ({
-  className,
-  variants,
-  children,
-  ...props
-}) => {
+const ListHorizontalScrollLink = ({ variants, children, ...props }) => {
   return (
-    <IconButton
-      asChild
-      className={cn(
-        'border-border focus-visible:outline-variant-content',
-        className,
-      )}
+    <Button
+      asLink
       variants={{ color: 'main', ...variants }}
       {...props}
     >
-      <Link className='no-underline'>
-        {children}
+      {children}
 
-        <IconButton.Icon animation='slideUpRight'>
-          <ArrowUpIcon className='rotate-45' />
-        </IconButton.Icon>
-      </Link>
-    </IconButton>
+      <Button.Icon animation='slideUpRight'>
+        <ArrowUpIcon className='rotate-45' />
+      </Button.Icon>
+    </Button>
   );
 };
 
