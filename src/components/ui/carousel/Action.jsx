@@ -15,7 +15,7 @@ const CarouselAction = ({ type = 'next', className, variants, ...props }) => {
         types[type],
         className,
       )}
-      variants={{ size: 'sm', ...variants }}
+      variants={{ color: 'main', size: 'sm', ...variants }}
       {...props}
     />
   );
