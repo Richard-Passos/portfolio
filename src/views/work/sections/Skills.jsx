@@ -160,7 +160,7 @@ const HomeViewSkillsSectionCarouselItem = ({
           <SkillCard.Title>{title}</SkillCard.Title>
 
           <SkillCard.Action>
-            <PlusIcon className='size-1/2 transition-transform duration-300 ease-backOut group-data-open:rotate-[135deg]' />
+            <PlusIcon className='transition-transform duration-300 ease-backOut group-data-open:rotate-[135deg]' />
           </SkillCard.Action>
         </div>
 
