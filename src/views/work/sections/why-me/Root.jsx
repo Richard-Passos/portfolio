@@ -1,6 +1,10 @@
-import { ScrollTitle, Section, TextScrollAnimation } from '@/components';
-import { IconButton } from '@/components/button';
-import { Link, Text } from '@/components/ui';
+import {
+  Button,
+  ScrollTitle,
+  Section,
+  TextScrollAnimation,
+} from '@/components';
+import { Text } from '@/components/ui';
 import { ArrowUpIcon } from '@/components/ui/icon/icons';
 import { stats } from '@/constants';
 import { cn } from '@/utils';
@@ -34,21 +38,16 @@ const WorkViewWhyMeSection = ({ className, ...props }) => {
             grow their careers and businesses.
           </Text>
 
-          <IconButton
-            asChild
-            className='border-border focus-visible:outline-variant-content'
+          <Button
+            asLink
+            href='/about'
             variants={{ color: 'main', size: 'sm' }}
           >
-            <Link
-              className='no-underline'
-              href='/about'
-            >
-              About me
-              <IconButton.Icon animation='slideUpRight'>
-                <ArrowUpIcon className='rotate-45' />
-              </IconButton.Icon>
-            </Link>
-          </IconButton>
+            About me
+            <Button.Icon animation='slideUpRight'>
+              <ArrowUpIcon className='rotate-45' />
+            </Button.Icon>
+          </Button>
         </div>
       </section>
 
