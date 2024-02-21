@@ -11,19 +11,13 @@ const WorkViewMissionSection = ({ className, ...props }) => {
       )}
       {...props}
     >
-      <Text.Title
-        className='mb-sm flex flex-col items-center text-center font-bold'
-        variants={{ size: 'xl' }}
-      >
-        <span className='text-[.15em] tracking-normal text-muted-content'>
-          My
-        </span>{' '}
-        <span className='ml-auto'>mission</span>
-      </Text.Title>
-
       <WorkViewMissionListSection className='mb-md' />
 
-      <Text className='max-w-xl text-center text-lg font-medium'>
+      <Text.Title className='mb-2 text-center font-bold uppercase'>
+        mission
+      </Text.Title>
+
+      <Text className='max-w-xl text-center text-lg font-medium text-muted-content'>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
         doloremque aspernatur architecto dolor eos. Harum minima modi deserunt
         culpa commodi! Facilis eveniet ad illo delectus?
@@ -44,26 +38,26 @@ const WorkViewMissionListSection = (props) => {
       {content.map(({ text, icon }, i) => (
         <Text.Title
           asChild
-          className='py-md font-bold [--gap:theme(spacing.sm)] odd:-rotate-1 even:rotate-1'
+          className='py-md font-semibold [--gap:theme(spacing.sm)] *:*:[--rotate:calc(var(--x)*7.2deg)] odd:-rotate-1 even:rotate-1'
           key={content}
           variants={{ size: 'xl' }}
         >
           <ListHorizontalScroll.Item
-            baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
+            baseVelocity={(1 + 0.5 * i) * (i % 2 === 0 ? 1 : -1)}
           >
             <span>{text}</span>{' '}
             <Icon
-              className='size-[1em]'
+              className='size-[1em] rotate-[--rotate]'
               name={icon}
             />{' '}
             <span className='opacity-30 dark:opacity-10'>{text}</span>{' '}
             <Icon
-              className='size-[1em] opacity-30 dark:opacity-10'
+              className='size-[1em] rotate-[--rotate] opacity-30 dark:opacity-10'
               name={icon}
             />{' '}
             <span className='opacity-30 dark:opacity-10'>{text}</span>{' '}
             <Icon
-              className='size-[1em]'
+              className='size-[1em] rotate-[--rotate]'
               name={icon}
             />
           </ListHorizontalScroll.Item>
