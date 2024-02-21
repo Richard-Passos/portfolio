@@ -13,14 +13,11 @@ const WorkViewMissionSection = ({ className, ...props }) => {
     >
       <WorkViewMissionListSection className='mb-md' />
 
-      <Text.Title className='mb-2 text-center font-bold uppercase'>
-        mission
-      </Text.Title>
-
-      <Text className='max-w-xl text-center text-lg font-medium text-muted-content'>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
-        doloremque aspernatur architecto dolor eos. Harum minima modi deserunt
-        culpa commodi! Facilis eveniet ad illo delectus?
+      <Text className='max-w-xl text-center text-xl/relaxed font-medium'>
+        That&apos; my mission — Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Velit doloremque aspernatur architecto dolor eos.
+        Harum minima modi deserunt culpa commodi! Facilis eveniet ad illo
+        delectus?
       </Text>
     </Section>
   );
