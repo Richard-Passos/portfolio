@@ -20,9 +20,9 @@ const NextPage = ({ text, href, className, ...props }) => {
         />
 
         <MagneticButton
-          className='absolute !h-2/3 focus-visible:outline-variant-content [&_svg]:h-[40%] [&_svg]:w-[40%]'
+          asLink
+          className='absolute !h-2/3 [&_svg]:size-[40%]'
           href={href}
-          isLink
           variants={{ color: 'main' }}
         >
           <ArrowUpIcon className='rotate-45' />
