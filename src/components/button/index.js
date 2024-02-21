@@ -1,10 +1,11 @@
+import ButtonIcon from './Icon';
 import MagneticButton from './Magnetic';
-import IconButton from './icon';
+import ButtonRoot from './Root';
 
-const Button = {
-  Magnetic: MagneticButton,
-  Icon: IconButton,
-};
+const Button = ButtonRoot;
+
+Button.Icon = ButtonIcon;
+Button.Magnetic = MagneticButton;
 
 export default Button;
-export { MagneticButton, IconButton };
+export { ButtonRoot as Button, ButtonIcon, MagneticButton };
