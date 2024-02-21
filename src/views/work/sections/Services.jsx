@@ -1,12 +1,12 @@
 import {
+  Button,
   ScrollTitle,
   Section,
   Services,
   TextScrollAnimation,
 } from '@/components';
-import { IconButton } from '@/components/button/icon';
 import { ScrollAnimationTransform } from '@/components/scroll-animation';
-import { Link, Separator, Text } from '@/components/ui';
+import { Separator, Text } from '@/components/ui';
 import { ArrowUpIcon } from '@/components/ui/icon/icons';
 import { services } from '@/constants';
 import { cn } from '@/utils';
@@ -61,21 +61,16 @@ const WorkViewServicesSection = ({ className, ...props }) => {
           </Services>
         </div>
 
-        <IconButton
-          asChild
-          className='border-border focus-visible:outline-variant-content'
+        <Button
+          asLink
+          href='/contact'
           variants={{ color: 'main' }}
         >
-          <Link
-            className='no-underline'
-            href='/contact'
-          >
-            Contact me
-            <IconButton.Icon animation='slideUpRight'>
-              <ArrowUpIcon className='rotate-45' />
-            </IconButton.Icon>
-          </Link>
-        </IconButton>
+          Contact me
+          <Button.Icon animation='slideUpRight'>
+            <ArrowUpIcon className='rotate-45' />
+          </Button.Icon>
+        </Button>
       </section>
     </Section>
   );
