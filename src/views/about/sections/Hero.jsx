@@ -58,7 +58,7 @@ const AboutViewHeroSection = ({ className, ...props }) => {
             Heart conquer
             <br />
             -ing{' '}
-            <span className='relative inline w-fit'>
+            <span className='relative inline'>
               person{' '}
               <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
                 Gotta know more
