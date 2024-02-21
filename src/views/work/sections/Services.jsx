@@ -21,22 +21,21 @@ const WorkViewServicesSection = ({ className, ...props }) => {
         <ScrollTitle title='SERVICES' />
       </h2>
 
-      <section className='mb-lg flex w-9/10 max-w-screen-lg justify-between gap-sm max-sm:flex-col'>
-        <Text className='max-w-lg text-4xl/tight font-medium md:text-5xl/tight'>
-          <TextScrollAnimation
-            className='max-sm:text-center'
-            text='We help our clients entertain, inform, and inspire the world.'
-          />
+      <section className='mb-lg flex w-9/10 max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
+        <Text className='max-w-lg text-4xl/tight font-medium max-sm:text-center md:text-5xl/tight'>
+          <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
 
-        <Text className='max-w-sm text-muted-content max-sm:text-center'>
-          With a vision for innovation and excellence, we create cohesive brand
-          transformations that reflect the values and ethos of your company.
+        <Text className='max-w-lg text-muted-content max-sm:text-center'>
+          We represent storytellers who shape culture and drive the future. From
+          artists and creators to athletes and brands, our deep expertise and
+          broad capabilities enable talent and companies to confidently grow
+          their careers and businesses.
         </Text>
       </section>
 
       <section className='flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
-        <Text.Subtitle className='mr-auto text-center text-2xl'>
+        <Text.Subtitle className='mr-auto text-center text-2xl font-medium'>
           I could help you with...
         </Text.Subtitle>
 
