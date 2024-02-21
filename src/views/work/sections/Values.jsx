@@ -1,26 +1,28 @@
 import { Section, Values } from '@/components';
-import { Icon, Text } from '@/components/ui';
+import { Badge, Icon, Text } from '@/components/ui';
 import { values } from '@/constants';
 import { cn } from '@/utils';
 
 const WorkViewValuesSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn('w-9/10 max-w-screen-xl', className)}
+      className={cn('w-9/10 max-w-screen-xl space-y-md', className)}
       {...props}
     >
-      <Values aria-labelledby='values-heading'>
-        <li className='h-full space-y-1.5 sm:pt-sm'>
-          <Text.Title
-            className='text-xs uppercase'
-            id='values-heading'
-          >
-            My values
-          </Text.Title>
+      <Text.Title
+        className='text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
+        id='carousel-skills-heading-0'
+      >
+        My <br />{' '}
+        <span className='relative inline'>
+          values{' '}
+          <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
+            Always improving
+          </Badge>
+        </span>
+      </Text.Title>
 
-          <Text className='text-lg text-muted-content'>Always improving.</Text>
-        </li>
-
+      <Values>
         {values.map(({ icon, title, description }) => (
           <Values.Item key={title}>
             <Values.Icon>
