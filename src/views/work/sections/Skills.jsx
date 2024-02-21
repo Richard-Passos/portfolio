@@ -1,5 +1,5 @@
-import { Section, SkillCard, TextScrollAnimation } from '@/components';
-import { Carousel, Icon, Text } from '@/components/ui';
+import { Section, SkillCard } from '@/components';
+import { Badge, Carousel, Icon, Text } from '@/components/ui';
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -11,36 +11,34 @@ import { cn } from '@/utils';
 const HomeViewSkillsSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn('flex w-full flex-col items-center gap-lg', className)}
+      className={cn('flex w-full flex-col items-center', className)}
       {...props}
     >
-      <div className='w-9/10 max-w-screen-xl'>
-        <Text className='max-w-lg text-4xl/tight font-medium sm:text-5xl/tight'>
-          <TextScrollAnimation
-            className='max-sm:text-center'
-            text='We help our clients entertain, inform, and inspire the world.'
-          />
-        </Text>
-      </div>
-
       <Carousel
         aria-labelledby='carousel-skills-heading-0'
+        className='mb-lg'
         options={{ slideFocus: true }}
       >
-        <header className='w-9/10 max-w-screen-xl'>
-          <div className='space-y-1.5'>
-            <Text.Title
-              className='text-xs uppercase'
-              id='carousel-skills-heading-0'
-            >
-              Hard skills
-            </Text.Title>
+        <div className='flex w-9/10 max-w-screen-xl items-end justify-between gap-sm'>
+          <Text.Title
+            className='text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
+            id='carousel-skills-heading-0'
+          >
+            Hard <br />{' '}
+            <span className='relative inline'>
+              skills{' '}
+              <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
+                The best in market
+              </Badge>
+            </span>
+          </Text.Title>
 
-            <Text className='text-lg text-muted-content'>
-              The best in market.
-            </Text>
-          </div>
-        </header>
+          <Text className='max-w-md text-muted-content max-sm:hidden'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
+            cumque excepturi quo impedit dolore reiciendis unde quae dignissimos
+            inventore quis?
+          </Text>
+        </div>
 
         <Carousel.Track>
           {skills.hard.map((data, i) => (
@@ -78,20 +76,26 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
         aria-labelledby='carousel-skills-heading-1'
         options={{ slideFocus: true }}
       >
-        <header className='w-9/10 max-w-screen-xl'>
-          <div className='space-y-1.5'>
-            <Text.Title
-              className='text-xs uppercase'
-              id='carousel-skills-heading-1'
-            >
-              Soft skills
-            </Text.Title>
+        <div className='flex w-9/10 max-w-screen-xl items-end justify-between gap-sm'>
+          <Text.Title
+            className='text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
+            id='carousel-skills-heading-0'
+          >
+            Soft <br />{' '}
+            <span className='relative inline'>
+              skills{' '}
+              <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
+                The best as person
+              </Badge>
+            </span>
+          </Text.Title>
 
-            <Text className='text-lg text-muted-content'>
-              The best as person.
-            </Text>
-          </div>
-        </header>
+          <Text className='max-w-md text-muted-content max-sm:hidden'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
+            cumque excepturi quo impedit dolore reiciendis unde quae dignissimos
+            inventore quis?
+          </Text>
+        </div>
 
         <Carousel.Track>
           {skills.soft.map((data, i) => (
