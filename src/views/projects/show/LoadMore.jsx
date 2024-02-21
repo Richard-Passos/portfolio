@@ -9,12 +9,7 @@ import { ProjectsShowContext } from '@/contexts';
 import { useLoadMore } from '@/hooks';
 import { cn, isFunctionThanCall } from '@/utils';
 
-const ProjectsViewShowLoadMore = ({
-  className,
-  variants,
-  children,
-  ...props
-}) => {
+const ProjectsViewShowLoadMore = ({ variants, children, ...props }) => {
   const { setProjects } = useContext(ProjectsShowContext);
 
   const { loadMore, isFetching, isLastPage } = useLoadMore(
@@ -24,7 +19,6 @@ const ProjectsViewShowLoadMore = ({
 
   return !isLastPage.current ? (
     <MagneticButton
-      className={cn('focus-visible:outline-content', className)}
       disabled={isFetching}
       variants={{ color: 'main', ...variants }}
       {...props}
