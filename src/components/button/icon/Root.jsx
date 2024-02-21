@@ -19,8 +19,8 @@ const iconButtonStyles = {
   },
   iconButtonSizes = {
     sm: 'gap-x-2',
-    md: 'gap-x-4',
-    lg: 'gap-x-6',
+    md: 'gap-x-3',
+    lg: 'gap-x-4',
   };
 
 const iconButtonVariants = cnv({
