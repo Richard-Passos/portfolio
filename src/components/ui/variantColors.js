@@ -1,5 +1,5 @@
 const variantColors = {
-  main: '[--variant:--main] [--variant-a:--active] [--variant-c:--content]',
+  main: 'border-border [--variant-a:--active] [--variant-c:--content] [--variant:--main] focus-visible:outline-variant-content',
   inverted:
     '[--variant:--inverted] [--variant-a:--inverted-a] [--variant-c:--inverted-c]',
   muted: '[--variant:--muted] [--variant-a:--muted-a] [--variant-c:--muted-c]',
