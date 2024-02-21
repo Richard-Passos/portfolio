@@ -1,21 +1,18 @@
+import { Slot } from '@radix-ui/react-slot';
+
 import { cn } from '@/utils';
 
-import Button from '../../button';
+const CarouselAction = ({ asChild, type = 'next', className, ...props }) => {
+  const Tag = asChild ? Slot : 'button';
 
-const CarouselAction = ({ type = 'next', className, variants, ...props }) => {
   const types = {
     next: 'splide__arrow--next',
     prev: 'splide__arrow--prev',
   };
 
   return (
-    <Button
-      className={cn(
-        'splide__arrow aspect-square rounded-sm bg-muted px-0 text-content [--variant-a:--primary] hover:text-primary-content',
-        types[type],
-        className,
-      )}
-      variants={{ color: 'main', size: 'sm', ...variants }}
+    <Tag
+      className={cn('splide__arrow', types[type], className)}
       {...props}
     />
   );
