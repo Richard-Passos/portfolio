@@ -37,7 +37,7 @@ const FooterContent = ({ className, ...props }) => {
         <ScrollAnimationTransform config={animationConfig.x}>
           <div
             className={cn(
-              'py-lg flex w-9/10 max-w-screen-xl flex-col justify-center [--h:100vh] max-2xl:min-h-screen sm:[--y:calc(var(--smooth-y)*var(--h))] 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
+              'flex w-9/10 max-w-screen-xl flex-col justify-center py-lg [--h:100vh] max-2xl:min-h-screen sm:[--y:calc(var(--smooth-y)*var(--h))] 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
               FOOTER_CONTENT_THEME,
               className,
             )}
@@ -58,8 +58,8 @@ const FooterContent = ({ className, ...props }) => {
 
               <div className='absolute bottom-0 left-1/2 translate-x-[--x] translate-y-1/2 sm:translate-x-[calc(var(--x)*4)]'>
                 <MagneticButton
+                  asLink
                   href='/contact'
-                  isLink
                   variants={{ size: 'lg' }}
                 >
                   <ArrowUpIcon className='rotate-45' />
@@ -77,7 +77,7 @@ const FooterContent = ({ className, ...props }) => {
                     needs.
                   </Text>
 
-                  <section className='my-2 space-y-1.5'>
+                  <section className='my-2 flex flex-col gap-1.5'>
                     <Text.Small className='text-xs'>
                       Made with{' '}
                       <HeartIcon className='inline-block h-3.5 w-3.5 fill-red-500' />{' '}
@@ -89,7 +89,7 @@ const FooterContent = ({ className, ...props }) => {
                     </Text.Small>
                   </section>
 
-                  <BackTop className='mt-auto -translate-x-4 max-sm:hidden' />
+                  <BackTop className='mt-auto max-sm:hidden' />
                 </div>
 
                 <SocialNav>
