@@ -1,4 +1,4 @@
-import { Section, SkillCard } from '@/components';
+import { Button, Section, SkillCard } from '@/components';
 import { Badge, Carousel, Icon, Text } from '@/components/ui';
 import {
   ArrowLeftIcon,
@@ -61,13 +61,13 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
           </Carousel.Progress>
 
           <Carousel.Actions>
-            <Carousel.Action type='prev'>
-              <ArrowLeftIcon className='h-[40%] w-[40%]' />
-            </Carousel.Action>
+            <HomeViewSkillsSectionCarouselAciton type='prev'>
+              <ArrowLeftIcon />
+            </HomeViewSkillsSectionCarouselAciton>
 
-            <Carousel.Action type='next'>
-              <ArrowRightIcon className='h-[40%] w-[40%]' />
-            </Carousel.Action>
+            <HomeViewSkillsSectionCarouselAciton type='next'>
+              <ArrowRightIcon />
+            </HomeViewSkillsSectionCarouselAciton>
           </Carousel.Actions>
         </section>
       </Carousel>
@@ -118,13 +118,13 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
           </Carousel.Progress>
 
           <Carousel.Actions>
-            <Carousel.Action type='prev'>
-              <ArrowLeftIcon className='h-[40%] w-[40%]' />
-            </Carousel.Action>
+            <HomeViewSkillsSectionCarouselAciton type='prev'>
+              <ArrowLeftIcon />
+            </HomeViewSkillsSectionCarouselAciton>
 
-            <Carousel.Action type='next'>
-              <ArrowRightIcon className='h-[40%] w-[40%]' />
-            </Carousel.Action>
+            <HomeViewSkillsSectionCarouselAciton type='next'>
+              <ArrowRightIcon />
+            </HomeViewSkillsSectionCarouselAciton>
           </Carousel.Actions>
         </section>
       </Carousel>
@@ -169,6 +169,30 @@ const HomeViewSkillsSectionCarouselItem = ({
         </SkillCard.WaterMark>
       </Carousel.Item>
     </SkillCard>
+  );
+};
+
+const HomeViewSkillsSectionCarouselAciton = ({
+  className,
+  variants,
+  children,
+  ...props
+}) => {
+  return (
+    <Carousel.Action
+      asChild
+      {...props}
+    >
+      <Button
+        className={cn(
+          'aspect-square rounded-sm bg-muted px-0 text-content [--variant-a:--primary] hover:text-primary-content [&_svg]:size-[40%]',
+          className,
+        )}
+        variants={{ color: 'main', size: 'sm', ...variants }}
+      >
+        {children}
+      </Button>
+    </Carousel.Action>
   );
 };
 
