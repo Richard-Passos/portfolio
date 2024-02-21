@@ -7,7 +7,7 @@ const IconButtonIcon = ({ className, animation, children, ...props }) => {
     <div
       aria-hidden
       className={cn(
-        'relative flex aspect-square w-[1.625rem] items-center justify-center transition-[clip-path] duration-500 ease-backOut [clip-path:inset(37.5%_round_theme(borderRadius.full))] group-hover:[clip-path:inset(0_round_theme(borderRadius.full))]',
+        'relative flex aspect-square h-[56%] items-center justify-center transition-[clip-path] duration-500 ease-backOut [clip-path:inset(37.5%_round_theme(borderRadius.full))] group-hover:[clip-path:inset(0_round_theme(borderRadius.full))]',
         className,
       )}
       {...props}
@@ -16,7 +16,7 @@ const IconButtonIcon = ({ className, animation, children, ...props }) => {
 
       <Slot
         className={cn(
-          'relative z-10 h-3.5 w-3.5 text-[--svg-color]',
+          'relative z-10 size-1/2 text-[--svg-color]',
           iconButtonIconAnimationVariants({ animation }),
         )}
       >
