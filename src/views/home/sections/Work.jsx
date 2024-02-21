@@ -43,9 +43,8 @@ const HomeViewWorkSection = ({ className, ...props }) => {
 
         <MagneticButton
           aria-label='More works'
-          className='focus-visible:outline-variant-content'
+          asLink
           href='/projects'
-          isLink
           variants={{ color: 'main' }}
         >
           <PlusIcon aria-hidden />
