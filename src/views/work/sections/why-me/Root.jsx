@@ -2,24 +2,22 @@ import { ScrollTitle, Section, TextScrollAnimation } from '@/components';
 import { IconButton } from '@/components/button';
 import { Link, Text } from '@/components/ui';
 import { ArrowUpIcon } from '@/components/ui/icon/icons';
+import { stats } from '@/constants';
 import { cn } from '@/utils';
 
-import Stats from './Stats';
+import Card from './Card';
 
 const WorkViewWhyMeSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn(
-        'flex w-full flex-col items-center justify-center overflow-x-clip',
-        className,
-      )}
+      className={cn('flex w-full flex-col items-center', className)}
       {...props}
     >
       <h2 className='mb-md flex w-full flex-col'>
         <ScrollTitle title='WHY PICK' />
         <ScrollTitle
           dir='rtl'
-          title='UP ME'
+          title='ME UP'
         />
       </h2>
 
@@ -54,7 +52,20 @@ const WorkViewWhyMeSection = ({ className, ...props }) => {
         </div>
       </section>
 
-      <Stats />
+      <section className='flex w-full flex-col items-center gap-md overflow-x-clip'>
+        <Text.Subtitle className='w-9/10 max-w-screen-lg text-2xl font-medium max-sm:text-center'>
+          For those who like numbers
+        </Text.Subtitle>
+
+        <ul className='grid w-9/10 max-w-screen-lg gap-sm md:grid-cols-2'>
+          {stats.map((data, i) => (
+            <Card
+              key={i}
+              {...data}
+            />
+          ))}
+        </ul>
+      </section>
     </Section>
   );
 };
