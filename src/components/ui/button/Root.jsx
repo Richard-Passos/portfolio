@@ -18,7 +18,7 @@ const Button = ({ asChild, variants, className, ...props }, ref) => {
 };
 
 const buttonStyles = {
-    solid: 'bg-variant text-variant-content hover:bg-variant-active',
+    solid: 'bg-variant text-variant-content',
     ghost: 'text-variant hover:bg-variant/20',
     outline:
       'border-variant/20 text-variant hover:border-transparent hover:bg-variant/20',
