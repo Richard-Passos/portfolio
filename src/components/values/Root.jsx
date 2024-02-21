@@ -3,10 +3,7 @@ import { cn } from '@/utils';
 const Values = ({ className, ...props }) => {
   return (
     <ul
-      className={cn(
-        'max-md:space-y-sm md:grid md:grid-cols-3 md:gap-sm lg:grid-cols-4',
-        className,
-      )}
+      className={cn('grid gap-sm sm:grid-cols-2 lg:grid-cols-3', className)}
       {...props}
     />
   );
