@@ -25,6 +25,11 @@ const SkillCard = ({ asChild, className, ...props }) => {
 
         isFunctionThanCall(props.onClick, ev);
       }}
+      onKeyDown={(ev) => {
+        if (KEYS.includes(ev.key)) ev.preventDefault();
+
+        isFunctionThanCall(props.onKeyDown, ev);
+      }}
       onKeyUp={(ev) => {
         if (KEYS.includes(ev.key)) setIsOpen((state) => !state);
 
