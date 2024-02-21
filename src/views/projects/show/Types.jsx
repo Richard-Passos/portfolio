@@ -26,10 +26,7 @@ const ProjectsViewShowTypes = ({ className, ...props }) => {
       {TYPES.map(({ data, icon }) => (
         <MagneticButton
           aria-label={`Toggle to ${data}`}
-          className={cn(
-            'hover:z-10 [&_svg]:h-[40%] [&_svg]:w-[40%]',
-            type !== data && 'focus-visible:outline-variant-content',
-          )}
+          className={cn('hover:z-10 [&_svg]:size-[40%]')}
           key={data}
           limit={0.35}
           onClick={() => setType(data)}
