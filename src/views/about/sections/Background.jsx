@@ -32,10 +32,10 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
         </section>
       </section>
 
-      <section className='grid w-9/10 max-w-screen-lg gap-md md:grid-cols-2'>
-        <span className='size-full rounded-3xl bg-blue-500 max-lg:hidden' />
+      <section className='grid w-9/10 max-w-screen-lg gap-sm md:grid-cols-2 lg:gap-md'>
+        <span className='size-full rounded-3xl bg-blue-500 max-md:hidden' />
 
-        <section className='h-fit md:col-end-3 lg:py-md'>
+        <section className='h-fit md:col-end-3 md:py-md'>
           <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>
             • Background
           </Text.Subtitle>
