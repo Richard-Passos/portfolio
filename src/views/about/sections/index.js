@@ -1,7 +1,7 @@
 import AboutViewBackgroundSection from './Background';
 import AboutViewExtraSection from './Extra';
-import AboutViewHeroSection from './Hero';
 import AboutViewValuesSection from './Values';
+import AboutViewHeroSection from './hero';
 
 const AboutViewSections = {
   Background: AboutViewBackgroundSection,
