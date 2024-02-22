@@ -19,7 +19,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
         className='mb-lg'
         options={{ slideFocus: true }}
       >
-        <div className='flex w-9/10 max-w-screen-xl items-end justify-between gap-sm'>
+        <div className='flex w-9/10 max-w-screen-xl items-end justify-between gap-md'>
           <Text.Title
             className='text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
             id='carousel-skills-heading-0'
@@ -76,7 +76,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
         aria-labelledby='carousel-skills-heading-1'
         options={{ slideFocus: true }}
       >
-        <div className='flex w-9/10 max-w-screen-xl items-end justify-between gap-sm'>
+        <div className='flex w-9/10 max-w-screen-xl items-end justify-between gap-md'>
           <Text.Title
             className='text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
             id='carousel-skills-heading-0'
