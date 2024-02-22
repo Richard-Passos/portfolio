@@ -31,8 +31,8 @@ const WorkViewProjectsSection = ({ theme, className, ...props }) => {
       </h2>
 
       <div className='mb-lg w-9/10 max-w-screen-lg'>
-        <Text className='text-lg font-medium max-sm:text-center sm:ml-auto sm:max-w-xl md:text-xl'>
-          <TextScrollAnimation text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quo id vel recusandae a porro pariatur, aliquid, soluta placeat reprehenderit error velit dolor dicta laborum!' />
+        <Text className='text-xl font-medium max-sm:text-center sm:max-w-xl md:text-2xl'>
+          <TextScrollAnimation text='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit dolores adipisci voluptates dolore inventore aperiam rerum possimus culpa nemo molestiae!' />
         </Text>
       </div>
 
