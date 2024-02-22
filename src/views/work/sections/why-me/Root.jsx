@@ -52,8 +52,8 @@ const WorkViewWhyMeSection = ({ className, ...props }) => {
       </section>
 
       <section className='flex w-full flex-col items-center gap-md overflow-x-clip'>
-        <Text.Subtitle className='w-9/10 max-w-screen-lg text-2xl font-medium max-sm:text-center'>
-          For those who like numbers
+        <Text.Subtitle className='w-9/10 max-w-screen-lg text-2xl font-medium'>
+          Some statistics...
         </Text.Subtitle>
 
         <ul className='grid w-9/10 max-w-screen-lg gap-sm md:grid-cols-2'>
