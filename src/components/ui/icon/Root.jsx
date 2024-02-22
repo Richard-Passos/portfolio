@@ -1,9 +1,16 @@
+import { forwardRef } from 'react';
+
 import Icons from './icons';
 
-const Icon = ({ name, ...props }) => {
+const Icon = ({ name, ...props }, ref) => {
   const Tag = Icons[name] || Icons.Question;
 
-  return <Tag {...props} />;
+  return (
+    <Tag
+      ref={ref}
+      {...props}
+    />
+  );
 };
 
-export default Icon;
+export default forwardRef(Icon);
