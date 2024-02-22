@@ -1,5 +1,4 @@
 import { Lines, ScrollTitle, TextScrollAnimation } from '@/components';
-import { ScrollAnimationTransform } from '@/components/scroll-animation';
 import { Separator, Text } from '@/components/ui';
 import { aboutText } from '@/constants/texts';
 import { cn } from '@/utils';
