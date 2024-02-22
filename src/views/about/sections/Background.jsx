@@ -1,4 +1,5 @@
-import { Lines, TextScrollAnimation } from '@/components';
+import { Lines, ScrollTitle, TextScrollAnimation } from '@/components';
+import { ScrollAnimationTransform } from '@/components/scroll-animation';
 import { Separator, Text } from '@/components/ui';
 import { aboutText } from '@/constants/texts';
 import { cn } from '@/utils';
@@ -7,49 +8,59 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'relative grid w-9/10 max-w-screen-lg grid-cols-12 gap-sm pb-lg pt-md',
+        'relative flex w-full flex-col items-center pb-lg pt-md',
         className,
       )}
       {...props}
     >
-      <Text.Title className='col-span-full text-xs uppercase text-muted-content'>
-        • Who I am
-      </Text.Title>
+      <h2 className='mb-md w-full'>
+        <ScrollTitle title='WHO I AM' />
+      </h2>
 
-      <Separator className='col-span-full' />
-
-      <Text className='mt-sm text-4xl/snug font-medium max-sm:col-span-full sm:col-start-2 sm:col-end-13'>
-        <TextScrollAnimation text={aboutText} />
-      </Text>
-
-      <section className='space-y-sm max-sm:col-span-full sm:col-start-6 sm:col-end-13'>
-        <Text className='text-2xl/snug font-medium'>
-          <TextScrollAnimation text='Lorem ipsum dolor sit amet consectetur adipisicin elit. Eum, ab illo molestias distinctio dicta impedit numquam, suscipit nisi placeat doloribus modi qui ex cupiditate deserunt!' />
+      <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
+        <Text className='text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+          <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
 
-        <Text className='text-2xl/snug font-medium'>
-          <TextScrollAnimation text='Lorem ipsum dolor sit amet consectetur adipisicin elit. Adipisci dolore omnis beatae sequi! Expedita beatae dolorum assumenda amet, rem et?' />
-        </Text>
+        <section className='space-y-xs sm:max-w-lg sm:justify-self-end'>
+          <Text className='text-muted-content max-sm:text-center sm:indent-4'>
+            {aboutText}
+          </Text>
+
+          <Text className='text-muted-content max-sm:text-center sm:indent-4'>
+            {aboutText}
+          </Text>
+        </section>
       </section>
 
-      <section className='col-start-5 col-end-13 mt-2 flex flex-col gap-4 sm:col-start-2 sm:col-end-6 sm:row-start-4'>
-        <Text.Subtitle className='text-xs uppercase text-muted-content'>
-          • Background
-        </Text.Subtitle>
+      <section className='grid w-9/10 max-w-screen-lg gap-md md:grid-cols-2'>
+        <ScrollAnimationTransform config={{ propPoints: ['10%', '-15%'] }}>
+          <span className='aspect-[1/1.4] w-full rounded-3xl bg-blue-500 max-lg:hidden' />
+        </ScrollAnimationTransform>
 
-        <Separator />
+        <section className='h-fit md:col-end-3 lg:py-md'>
+          <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>
+            • Background
+          </Text.Subtitle>
 
-        <Text className='mt-2 text-sm text-muted-content'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ipsa
-          esse atque eligendi non veniam culpa ipsum minus ipsam, quisquam vero,
-          error, optio assumenda aut.
-        </Text>
+          <Separator className='mb-sm' />
 
-        <Text className='text-sm text-muted-content'>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime,
-          cumque. Perspiciatis suscipit exercitationem eos facilis iure
-          inventore, vitae veritatis optio!
-        </Text>
+          <section className='space-y-sm'>
+            <Text className='text-xl font-medium'>
+              <TextScrollAnimation
+                className='sm:first:*:ml-4'
+                text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat officiis inventore eius facere sunt ut culpa. Eaque iste pariatur a doloribus enim alias rerum! Ab ex incidunt, aliquid nostrum rem, non quasi molestiae eos dolorum quo labore repudiandae minus alias?'
+              />
+            </Text>
+
+            <Text className='text-xl font-medium'>
+              <TextScrollAnimation
+                className='sm:first:*:ml-4'
+                text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci explicabo similique cum maxime praesentium nam inventore reiciendis iste ad, sequi, eligendi rem eum maiores. Aliquid beatae voluptatem praesentium perferendis quam?'
+              />
+            </Text>
+          </section>
+        </section>
       </section>
 
       <Lines />
