@@ -53,7 +53,7 @@ const HomeViewWorkSection = ({ className, ...props }) => {
   );
 };
 
-const ShowProjects = () => {
+const ShowProjects = ({ className, ...props }) => {
   const projects = selectedProjects.reduce(
     (obj, { img, ...data }) => ({
       data: [...obj.data, data],
@@ -64,8 +64,9 @@ const ShowProjects = () => {
 
   return (
     <Projects
-      className='w-full'
+      className={cn('w-full', className)}
       images={projects.images}
+      {...props}
     >
       <Projects.List className='max-sm:hidden'>
         {projects.data.map((project, i) => (
