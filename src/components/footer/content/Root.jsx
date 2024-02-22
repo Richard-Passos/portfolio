@@ -11,20 +11,20 @@ import { CursorHover } from '../../ui/cursor';
 import { ArrowUpIcon, HandHornsIcon, HeartIcon } from '../../ui/icon/icons';
 import { FOOTER_CONTENT_THEME } from '../Root';
 
-const ANIMATION_OFFSET = ['0 1', '.95 1'];
+const SCROLL_OFFSET = ['0 1', '.95 1'];
 
 const FooterContent = ({ className, ...props }) => {
   const animationConfig = {
     y: {
       useScrollConfig: {
-        offset: ANIMATION_OFFSET,
+        offset: SCROLL_OFFSET,
       },
       prop: '--smooth-y',
       propPoints: [-0.4, 0],
     },
     x: {
       useScrollConfig: {
-        offset: ANIMATION_OFFSET,
+        offset: SCROLL_OFFSET,
       },
       prop: '--x',
       propPoints: ['0%', '27.5%'],
