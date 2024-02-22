@@ -20,35 +20,35 @@ const AboutViewExtraSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'grid w-9/10 max-w-screen-lg gap-x-lg gap-y-sm sm:grid-cols-2',
+        'grid w-9/10 max-w-screen-lg gap-x-lg gap-y-md sm:grid-cols-2',
         className,
       )}
       {...props}
     >
-      <ul className='max-w-screen-sm space-y-md pt-8'>
+      <ul className='max-w-screen-sm space-y-md sm:py-md'>
         {EXTRA_CONTENT.map(({ title, content }) => (
           <li
-            className='flex flex-col gap-4'
+            className='flex flex-col'
             key={title}
           >
-            <Text.Subtitle className='text-xs uppercase text-muted-content'>
+            <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>
               • {title}
             </Text.Subtitle>
 
-            <Separator />
+            <Separator className='mb-sm' />
 
-            <Text className='mt-2 text-xl font-medium'>{content}</Text>
+            <Text className='text-xl font-medium'>{content}</Text>
           </li>
         ))}
       </ul>
 
       <div className='relative sm:row-start-1'>
         <ScrollAnimationTransform config={{ propPoints: ['10%', '-15%'] }}>
-          <span className='aspect-[1/1.35] w-full rounded-3xl bg-blue-500 ' />
+          <span className='aspect-[1/1.4] w-full rounded-3xl bg-blue-500 max-sm:!translate-y-0 ' />
         </ScrollAnimationTransform>
 
         <ScrollAnimationTransform config={{ propPoints: ['20%', '-40%'] }}>
-          <span className='absolute bottom-0 right-0 aspect-[1/1.35] w-2/3 rounded-3xl bg-red-500 shadow-md [--tw-translate-x:25%] max-sm:hidden' />
+          <span className='absolute bottom-0 right-0 aspect-[1/1.4] w-2/3 rounded-3xl bg-red-500 shadow-md [--tw-translate-x:25%] max-sm:hidden' />
         </ScrollAnimationTransform>
       </div>
     </Section>
