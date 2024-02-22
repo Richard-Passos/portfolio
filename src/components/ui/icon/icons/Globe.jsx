@@ -1,10 +1,13 @@
+import { forwardRef } from 'react';
+
 import { cn } from '@/utils';
 
-const GlobeIcon = ({ className, ...props }) => {
+const GlobeIcon = ({ className, ...props }, ref) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-svg='Globe'
+      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -14,4 +17,4 @@ const GlobeIcon = ({ className, ...props }) => {
   );
 };
 
-export default GlobeIcon;
+export default forwardRef(GlobeIcon);

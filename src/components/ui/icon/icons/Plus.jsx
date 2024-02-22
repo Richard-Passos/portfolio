@@ -1,10 +1,13 @@
+import { forwardRef } from 'react';
+
 import { cn } from '@/utils';
 
-const PlusIcon = ({ className, ...props }) => {
+const PlusIcon = ({ className, ...props }, ref) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-svg='Plus'
+      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -14,4 +17,4 @@ const PlusIcon = ({ className, ...props }) => {
   );
 };
 
-export default PlusIcon;
+export default forwardRef(PlusIcon);

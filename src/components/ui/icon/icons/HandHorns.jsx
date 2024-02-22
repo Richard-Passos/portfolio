@@ -1,10 +1,12 @@
 import { cn } from '@/utils';
+import { forwardRef } from 'react';
 
-const HandHornsIcon = ({ className, ...props }) => {
+const HandHornsIcon = ({ className, ...props }, ref) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-svg='Hand horns'
+      ref={ref}
       viewBox='0 0 384 512'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -14,4 +16,4 @@ const HandHornsIcon = ({ className, ...props }) => {
   );
 };
 
-export default HandHornsIcon;
+export default forwardRef(HandHornsIcon);

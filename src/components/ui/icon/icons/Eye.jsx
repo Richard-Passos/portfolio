@@ -1,10 +1,13 @@
+import { forwardRef } from 'react';
+
 import { cn } from '@/utils';
 
-const EyeIcon = ({ className, ...props }) => {
+const EyeIcon = ({ className, ...props }, ref) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-svg='Eye'
+      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -14,4 +17,4 @@ const EyeIcon = ({ className, ...props }) => {
   );
 };
 
-export default EyeIcon;
+export default forwardRef(EyeIcon);

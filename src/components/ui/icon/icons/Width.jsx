@@ -1,10 +1,13 @@
+import { forwardRef } from 'react';
+
 import { cn } from '@/utils';
 
-const WidthIcon = ({ className, ...props }) => {
+const WidthIcon = ({ className, ...props }, ref) => {
   return (
     <svg
       className={cn('h-8 w-8 stroke-current', className)}
       data-svg='Width'
+      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -19,4 +22,4 @@ const WidthIcon = ({ className, ...props }) => {
   );
 };
 
-export default WidthIcon;
+export default forwardRef(WidthIcon);

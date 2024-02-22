@@ -1,10 +1,13 @@
+import { forwardRef } from 'react';
+
 import { cn } from '@/utils';
 
-const CoffeeIcon = ({ className, ...props }) => {
+const CoffeeIcon = ({ className, ...props }, ref) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-svg='Coffee'
+      ref={ref}
       viewBox='0 0 1024 1024'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -14,4 +17,4 @@ const CoffeeIcon = ({ className, ...props }) => {
   );
 };
 
-export default CoffeeIcon;
+export default forwardRef(CoffeeIcon);

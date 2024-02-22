@@ -1,10 +1,13 @@
+import { forwardRef } from 'react';
+
 import { cn } from '@/utils';
 
-const TimesIcon = ({ className, ...props }) => {
+const TimesIcon = ({ className, ...props }, ref) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-svg='Times'
+      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -14,4 +17,4 @@ const TimesIcon = ({ className, ...props }) => {
   );
 };
 
-export default TimesIcon;
+export default forwardRef(TimesIcon);

@@ -1,10 +1,13 @@
+import { forwardRef } from 'react';
+
 import { cn } from '@/utils';
 
-const LinkedinIcon = ({ className, ...props }) => {
+const LinkedinIcon = ({ className, ...props }, ref) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-svg='Linkedin'
+      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -14,4 +17,4 @@ const LinkedinIcon = ({ className, ...props }) => {
   );
 };
 
-export default LinkedinIcon;
+export default forwardRef(LinkedinIcon);

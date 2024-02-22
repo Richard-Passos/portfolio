@@ -1,10 +1,13 @@
+import { forwardRef } from 'react';
+
 import { cn } from '@/utils';
 
-const PaperPlaneIcon = ({ className, ...props }) => {
+const PaperPlaneIcon = ({ className, ...props }, ref) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-svg='Paper plane'
+      ref={ref}
       viewBox='0 0 256 256'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -14,4 +17,4 @@ const PaperPlaneIcon = ({ className, ...props }) => {
   );
 };
 
-export default PaperPlaneIcon;
+export default forwardRef(PaperPlaneIcon);
