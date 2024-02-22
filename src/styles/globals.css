@@ -31,7 +31,7 @@
     @apply text-content;
 
     --main: 0 0% 98%;
-    --active: 0 0% 96%;
+    --active: 0 0% 96.5%;
     --content: 0 0% 4.7%;
 
     --inverted: 0 0% 4.7%;
@@ -146,5 +146,12 @@
   .vertical-text {
     writing-mode: vertical-lr;
     text-orientation: upright;
+  }
+
+  /* When add a new custom screen Tailwind disabled max-2xl:..., so I decided to it like this. */
+  @media not all and (min-height: 500px) {
+    .fix-work-hero-y {
+      @apply !translate-y-0;
+    }
   }
 }
