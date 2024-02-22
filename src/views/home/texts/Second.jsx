@@ -1,30 +1,41 @@
-import { Bg, Lines, MultiY, TextScrollAnimation } from '@/components';
-import { SmileIcon } from '@/components/ui/icon/icons';
+import { Bg, Lines, TextScrollAnimation } from '@/components';
+import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
 const HomeViewSecondText = ({ theme, className, ...props }) => {
+  const animationConfig = {
+    useScrollRes: 'scrollY',
+    prop: '--rotate',
+    scrollPoints: [0, 400],
+    propPoints: ['0deg', '360deg'],
+    useTransformConfig: { clamp: false },
+  };
+
   return (
-    <div
-      className={cn(
-        'relative flex w-full items-center justify-center py-lg max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds',
-        theme,
-        className,
-      )}
-      {...props}
-    >
-      <Text className='w-9/10 max-w-screen-lg text-center text-4xl/tight font-medium md:text-[3.5rem]/tight'>
-        <TextScrollAnimation text="If you're looking for a developer who's got the skills, the passion, and a problem solving mindset to make your ideas come true. Then..." />
-      </Text>
+    <ScrollAnimationTransform config={animationConfig}>
+      <div
+        className={cn(
+          'relative flex w-full items-center justify-center py-lg max-2xl:min-h-screen max-2xl:overflow-hidden 2xl:h-screen 2xl:max-h-bounds',
+          theme,
+          className,
+        )}
+        {...props}
+      >
+        <Text className='w-9/10 max-w-screen-lg text-center text-4xl/tight font-semibold md:text-5xl/tight'>
+          <TextScrollAnimation text="If you're looking for a developer who's got the skills, the passion, and a problem solving mindset to make your ideas come true. Then..." />
+        </Text>
 
-      <Bg />
+        <SmileIcon className='absolute left-0 top-0 -z-10 size-[min(50vmin,theme(screens.sm))] -translate-x-1/2 rotate-[--rotate] opacity-10 dark:opacity-5' />
 
-      <Lines />
+        <GlobeIcon className='absolute bottom-0 right-0 -z-10 size-[min(50vmin,theme(screens.sm))] translate-x-1/2 -rotate-[--rotate] opacity-10 dark:opacity-5' />
 
-      <MultiY>
-        <SmileIcon />
-      </MultiY>
-    </div>
+        <Bg />
+
+        <Lines />
+      </div>
+    </ScrollAnimationTransform>
   );
 };
 
