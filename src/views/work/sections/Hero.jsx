@@ -45,7 +45,7 @@ const WorkViewHeroSection = ({ theme, className, ...props }) => {
         >
           <div className='top-0 sm:sticky'>
             <div className='relative mx-auto w-[95%] sm:scale-[--scale]'>
-              <div className='relative mx-auto flex w-9/10 flex-col items-center justify-center gap-sm py-[--p] [--p:--spacing-lg] max-2xl:min-h-screen sm:[--p:--spacing-md] lg:-translate-y-[--header-h] 2xl:h-screen 2xl:max-h-bounds'>
+              <div className='fix-work-hero-y relative mx-auto flex w-9/10 flex-col items-center justify-center gap-sm py-[--p] [--p:--spacing-lg] max-2xl:min-h-screen max-sm:min-h-[calc(100svh-var(--header-h))] sm:-translate-y-[--header-h] 2xl:h-screen 2xl:max-h-bounds'>
                 <Text.Title className='overflow-y-clip text-center text-[min(20vw,16rem)]/[1] font-extrabold uppercase tracking-tighter'>
                   <div className='relative sm:translate-y-[--y]'>
                     <span className='sm:absolute sm:bottom-full sm:left-1/2 sm:-translate-x-1/2'>
