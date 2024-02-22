@@ -34,9 +34,7 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
       </section>
 
       <section className='grid w-9/10 max-w-screen-lg gap-md md:grid-cols-2'>
-        <ScrollAnimationTransform config={{ propPoints: ['10%', '-15%'] }}>
-          <span className='aspect-[1/1.4] w-full rounded-3xl bg-blue-500 max-lg:hidden' />
-        </ScrollAnimationTransform>
+        <span className='size-full rounded-3xl bg-blue-500 max-lg:hidden' />
 
         <section className='h-fit md:col-end-3 lg:py-md'>
           <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>
