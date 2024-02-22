@@ -14,10 +14,10 @@ import { cn } from '@/utils';
 const HomeViewWorkSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn('relative flex flex-col items-center gap-lg', className)}
+      className={cn('relative flex flex-col items-center', className)}
       {...props}
     >
-      <h2 className='flex w-full flex-col'>
+      <h2 className='mb-md flex w-full flex-col'>
         <ScrollTitle title='ABOUT' />
         <ScrollTitle
           dir='rtl'
@@ -25,13 +25,20 @@ const HomeViewWorkSection = ({ className, ...props }) => {
         />
       </h2>
 
-      <div className='w-9/10 max-w-screen-xl'>
-        <Text className='max-w-xl text-xl max-sm:text-center sm:ml-auto md:text-2xl'>
-          <TextScrollAnimation text='Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.' />
+      <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
+        <Text className='text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+          <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
-      </div>
 
-      <div className='flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
+        <Text className='text-muted-content max-sm:text-center sm:max-w-lg sm:justify-self-end'>
+          We represent storytellers who shape culture and drive the future. From
+          artists and creators to athletes and brands, our deep expertise and
+          broad capabilities enable talent and companies to confidently grow
+          their careers and businesses.
+        </Text>
+      </section>
+
+      <div className='mb-lg flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
         <Text.Subtitle className='mr-auto text-xs uppercase text-muted-content'>
           Selected works
         </Text.Subtitle>
@@ -109,7 +116,7 @@ const ShowProjects = ({ className, ...props }) => {
 };
 
 const ListWorkPage = ({ className, ...props }) => {
-  const content = ['Work method', 'Soft & hard skills', 'Services'];
+  const content = ['Mission', 'Soft & hard skills', 'Services'];
 
   return (
     <div
