@@ -28,7 +28,7 @@ const AboutViewHeroImagesSeciton = ({ className, ...props }) => {
   return (
     <ul
       className={cn(
-        'grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-3 md:gap-x-md',
+        'grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-3 lg:gap-x-md',
         className,
       )}
       {...props}
