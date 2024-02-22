@@ -32,7 +32,7 @@ const WorkViewServicesSection = ({ className, ...props }) => {
           <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
 
-        <Text className='text-muted-content max-sm:text-center sm:max-w-lg'>
+        <Text className='text-muted-content max-sm:text-center sm:max-w-lg sm:justify-self-end'>
           We represent storytellers who shape culture and drive the future. From
           artists and creators to athletes and brands, our deep expertise and
           broad capabilities enable talent and companies to confidently grow
@@ -41,7 +41,7 @@ const WorkViewServicesSection = ({ className, ...props }) => {
       </section>
 
       <section className='flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
-        <Text.Subtitle className='mr-auto text-center text-2xl font-medium'>
+        <Text.Subtitle className='mr-auto text-2xl font-medium'>
           I could help you with...
         </Text.Subtitle>
 
