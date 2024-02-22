@@ -20,7 +20,7 @@ const AboutViewExtraSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'grid w-9/10 max-w-screen-lg gap-x-lg gap-y-md sm:grid-cols-2',
+        'grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-lg',
         className,
       )}
       {...props}
@@ -42,13 +42,13 @@ const AboutViewExtraSection = ({ className, ...props }) => {
         ))}
       </ul>
 
-      <div className='relative sm:row-start-1'>
+      <div className='relative md:row-start-1'>
         <ScrollAnimationTransform config={{ propPoints: ['10%', '-15%'] }}>
-          <span className='aspect-[1/1.4] w-full rounded-3xl bg-blue-500 max-sm:!translate-y-0 ' />
+          <span className='size-full rounded-3xl bg-blue-500 max-md:aspect-[1/1.4] max-md:!translate-y-0 lg:aspect-[1/1.4]' />
         </ScrollAnimationTransform>
 
         <ScrollAnimationTransform config={{ propPoints: ['20%', '-40%'] }}>
-          <span className='absolute bottom-0 right-0 aspect-[1/1.4] w-2/3 rounded-3xl bg-red-500 shadow-md [--tw-translate-x:25%] max-sm:hidden' />
+          <span className='absolute bottom-0 right-0 aspect-[1/1.4] w-2/3 rounded-3xl bg-red-500 shadow-md [--tw-translate-x:25%] max-lg:hidden' />
         </ScrollAnimationTransform>
       </div>
     </Section>
