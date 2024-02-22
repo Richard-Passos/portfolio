@@ -140,7 +140,7 @@ const Grid = ({ className, ...props }) => {
 };
 
 const ListContactPage = ({ className, ...props }) => {
-  const content = ['Personality', 'Hobbys', 'Background'];
+  const content = ['Background', 'Hobbys', 'Personality'];
 
   return (
     <div
