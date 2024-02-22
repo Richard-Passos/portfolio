@@ -12,6 +12,12 @@ import { services } from '@/constants';
 import { cn } from '@/utils';
 
 const WorkViewServicesSection = ({ className, ...props }) => {
+  const animationConfig = {
+    useScrollConfig: { offset: ['1 1', '1 0'] },
+    prop: '--y',
+    propPoints: ['0%', '100%'],
+  };
+
   return (
     <Section
       className={cn('flex w-full flex-col items-center', className)}
@@ -40,9 +46,7 @@ const WorkViewServicesSection = ({ className, ...props }) => {
         </Text.Subtitle>
 
         <div className='grid gap-md sm:grid-cols-2'>
-          <ScrollAnimationTransform
-            config={{ prop: '--y', propPoints: ['0%', '100%'] }}
-          >
+          <ScrollAnimationTransform config={animationConfig}>
             <div className='h-1/2 translate-y-[--y] rounded-3xl bg-blue-500 max-sm:hidden md:h-2/3 md:translate-y-[calc(var(--y)/2)]' />
           </ScrollAnimationTransform>
 
