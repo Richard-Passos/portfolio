@@ -27,12 +27,12 @@ const WorkViewServicesSection = ({ className, ...props }) => {
         <ScrollTitle title='SERVICES' />
       </h2>
 
-      <section className='mb-lg flex w-9/10 max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
-        <Text className='max-w-lg text-4xl/tight font-medium max-sm:text-center md:text-5xl/tight'>
+      <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
+        <Text className='text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
           <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
 
-        <Text className='max-w-lg text-muted-content max-sm:text-center'>
+        <Text className='text-muted-content max-sm:text-center sm:max-w-lg'>
           We represent storytellers who shape culture and drive the future. From
           artists and creators to athletes and brands, our deep expertise and
           broad capabilities enable talent and companies to confidently grow

@@ -26,11 +26,8 @@ const HomeViewWorkSection = ({ className, ...props }) => {
       </h2>
 
       <div className='w-9/10 max-w-screen-xl'>
-        <Text className='max-w-xl text-xl sm:ml-auto md:text-2xl'>
-          <TextScrollAnimation
-            className='max-sm:text-center'
-            text='Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.'
-          />
+        <Text className='max-w-xl text-xl max-sm:text-center sm:ml-auto md:text-2xl'>
+          <TextScrollAnimation text='Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.' />
         </Text>
       </div>
 
