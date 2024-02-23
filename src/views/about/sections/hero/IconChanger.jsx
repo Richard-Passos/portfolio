@@ -3,29 +3,22 @@
 import { useState } from 'react';
 
 import { Button } from '@/components';
+import { magneticButtonSizes } from '@/components/button/Magnetic';
 import { ScrollAnimationTransform } from '@/components/scroll-animation';
 import { Icon } from '@/components/ui';
 import { cn, isFunctionThanCall } from '@/utils';
-import { magneticButtonSizes } from '@/components/button/Magnetic';
 
-const SCROLL_OFFSET = ['0 1', '0 0'],
-  ICONS = ['Smile', 'Globe', 'Rocket'];
+const ICONS = ['Smile', 'Globe', 'Rocket'];
 
 const AboutViewHeroIconChangerSection = ({ className, ...props }) => {
   const [activeIdx, setActiveIdx] = useState(0);
 
   const animationConfig = {
     x: {
-      useScrollConfig: {
-        offset: SCROLL_OFFSET,
-      },
       prop: 'x',
       propPoints: ['-25%', '25%'],
     },
     rotate: {
-      useScrollConfig: {
-        offset: SCROLL_OFFSET,
-      },
       useScrollRes: 'scrollY',
       prop: 'rotate',
       scrollPoints: [0, 400],
