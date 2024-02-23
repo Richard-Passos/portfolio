@@ -23,9 +23,6 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
       propPoints: [1, 0],
     },
     rotate: {
-      useScrollConfig: {
-        offset: ['1 1', '1 0'],
-      },
       useScrollRes: 'scrollY',
       prop: 'rotate',
       scrollPoints: [0, 400],
