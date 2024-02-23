@@ -7,7 +7,7 @@ const values = [
   },
   {
     icon: 'Grid',
-    title: 'Forward-thinking',
+    title: 'Open-minded',
     description:
       'I pride myself on pushing the boundaries of development. I combine relevant trends and best practices to build solutions with longevity.',
   },
