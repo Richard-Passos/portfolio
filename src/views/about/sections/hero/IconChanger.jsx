@@ -28,7 +28,7 @@ const AboutViewHeroIconChangerSection = ({ className, ...props }) => {
       },
       useScrollRes: 'scrollY',
       prop: 'rotate',
-      scrollPoints: [0, 200],
+      scrollPoints: [0, 400],
       propPoints: ['0deg', '360deg'],
       useTransformConfig: {
         clamp: false,
