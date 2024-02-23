@@ -24,12 +24,12 @@ const HomeViewSecondText = ({ theme, className, ...props }) => {
         {...props}
       >
         <Text className='w-9/10 max-w-screen-lg text-center text-4xl/tight font-semibold md:text-5xl/tight'>
-          <TextScrollAnimation text="If you're looking for a developer who's got the skills, the passion, and a problem solving mindset to make your ideas come true. Then..." />
+          <TextScrollAnimation text="If you're looking for a developer who's got the skills, passion and a problem solving mindset to make your ideas come true. Then..." />
         </Text>
 
-        <SmileIcon className='absolute left-0 top-0 -z-10 size-[min(50vmin,theme(screens.sm))] -translate-x-1/2 rotate-[--rotate] opacity-10 dark:opacity-5' />
+        <SmileIcon className='absolute left-0 top-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] -translate-x-1/2 rotate-[--rotate] opacity-10 dark:opacity-5' />
 
-        <GlobeIcon className='absolute bottom-0 right-0 -z-10 size-[min(50vmin,theme(screens.sm))] translate-x-1/2 -rotate-[--rotate] opacity-10 dark:opacity-5' />
+        <GlobeIcon className='absolute bottom-0 right-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] translate-x-1/2 -rotate-[--rotate] opacity-10 dark:opacity-5' />
 
         <Bg />
 
