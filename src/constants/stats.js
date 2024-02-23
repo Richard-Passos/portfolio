@@ -9,7 +9,7 @@ const stats = [
   },
   {
     value: '100%',
-    title: `Awesome \n projects`,
+    title: `Great \n projects`,
   },
   {
     value: '50ᐩ',
