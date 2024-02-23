@@ -13,10 +13,13 @@ const ContactViewServices = ({ className, ...props }) => {
 
   return (
     <section
-      className={cn('relative w-9/10 max-w-screen-lg space-y-md', className)}
+      className={cn(
+        'w-9/10 max-w-screen-lg max-2xl:min-h-screen',
+        className,
+      )}
       {...props}
     >
-      <Text.Subtitle className='mr-auto text-2xl font-medium'>
+      <Text.Subtitle className='mb-md mr-auto text-2xl font-medium'>
         I could help you with...
       </Text.Subtitle>
 
