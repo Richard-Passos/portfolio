@@ -50,7 +50,7 @@ const WorkViewServicesSection = ({ className, ...props }) => {
             <div className='h-1/2 translate-y-[--y] rounded-3xl bg-blue-500 max-sm:hidden md:h-2/3 md:translate-y-[calc(var(--y)/2)]' />
           </ScrollAnimationTransform>
 
-          <Services className='sm:grid-cols-1 sm:py-md'>
+          <Services className='sm:py-md'>
             {services.map(({ title, description }, i) => (
               <Services.Item key={title}>
                 <Services.Number index={i} />
