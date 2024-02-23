@@ -64,7 +64,7 @@ const HorizontalScroll = (
           {children}
         </HorizontalScrollChildren>
 
-        {[...Array(numberOfSiblings)].map((_, i) => (
+        {[...Array(numberOfSiblings || 1)].map((_, i) => (
           <HorizontalScrollChildren key={i}>
             {children}
           </HorizontalScrollChildren>
