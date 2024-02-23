@@ -1,5 +1,5 @@
 import { Lines, LocalTime, SocialNav } from '@/components';
-import { Link, Text } from '@/components/ui';
+import { Badge, Link, Text } from '@/components/ui';
 import { PaperPlaneIcon } from '@/components/ui/icon/icons';
 import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
@@ -11,27 +11,30 @@ const ContactView = ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout py-lg dark relative mx-auto flex w-full max-w-bounds flex-col items-center gap-lg',
+        'dark-layout dark relative mx-auto flex w-full max-w-bounds flex-col items-center py-lg',
         className,
       )}
       {...props}
     >
       <Text.Title
         asChild
-        className='w-9/10 max-w-screen-xl text-[12vw]/[1] font-bold uppercase max-md:text-center md:text-[min(8vw,6rem)]/[1]'
+        className='mb-md w-9/10 max-w-screen-lg max-sm:text-center'
+        variants={{ size: 'lg' }}
       >
         <h1>
-          Let&apos;s make some <br className='max-md:hidden' /> ideas{' '}
-          <PaperPlaneIcon
-            aria-hidden
-            className='inline-block h-[.9em] w-[.9em]'
-          />{' '}
-          fly!
+          Any good
+          <br />
+          <span className='relative inline'>
+            ideas?{' '}
+            <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
+              Let&apos;s make&apos;em fly
+            </Badge>
+          </span>
         </h1>
       </Text.Title>
 
-      <section className='relative z-10 grid w-9/10 max-w-screen-xl gap-md md:grid-cols-2 md:grid-rows-2'>
-        <div className='light space-y-md rounded-lg border bg-main p-9 shadow-md md:row-span-2'>
+      <section className='relative z-10 mb-lg grid w-9/10 max-w-screen-lg gap-md md:grid-cols-3 md:grid-rows-2'>
+        <div className='light space-y-md rounded-lg border bg-main p-9 shadow-md md:col-span-2 md:row-span-2'>
           <section className='space-y-6'>
             <Text.Title>Send me a message</Text.Title>
 
