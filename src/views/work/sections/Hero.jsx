@@ -84,7 +84,7 @@ const WorkViewHeroSection = ({ theme, className, ...props }) => {
               {[...Array(3)].map((_, i) => (
                 <li key={i}>
                   <HorizontalScroll
-                    baseVelocity={i % 2 === 0 ? 1 : -2}
+                    baseVelocity={i % 2 === 0 ? 1 : -1.5}
                     className='text-[min(32vmin,16rem)]/[1] font-extrabold uppercase tracking-tighter text-muted [--gap:.2em]'
                   >
                     <span>Beyond</span> •
