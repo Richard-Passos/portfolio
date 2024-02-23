@@ -42,7 +42,7 @@ const Language = (props) => {
       onValueChange={onChange}
       {...props}
     >
-      <Select.Trigger className='h-8 w-12 justify-center gap-1 px-0 transition-none'>
+      <Select.Trigger className='h-8 w-12 justify-center gap-1 px-0 capitalize transition-none'>
         <Select.Value />
 
         <Select.Icon
@@ -61,7 +61,7 @@ const Language = (props) => {
                 key={lang}
                 value={lang.toLowerCase()}
               >
-                {lang.toLowerCase()}
+                {lang}
               </LanguageSelectItem>
             ))}
           </Select.Viewport>
@@ -82,7 +82,7 @@ const Language = (props) => {
 const LanguageSelectItem = ({ className, children, ...props }) => {
   return (
     <Select.Item
-      className={cn('justify-center pl-0 pr-0 lowercase', className)}
+      className={cn('justify-center pl-0 pr-0 capitalize', className)}
       {...props}
     >
       <Select.Item.Text>{children}</Select.Item.Text>
