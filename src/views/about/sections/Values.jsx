@@ -54,12 +54,12 @@ const AboutViewValuesSection = ({ theme, className, ...props }) => {
 
           <GlobeIcon
             aria-hidden
-            className='absolute right-0 top-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] -rotate-[--rotate] opacity-10 dark:opacity-5 max-lg:hidden'
+            className='absolute right-0 top-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] -rotate-[--rotate] fill-muted max-lg:hidden'
           />
 
           <SmileIcon
             aria-hidden
-            className='absolute bottom-0 left-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] rotate-[--rotate] opacity-10 dark:opacity-5 max-lg:hidden'
+            className='absolute bottom-0 left-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] rotate-[--rotate] fill-muted max-lg:hidden'
           />
         </div>
 
