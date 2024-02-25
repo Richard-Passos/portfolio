@@ -6,7 +6,7 @@ const ProjectsGridRoles = ({ className, data, ...props }) => {
   return (
     <ul
       className={cn(
-        'col-span-3 ml-3.5 flex flex-wrap gap-1.5 text-sm font-medium lowercase',
+        'relative z-10 col-span-3 flex translate-y-full flex-wrap gap-1.5 text-sm font-normal lowercase transition-[transform,clip-path] duration-300 [clip-path:inset(0_0_100%_0)] group-hover:translate-y-0 group-hover:[clip-path:inset(0)]',
         className,
       )}
       {...props}

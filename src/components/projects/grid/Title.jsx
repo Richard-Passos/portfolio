@@ -7,7 +7,7 @@ const ProjectsGridTitle = ({ className, ...props }) => {
     <Title
       animationType='onGroupHover'
       className={cn(
-        'absolute z-10 max-w-9/10 text-center text-[10vw] sm:text-[min(6vw,2.75rem)]',
+        'absolute left-1/2 top-1/2 z-10 w-9/10 -translate-x-1/2 -translate-y-1/2 text-center text-[10vw] font-bold tracking-tight sm:text-[min(6vw,3rem)]',
         className,
       )}
       {...props}

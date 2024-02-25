@@ -38,7 +38,7 @@ const ProjectsGridImage = ({ index, className, ...props }) => {
   return (
     <div
       className={cn(
-        'relative h-full w-full overflow-hidden rounded-inherit border border-transparent transition-transform duration-300 group-hover:scale-[.98]',
+        'absolute inset-0 overflow-hidden rounded-inherit border border-transparent bg-muted',
         className,
       )}
       {...props}
@@ -47,13 +47,11 @@ const ProjectsGridImage = ({ index, className, ...props }) => {
         <ScrollAnimation.Transform config={animationConfig.scale}>
           {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <Image
-            className='h-full w-full object-cover'
+            className='size-full object-cover'
             {...img}
           />
         </ScrollAnimation.Transform>
       </ScrollAnimation>
-
-      <span className='absolute inset-0 -z-10 rounded-inherit bg-muted transition-bg' />
     </div>
   );
 };

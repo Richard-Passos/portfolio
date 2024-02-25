@@ -6,7 +6,7 @@ const ProjectsGridNumber = ({ className, index, ...props }) => {
   return (
     <Text
       className={cn(
-        'outline-text pointer-events-none absolute bottom-0 right-0 -z-10 translate-y-1/2 text-[28vw] text-muted sm:text-[min(10vw,8rem)]/[1]',
+        'absolute left-sm top-sm z-10 -translate-y-full text-sm font-normal transition-[transform,clip-path] duration-300 [clip-path:inset(100%_0_0_0)] group-hover:translate-y-0 group-hover:[clip-path:inset(0)]',
         className,
       )}
       {...props}
