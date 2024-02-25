@@ -88,7 +88,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
               </div>
             </div>
 
-            <GridPattern className='inset-[--inset] top-0 -z-40 [&>:nth-child(14)]:rounded-tr-3xl [&>:nth-child(15)]:rounded-tl-3xl [&>:nth-child(2)]:border-transparent [&>:nth-child(3)]:rounded-tl-3xl [&>:nth-child(84)]:rounded-br-3xl [&>:nth-child(85)]:rounded-bl-3xl [&>:nth-child(97)]:rounded-br-3xl first:[&>]:border-transparent last:[&>]:border-transparent' />
+            <GridPattern className='inset-[--inset] top-0 -z-40 first:*:rounded-tl-3xl last:*:rounded-br-3xl [&>:nth-child(14)]:rounded-tr-3xl [&>:nth-child(85)]:rounded-bl-3xl' />
           </div>
 
           <ScrollIndicator
