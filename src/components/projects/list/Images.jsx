@@ -13,7 +13,7 @@ const ProjectsListImages = ({ className, ...props }) => {
   return (
     <FollowPointer
       className={cn(
-        'aspect-square w-[50vmin] max-w-sm border border-transparent [clip-path:inset(0_0_0_0_round_theme(borderRadius.3xl))]',
+        'aspect-square w-[50vmin] max-w-sm [clip-path:inset(0_round_theme(borderRadius.3xl))]',
         className,
       )}
       smoothConfig={{ stiffness: 100 }}
