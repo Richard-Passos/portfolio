@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 import { Select } from '../ui';
 import { ChevronDownIcon, ChevronUpIcon } from '../ui/icon/icons';
 
-const DEFAULT_LANG = languages[0],
+const DEFAULT_LANG = languages[0].toLowerCase(),
   LANG_REGEX = /\/[a-z]{2}(?![^/])/;
 
 const Language = (props) => {
@@ -16,8 +16,7 @@ const Language = (props) => {
     pathname = usePathname(),
     searchParams = useSearchParams();
 
-  const currLang =
-    pathname.match(LANG_REGEX)?.[0].replace('/', '') || DEFAULT_LANG;
+  const currLang = pathname.match(LANG_REGEX)?.[0].slice(1) || DEFAULT_LANG;
 
   const onChange = (lang) => {
     const pathnameWithReplacedLang = pathname.replace(
@@ -26,7 +25,7 @@ const Language = (props) => {
     );
 
     const url = `${
-      currLang === DEFAULT_LANG
+      currLang === DEFAULT_LANG && lang !== DEFAULT_LANG
         ? '/' + lang + pathname
         : pathnameWithReplacedLang
     }?${searchParams}`;
@@ -42,7 +41,7 @@ const Language = (props) => {
       onValueChange={onChange}
       {...props}
     >
-      <Select.Trigger className='h-8 w-12 justify-center gap-1 px-0 capitalize transition-none'>
+      <Select.Trigger className='h-8 w-12 justify-center gap-1 px-0 lowercase transition-none'>
         <Select.Value />
 
         <Select.Icon
@@ -82,7 +81,7 @@ const Language = (props) => {
 const LanguageSelectItem = ({ className, children, ...props }) => {
   return (
     <Select.Item
-      className={cn('justify-center pl-0 pr-0 capitalize', className)}
+      className={cn('justify-center pl-0 pr-0 lowercase', className)}
       {...props}
     >
       <Select.Item.Text>{children}</Select.Item.Text>
