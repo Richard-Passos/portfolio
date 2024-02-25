@@ -18,7 +18,7 @@ const TextTitle = ({ asChild, variants, className, ...props }, ref) => {
 const textTitleSizes = {
   md: 'text-xl font-semibold',
   lg: 'text-[12vw]/[1] font-bold uppercase tracking-tight sm:text-[min(8vw,theme(fontSize.8xl))]/[1]',
-  xl: 'text-[14vw]/[1] font-extrabold uppercase tracking-tighter sm:text-[min(10vw,theme(fontSize.9xl))]/[1]',
+  xl: 'text-[13vw]/[1] font-extrabold uppercase tracking-tighter sm:text-[min(10vw,theme(fontSize.9xl))]/[1]',
 };
 
 const textTitleVariants = cnv({
