@@ -32,8 +32,8 @@ const MagneticButton = (
 };
 
 const magneticButtonSizes = {
-  sm: 'h-[clamp(theme(spacing.10),5vw,theme(spacing.16))] max-md:text-sm',
-  md: 'h-[clamp(theme(spacing.12),6vw,theme(spacing.20))]',
+  sm: 'h-[clamp(theme(spacing.12),5vw,theme(spacing.16))] max-md:text-sm',
+  md: 'h-[clamp(theme(spacing.16),6vw,theme(spacing.20))]',
   lg: 'h-[clamp(theme(spacing.20),12vw,theme(spacing.60))] text-lg',
 };
 
