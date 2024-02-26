@@ -2,7 +2,7 @@ const projects = [
   {
     href: '#00',
     title: 'PROJECT-00',
-    roles: ['design', 'development'],
+    roles: ['design'],
     year: 2024,
     img: {
       src: '/images/project-00.jpg',
@@ -14,7 +14,7 @@ const projects = [
   {
     href: '#01',
     title: 'PROJECT-01',
-    roles: ['design', 'development'],
+    roles: ['development'],
     year: 2024,
     img: {
       src: '/images/project-01.png',
