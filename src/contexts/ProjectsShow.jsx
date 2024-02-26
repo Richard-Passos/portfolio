@@ -3,7 +3,7 @@
 import { createContext } from 'react';
 
 const ProjectsShowContext = createContext({
-  projects: '',
+  projects: [],
   setProjects: () => {},
   role: '',
   setRole: () => {},
