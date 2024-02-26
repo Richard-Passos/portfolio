@@ -12,7 +12,7 @@ const ButtonIcon = ({ className, animation, children, ...props }) => {
       )}
       {...props}
     >
-      <span className='absolute inset-0 rounded-full bg-variant-content transition-bg' />
+      <span className='absolute inset-0 rounded-full bg-variant-content transition-bg delay-100' />
 
       <Slot
         className={cn(
