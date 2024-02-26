@@ -1,8 +1,8 @@
 import ProjectsViewShowContent from './Content';
 import ProjectsViewShowLoadMore from './LoadMore';
-import ProjectsViewShowRoles from './Roles';
 import ProjectsViewShowRoot from './Root';
-import ProjectsViewShowTypes from './Types';
+import ProjectsViewShowRoles from './roles';
+import ProjectsViewShowTypes from './types';
 
 const ProjectsViewShow = ProjectsViewShowRoot;
 

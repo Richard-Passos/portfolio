@@ -1,33 +1,31 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 
 import { getProjects } from '@/api';
 import { Projects } from '@/components';
 import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
-const ProjectsViewShowContent = ({ initialData = [], className, ...props }) => {
-  const page = useSearchParams().get('page') || 1,
-    [data, setData] = useState(initialData);
+const ProjectsViewShowContent = ({ className, ...props }) => {
+  const { type, role, projects, setProjects } = useContext(ProjectsShowContext),
+    page = useSearchParams().get('page') || 1;
 
-  useEffect(() => {
-    const handleSetData = async () => {
-      const data = await getProjects(`page=${page}`);
-
-      setData(data.results);
-    };
-
-    if (page > 1) handleSetData();
-  }, [page]);
-
-  const { type, role, projects } = useContext(ProjectsShowContext);
-
-  const projectsObj = [...data, ...projects].reduce(
+  const projectsObj = projects.reduce(
     (obj, project) => getByRole(role, obj, project),
     { data: [], images: [] },
   );
+
+  useEffect(() => {
+    const handleSetProjects = async () => {
+      const data = await getProjects(`page=${page}`);
+
+      setProjects(data.results);
+    };
+
+    if (page > 1) handleSetProjects();
+  }, [page, setProjects]);
 
   const types = {
     list: (

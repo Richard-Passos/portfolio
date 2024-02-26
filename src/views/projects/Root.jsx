@@ -1,10 +1,16 @@
 import { getProjects } from '@/api';
 import { Lines } from '@/components';
-import { Badge, Text } from '@/components/ui';
+import { Badge, Icon, Text } from '@/components/ui';
 import { PlusIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
 
 import Show from './show';
+
+const ROLES = ['all', 'design', 'development'],
+  TYPES = [
+    { data: 'list', icon: 'List' },
+    { data: 'grid', icon: 'Grid' },
+  ];
 
 const ProjectsView = async ({ className, ...props }) => {
   const projects = (await getProjects()).results;
@@ -12,7 +18,7 @@ const ProjectsView = async ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout py-lg dark relative mx-auto flex max-w-bounds flex-col items-center gap-lg',
+        'dark-layout dark relative mx-auto flex max-w-bounds flex-col items-center gap-lg py-lg',
         className,
       )}
       {...props}
@@ -33,12 +39,36 @@ const ProjectsView = async ({ className, ...props }) => {
         </h1>
       </Text.Title>
 
-      <Show>
+      <Show defaultState={{ role: ROLES[0], type: TYPES[0].data, projects }}>
         <div className='flex w-full flex-wrap-reverse items-center justify-center gap-5 gap-x-10 sm:justify-between'>
-          <Show.Roles /> <Show.Types />
+          <Show.Roles>
+            {ROLES.map((role) => (
+              <Show.Roles.Trigger
+                key={role}
+                role={role}
+              >
+                {role}
+              </Show.Roles.Trigger>
+            ))}
+          </Show.Roles>
+
+          <Show.Types>
+            {TYPES.map(({ data, icon }) => (
+              <Show.Types.Trigger
+                aria-label={`Toggle to ${data}`}
+                key={data}
+                type={data}
+              >
+                <Icon
+                  aria-hidden
+                  name={icon}
+                />
+              </Show.Types.Trigger>
+            ))}
+          </Show.Types>
         </div>
 
-        <Show.Content initialData={projects} />
+        <Show.Content />
 
         <Show.LoadMore>
           <PlusIcon aria-hidden />
