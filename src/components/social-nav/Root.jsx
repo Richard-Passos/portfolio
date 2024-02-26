@@ -1,25 +1,13 @@
-import { cn } from '@/utils';
-
 import { TextTitle } from '../ui/text';
 
-const SocialNav = ({ className, children, ...props }) => {
+const SocialNav = ({ children, ...props }) => {
   return (
-    <section
-      className={cn('relative flex flex-col gap-sm', className)}
-      {...props}
-    >
-      <TextTitle className='text-xs uppercase text-muted-content sm:absolute sm:left-4 sm:top-4'>
+    <section {...props}>
+      <TextTitle className='mb-4 text-xs uppercase text-muted-content'>
         Socials
       </TextTitle>
 
-      <nav className='grid gap-sm sm:grid-cols-2'>
-        <span
-          aria-hidden
-          className='max-sm:hidden'
-        />
-
-        {children}
-      </nav>
+      <nav className='grid gap-2'>{children}</nav>
     </section>
   );
 };
