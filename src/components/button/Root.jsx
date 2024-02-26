@@ -20,7 +20,9 @@ const Button = (
         {children}
       </span>
 
-      <span className='absolute inset-0 translate-y-full rounded-[50%_50%_0_0] bg-variant-active transition-[transform,border-radius] duration-500 group-hover:translate-y-0 group-hover:rounded-none' />
+      <div className='absolute inset-0 translate-y-full overflow-hidden rounded-[50%_50%_0_0] transition-[transform,border-radius] duration-500 group-hover:translate-y-0 group-hover:rounded-none'>
+        <span className='size-full bg-variant-active transition-bg' />
+      </div>
     </>
   );
 
