@@ -127,11 +127,11 @@ module.exports = {
               'translate(var(--tw-translate-y), var(--final-y, 250%)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
           },
         },
-        loader: {
-          to: {
-            transform:
-              'translate(var(--tw-translate-y), var(--final-y, -75%)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
-          },
+        'dots-loader': {
+          '20%': { 'background-position': '0%   0%, 50%  50%, 100%  50%' },
+          '40%': { 'background-position': '0% 100%, 50%   0%, 100%  50%' },
+          '60%': { 'background-position': '0%  50%, 50% 100%, 100%   0%' },
+          '80%': { 'background-position': '0%  50%, 50%  50%, 100% 100%' },
         },
       },
       animation: {
@@ -141,7 +141,7 @@ module.exports = {
           'infinity-scroll var(--duration, 15s) linear infinite',
         'scroll-indicator':
           'scroll-indicator var(--duration, 2s) cubic-bezier(0.87, 0, 0.13, 1) infinite',
-        loader: 'loader var(--duration, .6s) infinite alternate',
+        'dots-loader': 'dots-loader var(--duration, 1.5s) infinite linear',
       },
       fontFamily: {
         app: 'var(--font-app)',
