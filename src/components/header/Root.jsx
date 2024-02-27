@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { cn } from '@/utils';
 
 import Language from '../language';
@@ -6,6 +8,7 @@ import Menu from '../menu';
 import { Logo, Separator } from '../ui';
 import { SheetTrigger } from '../ui/sheet';
 import Nav from './Nav';
+import NavFallback from './NavFallback';
 
 const Header = ({ className, ...props }) => {
   return (
@@ -19,7 +22,9 @@ const Header = ({ className, ...props }) => {
       <Logo className='transition-none' />
 
       <div className='flex h-10 items-center max-sm:hidden'>
-        <Nav />
+        <Suspense fallback={<NavFallback />}>
+          <Nav />
+        </Suspense>
 
         <Separator
           className='mr-4'
