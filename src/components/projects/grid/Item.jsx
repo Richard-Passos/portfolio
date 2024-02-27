@@ -18,7 +18,7 @@ const ProjectsGridItem = ({ className, content, children, ...props }) => {
     >
       {children}
 
-      <span className='absolute inset-0 rounded-inherit bg-main/95 opacity-0 backdrop-blur-sm transition-[transform,opacity] group-hover:opacity-100' />
+      <span className='absolute inset-0 rounded-inherit bg-main/60 opacity-0 backdrop-blur-sm transition-[transform,opacity] group-hover:opacity-100' />
     </CursorLink>
   );
 };
