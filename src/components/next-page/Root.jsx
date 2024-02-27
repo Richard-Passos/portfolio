@@ -14,10 +14,7 @@ const NextPage = ({ text, href, className, ...props }) => {
       <NextPageLinkHeading />
 
       <div className='relative flex w-full flex-col items-center justify-center gap-[.2em]'>
-        <NextPageLinkContent
-          baseVelocity={1}
-          text={text}
-        />
+        <NextPageLinkContent text={text} />
 
         <MagneticButton
           asLink
