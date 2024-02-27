@@ -22,6 +22,7 @@ import PaperPlaneIcon from './PaperPlane';
 import PlusIcon from './Plus';
 import QuestionIcon from './Question';
 import RocketIcon from './Rocket';
+import RotateIcon from './Rotate';
 import SmileIcon from './Smile';
 import TimesIcon from './Times';
 import WidthIcon from './Width';
@@ -51,6 +52,7 @@ const Icons = {
   Plus: PlusIcon,
   Question: QuestionIcon,
   Rocket: RocketIcon,
+  Rotate: RotateIcon,
   Smile: SmileIcon,
   Times: TimesIcon,
   Width: WidthIcon,
@@ -82,6 +84,7 @@ export {
   PlusIcon,
   QuestionIcon,
   RocketIcon,
+  RotateIcon,
   SmileIcon,
   TimesIcon,
   WidthIcon,
