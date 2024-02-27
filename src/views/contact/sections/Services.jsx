@@ -1,10 +1,10 @@
-import { Services } from '@/components';
+import { Bg, Lines, Services } from '@/components';
 import { ScrollAnimationTransform } from '@/components/scroll-animation';
 import { Separator, Text } from '@/components/ui';
 import { services } from '@/constants';
 import { cn } from '@/utils';
 
-const ContactViewServices = ({ className, ...props }) => {
+const ContactViewServicesSection = ({ className, ...props }) => {
   const animationConfig = {
     useScrollConfig: { offset: ['1 1', '1 0'] },
     prop: '--y',
@@ -13,10 +13,7 @@ const ContactViewServices = ({ className, ...props }) => {
 
   return (
     <section
-      className={cn(
-        'w-9/10 max-w-screen-lg max-2xl:min-h-screen',
-        className,
-      )}
+      className={cn('relative w-9/10 max-w-screen-lg pb-lg', className)}
       {...props}
     >
       <Text.Subtitle className='mb-md mr-auto text-2xl font-medium'>
@@ -42,8 +39,12 @@ const ContactViewServices = ({ className, ...props }) => {
           ))}
         </Services>
       </div>
+
+      <Bg />
+
+      <Lines />
     </section>
   );
 };
 
-export default ContactViewServices;
+export default ContactViewServicesSection;
