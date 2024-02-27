@@ -1,5 +1,8 @@
+import { Suspense } from 'react';
+
 import { getProjects } from '@/api';
-import { Lines } from '@/components';
+import { DotsLoader, Lines } from '@/components';
+import { MagneticButton } from '@/components/button';
 import { Badge, Icon, Text } from '@/components/ui';
 import { PlusIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
@@ -68,13 +71,26 @@ const ProjectsView = async ({ className, ...props }) => {
           </Show.Types>
         </div>
 
-        <Show.Content />
+        <Suspense fallback={<DotsLoader />}>
+          <Show.Content />
+        </Suspense>
 
-        <Show.LoadMore>
-          <PlusIcon aria-hidden />
+        <Suspense
+          fallback={
+            <MagneticButton
+              disabled
+              variants={{ color: 'main' }}
+            >
+              <DotsLoader />
+            </MagneticButton>
+          }
+        >
+          <Show.LoadMore>
+            <PlusIcon aria-hidden />
 
-          <span className='sr-only'>More projects</span>
-        </Show.LoadMore>
+            <span className='sr-only'>More projects</span>
+          </Show.LoadMore>
+        </Suspense>
       </Show>
 
       <Lines />

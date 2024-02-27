@@ -3,11 +3,12 @@
 import { useContext } from 'react';
 
 import { getProjects } from '@/api';
+import { DotsLoader } from '@/components';
 import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui/text';
 import { ProjectsShowContext } from '@/contexts';
 import { useLoadMore } from '@/hooks';
-import { cn, isFunctionThanCall } from '@/utils';
+import { isFunctionThanCall } from '@/utils';
 
 const ProjectsViewShowLoadMore = ({ variants, children, ...props }) => {
   const { setProjects } = useContext(ProjectsShowContext);
@@ -28,32 +29,12 @@ const ProjectsViewShowLoadMore = ({ variants, children, ...props }) => {
         isFunctionThanCall(props.onClick, ev);
       }}
     >
-      {!isFetching ? (
-        children
-      ) : (
-        <div className='flex gap-1'>
-          <ProjectsViewShowLoadMoreDot />
-          <ProjectsViewShowLoadMoreDot className='delay-200' />
-          <ProjectsViewShowLoadMoreDot className='[animation-delay:400ms]' />
-        </div>
-      )}
+      {!isFetching ? children : <DotsLoader />}
     </MagneticButton>
   ) : (
     <Text className='text-muted-content'>
       Congrats! You really saw them all.
     </Text>
-  );
-};
-
-const ProjectsViewShowLoadMoreDot = ({ className, ...props }) => {
-  return (
-    <span
-      className={cn(
-        'aspect-square w-[.25em] animate-loader rounded-full bg-current',
-        className,
-      )}
-      {...props}
-    />
   );
 };
 
