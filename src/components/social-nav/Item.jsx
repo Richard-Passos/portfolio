@@ -10,7 +10,7 @@ const SocialNavItem = ({ className, variants, icon, name, ...props }) => {
     <Button.Magnetic
       asLink
       className={cn(
-        'aspect-auto h-12 rounded-sm bg-main [--variant-a:--primary] hover:text-primary-content [&>span>span]:px-4 [&_svg]:size-1/2',
+        'aspect-auto h-12 rounded-sm bg-main [--variant-a:--primary] hover:z-10 hover:text-primary-content [&>span>span]:px-4 [&_svg]:size-1/2',
         className,
       )}
       limit={0.2}
