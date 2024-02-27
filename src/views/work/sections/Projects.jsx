@@ -91,16 +91,15 @@ const WorkViewProjectsShowSection = () => {
       <Projects.Grid className='sm:hidden'>
         {projects.data.map((project, i) => (
           <Projects.Grid.Item
+            href={project.href}
             index={i}
             key={'projects-grid-' + project.href}
           >
-            <Projects.Grid.Link href={project.href}>
-              <Projects.Grid.Number index={i} />
+            <Projects.Grid.Number index={i} />
 
-              <Projects.Grid.Image index={i} />
+            <Projects.Grid.Image index={i} />
 
-              <Projects.Grid.Title text={project.title} />
-            </Projects.Grid.Link>
+            <Projects.Grid.Title text={project.title} />
 
             <Projects.Grid.Roles data={project.roles} />
           </Projects.Grid.Item>
