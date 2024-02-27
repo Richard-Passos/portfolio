@@ -4,6 +4,7 @@ export { default as BentoGrid } from './bento-grid';
 export { default as Bg } from './bg';
 export { default as Button } from './button';
 export { default as ChangeTheme } from './change-theme';
+export { default as DotsLoader } from './dots-loader';
 export { default as Footer } from './footer';
 export { default as GridPattern } from './grid-pattern';
 export { default as Header } from './header';
