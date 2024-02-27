@@ -40,7 +40,7 @@ const ProjectsView = async ({ className, ...props }) => {
       </Text.Title>
 
       <Show defaultState={{ role: ROLES[0], type: TYPES[0].data, projects }}>
-        <div className='flex w-full flex-wrap-reverse items-center justify-center gap-5 gap-x-10 sm:justify-between'>
+        <div className='flex w-full flex-wrap-reverse items-center justify-center gap-sm sm:justify-between'>
           <Show.Roles>
             {ROLES.map((role) => (
               <Show.Roles.Trigger

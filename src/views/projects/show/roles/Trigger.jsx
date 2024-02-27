@@ -20,7 +20,7 @@ const ProjectsViewShowRolesTrigger = ({
   return (
     <button
       className={cn(
-        'relative flex size-full items-center justify-center rounded-full px-4 text-xs font-medium uppercase transition-colors hover:text-content data-[state=active]:text-primary-content data-[state=active]:focus-visible:outline-primary',
+        'relative flex size-full items-center justify-center rounded-sm px-4 text-xs font-medium uppercase transition-colors hover:text-content data-[state=active]:text-primary-content data-[state=active]:focus-visible:outline-primary',
         className,
       )}
       data-state={isActive ? 'active' : 'inactive'}
@@ -36,9 +36,8 @@ const ProjectsViewShowRolesTrigger = ({
 
       {isActive && (
         <motion.span
-          className='absolute inset-0 -z-10 bg-primary'
+          className='absolute inset-0 -z-10 rounded-inherit bg-primary'
           layoutId='projectsViewShowRolesTriggerActiveIndicator'
-          style={{ borderRadius: '9999px' }}
           transition={{
             type: 'spring',
             ...smoothConfig,
