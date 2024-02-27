@@ -102,8 +102,13 @@ const FooterContent = ({ className, ...props }) => {
                 ))}
               </SocialNav>
 
+              <Logo
+                aria-hidden
+                className='pointer-events-none absolute bottom-0 left-1/2 -z-10 h-auto -translate-x-1/2 translate-y-1/2 px-0 text-[40vw]/[1] font-extrabold text-muted'
+              />
+
               <GridPattern
-                className='inset-x-auto -top-px left-1/2 -z-10 w-screen max-w-bounds -translate-x-1/2'
+                className='inset-x-auto -top-px left-1/2 -z-20 w-screen max-w-bounds -translate-x-1/2'
                 rows={4}
               />
             </div>
