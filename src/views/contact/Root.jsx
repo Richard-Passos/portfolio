@@ -13,9 +13,9 @@ const ContactView = ({ className, ...props }) => {
     >
       <Sections.Hero />
 
-      <Sections.Services />
+      <Sections.Contact theme='light' />
 
-      <Sections.Contact theme='dark' />
+      <Sections.Services theme='dark' />
     </main>
   );
 };

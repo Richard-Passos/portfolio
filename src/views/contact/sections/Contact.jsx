@@ -1,4 +1,4 @@
-import { HorizontalScroll, Lines, LocalTime, SocialNav } from '@/components';
+import { HorizontalScroll, LocalTime, Section, SocialNav } from '@/components';
 import { Link } from '@/components/ui';
 import { PaperPlaneIcon } from '@/components/ui/icon/icons';
 import { Text } from '@/components/ui/text';
@@ -20,9 +20,9 @@ const EXTRA_INFO = [
 
 const ContactViewContactSection = ({ className, ...props }) => {
   return (
-    <section
+    <Section
       className={cn(
-        'relative flex w-9/10 max-w-screen-sm flex-col items-center justify-center py-lg',
+        'flex w-9/10 max-w-screen-sm flex-col items-center justify-center',
         className,
       )}
       {...props}
@@ -38,7 +38,7 @@ const ContactViewContactSection = ({ className, ...props }) => {
         ))}
       </ul> */}
 
-      <div className='light mb-sm rounded-lg border bg-main p-sm shadow-xl sm:p-[calc(var(--spacing-sm)*1.5)]'>
+      <div className='light mb-sm rounded-lg border bg-main p-sm shadow-lg sm:p-[calc(var(--spacing-sm)*1.5)]'>
         <section className='mb-md space-y-6'>
           <Text.Title>Send a message</Text.Title>
 
@@ -75,7 +75,7 @@ const ContactViewContactSection = ({ className, ...props }) => {
         ))}
       </nav>
 
-      <ul className='absolute inset-y-0 left-1/2 -z-20 flex w-screen -translate-x-1/2 flex-col justify-around max-sm:hidden'>
+      <ul className='absolute inset-y-0 left-1/2 top-[calc(var(--spacing-lg)/2)] -z-20 flex w-screen -translate-x-1/2 flex-col justify-around max-sm:hidden'>
         {[...Array(3)].map((_, i) => (
           <li key={i}>
             <HorizontalScroll
@@ -87,9 +87,7 @@ const ContactViewContactSection = ({ className, ...props }) => {
           </li>
         ))}
       </ul>
-
-      <Lines />
-    </section>
+    </Section>
   );
 };
 

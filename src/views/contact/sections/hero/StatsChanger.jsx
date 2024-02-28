@@ -1,43 +1,39 @@
-'use client';
-
-import { useState } from 'react';
-
-import { MagneticButton } from '@/components/button';
+import { StatsChanger } from '@/components';
 import { Text } from '@/components/ui';
 import { RotateIcon } from '@/components/ui/icon/icons';
 import { stats } from '@/constants';
 import { cn } from '@/utils';
 
 const ContactViewHeroStatsChangerSection = ({ className, ...props }) => {
-  const [activeIdx, setActiveIdx] = useState(0);
-
-  const stat = stats[activeIdx];
-
   return (
-    <section
-      className={cn('ml-md flex grow items-center', className)}
+    <StatsChanger
+      className={cn('my-auto ml-md', className)}
+      lastIdx={stats.length - 1}
       {...props}
     >
-      <MagneticButton
-        aria-label='Switch'
-        className='mr-4 h-12 focus-visible:outline-content [&_svg]:size-1/2'
-        limit={0.2}
-        onClick={() =>
-          setActiveIdx((state) => (state >= stats.length - 1 ? 0 : state + 1))
-        }
-        variants={{ color: 'muted' }}
-      >
+      <StatsChanger.Action>
         <RotateIcon />
-      </MagneticButton>
+      </StatsChanger.Action>
 
-      <section>
-        <Text.Title className='mb-1 text-sm text-muted-content'>
-          {stat.value}
-        </Text.Title>
+      <ul className='relative w-40'>
+        {stats.map(({ title, value }, i) => (
+          <StatsChanger.Item
+            idx={i}
+            key={title}
+          >
+            <Text.Title className='group-data-active:duration-500 group-data-active:[clip-path:inset(0)] text-base/tight text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)]'>
+              {value}
+            </Text.Title>
 
-        <Text className='text-xs text-muted-content'> {stat.title}</Text>
-      </section>
-    </section>
+            <Text className='group-data-active:duration-500 group-data-active:[clip-path:inset(0)] text-sm text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)]'>
+              {title}
+            </Text>
+          </StatsChanger.Item>
+        ))}
+
+        <StatsChanger.Timerbar />
+      </ul>
+    </StatsChanger>
   );
 };
 

@@ -31,7 +31,7 @@ const ContactViewHeroSection = ({ className, ...props }) => {
           </div>
         </div>
 
-        <div className='relative z-10 aspect-[1/1.4] w-full max-w-md rounded-3xl bg-red-500' />
+        <div className='relative z-10 aspect-[1/1.4] w-full max-w-md rounded-3xl bg-red-500 shadow-lg' />
       </div>
 
       <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-20' />
