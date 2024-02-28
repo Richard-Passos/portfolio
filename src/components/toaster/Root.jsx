@@ -66,7 +66,7 @@ const ToasterTimerbar = ({ variants, className, ...props }) => {
       duration={TOAST_DURATION}
       variants={{
         color: 'inherit',
-        size: 'xs',
+        size: 'sm',
       }}
       {...props}
     >
