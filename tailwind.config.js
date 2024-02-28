@@ -147,10 +147,11 @@ module.exports = {
         app: 'var(--font-app)',
       },
       data: {
+        active: 'state=active',
         checked: 'state=checked',
         closed: 'state=closed',
-        open: 'state=open',
         disabled: 'disabled',
+        open: 'state=open',
       },
       transitionProperty: {
         color: 'color',
