@@ -13,7 +13,7 @@ const stats = [
   },
   {
     value: '50ᐩ',
-    title: `Projects \n completed`,
+    title: `Clebers \n completed`,
   },
 ];
 
