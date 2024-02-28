@@ -107,10 +107,7 @@ const FooterContent = ({ className, ...props }) => {
                 className='pointer-events-none absolute bottom-0 left-1/2 -z-10 h-auto -translate-x-1/2 translate-y-1/2 px-0 text-[calc(var(--w)*.4)]/[1] font-extrabold text-muted [--w:100vw] 2xl:[--w:--max-w]'
               />
 
-              <GridPattern
-                className='inset-x-auto -top-px left-1/2 -z-20 w-screen max-w-bounds -translate-x-1/2'
-                rows={4}
-              />
+              <GridPattern className='inset-x-auto -top-px left-1/2 w-screen max-w-bounds -translate-x-1/2' />
             </div>
           </ScrollAnimationTransform>
         </div>

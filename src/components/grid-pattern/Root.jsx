@@ -1,26 +1,14 @@
 import { cn } from '@/utils';
 
-const GridPattern = ({ cols = 14, rows = 7, className, style, ...props }) => {
+const GridPattern = ({ className, ...props }) => {
   return (
-    <div
+    <span
       className={cn(
-        'absolute inset-0 grid grid-cols-[repeat(var(--cols),minmax(0,1fr))] grid-rows-[repeat(var(--rows),minmax(0,1fr))]',
+        'absolute inset-0 -z-40 overflow-hidden border bg-main bg-center [--c:hsl(var(--color)/var(--opacity))] [--color:--border] [--opacity:theme(opacity.60)] [background-image:linear-gradient(var(--c)_.8px,transparent_.8px),linear-gradient(to_right,var(--c)_.8px,transparent_.8px)] [background-size:60px_60px] [border-color:--c] dark:[---opacity:theme(opacity.20)]',
         className,
       )}
-      style={{
-        '--cols': cols,
-        '--rows': rows,
-        ...style,
-      }}
       {...props}
-    >
-      {[...Array(cols * rows)].map((_, i) => (
-        <span
-          className='relative left-px top-px -ml-px -mt-px border border-border/60 transition-all dark:border-border/20'
-          key={i}
-        />
-      ))}
-    </div>
+    />
   );
 };
 

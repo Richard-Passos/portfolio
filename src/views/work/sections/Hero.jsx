@@ -74,10 +74,7 @@ const WorkViewHeroSection = ({ theme, className, ...props }) => {
                 />
               </div>
 
-              <GridPattern
-                className='bottom-px -z-40 [&>*]:bg-main [&>:nth-child(14)]:rounded-tr-3xl [&>:nth-child(99)]:rounded-bl-3xl first:[&>]:rounded-tl-3xl last:[&>]:rounded-br-3xl'
-                rows={8}
-              />
+              <GridPattern className='rounded-3xl' />
             </div>
 
             <ul className='absolute inset-y-0 left-1/2 -z-50 flex w-screen -translate-x-1/2 flex-col justify-around'>
