@@ -22,7 +22,7 @@ const ContactViewContactSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'flex w-9/10 max-w-screen-sm flex-col items-center justify-center',
+        'flex w-full max-w-screen-lg flex-col items-center justify-center',
         className,
       )}
       {...props}
@@ -38,7 +38,7 @@ const ContactViewContactSection = ({ className, ...props }) => {
         ))}
       </ul> */}
 
-      <div className='light mb-sm rounded-lg border bg-main p-sm shadow-lg sm:p-[calc(var(--spacing-sm)*1.5)]'>
+      <div className='mb-sm rounded-lg border bg-main p-sm shadow-md max-sm:w-full sm:p-[calc(var(--spacing-sm)*1.5)] sm:shadow-lg'>
         <section className='mb-md space-y-6'>
           <Text.Title>Send a message</Text.Title>
 
@@ -65,7 +65,7 @@ const ContactViewContactSection = ({ className, ...props }) => {
         </section>
       </div>
 
-      <nav className='grid gap-2 sm:grid-cols-3'>
+      <nav className='grid gap-2 max-sm:w-9/10 sm:grid-cols-3'>
         {personalInfo.socials.map((social, i) => (
           <SocialNav.Item
             index={i}

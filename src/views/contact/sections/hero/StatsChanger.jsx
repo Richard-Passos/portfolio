@@ -7,7 +7,7 @@ import { cn } from '@/utils';
 const ContactViewHeroStatsChangerSection = ({ className, ...props }) => {
   return (
     <StatsChanger
-      className={cn('my-auto ml-md', className)}
+      className={cn('my-auto ml-sm max-sm:mr-sm md:ml-md', className)}
       lastIdx={stats.length - 1}
       {...props}
     >
@@ -15,17 +15,17 @@ const ContactViewHeroStatsChangerSection = ({ className, ...props }) => {
         <RotateIcon />
       </StatsChanger.Action>
 
-      <ul className='relative w-40'>
+      <ul className='relative w-36'>
         {stats.map(({ title, value }, i) => (
           <StatsChanger.Item
             idx={i}
             key={title}
           >
-            <Text.Title className='text-base/tight text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
+            <Text.Title className='group-data-active:duration-500 group-data-active:[clip-path:inset(0)] text-base/tight text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)]'>
               {value}
             </Text.Title>
 
-            <Text className='text-sm text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
+            <Text className='group-data-active:duration-500 group-data-active:[clip-path:inset(0)] text-sm text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)]'>
               {title}
             </Text>
           </StatsChanger.Item>

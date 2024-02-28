@@ -17,7 +17,7 @@ const ContactViewHeroHorizontalScrollSection = ({ className, ...props }) => {
         <span>A</span>
       </TextTitle>
 
-      <div className='absolute top-0 w-screen max-w-screen-lg'>
+      <div className='absolute top-0 w-[90vw] max-w-screen-lg'>
         <HorizontalScroll className='absolute left-1/2 w-screen max-w-bounds -translate-x-1/2'>
           <TextTitle
             asChild

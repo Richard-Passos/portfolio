@@ -96,7 +96,7 @@ const ContactForm = ({ className, ...props }) => {
       </Form.Field>
 
       <Form.Submit asChild>
-        <MagneticButton className='place-self-center max-sm:aspect-auto max-sm:px-6 sm:!h-28'>
+        <MagneticButton className='h-12 place-self-center max-sm:aspect-auto max-sm:px-6 sm:h-28'>
           <PaperPlaneIcon
             aria-hidden
             className='scale-90 max-sm:hidden'
