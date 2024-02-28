@@ -104,7 +104,7 @@ const FooterContent = ({ className, ...props }) => {
 
               <Logo
                 aria-hidden
-                className='pointer-events-none absolute bottom-0 left-1/2 -z-10 h-auto -translate-x-1/2 translate-y-1/2 px-0 text-[40vw]/[1] font-extrabold text-muted'
+                className='pointer-events-none absolute bottom-0 left-1/2 -z-10 h-auto -translate-x-1/2 translate-y-1/2 px-0 text-[calc(var(--w)*.4)]/[1] font-extrabold text-muted [--w:100vw] 2xl:[--w:--max-w]'
               />
 
               <GridPattern
