@@ -1,3 +1,3 @@
-import ContactViewHeroSection from './Root'
+import ContactViewHeroSection from './Root';
 
-export default ContactViewHeroSection
+export default ContactViewHeroSection;

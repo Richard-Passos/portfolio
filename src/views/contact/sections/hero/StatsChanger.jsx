@@ -21,11 +21,11 @@ const ContactViewHeroStatsChangerSection = ({ className, ...props }) => {
             idx={i}
             key={title}
           >
-            <Text.Title className='group-data-active:duration-500 group-data-active:[clip-path:inset(0)] text-base/tight text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)]'>
+            <Text.Title className='text-base/tight text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
               {value}
             </Text.Title>
 
-            <Text className='group-data-active:duration-500 group-data-active:[clip-path:inset(0)] text-sm text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)]'>
+            <Text className='text-sm text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
               {title}
             </Text>
           </StatsChanger.Item>

@@ -9,7 +9,7 @@ const MenubarTrigger = ({ className, ...props }, ref) => {
   return (
     <Trigger
       className={cn(
-        'inline-flex items-center gap-2 rounded-sm px-4 py-1.5 text-sm font-medium transition-colors hover:bg-muted focus-visible:transition-all data-open:bg-muted data-disabled:pointer-events-none data-disabled:opacity-50',
+        'inline-flex items-center gap-2 rounded-sm px-4 py-1.5 text-sm font-medium transition-colors hover:bg-muted focus-visible:transition-all data-disabled:pointer-events-none data-disabled:opacity-50 data-open:bg-muted',
         className,
       )}
       ref={ref}

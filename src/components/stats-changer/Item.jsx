@@ -14,7 +14,7 @@ const StatsChangerItem = ({ idx, className, ...props }) => {
     <li
       aria-hidden={!isActive}
       className={cn(
-        'data-active:visible data-active:static group invisible absolute mb-1.5',
+        'group invisible absolute mb-1.5 data-active:visible data-active:static',
         className,
       )}
       data-state={isActive ? 'active' : 'inactive'}

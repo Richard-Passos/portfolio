@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
-const ProjectsViewShow = ({ defaultState, className,  ...props }) => {
+const ProjectsViewShow = ({ defaultState, className, ...props }) => {
   const [data, setData] = useState(defaultState);
 
   const handleSetData = (id) => (content) =>

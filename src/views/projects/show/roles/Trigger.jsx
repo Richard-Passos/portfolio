@@ -20,7 +20,7 @@ const ProjectsViewShowRolesTrigger = ({
   return (
     <button
       className={cn(
-        'data-active:text-primary-content data-active:focus-visible:outline-primary relative flex size-full items-center justify-center rounded-sm px-4 text-xs font-medium uppercase transition-colors hover:text-content',
+        'relative flex size-full items-center justify-center rounded-sm px-4 text-xs font-medium uppercase transition-colors hover:text-content data-active:text-primary-content data-active:focus-visible:outline-primary',
         className,
       )}
       data-state={isActive ? 'active' : 'inactive'}

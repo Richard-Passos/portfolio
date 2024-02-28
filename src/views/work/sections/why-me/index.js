@@ -1,3 +1,3 @@
-import WhyMe from './Root'
+import WhyMe from './Root';
 
-export default WhyMe
+export default WhyMe;
