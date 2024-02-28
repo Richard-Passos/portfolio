@@ -1,5 +1,3 @@
-import { PlusIcon } from '@radix-ui/react-icons';
-
 import {
   Bg,
   Lines,
@@ -9,6 +7,7 @@ import {
 } from '@/components';
 import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui';
+import { PlusIcon } from '@/components/ui/icon/icons';
 import { selectedProjects } from '@/constants';
 import { cn } from '@/utils';
 
