@@ -6,4 +6,5 @@ export { default as useIsExternalUrl } from './useIsExternalUrl';
 export { default as useLoadMore } from './useLoadMore';
 export { default as useLocalTime } from './useLocalTime';
 export { default as useSmooth } from './useSmooth';
+export { default as useTimer } from './useTimer';
 export { default as useToast } from './useToast';
