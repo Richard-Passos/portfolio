@@ -6,7 +6,7 @@ const personalInfo = {
       return `${this.first} ${this.last}`;
     },
   },
-  email: 'richard.ac.passos12@gmail.com',
+  email: 'hi.richardp@gmail.com',
   job: 'Full stack developer',
   location: {
     country: 'Brazil',
