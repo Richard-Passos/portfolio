@@ -1,26 +1,27 @@
 'use client';
 
-import { useContext } from 'react';
+import { forwardRef, useContext } from 'react';
 
 import { TIMERBAR_UPDATE_DELAY } from '@/components/ui/timerbar';
 import { TIMERBAR_INDICATOR_TRANSITION_DURATION } from '@/components/ui/timerbar/Indicator';
-import { StatsChangerContext } from '@/contexts';
-import { STATS_CHANGER_TIMER_DURATION } from '@/contexts/StatsChanger';
+import { DataChangerContext } from '@/contexts';
+import { DATA_CHANGER_TIMER_DURATION } from '@/contexts/DataChanger';
 
 const { Timerbar } = require('@/components/ui');
 
-const StatsChangerTimerbar = ({ variants, ...props }) => {
-  const { activeIdx, isPaused } = useContext(StatsChangerContext);
+const DataChangerTimerbar = ({ variants, ...props }, ref) => {
+  const { activeIdx, isPaused } = useContext(DataChangerContext);
 
   return (
     <Timerbar
       duration={
-        STATS_CHANGER_TIMER_DURATION -
+        DATA_CHANGER_TIMER_DURATION -
         TIMERBAR_UPDATE_DELAY -
         TIMERBAR_INDICATOR_TRANSITION_DURATION
       }
       key={activeIdx}
       pause={isPaused}
+      ref={ref}
       variants={{ color: 'muted', size: 'sm', ...variants }}
       {...props}
     >
@@ -29,4 +30,4 @@ const StatsChangerTimerbar = ({ variants, ...props }) => {
   );
 };
 
-export default StatsChangerTimerbar;
+export default forwardRef(DataChangerTimerbar);
