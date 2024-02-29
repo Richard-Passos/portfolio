@@ -50,6 +50,8 @@ const ProjectsViewShowContent = ({ className, ...props }) => {
             </Projects.List.Content>
           </Projects.List.Item>
         ))}
+
+        <Projects.List.Images />
       </Projects.List>
     ),
     grid: (

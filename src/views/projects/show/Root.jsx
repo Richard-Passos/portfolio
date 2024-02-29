@@ -1,29 +1,9 @@
-'use client';
-
-import { useState } from 'react';
-
-import { ProjectsShowContext } from '@/contexts';
+import { ProjectsShowProvider } from '@/contexts';
 import { cn } from '@/utils';
 
-const ProjectsViewShow = ({ defaultState, className, ...props }) => {
-  const [data, setData] = useState(defaultState);
-
-  const handleSetData = (id) => (content) =>
-    setData((state) => {
-      const isFn = typeof content === 'function';
-
-      return { ...state, [id]: isFn ? content(state[id]) : content };
-    });
-
+const ProjectsViewShow = ({ defaultData, className, ...props }) => {
   return (
-    <ProjectsShowContext.Provider
-      value={{
-        ...data,
-        setProjects: handleSetData('projects'),
-        setRole: handleSetData('role'),
-        setType: handleSetData('type'),
-      }}
-    >
+    <ProjectsShowProvider defaultData={defaultData}>
       <div
         className={cn(
           'flex w-9/10 max-w-screen-lg flex-col items-center gap-md',
@@ -31,7 +11,7 @@ const ProjectsViewShow = ({ defaultState, className, ...props }) => {
         )}
         {...props}
       />
-    </ProjectsShowContext.Provider>
+    </ProjectsShowProvider>
   );
 };
 

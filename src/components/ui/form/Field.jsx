@@ -1,21 +1,17 @@
-'use client';
+import { forwardRef } from 'react';
 
-import { forwardRef, useId } from 'react';
-
-import { FormFieldContext } from '@/contexts';
+import { FormFieldProvider } from '@/contexts';
 import { cn } from '@/utils';
 
 const FormField = ({ name, className, ...props }, ref) => {
-  const id = useId();
-
   return (
-    <FormFieldContext.Provider value={{ id, name }}>
+    <FormFieldProvider value={{ name }}>
       <section
         className={cn('flex flex-col', className)}
         ref={ref}
         {...props}
       />
-    </FormFieldContext.Provider>
+    </FormFieldProvider>
   );
 };
 

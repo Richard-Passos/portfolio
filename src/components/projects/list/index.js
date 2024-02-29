@@ -1,4 +1,5 @@
 import ProjectsListContent from './Content';
+import ProjectsListImages from './Images';
 import ProjectsListItem from './Item';
 import ProjectsListNumber from './Number';
 import ProjectsListRoles from './Roles';
@@ -9,6 +10,7 @@ import ProjectsListYear from './Year';
 const ProjectsList = ProjectsListRoot;
 
 ProjectsList.Content = ProjectsListContent;
+ProjectsList.Images = ProjectsListImages;
 ProjectsList.Item = ProjectsListItem;
 ProjectsList.Number = ProjectsListNumber;
 ProjectsList.Roles = ProjectsListRoles;
@@ -19,6 +21,7 @@ export default ProjectsList;
 export {
   ProjectsListRoot as ProjectsList,
   ProjectsListContent,
+  ProjectsListImages,
   ProjectsListItem,
   ProjectsListNumber,
   ProjectsListRoles,

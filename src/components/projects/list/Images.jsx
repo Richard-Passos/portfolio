@@ -6,6 +6,7 @@ import { ProjectsContext } from '@/contexts';
 import { cn } from '@/utils';
 
 import { FollowPointer, Image } from '../../ui';
+import { PROJECTS_LIST_FOLLOW_POINTER_ID } from './Root';
 
 const ProjectsListImages = ({ className, ...props }) => {
   const { activeIdx, images } = useContext(ProjectsContext);
@@ -16,6 +17,7 @@ const ProjectsListImages = ({ className, ...props }) => {
         'aspect-square w-[50vmin] max-w-sm [clip-path:inset(0_round_theme(borderRadius.3xl))]',
         className,
       )}
+      id={PROJECTS_LIST_FOLLOW_POINTER_ID}
       smoothConfig={{ stiffness: 100 }}
       {...props}
     >

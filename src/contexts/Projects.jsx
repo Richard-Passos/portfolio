@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 
 const ProjectsContext = createContext({
   images: [],
@@ -8,4 +8,16 @@ const ProjectsContext = createContext({
   setActiveIdx: () => {},
 });
 
+const ProjectsProvider = ({ value, ...props }) => {
+  const [activeIdx, setActiveIdx] = useState(undefined);
+
+  return (
+    <ProjectsContext.Provider
+      value={{ activeIdx, setActiveIdx, ...value }}
+      {...props}
+    />
+  );
+};
+
 export default ProjectsContext;
+export { ProjectsProvider };

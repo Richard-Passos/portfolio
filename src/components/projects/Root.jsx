@@ -1,16 +1,14 @@
-'use client';
-
-import { ProjectsContext } from '@/contexts';
+import { ProjectsProvider } from '@/contexts';
 import { cn } from '@/utils';
 
 const Projects = ({ images, className, ...props }) => {
   return (
-    <ProjectsContext.Provider value={{ images }}>
+    <ProjectsProvider value={{ images }}>
       <div
         className={cn('w-9/10 max-w-screen-lg', className)}
         {...props}
       />
-    </ProjectsContext.Provider>
+    </ProjectsProvider>
   );
 };
 

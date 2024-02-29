@@ -42,7 +42,7 @@ const ProjectsView = async ({ className, ...props }) => {
         </h1>
       </Text.Title>
 
-      <Show defaultState={{ role: ROLES[0], type: TYPES[0].data, projects }}>
+      <Show defaultData={{ role: ROLES[0], type: TYPES[0].data, projects }}>
         <div className='flex w-full flex-wrap-reverse items-center justify-center gap-sm sm:justify-between'>
           <Show.Roles>
             {ROLES.map((role) => (

@@ -2,14 +2,13 @@
 
 import { Splide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/core';
-import { forwardRef, useRef, useState } from 'react';
+import { forwardRef, useContext } from 'react';
 
-import { CarouselContext } from '@/contexts';
+import { CarouselContext, CarouselProvider } from '@/contexts';
 import { cn } from '@/utils';
 
-const Carousel = ({ options, className, ...props }, ref) => {
-  const [activeIdx, setActiveIdx] = useState(0),
-    progress = useRef(0);
+const Carousel = forwardRef(({ options, className, ...props }, ref) => {
+  const { setActiveIdx, progress } = useContext(CarouselContext);
 
   options = {
     autoWidth: true,
@@ -22,24 +21,34 @@ const Carousel = ({ options, className, ...props }, ref) => {
   };
 
   return (
-    <CarouselContext.Provider value={{ activeIdx, progress }}>
-      <Splide
-        className={cn('flex w-full flex-col items-center gap-sm', className)}
-        hasTrack={false}
-        onMove={(carousel) => {
-          const end = carousel.length - 1,
-            rate = Math.min(carousel.index / end, 1);
+    <Splide
+      className={cn('flex w-full flex-col items-center gap-sm', className)}
+      hasTrack={false}
+      onMove={(carousel) => {
+        const end = carousel.length - 1,
+          rate = Math.min(carousel.index / end, 1);
 
-          progress.current = rate;
-          setActiveIdx(carousel.index);
-        }}
-        options={options}
+        progress.current = rate;
+        setActiveIdx(carousel.index);
+      }}
+      options={options}
+      ref={ref}
+      tag='section'
+      {...props}
+    />
+  );
+});
+Carousel.displayName = 'Carousel';
+
+const DataChangerWithProvider = (props, ref) => {
+  return (
+    <CarouselProvider>
+      <Carousel
         ref={ref}
-        tag='section'
         {...props}
       />
-    </CarouselContext.Provider>
+    </CarouselProvider>
   );
 };
 
-export default forwardRef(Carousel);
+export default forwardRef(DataChangerWithProvider);

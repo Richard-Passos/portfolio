@@ -91,6 +91,8 @@ const ShowProjects = ({ className, ...props }) => {
             </Projects.List.Content>
           </Projects.List.Item>
         ))}
+
+        <Projects.List.Images />
       </Projects.List>
 
       <Projects.Grid className='sm:hidden'>

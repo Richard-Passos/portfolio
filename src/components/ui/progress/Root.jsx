@@ -3,7 +3,7 @@
 import { Root } from '@radix-ui/react-progress';
 import { forwardRef } from 'react';
 
-import { ProgressContext } from '@/contexts';
+import { ProgressProvider } from '@/contexts';
 import { cn, cnv } from '@/utils';
 
 import variantColors from '../variantColors';
@@ -21,12 +21,12 @@ const Progress = (
   };
 
   return (
-    <ProgressContext.Provider value={{ value, min, max }}>
+    <ProgressProvider value={{ value, min, max }}>
       <Root
         className={cn(progressVariants(variants), className)}
         {...props}
       />
-    </ProgressContext.Provider>
+    </ProgressProvider>
   );
 };
 
