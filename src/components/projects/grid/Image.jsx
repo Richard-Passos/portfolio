@@ -45,11 +45,13 @@ const ProjectsGridImage = ({ index, className, ...props }) => {
     >
       <ScrollAnimation config={animationConfig.clipPath}>
         <ScrollAnimation.Transform config={animationConfig.scale}>
-          {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <Image
-            className='size-full object-cover'
-            {...img}
-          />
+          <div className='size-full'>
+            {/* eslint-disable-next-line jsx-a11y/alt-text */}
+            <Image
+              className='size-full object-cover transition-transform duration-300 group-hover:scale-110'
+              {...img}
+            />
+          </div>
         </ScrollAnimation.Transform>
       </ScrollAnimation>
     </div>

@@ -35,9 +35,9 @@ const ProjectsListImages = ({ className, ...props }) => {
           >
             {/* eslint-disable-next-line jsx-a11y/alt-text */}
             <Image
-              className='h-full w-full object-cover object-center transition-transform duration-500'
+              className='size-full scale-[--scale] object-cover object-center transition-transform duration-500'
               style={{
-                transform: i > activeIdx ? `scale(${1.1})` : `scale(${1})`,
+                '--scale': i > activeIdx ? 1.1 : 1,
               }}
               {...img}
             />

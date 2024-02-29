@@ -18,7 +18,7 @@ const ProjectsListItem = ({ className, index, ...props }) => {
       )}
       content={{
         name: 'Eye',
-        className: 'w-[45%] h-[45%]',
+        className: 'size-1/2',
       }}
       {...props}
       onMouseEnter={(ev) => {
