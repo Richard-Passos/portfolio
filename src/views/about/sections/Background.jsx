@@ -1,13 +1,20 @@
 import { Lines, ScrollTitle, TextScrollAnimation } from '@/components';
+import { ScrollAnimationTransform } from '@/components/scroll-animation';
 import { Separator, Text } from '@/components/ui';
 import { aboutText } from '@/constants/texts';
 import { cn } from '@/utils';
 
 const AboutViewBackgroundSection = ({ className, ...props }) => {
+  const animationConfig = {
+    useScrollConfig: { offset: ['1 1', '1 0'] },
+    prop: '--y',
+    propPoints: ['0%', '100%'],
+  };
+
   return (
     <section
       className={cn(
-        'relative flex w-full flex-col items-center pb-lg pt-md',
+        'relative flex w-full flex-col items-center pb-lg lg:pt-md',
         className,
       )}
       {...props}
@@ -21,42 +28,38 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
           <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
 
-        <section className='space-y-xs sm:max-w-lg sm:justify-self-end'>
-          <Text className='text-muted-content max-sm:text-center sm:indent-4'>
-            {aboutText}
-          </Text>
-
-          <Text className='text-muted-content max-sm:text-center sm:indent-4'>
-            {aboutText}
-          </Text>
-        </section>
+        <Text className='text-muted-content max-sm:text-center sm:max-w-lg sm:justify-self-end sm:indent-4'>
+          {aboutText} {aboutText}
+        </Text>
       </section>
 
       <section className='grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-md'>
-        <span className='size-full rounded-3xl bg-blue-500 max-md:aspect-[1/1.4]' />
+        <ScrollAnimationTransform config={animationConfig}>
+          <div className='h-1/2 translate-y-[--y] rounded-3xl bg-blue-500 max-sm:hidden md:h-2/3 md:translate-y-[calc(var(--y)/2)]' />
+        </ScrollAnimationTransform>
 
-        <section className='h-fit md:col-end-3 md:py-md'>
+        <section className='sm:pb-md'>
+          <div className='mb-md aspect-video w-full rounded-3xl bg-blue-500' />
+
           <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>
             • Background
           </Text.Subtitle>
 
           <Separator className='mb-sm' />
 
-          <section className='space-y-sm'>
-            <Text className='text-xl font-medium'>
-              <TextScrollAnimation
-                className='sm:first:*:ml-4'
-                text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat officiis inventore eius facere sunt ut culpa. Eaque iste pariatur a doloribus enim alias rerum! Ab ex incidunt, aliquid nostrum rem, non quasi molestiae eos dolorum quo labore repudiandae minus alias?'
-              />
-            </Text>
+          <Text className='mb-sm text-xl font-medium'>
+            <TextScrollAnimation
+              className='sm:first:*:ml-4'
+              text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat officiis inventore eius facere sunt ut culpa. Eaque iste pariatur a doloribus enim alias rerum! Ab ex incidunt, aliquid nostrum rem, non quasi molestiae eos dolorum quo labore repudiandae minus alias?'
+            />
+          </Text>
 
-            <Text className='text-xl font-medium'>
-              <TextScrollAnimation
-                className='sm:first:*:ml-4'
-                text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci explicabo similique cum maxime praesentium nam inventore reiciendis iste ad, sequi, eligendi rem eum maiores. Aliquid beatae voluptatem praesentium perferendis quam?'
-              />
-            </Text>
-          </section>
+          <Text className='text-xl font-medium'>
+            <TextScrollAnimation
+              className='sm:first:*:ml-4'
+              text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci explicabo similique cum maxime praesentium nam inventore reiciendis iste ad, sequi, eligendi rem eum maiores. Aliquid beatae voluptatem praesentium perferendis quam?'
+            />
+          </Text>
         </section>
       </section>
 
