@@ -42,7 +42,7 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
           <div className='mb-md aspect-video w-full rounded-3xl bg-blue-500' />
 
           <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>
-            • Background
+            · Background
           </Text.Subtitle>
 
           <Separator className='mb-sm' />

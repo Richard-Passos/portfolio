@@ -32,7 +32,7 @@ const AboutViewExtraSection = ({ className, ...props }) => {
             key={title}
           >
             <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>
-              • {title}
+              · {title}
             </Text.Subtitle>
 
             <Separator className='mb-sm' />

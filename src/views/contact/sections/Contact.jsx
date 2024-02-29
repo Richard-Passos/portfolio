@@ -1,4 +1,4 @@
-import { HorizontalScroll, LocalTime, Section, SocialNav } from '@/components';
+import { HorizontalScroll, Section, SocialNav } from '@/components';
 import { Link } from '@/components/ui';
 import { PaperPlaneIcon } from '@/components/ui/icon/icons';
 import { Text } from '@/components/ui/text';
@@ -6,17 +6,6 @@ import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
 import Form from '../form';
-
-const EXTRA_INFO = [
-  {
-    title: 'Availability',
-    content: personalInfo.availabilityMessage,
-  },
-  {
-    title: 'Local time',
-    content: <LocalTime key='local-time' />,
-  },
-];
 
 const ContactViewContactSection = ({ className, ...props }) => {
   return (
@@ -27,17 +16,6 @@ const ContactViewContactSection = ({ className, ...props }) => {
       )}
       {...props}
     >
-      {/* <ul className='mb-sm grid h-fit w-full gap-sm md:grid-cols-2'>
-        {EXTRA_INFO.map(({ title, content }) => (
-          <li
-            className='flex h-12 items-center rounded-sm border bg-main px-4'
-            key={title}
-          >
-            <Text className='text-xs'>{content}</Text>
-          </li>
-        ))}
-      </ul> */}
-
       <div className='mb-sm rounded-lg border bg-main p-sm shadow-md max-sm:w-full sm:p-[calc(var(--spacing-sm)*1.5)] sm:shadow-lg'>
         <section className='mb-md space-y-6'>
           <Text.Title>Send a message</Text.Title>
@@ -82,7 +60,7 @@ const ContactViewContactSection = ({ className, ...props }) => {
               baseVelocity={i % 2 === 0 ? -1 : 1.5}
               className='text-[min(32vmin,16rem)]/[1] font-extrabold uppercase tracking-tighter text-muted [--gap:.2em]'
             >
-              <span>Contact me</span> •
+              <span>Contact me</span> ·
             </HorizontalScroll>
           </li>
         ))}

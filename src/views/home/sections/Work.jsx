@@ -128,13 +128,13 @@ const ListWorkPage = ({ className, ...props }) => {
         {content.map((content, i) => (
           <ListHorizontalScroll.Item
             baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
-            className='[--gap:theme(spacing.8)]'
+            className='[--gap:theme(spacing.4)]'
             key={content}
           >
-            <span>{content}</span> •{' '}
+            <span>{content}</span> ·{' '}
             <span className='opacity-30 dark:opacity-10'>{content}</span>{' '}
-            <span className='opacity-30 dark:opacity-10'>•</span>{' '}
-            <span className='opacity-30 dark:opacity-10'>{content}</span> •
+            <span className='opacity-30 dark:opacity-10'>·</span>{' '}
+            <span className='opacity-30 dark:opacity-10'>{content}</span> ·
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll>

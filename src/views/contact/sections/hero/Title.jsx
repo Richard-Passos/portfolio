@@ -7,7 +7,7 @@ const ContactViewHeroTitleSection = ({ className, ...props }) => {
     <TextTitle
       asChild
       className={cn(
-        'relative z-20 mb-lg w-9/10 max-w-screen-lg max-sm:text-center sm:-mb-md',
+        'mb-lg w-9/10 max-w-screen-lg max-sm:text-center',
         className,
       )}
       variants={{ size: 'lg' }}

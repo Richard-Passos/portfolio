@@ -1,10 +1,26 @@
-import { Lines } from '@/components';
+import { Lines, LocalTime } from '@/components';
 import { Text } from '@/components/ui/text';
+import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
 import HorizontalScroll from './HorizontalScroll';
 import StatsChanger from './StatsChanger';
 import Title from './Title';
+
+const EXTRA_INFO = [
+  {
+    title: 'Availability',
+    content: personalInfo.availabilityMessage,
+  },
+  {
+    title: 'Local time',
+    content: <LocalTime key='local-time' />,
+  },
+  {
+    title: 'Location',
+    content: `${personalInfo.location.country}, ${personalInfo.location.state}`,
+  },
+];
 
 const ContactViewHeroSection = ({ className, ...props }) => {
   return (
@@ -17,21 +33,32 @@ const ContactViewHeroSection = ({ className, ...props }) => {
     >
       <Title />
 
-      <div className='relative flex w-9/10 max-w-screen-lg justify-between gap-md max-sm:flex-col'>
-        <div className='flex grow flex-col justify-between sm:mt-md sm:pt-md'>
+      <div className='relative grid w-9/10 max-w-screen-lg items-end gap-md sm:grid-cols-2'>
+        <div className='flex h-fit flex-col justify-between sm:py-md'>
+          <HorizontalScroll />
+
+          <Text className='mb-sm max-w-xs text-muted-content'>
+            Ready for lift-off? Ping, tweet, message or poke — and we will get
+            back as soon as possible.
+          </Text>
+
           <StatsChanger />
 
-          <div className='mt-md'>
-            <HorizontalScroll />
-
-            <Text className='ml-sm max-w-xs text-muted-content max-sm:mr-sm sm:pb-md md:ml-md'>
-              Ready for lift-off? Ping, tweet, message or poke — and we will get
-              back as soon as possible.
-            </Text>
-          </div>
+          <ul className='grid w-full gap-sm lg:grid-cols-3'>
+            {EXTRA_INFO.map(({ title, content }) => (
+              <li
+                className='flex h-12 items-center rounded-sm border bg-main px-4'
+                key={title}
+              >
+                <Text className='text-xs font-medium text-muted-content'>
+                  {content}
+                </Text>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className='relative z-10 aspect-[1/1.4] w-full max-w-md rounded-3xl bg-red-500 shadow-lg max-sm:-order-1 max-sm:hidden' />
+        <div className='relative z-10 aspect-[1/1.4] h-fit w-full rounded-3xl bg-red-500 shadow-md max-sm:hidden' />
       </div>
 
       <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-20' />

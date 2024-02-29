@@ -24,10 +24,7 @@ const ContactViewHeroHorizontalScrollSection = ({ className, ...props }) => {
             className='font-medium'
             variants={{ size: 'lg' }}
           >
-            <span>
-              Get in touch · 保持联系 · Ponerse en contacto · Neem contact op
-              ·&nbsp;
-            </span>
+            <span>Hello · Olá · Ciao · Salut · 你好</span>
           </TextTitle>
         </HorizontalScroll>
       </div>

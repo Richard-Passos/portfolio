@@ -8,7 +8,7 @@ const ServicesNumber = ({ className, index, ...props }) => {
       className={cn('text-xs font-semibold text-muted-content', className)}
       {...props}
     >
-      • {`${index + 1}`.padStart(2, '0')}
+      · {`${index + 1}`.padStart(2, '0')}
     </Text>
   );
 };

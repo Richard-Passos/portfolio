@@ -66,7 +66,7 @@ const NextPageLinkContent = ({ className, variants, text, ...props }) => {
       {...props}
     >
       <HorizontalScroll>
-        <span>{text}</span> •
+        <span>{text}</span> ·
       </HorizontalScroll>
     </Text.Title>
   );

@@ -1,6 +1,6 @@
 import { ScrollTitle, Section, Services } from '@/components';
 import { ScrollAnimationTransform } from '@/components/scroll-animation';
-import { Separator, Text } from '@/components/ui';
+import { Separator } from '@/components/ui';
 import { services } from '@/constants';
 import { cn } from '@/utils';
 
