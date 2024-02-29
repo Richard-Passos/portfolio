@@ -1,4 +1,5 @@
 import { Lines, LocalTime } from '@/components';
+import { ScrollAnimationTransform } from '@/components/scroll-animation';
 import { Text } from '@/components/ui/text';
 import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
@@ -23,6 +24,14 @@ const EXTRA_INFO = [
 ];
 
 const ContactViewHeroSection = ({ className, ...props }) => {
+  const animationConfig = {
+    useScrollConfig: {
+      offset: ['0 1', '0 0'],
+    },
+    prop: '--y',
+    propPoints: [1, 0],
+  };
+
   return (
     <section
       className={cn(
@@ -47,18 +56,21 @@ const ContactViewHeroSection = ({ className, ...props }) => {
           <ul className='grid w-full gap-sm lg:grid-cols-3'>
             {EXTRA_INFO.map(({ title, content }) => (
               <li
-                className='flex h-12 items-center rounded-sm border bg-main px-4'
+                className='rounded-sm border bg-main p-4'
                 key={title}
               >
-                <Text className='text-xs font-medium text-muted-content'>
-                  {content}
-                </Text>
+                <Text.Title className='mb-1.5 text-xs uppercase text-muted-content'>
+                  {title}
+                </Text.Title>
+
+                <Text className='text-sm'>{content}</Text>
               </li>
             ))}
           </ul>
         </div>
-
-        <div className='relative z-10 aspect-[1/1.4] h-fit w-full rounded-3xl bg-red-500 shadow-md max-sm:hidden' />
+        <ScrollAnimationTransform config={animationConfig}>
+          <div className='relative z-10 aspect-[1/1.4] h-fit w-full rounded-3xl bg-red-500 shadow-md max-sm:hidden sm:-translate-y-[var(--y)*(theme(spacing.lg)*2)]' />
+        </ScrollAnimationTransform>
       </div>
 
       <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-20' />

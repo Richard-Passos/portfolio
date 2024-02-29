@@ -24,7 +24,7 @@ const ContactViewHeroHorizontalScrollSection = ({ className, ...props }) => {
             className='font-medium'
             variants={{ size: 'lg' }}
           >
-            <span>Hello · Olá · Ciao · Salut · 你好</span>
+            <span>Hello · Olá · Ciao · Salut · 你好 ·&nbsp;</span>
           </TextTitle>
         </HorizontalScroll>
       </div>

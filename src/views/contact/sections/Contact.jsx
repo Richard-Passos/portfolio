@@ -11,14 +11,19 @@ const ContactViewContactSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'flex w-full max-w-screen-lg flex-col items-center justify-center',
+        'flex w-full flex-col items-center justify-center pb-[calc(theme(spacing.lg)*1.5)]',
         className,
       )}
       {...props}
     >
-      <div className='mb-sm rounded-lg border bg-main p-sm shadow-md max-sm:w-full sm:p-[calc(var(--spacing-sm)*1.5)] sm:shadow-lg'>
-        <section className='mb-md space-y-6'>
-          <Text.Title>Send a message</Text.Title>
+      <div className='mb-sm rounded-lg border bg-main p-sm shadow-md max-sm:w-full sm:p-[calc(var(--spacing-sm)*1.5)]'>
+        <section className='mb-md'>
+          <Text.Title className='mb-6 text-base font-medium'>
+            To:{' '}
+            <span className='ml-2 rounded-sm bg-muted px-3 py-1'>
+              {personalInfo.email}
+            </span>
+          </Text.Title>
 
           <Form />
         </section>
@@ -53,7 +58,7 @@ const ContactViewContactSection = ({ className, ...props }) => {
         ))}
       </nav>
 
-      <ul className='absolute inset-y-0 left-1/2 top-[calc(var(--spacing-lg)/2)] -z-20 flex w-screen -translate-x-1/2 flex-col justify-around max-sm:hidden'>
+      <ul className='absolute inset-y-[calc(var(--spacing-lg)/2)] left-1/2 -z-20 flex w-screen -translate-x-1/2 flex-col justify-around max-sm:hidden'>
         {[...Array(3)].map((_, i) => (
           <li key={i}>
             <HorizontalScroll
