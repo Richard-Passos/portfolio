@@ -91,10 +91,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
             <GridPattern className='inset-[--inset] top-0 rounded-3xl' />
           </div>
 
-          <ScrollIndicator
-            className='absolute bottom-[min(9.5vw,3.75rem)] right-[min(10vw,theme(spacing.16))] rounded-sm bg-muted transition-transform duration-300 hover:scale-90 focus-visible:outline-content'
-            href='#scrollTo'
-          />
+          <ScrollIndicator className='absolute bottom-[min(9.5vw,3.75rem)] right-1/2 max-sm:translate-x-1/2 sm:right-[min(10vw,theme(spacing.16))]' />
         </section>
       </ScrollAnimation>
     </ScrollAnimation.Transform>

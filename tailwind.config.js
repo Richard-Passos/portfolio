@@ -124,7 +124,7 @@ module.exports = {
         'scroll-indicator': {
           to: {
             transform:
-              'translate(var(--tw-translate-y), var(--final-y, 250%)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
+              'translate(var(--tw-translate-y), var(--final-y, 100%)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))',
           },
         },
         'dots-loader': {

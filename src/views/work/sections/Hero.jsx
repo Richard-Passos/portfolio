@@ -68,10 +68,7 @@ const WorkViewHeroSection = ({ theme, className, ...props }) => {
                   </ScrollAnimationTransform>
                 </div>
 
-                <ScrollIndicator
-                  className='absolute bottom-[calc(var(--p)/2)] rounded-sm bg-muted transition-transform duration-300 hover:scale-90 focus-visible:outline-content'
-                  href='#scrollTo'
-                />
+                <ScrollIndicator className='absolute bottom-[calc(var(--p)/2)]' />
               </div>
 
               <GridPattern className='rounded-3xl' />
@@ -84,7 +81,7 @@ const WorkViewHeroSection = ({ theme, className, ...props }) => {
                     baseVelocity={i % 2 === 0 ? 1 : -1.5}
                     className='text-[min(32vmin,16rem)]/[1] font-extrabold uppercase tracking-tighter text-muted [--gap:.2em]'
                   >
-                    <span>Beyond</span> •
+                    <span>Beyond</span> ·
                   </HorizontalScroll>
                 </li>
               ))}
