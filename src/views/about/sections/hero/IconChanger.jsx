@@ -1,18 +1,12 @@
-'use client';
-
-import { useState } from 'react';
-
-import { Button } from '@/components';
-import { magneticButtonSizes } from '@/components/button/Magnetic';
+import { DataChanger } from '@/components';
+import { MagneticButton } from '@/components/button';
 import { ScrollAnimationTransform } from '@/components/scroll-animation';
 import { Icon } from '@/components/ui';
-import { cn, isFunctionThanCall } from '@/utils';
+import { cn } from '@/utils';
 
 const ICONS = ['Smile', 'Globe', 'Rocket'];
 
 const AboutViewHeroIconChangerSection = ({ className, ...props }) => {
-  const [activeIdx, setActiveIdx] = useState(0);
-
   const animationConfig = {
     x: {
       prop: 'x',
@@ -31,29 +25,37 @@ const AboutViewHeroIconChangerSection = ({ className, ...props }) => {
 
   return (
     <ScrollAnimationTransform config={animationConfig.x}>
-      <Button
-        className={cn(
-          'z-10 col-end-3 aspect-square px-0',
-          magneticButtonSizes.lg,
-          className,
-        )}
+      <DataChanger
+        className={cn('z-10 col-end-3', className)}
+        lastIdx={ICONS.length - 1}
         {...props}
-        onClick={(ev) => {
-          setActiveIdx((state) => (state >= ICONS.length - 1 ? 0 : state + 1));
-
-          isFunctionThanCall(props.onClick, ev);
-        }}
       >
-        <ScrollAnimationTransform
-          config={animationConfig.rotate}
-          key={activeIdx}
-        >
-          <Icon
-            className='size-[40%]'
-            name={ICONS[activeIdx]}
-          />
-        </ScrollAnimationTransform>
-      </Button>
+        <DataChanger.Action asChild>
+          <MagneticButton
+            aria-label='Change icon'
+            className='[&_svg]:size-[40%]'
+            limit={0.2}
+            variants={{ size: 'lg' }}
+          >
+            <ScrollAnimationTransform config={animationConfig.rotate}>
+              <div className='relative flex size-full items-center justify-center'>
+                {ICONS.map((icon, i) => (
+                  <DataChanger.Item
+                    asChild
+                    idx={i}
+                    key={icon}
+                  >
+                    <Icon
+                      className='transition-[clip-path] [clip-path:inset(100%_0_0_0)] data-active:duration-500 data-active:[clip-path:inset(0)]'
+                      name={icon}
+                    />
+                  </DataChanger.Item>
+                ))}
+              </div>
+            </ScrollAnimationTransform>
+          </MagneticButton>
+        </DataChanger.Action>
+      </DataChanger>
     </ScrollAnimationTransform>
   );
 };
