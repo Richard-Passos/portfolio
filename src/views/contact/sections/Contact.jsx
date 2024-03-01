@@ -1,22 +1,78 @@
-import { HorizontalScroll, Section, SocialNav } from '@/components';
-import { Link } from '@/components/ui';
+import { HorizontalScroll, LocalTime, Section, SocialNav } from '@/components';
+import { Icon, Link, Text } from '@/components/ui';
 import { PaperPlaneIcon } from '@/components/ui/icon/icons';
-import { Text } from '@/components/ui/text';
 import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
 import Form from '../form';
+import { CONTACT_VIEW_HERO_SECTION_ICONS } from './hero/Root';
+
+const EXTRA_INFO = [
+  {
+    title: 'Availability',
+    content: personalInfo.availabilityMessage,
+  },
+  {
+    title: 'Local time',
+    content: <LocalTime key='local-time' />,
+  },
+  {
+    title: 'Location',
+    content: `${personalInfo.location.country}, ${personalInfo.location.state}`,
+  },
+  {
+    title: 'Cleber',
+    content: 'Lorem, ipsum',
+  },
+];
 
 const ContactViewContactSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'flex w-full flex-col items-center justify-center pb-[calc(theme(spacing.lg)*1.5)]',
+        'grid w-full max-w-screen-xl gap-x-sm gap-y-md pb-[calc(theme(spacing.lg)*1.5)] max-2xl:min-h-0 sm:w-9/10 sm:gap-y-sm md:grid-cols-3 lg:grid-cols-2 lg:gap-x-md',
         className,
       )}
       {...props}
     >
-      <div className='mb-sm rounded-lg border bg-main p-sm shadow-md max-sm:w-full sm:p-[calc(var(--spacing-sm)*1.5)]'>
+      <div className='dark w-9/10 self-end justify-self-center rounded-lg border bg-main p-sm shadow-md sm:w-full lg:p-[calc(var(--spacing-sm)*1.5)]'>
+        <div className='relative mb-sm flex w-full justify-center overflow-hidden border-t'>
+          {CONTACT_VIEW_HERO_SECTION_ICONS.map((icon) => (
+            <Icon
+              className='aspect-square h-auto w-[33.333%] fill-muted first:-translate-x-1/2 last:translate-x-1/2 odd:-mt-[15%] even:absolute even:top-0 even:-translate-y-[70%]'
+              key={icon}
+              name={icon}
+            />
+          ))}
+        </div>
+
+        <ul className='mb-sm mt-auto grid gap-xs lg:grid-cols-2'>
+          {EXTRA_INFO.map(({ title, content }) => (
+            <li
+              className='rounded-sm border bg-main p-4'
+              key={title}
+            >
+              <Text.Title className='mb-0.5 text-xs uppercase text-muted-content'>
+                {title}
+              </Text.Title>
+
+              <Text className='text-sm'>{content}</Text>
+            </li>
+          ))}
+        </ul>
+
+        <nav className='grid gap-2 lg:grid-cols-3'>
+          {personalInfo.socials.map((social, i) => (
+            <SocialNav.Item
+              index={i}
+              key={social.href}
+              {...social}
+            />
+          ))}
+        </nav>
+      </div>
+
+      <div className='h-fit w-full self-center rounded-lg border bg-main p-sm shadow-md sm:p-[calc(var(--spacing-sm)*1.5)] md:max-lg:col-span-2'>
         <section className='mb-md'>
           <Text.Title className='mb-6 text-base font-medium'>
             To:{' '}
@@ -48,21 +104,11 @@ const ContactViewContactSection = ({ className, ...props }) => {
         </section>
       </div>
 
-      <nav className='grid gap-2 max-sm:w-9/10 sm:grid-cols-3'>
-        {personalInfo.socials.map((social, i) => (
-          <SocialNav.Item
-            index={i}
-            key={social.href}
-            {...social}
-          />
-        ))}
-      </nav>
-
-      <ul className='absolute inset-y-[calc(var(--spacing-lg)/2)] left-1/2 -z-20 flex w-screen -translate-x-1/2 flex-col justify-around max-sm:hidden'>
+      <ul className='absolute inset-y-[calc(var(--spacing-lg)/2)] left-1/2 -z-20 flex w-screen -translate-x-1/2 flex-col justify-between max-sm:hidden'>
         {[...Array(3)].map((_, i) => (
           <li key={i}>
             <HorizontalScroll
-              baseVelocity={i % 2 === 0 ? -1 : 1.5}
+              baseVelocity={i % 2 === 0 ? 1 : -1.5}
               className='text-[min(32vmin,16rem)]/[1] font-extrabold uppercase tracking-tighter text-muted [--gap:.2em]'
             >
               <span>Contact me</span> ·

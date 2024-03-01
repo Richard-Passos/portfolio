@@ -1,27 +1,14 @@
-import { Lines, LocalTime } from '@/components';
+import { Lines } from '@/components';
 import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { Icon } from '@/components/ui';
 import { Text } from '@/components/ui/text';
-import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
 import HorizontalScroll from './HorizontalScroll';
 import StatsChanger from './StatsChanger';
 import Title from './Title';
 
-const EXTRA_INFO = [
-  {
-    title: 'Availability',
-    content: personalInfo.availabilityMessage,
-  },
-  {
-    title: 'Local time',
-    content: <LocalTime key='local-time' />,
-  },
-  {
-    title: 'Location',
-    content: `${personalInfo.location.country}, ${personalInfo.location.state}`,
-  },
-];
+const CONTACT_VIEW_HERO_SECTION_ICONS = ['Rocket', 'Smile', 'Globe'];
 
 const ContactViewHeroSection = ({ className, ...props }) => {
   const animationConfig = {
@@ -43,7 +30,17 @@ const ContactViewHeroSection = ({ className, ...props }) => {
       <Title />
 
       <div className='relative grid w-9/10 max-w-screen-lg items-end gap-md sm:grid-cols-2'>
-        <div className='flex h-fit flex-col justify-between sm:py-md'>
+        <div className='flex h-fit flex-col justify-between sm:pb-md'>
+          <div className='relative mb-md flex w-full justify-center overflow-hidden border-b'>
+            {CONTACT_VIEW_HERO_SECTION_ICONS.map((icon) => (
+              <Icon
+                className='aspect-square h-auto w-[33.333%] fill-muted first:-translate-x-full last:translate-x-full odd:absolute odd:bottom-0 odd:translate-y-[70%] even:-mb-[15%]'
+                key={icon}
+                name={icon}
+              />
+            ))}
+          </div>
+
           <HorizontalScroll />
 
           <Text className='mb-sm max-w-xs text-muted-content'>
@@ -52,21 +49,6 @@ const ContactViewHeroSection = ({ className, ...props }) => {
           </Text>
 
           <StatsChanger />
-
-          <ul className='grid w-full gap-sm lg:grid-cols-3'>
-            {EXTRA_INFO.map(({ title, content }) => (
-              <li
-                className='rounded-sm border bg-main p-4'
-                key={title}
-              >
-                <Text.Title className='mb-1.5 text-xs uppercase text-muted-content'>
-                  {title}
-                </Text.Title>
-
-                <Text className='text-sm'>{content}</Text>
-              </li>
-            ))}
-          </ul>
         </div>
         <ScrollAnimationTransform config={animationConfig}>
           <div className='relative z-10 aspect-[1/1.4] h-fit w-full rounded-3xl bg-red-500 shadow-md max-sm:hidden sm:-translate-y-[var(--y)*(theme(spacing.lg)*2.5)]' />
@@ -80,3 +62,4 @@ const ContactViewHeroSection = ({ className, ...props }) => {
 };
 
 export default ContactViewHeroSection;
+export { CONTACT_VIEW_HERO_SECTION_ICONS };
