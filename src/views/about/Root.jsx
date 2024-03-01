@@ -7,7 +7,7 @@ const AboutView = ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout dark mx-auto flex max-w-bounds flex-col items-center justify-center',
+        'dark-layout dark flex w-full max-w-bounds flex-col items-center justify-center',
         className,
       )}
       {...props}

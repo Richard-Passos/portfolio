@@ -6,7 +6,7 @@ const ContactView = ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout dark mx-auto flex w-full max-w-bounds flex-col items-center',
+        'dark-layout dark flex w-full max-w-bounds flex-col items-center',
         className,
       )}
       {...props}

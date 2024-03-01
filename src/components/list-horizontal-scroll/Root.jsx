@@ -3,7 +3,7 @@ import { cn } from '@/utils';
 const ListHorizontalScroll = ({ className, ...props }) => {
   return (
     <ul
-      className={cn('w-full', className)}
+      className={cn('w-full overflow-x-clip', className)}
       {...props}
     />
   );
