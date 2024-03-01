@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    @apply [--font-blank-space:.25em] [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)] [--spacing-lg:calc(var(--spacing-md)*2)] [--spacing-md:clamp(theme(spacing.7),14vh,theme(spacing.14))] [--spacing-sm:calc(var(--spacing-md)/2)] [--spacing-xl:calc(var(--spacing-md)*4)] [--spacing-xs:calc(var(--spacing-md)/4)];
+    @apply text-content [--font-blank-space:.25em] [--max-h:calc(var(--max-w)/1.778)] [--max-w:theme(screens.2xl)] [--spacing-lg:calc(var(--spacing-md)*2)] [--spacing-md:clamp(theme(spacing.7),14vh,theme(spacing.14))] [--spacing-sm:calc(var(--spacing-md)/2)] [--spacing-xl:calc(var(--spacing-md)*4)] [--spacing-xs:calc(var(--spacing-md)/4)];
 
     --info: 199 77% 54%;
     --info-a: 199 77% 50%;
@@ -28,8 +28,6 @@
   }
 
   .light {
-    @apply text-content;
-
     --main: 0 0% 98%;
     --active: 0 0% 96.5%;
     --content: 0 0% 4.7%;
@@ -63,8 +61,6 @@
 
   .dark,
   body:has(.dark-layout) {
-    @apply text-content;
-
     --main: 0 0% 4.7%;
     --active: 0 0% 5.7%;
     --content: 0 0% 98%;
