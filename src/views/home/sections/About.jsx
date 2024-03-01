@@ -15,7 +15,10 @@ import { cn } from '@/utils';
 const HomeViewAboutSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn('relative flex flex-col items-center gap-lg', className)}
+      className={cn(
+        'relative flex flex-col items-center gap-lg overflow-x-clip',
+        className,
+      )}
       {...props}
     >
       <h2 className='flex w-full flex-col'>

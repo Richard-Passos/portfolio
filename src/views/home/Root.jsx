@@ -3,7 +3,7 @@ import Texts from './texts';
 
 const HomeView = () => {
   return (
-    <main className='mx-auto max-w-bounds'>
+    <main className='w-full max-w-bounds'>
       <Sections.Hero theme='light' />
 
       <Sections.Work
