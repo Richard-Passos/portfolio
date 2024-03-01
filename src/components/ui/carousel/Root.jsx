@@ -40,7 +40,7 @@ const Carousel = forwardRef(({ options, className, ...props }, ref) => {
 });
 Carousel.displayName = 'Carousel';
 
-const DataChangerWithProvider = (props, ref) => {
+const CarouselWithProvider = (props, ref) => {
   return (
     <CarouselProvider>
       <Carousel
@@ -51,4 +51,4 @@ const DataChangerWithProvider = (props, ref) => {
   );
 };
 
-export default forwardRef(DataChangerWithProvider);
+export default forwardRef(CarouselWithProvider);

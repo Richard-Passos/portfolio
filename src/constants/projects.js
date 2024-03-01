@@ -1,6 +1,8 @@
+const PROJECTS_BASE_URL = '/projects';
+
 const projects = [
   {
-    href: '#00',
+    href: `${PROJECTS_BASE_URL}/0`,
     title: 'PROJECT-00',
     roles: ['design'],
     year: 2024,
@@ -12,7 +14,7 @@ const projects = [
     },
   },
   {
-    href: '#01',
+    href: `${PROJECTS_BASE_URL}/1`,
     title: 'PROJECT-01',
     roles: ['development'],
     year: 2024,
@@ -24,7 +26,7 @@ const projects = [
     },
   },
   {
-    href: '#02',
+    href: `${PROJECTS_BASE_URL}/2`,
     title: 'PROJECT-02',
     roles: ['design', 'development'],
     year: 2024,
@@ -36,7 +38,7 @@ const projects = [
     },
   },
   {
-    href: '#03',
+    href: `${PROJECTS_BASE_URL}/3`,
     title: 'PROJECT-03',
     roles: ['design', 'development'],
     year: 2024,
@@ -48,7 +50,7 @@ const projects = [
     },
   },
   {
-    href: '#04',
+    href: `${PROJECTS_BASE_URL}/4`,
     title: 'PROJECT-04',
     roles: ['design', 'development'],
     year: 2024,
@@ -60,7 +62,7 @@ const projects = [
     },
   },
   {
-    href: '#05',
+    href: `${PROJECTS_BASE_URL}/5`,
     title: 'PROJECT-05',
     roles: ['design', 'development'],
     year: 2024,
@@ -72,7 +74,7 @@ const projects = [
     },
   },
   {
-    href: '#06',
+    href: `${PROJECTS_BASE_URL}/6`,
     title: 'PROJECT-06',
     roles: ['design', 'development'],
     year: 2024,
@@ -84,7 +86,7 @@ const projects = [
     },
   },
   {
-    href: '#07',
+    href: `${PROJECTS_BASE_URL}/7`,
     title: 'PROJECT-07',
     roles: ['design', 'development'],
     year: 2024,
@@ -96,7 +98,7 @@ const projects = [
     },
   },
   {
-    href: '#08',
+    href: `${PROJECTS_BASE_URL}/8`,
     title: 'PROJECT-08',
     roles: ['design', 'development'],
     year: 2024,
@@ -108,7 +110,7 @@ const projects = [
     },
   },
   {
-    href: '#09',
+    href: `${PROJECTS_BASE_URL}/9`,
     title: 'PROJECT-09',
     roles: ['design', 'Development'],
     year: 2024,
@@ -122,3 +124,4 @@ const projects = [
 ];
 
 export default projects;
+export { PROJECTS_BASE_URL };
