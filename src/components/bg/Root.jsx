@@ -8,7 +8,7 @@ const Bg = ({ asChild, className, ...props }) => {
   return (
     <Tag
       className={cn(
-        'absolute inset-y-0 left-1/2 -z-50 w-screen -translate-x-1/2 bg-main transition-bg',
+        'absolute inset-y-0 -z-50 w-screen bg-main transition-bg',
         className,
       )}
       {...props}

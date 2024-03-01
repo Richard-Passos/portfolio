@@ -11,7 +11,7 @@ const Footer = ({ className, ...props }) => {
   return (
     <footer
       className={cn(
-        'relative mx-auto flex max-w-bounds flex-col items-center overflow-y-clip pt-[--spacing-t] [--spacing-t:theme(spacing.24)]',
+        'relative flex w-full max-w-bounds flex-col items-center overflow-y-clip pt-[--spacing-t] [--spacing-t:theme(spacing.24)]',
         className,
       )}
       {...props}
