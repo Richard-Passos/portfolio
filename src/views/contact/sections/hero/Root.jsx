@@ -69,7 +69,7 @@ const ContactViewHeroSection = ({ className, ...props }) => {
           </ul>
         </div>
         <ScrollAnimationTransform config={animationConfig}>
-          <div className='relative z-10 aspect-[1/1.4] h-fit w-full rounded-3xl bg-red-500 shadow-md max-sm:hidden sm:-translate-y-[var(--y)*(theme(spacing.lg)*2)]' />
+          <div className='relative z-10 aspect-[1/1.4] h-fit w-full rounded-3xl bg-red-500 shadow-md max-sm:hidden sm:-translate-y-[var(--y)*(theme(spacing.lg)*2.5)]' />
         </ScrollAnimationTransform>
       </div>
 
