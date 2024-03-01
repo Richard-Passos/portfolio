@@ -7,7 +7,7 @@ const WorkView = ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'mx-auto flex max-w-bounds flex-col items-center justify-center',
+        'flex w-full max-w-bounds flex-col items-center justify-center',
         className,
       )}
       {...props}

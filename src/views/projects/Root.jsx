@@ -21,7 +21,7 @@ const ProjectsView = async ({ className, ...props }) => {
   return (
     <main
       className={cn(
-        'dark-layout dark relative mx-auto flex max-w-bounds flex-col items-center gap-lg py-lg',
+        'dark-layout dark relative flex w-full max-w-bounds flex-col items-center gap-lg py-lg',
         className,
       )}
       {...props}
