@@ -17,7 +17,10 @@ const metadata = {
 
 const Layout = ({ children }) => {
   return (
-    <html lang='en'>
+    <html
+      className='light'
+      lang='en'
+    >
       <Providers.GlobalState>
         <body
           className={cn(
