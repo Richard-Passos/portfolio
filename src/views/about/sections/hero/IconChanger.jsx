@@ -27,6 +27,7 @@ const AboutViewHeroIconChangerSection = ({ className, ...props }) => {
     <ScrollAnimationTransform config={animationConfig.x}>
       <DataChanger
         className={cn('z-10 col-end-3', className)}
+        duration={2500}
         lastIdx={ICONS.length - 1}
         {...props}
       >

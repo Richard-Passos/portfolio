@@ -27,9 +27,12 @@ const DataChanger = forwardRef((props, ref) => {
 });
 DataChanger.displayName = 'DataChanger';
 
-const DataChangerWithProvider = ({ lastIdx, ...props }, ref) => {
+const DataChangerWithProvider = ({ lastIdx, duration, ...props }, ref) => {
   return (
-    <DataChangerProvider lastIdx={lastIdx}>
+    <DataChangerProvider
+      duration={duration}
+      lastIdx={lastIdx}
+    >
       <DataChanger
         ref={ref}
         {...props}

@@ -4,28 +4,23 @@ import { createContext, useState } from 'react';
 
 import { useTimer } from '@/hooks';
 
-const DATA_CHANGER_TIMER_DURATION = 5000; //ms
-
 const DataChangerContext = createContext({
   activeIdx: 0,
   handleSetAciveIdx: () => {},
   resetTimer: () => {},
   isPaused: false,
   setIsPaused: () => {},
+  duration: 5000, //ms
 });
 
-const DataChangerProvider = ({ lastIdx, value, ...props }) => {
+const DataChangerProvider = ({ lastIdx, duration = 5000, value, ...props }) => {
   const [activeIdx, setActiveIdx] = useState(0),
     [isPaused, setIsPaused] = useState(false);
 
   const handleSetAciveIdx = () =>
     setActiveIdx((state) => (state >= lastIdx ? 0 : state + 1));
 
-  const resetTimer = useTimer(
-    isPaused,
-    handleSetAciveIdx,
-    DATA_CHANGER_TIMER_DURATION,
-  );
+  const resetTimer = useTimer(isPaused, handleSetAciveIdx, duration);
 
   return (
     <DataChangerContext.Provider
@@ -35,6 +30,7 @@ const DataChangerProvider = ({ lastIdx, value, ...props }) => {
         resetTimer,
         isPaused,
         setIsPaused,
+        duration,
         ...value,
       }}
       {...props}
@@ -43,4 +39,4 @@ const DataChangerProvider = ({ lastIdx, value, ...props }) => {
 };
 
 export default DataChangerContext;
-export { DataChangerProvider, DATA_CHANGER_TIMER_DURATION };
+export { DataChangerProvider };

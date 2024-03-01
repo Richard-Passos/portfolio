@@ -5,17 +5,16 @@ import { forwardRef, useContext } from 'react';
 import { TIMERBAR_UPDATE_DELAY } from '@/components/ui/timerbar';
 import { TIMERBAR_INDICATOR_TRANSITION_DURATION } from '@/components/ui/timerbar/Indicator';
 import { DataChangerContext } from '@/contexts';
-import { DATA_CHANGER_TIMER_DURATION } from '@/contexts/DataChanger';
 
 const { Timerbar } = require('@/components/ui');
 
 const DataChangerTimerbar = ({ variants, ...props }, ref) => {
-  const { activeIdx, isPaused } = useContext(DataChangerContext);
+  const { activeIdx, isPaused, duration } = useContext(DataChangerContext);
 
   return (
     <Timerbar
       duration={
-        DATA_CHANGER_TIMER_DURATION -
+        duration -
         TIMERBAR_UPDATE_DELAY -
         TIMERBAR_INDICATOR_TRANSITION_DURATION
       }
