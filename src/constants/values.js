@@ -13,7 +13,7 @@ const values = [
   },
   {
     icon: 'Grid',
-    title: 'Constant growth',
+    title: 'Quality',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
   },
