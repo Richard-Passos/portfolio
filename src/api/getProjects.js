@@ -3,10 +3,10 @@ import { baseUrl } from '@/constants';
 const getProjects = async (params = '', init = {}) => {
   const res = await fetch(
     `${baseUrl}/api/projects${params ? '?' + params : ''}`,
-    init,
+    { cache: 'no-cache' },
   );
 
-  const data = await res.json();
+  const { data } = await res.json();
 
   return data;
 };

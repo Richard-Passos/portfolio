@@ -8,7 +8,7 @@ import {
 import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui';
 import { PlusIcon } from '@/components/ui/icon/icons';
-import { selectedProjects } from '@/constants';
+import { projectsSelecteds } from '@/constants/projects';
 import { cn } from '@/utils';
 
 const WorkViewProjectsSection = ({ theme, className, ...props }) => {
@@ -56,7 +56,7 @@ const WorkViewProjectsSection = ({ theme, className, ...props }) => {
 };
 
 const WorkViewProjectsShowSection = () => {
-  const projects = selectedProjects.reduce(
+  const projects = projectsSelecteds.reduce(
     (obj, { img, ...data }) => ({
       data: [...obj.data, data],
       images: [...obj.images, img],

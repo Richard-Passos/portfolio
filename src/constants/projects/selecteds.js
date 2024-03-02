@@ -1,6 +1,6 @@
-const { PROJECTS_BASE_URL } = require('./projects');
+import { PROJECTS_BASE_URL } from './root';
 
-const selectedProjects = [
+const projectsSelecteds = [
   {
     href: `${PROJECTS_BASE_URL}/0`,
     title: 'PROJECT-00',
@@ -58,4 +58,4 @@ const selectedProjects = [
   },
 ];
 
-export default selectedProjects;
+export default projectsSelecteds;
