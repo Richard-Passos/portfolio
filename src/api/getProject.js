@@ -7,6 +7,12 @@ const getProject = (id, init) => {
   return { data, images };
 };
 
-const _fetch = async (pathname, init) => {};
+const _fetch = async (pathname, init) => {
+  const res = await fetch(`${baseUrl}/api/projects${pathname}`, init);
+
+  const { data } = await res.json();
+
+  return data;
+};
 
 export default getProject;
