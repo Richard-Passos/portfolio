@@ -35,7 +35,7 @@ const WorkViewHeroSection = ({ theme, className, ...props }) => {
       <ScrollAnimationTransform config={animationConfig.scale}>
         <section
           className={cn(
-            'relative w-full [--h:100vh] [--header-h:88px] sm:min-h-[calc(var(--h)*1.5)] 2xl:[--h:--max-h]',
+            'relative w-full [--h:100vh] sm:min-h-[calc(var(--h)*1.5)] 2xl:[--h:--max-h]',
             className,
           )}
           {...props}
