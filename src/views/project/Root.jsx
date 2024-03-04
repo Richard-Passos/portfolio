@@ -9,11 +9,11 @@ const ProjectView = async ({ promises }) => {
 
   return (
     <main className='w-full max-w-bounds'>
-      <Sections.Hero data={data} />
+      {/* <Sections.Hero data={data} />
 
       <Suspense fallback={<DotsLoader />}>
         <Sections.Images promise={promises.images} />
-      </Suspense>
+      </Suspense> */}
     </main>
   );
 };

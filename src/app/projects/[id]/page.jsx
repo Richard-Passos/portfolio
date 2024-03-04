@@ -8,7 +8,7 @@ const ProjectPage = ({ params: { id } }) => {
   return <ProjectView promises={promises} />;
 };
 
-const generateStaticParams = async () => {
+const generateStaticParams = () => {
   return projects.map((_, i) => ({ id: i.toString() }));
 };
 
