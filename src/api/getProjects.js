@@ -1,8 +1,6 @@
-import { baseUrl } from '@/constants';
-
 const getProjects = async (params, init) => {
   const res = await fetch(
-    `${baseUrl}/api/projects${params ? '?' + params : ''}`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects${params ? '?' + params : ''}`,
     init,
   );
 

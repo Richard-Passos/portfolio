@@ -41,7 +41,6 @@
     "@reduxjs/toolkit": "^2.2.1",
     "@splidejs/react-splide": "^0.7.12",
     "@studio-freight/react-lenis": "^0.0.46",
-    "@types/react": "^18.2.66",
     "class-variance-authority": "^0.7.0",
     "cmdk": "^1.0.0",
     "date-fns": "^3.5.0",

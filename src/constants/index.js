@@ -1,4 +1,3 @@
-export { default as baseUrl } from './baseUrl';
 export { default as languages } from './languages';
 export { default as pages } from './pages';
 export { default as personalInfo } from './personalInfo';
