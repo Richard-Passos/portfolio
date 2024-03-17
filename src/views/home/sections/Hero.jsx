@@ -36,7 +36,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
       <ScrollAnimation config={animationConfig.opacity}>
         <section
           className={cn(
-            'relative [--header-h:96px] sm:[clip-path:inset(0_-50vw_1px_-50vw)]',
+            'relative sm:[clip-path:inset(0_-50vw_1px_-50vw)]',
             theme,
             className,
           )}

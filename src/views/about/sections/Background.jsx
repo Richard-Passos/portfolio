@@ -8,7 +8,7 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
   const animationConfig = {
     useScrollConfig: { offset: ['1 1', '1 0'] },
     prop: '--y',
-    propPoints: ['0%', '100%'],
+    propPoints: ['0%', '50%'],
   };
 
   return (
@@ -35,12 +35,10 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
 
       <section className='grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-md'>
         <ScrollAnimationTransform config={animationConfig}>
-          <div className='h-1/2 translate-y-[--y] rounded-3xl bg-blue-500 max-sm:hidden md:h-2/3 md:translate-y-[calc(var(--y)/2)]' />
+          <div className='md:translate-y-[--y] rounded-3xl max-md:aspect-video w-full bg-blue-500 md:h-2/3 lg:h-9/10 lg:translate-y-[calc(var(--y)*20/90)]' />
         </ScrollAnimationTransform>
 
-        <section className='sm:pb-md'>
-          <div className='mb-md aspect-video w-full rounded-3xl bg-blue-500' />
-
+        <section className='md:py-lg'>
           <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>
             · Background
           </Text.Subtitle>

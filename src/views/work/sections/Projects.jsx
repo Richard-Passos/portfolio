@@ -8,7 +8,7 @@ import {
 import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui';
 import { PlusIcon } from '@/components/ui/icon/icons';
-import { selectedProjects } from '@/constants';
+import { projectsSelecteds } from '@/constants/projects';
 import { cn } from '@/utils';
 
 const WorkViewProjectsSection = ({ theme, className, ...props }) => {
@@ -29,11 +29,11 @@ const WorkViewProjectsSection = ({ theme, className, ...props }) => {
         />
       </h2>
 
-      <div className='mb-lg w-9/10 max-w-screen-lg'>
-        <Text className='text-xl font-medium max-sm:text-center sm:max-w-xl md:text-2xl'>
-          <TextScrollAnimation text='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit dolores adipisci voluptates dolore inventore aperiam rerum possimus culpa nemo molestiae!' />
+     <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
+        <Text className='text-muted-content max-sm:text-center sm:col-end-3 sm:max-w-lg sm:justify-self-end'>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit dolores adipisci voluptates dolore inventore aperiam rerum possimus culpa nemo molestiae!
         </Text>
-      </div>
+      </section>
 
       <div className='flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
         <WorkViewProjectsShowSection />
@@ -56,7 +56,7 @@ const WorkViewProjectsSection = ({ theme, className, ...props }) => {
 };
 
 const WorkViewProjectsShowSection = () => {
-  const projects = selectedProjects.reduce(
+  const projects = projectsSelecteds.reduce(
     (obj, { img, ...data }) => ({
       data: [...obj.data, data],
       images: [...obj.images, img],

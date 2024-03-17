@@ -17,14 +17,11 @@ const metadata = {
 
 const Layout = ({ children }) => {
   return (
-    <html
-      className='light'
-      lang='en'
-    >
+    <html lang='en'>
       <Providers.GlobalState>
         <body
           className={cn(
-            'relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app text-content',
+            'light relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app [--header-h:calc(theme(spacing.sm)*2+theme(spacing.10))]',
             font.variable,
           )}
         >

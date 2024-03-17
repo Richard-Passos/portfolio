@@ -8,7 +8,7 @@ import {
 import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui';
 import { PlusIcon } from '@/components/ui/icon/icons';
-import { selectedProjects } from '@/constants';
+import { projectsSelecteds } from '@/constants/projects';
 import { cn } from '@/utils';
 
 const HomeViewWorkSection = ({ className, ...props }) => {
@@ -61,7 +61,7 @@ const HomeViewWorkSection = ({ className, ...props }) => {
 };
 
 const ShowProjects = ({ className, ...props }) => {
-  const projects = selectedProjects.reduce(
+  const projects = projectsSelecteds.reduce(
     (obj, { img, ...data }) => ({
       data: [...obj.data, data],
       images: [...obj.images, img],

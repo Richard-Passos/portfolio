@@ -6,7 +6,7 @@ const ValuesIcon = ({ className, children, ...props }) => {
   return (
     <div
       className={cn(
-        'flex aspect-square w-12 items-center justify-center rounded-md bg-muted',
+        'flex aspect-square w-12 mb-6 items-center justify-center rounded-md bg-muted',
       )}
       {...props}
     >

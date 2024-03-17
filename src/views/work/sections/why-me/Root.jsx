@@ -21,7 +21,7 @@ const WorkViewWhyMeSection = ({ className, ...props }) => {
         <ScrollTitle title='WHY PICK' />
         <ScrollTitle
           dir='rtl'
-          title='ME UP'
+          title='ME'
         />
       </h2>
 

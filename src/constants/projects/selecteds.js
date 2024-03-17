@@ -1,6 +1,8 @@
-const selectedProjects = [
+import { PROJECTS_BASE_URL } from './root';
+
+const projectsSelecteds = [
   {
-    href: '#0',
+    href: `${PROJECTS_BASE_URL}/0`,
     title: 'PROJECT-00',
     roles: ['design', 'development'],
     img: {
@@ -11,7 +13,7 @@ const selectedProjects = [
     },
   },
   {
-    href: '#1',
+    href: `${PROJECTS_BASE_URL}/1`,
     title: 'PROJECT-01',
     roles: ['design', 'development'],
     img: {
@@ -22,7 +24,7 @@ const selectedProjects = [
     },
   },
   {
-    href: '#2',
+    href: `${PROJECTS_BASE_URL}/2`,
     title: 'PROJECT-02',
     roles: ['design', 'development'],
     img: {
@@ -33,7 +35,7 @@ const selectedProjects = [
     },
   },
   {
-    href: '#3',
+    href: `${PROJECTS_BASE_URL}/3`,
     title: 'PROJECT-03',
     roles: ['design', 'development'],
     img: {
@@ -44,7 +46,7 @@ const selectedProjects = [
     },
   },
   {
-    href: '#4',
+    href: `${PROJECTS_BASE_URL}/4`,
     title: 'PROJECT-04',
     roles: ['design', 'development'],
     img: {
@@ -56,4 +58,4 @@ const selectedProjects = [
   },
 ];
 
-export default selectedProjects;
+export default projectsSelecteds;

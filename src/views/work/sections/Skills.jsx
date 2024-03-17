@@ -19,7 +19,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
         className='mb-lg'
         options={{ slideFocus: true }}
       >
-        <div className='flex w-9/10 max-w-screen-xl items-end justify-between gap-md'>
+        <div className='flex w-9/10 max-w-screen-xl sm:items-end max-sm:flex-col justify-between gap-md'>
           <Text.Title
             className='text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
             id='carousel-skills-heading-0'
@@ -33,24 +33,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             </span>
           </Text.Title>
 
-          <Text className='max-w-md text-muted-content max-sm:hidden'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
-            cumque excepturi quo impedit dolore reiciendis unde quae dignissimos
-            inventore quis?
-          </Text>
-        </div>
-
-        <Carousel.Track>
-          {skills.hard.map((data, i) => (
-            <HomeViewSkillsSectionCarouselItem
-              idx={i}
-              key={data.title}
-              {...data}
-            />
-          ))}
-        </Carousel.Track>
-
-        <section className='flex w-9/10 max-w-screen-xl items-center gap-sm'>
+          <section className='flex items-center gap-sm w-full sm:max-w-xl'>
           <Carousel.ActiveIdx
             className='shrink-0'
             itemsLength={skills.hard.length}
@@ -70,13 +53,24 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             </HomeViewSkillsSectionCarouselAciton>
           </Carousel.Actions>
         </section>
+        </div>
+
+        <Carousel.Track>
+          {skills.hard.map((data, i) => (
+            <HomeViewSkillsSectionCarouselItem
+              idx={i}
+              key={data.title}
+              {...data}
+            />
+          ))}
+        </Carousel.Track>
       </Carousel>
 
       <Carousel
         aria-labelledby='carousel-skills-heading-1'
         options={{ slideFocus: true }}
       >
-        <div className='flex w-9/10 max-w-screen-xl items-end justify-between gap-md'>
+        <div className='flex w-9/10 max-w-screen-xl sm:items-end max-sm:flex-col justify-between gap-md'>
           <Text.Title
             className='text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
             id='carousel-skills-heading-0'
@@ -90,24 +84,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             </span>
           </Text.Title>
 
-          <Text className='max-w-md text-muted-content max-sm:hidden'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
-            cumque excepturi quo impedit dolore reiciendis unde quae dignissimos
-            inventore quis?
-          </Text>
-        </div>
-
-        <Carousel.Track>
-          {skills.soft.map((data, i) => (
-            <HomeViewSkillsSectionCarouselItem
-              idx={i}
-              key={data.title}
-              {...data}
-            />
-          ))}
-        </Carousel.Track>
-
-        <section className='flex w-9/10 max-w-screen-xl items-center gap-sm'>
+          <section className='flex items-center gap-sm w-full sm:max-w-xl'>
           <Carousel.ActiveIdx
             className='shrink-0'
             itemsLength={skills.soft.length}
@@ -127,6 +104,17 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             </HomeViewSkillsSectionCarouselAciton>
           </Carousel.Actions>
         </section>
+        </div>
+
+        <Carousel.Track>
+          {skills.soft.map((data, i) => (
+            <HomeViewSkillsSectionCarouselItem
+              idx={i}
+              key={data.title}
+              {...data}
+            />
+          ))}
+        </Carousel.Track>
       </Carousel>
     </Section>
   );
