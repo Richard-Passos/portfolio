@@ -6,7 +6,7 @@ import { Link } from '../ui';
 const MagneticLink = ({ asChild, children, ...props }, ref) => {
   return (
     <Magnetic
-      limit={0.35}
+      limit={0.3}
       ref={ref}
       smoothConfig={{ damping: 5 }}
       {...props}

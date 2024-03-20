@@ -1,14 +1,13 @@
+import { projectsApi } from '@/api';
 import {
   Bg,
   Lines,
   Projects,
   ScrollTitle,
-  TextScrollAnimation,
 } from '@/components';
 import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui';
 import { PlusIcon } from '@/components/ui/icon/icons';
-import { projectsSelecteds } from '@/constants/projects';
 import { cn } from '@/utils';
 
 const WorkViewProjectsSection = ({ theme, className, ...props }) => {
@@ -55,11 +54,13 @@ const WorkViewProjectsSection = ({ theme, className, ...props }) => {
   );
 };
 
-const WorkViewProjectsShowSection = () => {
-  const projects = projectsSelecteds.reduce(
-    (obj, { img, ...data }) => ({
+const WorkViewProjectsShowSection = async () => {
+  const selectedProjects = (await projectsApi.getSelecteds()) || []
+
+  const projects = selectedProjects.reduce(
+    (obj, { thumbnail, ...data }) => ({
       data: [...obj.data, data],
-      images: [...obj.images, img],
+      images: [...obj.images, thumbnail],
     }),
     { data: [], images: [] },
   );
@@ -70,18 +71,18 @@ const WorkViewProjectsShowSection = () => {
       images={projects.images}
     >
       <Projects.List className='max-sm:hidden'>
-        {projects.data.map((project, i) => (
+        {projects.data.map((data, i) => (
           <Projects.List.Item
-            href={project.href}
+            href={`/projects/${data.slug}`}
             index={i}
-            key={'projects-list-' + project.href}
+            key={'projects-list-' + data.title}
           >
             <Projects.List.Number index={i} />
 
             <Projects.List.Content>
-              <Projects.List.Title text={project.title} />
+              <Projects.List.Title text={data.title} />
 
-              <Projects.List.Roles data={project.roles} />
+              <Projects.List.Roles data={data.roles} />
             </Projects.List.Content>
           </Projects.List.Item>
         ))}
@@ -90,19 +91,19 @@ const WorkViewProjectsShowSection = () => {
       </Projects.List>
 
       <Projects.Grid className='sm:hidden'>
-        {projects.data.map((project, i) => (
+        {projects.data.map((data, i) => (
           <Projects.Grid.Item
-            href={project.href}
+            href={`/projects/${data.slug}`}
             index={i}
-            key={'projects-grid-' + project.href}
+            key={'projects-grid-' + data.title}
           >
             <Projects.Grid.Number index={i} />
 
             <Projects.Grid.Image index={i} />
 
-            <Projects.Grid.Title text={project.title} />
+            <Projects.Grid.Title text={data.title} />
 
-            <Projects.Grid.Roles data={project.roles} />
+            <Projects.Grid.Roles data={data.roles} />
           </Projects.Grid.Item>
         ))}
       </Projects.Grid>

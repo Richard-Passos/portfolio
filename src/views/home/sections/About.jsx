@@ -1,3 +1,4 @@
+import { globalsApi } from '@/api';
 import {
   InfinityScroll,
   BentoGrid,
@@ -8,8 +9,7 @@ import {
 } from '@/components';
 import { Badge, Link, Text } from '@/components/ui';
 import Icons from '@/components/ui/icon/icons';
-import { personalInfo, values } from '@/constants';
-import { aboutText } from '@/constants/texts';
+import {  values } from '@/constants';
 import { cn } from '@/utils';
 
 const HomeViewAboutSection = ({ className, ...props }) => {
@@ -36,7 +36,9 @@ const HomeViewAboutSection = ({ className, ...props }) => {
   );
 };
 
-const Grid = ({ className, ...props }) => {
+const Grid = async ({ className, ...props }) => {
+  const personalInfo = await globalsApi.getOne('personal-info')
+
   return (
     <BentoGrid
       className={cn(
@@ -53,12 +55,12 @@ const Grid = ({ className, ...props }) => {
           #about
         </Badge>
 
-        <Text>
+        <Text className='text-muted-content'>
           <Icons.HandHorns
             aria-hidden
-            className='inline-block h-4 w-4 -translate-y-0.5'
+            className='inline-block fill-content size-4 -translate-y-0.5'
           />{' '}
-          Hey — <span className='inline text-muted-content'>{aboutText}</span>
+          <span className='inline text-content'>Hey —</span> I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to  rogue-like games.
         </Text>
       </BentoGrid.Item>
 

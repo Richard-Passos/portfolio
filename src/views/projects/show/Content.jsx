@@ -3,7 +3,7 @@
 import { useSearchParams } from 'next/navigation';
 import { useContext, useEffect } from 'react';
 
-import { getProjects } from '@/api';
+import { projectsApi } from '@/api';
 import { Projects } from '@/components';
 import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
@@ -19,7 +19,7 @@ const ProjectsViewShowContent = ({ className, ...props }) => {
 
   useEffect(() => {
     const handleSetProjects = async () => {
-      const data = await getProjects(`page=${page}`);
+      const data = await projectsApi.get(`?page=${page}`);
 
       setProjects(data.results);
     };

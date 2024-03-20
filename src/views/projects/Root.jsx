@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import { getProjects } from '@/api';
+import { projectsApi } from '@/api';
 import { DotsLoader, Lines } from '@/components';
 import { MagneticButton } from '@/components/button';
 import { Badge, Icon, Text } from '@/components/ui';
@@ -16,7 +16,7 @@ const ROLES = ['all', 'design', 'development'],
   ];
 
 const ProjectsView = async ({ className, ...props }) => {
-  const projects = (await getProjects()).results;
+  const projects = (await projectsApi.get()) || [];
 
   return (
     <main

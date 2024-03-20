@@ -1,4 +1,3 @@
-import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
 import BackTop from '../../back-top';
@@ -10,10 +9,13 @@ import { Logo, Text } from '../../ui';
 import { CursorHover } from '../../ui/cursor';
 import { ArrowUpIcon, HandHornsIcon, HeartIcon } from '../../ui/icon/icons';
 import { FOOTER_CONTENT_THEME } from '../Root';
+import { globalsApi } from '@/api';
 
 const SCROLL_OFFSET = ['0 1', '1 1'];
 
-const FooterContent = ({ className, ...props }) => {
+const FooterContent = async ({ className, ...props }) => {
+  const personalInfo = await globalsApi.getOne('personal-info')
+
   const animationConfig = {
     y: {
       useScrollConfig: {

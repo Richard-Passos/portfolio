@@ -1,4 +1,4 @@
-import { projects } from '@/constants/projects';
+import { projects } from '@/constants';
 
 const RES_PER_PAGE = 5;
 
@@ -15,12 +15,12 @@ const GET = async (req) => {
 
   return Response.json({
     status: 200,
-    data: {
+    data: results,
+    meta: {
       page,
-      results,
       totalPages: Math.ceil(totalResults / RES_PER_PAGE),
       totalResults,
-    },
+    }
   });
 };
 

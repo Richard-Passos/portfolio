@@ -1,13 +1,12 @@
 import { MagneticButton } from '@/components/button';
 import { Form, Input, Textarea } from '@/components/ui';
 import { PaperPlaneIcon } from '@/components/ui/icon/icons';
-import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
 import ClientForm from './Client';
 import Select from './Select';
 
-const ContactForm = ({ className, ...props }) => {
+const ContactForm = async ({ className, ...props }) => {
   return (
     <ClientForm
       className={cn(
@@ -86,7 +85,7 @@ const ContactForm = ({ className, ...props }) => {
 
         <Form.Control>
           <Textarea
-            placeholder={`👋 Hey ${personalInfo.name.first}! I would love if you could help me with...`}
+            placeholder={`👋 Hey Richard! I would love if you could help me with...`}
           />
         </Form.Control>
 

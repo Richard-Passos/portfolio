@@ -1,7 +1,6 @@
 import { GridPattern, ScrollAnimation, ScrollIndicator } from '@/components';
 import { Text } from '@/components/ui';
 import { SmileIcon } from '@/components/ui/icon/icons';
-import { introText } from '@/constants/texts';
 import { cn } from '@/utils';
 
 const HomeViewHeroSection = ({ theme, className, ...props }) => {
@@ -42,7 +41,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
           )}
           {...props}
         >
-          <div className='relative flex items-center justify-center py-lg [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-[calc(100svh-var(--header-h))] sm:translate-y-[--y] 2xl:h-screen 2xl:max-h-bounds 2xl:[--w:--max-w]'>
+          <div className='relative flex items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-svh -mt-[--header-h] sm:translate-y-[--y] 2xl:h-screen 2xl:max-h-bounds 2xl:[--w:--max-w]'>
             <div className='w-[calc(90%-var(--inset)*2)] space-y-sm pb-[--inset] sm:grid-cols-3 lg:opacity-[--opacity]'>
               <Text.Title
                 aria-label='Turning heads and conquering hearts.'
@@ -66,7 +65,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
                       <span>hearts</span>
 
                       <span className='max-w-sm -translate-y-3.5 text-start text-[.12em]/[1.15] font-normal normal-case tracking-normal text-muted-content max-lg:hidden'>
-                        {introText}
+                        Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.
                       </span>
                     </div>
                   </div>
@@ -75,7 +74,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
 
               <div className='mx-auto grid max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
                 <Text className='col-span-full max-w-lg text-center text-muted-content sm:col-span-4 lg:sr-only'>
-                  {introText}
+                  Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.
                 </Text>
 
                 <ScrollAnimation.Transform config={animationConfig.rotate}>
@@ -88,7 +87,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
               </div>
             </div>
 
-            <GridPattern className='inset-[--inset] top-0 rounded-3xl' />
+            <GridPattern className='inset-[--inset] top-[--header-h] rounded-3xl' />
           </div>
 
           <ScrollIndicator className='absolute bottom-[min(9.5vw,3.75rem)] right-1/2 max-sm:translate-x-1/2 sm:right-[min(10vw,theme(spacing.16))]' />

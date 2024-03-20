@@ -1,11 +1,13 @@
-import { NextResponse } from 'next/server';
-
-import { projectsDetails } from '@/constants/projects';
+import { projects } from '@/constants';
 
 const GET = async (_, { params: { id } }) => {
-  return NextResponse.json({
+  id = id?.toLowerCase()
+
+  const data = projects.find(({slug}) => slug === id?.replace(/[_ ]/g, '-'))
+
+  return Response.json({
     status: 200,
-    data: projectsDetails[id],
+    data
   });
 };
 

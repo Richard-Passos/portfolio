@@ -1,11 +1,14 @@
+import { globalsApi } from '@/api';
 import { GridPattern, HorizontalScroll, ScrollIndicator } from '@/components';
 import { ScrollAnimationTransform } from '@/components/scroll-animation';
 import { Text } from '@/components/ui';
 import { SmileIcon } from '@/components/ui/icon/icons';
-import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
-const WorkViewHeroSection = ({ theme, className, ...props }) => {
+const WorkViewHeroSection = async ({ theme, className, ...props }) => {
+  const personalInfo = await globalsApi.getOne('personal-info')
+
+
   const animationConfig = {
     y: {
       useScrollConfig: {
@@ -60,7 +63,7 @@ const WorkViewHeroSection = ({ theme, className, ...props }) => {
                   </Text>
 
                   <Text className='text-xs font-semibold md:-order-1'>
-                    {personalInfo.availabilityMessage}
+                    {personalInfo.availability}
                   </Text>
 
                   <ScrollAnimationTransform config={animationConfig.rotate}>

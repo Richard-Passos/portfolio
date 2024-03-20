@@ -1,32 +1,36 @@
 import { HorizontalScroll, LocalTime, Section, SocialNav } from '@/components';
 import { Icon, Link, Text } from '@/components/ui';
 import { PaperPlaneIcon } from '@/components/ui/icon/icons';
-import { personalInfo } from '@/constants';
 import { cn } from '@/utils';
 
 import Form from '../form';
 import { CONTACT_VIEW_HERO_SECTION_ICONS } from './hero/Root';
+import { globalsApi } from '@/api';
 
-const EXTRA_INFO = [
-  {
-    title: 'Availability',
-    content: personalInfo.availabilityMessage,
-  },
-  {
-    title: 'Local time',
-    content: <LocalTime key='local-time' />,
-  },
-  {
-    title: 'Location',
-    content: `${personalInfo.location.country}, ${personalInfo.location.state}`,
-  },
-  {
-    title: 'Cleber',
-    content: 'Lorem, ipsum',
-  },
-];
 
-const ContactViewContactSection = ({ className, ...props }) => {
+
+const ContactViewContactSection = async ({ className, ...props }) => {
+  const personalInfo = await globalsApi.getOne('personal-info')
+
+  
+  const extraInfo = [
+    {
+      title: 'Availability',
+      content: personalInfo.availability,
+    },
+    {
+      title: 'Local time',
+      content: <LocalTime key='local-time' />,
+    },
+    {
+      title: 'Location',
+      content: `${personalInfo.location.country}, ${personalInfo.location.state}`,
+    },
+    {
+      title: 'Cleber',
+      content: 'Lorem, ipsum',
+    },
+  ];
   return (
     <Section
       className={cn(
@@ -47,7 +51,7 @@ const ContactViewContactSection = ({ className, ...props }) => {
         </div>
 
         <ul className='mb-sm mt-auto grid gap-xs lg:grid-cols-2'>
-          {EXTRA_INFO.map(({ title, content }) => (
+          {extraInfo.map(({ title, content }) => (
             <li
               className='rounded-sm border bg-main p-4'
               key={title}

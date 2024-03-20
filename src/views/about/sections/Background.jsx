@@ -1,7 +1,6 @@
 import { Lines, ScrollTitle, TextScrollAnimation } from '@/components';
 import { ScrollAnimationTransform } from '@/components/scroll-animation';
 import { Separator, Text } from '@/components/ui';
-import { aboutText } from '@/constants/texts';
 import { cn } from '@/utils';
 
 const AboutViewBackgroundSection = ({ className, ...props }) => {
@@ -28,9 +27,15 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
           <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
 
-        <Text className='text-muted-content max-sm:text-center sm:max-w-lg sm:justify-self-end sm:indent-4'>
-          {aboutText} {aboutText}
+        <div className='sm:max-w-lg sm:justify-self-end'>
+        <Text className='text-muted-content mb-4 max-sm:text-center sm:indent-4'>
+        I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.
         </Text>
+
+        <Text className='text-muted-content max-sm:text-center sm:indent-4'>
+        I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.
+        </Text>
+        </div>
       </section>
 
       <section className='grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-md'>

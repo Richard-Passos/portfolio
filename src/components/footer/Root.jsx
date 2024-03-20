@@ -25,7 +25,7 @@ const Footer = ({ className, ...props }) => {
         <Lines className='absolute' />
       </div>
 
-      <Overlay
+       <Overlay
         className={cn('top-[--spacing-t]', getOpstTheme(FOOTER_CONTENT_THEME))}
       />
 

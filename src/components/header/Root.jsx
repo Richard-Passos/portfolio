@@ -4,13 +4,14 @@ import { cn } from '@/utils';
 
 import DotsLoader from '../dots-loader';
 import Language from '../language';
-import { MagneticLink } from '../link';
-import Menu from '../menu';
+import Menu from './menu';
 import { Logo, Separator } from '../ui';
-import { SheetTrigger } from '../ui/sheet';
 import Nav from './Nav';
+import { globalsApi } from '@/api';
 
-const Header = ({ className, ...props }) => {
+const Header = async ({ className, ...props }) => {
+  const header = (await globalsApi.getOne('header')) || {}
+
   return (
     <header
       className={cn(
@@ -22,7 +23,7 @@ const Header = ({ className, ...props }) => {
       <Logo className='transition-none' />
 
       <div className='flex h-10 items-center max-sm:hidden'>
-        <Nav />
+        <Nav items={header.navItems} />
 
         <Separator
           className='mr-4'
@@ -34,13 +35,7 @@ const Header = ({ className, ...props }) => {
         </Suspense>
       </div>
 
-      <Menu>
-        <MagneticLink asChild>
-          <SheetTrigger className='-mr-4 h-10 rounded-sm px-4 sm:hidden'>
-            Menu
-          </SheetTrigger>
-        </MagneticLink>
-      </Menu>
+      <Menu/>
     </header>
   );
 };

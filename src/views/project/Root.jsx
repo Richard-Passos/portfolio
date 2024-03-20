@@ -11,12 +11,12 @@ const ProjectView = async ({ promises }) => {
     <main className='w-full max-w-bounds flex flex-col items-center'>
       <Sections.Hero data={data} />
 
-      <Sections.Video theme='dark' data={data.video} />
+            <Sections.Video data={data.video} theme='dark' />
 
-      <Sections.Why theme='light' data={data} />
+      <Sections.Why data={data} theme='light' />
 
       <Suspense fallback={<DotsLoader />}>
-        <Sections.Images theme='dark' promise={promises.images} />
+        <Sections.Images promise={promises.images} theme='dark' />
       </Suspense>
     </main>
   );
