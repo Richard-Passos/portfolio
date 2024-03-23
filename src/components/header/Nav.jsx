@@ -6,15 +6,18 @@ import { useState } from 'react';
 
 import { NavigationMenu } from '../ui/navigation-menu';
 import Link from './Link';
+import { cn } from '@/utils';
 
 const DEFAULT_IS_HOVER = undefined;
 
-const HeaderNav = ({items = [], ...props}) => {
+const HeaderNav = ({className, items = [], ...props}) => {
   const [isHover, setIsHover] = useState(DEFAULT_IS_HOVER),
-    pathname = usePathname();
+  pathname = usePathname();
+
+    const includesPathname = !!items.find(({href}) => href === pathname)
 
   return (
-    <NavigationMenu {...props}>
+    <NavigationMenu className={cn('group', className)} {...props}>
       {items.map(({ href, label }, i) => {
         const isActive =
           isHover === i || (pathname === href && isHover === DEFAULT_IS_HOVER);
@@ -23,9 +26,10 @@ const HeaderNav = ({items = [], ...props}) => {
           <Link
             href={href}
             isActive={isActive}
+            includesPathname={includesPathname}
             key={href}
             onMouseEnter={() => setIsHover(i)}
-            onMouseLeave={() => setIsHover(DEFAULT_IS_HOVER)}
+            onMouseLeave={() => {if(includesPathname) setIsHover(DEFAULT_IS_HOVER)}}
           >
             {label}
           </Link>
