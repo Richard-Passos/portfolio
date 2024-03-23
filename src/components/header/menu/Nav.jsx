@@ -14,6 +14,8 @@ const HeaderMenuNav = ({ className, items, ...props }) => {
   const [isHover, setIsHover] = useState(DEFAULT_IS_HOVER),
     pathname = usePathname();
 
+    const includesPathname = !!items.find(({href}) => href === pathname)
+
   return (
     <NavigationMenu
       className={cn('w-9/10 max-w-none flex-col', className)}
@@ -29,7 +31,7 @@ const HeaderMenuNav = ({ className, items, ...props }) => {
             isActive={isActive}
             key={href}
             onMouseEnter={() => setIsHover(i)}
-            onMouseLeave={() => setIsHover(DEFAULT_IS_HOVER)}
+            onMouseLeave={() => {if(includesPathname) setIsHover(DEFAULT_IS_HOVER)}}
           >
             {label}
           </Link>
