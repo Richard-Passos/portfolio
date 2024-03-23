@@ -10,12 +10,12 @@ import Nav from './Nav';
 import { globalsApi } from '@/api';
 
 const Header = async ({ className, ...props }) => {
-  const header = (await globalsApi.getOne('header')) || {}
+  const {data} = await globalsApi.getOne('header')
 
   return (
     <header
       className={cn(
-        'relative z-10 flex min-h-[--header-h] w-9/10 max-w-bounds flex-wrap items-center justify-between',
+        'relative z-10 flex min-h-[--header-h] w-[calc(var(--w)*.9)] [--w:100vw] 2xl:[--w:--max-w] flex-wrap items-center justify-between',
         className,
       )}
       {...props}
@@ -23,7 +23,7 @@ const Header = async ({ className, ...props }) => {
       <Logo className='transition-none' />
 
       <div className='flex h-10 items-center max-sm:hidden'>
-        <Nav items={header.navItems} />
+        <Nav items={data.navItems} />
 
         <Separator
           className='mr-4'

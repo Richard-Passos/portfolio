@@ -16,7 +16,7 @@ const HomeViewAboutSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'relative flex flex-col items-center gap-lg overflow-x-clip',
+        'relative flex flex-col items-center gap-lg',
         className,
       )}
       {...props}
@@ -29,7 +29,9 @@ const HomeViewAboutSection = ({ className, ...props }) => {
         />
       </h2>
 
-      <Grid />
+        <div className='w-full overflow-x-clip flex justify-center'>
+        <Grid />
+        </div>
 
       <ListContactPage />
     </Section>
@@ -37,7 +39,7 @@ const HomeViewAboutSection = ({ className, ...props }) => {
 };
 
 const Grid = async ({ className, ...props }) => {
-  const personalInfo = await globalsApi.getOne('personal-info')
+  const personalInfo = (await globalsApi.getOne('personal-info')).data
 
   return (
     <BentoGrid

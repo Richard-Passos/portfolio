@@ -6,7 +6,7 @@ import { SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
 
 const WorkViewHeroSection = async ({ theme, className, ...props }) => {
-  const personalInfo = await globalsApi.getOne('personal-info')
+  const personalInfo = (await globalsApi.getOne('personal-info')).data
 
 
   const animationConfig = {
@@ -43,10 +43,10 @@ const WorkViewHeroSection = async ({ theme, className, ...props }) => {
           )}
           {...props}
         >
-          <div className='top-0 sm:sticky'>
-            <div className='relative mx-auto w-[95%] sm:scale-[--scale]'>
-              <div className='fix-work-hero-y relative mx-auto flex w-9/10 flex-col items-center justify-center gap-sm py-[--p] [--p:--spacing-lg] max-2xl:min-h-screen max-sm:min-h-[calc(100svh-var(--header-h))] sm:-translate-y-[--header-h] 2xl:h-screen 2xl:max-h-bounds'>
-                <Text.Title className='overflow-y-clip text-center text-[min(20vw,16rem)]/[1] font-extrabold uppercase tracking-tighter'>
+          <div className='top-[calc(var(--header-h)/2)] sm:sticky'>
+             <div className='relative mx-auto w-[95%] sm:scale-[--scale]'>
+              <div className='fix-work-hero-y relative mx-auto flex w-9/10 flex-col items-center justify-center py-lg max-2xl:min-h-[calc(100svh-var(--header-h))] 2xl:h-screen 2xl:max-h-bounds'>
+                <Text.Title className='overflow-y-clip mb-sm text-center text-[min(18vw,14rem)]/[1] font-extrabold uppercase tracking-tighter'>
                   <div className='relative sm:translate-y-[--y]'>
                     <span className='sm:absolute sm:bottom-full sm:left-1/2 sm:-translate-x-1/2'>
                       Beyond
@@ -55,7 +55,7 @@ const WorkViewHeroSection = async ({ theme, className, ...props }) => {
                   </div>
                 </Text.Title>
 
-                <div className='grid w-full max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
+                <div className='grid w-full mb-md max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
                   <Text className='col-span-full max-w-md justify-self-center text-center font-medium text-muted-content md:col-span-4'>
                     Helping brands achieve digital prominence. I bring a passion
                     for cutting-edge technology and a commitment to transforming
@@ -71,17 +71,17 @@ const WorkViewHeroSection = async ({ theme, className, ...props }) => {
                   </ScrollAnimationTransform>
                 </div>
 
-                <ScrollIndicator className='absolute bottom-[calc(var(--p)/2)]' />
+                <ScrollIndicator />
               </div>
 
               <GridPattern className='rounded-3xl' />
             </div>
 
-            <ul className='absolute inset-y-0 left-1/2 -z-50 flex w-screen -translate-x-1/2 flex-col justify-around'>
+             <ul className='absolute inset-y-0 left-1/2 -z-50 flex w-screen -translate-x-1/2 flex-col justify-around'>
               {[...Array(3)].map((_, i) => (
                 <li key={i}>
                   <HorizontalScroll
-                    baseVelocity={i % 2 === 0 ? 1 : -1.5}
+                    baseVelocity={i % 2 === 0 ? -1 : 1.5}
                     className='text-[min(32vmin,16rem)]/[1] font-extrabold uppercase tracking-tighter text-muted [--gap:.2em]'
                   >
                     <span>Beyond</span> ·

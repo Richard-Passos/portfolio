@@ -1,19 +1,16 @@
+import ProjectViewAboutSection from './About';
 import ProjectViewHeroSection from './Hero';
 import ProjectViewImagesSection from './Images';
-import ProjectViewVideoSection from './Video';
-import ProjectViewWhySection from './Why';
 
 const ProjectViewSections = {
+  About: ProjectViewAboutSection,
   Hero: ProjectViewHeroSection,
   Images: ProjectViewImagesSection,
-  Video: ProjectViewVideoSection,
-  Why: ProjectViewWhySection,
 };
 
 export default ProjectViewSections;
 export { 
+  ProjectViewAboutSection, 
   ProjectViewHeroSection, 
   ProjectViewImagesSection, 
-  ProjectViewVideoSection, 
-  ProjectViewWhySection, 
 };

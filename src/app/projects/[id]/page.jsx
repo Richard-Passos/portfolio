@@ -8,9 +8,27 @@ const ProjectPage = ({ params: { id } }) => {
   return <ProjectView promises={{data, images}} />;
 };
 
-const generateStaticParams = () => {
-  return projectsApi.get().map(({slug}) => ({ id: slug }));
+const generateMetadata = async ({ params }) => {
+  const { id } = params;
+
+  const {data} = (await projectsApi.getOne(id));
+
+  return {
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+    },
+  };
+};
+
+
+const generateStaticParams = async () => {
+  const {data = []} = (await projectsApi.get())
+
+  return data.map(({slug}) => ({ id: slug }));
 };
 
 export default ProjectPage;
-export { generateStaticParams };
+export { generateMetadata, generateStaticParams };

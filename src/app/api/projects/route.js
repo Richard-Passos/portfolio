@@ -2,7 +2,7 @@ import { projects } from '@/constants';
 
 const RES_PER_PAGE = 5;
 
-const GET = async (req) => {
+const GET = (req) => {
   const { searchParams } = req.nextUrl;
 
   const page = searchParams.get('page') || 1;

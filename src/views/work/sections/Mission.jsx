@@ -35,7 +35,7 @@ const WorkViewMissionListSection = (props) => {
       {content.map(({ text, icon }, i) => (
         <Text.Title
           asChild
-          className='py-md font-semibold [--gap:theme(spacing.sm)] *:*:[--rotate:calc(var(--x)*(360deg/12.5))] odd:-rotate-1 even:rotate-1'
+          className='py-[.5em] font-semibold [--gap:theme(spacing.sm)] *:*:[--rotate:calc(var(--x)*(360deg/12.5))] odd:-rotate-1 even:rotate-1'
           key={content}
           variants={{ size: 'xl' }}
         >

@@ -20,6 +20,8 @@ export { default as Magnetic } from './magnetic';
 export { default as Menu } from './header/menu';
 export { default as MultiY } from './multi-y';
 export { default as NextPage } from './next-page';
+export { default as NextProject } from './next-project';
+export { default as Player } from './player';
 export { default as Projects } from './projects';
 export { default as Providers } from './providers';
 export { default as SmoothScroll } from './smooth-scroll';

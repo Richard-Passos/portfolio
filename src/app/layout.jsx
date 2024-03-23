@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
   return (
     <html
       className='scroll-smooth'
-      lang='pt-BR'
+      lang='en'
     >
             <Providers.GlobalState>
 
@@ -44,14 +44,13 @@ const Layout = ({ children }) => {
 };
 
 const generateMetadata = async () => {
-  const data = (await globalsApi.getOne('personal-info')) || {};
+  const {data} = (await globalsApi.getOne('personal-info'));
 
   return {
     title: {
       default: `${data.name?.first} ${data.name?.last}`,
       template: `%s · ${data.name?.first} ${data.name?.last}`,
     },
-    icons: data.logo?.data.src,
     description: data.summary,
     openGraph: {
       title: {
@@ -59,7 +58,6 @@ const generateMetadata = async () => {
         template: `%s · ${data.name?.first} ${data.name?.last}`,
       },
       description: data.summary,
-      images: [data.logo?.data],
     },
   };
 };

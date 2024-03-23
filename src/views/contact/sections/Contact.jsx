@@ -10,7 +10,7 @@ import { globalsApi } from '@/api';
 
 
 const ContactViewContactSection = async ({ className, ...props }) => {
-  const personalInfo = await globalsApi.getOne('personal-info')
+  const personalInfo = (await globalsApi.getOne('personal-info')).data
 
   
   const extraInfo = [

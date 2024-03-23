@@ -19,9 +19,9 @@ const ProjectsViewShowContent = ({ className, ...props }) => {
 
   useEffect(() => {
     const handleSetProjects = async () => {
-      const data = await projectsApi.get(`?page=${page}`);
+      const {data = []} = await projectsApi.get(`?page=${page}`);
 
-      setProjects(data.results);
+      setProjects(data);
     };
 
     if (page > 1) handleSetProjects();
@@ -30,23 +30,23 @@ const ProjectsViewShowContent = ({ className, ...props }) => {
   const types = {
     list: (
       <Projects.List>
-        {projectsObj.data.map((project, i) => (
+        {projectsObj.data.map((data, i) => (
           <Projects.List.Item
-            href={project.href}
+            href={`/projects/${data.slug}`}
             index={i}
-            key={'projects-list-' + project.href}
+            key={'projects-list-' + data.slug}
           >
             <Projects.List.Number index={i} />
 
             <Projects.List.Content className='grid-cols-4 sm:grid-cols-4'>
-              <Projects.List.Title text={project.title} />
+              <Projects.List.Title text={data.title} />
 
               <Projects.List.Roles
                 className='max-sm:col-span-3 sm:justify-center'
-                data={project.roles}
+                data={data.roles}
               />
 
-              <Projects.List.Year>{project.year}</Projects.List.Year>
+              <Projects.List.Year>{data.year}</Projects.List.Year>
             </Projects.List.Content>
           </Projects.List.Item>
         ))}
@@ -56,21 +56,21 @@ const ProjectsViewShowContent = ({ className, ...props }) => {
     ),
     grid: (
       <Projects.Grid>
-        {projectsObj.data.map((project, i) => (
+        {projectsObj.data.map((data, i) => (
           <Projects.Grid.Item
-            href={project.href}
+            href={`/projects/${data.slug}`}
             index={i}
-            key={'projects-grid-' + project.href}
+            key={'projects-grid-' + data.slug}
           >
             <Projects.Grid.Number index={i} />
 
             <Projects.Grid.Image index={i} />
 
-            <Projects.Grid.Title text={project.title} />
+            <Projects.Grid.Title text={data.title} />
 
-            <Projects.Grid.Roles data={project.roles} />
+            <Projects.Grid.Roles data={data.roles} />
 
-            <Projects.Grid.Year>{project.year}</Projects.Grid.Year>
+            <Projects.Grid.Year>{data.year}</Projects.Grid.Year>
           </Projects.Grid.Item>
         ))}
       </Projects.Grid>
@@ -88,7 +88,7 @@ const ProjectsViewShowContent = ({ className, ...props }) => {
   );
 };
 
-const getByRole = (role, obj1, { img, ...data }) => {
+const getByRole = (role, obj1, { thumbnail, ...data }) => {
   const isValid =
     role === 'all' || role === undefined
       ? true
@@ -96,7 +96,7 @@ const getByRole = (role, obj1, { img, ...data }) => {
 
   return {
     data: isValid ? [...obj1.data, data] : obj1.data,
-    images: isValid ? [...obj1.images, img] : obj1.images,
+    images: isValid ? [...obj1.images, thumbnail] : obj1.images,
   };
 };
 

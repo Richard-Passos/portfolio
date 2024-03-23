@@ -29,7 +29,7 @@ const WorkView = ({ className, ...props }) => {
 
       <Sections.Values theme='dark' />
 
-      <div className='dark relative flex w-full items-center pb-lg max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
+      <div className='dark relative flex w-full justify-center items-center pb-lg max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
         <NextPage
           href='/about'
           text='About me'

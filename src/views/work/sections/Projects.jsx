@@ -55,7 +55,7 @@ const WorkViewProjectsSection = ({ theme, className, ...props }) => {
 };
 
 const WorkViewProjectsShowSection = async () => {
-  const selectedProjects = (await projectsApi.getSelecteds()) || []
+  const selectedProjects = (await projectsApi.getSelecteds()).data || []
 
   const projects = selectedProjects.reduce(
     (obj, { thumbnail, ...data }) => ({

@@ -14,7 +14,7 @@ import { globalsApi } from '@/api';
 const SCROLL_OFFSET = ['0 1', '1 1'];
 
 const FooterContent = async ({ className, ...props }) => {
-  const personalInfo = await globalsApi.getOne('personal-info')
+  const personalInfo = (await globalsApi.getOne('personal-info')).data
 
   const animationConfig = {
     y: {

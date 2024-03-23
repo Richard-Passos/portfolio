@@ -3,7 +3,7 @@ const themesNOpposites = {
   dark: 'light',
 };
 
-const getOpstTheme = (theme) => themesNOpposites[theme.toLowerCase()];
+const getOpstTheme = (theme = '') => themesNOpposites[theme.toLowerCase()];
 
 export default getOpstTheme;
 export { themesNOpposites };

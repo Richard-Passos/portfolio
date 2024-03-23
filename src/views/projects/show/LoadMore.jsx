@@ -2,7 +2,7 @@
 
 import { useContext } from 'react';
 
-import { projectsApi } from '@/api';
+import { projectsApiGet } from '@/api/projects/get';
 import { DotsLoader } from '@/components';
 import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui/text';
@@ -15,7 +15,7 @@ const ProjectsViewShowLoadMore = ({ variants, children, ...props }) => {
 
   const { loadMore, isFetching, isLastPage } = useLoadMore(
     setProjects,
-    projectsApi.get,
+    projectsApiGet,
   );
 
   return !isLastPage.current ? (

@@ -16,7 +16,7 @@ const ROLES = ['all', 'design', 'development'],
   ];
 
 const ProjectsView = async ({ className, ...props }) => {
-  const projects = (await projectsApi.get()) || [];
+  const {data = []} = await projectsApi.get()
 
   return (
     <main
@@ -42,7 +42,7 @@ const ProjectsView = async ({ className, ...props }) => {
         </h1>
       </Text.Title>
 
-      <Show defaultData={{ role: ROLES[0], type: TYPES[0].data, projects }}>
+      <Show defaultData={{ role: ROLES[0], type: TYPES[0].data, projects: data }}>
         <div className='flex w-full flex-wrap-reverse items-center justify-center gap-sm sm:justify-between'>
           <Show.Roles>
             {ROLES.map((role) => (

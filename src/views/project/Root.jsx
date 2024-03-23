@@ -1,23 +1,30 @@
 import { Suspense } from 'react';
 
-import { DotsLoader } from '@/components';
+import { Bg, DotsLoader, Lines, NextProject } from '@/components';
 
 import Sections from './sections';
 
 const ProjectView = async ({ promises }) => {
-  const data = await promises.data;
+  const {data} = await promises.data;
 
   return (
-    <main className='w-full max-w-bounds flex flex-col items-center'>
-      <Sections.Hero data={data} />
+    <main className='dark-layout w-full max-w-bounds flex flex-col items-center'>
+      <Sections.Hero data={data} theme='light' />
 
-            <Sections.Video data={data.video} theme='dark' />
-
-      <Sections.Why data={data} theme='light' />
+      <Sections.About data={data} theme='light' />
 
       <Suspense fallback={<DotsLoader />}>
         <Sections.Images promise={promises.images} theme='dark' />
       </Suspense>
+      
+      <div className='dark relative flex w-full justify-center items-center pb-lg max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
+        <NextProject
+        />
+
+        <Bg />
+
+        <Lines />
+      </div>
     </main>
   );
 };

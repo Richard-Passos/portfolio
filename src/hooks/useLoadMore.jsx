@@ -14,12 +14,12 @@ const useLoadMore = (setState, getFn) => {
     try {
       setIsFetching(true);
 
-      const data = await getFn(`page=${page.current + 1}`);
+       const res = await getFn(`?page=${page.current + 1}`);
 
       page.current++;
-      isLastPage.current = page.current >= data.totalPages;
+      isLastPage.current = page.current >= res.meta.totalPages;
 
-      setState((state) => [...state, ...data.results]);
+      setState((state) => [...state, ...res.data]);
     } catch (err) {
       throw new Error(err);
     } finally {
