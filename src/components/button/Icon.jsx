@@ -29,6 +29,9 @@ const ButtonIcon = ({ className, animation, children, ...props }) => {
 const buttonIconAnimations = {
   opacity: 'opacity-0 transition-opacity group-hover:opacity-100',
   slideUp: 'translate-y-full transition-transform group-hover:translate-y-0',
+  slideRight: '-translate-x-full transition-transform group-hover:translate-x-0',
+  slideBottom: '-translate-y-full transition-transform group-hover:translate-y-0',
+   slideLeft: 'translate-x-full transition-transform group-hover:translate-x-0',
   slideUpRight:
     '-translate-x-full translate-y-full transition-transform group-hover:translate-x-0 group-hover:translate-y-0',
 };
