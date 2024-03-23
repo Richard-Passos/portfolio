@@ -8,12 +8,12 @@ import { cn } from '@/utils';
 import { MagneticLink } from '../link';
 import { NavigationMenuLink } from '../ui/navigation-menu';
 
-const HeaderLink = ({ isActive, className, children, ...props }) => {
+const HeaderLink = ({ className, children,isActive,includesPathname, ...props }) => {
   return (
     <MagneticLink
       asChild
       className={cn(
-        'relative h-10 rounded-sm px-4 no-underline lowercase flex transition-none hover:z-10',
+        'group/link relative h-10 rounded-sm px-4 no-underline lowercase flex transition-none hover:z-10',
                 className,
       )}
       {...props}
@@ -23,7 +23,7 @@ const HeaderLink = ({ isActive, className, children, ...props }) => {
 
         {isActive && (
           <motion.span
-          className='absolute bottom-1 w-1/3 h-[.15em] bg-primary'
+          className={cn('absolute bottom-1 w-1/3 h-[.15em] bg-primary', !includesPathname && 'opacity-0 group-hover:opacity-100 group-hover/link:opacity-100 transition-opacity')}
             layoutId='headerLinkActiveIndicator'
             style={{ borderRadius: '9999px' }}
             transition={{
