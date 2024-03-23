@@ -20,15 +20,17 @@ const ProjectViewImagesSection = async ({
         <ScrollTitle dir='rtl' title='IMAGES'/>
       </h2>
 
-      <ul className='flex flex-col gap-xs w-9/10'>
+      <ul className='flex flex-col gap-sm w-9/10'>
       {data.map((img) => 
       <li className='w-full relative aspect-square overflow-hidden items-center flex justify-center' key={img.src}>
 
-<Image className='max-sm:hidden size-1/3 rounded-md shadow-lg' {...img}/>
+<Image className='max-sm:hidden size-1/3 object-cover rounded-md shadow-lg' {...img}/>
 
-<ScrollAnimationTransform config={{propPoints: ['-30%', '30%']}}>
-<Image quality={100}   className='absolute -z-10 size-full left-0 top-0 object-cover' {...img}/>
+<div className='absolute -inset-y-[7.5%] inset-x-0 -z-10'>
+<ScrollAnimationTransform config={{propPoints: ['-15%', '15%']}}>
+<Image quality={100}   className='size-full object-cover' {...img}/>
 </ScrollAnimationTransform>
+</div>
 
 <span className='absolute inset-0 bg-main/10 -z-10'/>
 </li>)}

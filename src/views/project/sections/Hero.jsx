@@ -1,33 +1,25 @@
-import { Bg, Lines } from '@/components';
+import { Bg, Lines,Button, ScrollIndicator } from '@/components';
 import { Image, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-import { MagneticButton } from '@/components/button';
-import { EyeIcon } from '@/components/ui/icon/icons';
+import { ArrowLeftIcon, ArrowRightIcon, EyeIcon } from '@/components/ui/icon/icons';
 import { ScrollAnimationTransform } from '@/components/scroll-animation';
 
 const ProjectViewHeroSection = ({ data={}, className, theme, ...props }) => {
-  const animationConfig = {
-    useScrollConfig: {
-      offset: ['0 0', '1 0']
-    },
-    propPoints: ['0%', '50%']
-  }
-
   return (
     <section
       className={cn(
-        'relative flex w-full pb-lg -mt-[--header-h] min-h-svh items-center flex-col',
+        'relative flex w-full pb-lg min-h-svh items-center flex-col',
         theme,
         className,
       )}
       {...props}
     >
-       <div className='grid relative sm:grid-cols-4 w-9/10 max-w-screen-lg gap-sm pt-md'>
+       <div className='min-h-[65svh] flex items-center py-lg w-9/10 max-w-screen-lg justify-center'>
        <Text.Title
           asChild
-          className='max-sm:text-center col-span-3 w-9/10 max-w-screen-lg'
-          variants={{ size: 'lg' }}
+          className='text-center'
+          variants={{ size: 'xl' }}
         >
           <h1>
            
@@ -35,35 +27,58 @@ const ProjectViewHeroSection = ({ data={}, className, theme, ...props }) => {
             
           </h1>
         </Text.Title>
+       </div>
 
         
-        <div className='flex justify-center'>
-        {data.href &&
-            <div className='absolute top-0 -translate-y-1/2'>
-                  <MagneticButton
+        <div className='flex justify-between items-center mb-md w-9/10 max-w-screen-xl'>
+<Button variants={{color: 'main', size: 'sm'}}>
+  <Button.Icon animation='slideLeft'>
+    <ArrowLeftIcon/>
+  </Button.Icon>
+
+  Prev
+</Button>
+
+          <ScrollIndicator/>
+
+          <Button variants={{color: 'main', size: 'sm'}}>
+
+  Next
+
+  <Button.Icon animation='slideRight'>
+    <ArrowRightIcon/>
+  </Button.Icon>
+</Button>
+          </div>    
+
+       <div id='scrollTo' className='w-full aspect-[1.5] relative flex items-center justify-center overflow-hidden'>
+       {data.href &&
+                  <Button.Magnetic
                 asLink
+                className='absolute z-10'
                 href={data.href}
                 aria-label='View live website'
-                  limit={0.2}
                   variants={{ size: 'lg' }}
                 >
                   <EyeIcon/>
-                </MagneticButton>
-            </div>
-          }      </div>    
-       </div>
+                </Button.Magnetic>
+          }  
 
-       <div className='w-full relative overflow-hidden'>
-      <ScrollAnimationTransform config={animationConfig}>
+      <div className='absolute -inset-y-[7.5%] inset-x-0'>
+      <ScrollAnimationTransform config={{propPoints: ['-15%', '15%']}}>
       <Image quality={100} priority className='size-full object-cover' {...data.thumbnail}/>
 
       </ScrollAnimationTransform>
+      </div>
+      <span className='absolute inset-0 bg-[radial-gradient(hsl(var(--inverted)/.5)_25%,hsl(var(--inverted)/.25)_75%,transparent)]'/>
+      
       </div>
       
 
         <Bg/>
 
         <Lines />
+        <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-30' />
     </section>
   );
 };

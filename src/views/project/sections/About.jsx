@@ -1,5 +1,6 @@
 import {  Bg, Lines, TextScrollAnimation } from '@/components';
-import { Text } from '@/components/ui';
+import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { Image, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const ProjectViewAboutSection = ({  data = {}, className,theme, ...props }) => {
@@ -10,20 +11,37 @@ const ProjectViewAboutSection = ({  data = {}, className,theme, ...props }) => {
 
   return (
     <section
-      className={cn('relative justify-center max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds z-10 w-9/10 max-w-screen-lg pb-lg flex flex-col items-center',theme, className)}
+      className={cn('relative justify-center max-2xl:min-h-screen z-10 w-9/10 pb-lg flex flex-col items-center',theme, className)}
       {...props}
     >
-        <Text.Subtitle className='uppercase mb-4 mr-auto'>About</Text.Subtitle> 
-
-       <div className='w-full flex gap-x-md mb-lg gap-y-sm max-sm:flex-col justify-between'>
-        <Text className='max-w-2xl text-xl font-medium'><TextScrollAnimation text={data.description}/></Text>
+<div className='w-full flex gap-x-md max-w-screen-lg mb-lg gap-y-sm max-sm:flex-col justify-between'>
+  <Text className='max-w-2xl text-xl font-medium'><TextScrollAnimation text={data.description}/></Text>
 
 <ul className='space-y-2'>
-  {listItems.map((data) => <li className='flex max-sm:flex-col gap-x-sm gap-y-1.5' key={data.title}><Text.Subtitle className='text-xs uppercase text-muted-content w-14'>{data.title}:</Text.Subtitle> <Text className='text-sm font-semibold first-letter:uppercase lowercase sm:col-span-2'>{data.description}</Text></li>)}
+{listItems.map((data) => <li className='flex max-sm:flex-col gap-x-sm gap-y-1.5' key={data.title}><Text.Subtitle className='text-xs uppercase text-muted-content w-14'>{data.title}:</Text.Subtitle> <Text className='text-sm font-semibold first-letter:uppercase lowercase sm:col-span-2'>{data.description}</Text></li>)}
 </ul>
-        </div>
+  </div>
 
-        <ul className='w-full flex flex-col sm:items-end gap-lg mb-lg'>
+      <div className='grid sm:grid-cols-12 max-w-screen-lg w-full mb-lg gap-sm'>
+      <div className='sm:col-span-7 relative w-full aspect-square rounded-3xl overflow-hidden'>
+      <div className='absolute -inset-y-[7.5%] inset-x-0'>
+      <ScrollAnimationTransform config={{propPoints: ['-15%', '15%']}}>
+      <Image className='size-full object-cover' {...data.thumbnail}/>
+
+      </ScrollAnimationTransform>
+      </div> </div>  
+
+<ScrollAnimationTransform config={{prop: '--y', propPoints: [-.333, .333]}}>
+<div className='rounded-3xl relative size-full translate-y-[calc(var(--y)*theme(spacing.lg))] sm:col-span-5 overflow-hidden max-sm:hidden'>
+<ScrollAnimationTransform config={{propPoints: ['-15%', '15%']}}>
+<div className='absolute -inset-y-[7.5%] inset-x-0'>
+<Image className='size-full object-cover' {...data.thumbnail}/>
+
+</div>
+      </ScrollAnimationTransform>
+  </div></ScrollAnimationTransform>        </div>
+
+        <ul className='w-full max-w-screen-lg flex flex-col sm:items-end gap-lg mb-lg'>
         {items.map(data => <li className='w-full max-w-screen-sm' key={data.title}>
           <Text.Subtitle className='uppercase mb-sm'>{data.title}</Text.Subtitle> 
           

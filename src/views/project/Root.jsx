@@ -8,7 +8,7 @@ const ProjectView = async ({ promises }) => {
   const {data} = await promises.data;
 
   return (
-    <main className='dark-layout w-full max-w-bounds flex flex-col items-center'>
+    <main className='w-full max-w-bounds flex flex-col items-center'>
       <Sections.Hero data={data} theme='light' />
 
       <Sections.About data={data} theme='light' />
