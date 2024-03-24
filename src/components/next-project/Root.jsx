@@ -2,10 +2,13 @@ import { cn } from '@/utils';
 
 import { MagneticButton } from '../button';
 import HorizontalScroll from '../horizontal-scroll';
-import { Text } from '../ui';
+import { Image, Text } from '../ui';
 import { ArrowUpIcon } from '../ui/icon/icons';
+import { projectsApi } from '@/api';
 
-const NextProject = ({ id, className, ...props }) => {
+const NextProject = async ({ id, className, ...props }) => {
+  const {data = {}} = await projectsApi.getOne(id)
+  
   return (
     <section
       className={cn('w-full space-y-sm', className)}
@@ -13,23 +16,39 @@ const NextProject = ({ id, className, ...props }) => {
     >
       <NextProjectLinkHeading />
 
-      <div className='relative flex w-full flex-col items-center justify-center gap-[.2em]'>
-        <NextProjectLinkContent text='Next project' />
+      <div className='relative flex w-full flex-col items-center [clip-path:inset(-100%_0_0_0)] justify-center gap-[.2em]'>
+      
 
-        <MagneticButton
+      <MagneticButton
           asLink
-          className='absolute !h-2/3 [&_svg]:size-[40%]'
-          href='#'
+          className='peer absolute !h-2/3 z-10 [&_svg]:size-[40%]'
+          href={`/projects/${id}`}
           variants={{ color: 'main' }}
         >
           <ArrowUpIcon className='rotate-45' />
         </MagneticButton>
 
+        <div className='group w-full flex justify-center relative'>
         <NextProjectLinkContent
-          baseVelocity={-1.5}
-          className='relative z-10'
-          text='Next project'
+          baseVelocity={-1}
+          className='text-muted'
+          text={data.title}
         />
+
+        <Image className='rounded-3xl w-9/10 max-w-screen-md aspect-square absolute object-cover top-0 [.peer:hover~.group_&]:-top-[100%] transition-[top] duration-500' {...data.thumbnail}/>
+        </div>
+
+
+         <span className='absolute z-10 inset-0 bg-gradient-to-b pointer-events-none from-transparent via-transparent to-main/75'/>
+        
+
+        <NextProjectLinkContent
+          baseVelocity={1.5}
+          className='relative z-10'
+          text={data.title}
+        />
+
+
       </div>
 
       <NextProjectLinkHeading
