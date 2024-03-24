@@ -1,44 +1,11 @@
-import { Lines } from '@/components';
-import { MagneticButton } from '@/components/button';
-import { Text } from '@/components/ui';
-import { cn } from '@/utils';
+import Sections from './sections';
 
-const NotFoundView = ({ className, ...props }) => {
+const NotFoundView = ({ data = {} }) => {
+
   return (
-    <main
-      className={cn(
-        'dark-layout dark relative flex w-full max-w-bounds flex-col items-center justify-center py-lg max-2xl:min-h-[calc(100svh-var(--header-h))] 2xl:h-screen 2xl:max-h-bounds',
-        className,
-      )}
-      {...props}
-    >
-      <Text.Title
-        aria-label='404'
-        className='text-[clamp(8rem,44vw,24rem)]/[1] font-bold'
-      >
-        <span
-          aria-hidden
-          className='flex items-center'
-        >
-          4
-          <MagneticButton
-            asLink
-            className='!h-[.8em] text-[1em] [&>span]:text-[.1em]'
-            href='/'
-            limit={0.2}
-            variants={{ size: 'lg' }}
-          >
-            Go home
-          </MagneticButton>
-          4
-        </span>
-      </Text.Title>
-
-      <Text>The page you are looking for is not available.</Text>
-
-      <Lines />
-      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-30' />
-    </main>
+    <main className='dark-layout dark flex w-full max-w-bounds flex-col items-center'>
+    <Sections.Hero data={data}/>
+  </main>
   );
 };
 
