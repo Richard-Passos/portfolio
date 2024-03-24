@@ -36,7 +36,7 @@ const HomeViewAboutSection = ({ className, ...props }) => {
 };
 
 const Grid = async ({ className, ...props }) => {
-  const personalInfo = (await globalsApi.getOne('personal-info')).data;
+  const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
 
   return (
     <BentoGrid
@@ -70,7 +70,7 @@ const Grid = async ({ className, ...props }) => {
         <Icons.Globe />
 
         <Text className='text-4xl font-medium'>
-          Based in {personalInfo.location.country}, {personalInfo.location.gmt}
+          Based in {personalInfo.location?.country}, {personalInfo.location?.gmt}
         </Text>
       </BentoGrid.Item>
 

@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
 };
 
 const generateMetadata = async () => {
-  const { data } = await globalsApi.getOne('personal-info');
+  const { data = {} } = await globalsApi.getOne('personal-info');
 
   return {
     title: {

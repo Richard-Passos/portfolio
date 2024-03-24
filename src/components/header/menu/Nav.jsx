@@ -10,7 +10,7 @@ import Link from './Link';
 
 const DEFAULT_IS_HOVER = undefined;
 
-const HeaderMenuNav = ({ className, items, ...props }) => {
+const HeaderMenuNav = ({ className, items = [], ...props }) => {
   const [isHover, setIsHover] = useState(DEFAULT_IS_HOVER),
     pathname = usePathname();
 

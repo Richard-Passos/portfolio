@@ -45,7 +45,7 @@ const ContactFormSelect = (props) => {
       <Select.Portal>
         <Select.Content>
           <Select.Viewport>
-            {services.map(({ title }) => (
+            {services.map(({ title = '' }) => (
               <ContactFormSelectItem
                 key={title}
                 value={title.toLowerCase()}

@@ -8,7 +8,7 @@ import Form from '../form';
 import { CONTACT_VIEW_HERO_SECTION_ICONS } from './hero/Root';
 
 const ContactViewContactSection = async ({ className, ...props }) => {
-  const personalInfo = (await globalsApi.getOne('personal-info')).data;
+  const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
 
   const extraInfo = [
     {
@@ -21,7 +21,7 @@ const ContactViewContactSection = async ({ className, ...props }) => {
     },
     {
       title: 'Location',
-      content: `${personalInfo.location.country}, ${personalInfo.location.state}`,
+      content: `${personalInfo.location?.country}, ${personalInfo.location?.state}`,
     },
     {
       title: 'Cleber',
@@ -63,7 +63,7 @@ const ContactViewContactSection = async ({ className, ...props }) => {
         </ul>
 
         <nav className='grid gap-2 lg:grid-cols-3'>
-          {personalInfo.socials.map((social, i) => (
+          {personalInfo.socials?.map((social, i) => (
             <SocialNav.Item
               index={i}
               key={social.href}
@@ -92,7 +92,7 @@ const ContactViewContactSection = async ({ className, ...props }) => {
 
           <Link
             className='group relative h-14 w-full justify-between gap-5 break-all rounded-sm border bg-main p-5'
-            href={`mailto:${personalInfo.email}?subject=👋 Hey ${personalInfo.name.first}, I'd like to hire you!`}
+            href={`mailto:${personalInfo.email}?subject=👋 Hey ${personalInfo.name?.first}, I'd like to hire you!`}
           >
             <div className='relative flex items-center justify-center overflow-hidden'>
               <PaperPlaneIcon className='h-5 w-5 transition-transform duration-0 ease-backOut group-hover:-translate-y-full group-hover:translate-x-full group-hover:duration-500' />

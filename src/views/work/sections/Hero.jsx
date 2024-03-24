@@ -6,7 +6,7 @@ import { SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
 
 const WorkViewHeroSection = async ({ theme, className, ...props }) => {
-  const personalInfo = (await globalsApi.getOne('personal-info')).data;
+  const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
 
   const animationConfig = {
     y: {

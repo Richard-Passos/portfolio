@@ -14,7 +14,7 @@ import { FOOTER_CONTENT_THEME } from '../Root';
 const SCROLL_OFFSET = ['0 1', '1 1'];
 
 const FooterContent = async ({ className, ...props }) => {
-  const personalInfo = (await globalsApi.getOne('personal-info')).data;
+  const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
 
   const animationConfig = {
     y: {
@@ -76,7 +76,7 @@ const FooterContent = async ({ className, ...props }) => {
                 <Logo className='w-fit' />
 
                 <Text className='mb-4 max-w-52 text-sm font-medium'>
-                  An great {personalInfo.job.toLowerCase()} to fit your needs.
+                  An great {personalInfo.job?.toLowerCase()} to fit your needs.
                 </Text>
 
                 <section className='flex flex-col gap-1.5 sm:mb-md'>
@@ -95,7 +95,7 @@ const FooterContent = async ({ className, ...props }) => {
               </div>
 
               <SocialNav>
-                {personalInfo.socials.map((social, i) => (
+                {personalInfo.socials?.map((social, i) => (
                   <SocialNav.Item
                     index={i}
                     key={social.href}

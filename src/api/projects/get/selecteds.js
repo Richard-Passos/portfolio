@@ -1,5 +1,5 @@
 const projectsApiGetSelecteds = async (pathname = '', opts = {}) => {
-  const res = await fetch(
+  /* const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects${pathname}`,
     {
       cache: 'no-store',
@@ -11,9 +11,9 @@ const projectsApiGetSelecteds = async (pathname = '', opts = {}) => {
 
   const data = await res.json();
 
-  if (data) data.data = data.data.filter((data) => data.isSelected);
+  if (data) data.data = data.data.filter((data) => data.isSelected); */
 
-  return data;
+  return {};
 };
 
 export default projectsApiGetSelecteds;

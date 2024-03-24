@@ -3,12 +3,15 @@ import { Suspense } from 'react';
 import { Bg, DotsLoader, Lines, NextProject } from '@/components';
 
 import Sections from './sections';
+import { notFound } from 'next/navigation';
 
 const ProjectView = async ({ promises }) => {
   const {
     data = {},
-    meta: { adjacentIds = {} },
+    meta: { adjacentIds = {} } = {},
   } = await promises.data;
+  
+  if(!data.title) notFound()
 
   return (
     <main className='flex w-full max-w-bounds flex-col items-center'>

@@ -10,7 +10,7 @@ import Nav from './Nav';
 import Menu from './menu';
 
 const Header = async ({ className, ...props }) => {
-  const { data } = await globalsApi.getOne('header');
+  const { data = {} } = await globalsApi.getOne('header');
 
   return (
     <header

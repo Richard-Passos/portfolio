@@ -7,7 +7,7 @@ import { forwardRef } from 'react';
 import { useIsExternalUrl } from '@/hooks';
 import { cn } from '@/utils';
 
-const Link = ({ href, asChild, className, ...props }, ref) => {
+const Link = ({ href = '', asChild, className, ...props }, ref) => {
   const isExternal = useIsExternalUrl(href);
 
   const Tag = asChild ? Slot : NextLink,

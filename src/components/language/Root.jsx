@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 import { Select } from '../ui';
 import { ChevronDownIcon, ChevronUpIcon } from '../ui/icon/icons';
 
-const DEFAULT_LANG = languages[0].toLowerCase(),
+const DEFAULT_LANG = languages[0]?.toLowerCase(),
   LANG_REGEX = /\/[a-z]{2}(?![^/])/;
 
 const Language = (props) => {
