@@ -11,7 +11,7 @@ const ProjectPage = ({ params: { id } }) => {
 const generateMetadata = async ({ params }) => {
   const { id } = params;
 
-  const {data} = (await projectsApi.getOne(id));
+  const {data = {}} = await projectsApi.getOne(id)
 
   return {
     title: data.title,
