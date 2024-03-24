@@ -29,11 +29,11 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
 
         <div className='sm:max-w-lg sm:justify-self-end'>
         <Text className='text-muted-content mb-4 max-sm:text-center sm:indent-4'>
-        I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.
+        I&apos;m Richard an awesome full stack developer based in Brazil. When I&apos;m not coding, you can catch me in the gaming world — I&apos;m a huge fan, especially when it comes to rogue-like games.
         </Text>
 
         <Text className='text-muted-content max-sm:text-center sm:indent-4'>
-        I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.
+        I&apos;m Richard an awesome full stack developer based in Brazil. When I&apos;m not coding, you can catch me in the gaming world — I&apos;m a huge fan, especially when it comes to rogue-like games.
         </Text>
         </div>
       </section>

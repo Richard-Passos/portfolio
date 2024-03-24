@@ -62,7 +62,7 @@ const Grid = async ({ className, ...props }) => {
             aria-hidden
             className='inline-block fill-content size-4 -translate-y-0.5'
           />{' '}
-          <span className='inline text-content'>Hey —</span> I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to  rogue-like games.
+          <span className='inline text-content'>Hey —</span> I&apos;m Richard an awesome full stack developer based in Brazil. When I&apos;m not coding, you can catch me in the gaming world — I&apos;m a huge fan, especially when it comes to  rogue-like games.
         </Text>
       </BentoGrid.Item>
 

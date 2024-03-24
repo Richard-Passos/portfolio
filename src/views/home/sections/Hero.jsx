@@ -65,7 +65,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
                       <span>hearts</span>
 
                       <span className='max-w-sm -translate-y-3.5 text-start text-[.12em]/[1.15] font-normal normal-case tracking-normal text-muted-content max-lg:hidden'>
-                        Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.
+                        Hey there! I&apos;m Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.
                       </span>
                     </div>
                   </div>
@@ -74,7 +74,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
 
               <div className='mx-auto grid max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
                 <Text className='col-span-full max-w-lg text-center justify-self-center text-muted-content sm:col-span-4 lg:sr-only'>
-                  Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.
+                  Hey there! I&apos;m Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.
                 </Text>
 
                 <ScrollAnimation.Transform config={animationConfig.rotate}>
