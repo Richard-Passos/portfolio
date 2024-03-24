@@ -2450,13 +2450,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tushargugnani/tailwind-group-peer-checked@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@tushargugnani/tailwind-group-peer-checked@npm:1.0.0"
-  checksum: 10c0/7d62b8f96deb7f4e2c3d42e8190e366bd3da45cc3ff32ac8bc56c7ca74ffa6ccf13ac2eef9ef6d7dc2385639ad63d48b191ffd1c30e79ee4d8072d0a43af5358
-  languageName: node
-  linkType: hard
-
 "@types/aria-query@npm:^5.0.1":
   version: 5.0.4
   resolution: "@types/aria-query@npm:5.0.4"
@@ -8342,7 +8335,6 @@ __metadata:
     "@testing-library/react": "npm:^14.2.1"
     "@testing-library/user-event": "npm:^14.5.2"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
-    "@tushargugnani/tailwind-group-peer-checked": "npm:^1.0.0"
     "@types/jest": "npm:^29.5.12"
     autoprefixer: "npm:^10.4.18"
     class-variance-authority: "npm:^0.7.0"
