@@ -14,7 +14,7 @@ const useLoadMore = (setState, getFn) => {
     try {
       setIsFetching(true);
 
-       const res = await getFn(`?page=${page.current + 1}`);
+      const res = await getFn(`?page=${page.current + 1}`);
 
       page.current++;
       isLastPage.current = page.current >= res.meta.totalPages;

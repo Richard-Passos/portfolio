@@ -1,21 +1,21 @@
 import { Suspense } from 'react';
 
+import { globalsApi } from '@/api';
 import { cn } from '@/utils';
 
 import DotsLoader from '../dots-loader';
 import Language from '../language';
-import Menu from './menu';
 import { Logo, Separator } from '../ui';
 import Nav from './Nav';
-import { globalsApi } from '@/api';
+import Menu from './menu';
 
 const Header = async ({ className, ...props }) => {
-  const {data} = await globalsApi.getOne('header')
+  const { data } = await globalsApi.getOne('header');
 
   return (
     <header
       className={cn(
-        'relative z-10 flex min-h-[--header-h] w-[calc(var(--w)*.9)] [--w:100vw] 2xl:[--w:--max-w] flex-wrap items-center justify-between',
+        'relative z-10 flex min-h-[--header-h] w-[calc(var(--w)*.9)] flex-wrap items-center justify-between [--w:100vw] 2xl:[--w:--max-w]',
         className,
       )}
       {...props}
@@ -35,7 +35,7 @@ const Header = async ({ className, ...props }) => {
         </Suspense>
       </div>
 
-      <Menu/>
+      <Menu />
     </header>
   );
 };

@@ -8,12 +8,11 @@ const projectsApiGetSelecteds = async (pathname = '', opts = {}) => {
   );
 
   if (!res.ok) throw new Error('Failed to fetch data!');
-  
-  const data = (await res.json())
 
-  if(data) data.data = data.data.filter((data) => data.isSelected)
+  const data = await res.json();
 
-  
+  if (data) data.data = data.data.filter((data) => data.isSelected);
+
   return data;
 };
 

@@ -17,7 +17,7 @@ const MenuTrigger = ({ asChild, ...props }, ref) => {
 
   return (
     <Tag
-    ref={ref}
+      ref={ref}
       data-state={isOpen ? 'open' : 'closed'}
       {...props}
       onClick={(ev) => {

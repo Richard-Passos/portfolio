@@ -2,8 +2,7 @@ import { pagesApi } from '@/api';
 import { ErrorProvider } from '@/contexts';
 
 const ErrorBoundaryProvider = async ({ value, ...props }) => {
-  const {data} = await pagesApi.getOne(
-    'error',  );
+  const { data } = await pagesApi.getOne('error');
 
   return (
     <ErrorProvider

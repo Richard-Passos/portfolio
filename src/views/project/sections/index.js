@@ -9,8 +9,8 @@ const ProjectViewSections = {
 };
 
 export default ProjectViewSections;
-export { 
-  ProjectViewAboutSection, 
-  ProjectViewHeroSection, 
-  ProjectViewImagesSection, 
+export {
+  ProjectViewAboutSection,
+  ProjectViewHeroSection,
+  ProjectViewImagesSection,
 };

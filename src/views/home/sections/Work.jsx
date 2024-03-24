@@ -61,7 +61,7 @@ const HomeViewWorkSection = ({ className, ...props }) => {
 };
 
 const ShowProjects = async ({ className, ...props }) => {
-  const selectedProjects = (await projectsApi.getSelecteds()).data || []
+  const selectedProjects = (await projectsApi.getSelecteds()).data || [];
 
   const projects = selectedProjects.reduce(
     (obj, { thumbnail, ...data }) => ({
@@ -100,8 +100,8 @@ const ShowProjects = async ({ className, ...props }) => {
       <Projects.Grid className='sm:hidden'>
         {projects.data.map((data, i) => (
           <Projects.Grid.Item
-          href={`/projects/${data.slug}`}
-          index={i}
+            href={`/projects/${data.slug}`}
+            index={i}
             key={'projects-grid-' + data.slug}
           >
             <Projects.Grid.Number index={i} />

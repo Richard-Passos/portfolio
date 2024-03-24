@@ -1,10 +1,3 @@
-const pages = [
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-]
+const pages = [{}, {}, {}, {}, {}, {}];
 
-export default pages
+export default pages;

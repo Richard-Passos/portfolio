@@ -19,7 +19,7 @@ const ProjectsViewShowContent = ({ className, ...props }) => {
 
   useEffect(() => {
     const handleSetProjects = async () => {
-      const {data = []} = await projectsApi.get(`?page=${page}`);
+      const { data = [] } = await projectsApi.get(`?page=${page}`);
 
       setProjects(data);
     };

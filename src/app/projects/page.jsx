@@ -7,7 +7,7 @@ const ProjectsPage = () => {
 const metadata = {
   title: 'Projects',
   description: 'Richard passos projects.',
- }
+};
 
 export default ProjectsPage;
-export {metadata}
+export { metadata };

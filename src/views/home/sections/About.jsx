@@ -9,16 +9,13 @@ import {
 } from '@/components';
 import { Badge, Link, Text } from '@/components/ui';
 import Icons from '@/components/ui/icon/icons';
-import {  values } from '@/constants';
+import { values } from '@/constants';
 import { cn } from '@/utils';
 
 const HomeViewAboutSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn(
-        'relative flex flex-col items-center gap-lg',
-        className,
-      )}
+      className={cn('relative flex flex-col items-center gap-lg', className)}
       {...props}
     >
       <h2 className='flex w-full flex-col'>
@@ -29,9 +26,9 @@ const HomeViewAboutSection = ({ className, ...props }) => {
         />
       </h2>
 
-        <div className='w-full overflow-x-clip flex justify-center'>
+      <div className='flex w-full justify-center overflow-x-clip'>
         <Grid />
-        </div>
+      </div>
 
       <ListContactPage />
     </Section>
@@ -39,7 +36,7 @@ const HomeViewAboutSection = ({ className, ...props }) => {
 };
 
 const Grid = async ({ className, ...props }) => {
-  const personalInfo = (await globalsApi.getOne('personal-info')).data
+  const personalInfo = (await globalsApi.getOne('personal-info')).data;
 
   return (
     <BentoGrid
@@ -60,9 +57,12 @@ const Grid = async ({ className, ...props }) => {
         <Text className='text-muted-content'>
           <Icons.HandHorns
             aria-hidden
-            className='inline-block fill-content size-4 -translate-y-0.5'
+            className='inline-block size-4 -translate-y-0.5 fill-content'
           />{' '}
-          <span className='inline text-content'>Hey —</span> I&apos;m Richard an awesome full stack developer based in Brazil. When I&apos;m not coding, you can catch me in the gaming world — I&apos;m a huge fan, especially when it comes to  rogue-like games.
+          <span className='inline text-content'>Hey —</span> I&apos;m Richard an
+          awesome full stack developer based in Brazil. When I&apos;m not
+          coding, you can catch me in the gaming world — I&apos;m a huge fan,
+          especially when it comes to rogue-like games.
         </Text>
       </BentoGrid.Item>
 

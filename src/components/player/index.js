@@ -1,3 +1,3 @@
-import Player from './Root'
+import Player from './Root';
 
-export default Player
+export default Player;

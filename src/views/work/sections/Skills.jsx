@@ -19,7 +19,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
         className='mb-lg'
         options={{ slideFocus: true }}
       >
-        <div className='flex w-9/10 max-w-screen-xl sm:items-end max-sm:flex-col justify-between gap-md'>
+        <div className='flex w-9/10 max-w-screen-xl justify-between gap-md max-sm:flex-col sm:items-end'>
           <Text.Title
             className='text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
             id='carousel-skills-heading-0'
@@ -33,26 +33,26 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             </span>
           </Text.Title>
 
-          <section className='flex items-center gap-sm w-full sm:max-w-xl'>
-          <Carousel.ActiveIdx
-            className='shrink-0'
-            itemsLength={skills.hard.length}
-          />
+          <section className='flex w-full items-center gap-sm sm:max-w-xl'>
+            <Carousel.ActiveIdx
+              className='shrink-0'
+              itemsLength={skills.hard.length}
+            />
 
-          <Carousel.Progress variants={{ size: 'sm' }}>
-            <Carousel.Progress.Indicator />
-          </Carousel.Progress>
+            <Carousel.Progress variants={{ size: 'sm' }}>
+              <Carousel.Progress.Indicator />
+            </Carousel.Progress>
 
-          <Carousel.Actions>
-            <HomeViewSkillsSectionCarouselAciton type='prev'>
-              <ArrowLeftIcon />
-            </HomeViewSkillsSectionCarouselAciton>
+            <Carousel.Actions>
+              <HomeViewSkillsSectionCarouselAciton type='prev'>
+                <ArrowLeftIcon />
+              </HomeViewSkillsSectionCarouselAciton>
 
-            <HomeViewSkillsSectionCarouselAciton type='next'>
-              <ArrowRightIcon />
-            </HomeViewSkillsSectionCarouselAciton>
-          </Carousel.Actions>
-        </section>
+              <HomeViewSkillsSectionCarouselAciton type='next'>
+                <ArrowRightIcon />
+              </HomeViewSkillsSectionCarouselAciton>
+            </Carousel.Actions>
+          </section>
         </div>
 
         <Carousel.Track>
@@ -70,7 +70,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
         aria-labelledby='carousel-skills-heading-1'
         options={{ slideFocus: true }}
       >
-        <div className='flex w-9/10 max-w-screen-xl sm:items-end max-sm:flex-col justify-between gap-md'>
+        <div className='flex w-9/10 max-w-screen-xl justify-between gap-md max-sm:flex-col sm:items-end'>
           <Text.Title
             className='text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
             id='carousel-skills-heading-0'
@@ -84,26 +84,26 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             </span>
           </Text.Title>
 
-          <section className='flex items-center gap-sm w-full sm:max-w-xl'>
-          <Carousel.ActiveIdx
-            className='shrink-0'
-            itemsLength={skills.soft.length}
-          />
+          <section className='flex w-full items-center gap-sm sm:max-w-xl'>
+            <Carousel.ActiveIdx
+              className='shrink-0'
+              itemsLength={skills.soft.length}
+            />
 
-          <Carousel.Progress variants={{ size: 'sm' }}>
-            <Carousel.Progress.Indicator />
-          </Carousel.Progress>
+            <Carousel.Progress variants={{ size: 'sm' }}>
+              <Carousel.Progress.Indicator />
+            </Carousel.Progress>
 
-          <Carousel.Actions>
-            <HomeViewSkillsSectionCarouselAciton type='prev'>
-              <ArrowLeftIcon />
-            </HomeViewSkillsSectionCarouselAciton>
+            <Carousel.Actions>
+              <HomeViewSkillsSectionCarouselAciton type='prev'>
+                <ArrowLeftIcon />
+              </HomeViewSkillsSectionCarouselAciton>
 
-            <HomeViewSkillsSectionCarouselAciton type='next'>
-              <ArrowRightIcon />
-            </HomeViewSkillsSectionCarouselAciton>
-          </Carousel.Actions>
-        </section>
+              <HomeViewSkillsSectionCarouselAciton type='next'>
+                <ArrowRightIcon />
+              </HomeViewSkillsSectionCarouselAciton>
+            </Carousel.Actions>
+          </section>
         </div>
 
         <Carousel.Track>

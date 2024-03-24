@@ -7,7 +7,4 @@ const globalsApiGet = {
 };
 
 export default globalsApiGet;
-export {
-  globalsApiGetRoot as globalsApiGet,
-  globalsApiGetOne,
-};
+export { globalsApiGetRoot as globalsApiGet, globalsApiGetOne };

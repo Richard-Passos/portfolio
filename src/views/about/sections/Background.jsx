@@ -28,19 +28,23 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
         </Text>
 
         <div className='sm:max-w-lg sm:justify-self-end'>
-        <Text className='text-muted-content mb-4 max-sm:text-center sm:indent-4'>
-        I&apos;m Richard an awesome full stack developer based in Brazil. When I&apos;m not coding, you can catch me in the gaming world — I&apos;m a huge fan, especially when it comes to rogue-like games.
-        </Text>
+          <Text className='mb-4 text-muted-content max-sm:text-center sm:indent-4'>
+            I&apos;m Richard an awesome full stack developer based in Brazil.
+            When I&apos;m not coding, you can catch me in the gaming world —
+            I&apos;m a huge fan, especially when it comes to rogue-like games.
+          </Text>
 
-        <Text className='text-muted-content max-sm:text-center sm:indent-4'>
-        I&apos;m Richard an awesome full stack developer based in Brazil. When I&apos;m not coding, you can catch me in the gaming world — I&apos;m a huge fan, especially when it comes to rogue-like games.
-        </Text>
+          <Text className='text-muted-content max-sm:text-center sm:indent-4'>
+            I&apos;m Richard an awesome full stack developer based in Brazil.
+            When I&apos;m not coding, you can catch me in the gaming world —
+            I&apos;m a huge fan, especially when it comes to rogue-like games.
+          </Text>
         </div>
       </section>
 
       <section className='grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-md'>
         <ScrollAnimationTransform config={animationConfig}>
-          <div className='md:translate-y-[--y] rounded-3xl max-md:aspect-video w-full bg-blue-500 md:h-2/3 lg:h-9/10 lg:translate-y-[calc(var(--y)*20/90)]' />
+          <div className='w-full rounded-3xl bg-blue-500 max-md:aspect-video md:h-2/3 md:translate-y-[--y] lg:h-9/10 lg:translate-y-[calc(var(--y)*20/90)]' />
         </ScrollAnimationTransform>
 
         <section className='md:py-lg'>

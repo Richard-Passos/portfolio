@@ -1,3 +1,3 @@
-import NextProject from './Root'
+import NextProject from './Root';
 
-export default NextProject
+export default NextProject;

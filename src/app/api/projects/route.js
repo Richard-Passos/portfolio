@@ -20,7 +20,7 @@ const GET = (req) => {
       page,
       totalPages: Math.ceil(totalResults / RES_PER_PAGE),
       totalResults,
-    }
+    },
   });
 };
 

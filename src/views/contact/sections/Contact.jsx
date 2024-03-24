@@ -1,3 +1,4 @@
+import { globalsApi } from '@/api';
 import { HorizontalScroll, LocalTime, Section, SocialNav } from '@/components';
 import { Icon, Link, Text } from '@/components/ui';
 import { PaperPlaneIcon } from '@/components/ui/icon/icons';
@@ -5,14 +6,10 @@ import { cn } from '@/utils';
 
 import Form from '../form';
 import { CONTACT_VIEW_HERO_SECTION_ICONS } from './hero/Root';
-import { globalsApi } from '@/api';
-
-
 
 const ContactViewContactSection = async ({ className, ...props }) => {
-  const personalInfo = (await globalsApi.getOne('personal-info')).data
+  const personalInfo = (await globalsApi.getOne('personal-info')).data;
 
-  
   const extraInfo = [
     {
       title: 'Availability',

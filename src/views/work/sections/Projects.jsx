@@ -1,10 +1,5 @@
 import { projectsApi } from '@/api';
-import {
-  Bg,
-  Lines,
-  Projects,
-  ScrollTitle,
-} from '@/components';
+import { Bg, Lines, Projects, ScrollTitle } from '@/components';
 import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui';
 import { PlusIcon } from '@/components/ui/icon/icons';
@@ -28,9 +23,11 @@ const WorkViewProjectsSection = ({ theme, className, ...props }) => {
         />
       </h2>
 
-     <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
+      <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
         <Text className='text-muted-content max-sm:text-center sm:col-end-3 sm:max-w-lg sm:justify-self-end'>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit dolores adipisci voluptates dolore inventore aperiam rerum possimus culpa nemo molestiae!
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit
+          dolores adipisci voluptates dolore inventore aperiam rerum possimus
+          culpa nemo molestiae!
         </Text>
       </section>
 
@@ -55,7 +52,7 @@ const WorkViewProjectsSection = ({ theme, className, ...props }) => {
 };
 
 const WorkViewProjectsShowSection = async () => {
-  const selectedProjects = (await projectsApi.getSelecteds()).data || []
+  const selectedProjects = (await projectsApi.getSelecteds()).data || [];
 
   const projects = selectedProjects.reduce(
     (obj, { thumbnail, ...data }) => ({

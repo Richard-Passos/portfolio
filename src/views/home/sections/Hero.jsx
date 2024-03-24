@@ -41,7 +41,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
           )}
           {...props}
         >
-          <div className='relative mx-auto w-[calc(100%-var(--inset)*2)] flex items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-svh -mt-[--header-h] sm:translate-y-[--y] 2xl:h-screen 2xl:max-h-bounds 2xl:[--w:--max-w]'>
+          <div className='relative mx-auto -mt-[--header-h] flex w-[calc(100%-var(--inset)*2)] items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-svh sm:translate-y-[--y] 2xl:h-screen 2xl:max-h-bounds 2xl:[--w:--max-w]'>
             <div className='w-9/10 space-y-sm pb-[--inset] sm:grid-cols-3 lg:opacity-[--opacity]'>
               <Text.Title
                 aria-label='Turning heads and conquering hearts.'
@@ -65,7 +65,9 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
                       <span>hearts</span>
 
                       <span className='max-w-sm -translate-y-3.5 text-start text-[.12em]/[1.15] font-normal normal-case tracking-normal text-muted-content max-lg:hidden'>
-                        Hey there! I&apos;m Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.
+                        Hey there! I&apos;m Richard an awesome full stack
+                        developer — who cares building solid and scalable
+                        products with a great user experience.
                       </span>
                     </div>
                   </div>
@@ -73,8 +75,10 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
               </Text.Title>
 
               <div className='mx-auto grid max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
-                <Text className='col-span-full max-w-lg text-center justify-self-center text-muted-content sm:col-span-4 lg:sr-only'>
-                  Hey there! I&apos;m Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.
+                <Text className='col-span-full max-w-lg justify-self-center text-center text-muted-content sm:col-span-4 lg:sr-only'>
+                  Hey there! I&apos;m Richard an awesome full stack developer —
+                  who cares building solid and scalable products with a great
+                  user experience.
                 </Text>
 
                 <ScrollAnimation.Transform config={animationConfig.rotate}>

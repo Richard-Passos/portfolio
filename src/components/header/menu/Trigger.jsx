@@ -39,7 +39,7 @@ const HeaderMenuTrigger = ({ className, variants, ...props }, ref) => {
           <Icon>
             <MenuIcon className='pointer-events-none group-data-open:opacity-0' />
           </Icon>
-          
+
           <span className='sr-only group-data-open:hidden'>Open menu</span>
 
           <span className='sr-only group-data-closed:hidden'>Close menu</span>

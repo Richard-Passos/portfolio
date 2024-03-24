@@ -7,10 +7,7 @@ const GET = async (req) => {
 
   const page = searchParams.get('page') || 1;
 
-  const results = globals.slice(
-      (page - 1) * RES_PER_PAGE,
-      page * RES_PER_PAGE,
-    ),
+  const results = globals.slice((page - 1) * RES_PER_PAGE, page * RES_PER_PAGE),
     totalResults = globals.length;
 
   return Response.json({
@@ -20,7 +17,7 @@ const GET = async (req) => {
       page,
       totalPages: Math.ceil(totalResults / RES_PER_PAGE),
       totalResults,
-    }
+    },
   });
 };
 

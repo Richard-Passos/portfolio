@@ -1,17 +1,19 @@
 import Button from '../../button';
-import { Portal, Menu } from '../../ui';
+import { Menu, Portal } from '../../ui';
 import Content from './Content';
 import Trigger from './Trigger';
 
 const HeaderMenu = (props) => {
   return (
     <Menu {...props}>
-          <Menu.Trigger asChild>
-            <Button       className='rounded-sm sm:hidden'  variants={{ size: 'sm', color: 'main' }}
->
-              Menu
-            </Button>
-          </Menu.Trigger>
+      <Menu.Trigger asChild>
+        <Button
+          className='rounded-sm sm:hidden'
+          variants={{ size: 'sm', color: 'main' }}
+        >
+          Menu
+        </Button>
+      </Menu.Trigger>
 
       <Portal
         asChild
