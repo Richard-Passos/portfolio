@@ -70,7 +70,8 @@ const Grid = async ({ className, ...props }) => {
         <Icons.Globe />
 
         <Text className='text-4xl font-medium'>
-          Based in {personalInfo.location?.country}, {personalInfo.location?.gmt}
+          Based in {personalInfo.location?.country},{' '}
+          {personalInfo.location?.gmt}
         </Text>
       </BentoGrid.Item>
 

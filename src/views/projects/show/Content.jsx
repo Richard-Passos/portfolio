@@ -9,7 +9,12 @@ import { ProjectsShowContext } from '@/contexts';
 import { cn } from '@/utils';
 
 const ProjectsViewShowContent = ({ className, ...props }) => {
-  const { type = '', role = '', projects = [], setProjects } = useContext(ProjectsShowContext),
+  const {
+      type = '',
+      role = '',
+      projects = [],
+      setProjects,
+    } = useContext(ProjectsShowContext),
     page = useSearchParams().get('page') || 1;
 
   const projectsObj = projects.reduce(

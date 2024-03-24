@@ -8,10 +8,10 @@ const GET = async (_, { params: { id = '' } }) => {
   );
 
   const data = projects[dataIdx],
-  adjacentIds = {
-    prev: projects.at(dataIdx > 0 ? dataIdx - 1 : projects.length - 1)?.slug,
-    next: projects.at(dataIdx < projects.length - 1 ? dataIdx + 1 : 0)?.slug,
-  };
+    adjacentIds = {
+      prev: projects.at(dataIdx > 0 ? dataIdx - 1 : projects.length - 1)?.slug,
+      next: projects.at(dataIdx < projects.length - 1 ? dataIdx + 1 : 0)?.slug,
+    };
 
   return Response.json({
     status: 200,
