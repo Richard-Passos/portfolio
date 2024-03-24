@@ -5,7 +5,7 @@ import { cn } from '@/utils';
 import { ArrowLeftIcon, ArrowRightIcon, EyeIcon } from '@/components/ui/icon/icons';
 import { ScrollAnimationTransform } from '@/components/scroll-animation';
 
-const ProjectViewHeroSection = ({ data={}, className, theme, ...props }) => {
+const ProjectViewHeroSection = ({ data={}, className, theme, adjacentIds = {}, ...props }) => {
   return (
     <section
       className={cn(
@@ -31,7 +31,7 @@ const ProjectViewHeroSection = ({ data={}, className, theme, ...props }) => {
 
         
         <div className='flex justify-between items-center mb-md w-9/10 max-w-screen-xl'>
-<Button variants={{color: 'main', size: 'sm'}}>
+<Button asLink href={`/projects/${adjacentIds.prev}`} variants={{color: 'main', size: 'sm'}}>
   <Button.Icon animation='slideLeft'>
     <ArrowLeftIcon/>
   </Button.Icon>
@@ -41,7 +41,7 @@ const ProjectViewHeroSection = ({ data={}, className, theme, ...props }) => {
 
           <ScrollIndicator/>
 
-          <Button variants={{color: 'main', size: 'sm'}}>
+          <Button  asLink href={`/projects/${adjacentIds.next}`} variants={{color: 'main', size: 'sm'}}>
 
   Next
 
