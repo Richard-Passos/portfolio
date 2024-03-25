@@ -8,8 +8,6 @@ const FooterOverlay = ({ className, ...props }) => {
     scrollConfig: {
       offset: ['0 1', '.95 1'],
     },
-    scroll: 'scrollYProgress',
-    scrollPoints: [0, 1],
     prop: '--h',
     propPoints: ['79px', '0px'],
   };

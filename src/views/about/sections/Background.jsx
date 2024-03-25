@@ -1,5 +1,5 @@
 import { Lines, ScrollTitle, TextScrollAnimate } from '@/components';
-import { ScrollAnimateTransform } from '@/components/scroll-animate';
+import { ScrollAnimate } from '@/components/scroll-animate';
 import { Separator, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -43,9 +43,9 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
       </section>
 
       <section className='grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-md'>
-        <ScrollAnimateTransform config={animationConfig}>
+        <ScrollAnimate config={animationConfig}>
           <div className='w-full rounded-3xl bg-blue-500 max-md:aspect-video md:h-2/3 md:translate-y-[--y] lg:h-9/10 lg:translate-y-[calc(var(--y)*20/90)]' />
-        </ScrollAnimateTransform>
+        </ScrollAnimate>
 
         <section className='md:py-lg'>
           <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>

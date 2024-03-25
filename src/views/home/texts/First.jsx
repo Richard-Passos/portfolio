@@ -14,8 +14,7 @@ const HomeViewFirstText = (props) => {
       scrollConfig: {
         offset: ['.5 .5', '.75 .5'],
       },
-      scroll: 'scrollYProgress',
-      scrollPoints: [0, 1],
+      
       prop: '--clip-path',
       propPoints: ['inset(0% -1% 0 0)', 'inset(100% -1% 0 0)'],
     },
@@ -23,14 +22,13 @@ const HomeViewFirstText = (props) => {
       scrollConfig: {
         offset: ['.5 .5', '1 .5'],
       },
+      prop: 'y',
       propPoints: ['0%', '50%'],
     },
     top: {
       scrollConfig: {
         offset: ['-1 .5', '0 .5'],
       },
-      scroll: 'scrollYProgress',
-      scrollPoints: [0, 1],
       prop: '--top',
       propPoints: ['0%', '-50%'],
     },
@@ -42,7 +40,7 @@ const HomeViewFirstText = (props) => {
       {...props}
     >
       <div className='grid min-h-[calc(var(--h)*1.5)] grid-rows-3 justify-items-center [--h:100vh] 2xl:[--h:--max-h]'>
-        <ScrollAnimate.Transform config={animationConfig.x}>
+        <ScrollAnimate config={animationConfig.x}>
           <ScrollAnimate config={animationConfig.clipPath}>
             <ScrollAnimate.Transform config={animationConfig.y}>
               <div className='row-span-2 flex items-center py-md [clip-path:inset(0_-1%_0_0)]'>
@@ -59,7 +57,7 @@ const HomeViewFirstText = (props) => {
               </div>
             </ScrollAnimate.Transform>
           </ScrollAnimate>
-        </ScrollAnimate.Transform>
+        </ScrollAnimate>
 
         <ScrollAnimate config={animationConfig.top}>
           <div className='flex w-9/10 items-center justify-center'>

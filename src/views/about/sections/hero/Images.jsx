@@ -1,4 +1,4 @@
-import { ScrollAnimateTransform } from '@/components/scroll-animate';
+import { ScrollAnimate } from '@/components/scroll-animate';
 import { cn } from '@/utils';
 
 const SCROLL_OFFSET = ['0 1', '0 0'];
@@ -29,9 +29,9 @@ const AboutViewHeroImagesSeciton = ({ className, ...props }) => {
   };
 
   return (
-    <ScrollAnimateTransform config={animationConfig.y}>
-      <ScrollAnimateTransform config={animationConfig.x}>
-        <ScrollAnimateTransform config={animationConfig.rotate}>
+    <ScrollAnimate config={animationConfig.y}>
+      <ScrollAnimate config={animationConfig.x}>
+        <ScrollAnimate config={animationConfig.rotate}>
           <ul
             className={cn(
               'grid w-9/10 max-w-screen-xl gap-[--gap] [--gap:theme(spacing.sm)] sm:grid-cols-3 sm:[--x:calc(var(--smooth-x)*(var(--gap)+35%))] lg:[--gap:theme(spacing.md)]',
@@ -46,9 +46,9 @@ const AboutViewHeroImagesSeciton = ({ className, ...props }) => {
               />
             ))}
           </ul>
-        </ScrollAnimateTransform>
-      </ScrollAnimateTransform>
-    </ScrollAnimateTransform>
+        </ScrollAnimate>
+      </ScrollAnimate>
+    </ScrollAnimate>
   );
 };
 

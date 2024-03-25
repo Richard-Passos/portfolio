@@ -4,7 +4,7 @@ import { cn } from '@/utils';
 import BackTop from '../../back-top';
 import { MagneticButton } from '../../button';
 import GridPattern from '../../grid-pattern';
-import { ScrollAnimateTransform } from '../../scroll-animate';
+import { ScrollAnimate } from '../../scroll-animate';
 import SocialNav from '../../social-nav';
 import { Logo, Text } from '../../ui';
 import { CursorHover } from '../../ui/cursor';
@@ -35,7 +35,7 @@ const FooterContent = async ({ className, ...props }) => {
 
   return (
     <CursorHover variant={{ theme: FOOTER_CONTENT_THEME }}>
-      <ScrollAnimateTransform config={animationConfig.x}>
+      <ScrollAnimate config={animationConfig.x}>
         <div
           className={cn(
             'flex w-9/10 max-w-screen-xl flex-col [--h:100vh] max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
@@ -44,7 +44,7 @@ const FooterContent = async ({ className, ...props }) => {
           )}
           {...props}
         >
-          <ScrollAnimateTransform config={animationConfig.y}>
+          <ScrollAnimate config={animationConfig.y}>
             <div className='relative z-10 flex flex-col gap-1.5 border-b border-border/60 py-md [--y:calc(var(--smooth-y)*var(--h))] dark:border-border/20 sm:translate-y-[--y]'>
               <Text className='text-muted-content'>
                 is your great ideas ready to fly?
@@ -68,9 +68,9 @@ const FooterContent = async ({ className, ...props }) => {
 
               <span className='absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-main shadow-[0_25px_35px_-15px] shadow-[hsl(0_0%_90%/.2)] dark:shadow-[hsl(0_0%_10%/.2)]' />
             </div>
-          </ScrollAnimateTransform>
+          </ScrollAnimate>
 
-          <ScrollAnimateTransform config={animationConfig.y}>
+          <ScrollAnimate config={animationConfig.y}>
             <div className='relative flex grow justify-between gap-md py-md [--y:calc(var(--smooth-y)*var(--h))] max-sm:flex-col sm:translate-y-[--y] sm:items-end'>
               <div className='flex flex-col items-start'>
                 <Logo className='w-fit' />
@@ -111,9 +111,9 @@ const FooterContent = async ({ className, ...props }) => {
 
               <GridPattern className='inset-x-auto -top-px left-1/2 w-screen -translate-x-1/2' />
             </div>
-          </ScrollAnimateTransform>
+          </ScrollAnimate>
         </div>
-      </ScrollAnimateTransform>
+      </ScrollAnimate>
     </CursorHover>
   );
 };

@@ -6,6 +6,11 @@ import { cn } from '@/utils';
 const ProjectViewImagesSection = async ({ promise, className, ...props }) => {
   const data = (await promise).data?.images || [];
 
+  const animationConfig = {
+    prop: 'y',
+    propPoints: ['-15%', '15%']
+  }
+
   return (
     <Section
       className={cn(
@@ -34,7 +39,7 @@ const ProjectViewImagesSection = async ({ promise, className, ...props }) => {
             />
 
             <div className='absolute -inset-y-[7.5%] inset-x-0 -z-10'>
-              <ScrollAnimateTransform config={{ propPoints: ['-15%', '15%'] }}>
+              <ScrollAnimateTransform config={animationConfig}>
                 <Image
                   quality={100}
                   className='size-full object-cover'

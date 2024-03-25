@@ -1,5 +1,5 @@
 import { ScrollTitle, Section, Services } from '@/components';
-import { ScrollAnimateTransform } from '@/components/scroll-animate';
+import { ScrollAnimate } from '@/components/scroll-animate';
 import { Separator } from '@/components/ui';
 import { services } from '@/constants';
 import { cn } from '@/utils';
@@ -21,9 +21,9 @@ const ContactViewServicesSection = ({ className, ...props }) => {
       </h2>
 
       <div className='grid w-9/10 max-w-screen-lg gap-md sm:grid-cols-2'>
-        <ScrollAnimateTransform config={animationConfig}>
+        <ScrollAnimate config={animationConfig}>
           <div className='h-1/2 translate-y-[--y] rounded-3xl bg-blue-500 max-sm:hidden md:h-2/3 md:translate-y-[calc(var(--y)/2)]' />
-        </ScrollAnimateTransform>
+        </ScrollAnimate>
 
         <Services className='sm:py-md'>
           {services.map(({ title, description }, i) => (

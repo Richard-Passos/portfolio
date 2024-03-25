@@ -1,5 +1,5 @@
 import { Lines } from '@/components';
-import { ScrollAnimateTransform } from '@/components/scroll-animate';
+import { ScrollAnimate } from '@/components/scroll-animate';
 import { Icon } from '@/components/ui';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
@@ -50,9 +50,9 @@ const ContactViewHeroSection = ({ className, ...props }) => {
 
           <StatsChanger />
         </div>
-        <ScrollAnimateTransform config={animationConfig}>
+        <ScrollAnimate config={animationConfig}>
           <div className='relative z-10 aspect-[1/1.4] h-fit w-full rounded-3xl bg-red-500 shadow-md max-sm:hidden sm:-translate-y-[var(--y)*(theme(spacing.lg)*2.5)]' />
-        </ScrollAnimateTransform>
+        </ScrollAnimate>
       </div>
 
       <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-20' />

@@ -15,6 +15,11 @@ const ProjectViewHeroSection = ({
   adjacentIds = {},
   ...props
 }) => {
+  const animationConfig = {
+    prop: 'y',
+    propPoints: ['-15%', '15%']
+  }
+
   return (
     <section
       className={cn(
@@ -77,7 +82,7 @@ const ProjectViewHeroSection = ({
         )}
 
         <div className='absolute -inset-y-[7.5%] inset-x-0'>
-          <ScrollAnimateTransform config={{ propPoints: ['-15%', '15%'] }}>
+          <ScrollAnimateTransform config={animationConfig}>
             <Image
               quality={100}
               priority

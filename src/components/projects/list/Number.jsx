@@ -1,6 +1,6 @@
 'use client';
 
-import { ScrollAnimateTransform } from '@/components/scroll-animate';
+import { ScrollAnimate } from '@/components/scroll-animate';
 import { cn } from '@/utils';
 
 import { Text } from '../../ui/text';
@@ -27,7 +27,7 @@ const ProjectsListNumber = ({ className, index, ...props }) => {
     >
       {chars.map((char, i, arr) =>
         i === arr.length - 1 ? (
-          <ScrollAnimateTransform
+          <ScrollAnimate
             aria-hidden
             config={animationConfig}
             key={i}
@@ -39,7 +39,7 @@ const ProjectsListNumber = ({ className, index, ...props }) => {
                 {char}/
               </span>
             </span>
-          </ScrollAnimateTransform>
+          </ScrollAnimate>
         ) : (
           <span
             aria-hidden

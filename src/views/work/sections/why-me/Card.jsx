@@ -1,4 +1,4 @@
-import { ScrollAnimate } from '@/components';
+import { ScrollAnimate } from '@/components/scroll-animate';
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -10,8 +10,7 @@ const WorkVieWhyMeCardSection = ({ className, value, title, ...props }) => {
       scrollConfig: {
         offset: SCROLL_OFFSET,
       },
-      scroll: 'scrollYProgress',
-      scrollPoints: [0, 1],
+      
       prop: 'opacity',
       propPoints: [0, 1],
     },
@@ -33,8 +32,8 @@ const WorkVieWhyMeCardSection = ({ className, value, title, ...props }) => {
 
   return (
     <ScrollAnimate config={animationConfig.opacity}>
-      <ScrollAnimate.Transform config={animationConfig.x}>
-        <ScrollAnimate.Transform config={animationConfig.rotate}>
+      <ScrollAnimate config={animationConfig.x}>
+        <ScrollAnimate config={animationConfig.rotate}>
           <li
             className={cn(
               'flex h-fit w-full translate-x-[--x] rotate-[--rotate] flex-col justify-between gap-sm rounded-3xl border bg-main p-sm shadow-md even:-translate-x-[--x] even:-rotate-[--rotate] sm:p-md md:even:mt-lg md:[&:not(:last-child)]:even:-mb-lg',
@@ -50,8 +49,8 @@ const WorkVieWhyMeCardSection = ({ className, value, title, ...props }) => {
               {title}
             </Text.Subtitle>
           </li>
-        </ScrollAnimate.Transform>
-      </ScrollAnimate.Transform>
+        </ScrollAnimate>
+      </ScrollAnimate>
     </ScrollAnimate>
   );
 };

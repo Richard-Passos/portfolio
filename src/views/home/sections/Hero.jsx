@@ -9,6 +9,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
       scrollConfig: {
         offset: ['0 0', '1 0'],
       },
+      prop: 'y',
       propPoints: ['0%', '75%'],
     },
     scale: {
@@ -22,8 +23,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
       scrollConfig: {
         offset: ['0 0', '.75 0'],
       },
-      scroll: 'scrollYProgress',
-      scrollPoints: [0, 1],
+      
       prop: '--opacity',
       propPoints: [1, 0],
     },
@@ -39,7 +39,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
   return (
     <section
       className={cn(
-        'max-w-2xlmin-h-svh relative -mt-[--header] w-full overflow-hidden pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] 2xl:h-screen 2xl:max-h-bounds',
+        'max-2xl:min-h-svh relative -mt-[--header] w-full overflow-hidden pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] 2xl:h-screen 2xl:max-h-bounds',
         theme,
         className,
       )}

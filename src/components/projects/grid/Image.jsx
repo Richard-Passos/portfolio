@@ -18,8 +18,6 @@ const ProjectsGridImage = ({ index, className, ...props }) => {
       scrollConfig: {
         offset: ['0 1', '0 .35'],
       },
-      scroll: 'scrollYProgress',
-      scrollPoints: [0, 1],
       prop: 'clipPath',
       propPoints: [
         'inset(50% 0 0 0 round 50% 50% 0 0)',

@@ -1,6 +1,5 @@
 import { globalsApi } from '@/api';
-import { GridPattern, HorizontalScroll, ScrollIndicator } from '@/components';
-import { ScrollAnimateTransform } from '@/components/scroll-animate';
+import { GridPattern, HorizontalScroll, ScrollIndicator, ScrollAnimate } from '@/components';
 import { Text } from '@/components/ui';
 import { SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
@@ -33,8 +32,8 @@ const WorkViewHeroSection = async ({ theme, className, ...props }) => {
   };
 
   return (
-    <ScrollAnimateTransform config={animationConfig.y}>
-      <ScrollAnimateTransform config={animationConfig.scale}>
+    <ScrollAnimate config={animationConfig.y}>
+      <ScrollAnimate config={animationConfig.scale}>
         <section
           className={cn(
             'relative w-full [--h:100vh] sm:min-h-[calc(var(--h)*1.5)] 2xl:[--h:--max-h]',
@@ -65,9 +64,9 @@ const WorkViewHeroSection = async ({ theme, className, ...props }) => {
                     {personalInfo.availability}
                   </Text>
 
-                  <ScrollAnimateTransform config={animationConfig.rotate}>
+                  <ScrollAnimate.Transform config={animationConfig.rotate}>
                     <SmileIcon className='h-6 w-6 justify-self-end' />
-                  </ScrollAnimateTransform>
+                  </ScrollAnimate.Transform>
                 </div>
 
                 <ScrollIndicator />
@@ -90,8 +89,8 @@ const WorkViewHeroSection = async ({ theme, className, ...props }) => {
             </ul>
           </div>
         </section>
-      </ScrollAnimateTransform>
-    </ScrollAnimateTransform>
+      </ScrollAnimate>
+    </ScrollAnimate>
   );
 };
 

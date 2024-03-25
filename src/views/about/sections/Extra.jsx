@@ -17,6 +17,17 @@ const EXTRA_CONTENT = [
 ];
 
 const AboutViewExtraSection = ({ className, ...props }) => {
+  const animationConfig = {
+    y1: {
+      prop: 'y',
+      propPoints: ['10%', '-15%']
+    },
+    y2: {
+      prop: 'y',
+      propPoints: ['20%', '-40%']
+    }
+  }
+
   return (
     <Section
       className={cn(
@@ -43,11 +54,11 @@ const AboutViewExtraSection = ({ className, ...props }) => {
       </ul>
 
       <div className='relative md:row-start-1'>
-        <ScrollAnimateTransform config={{ propPoints: ['10%', '-15%'] }}>
+        <ScrollAnimateTransform config={animationConfig.y1}>
           <span className='size-full rounded-3xl bg-blue-500 max-md:aspect-[1/1.4] max-md:!translate-y-0 lg:aspect-[1/1.4]' />
         </ScrollAnimateTransform>
 
-        <ScrollAnimateTransform config={{ propPoints: ['20%', '-40%'] }}>
+        <ScrollAnimateTransform config={animationConfig.y2}>
           <span className='absolute bottom-0 right-0 aspect-[1/1.4] w-2/3 rounded-3xl bg-red-500 shadow-md [--tw-translate-x:25%] max-lg:hidden' />
         </ScrollAnimateTransform>
       </div>

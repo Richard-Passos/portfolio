@@ -19,8 +19,6 @@ const ListHorizontalScrollItem = ({
     scrollConfig: {
       offset: ['0 1', '0 .6'],
     },
-    scroll: 'scrollYProgress',
-    scrollPoints: [0, 1],
     prop: '--size',
     propPoints: ['100%', '0%'],
   };

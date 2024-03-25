@@ -1,5 +1,5 @@
 import { Bg, Lines, TextScrollAnimate } from '@/components';
-import { ScrollAnimateTransform } from '@/components/scroll-animate';
+import { ScrollAnimate } from '@/components/scroll-animate';
 import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
@@ -14,7 +14,7 @@ const HomeViewSecondText = ({ theme, className, ...props }) => {
   };
 
   return (
-    <ScrollAnimateTransform config={animationConfig}>
+    <ScrollAnimate config={animationConfig}>
       <div
         className={cn(
           'relative flex w-full items-center justify-center py-lg max-2xl:min-h-screen max-2xl:overflow-hidden 2xl:h-screen 2xl:max-h-bounds',
@@ -35,7 +35,7 @@ const HomeViewSecondText = ({ theme, className, ...props }) => {
 
         <Lines />
       </div>
-    </ScrollAnimateTransform>
+    </ScrollAnimate>
   );
 };
 

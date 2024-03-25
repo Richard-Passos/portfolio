@@ -1,9 +1,19 @@
-import { Bg, Lines, TextScrollAnimate } from '@/components';
-import { ScrollAnimateTransform } from '@/components/scroll-animate';
+import { Bg, Lines, TextScrollAnimate, ScrollAnimate } from '@/components';
 import { Image, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const ProjectViewAboutSection = ({ data = {}, className, theme, ...props }) => {
+  const animationConfig = {
+    y1: {
+        prop: 'y',
+        propPoints: ['-15%', '15%']
+    },
+    y2: {
+      prop: '--y',
+      propPoints: [-0.333, 0.333]
+  }
+  }
+
   const listItems = [
     { title: 'Roles', description: data.roles?.join(' & ') },
     { title: 'Client', description: data.client },
@@ -49,28 +59,28 @@ const ProjectViewAboutSection = ({ data = {}, className, theme, ...props }) => {
       <div className='mb-lg grid w-full max-w-screen-lg gap-sm sm:grid-cols-12'>
         <div className='relative aspect-square w-full overflow-hidden rounded-3xl sm:col-span-7'>
           <div className='absolute -inset-y-[7.5%] inset-x-0'>
-            <ScrollAnimateTransform config={{ propPoints: ['-15%', '15%'] }}>
+            <ScrollAnimate.Transform config={animationConfig.y1}>
               <Image
                 className='size-full object-cover'
                 {...data.thumbnail}
               />
-            </ScrollAnimateTransform>
+            </ScrollAnimate.Transform>
           </div>{' '}
         </div>
-        <ScrollAnimateTransform
-          config={{ prop: '--y', propPoints: [-0.333, 0.333] }}
+        <ScrollAnimate
+          config={animationConfig.y2}
         >
           <div className='relative size-full translate-y-[calc(var(--y)*theme(spacing.lg))] overflow-hidden rounded-3xl max-sm:hidden sm:col-span-5'>
-            <ScrollAnimateTransform config={{ propPoints: ['-15%', '15%'] }}>
+            <ScrollAnimate.Transform config={animationConfig.y1}>
               <div className='absolute -inset-y-[7.5%] inset-x-0'>
                 <Image
                   className='size-full object-cover'
                   {...data.thumbnail}
                 />
               </div>
-            </ScrollAnimateTransform>
+            </ScrollAnimate.Transform>
           </div>
-        </ScrollAnimateTransform>{' '}
+        </ScrollAnimate>{' '}
       </div>
 
       <ul className='mb-lg flex w-full max-w-screen-lg flex-col gap-lg sm:items-end'>

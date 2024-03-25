@@ -9,8 +9,6 @@ const ChangeTheme = ({ className, ...props }) => {
     scrollConfig: {
       offset: ['0 1', '0 0'],
     },
-    scroll: 'scrollYProgress',
-    scrollPoints: [0, 1],
     prop: '--h',
     propPoints: ['0%', '100%'],
   };

@@ -1,5 +1,5 @@
 import { Section, Values } from '@/components';
-import { ScrollAnimateTransform } from '@/components/scroll-animate';
+import { ScrollAnimate } from '@/components/scroll-animate';
 import { Badge, Icon, Text } from '@/components/ui';
 import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { values } from '@/constants';
@@ -15,7 +15,7 @@ const WorkViewValuesSection = ({ className, ...props }) => {
   };
 
   return (
-    <ScrollAnimateTransform config={animationConfig}>
+    <ScrollAnimate config={animationConfig}>
       <Section
         className={cn('flex w-full flex-col items-center gap-md', className)}
         {...props}
@@ -59,7 +59,7 @@ const WorkViewValuesSection = ({ className, ...props }) => {
           />
         </div>
       </Section>
-    </ScrollAnimateTransform>
+    </ScrollAnimate>
   );
 };
 

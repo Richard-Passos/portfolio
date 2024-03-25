@@ -1,5 +1,5 @@
 import { Bg, Lines, Values } from '@/components';
-import { ScrollAnimateTransform } from '@/components/scroll-animate';
+import { ScrollAnimate } from '@/components/scroll-animate';
 import { Badge, Icon, Text } from '@/components/ui';
 import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { values } from '@/constants';
@@ -15,7 +15,7 @@ const AboutViewValuesSection = ({ theme, className, ...props }) => {
   };
 
   return (
-    <ScrollAnimateTransform config={animationConfig}>
+    <ScrollAnimate config={animationConfig}>
       <section
         className={cn(
           'relative flex w-full flex-col items-center gap-md pb-lg',
@@ -67,7 +67,7 @@ const AboutViewValuesSection = ({ theme, className, ...props }) => {
 
         <Lines />
       </section>
-    </ScrollAnimateTransform>
+    </ScrollAnimate>
   );
 };
 
