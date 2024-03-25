@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { ErrorView } from '@/views';
 
@@ -11,4 +11,4 @@ const metadata = {
 };
 
 export default ErrorPage;
-export {metadata}
+export { metadata };

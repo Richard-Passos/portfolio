@@ -17,10 +17,7 @@ config = {
 }
  */
 
-const ScrollAnimate = (
-  { config = {}, smoothConfig, style, ...props },
-  ref,
-) => {
+const ScrollAnimate = ({ config = {}, smoothConfig, style, ...props }, ref) => {
   const innerRef = useRef(null);
 
   const defaultConfig = {

@@ -16,11 +16,10 @@ const Menu = (props) => {
         </Button>
       </MenuUi.Trigger>
 
-
       <MenuUi.Portal>
         <Content />
 
-        <Overlay/>
+        <Overlay />
       </MenuUi.Portal>
 
       <Portal

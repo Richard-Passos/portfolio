@@ -16,7 +16,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
         offset: ['0 0', '1 0'],
       },
       prop: 'scale',
-      propPoints: [1, .85],
+      propPoints: [1, 0.85],
     },
     opacity: {
       scrollConfig: {
@@ -37,75 +37,77 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
   };
 
   return (
-        <section
-          className={cn(
-            'relative w-full -mt-[--header] overflow-hidden max-w-2xlmin-h-svh 2xl:h-screen 2xl:max-h-bounds pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))]',
-            theme,
-            className,
-          )}
-          {...props}
-        >
-    <ScrollAnimate.Transform config={animationConfig.y}>
-    <ScrollAnimate.Transform config={animationConfig.scale}>
-      <ScrollAnimate config={animationConfig.opacity}>
-          <div className='relative px-[--inset] pb-[--inset] flex size-full items-center justify-center [--inset:calc(var(--w)*.025)] [--w:100vw] max-sm:!translate-y-0 max-sm:!scale-0 2xl:[--w:--max-w]'>
-            <div className='w-9/10 sm:opacity-[--opacity]'>
-              <Text.Title
-                aria-label='Turning heads and conquering hearts.'
-                asChild
-                className='w-full mb-sm text-center [--x:--spacing-lg] lg:text-[min(9vw,theme(fontSize.9xl))]/[1]'
-                variants={{ size: 'xl' }}
-              >
-                <h1>
-                  <div aria-hidden>
-                    <span className='lg:-translate-x-[--x]'>Turning heads</span>
-
-                    <br />
-
-                    <span className='lg:translate-x-[--x]'>
-                      <span className='outline-text'>&</span> conquering
-                    </span>
-
-                    <br />
-
-                    <div className='flex w-full items-end justify-evenly'>
-                      <span>hearts</span>
-
-                      <span className='max-w-sm -translate-y-3.5 text-start text-[.12em]/[1.15] font-normal normal-case tracking-normal text-muted-content max-lg:hidden'>
-                        Hey there! I&apos;m Richard an awesome full stack
-                        developer — who cares building solid and scalable
-                        products with a great user experience.
+    <section
+      className={cn(
+        'max-w-2xlmin-h-svh relative -mt-[--header] w-full overflow-hidden pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] 2xl:h-screen 2xl:max-h-bounds',
+        theme,
+        className,
+      )}
+      {...props}
+    >
+      <ScrollAnimate.Transform config={animationConfig.y}>
+        <ScrollAnimate.Transform config={animationConfig.scale}>
+          <ScrollAnimate config={animationConfig.opacity}>
+            <div className='relative flex size-full items-center justify-center px-[--inset] pb-[--inset] [--inset:calc(var(--w)*.025)] [--w:100vw] max-sm:!translate-y-0 max-sm:!scale-0 2xl:[--w:--max-w]'>
+              <div className='w-9/10 sm:opacity-[--opacity]'>
+                <Text.Title
+                  aria-label='Turning heads and conquering hearts.'
+                  asChild
+                  className='mb-sm w-full text-center [--x:--spacing-lg] lg:text-[min(9vw,theme(fontSize.9xl))]/[1]'
+                  variants={{ size: 'xl' }}
+                >
+                  <h1>
+                    <div aria-hidden>
+                      <span className='lg:-translate-x-[--x]'>
+                        Turning heads
                       </span>
+
+                      <br />
+
+                      <span className='lg:translate-x-[--x]'>
+                        <span className='outline-text'>&</span> conquering
+                      </span>
+
+                      <br />
+
+                      <div className='flex w-full items-end justify-evenly'>
+                        <span>hearts</span>
+
+                        <span className='max-w-sm -translate-y-3.5 text-start text-[.12em]/[1.15] font-normal normal-case tracking-normal text-muted-content max-lg:hidden'>
+                          Hey there! I&apos;m Richard an awesome full stack
+                          developer — who cares building solid and scalable
+                          products with a great user experience.
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </h1>
-              </Text.Title>
+                  </h1>
+                </Text.Title>
 
-              <div className='mx-auto grid max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
-                <Text className='col-span-full max-w-lg justify-self-center text-center text-muted-content sm:col-span-4 lg:sr-only'>
-                  Hey there! I&apos;m Richard an awesome full stack developer —
-                  who cares building solid and scalable products with a great
-                  user experience.
-                </Text>
+                <div className='mx-auto grid max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
+                  <Text className='col-span-full max-w-lg justify-self-center text-center text-muted-content sm:col-span-4 lg:sr-only'>
+                    Hey there! I&apos;m Richard an awesome full stack developer
+                    — who cares building solid and scalable products with a
+                    great user experience.
+                  </Text>
 
-                <ScrollAnimate.Transform config={animationConfig.rotate}>
-                  <SmileIcon className='h-6 w-6 md:-order-1' />
-                </ScrollAnimate.Transform>
+                  <ScrollAnimate.Transform config={animationConfig.rotate}>
+                    <SmileIcon className='h-6 w-6 md:-order-1' />
+                  </ScrollAnimate.Transform>
 
-                <Text className='justify-self-end text-xs font-semibold md:col-end-7'>
-                  (2024)
-                </Text>
+                  <Text className='justify-self-end text-xs font-semibold md:col-end-7'>
+                    (2024)
+                  </Text>
+                </div>
               </div>
+
+              <GridPattern className='inset-[--inset] top-[--header-h] rounded-3xl' />
             </div>
+          </ScrollAnimate>
+        </ScrollAnimate.Transform>
+      </ScrollAnimate.Transform>
 
-            <GridPattern className='inset-[--inset] top-[--header-h] rounded-3xl' />
-          </div>
-      </ScrollAnimate>
-    </ScrollAnimate.Transform>
-    </ScrollAnimate.Transform>
-
-          <ScrollIndicator className='absolute bottom-[min(9.5vw,3.75rem)] right-1/2 max-sm:translate-x-1/2 sm:right-[min(10vw,theme(spacing.16))]' />
-        </section>
+      <ScrollIndicator className='absolute bottom-[min(9.5vw,3.75rem)] right-1/2 max-sm:translate-x-1/2 sm:right-[min(10vw,theme(spacing.16))]' />
+    </section>
   );
 };
 

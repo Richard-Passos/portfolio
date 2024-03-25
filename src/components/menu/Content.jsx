@@ -7,10 +7,11 @@ const MenuContent = async (props) => {
   const { data = {} } = await globalsApi.getOne('header');
 
   return (
-    <MenuUiContent       data-lenis-prevent
-    {...props}>
-<Nav items={data.navItems} />
-
+    <MenuUiContent
+      data-lenis-prevent
+      {...props}
+    >
+      <Nav items={data.navItems} />
     </MenuUiContent>
   );
 };

@@ -4,7 +4,10 @@ import { Slot } from '@radix-ui/react-slot';
 import { motion } from 'framer-motion';
 import { forwardRef } from 'react';
 
-const Animate = ({ variants = [], type = 'animate', config, ...props }, ref) => {
+const Animate = (
+  { variants = [], type = 'animate', config, ...props },
+  ref,
+) => {
   const [hidden, visible] = variants;
 
   const defaultConfig = {
@@ -17,7 +20,7 @@ const Animate = ({ variants = [], type = 'animate', config, ...props }, ref) => 
   };
 
   config = config || defaultConfig;
-  console.log('-  config   -', config)
+  console.log('-  config   -', config);
 
   return (
     <MotionChild

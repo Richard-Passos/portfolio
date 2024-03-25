@@ -14,7 +14,7 @@ const MenuContent = ({ className, ...props }, ref) => {
     <section
       aria-hidden={!isOpen}
       className={cn(
-        'relative z-10 size-full max-w-bounds mx-auto p-6 overflow-x-clip overflow-y-auto space-y-6 text-primary-content bg-primary transition-[transform,opacity] pointer-events-auto data-closed:pointer-events-none duration-500 data-closed:duration-300 data-closed:scale-90 data-open:delay-300 data-closed:opacity-0 data-closed:-translate-y-2',
+        'pointer-events-auto relative z-10 mx-auto size-full max-w-bounds space-y-6 overflow-y-auto overflow-x-clip bg-primary p-6 text-primary-content transition-[transform,opacity] duration-500 data-closed:pointer-events-none data-closed:-translate-y-2 data-closed:scale-90 data-closed:opacity-0 data-closed:duration-300 data-open:delay-300',
         className,
       )}
       data-state={isOpen ? 'open' : 'closed'}

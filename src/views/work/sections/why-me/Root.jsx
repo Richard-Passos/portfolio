@@ -1,9 +1,4 @@
-import {
-  Button,
-  ScrollTitle,
-  Section,
-  TextScrollAnimate,
-} from '@/components';
+import { Button, ScrollTitle, Section, TextScrollAnimate } from '@/components';
 import { Text } from '@/components/ui';
 import { ArrowUpIcon } from '@/components/ui/icon/icons';
 import { stats } from '@/constants';

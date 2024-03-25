@@ -9,4 +9,4 @@ const metadata = {
 };
 
 export default NotFoundPage;
-export {metadata}
+export { metadata };

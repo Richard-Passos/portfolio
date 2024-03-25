@@ -1,3 +1,3 @@
-import Animate from './Root'
+import Animate from './Root';
 
-export default Animate
+export default Animate;

@@ -16,13 +16,13 @@ const Layout = ({ children }) => {
     >
       <Providers.GlobalState>
         <SmoothScroll>
-        <body
-          className={cn(
-            'light relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app [--header-h:calc(theme(spacing.sm)*2+theme(spacing.10))]',
-            font.variable,
-          )}
-          id='top'
-        >
+          <body
+            className={cn(
+              'light relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app [--header-h:calc(theme(spacing.sm)*2+theme(spacing.10))]',
+              font.variable,
+            )}
+            id='top'
+          >
             <Cursor>
               <Cursor.Content />
             </Cursor>
@@ -34,8 +34,8 @@ const Layout = ({ children }) => {
             </ErrorBoundary.Provider>
 
             <Footer />
-        </body>
-          </SmoothScroll>
+          </body>
+        </SmoothScroll>
       </Providers.GlobalState>
     </html>
   );

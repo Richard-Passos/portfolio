@@ -11,7 +11,11 @@ const ErrorView = ({ error, reset }) => {
 
   return (
     <main className='dark-layout dark flex w-full max-w-bounds flex-col items-center'>
-      <Sections.Hero data={data} error={error} reset={reset}/>
+      <Sections.Hero
+        data={data}
+        error={error}
+        reset={reset}
+      />
     </main>
   );
 };

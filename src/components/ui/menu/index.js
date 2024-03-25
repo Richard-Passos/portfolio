@@ -14,11 +14,11 @@ Menu.Portal = MenuPortal;
 Menu.Trigger = MenuTrigger;
 
 export default Menu;
-export { 
+export {
   MenuRoot as Menu,
-   MenuClose,
-   MenuContent,
-   MenuOverlay,
-   MenuPortal,
-   MenuTrigger 
+  MenuClose,
+  MenuContent,
+  MenuOverlay,
+  MenuPortal,
+  MenuTrigger,
 };

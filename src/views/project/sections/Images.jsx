@@ -34,9 +34,7 @@ const ProjectViewImagesSection = async ({ promise, className, ...props }) => {
             />
 
             <div className='absolute -inset-y-[7.5%] inset-x-0 -z-10'>
-              <ScrollAnimateTransform
-                config={{ propPoints: ['-15%', '15%'] }}
-              >
+              <ScrollAnimateTransform config={{ propPoints: ['-15%', '15%'] }}>
                 <Image
                   quality={100}
                   className='size-full object-cover'
