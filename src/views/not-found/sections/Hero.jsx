@@ -23,7 +23,7 @@ const NotFoundHeroSection = ({ className, ...props }) => {
         Page not found!
       </Text>
       <Text className='mb-md w-9/10 max-w-xl text-center text-muted-content first-letter:uppercase'>
-        Ops... looks like you're lost. Please go back to Home page.
+        Ops... looks like you&apos;re lost. Please go back to Home page.
       </Text>
       <Button
         asLink
