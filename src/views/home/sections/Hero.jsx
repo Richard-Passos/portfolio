@@ -1,4 +1,4 @@
-import { GridPattern, ScrollAnimation, ScrollIndicator } from '@/components';
+import { GridPattern, ScrollAnimate, ScrollIndicator } from '@/components';
 import { Text } from '@/components/ui';
 import { SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
@@ -6,47 +6,54 @@ import { cn } from '@/utils';
 const HomeViewHeroSection = ({ theme, className, ...props }) => {
   const animationConfig = {
     y: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: ['0 0', '1 0'],
       },
-      prop: '--y',
-      propPoints: ['0%', '50%'],
+      propPoints: ['0%', '75%'],
+    },
+    scale: {
+      scrollConfig: {
+        offset: ['0 0', '1 0'],
+      },
+      prop: 'scale',
+      propPoints: [1, .85],
     },
     opacity: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: ['0 0', '.75 0'],
       },
-      useScrollRes: 'scrollYProgress',
+      scroll: 'scrollYProgress',
       scrollPoints: [0, 1],
       prop: '--opacity',
       propPoints: [1, 0],
     },
     rotate: {
-      useScrollRes: 'scrollY',
-      prop: 'rotate',
+      scroll: 'scrollY',
       scrollPoints: [0, 400],
+      prop: 'rotate',
       propPoints: ['0deg', '360deg'],
-      useTransformConfig: { clamp: false },
+      transformConfig: { clamp: false },
     },
   };
 
   return (
-    <ScrollAnimation.Transform config={animationConfig.y}>
-      <ScrollAnimation config={animationConfig.opacity}>
         <section
           className={cn(
-            'relative w-full sm:[clip-path:inset(0_-50vw_1px_-50vw)]',
+            'relative w-full -mt-[--header] overflow-hidden max-w-2xlmin-h-svh 2xl:h-screen 2xl:max-h-bounds pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))]',
             theme,
             className,
           )}
           {...props}
         >
-          <div className='relative mx-auto -mt-[--header-h] flex w-[calc(100%-var(--inset)*2)] items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-svh sm:translate-y-[--y] 2xl:h-screen 2xl:max-h-bounds 2xl:[--w:--max-w]'>
-            <div className='w-9/10 space-y-sm pb-[--inset] sm:grid-cols-3 lg:opacity-[--opacity]'>
+    <ScrollAnimate.Transform config={animationConfig.y}>
+    <ScrollAnimate.Transform config={animationConfig.scale}>
+      <ScrollAnimate config={animationConfig.opacity}>
+          <div className='relative px-[--inset] pb-[--inset] flex size-full items-center justify-center [--inset:calc(var(--w)*.025)] [--w:100vw] max-sm:!translate-y-0 max-sm:!scale-0 2xl:[--w:--max-w]'>
+            <div className='w-9/10 sm:opacity-[--opacity]'>
               <Text.Title
                 aria-label='Turning heads and conquering hearts.'
                 asChild
-                className='w-full text-center [--x:--spacing-lg] lg:text-[min(9vw,theme(fontSize.9xl))]/[1]'
+                className='w-full mb-sm text-center [--x:--spacing-lg] lg:text-[min(9vw,theme(fontSize.9xl))]/[1]'
                 variants={{ size: 'xl' }}
               >
                 <h1>
@@ -81,9 +88,9 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
                   user experience.
                 </Text>
 
-                <ScrollAnimation.Transform config={animationConfig.rotate}>
+                <ScrollAnimate.Transform config={animationConfig.rotate}>
                   <SmileIcon className='h-6 w-6 md:-order-1' />
-                </ScrollAnimation.Transform>
+                </ScrollAnimate.Transform>
 
                 <Text className='justify-self-end text-xs font-semibold md:col-end-7'>
                   (2024)
@@ -91,13 +98,14 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
               </div>
             </div>
 
-            <GridPattern className='bottom-[--inset] top-[--header-h] rounded-3xl' />
+            <GridPattern className='inset-[--inset] top-[--header-h] rounded-3xl' />
           </div>
+      </ScrollAnimate>
+    </ScrollAnimate.Transform>
+    </ScrollAnimate.Transform>
 
           <ScrollIndicator className='absolute bottom-[min(9.5vw,3.75rem)] right-1/2 max-sm:translate-x-1/2 sm:right-[min(10vw,theme(spacing.16))]' />
         </section>
-      </ScrollAnimation>
-    </ScrollAnimation.Transform>
   );
 };
 
