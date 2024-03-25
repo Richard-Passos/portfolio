@@ -1,21 +1,21 @@
 import { cn } from '@/utils';
 
 import Lines from '../lines';
-import { ScrollAnimation } from '../scroll-animation';
+import { ScrollAnimate } from '../scroll-animate';
 
 const FooterOverlay = ({ className, ...props }) => {
   const animationConfig = {
-    useScrollConfig: {
+    scrollConfig: {
       offset: ['0 1', '.95 1'],
     },
-    useScrollRes: 'scrollYProgress',
-    prop: '--h',
+    scroll: 'scrollYProgress',
     scrollPoints: [0, 1],
+    prop: '--h',
     propPoints: ['79px', '0px'],
   };
 
   return (
-    <ScrollAnimation
+    <ScrollAnimate
       className={cn(
         'pointer-events-none absolute inset-y-0 z-10 max-h-screen w-screen overflow-hidden',
         className,
@@ -30,7 +30,7 @@ const FooterOverlay = ({ className, ...props }) => {
           </div>
         </div>
       </div>
-    </ScrollAnimation>
+    </ScrollAnimate>
   );
 };
 

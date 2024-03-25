@@ -4,7 +4,7 @@ import { motion, useTransform } from 'framer-motion';
 
 import { cn } from '@/utils';
 
-const TextScrollAnimationWord = ({
+const TextScrollAnimateWord = ({
   progress,
   range,
   className,
@@ -29,4 +29,4 @@ const TextScrollAnimationWord = ({
   );
 };
 
-export default TextScrollAnimationWord;
+export default TextScrollAnimateWord;

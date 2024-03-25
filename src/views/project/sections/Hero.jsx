@@ -1,5 +1,5 @@
 import { Bg, Button, Lines, ScrollIndicator } from '@/components';
-import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Image, Text } from '@/components/ui';
 import {
   ArrowLeftIcon,
@@ -77,14 +77,14 @@ const ProjectViewHeroSection = ({
         )}
 
         <div className='absolute -inset-y-[7.5%] inset-x-0'>
-          <ScrollAnimationTransform config={{ propPoints: ['-15%', '15%'] }}>
+          <ScrollAnimateTransform config={{ propPoints: ['-15%', '15%'] }}>
             <Image
               quality={100}
               priority
               className='size-full object-cover'
               {...data.thumbnail}
             />
-          </ScrollAnimationTransform>
+          </ScrollAnimateTransform>
         </div>
         <span className='absolute inset-0 bg-[radial-gradient(hsl(var(--inverted)/.5)_25%,hsl(var(--inverted)/.25)_75%,transparent)]' />
       </div>

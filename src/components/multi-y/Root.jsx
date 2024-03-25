@@ -1,6 +1,6 @@
 import { cn } from '@/utils';
 
-import { ScrollAnimationTransform } from '../scroll-animation';
+import { ScrollAnimateTransform } from '../scroll-animate';
 
 const AMOUNT = 20;
 
@@ -11,7 +11,7 @@ const MultiY = ({ className, children, ...props }) => {
   };
 
   return (
-    <ScrollAnimationTransform config={animationConfig}>
+    <ScrollAnimateTransform config={animationConfig}>
       <div
         className={cn(
           'pointer-events-none absolute inset-0 flex items-end justify-evenly overflow-hidden [--h:100vh] 2xl:[--h:--max-h]',
@@ -32,7 +32,7 @@ const MultiY = ({ className, children, ...props }) => {
           </span>
         ))}
       </div>
-    </ScrollAnimationTransform>
+    </ScrollAnimateTransform>
   );
 };
 

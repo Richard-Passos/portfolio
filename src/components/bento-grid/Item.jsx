@@ -1,28 +1,28 @@
 import { cn } from '@/utils';
 
-import ScrollAnimation from '../scroll-animation';
+import ScrollAnimate from '../scroll-animate';
 
 const SCROLL_OFFSET = ['0 1', '0 .55'];
 
 const BentoGridItem = ({ className, ...props }) => {
   const animationConfig = {
     opacity: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: SCROLL_OFFSET,
       },
-      useScrollRes: 'scrollYProgress',
-      prop: 'opacity',
+      scroll: 'scrollYProgress',
       scrollPoints: [0, 1],
+      prop: 'opacity',
       propPoints: [0, 1],
     },
     y: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: SCROLL_OFFSET,
       },
       propPoints: ['50%', '0%'],
     },
     rotate: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: SCROLL_OFFSET,
       },
       prop: '--tw-rotate',
@@ -31,9 +31,9 @@ const BentoGridItem = ({ className, ...props }) => {
   };
 
   return (
-    <ScrollAnimation config={animationConfig.opacity}>
-      <ScrollAnimation.Transform config={animationConfig.y}>
-        <ScrollAnimation.Transform config={animationConfig.rotate}>
+    <ScrollAnimate config={animationConfig.opacity}>
+      <ScrollAnimate.Transform config={animationConfig.y}>
+        <ScrollAnimate.Transform config={animationConfig.rotate}>
           <li
             className={cn(
               'flex min-h-60 max-w-full flex-col justify-center gap-3 rounded-md border bg-main p-5 transition-bg',
@@ -41,9 +41,9 @@ const BentoGridItem = ({ className, ...props }) => {
             )}
             {...props}
           />
-        </ScrollAnimation.Transform>
-      </ScrollAnimation.Transform>
-    </ScrollAnimation>
+        </ScrollAnimate.Transform>
+      </ScrollAnimate.Transform>
+    </ScrollAnimate>
   );
 };
 

@@ -1,6 +1,6 @@
 import { globalsApi } from '@/api';
 import { GridPattern, HorizontalScroll, ScrollIndicator } from '@/components';
-import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Text } from '@/components/ui';
 import { SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
@@ -10,31 +10,31 @@ const WorkViewHeroSection = async ({ theme, className, ...props }) => {
 
   const animationConfig = {
     y: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: ['0 0', '.2 0'],
       },
       prop: '--y',
       propPoints: ['100%', '0%'],
     },
     scale: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: ['0 0', '.2 0'],
       },
       prop: '--scale',
       propPoints: [1, 0.75],
     },
     rotate: {
-      useScrollRes: 'scrollY',
-      prop: 'rotate',
+      scroll: 'scrollY',
       scrollPoints: [0, 400],
+      prop: 'rotate',
       propPoints: ['0deg', '360deg'],
-      useTransformConfig: { clamp: false },
+      transformConfig: { clamp: false },
     },
   };
 
   return (
-    <ScrollAnimationTransform config={animationConfig.y}>
-      <ScrollAnimationTransform config={animationConfig.scale}>
+    <ScrollAnimateTransform config={animationConfig.y}>
+      <ScrollAnimateTransform config={animationConfig.scale}>
         <section
           className={cn(
             'relative w-full [--h:100vh] sm:min-h-[calc(var(--h)*1.5)] 2xl:[--h:--max-h]',
@@ -65,9 +65,9 @@ const WorkViewHeroSection = async ({ theme, className, ...props }) => {
                     {personalInfo.availability}
                   </Text>
 
-                  <ScrollAnimationTransform config={animationConfig.rotate}>
+                  <ScrollAnimateTransform config={animationConfig.rotate}>
                     <SmileIcon className='h-6 w-6 justify-self-end' />
-                  </ScrollAnimationTransform>
+                  </ScrollAnimateTransform>
                 </div>
 
                 <ScrollIndicator />
@@ -90,8 +90,8 @@ const WorkViewHeroSection = async ({ theme, className, ...props }) => {
             </ul>
           </div>
         </section>
-      </ScrollAnimationTransform>
-    </ScrollAnimationTransform>
+      </ScrollAnimateTransform>
+    </ScrollAnimateTransform>
   );
 };
 

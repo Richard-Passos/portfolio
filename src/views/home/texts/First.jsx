@@ -1,37 +1,37 @@
-import { ScrollAnimation, Section, TextScrollAnimation } from '@/components';
+import { ScrollAnimate, Section, TextScrollAnimate } from '@/components';
 import { Text } from '@/components/ui/text';
 
 const HomeViewFirstText = (props) => {
   const animationConfig = {
     x: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: ['-.5 .5', '0 .5'],
       },
       prop: '--x',
       propPoints: ['-101%', '0%'],
     },
     clipPath: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: ['.5 .5', '.75 .5'],
       },
-      useScrollRes: 'scrollYProgress',
-      prop: '--clip-path',
+      scroll: 'scrollYProgress',
       scrollPoints: [0, 1],
+      prop: '--clip-path',
       propPoints: ['inset(0% -1% 0 0)', 'inset(100% -1% 0 0)'],
     },
     y: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: ['.5 .5', '1 .5'],
       },
       propPoints: ['0%', '50%'],
     },
     top: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: ['-1 .5', '0 .5'],
       },
-      useScrollRes: 'scrollYProgress',
-      prop: '--top',
+      scroll: 'scrollYProgress',
       scrollPoints: [0, 1],
+      prop: '--top',
       propPoints: ['0%', '-50%'],
     },
   };
@@ -42,9 +42,9 @@ const HomeViewFirstText = (props) => {
       {...props}
     >
       <div className='grid min-h-[calc(var(--h)*1.5)] grid-rows-3 justify-items-center [--h:100vh] 2xl:[--h:--max-h]'>
-        <ScrollAnimation.Transform config={animationConfig.x}>
-          <ScrollAnimation config={animationConfig.clipPath}>
-            <ScrollAnimation.Transform config={animationConfig.y}>
+        <ScrollAnimate.Transform config={animationConfig.x}>
+          <ScrollAnimate config={animationConfig.clipPath}>
+            <ScrollAnimate.Transform config={animationConfig.y}>
               <div className='row-span-2 flex items-center py-md [clip-path:inset(0_-1%_0_0)]'>
                 <Text className='relative translate-x-[--x] text-[clamp(8rem,44vw,32rem)]/[1] font-bold tracking-tighter'>
                   <span className='outline-text text-muted-content'>BUT</span>
@@ -57,17 +57,17 @@ const HomeViewFirstText = (props) => {
                   </span>
                 </Text>
               </div>
-            </ScrollAnimation.Transform>
-          </ScrollAnimation>
-        </ScrollAnimation.Transform>
+            </ScrollAnimate.Transform>
+          </ScrollAnimate>
+        </ScrollAnimate.Transform>
 
-        <ScrollAnimation config={animationConfig.top}>
+        <ScrollAnimate config={animationConfig.top}>
           <div className='flex w-9/10 items-center justify-center'>
             <Text className='relative top-[--top] text-center text-[clamp(2rem,6.6vw,6rem)]/tight font-semibold'>
-              <TextScrollAnimation text="it's not just about the tech." />
+              <TextScrollAnimate text="it's not just about the tech." />
             </Text>
           </div>
-        </ScrollAnimation>
+        </ScrollAnimate>
       </div>
     </Section>
   );

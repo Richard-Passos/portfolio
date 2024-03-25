@@ -1,4 +1,4 @@
-import { ScrollAnimation } from '@/components';
+import { ScrollAnimate } from '@/components';
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -7,23 +7,23 @@ const SCROLL_OFFSET = ['0 1', '0 .55'];
 const WorkVieWhyMeCardSection = ({ className, value, title, ...props }) => {
   const animationConfig = {
     opacity: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: SCROLL_OFFSET,
       },
-      useScrollRes: 'scrollYProgress',
-      prop: 'opacity',
+      scroll: 'scrollYProgress',
       scrollPoints: [0, 1],
+      prop: 'opacity',
       propPoints: [0, 1],
     },
     x: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: SCROLL_OFFSET,
       },
       prop: '--x',
       propPoints: ['-25%', '0%'],
     },
     rotate: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: SCROLL_OFFSET,
       },
       prop: '--rotate',
@@ -32,9 +32,9 @@ const WorkVieWhyMeCardSection = ({ className, value, title, ...props }) => {
   };
 
   return (
-    <ScrollAnimation config={animationConfig.opacity}>
-      <ScrollAnimation.Transform config={animationConfig.x}>
-        <ScrollAnimation.Transform config={animationConfig.rotate}>
+    <ScrollAnimate config={animationConfig.opacity}>
+      <ScrollAnimate.Transform config={animationConfig.x}>
+        <ScrollAnimate.Transform config={animationConfig.rotate}>
           <li
             className={cn(
               'flex h-fit w-full translate-x-[--x] rotate-[--rotate] flex-col justify-between gap-sm rounded-3xl border bg-main p-sm shadow-md even:-translate-x-[--x] even:-rotate-[--rotate] sm:p-md md:even:mt-lg md:[&:not(:last-child)]:even:-mb-lg',
@@ -50,9 +50,9 @@ const WorkVieWhyMeCardSection = ({ className, value, title, ...props }) => {
               {title}
             </Text.Subtitle>
           </li>
-        </ScrollAnimation.Transform>
-      </ScrollAnimation.Transform>
-    </ScrollAnimation>
+        </ScrollAnimate.Transform>
+      </ScrollAnimate.Transform>
+    </ScrollAnimate>
   );
 };
 

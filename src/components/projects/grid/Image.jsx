@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { ProjectsContext } from '@/contexts';
 import { cn } from '@/utils';
 
-import ScrollAnimation from '../../scroll-animation';
+import ScrollAnimate from '../../scroll-animate';
 import { Image } from '../../ui';
 
 const ProjectsGridImage = ({ index, className, ...props }) => {
@@ -15,19 +15,19 @@ const ProjectsGridImage = ({ index, className, ...props }) => {
 
   const animationConfig = {
     clipPath: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: ['0 1', '0 .35'],
       },
-      useScrollRes: 'scrollYProgress',
-      prop: 'clipPath',
+      scroll: 'scrollYProgress',
       scrollPoints: [0, 1],
+      prop: 'clipPath',
       propPoints: [
         'inset(50% 0 0 0 round 50% 50% 0 0)',
         'inset(0% 0 0 0 round 0% 0% 0 0)',
       ],
     },
     scale: {
-      useScrollConfig: {
+      scrollConfig: {
         offset: ['0 1', '0 .35'],
       },
       prop: 'scale',
@@ -43,8 +43,8 @@ const ProjectsGridImage = ({ index, className, ...props }) => {
       )}
       {...props}
     >
-      <ScrollAnimation config={animationConfig.clipPath}>
-        <ScrollAnimation.Transform config={animationConfig.scale}>
+      <ScrollAnimate config={animationConfig.clipPath}>
+        <ScrollAnimate.Transform config={animationConfig.scale}>
           <div className='size-full'>
             {/* eslint-disable-next-line jsx-a11y/alt-text */}
             <Image
@@ -52,8 +52,8 @@ const ProjectsGridImage = ({ index, className, ...props }) => {
               {...img}
             />
           </div>
-        </ScrollAnimation.Transform>
-      </ScrollAnimation>
+        </ScrollAnimate.Transform>
+      </ScrollAnimate>
     </div>
   );
 };

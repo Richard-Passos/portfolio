@@ -1,11 +1,11 @@
-import { Lines, ScrollTitle, TextScrollAnimation } from '@/components';
-import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { Lines, ScrollTitle, TextScrollAnimate } from '@/components';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Separator, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const AboutViewBackgroundSection = ({ className, ...props }) => {
   const animationConfig = {
-    useScrollConfig: { offset: ['1 1', '1 0'] },
+    scrollConfig: { offset: ['1 1', '1 0'] },
     prop: '--y',
     propPoints: ['0%', '50%'],
   };
@@ -24,7 +24,7 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
 
       <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
         <Text className='text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
-          <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
+          <TextScrollAnimate text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
 
         <div className='sm:max-w-lg sm:justify-self-end'>
@@ -43,9 +43,9 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
       </section>
 
       <section className='grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-md'>
-        <ScrollAnimationTransform config={animationConfig}>
+        <ScrollAnimateTransform config={animationConfig}>
           <div className='w-full rounded-3xl bg-blue-500 max-md:aspect-video md:h-2/3 md:translate-y-[--y] lg:h-9/10 lg:translate-y-[calc(var(--y)*20/90)]' />
-        </ScrollAnimationTransform>
+        </ScrollAnimateTransform>
 
         <section className='md:py-lg'>
           <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>
@@ -55,14 +55,14 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
           <Separator className='mb-sm' />
 
           <Text className='mb-sm text-xl font-medium'>
-            <TextScrollAnimation
+            <TextScrollAnimate
               className='sm:first:*:ml-4'
               text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat officiis inventore eius facere sunt ut culpa. Eaque iste pariatur a doloribus enim alias rerum! Ab ex incidunt, aliquid nostrum rem, non quasi molestiae eos dolorum quo labore repudiandae minus alias?'
             />
           </Text>
 
           <Text className='text-xl font-medium'>
-            <TextScrollAnimation
+            <TextScrollAnimate
               className='sm:first:*:ml-4'
               text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci explicabo similique cum maxime praesentium nam inventore reiciendis iste ad, sequi, eligendi rem eum maiores. Aliquid beatae voluptatem praesentium perferendis quam?'
             />

@@ -1,6 +1,6 @@
 import { DataChanger } from '@/components';
 import { MagneticButton } from '@/components/button';
-import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Icon } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -13,18 +13,18 @@ const AboutViewHeroIconChangerSection = ({ className, ...props }) => {
       propPoints: ['-25%', '25%'],
     },
     rotate: {
-      useScrollRes: 'scrollY',
-      prop: 'rotate',
+      scroll: 'scrollY',
       scrollPoints: [0, 400],
+      prop: 'rotate',
       propPoints: ['0deg', '360deg'],
-      useTransformConfig: {
+      transformConfig: {
         clamp: false,
       },
     },
   };
 
   return (
-    <ScrollAnimationTransform config={animationConfig.x}>
+    <ScrollAnimateTransform config={animationConfig.x}>
       <DataChanger
         className={cn('z-10 col-end-3', className)}
         duration={2500}
@@ -38,7 +38,7 @@ const AboutViewHeroIconChangerSection = ({ className, ...props }) => {
             limit={0.2}
             variants={{ size: 'lg' }}
           >
-            <ScrollAnimationTransform config={animationConfig.rotate}>
+            <ScrollAnimateTransform config={animationConfig.rotate}>
               <div className='relative flex size-full items-center justify-center'>
                 {ICONS.map((icon, i) => (
                   <DataChanger.Item
@@ -53,11 +53,11 @@ const AboutViewHeroIconChangerSection = ({ className, ...props }) => {
                   </DataChanger.Item>
                 ))}
               </div>
-            </ScrollAnimationTransform>
+            </ScrollAnimateTransform>
           </MagneticButton>
         </DataChanger.Action>
       </DataChanger>
-    </ScrollAnimationTransform>
+    </ScrollAnimateTransform>
   );
 };
 

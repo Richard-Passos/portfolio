@@ -2,7 +2,7 @@ import {
   Button,
   ScrollTitle,
   Section,
-  TextScrollAnimation,
+  TextScrollAnimate,
 } from '@/components';
 import { Text } from '@/components/ui';
 import { ArrowUpIcon } from '@/components/ui/icon/icons';
@@ -27,7 +27,7 @@ const WorkViewWhyMeSection = ({ className, ...props }) => {
 
       <section className='mb-lg flex w-9/10 max-w-screen-xl justify-between gap-sm max-sm:flex-col'>
         <Text className='max-w-lg text-4xl/tight font-medium max-sm:text-center md:text-5xl/tight'>
-          <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
+          <TextScrollAnimate text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
 
         <div className='flex flex-col items-start justify-between gap-md max-sm:items-center'>

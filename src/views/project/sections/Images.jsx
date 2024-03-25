@@ -1,5 +1,5 @@
 import { ScrollTitle, Section } from '@/components';
-import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Image } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -34,7 +34,7 @@ const ProjectViewImagesSection = async ({ promise, className, ...props }) => {
             />
 
             <div className='absolute -inset-y-[7.5%] inset-x-0 -z-10'>
-              <ScrollAnimationTransform
+              <ScrollAnimateTransform
                 config={{ propPoints: ['-15%', '15%'] }}
               >
                 <Image
@@ -42,7 +42,7 @@ const ProjectViewImagesSection = async ({ promise, className, ...props }) => {
                   className='size-full object-cover'
                   {...img}
                 />
-              </ScrollAnimationTransform>
+              </ScrollAnimateTransform>
             </div>
 
             <span className='absolute inset-0 -z-10 bg-main/10' />

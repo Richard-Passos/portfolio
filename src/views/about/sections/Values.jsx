@@ -1,5 +1,5 @@
 import { Bg, Lines, Values } from '@/components';
-import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Badge, Icon, Text } from '@/components/ui';
 import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { values } from '@/constants';
@@ -7,15 +7,15 @@ import { cn } from '@/utils';
 
 const AboutViewValuesSection = ({ theme, className, ...props }) => {
   const animationConfig = {
-    useScrollRes: 'scrollY',
-    prop: '--rotate',
+    scroll: 'scrollY',
     scrollPoints: [0, 400],
+    prop: '--rotate',
     propPoints: ['0deg', '360deg'],
-    useTransformConfig: { clamp: false },
+    transformConfig: { clamp: false },
   };
 
   return (
-    <ScrollAnimationTransform config={animationConfig}>
+    <ScrollAnimateTransform config={animationConfig}>
       <section
         className={cn(
           'relative flex w-full flex-col items-center gap-md pb-lg',
@@ -67,7 +67,7 @@ const AboutViewValuesSection = ({ theme, className, ...props }) => {
 
         <Lines />
       </section>
-    </ScrollAnimationTransform>
+    </ScrollAnimateTransform>
   );
 };
 

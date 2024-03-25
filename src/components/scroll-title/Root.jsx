@@ -5,7 +5,7 @@ import { Fragment, useRef } from 'react';
 import { useGetNumberOfSiblings } from '@/hooks';
 import { cn } from '@/utils';
 
-import { ScrollAnimationTransform } from '../scroll-animation';
+import { ScrollAnimateTransform } from '../scroll-animate';
 import { TextTitle } from '../ui/text';
 
 const ScrollTitle = ({ dir = 'ltr', className, variants, title, ...props }) => {
@@ -37,7 +37,7 @@ const ScrollTitle = ({ dir = 'ltr', className, variants, title, ...props }) => {
       {...props}
     >
       <span>
-        <ScrollAnimationTransform config={animationConfig}>
+        <ScrollAnimateTransform config={animationConfig}>
           <span className='flex w-full justify-center gap-font-blank-space whitespace-nowrap'>
             <SecondaryTitle>
               {[...Array(numberOfSiblings / 2)].map((_, i) => (
@@ -53,7 +53,7 @@ const ScrollTitle = ({ dir = 'ltr', className, variants, title, ...props }) => {
               ))}
             </SecondaryTitle>
           </span>
-        </ScrollAnimationTransform>
+        </ScrollAnimateTransform>
       </span>
     </TextTitle>
   );

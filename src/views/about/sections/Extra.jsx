@@ -1,5 +1,5 @@
 import { Section } from '@/components';
-import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Separator, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -43,13 +43,13 @@ const AboutViewExtraSection = ({ className, ...props }) => {
       </ul>
 
       <div className='relative md:row-start-1'>
-        <ScrollAnimationTransform config={{ propPoints: ['10%', '-15%'] }}>
+        <ScrollAnimateTransform config={{ propPoints: ['10%', '-15%'] }}>
           <span className='size-full rounded-3xl bg-blue-500 max-md:aspect-[1/1.4] max-md:!translate-y-0 lg:aspect-[1/1.4]' />
-        </ScrollAnimationTransform>
+        </ScrollAnimateTransform>
 
-        <ScrollAnimationTransform config={{ propPoints: ['20%', '-40%'] }}>
+        <ScrollAnimateTransform config={{ propPoints: ['20%', '-40%'] }}>
           <span className='absolute bottom-0 right-0 aspect-[1/1.4] w-2/3 rounded-3xl bg-red-500 shadow-md [--tw-translate-x:25%] max-lg:hidden' />
-        </ScrollAnimationTransform>
+        </ScrollAnimateTransform>
       </div>
     </Section>
   );

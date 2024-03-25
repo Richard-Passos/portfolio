@@ -4,7 +4,7 @@ import {
   Projects,
   ScrollTitle,
   Section,
-  TextScrollAnimation,
+  TextScrollAnimate,
 } from '@/components';
 import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui';
@@ -27,7 +27,7 @@ const HomeViewWorkSection = ({ className, ...props }) => {
 
       <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
         <Text className='text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
-          <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
+          <TextScrollAnimate text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
 
         <Text className='text-muted-content max-sm:text-center sm:max-w-lg sm:justify-self-end'>

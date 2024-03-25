@@ -5,20 +5,20 @@ import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
 import { MagneticButton } from '../button';
-import { ScrollAnimation } from '../scroll-animation';
+import { ScrollAnimate } from '../scroll-animate';
 import { MenuIcon, TimesIcon } from '../ui/icon/icons';
 import MenuUiTrigger from '../ui/menu/Trigger';
 
 const MenuTrigger = ({ className, variants, ...props }, ref) => {
   const animationConfig = {
-    useScrollRes: 'scrollY',
-    prop: '--tw-scale-x',
+    scroll: 'scrollY',
     scrollPoints: [0, 299.999, 300],
+    prop: '--tw-scale-x',
     propPoints: [0, 0, 1],
   };
 
   return (
-    <ScrollAnimation
+    <ScrollAnimate
       config={animationConfig}
       ref={ref}
       smoothConfig={smoothConfig}
@@ -45,7 +45,7 @@ const MenuTrigger = ({ className, variants, ...props }, ref) => {
           <span className='sr-only group-data-closed:hidden'>Close menu</span>
         </MagneticButton>
       </MenuUiTrigger>
-    </ScrollAnimation>
+    </ScrollAnimate>
   );
 };
 

@@ -1,5 +1,5 @@
-import { Bg, Lines, TextScrollAnimation } from '@/components';
-import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { Bg, Lines, TextScrollAnimate } from '@/components';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Image, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -26,7 +26,7 @@ const ProjectViewAboutSection = ({ data = {}, className, theme, ...props }) => {
     >
       <div className='mb-lg flex w-full max-w-screen-lg justify-between gap-x-md gap-y-sm max-sm:flex-col'>
         <Text className='max-w-2xl text-xl font-medium'>
-          <TextScrollAnimation text={data.description} />
+          <TextScrollAnimate text={data.description} />
         </Text>
 
         <ul className='space-y-2'>
@@ -49,28 +49,28 @@ const ProjectViewAboutSection = ({ data = {}, className, theme, ...props }) => {
       <div className='mb-lg grid w-full max-w-screen-lg gap-sm sm:grid-cols-12'>
         <div className='relative aspect-square w-full overflow-hidden rounded-3xl sm:col-span-7'>
           <div className='absolute -inset-y-[7.5%] inset-x-0'>
-            <ScrollAnimationTransform config={{ propPoints: ['-15%', '15%'] }}>
+            <ScrollAnimateTransform config={{ propPoints: ['-15%', '15%'] }}>
               <Image
                 className='size-full object-cover'
                 {...data.thumbnail}
               />
-            </ScrollAnimationTransform>
+            </ScrollAnimateTransform>
           </div>{' '}
         </div>
-        <ScrollAnimationTransform
+        <ScrollAnimateTransform
           config={{ prop: '--y', propPoints: [-0.333, 0.333] }}
         >
           <div className='relative size-full translate-y-[calc(var(--y)*theme(spacing.lg))] overflow-hidden rounded-3xl max-sm:hidden sm:col-span-5'>
-            <ScrollAnimationTransform config={{ propPoints: ['-15%', '15%'] }}>
+            <ScrollAnimateTransform config={{ propPoints: ['-15%', '15%'] }}>
               <div className='absolute -inset-y-[7.5%] inset-x-0'>
                 <Image
                   className='size-full object-cover'
                   {...data.thumbnail}
                 />
               </div>
-            </ScrollAnimationTransform>
+            </ScrollAnimateTransform>
           </div>
-        </ScrollAnimationTransform>{' '}
+        </ScrollAnimateTransform>{' '}
       </div>
 
       <ul className='mb-lg flex w-full max-w-screen-lg flex-col gap-lg sm:items-end'>

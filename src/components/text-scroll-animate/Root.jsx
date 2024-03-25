@@ -7,7 +7,7 @@ import { cn } from '@/utils';
 
 import Word from './Word';
 
-const TextScrollAnimation = ({ text = '', className, ...props }) => {
+const TextScrollAnimate = ({ text = '', className, ...props }) => {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -42,4 +42,4 @@ const TextScrollAnimation = ({ text = '', className, ...props }) => {
   );
 };
 
-export default TextScrollAnimation;
+export default TextScrollAnimate;

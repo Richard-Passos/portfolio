@@ -1,5 +1,5 @@
 import { Lines } from '@/components';
-import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Icon } from '@/components/ui';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
@@ -12,7 +12,7 @@ const CONTACT_VIEW_HERO_SECTION_ICONS = ['Rocket', 'Smile', 'Globe'];
 
 const ContactViewHeroSection = ({ className, ...props }) => {
   const animationConfig = {
-    useScrollConfig: {
+    scrollConfig: {
       offset: ['0 1', '0 0'],
     },
     prop: '--y',
@@ -50,9 +50,9 @@ const ContactViewHeroSection = ({ className, ...props }) => {
 
           <StatsChanger />
         </div>
-        <ScrollAnimationTransform config={animationConfig}>
+        <ScrollAnimateTransform config={animationConfig}>
           <div className='relative z-10 aspect-[1/1.4] h-fit w-full rounded-3xl bg-red-500 shadow-md max-sm:hidden sm:-translate-y-[var(--y)*(theme(spacing.lg)*2.5)]' />
-        </ScrollAnimationTransform>
+        </ScrollAnimateTransform>
       </div>
 
       <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-20' />

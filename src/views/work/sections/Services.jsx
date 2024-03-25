@@ -3,9 +3,9 @@ import {
   ScrollTitle,
   Section,
   Services,
-  TextScrollAnimation,
+  TextScrollAnimate,
 } from '@/components';
-import { ScrollAnimationTransform } from '@/components/scroll-animation';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Separator, Text } from '@/components/ui';
 import { ArrowUpIcon } from '@/components/ui/icon/icons';
 import { services } from '@/constants';
@@ -13,7 +13,7 @@ import { cn } from '@/utils';
 
 const WorkViewServicesSection = ({ className, ...props }) => {
   const animationConfig = {
-    useScrollConfig: { offset: ['1 1', '1 0'] },
+    scrollConfig: { offset: ['1 1', '1 0'] },
     prop: '--y',
     propPoints: ['0%', '100%'],
   };
@@ -29,7 +29,7 @@ const WorkViewServicesSection = ({ className, ...props }) => {
 
       <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
         <Text className='text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
-          <TextScrollAnimation text='We help our clients entertain, inform, and inspire the world.' />
+          <TextScrollAnimate text='We help our clients entertain, inform, and inspire the world.' />
         </Text>
 
         <Text className='text-muted-content max-sm:text-center sm:max-w-lg sm:justify-self-end'>
@@ -46,9 +46,9 @@ const WorkViewServicesSection = ({ className, ...props }) => {
         </Text.Subtitle>
 
         <div className='grid gap-md sm:grid-cols-2'>
-          <ScrollAnimationTransform config={animationConfig}>
+          <ScrollAnimateTransform config={animationConfig}>
             <div className='h-1/2 translate-y-[--y] rounded-3xl bg-blue-500 max-sm:hidden md:h-2/3 md:translate-y-[calc(var(--y)/2)]' />
-          </ScrollAnimationTransform>
+          </ScrollAnimateTransform>
 
           <Services className='sm:py-md'>
             {services.map(({ title, description }, i) => (
