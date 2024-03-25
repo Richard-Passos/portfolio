@@ -9,14 +9,14 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
       scrollConfig: {
         offset: ['0 0', '1 0'],
       },
-      prop: '--tw-translate-y',
+      prop: 'y',
       propPoints: ['0%', '75%'],
     },
     scale: {
       scrollConfig: {
         offset: ['0 0', '1 0'],
       },
-      prop: 'scale',
+      prop: '--scale',
       propPoints: [1, 0.85],
     },
     opacity: {
@@ -45,11 +45,11 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
       )}
       {...props}
     >
-        <ScrollAnimate config={animationConfig.y}>
-       <ScrollAnimate.Transform config={animationConfig.scale}>
+       <ScrollAnimate.Transform config={animationConfig.y}>
+        <ScrollAnimate config={animationConfig.scale}>
           <ScrollAnimate config={animationConfig.opacity}>
-            <div className='relative flex size-full items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] px-[--inset] [--inset:calc(var(--w)*.025)] [--w:100vw] max-sm:!translate-y-0 max-sm:!scale-0 2xl:[--w:--max-w]'>
-              <div className='w-9/10 pb-[--inset] sm:opacity-[--opacity]'>
+            <div className='relative flex size-full items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] px-[--inset] [--inset:calc(var(--w)*.025)] [--w:100vw] max-sm:!translate-y-0 2xl:[--w:--max-w]'>
+              <div className='w-9/10 pb-[--inset] sm:opacity-[--opacity] sm:scale-[--scale]'>
                 <Text.Title
                   aria-label='Turning heads and conquering hearts.'
                   asChild
@@ -103,8 +103,8 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
               <GridPattern className='inset-[--inset] top-[--header-h] rounded-3xl' />
             </div>
           </ScrollAnimate>
-      </ScrollAnimate.Transform>
         </ScrollAnimate>
+      </ScrollAnimate.Transform>
 
       <ScrollIndicator className='absolute bottom-[min(9.5vw,3.75rem)] right-1/2 max-sm:translate-x-1/2 sm:right-[min(10vw,theme(spacing.16))]' />
     </section>
