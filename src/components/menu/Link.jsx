@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
-import { NavigationMenuLink } from '../../ui/navigation-menu';
+import { NavigationMenuLink } from '../ui/navigation-menu';
 
-const HeaderMenuLink = ({
+const MenuLink = ({
   className,
   children,
   isActive,
@@ -17,7 +17,7 @@ const HeaderMenuLink = ({
   return (
     <NavigationMenuLink
       className={cn(
-        'relative inline-flex w-full items-center justify-start rounded-sm px-6 py-3 text-2xl font-medium',
+        'group/link relative inline-flex w-full items-center justify-start rounded-sm px-6 py-3 text-2xl font-medium',
         className,
       )}
       {...props}
@@ -27,11 +27,11 @@ const HeaderMenuLink = ({
       {isActive && (
         <motion.span
           className={cn(
-            'absolute left-1 h-1/3 w-[.15em] bg-primary',
+            'absolute left-1 h-1/3 w-[.15em] bg-current',
             !includesPathname &&
               'opacity-0 transition-opacity group-hover/link:opacity-100 group-hover:opacity-100',
           )}
-          layoutId='headerMenuLinkActiveIndicator'
+          layoutId='menuLinkActiveIndicator'
           style={{ borderRadius: '9999px' }}
           transition={{
             type: 'spring',
@@ -43,4 +43,4 @@ const HeaderMenuLink = ({
   );
 };
 
-export default HeaderMenuLink;
+export default MenuLink;

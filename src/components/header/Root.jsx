@@ -7,7 +7,7 @@ import DotsLoader from '../dots-loader';
 import Language from '../language';
 import { Logo, Separator } from '../ui';
 import Nav from './Nav';
-import Menu from './menu';
+import Menu from '../menu'
 
 const Header = async ({ className, ...props }) => {
   const { data = {} } = await globalsApi.getOne('header');

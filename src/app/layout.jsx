@@ -15,6 +15,7 @@ const Layout = ({ children }) => {
       lang='en'
     >
       <Providers.GlobalState>
+        <SmoothScroll>
         <body
           className={cn(
             'light relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app [--header-h:calc(theme(spacing.sm)*2+theme(spacing.10))]',
@@ -22,7 +23,6 @@ const Layout = ({ children }) => {
           )}
           id='top'
         >
-          <SmoothScroll>
             <Cursor>
               <Cursor.Content />
             </Cursor>
@@ -34,8 +34,8 @@ const Layout = ({ children }) => {
             </ErrorBoundary.Provider>
 
             <Footer />
-          </SmoothScroll>
         </body>
+          </SmoothScroll>
       </Providers.GlobalState>
     </html>
   );

@@ -3,26 +3,15 @@
 import { forwardRef, useContext } from 'react';
 
 import { MenuContext } from '@/contexts';
-import { cn, isFunctionThanCall } from '@/utils';
+import { cn } from '@/utils';
 
 const MenuOverlay = ({ className, ...props }, ref) => {
-  const { isOpen, setIsOpen } = useContext(MenuContext);
+  const { isOpen } = useContext(MenuContext);
 
   return (
-    <div
-      className={cn(
-        'fixed right-0 top-0 z-50 h-svh w-screen bg-main/75 backdrop-blur-sm transition-opacity data-closed:pointer-events-none data-closed:opacity-0',
-        className,
-      )}
-      data-state={isOpen ? 'open' : 'closed'}
-      ref={ref}
-      {...props}
-      onClick={(ev) => {
-        setIsOpen(false);
-
-        isFunctionThanCall(props.onClick, ev);
-      }}
-    />
+    <div ref={ref} data-state={isOpen ? 'open' : 'closed'} className={cn('absolute inset-0 -translate-y-full overflow-hidden rounded-[0_0_50%_50%] pointer-events-auto transition-[transform,border-radius] duration-500 data-closed:delay-300 data-open:translate-y-0 data-open:rounded-none', className)} {...props}>
+        <span className='size-full bg-primary transition-bg' />
+      </div>
   );
 };
 

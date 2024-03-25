@@ -4,12 +4,12 @@ import { forwardRef } from 'react';
 import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
-import { MagneticButton } from '../../button';
-import { ScrollAnimation } from '../../scroll-animation';
-import { MenuIcon, TimesIcon } from '../../ui/icon/icons';
-import { MenuTrigger } from '../../ui/menu';
+import { MagneticButton } from '../button';
+import { ScrollAnimation } from '../scroll-animation';
+import { MenuIcon, TimesIcon } from '../ui/icon/icons';
+import MenuUiTrigger from '../ui/menu/Trigger';
 
-const HeaderMenuTrigger = ({ className, variants, ...props }, ref) => {
+const MenuTrigger = ({ className, variants, ...props }, ref) => {
   const animationConfig = {
     useScrollRes: 'scrollY',
     prop: '--tw-scale-x',
@@ -24,7 +24,7 @@ const HeaderMenuTrigger = ({ className, variants, ...props }, ref) => {
       smoothConfig={smoothConfig}
       {...props}
     >
-      <MenuTrigger asChild>
+      <MenuUiTrigger asChild>
         <MagneticButton
           className={cn(
             '[--tw-scale-y:--tw-scale-x] [--variant-a:--primary] hover:text-primary-content data-open:![--tw-scale-x:1]',
@@ -44,7 +44,7 @@ const HeaderMenuTrigger = ({ className, variants, ...props }, ref) => {
 
           <span className='sr-only group-data-closed:hidden'>Close menu</span>
         </MagneticButton>
-      </MenuTrigger>
+      </MenuUiTrigger>
     </ScrollAnimation>
   );
 };
@@ -59,4 +59,4 @@ const Icon = ({ className, ...props }) => {
   );
 };
 
-export default forwardRef(HeaderMenuTrigger);
+export default forwardRef(MenuTrigger);

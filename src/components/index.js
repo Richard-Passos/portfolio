@@ -1,4 +1,4 @@
-export { default as Animation } from './animation';
+export { default as Animate } from './animate';
 export { default as BackTop } from './back-top';
 export { default as BentoGrid } from './bento-grid';
 export { default as Bg } from './bg';
@@ -17,7 +17,7 @@ export { default as Link } from './link';
 export { default as ListHorizontalScroll } from './list-horizontal-scroll';
 export { default as LocalTime } from './local-time';
 export { default as Magnetic } from './magnetic';
-export { default as Menu } from './header/menu';
+export { default as Menu } from './menu';
 export { default as MultiY } from './multi-y';
 export { default as NextPage } from './next-page';
 export { default as NextProject } from './next-project';

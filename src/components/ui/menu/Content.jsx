@@ -7,25 +7,19 @@ import { cn, isFunctionThanCall } from '@/utils';
 
 const KEYS = ['Esc'];
 
-const MenuContent = ({ variants, className, ...props }, ref) => {
+const MenuContent = ({ className, ...props }, ref) => {
   const { isOpen, setIsOpen } = useContext(MenuContext);
 
   return (
     <section
       aria-hidden={!isOpen}
       className={cn(
-        'fixed inset-y-0 right-0 z-50 w-4/5 max-w-sm space-y-6 overflow-y-auto border-l bg-main p-6 shadow-lg transition-transform duration-500 ease-in-out data-closed:translate-x-[150%] data-closed:duration-300 [body:has(&[data-state=open])]:overflow-y-hidden',
+        'relative z-10 size-full max-w-bounds mx-auto p-6 overflow-x-clip overflow-y-auto space-y-6 text-primary-content bg-primary transition-[transform,opacity] pointer-events-auto data-closed:pointer-events-none duration-500 data-closed:duration-300 data-closed:scale-90 data-open:delay-300 data-closed:opacity-0 data-closed:-translate-y-2',
         className,
       )}
       data-state={isOpen ? 'open' : 'closed'}
       ref={ref}
-      tabIndex={isOpen ? 1 : -1}
       {...props}
-      onKeyDown={(ev) => {
-        if (KEYS.includes(ev.key)) ev.preventDefault();
-
-        isFunctionThanCall(props.onKeyDown, ev);
-      }}
       onKeyUp={(ev) => {
         if (KEYS.includes(ev.key)) setIsOpen(false);
 
