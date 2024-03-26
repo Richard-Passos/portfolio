@@ -7,13 +7,11 @@ import GridPattern from '../../grid-pattern';
 import { ScrollAnimate } from '../../scroll-animate';
 import SocialNav from '../../social-nav';
 import { Logo, Text } from '../../ui';
-import { CursorHover } from '../../ui/cursor';
 import { ArrowUpIcon, HandHornsIcon, HeartIcon } from '../../ui/icon/icons';
-import { FOOTER_CONTENT_THEME } from '../Root';
 
 const SCROLL_OFFSET = ['0 1', '1 1'];
 
-const FooterContent = async ({ className, ...props }) => {
+const FooterContent = async ({ theme,className, ...props }) => {
   const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
 
   const animationConfig = {
@@ -34,12 +32,11 @@ const FooterContent = async ({ className, ...props }) => {
   };
 
   return (
-    <CursorHover variant={{ theme: FOOTER_CONTENT_THEME }}>
       <ScrollAnimate config={animationConfig.x}>
         <div
           className={cn(
             'flex w-9/10 max-w-screen-xl flex-col [--h:100vh] max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
-            FOOTER_CONTENT_THEME,
+            theme,
             className,
           )}
           {...props}
@@ -114,7 +111,6 @@ const FooterContent = async ({ className, ...props }) => {
           </ScrollAnimate>
         </div>
       </ScrollAnimate>
-    </CursorHover>
   );
 };
 
