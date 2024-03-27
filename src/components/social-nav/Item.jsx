@@ -2,15 +2,14 @@ import { capitalize, cn } from '@/utils';
 
 import Button from '../button';
 import { Icon } from '../ui';
-import { ArrowUpIcon } from '../ui/icon/icons';
 import { Text } from '../ui/text';
 
 const SocialNavItem = ({ className, variants, label, ...props }) => {
   return (
     <Button.Magnetic
       asLink
-      className={cn(
-        'aspect-auto h-12 rounded-sm bg-main [--variant-a:--primary] hover:z-10 hover:text-primary-content [&>span>span]:px-4 [&_svg]:size-1/2',
+       className={cn(
+        'aspect-auto rounded-sm hover:z-10 h-12 [--variant-a:--primary] hover:[--variant-c:--primary-c] [&>span>span]:px-6 [&_svg]:size-[none]',
         className,
       )}
       limit={0.2}
@@ -19,20 +18,13 @@ const SocialNavItem = ({ className, variants, label, ...props }) => {
     >
       <Icon
         aria-hidden
-        className='mr-2 !size-6'
+        className='size-6'
         name={capitalize(label)}
       />
 
-      <Text className='mr-4 text-xs lowercase first-letter:uppercase'>
+      <Text className='mr-auto text-xs lowercase first-letter:uppercase'>
         {label}
       </Text>
-
-      <Button.Icon
-        animation='slideUpRight'
-        className='ml-auto h-6 group-hover:[&>span]:bg-primary-content'
-      >
-        <ArrowUpIcon className='rotate-45 fill-primary' />
-      </Button.Icon>
     </Button.Magnetic>
   );
 };
