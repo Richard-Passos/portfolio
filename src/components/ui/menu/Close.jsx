@@ -9,9 +9,7 @@ import { isFunctionThanCall } from '@/utils';
 const KEYS = ['Enter', ' '];
 
 const MenuClose = ({ asChild, ...props }) => {
-  const { setIsOpen } = useContext(MenuContext);
-
-  const handleSetIsOpen = () => setIsOpen(false);
+  const { toggleIsOpen } = useContext(MenuContext);
 
   const Tag = asChild ? Slot : 'button';
 
@@ -19,7 +17,7 @@ const MenuClose = ({ asChild, ...props }) => {
     <Tag
       {...props}
       onClick={(ev) => {
-        handleSetIsOpen();
+        toggleIsOpen();
 
         isFunctionThanCall(props.onClick, ev);
       }}
@@ -29,7 +27,7 @@ const MenuClose = ({ asChild, ...props }) => {
         isFunctionThanCall(props.onKeyDown, ev);
       }}
       onKeyUp={(ev) => {
-        if (KEYS.includes(ev.key)) handleSetIsOpen();
+        if (KEYS.includes(ev.key)) toggleIsOpen();
 
         isFunctionThanCall(props.onKeyUp, ev);
       }}

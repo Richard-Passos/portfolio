@@ -6,7 +6,6 @@ import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
 import { NavigationMenuLink } from '../ui/navigation-menu';
-import { TextTitle } from '../ui/text';
 
 const MenuLink = ({
   className,

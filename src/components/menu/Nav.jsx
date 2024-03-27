@@ -1,17 +1,19 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { cn } from '@/utils';
 
 import { NavigationMenu } from '../ui/navigation-menu';
 import Link from './Link';
+import { MenuContext } from '@/contexts';
 
 const DEFAULT_IS_HOVER = undefined;
 
 const MenuNav = ({ className, items = [], ...props }) => {
-  const [isHover, setIsHover] = useState(DEFAULT_IS_HOVER),
+  const {toggleIsOpen} = useContext(MenuContext),
+  [isHover, setIsHover] = useState(DEFAULT_IS_HOVER),
     pathname = usePathname();
 
   const includesPathname = !!items.find(({ href }) => href === pathname);
@@ -35,6 +37,7 @@ const MenuNav = ({ className, items = [], ...props }) => {
             onMouseLeave={() => {
               if (includesPathname) setIsHover(DEFAULT_IS_HOVER);
             }}
+            onClick={toggleIsOpen}
           >
             {label}
           </Link>

@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 import Language from '../language';
 import DotsLoader from '../dots-loader';
 import SocialNav from '../social-nav';
+import GridPattern from '../grid-pattern';
 
 const MenuContent = async (props) => {
   const { data = {} } = await globalsApi.getOne('header'),
@@ -27,7 +28,7 @@ const MenuContent = async (props) => {
         />
 
         <Suspense fallback={<DotsLoader />}>
-          <Language className='bg-primary' />
+          <Language />
         </Suspense>
       </div>
 
@@ -42,6 +43,14 @@ const MenuContent = async (props) => {
                   />
                 ))}
               </SocialNav>
+
+              <Logo
+                aria-hidden
+                tabIndex={-1}
+                className='pointer-events-none select-none touch-none absolute bottom-0 left-1/2 -z-10 h-auto -translate-x-1/2 translate-y-1/2 px-0 text-[calc(var(--w)*.4)]/[1] font-extrabold text-muted [--w:100vw] 2xl:[--w:--max-w]'
+              />
+
+              <GridPattern/>
     </MenuUiContent>
   );
 };

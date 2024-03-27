@@ -6,13 +6,13 @@ import { MenuContext } from '@/contexts';
 import { cn } from '@/utils';
 
 const MenuOverlay = ({ className, ...props }, ref) => {
-  const { isOpen } = useContext(MenuContext);
+  const { state } = useContext(MenuContext);
 
   return (
 
  <span       ref={ref}
-      data-state={isOpen ? 'open' : 'closed'}
- className={cn('bg-main/15 backdrop-blur-sm transition-opacity duration-300 pointer-events-auto data-closed:pointer-events-none data-closed:opacity-0 absolute inset-0', className)} {...props}/>
+       data-state={state}
+ className={cn('bg-main/20 [body:has(.dark-layout)_&]:bg-main/80 transition-opacity duration-300 pointer-events-auto data-closed:pointer-events-none data-closed:opacity-0 absolute inset-0', className)} {...props}/>
   );
 };
 

@@ -24,11 +24,12 @@ const MenuTrigger = ({ className, ...props }, ref) => {
       {...props}
     >
       <MenuUiTrigger asChild>
-        <MagneticButton
+          <MagneticButton
           className={cn(
-            '[--tw-scale-y:--tw-scale-x] data-closed:[--variant-a:--primary] data-closed:[--variant:--main] data-closed:[--variant-c:--content] hover:[--variant-c:--content] data-closed:hover:[--variant-c:--primary-c] border-border focus-visible:outline-variant-content [--variant-a:--main] data-open:![--tw-scale-x:1]',
+            'data-open:primary [--tw-scale-y:--tw-scale-x] !text-variant-content [--variant-a:--primary] hover:[--variant-c:--primary-c] data-open:![--tw-scale-x:1]',
             className,
           )}
+          variants={{color: 'main'}}
         >
           <Icon>
             <TimesIcon className='pointer-events-none group-data-closed:opacity-0' />
