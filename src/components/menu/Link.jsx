@@ -6,6 +6,7 @@ import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
 import { NavigationMenuLink } from '../ui/navigation-menu';
+import { TextTitle } from '../ui/text';
 
 const MenuLink = ({
   className,
@@ -15,14 +16,14 @@ const MenuLink = ({
   ...props
 }) => {
   return (
-    <NavigationMenuLink
+     <NavigationMenuLink
       className={cn(
-        'group/link relative inline-flex w-full items-center justify-start rounded-sm px-6 py-3 text-2xl font-medium',
+        'group/link relative inline-flex w-fit items-center justify-start rounded-sm px-8 py-4 text-6xl uppercase font-bold tracking-tight',
         className,
       )}
       {...props}
     >
-      <span className='lowercase first-letter:capitalize'>{children}</span>
+      {children}
 
       {isActive && (
         <motion.span

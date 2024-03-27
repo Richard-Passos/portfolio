@@ -3,29 +3,26 @@
 import { forwardRef, useContext } from 'react';
 
 import { MenuContext } from '@/contexts';
-import { cn, isFunctionThanCall } from '@/utils';
+import { cn } from '@/utils';
 
-const KEYS = ['Esc'];
-
-const MenuContent = ({ className, ...props }, ref) => {
-  const { isOpen, setIsOpen } = useContext(MenuContext);
+const MenuContent = ({ className,children, ...props }, ref) => {
+  const { isOpen } = useContext(MenuContext)
 
   return (
     <section
       aria-hidden={!isOpen}
-      className={cn(
-        'pointer-events-auto relative z-10 mx-auto size-full max-w-bounds space-y-6 overflow-y-auto overflow-x-clip bg-primary p-6 text-primary-content transition-[transform,opacity] duration-500 data-closed:pointer-events-none data-closed:-translate-y-2 data-closed:scale-90 data-closed:opacity-0 data-closed:duration-300 data-open:delay-300',
+       className={cn(
+        'pointer-events-auto group/menu relative z-10 size-full flex items-center justify-center bg-primary text-primary-content [transition:transform_.7,clip-path_.5] duration-500 data-closed:-translate-y-[20%] [clip-path:inset(0_round_0)] data-closed:[clip-path:inset(0_0_100%_0_round_0_0_50%_50%)] data-closed:[transition:transform_.5,clip-path_.3]',
         className,
       )}
       data-state={isOpen ? 'open' : 'closed'}
       ref={ref}
       {...props}
-      onKeyUp={(ev) => {
-        if (KEYS.includes(ev.key)) setIsOpen(false);
-
-        isFunctionThanCall(props.onKeyUp, ev);
-      }}
-    />
+    >
+      <div className='size-full max-w-bounds 2xl:max-h-bounds overflow-y-auto flex flex-col gap-md justify-between p-sm'>
+        {children}
+      </div>
+    </section>
   );
 };
 

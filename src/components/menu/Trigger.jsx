@@ -5,11 +5,11 @@ import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
 import { MagneticButton } from '../button';
-import { ScrollAnimate } from '../scroll-animate';
+import { ScrollAnimate} from '../scroll-animate';
 import { MenuIcon, TimesIcon } from '../ui/icon/icons';
 import MenuUiTrigger from '../ui/menu/Trigger';
 
-const MenuTrigger = ({ className, variants, ...props }, ref) => {
+const MenuTrigger = ({ className, ...props }, ref) => {
   const animationConfig = {
     scroll: 'scrollY',
     scrollPoints: [0, 299.999, 300],
@@ -18,8 +18,7 @@ const MenuTrigger = ({ className, variants, ...props }, ref) => {
   };
 
   return (
-    <ScrollAnimate
-      config={animationConfig}
+    <ScrollAnimate      config={animationConfig}
       ref={ref}
       smoothConfig={smoothConfig}
       {...props}
@@ -27,10 +26,9 @@ const MenuTrigger = ({ className, variants, ...props }, ref) => {
       <MenuUiTrigger asChild>
         <MagneticButton
           className={cn(
-            '[--tw-scale-y:--tw-scale-x] [--variant-a:--primary] hover:text-primary-content data-open:![--tw-scale-x:1]',
+            '[--tw-scale-y:--tw-scale-x] data-closed:[--variant-a:--primary] data-closed:[--variant:--main] data-closed:[--variant-c:--content] hover:[--variant-c:--content] data-closed:hover:[--variant-c:--primary-c] border-border focus-visible:outline-variant-content [--variant-a:--main] data-open:![--tw-scale-x:1]',
             className,
           )}
-          variants={{ color: 'main', ...variants }}
         >
           <Icon>
             <TimesIcon className='pointer-events-none group-data-closed:opacity-0' />

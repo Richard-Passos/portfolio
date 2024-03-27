@@ -18,7 +18,7 @@ const MenuNav = ({ className, items = [], ...props }) => {
 
   return (
     <NavigationMenu
-      className={cn('w-9/10 max-w-none flex-col', className)}
+      className={cn('w-9/10 max-w-screen-lg mx-auto flex-col', className)}
       {...props}
     >
       {items?.map(({ href, label }, i) => {

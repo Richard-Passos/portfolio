@@ -24,7 +24,7 @@ const Menu = (props) => {
 
       <Portal
         asChild
-        className='!fixed right-sm top-sm z-50'
+        className='!fixed right-sm top-sm z-[60]'
       >
         <Trigger />
       </Portal>
