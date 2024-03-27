@@ -61,6 +61,28 @@
     --border: 0 0% 90%;
   }
 
+  .light .primary {
+    @apply text-content;
+
+    --main: 0 0% 4.7%;
+    --active: 0 0% 5.7%;
+    --content: 0 0% 98%;
+
+    --muted: 0 0% 9%;
+    --muted-a: 0 0% 13%;
+    --muted-c: 0 0% 62.5%;
+
+    --primary: 0 0% 98%;
+    --primary-a: 0 0% 92%;
+    --primary-c: 0 0% 4.7%;
+
+    --danger: 354 80% 57%;
+    --danger-a: 354 80% 60%;
+    --danger-c: 354 70% 93%;
+
+    --border: 0 0% 12%;
+  }
+
   .dark,
   body:has(.dark-layout) {
     @apply text-content;
@@ -94,6 +116,28 @@
     --danger-c: 354 70% 93%;
 
     --border: 0 0% 12%;
+  }
+
+  .dark .primary, body:has(.dark-layout) .primary {
+    @apply text-content;
+
+    --main: 0 0% 98%;
+    --active: 0 0% 96.5%;
+    --content: 0 0% 4.7%;
+
+    --muted: 0 0% 94%;
+    --muted-a: 0 0% 90%;
+    --muted-c: 0 0% 32%;
+
+    --primary: 0 0% 4.7%;
+    --primary-a: 0 0% 6.7%;
+    --primary-c: 0 0% 98%;
+
+    --danger: 354 70% 53%;
+    --danger-a: 354 70% 57%;
+    --danger-c: 354 60% 93%;
+
+    --border: 0 0% 90%;
   }
 
   * {
