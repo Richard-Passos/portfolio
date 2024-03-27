@@ -19,7 +19,7 @@ const ProjectsGridItem = ({ className, content, children, ...props }) => {
       <div className='relative grid size-full grid-cols-4 items-end overflow-hidden rounded-inherit p-sm transition-transform duration-300 group-hover:scale-95'>
         {children}
 
-        <span className='absolute inset-0 rounded-inherit bg-main/60 opacity-0 backdrop-blur-sm transition-[transform,opacity] duration-300 group-hover:opacity-100' />
+        <span className='absolute inset-0 rounded-inherit bg-main/60 opacity-0 transition-[transform,opacity] duration-300 group-hover:opacity-100' />
       </div>
     </CursorLink>
   );
