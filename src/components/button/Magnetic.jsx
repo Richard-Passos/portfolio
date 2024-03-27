@@ -21,7 +21,7 @@ const MagneticButton = (
         variants={{ color: variants.color }}
       >
         <Magnetic
-          className='flex size-full items-center justify-center rounded-inherit'
+          className='flex size-full items-center justify-center gap-[inherit] rounded-inherit'
           limit={limit * 0.8}
         >
           <span>{children}</span>
