@@ -1,7 +1,7 @@
 import { cnv } from '@/utils';
 
 const selectScrollButtonVariants = cnv({
-  base: 'absolute z-10 flex h-6 w-full cursor-default items-center justify-center bg-main/75 backdrop-blur-sm',
+  base: 'absolute z-10 flex h-6 w-full cursor-default items-center justify-center bg-main/80',
   variants: {
     side: {
       down: 'bottom-0 border-t',
