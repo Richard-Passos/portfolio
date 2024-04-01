@@ -3,25 +3,23 @@
 import { usePathname } from 'next/navigation';
 import { useContext, useState } from 'react';
 
+import { MenuContext } from '@/contexts';
 import { cn } from '@/utils';
 
 import { NavigationMenu } from '../ui/navigation-menu';
 import Link from './Link';
-import { MenuContext } from '@/contexts';
 
 const DEFAULT_IS_HOVER = undefined;
 
-const MenuNav = ({  items = [], ...props }) => {
-  const {toggleIsOpen} = useContext(MenuContext),
-  [isHover, setIsHover] = useState(DEFAULT_IS_HOVER),
+const MenuNav = ({ items = [], ...props }) => {
+  const { toggleIsOpen } = useContext(MenuContext),
+    [isHover, setIsHover] = useState(DEFAULT_IS_HOVER),
     pathname = usePathname();
 
   const includesPathname = !!items.find(({ href }) => href === pathname);
 
   return (
-    <NavigationMenu
-      {...props}
-    >
+    <NavigationMenu {...props}>
       {items?.map(({ href, label }, i) => {
         const isActive =
           isHover === i || (pathname === href && isHover === DEFAULT_IS_HOVER);

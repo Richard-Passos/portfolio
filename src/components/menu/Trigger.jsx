@@ -5,7 +5,7 @@ import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
 import { MagneticButton } from '../button';
-import { ScrollAnimate} from '../scroll-animate';
+import { ScrollAnimate } from '../scroll-animate';
 import { MenuIcon, TimesIcon } from '../ui/icon/icons';
 import MenuUiTrigger from '../ui/menu/Trigger';
 
@@ -18,18 +18,19 @@ const MenuTrigger = ({ className, ...props }, ref) => {
   };
 
   return (
-    <ScrollAnimate      config={animationConfig}
+    <ScrollAnimate
+      config={animationConfig}
       ref={ref}
       smoothConfig={smoothConfig}
       {...props}
     >
       <MenuUiTrigger asChild>
-          <MagneticButton
+        <MagneticButton
           className={cn(
-            'data-open:primary [--tw-scale-y:--tw-scale-x] !text-variant-content [--variant-a:--primary] hover:[--variant-c:--primary-c] data-open:![--tw-scale-x:1]',
+            'data-open:primary !text-variant-content [--tw-scale-y:--tw-scale-x] [--variant-a:--primary] hover:[--variant-c:--primary-c] data-open:![--tw-scale-x:1]',
             className,
           )}
-          variants={{color: 'main'}}
+          variants={{ color: 'main' }}
         >
           <Icon>
             <TimesIcon className='pointer-events-none group-data-closed:opacity-0' />

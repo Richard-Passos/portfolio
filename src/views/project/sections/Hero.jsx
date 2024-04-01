@@ -17,8 +17,8 @@ const ProjectViewHeroSection = ({
 }) => {
   const animationConfig = {
     prop: 'y',
-    propPoints: ['-15%', '15%']
-  }
+    propPoints: ['-15%', '15%'],
+  };
 
   return (
     <section

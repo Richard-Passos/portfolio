@@ -118,7 +118,8 @@
     --border: 0 0% 12%;
   }
 
-  .dark .primary, body:has(.dark-layout) .primary {
+  .dark .primary,
+  body:has(.dark-layout) .primary {
     @apply text-content;
 
     --main: 0 0% 98%;

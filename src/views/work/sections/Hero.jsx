@@ -1,5 +1,10 @@
 import { globalsApi } from '@/api';
-import { GridPattern, HorizontalScroll, ScrollIndicator, ScrollAnimate } from '@/components';
+import {
+  GridPattern,
+  HorizontalScroll,
+  ScrollAnimate,
+  ScrollIndicator,
+} from '@/components';
 import { Text } from '@/components/ui';
 import { SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';

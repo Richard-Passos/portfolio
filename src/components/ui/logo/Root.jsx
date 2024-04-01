@@ -1,22 +1,26 @@
 import { globalsApi } from '@/api';
-import Link from '../link';
 import { cn } from '@/utils';
+
+import Link from '../link';
 
 const Root = async ({ className, ...props }) => {
   const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
-  
+
   return (
-     <Link
+    <Link
       className={cn(
-         'h-10 rounded-sm px-2 py-1 -translate-x-2 aspect-[2] overflow-hidden',
+        'aspect-[2] h-10 -translate-x-2 overflow-hidden rounded-sm px-2 py-1',
         className,
       )}
       href='/'
       {...props}
     >
-      <div className='size-full relative bg-current' style={{
-        maskImage:  `url(${personalInfo?.logo.src})`,
-      }}/>
+      <div
+        className='relative size-full bg-current'
+        style={{
+          maskImage: `url(${personalInfo?.logo.src})`,
+        }}
+      />
     </Link>
   );
 };

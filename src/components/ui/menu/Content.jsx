@@ -6,13 +6,13 @@ import { MenuContext } from '@/contexts';
 import { cn } from '@/utils';
 
 const MenuContent = ({ className, ...props }, ref) => {
-  const { isOpen, state } = useContext(MenuContext)
+  const { isOpen, state } = useContext(MenuContext);
 
   return (
     <section
       aria-hidden={!isOpen}
-       className={cn(
-        'primary pointer-events-auto bg-main group/menu relative z-10 size-full flex items-center justify-center [transition:transform_.7,clip-path_.5] duration-500 data-closed:-translate-y-[20%] [clip-path:inset(0_round_0)] data-closed:[clip-path:inset(0_0_100%_0_round_0_0_50%_50%)] data-closed:[transition:transform_.5,clip-path_.3]',
+      className={cn(
+        'primary group/menu pointer-events-auto relative z-10 flex size-full items-center justify-center bg-main duration-500 [clip-path:inset(0_round_0)] [transition:transform_.7,clip-path_.5] data-closed:-translate-y-[20%] data-closed:[clip-path:inset(0_0_100%_0_round_0_0_50%_50%)] data-closed:[transition:transform_.5,clip-path_.3]',
         className,
       )}
       data-state={state}

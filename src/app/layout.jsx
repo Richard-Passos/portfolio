@@ -10,7 +10,7 @@ const font = Inter({ subsets: ['latin'], variable: '--font-app' });
 
 const Layout = ({ children }) => {
   return (
-    <html    lang='en'>
+    <html lang='en'>
       <Providers.GlobalState>
         <SmoothScroll>
           <body

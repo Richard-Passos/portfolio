@@ -8,8 +8,8 @@ const ProjectViewImagesSection = async ({ promise, className, ...props }) => {
 
   const animationConfig = {
     prop: 'y',
-    propPoints: ['-15%', '15%']
-  }
+    propPoints: ['-15%', '15%'],
+  };
 
   return (
     <Section

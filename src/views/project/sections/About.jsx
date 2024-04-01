@@ -1,18 +1,18 @@
-import { Bg, Lines, TextScrollAnimate, ScrollAnimate } from '@/components';
+import { Bg, Lines, ScrollAnimate, TextScrollAnimate } from '@/components';
 import { Image, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const ProjectViewAboutSection = ({ data = {}, className, theme, ...props }) => {
   const animationConfig = {
     y1: {
-        prop: 'y',
-        propPoints: ['-15%', '15%']
+      prop: 'y',
+      propPoints: ['-15%', '15%'],
     },
     y2: {
       prop: '--y',
-      propPoints: [-0.333, 0.333]
-  }
-  }
+      propPoints: [-0.333, 0.333],
+    },
+  };
 
   const listItems = [
     { title: 'Roles', description: data.roles?.join(' & ') },
@@ -67,9 +67,7 @@ const ProjectViewAboutSection = ({ data = {}, className, theme, ...props }) => {
             </ScrollAnimate.Transform>
           </div>{' '}
         </div>
-        <ScrollAnimate
-          config={animationConfig.y2}
-        >
+        <ScrollAnimate config={animationConfig.y2}>
           <div className='relative size-full translate-y-[calc(var(--y)*theme(spacing.lg))] overflow-hidden rounded-3xl max-sm:hidden sm:col-span-5'>
             <ScrollAnimate.Transform config={animationConfig.y1}>
               <div className='absolute -inset-y-[7.5%] inset-x-0'>

@@ -23,7 +23,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
       scrollConfig: {
         offset: ['0 0', '.75 0'],
       },
-      
+
       prop: '--opacity',
       propPoints: [1, 0],
     },
@@ -39,17 +39,17 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
   return (
     <section
       className={cn(
-        'max-2xl:min-h-svh relative -mt-[--header-h] w-full overflow-hidden 2xl:h-screen 2xl:max-h-bounds',
+        'relative -mt-[--header-h] w-full overflow-hidden max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
         theme,
         className,
       )}
       {...props}
     >
-       <ScrollAnimate.Transform config={animationConfig.y}>
+      <ScrollAnimate.Transform config={animationConfig.y}>
         <ScrollAnimate config={animationConfig.scale}>
           <ScrollAnimate config={animationConfig.opacity}>
-            <div className='relative flex size-full items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] px-[--inset] [--inset:calc(var(--w)*.025)] [--w:100vw] max-sm:!translate-y-0 2xl:[--w:--max-w]'>
-              <div className='w-9/10 pb-[--inset] sm:opacity-[--opacity] sm:scale-[--scale]'>
+            <div className='relative flex size-full items-center justify-center px-[--inset] pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-sm:!translate-y-0 2xl:[--w:--max-w]'>
+              <div className='w-9/10 pb-[--inset] sm:scale-[--scale] sm:opacity-[--opacity]'>
                 <Text.Title
                   aria-label='Turning heads and conquering hearts.'
                   asChild

@@ -11,7 +11,7 @@ import { ChevronDownIcon, ChevronUpIcon } from '../ui/icon/icons';
 const DEFAULT_LANG = languages[0]?.toLowerCase(),
   LANG_REGEX = /\/[a-z]{2}(?![^/])/;
 
-const Language = ({className, ...props}) => {
+const Language = ({ className, ...props }) => {
   const router = useRouter(),
     pathname = usePathname(),
     searchParams = useSearchParams();
@@ -41,7 +41,12 @@ const Language = ({className, ...props}) => {
       onValueChange={onChange}
       {...props}
     >
-      <Select.Trigger className={cn('h-8 w-12 justify-center gap-1 px-0 lowercase transition-none', className)}>
+      <Select.Trigger
+        className={cn(
+          'h-8 w-12 justify-center gap-1 px-0 lowercase transition-none',
+          className,
+        )}
+      >
         <Select.Value />
 
         <Select.Icon

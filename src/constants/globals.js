@@ -38,7 +38,7 @@ const globals = [
       src: '/images/logo.svg',
       alt: 'Richard Passos logo',
       width: 220,
-      height: 110
+      height: 110,
     },
     socials: [
       {

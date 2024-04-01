@@ -1,18 +1,17 @@
-'use client'
+'use client';
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from 'react';
 
 const useEventListener = (ev, fn, el, opts) => {
-  const fnRef = useRef(fn)
+  const fnRef = useRef(fn);
 
   useEffect(() => {
-    const targetEl = el?.current ?? window
+    const targetEl = el?.current ?? window;
 
-    targetEl.addEventListener(ev, fnRef.current, opts)
+    targetEl.addEventListener(ev, fnRef.current, opts);
 
-    return () => targetEl.removeEventListener(ev, fnRef.current, opts)
-  
-  }, [ev, el, opts])
-}
+    return () => targetEl.removeEventListener(ev, fnRef.current, opts);
+  }, [ev, el, opts]);
+};
 
-export default useEventListener
+export default useEventListener;

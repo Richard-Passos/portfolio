@@ -16,8 +16,8 @@ const MenuOverlay = (props) => {
       Lenis.stop();
     } else {
       Lenis.start();
-    }  
-  }, [isOpen])
+    }
+  }, [isOpen]);
 
   return <MenuUiOverlay {...props} />;
 };

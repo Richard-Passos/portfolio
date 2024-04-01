@@ -20,13 +20,13 @@ const AboutViewExtraSection = ({ className, ...props }) => {
   const animationConfig = {
     y1: {
       prop: 'y',
-      propPoints: ['10%', '-15%']
+      propPoints: ['10%', '-15%'],
     },
     y2: {
       prop: 'y',
-      propPoints: ['20%', '-40%']
-    }
-  }
+      propPoints: ['20%', '-40%'],
+    },
+  };
 
   return (
     <Section

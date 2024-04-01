@@ -10,7 +10,7 @@ const WorkVieWhyMeCardSection = ({ className, value, title, ...props }) => {
       scrollConfig: {
         offset: SCROLL_OFFSET,
       },
-      
+
       prop: 'opacity',
       propPoints: [0, 1],
     },

@@ -14,7 +14,7 @@ const HomeViewFirstText = (props) => {
       scrollConfig: {
         offset: ['.5 .5', '.75 .5'],
       },
-      
+
       prop: '--clip-path',
       propPoints: ['inset(0% -1% 0 0)', 'inset(100% -1% 0 0)'],
     },

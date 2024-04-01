@@ -9,10 +9,15 @@ const MenuOverlay = ({ className, ...props }, ref) => {
   const { state } = useContext(MenuContext);
 
   return (
-
- <span       ref={ref}
-       data-state={state}
- className={cn('bg-main/20 [body:has(.dark-layout)_&]:bg-main/80 transition-opacity duration-300 pointer-events-auto data-closed:pointer-events-none data-closed:opacity-0 absolute inset-0', className)} {...props}/>
+    <span
+      ref={ref}
+      data-state={state}
+      className={cn(
+        'pointer-events-auto absolute inset-0 bg-main/20 transition-opacity duration-300 data-closed:pointer-events-none data-closed:opacity-0 [body:has(.dark-layout)_&]:bg-main/80',
+        className,
+      )}
+      {...props}
+    />
   );
 };
 
