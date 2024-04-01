@@ -20,7 +20,7 @@ const Header = async ({ className, ...props }) => {
       )}
       {...props}
     >
-      <Logo className='transition-none' />
+      <Logo />
 
       <div className='flex h-10 items-center max-sm:hidden'>
         <Nav items={data.navItems} />

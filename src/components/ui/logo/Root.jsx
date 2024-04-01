@@ -1,17 +1,22 @@
-import { Link } from '@/components/ui';
+import { globalsApi } from '@/api';
+import Link from '../link';
 import { cn } from '@/utils';
 
-const Root = ({ className, ...props }) => {
+const Root = async ({ className, ...props }) => {
+  const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
+  
   return (
-    <Link
+     <Link
       className={cn(
-        'h-10 -translate-x-2 gap-2 rounded-sm px-2 text-2xl font-bold uppercase no-underline',
+         'h-10 rounded-sm px-2 py-1 -translate-x-2 aspect-[2] overflow-hidden',
         className,
       )}
       href='/'
       {...props}
     >
-      R <span className='h-[.1em] w-[1em] bg-current transition-bg' /> P
+      <div className='size-full relative bg-current' style={{
+        maskImage:  `url(${personalInfo?.logo.src})`,
+      }}/>
     </Link>
   );
 };

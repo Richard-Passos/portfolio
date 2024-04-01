@@ -11,7 +11,7 @@ import { MenuContext } from '@/contexts';
 
 const DEFAULT_IS_HOVER = undefined;
 
-const MenuNav = ({ className, items = [], ...props }) => {
+const MenuNav = ({  items = [], ...props }) => {
   const {toggleIsOpen} = useContext(MenuContext),
   [isHover, setIsHover] = useState(DEFAULT_IS_HOVER),
     pathname = usePathname();
@@ -20,7 +20,6 @@ const MenuNav = ({ className, items = [], ...props }) => {
 
   return (
     <NavigationMenu
-      className={cn('w-9/10 max-w-screen-lg mx-auto flex-col', className)}
       {...props}
     >
       {items?.map(({ href, label }, i) => {

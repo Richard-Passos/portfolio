@@ -34,6 +34,12 @@ const globals = [
       state: 'RS',
       gmt: 'GMT-3',
     },
+    logo: {
+      src: '/images/logo.svg',
+      alt: 'Richard Passos logo',
+      width: 220,
+      height: 110
+    },
     socials: [
       {
         label: 'Github',

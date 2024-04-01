@@ -70,7 +70,7 @@ const FooterContent = async ({ theme,className, ...props }) => {
           <ScrollAnimate config={animationConfig.y}>
             <div className='relative flex grow justify-between gap-md py-md [--y:calc(var(--smooth-y)*var(--h))] max-sm:flex-col sm:translate-y-[--y] sm:items-end'>
               <div className='flex flex-col items-start'>
-                <Logo className='w-fit' />
+                <Logo className='mb-1' />
 
                 <Text className='mb-4 max-w-52 text-sm font-medium'>
                   An great {personalInfo.job?.toLowerCase()} to fit your needs.
@@ -101,10 +101,10 @@ const FooterContent = async ({ theme,className, ...props }) => {
                 ))}
               </SocialNav>
 
-              <Logo
+                <Logo
                 aria-hidden
                 tabIndex={-1}
-                className='pointer-events-none select-none touch-none absolute bottom-0 left-1/2 -z-10 h-auto -translate-x-1/2 translate-y-1/2 px-0 text-[calc(var(--w)*.4)]/[1] font-extrabold text-muted [--w:100vw] 2xl:[--w:--max-w]'
+                className='pointer-events-none select-none touch-none absolute bottom-0 left-1/2 w-[calc(var(--w)*.95)] -z-10 h-auto -translate-x-1/2 p-0 translate-y-1/2 opacity-[.035] [--w:100vw] 2xl:[--w:--max-w]'
               />
 
               <GridPattern className='inset-x-auto pointer-events-none -top-px left-1/2 w-screen -translate-x-1/2' />

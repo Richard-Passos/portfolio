@@ -5,7 +5,7 @@ import { forwardRef, useContext } from 'react';
 import { MenuContext } from '@/contexts';
 import { cn } from '@/utils';
 
-const MenuContent = ({ className,children, ...props }, ref) => {
+const MenuContent = ({ className, ...props }, ref) => {
   const { isOpen, state } = useContext(MenuContext)
 
   return (
@@ -18,11 +18,7 @@ const MenuContent = ({ className,children, ...props }, ref) => {
       data-state={state}
       ref={ref}
       {...props}
-    >
-      <div className='size-full max-w-bounds 2xl:max-h-bounds overflow-y-auto flex flex-col gap-md justify-between p-sm'>
-        {children}
-      </div>
-    </section>
+    />
   );
 };
 
