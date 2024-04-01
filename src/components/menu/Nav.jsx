@@ -1,46 +1,53 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import { useContext, useState } from 'react';
 
 import { MenuContext } from '@/contexts';
 import { cn } from '@/utils';
 
-import { NavigationMenu } from '../ui/navigation-menu';
-import Link from './Link';
+import InfinityScroll from '../infinity-scroll';
+import { MagneticLink } from '../link';
 
-const DEFAULT_IS_HOVER = undefined;
-
-const MenuNav = ({ items = [], ...props }) => {
+const MenuNav = ({ className, items = [], ...props }) => {
   const { toggleIsOpen } = useContext(MenuContext),
-    [isHover, setIsHover] = useState(DEFAULT_IS_HOVER),
-    pathname = usePathname();
-
-  const includesPathname = !!items.find(({ href }) => href === pathname);
+    [isActive, setIsActive] = useState(undefined);
 
   return (
-    <NavigationMenu {...props}>
-      {items?.map(({ href, label }, i) => {
-        const isActive =
-          isHover === i || (pathname === href && isHover === DEFAULT_IS_HOVER);
-
-        return (
-          <Link
-            href={href}
-            isActive={isActive}
-            includesPathname={includesPathname}
-            key={href}
-            onMouseEnter={() => setIsHover(i)}
-            onMouseLeave={() => {
-              if (includesPathname) setIsHover(DEFAULT_IS_HOVER);
-            }}
+    <div className={cn('w-full relative flex items-center justify-center p-md', className)} {...props}>
+      <nav className='relative z-10 flex group justify-center flex-col w-9/10 max-w-xl'>
+       {items?.map((data, i) => 
+          <div className='[--opacity:.25] [body:not(:has(.dark-layout))_&]:[--opacity:.05] group-hover:[&:not(:hover)]:scale-x-95 group-hover:[&:not(:hover)]:opacity-[--opacity] w-fit transition-[transform,opacity]'>
+            <MagneticLink
+          className='justify-start rounded-sm px-8 py-4 text-7xl font-extrabold uppercase tracking-tighter no-underline'
+          limit={0.15}
+            href={data.href}
+            key={data.href}
+            onMouseEnter={() => setIsActive(i)}
+            onMouseLeave={() => setIsActive(undefined)}
             onClick={toggleIsOpen}
           >
-            {label}
-          </Link>
-        );
-      })}
-    </NavigationMenu>
+            {data.label}
+          </MagneticLink>
+          </div>
+        )
+      }
+    </nav>
+
+        
+       
+            <ul aria-hidden
+               className='w-full absolute flex items-center justify-center'>
+            {items.map((data, i) => <li className={cn('absolute w-full duration-300 transition-[transform,opacity] text-[min(32vmin,16rem)]/[1] font-extrabold uppercase tracking-tighter text-muted', isActive !== i && 'scale-y-75 opacity-0')}
+            key={`Infinity scroll ${data.href}`}>
+              <InfinityScroll
+            className='[--gap:.2em]'
+            
+            >
+              <span>{data.label}</span> ·
+            </InfinityScroll>
+            </li>)}
+            </ul>
+            </div>
   );
 };
 
