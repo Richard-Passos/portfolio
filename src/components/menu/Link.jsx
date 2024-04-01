@@ -6,6 +6,7 @@ import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
 import { NavigationMenuLink } from '../ui/navigation-menu';
+import { MagneticLink } from '../link';
 
 const MenuLink = ({
   className,
@@ -15,12 +16,16 @@ const MenuLink = ({
   ...props
 }) => {
   return (
-     <NavigationMenuLink
+    <MagneticLink
+      asChild
       className={cn(
-        'group/link relative inline-flex w-fit items-center justify-start rounded-sm px-8 py-4 text-6xl uppercase font-bold tracking-tight',
+        'group/link relative inline-flex w-fit items-center justify-start rounded-sm px-8 py-4 text-6xl uppercase font-bold tracking-tight no-underline hover:z-10',
         className,
       )}
+      limit={.15}
       {...props}
+    >
+     <NavigationMenuLink
     >
       {children}
 
@@ -40,6 +45,7 @@ const MenuLink = ({
         />
       )}
     </NavigationMenuLink>
+    </MagneticLink>
   );
 };
 

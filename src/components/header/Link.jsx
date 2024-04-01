@@ -19,7 +19,7 @@ const HeaderLink = ({
     <MagneticLink
       asChild
       className={cn(
-        'group/link relative flex h-10 rounded-sm px-4 lowercase no-underline transition-none hover:z-10',
+        'group/link relative flex h-10 rounded-sm px-4 no-underline transition-none hover:z-10',
         className,
       )}
       {...props}
