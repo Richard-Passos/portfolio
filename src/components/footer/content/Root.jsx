@@ -63,7 +63,7 @@ const FooterContent = async ({ theme, className, ...props }) => {
               </MagneticButton>
             </div>
 
-            <span className='absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-main shadow-[0_25px_35px_-15px] shadow-[hsl(0_0%_90%/.2)] dark:shadow-[hsl(0_0%_10%/.2)]' />
+            <span className='absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-main shadow-[0_25px_35px_-15px] shadow-[hsl(--content/.2)]' />
           </div>
         </ScrollAnimate>
 
