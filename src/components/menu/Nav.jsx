@@ -1,16 +1,14 @@
 'use client';
 
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
-import { MenuContext } from '@/contexts';
 import { cn } from '@/utils';
 
 import InfinityScroll from '../infinity-scroll';
 import { MagneticLink } from '../link';
 
 const MenuNav = ({ className, items = [], ...props }) => {
-  const { toggleIsOpen } = useContext(MenuContext),
-    [isActive, setIsActive] = useState(undefined);
+  const [isActive, setIsActive] = useState(undefined);
 
   return (
     <div
@@ -27,12 +25,11 @@ const MenuNav = ({ className, items = [], ...props }) => {
             className='w-fit transition-[transform,opacity] [--opacity:.25] group-hover:[&:not(:hover)]:scale-x-95 group-hover:[&:not(:hover)]:opacity-[--opacity] [body:not(:has(.dark-layout))_&]:[--opacity:.05]'
           >
             <MagneticLink
-              className='justify-start rounded-sm px-8 py-4 text-7xl font-extrabold uppercase tracking-tighter no-underline'
+              className='justify-start rounded-sm transition-none px-8 py-4 text-7xl font-extrabold uppercase tracking-tighter no-underline'
               limit={0.15}
               href={data.href}
               onMouseEnter={() => setIsActive(i)}
               onMouseLeave={() => setIsActive(undefined)}
-              onClick={toggleIsOpen}
             >
               {data.label}
             </MagneticLink>
