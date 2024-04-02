@@ -9,7 +9,7 @@ const Root = async ({ className, ...props }) => {
   return (
     <Link
       className={cn(
-        'aspect-[2] h-10 -translate-x-2 overflow-hidden rounded-sm px-2 py-1',
+        'aspect-[2] h-10 -translate-x-2 transition-none overflow-hidden rounded-sm px-2 py-1',
         className,
       )}
       href='/'
