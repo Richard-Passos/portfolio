@@ -8,9 +8,7 @@ const ProjectPage = ({ params: { id } }) => {
   return <ProjectView promises={{ data, images }} />;
 };
 
-const generateMetadata = async ({ params }) => {
-  const { id } = params;
-
+const generateMetadata = async ({ params: { id } }) => {
   const { data = {} } = await projectsApi.getOne(id);
 
   return {
