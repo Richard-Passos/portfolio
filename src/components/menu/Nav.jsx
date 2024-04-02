@@ -16,12 +16,11 @@ const MenuNav = ({ className, items = [], ...props }) => {
     <div className={cn('w-full relative flex items-center justify-center p-md', className)} {...props}>
       <nav className='relative z-10 flex group justify-center flex-col w-9/10 max-w-xl'>
        {items?.map((data, i) => 
-          <div className='[--opacity:.25] [body:not(:has(.dark-layout))_&]:[--opacity:.05] group-hover:[&:not(:hover)]:scale-x-95 group-hover:[&:not(:hover)]:opacity-[--opacity] w-fit transition-[transform,opacity]'>
+          <div key={data.href} className='[--opacity:.25] [body:not(:has(.dark-layout))_&]:[--opacity:.05] group-hover:[&:not(:hover)]:scale-x-95 group-hover:[&:not(:hover)]:opacity-[--opacity] w-fit transition-[transform,opacity]'>
             <MagneticLink
           className='justify-start rounded-sm px-8 py-4 text-7xl font-extrabold uppercase tracking-tighter no-underline'
           limit={0.15}
             href={data.href}
-            key={data.href}
             onMouseEnter={() => setIsActive(i)}
             onMouseLeave={() => setIsActive(undefined)}
             onClick={toggleIsOpen}
