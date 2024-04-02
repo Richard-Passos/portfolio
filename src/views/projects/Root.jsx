@@ -21,7 +21,7 @@ const ProjectsView = async () => {
     <>
       <Text.Title
         asChild
-        className='w-9/10 max-w-screen-lg dark-layout max-sm:text-center mb-lg pt-lg'
+        className='dark-layout mb-lg w-9/10 max-w-screen-lg pt-lg max-sm:text-center'
         variants={{ size: 'lg' }}
       >
         <h1>
@@ -36,7 +36,7 @@ const ProjectsView = async () => {
       </Text.Title>
 
       <Show
-      className='pb-lg'
+        className='pb-lg'
         defaultData={{ role: ROLES[0], type: TYPES[0].data, projects: data }}
       >
         <div className='flex w-full flex-wrap-reverse items-center justify-center gap-sm sm:justify-between'>

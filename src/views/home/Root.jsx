@@ -3,20 +3,20 @@ import Texts from './texts';
 
 const HomeView = async () => {
   return (
-      <>
+    <>
       <Sections.Hero theme='light' />
 
-<Sections.Work
-  id='scrollTo'
-  theme='dark'
-/>
+      <Sections.Work
+        id='scrollTo'
+        theme='dark'
+      />
 
-<Texts.First theme='light' />
+      <Texts.First theme='light' />
 
-<Sections.About theme='dark' />
+      <Sections.About theme='dark' />
 
-<Texts.Second theme='dark' />
-</>
+      <Texts.Second theme='dark' />
+    </>
   );
 };
 

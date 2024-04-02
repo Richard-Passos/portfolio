@@ -13,10 +13,7 @@ const ProjectViewImagesSection = async ({ promise, className, ...props }) => {
 
   return (
     <Section
-      className={cn(
-        'z-10 flex flex-col items-center',
-        className,
-      )}
+      className={cn('z-10 flex flex-col items-center', className)}
       {...props}
     >
       <h2 className='mb-lg flex w-full flex-col'>

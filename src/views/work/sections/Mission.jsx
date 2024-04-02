@@ -5,10 +5,7 @@ import { cn } from '@/utils';
 const WorkViewMissionSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn(
-        'flex flex-col items-center justify-center',
-        className,
-      )}
+      className={cn('flex flex-col items-center justify-center', className)}
       {...props}
     >
       <WorkViewMissionListSection className='mb-md' />

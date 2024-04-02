@@ -20,19 +20,19 @@ const MenuContent = async (props) => {
       {...props}
     >
       <div className='relative flex size-full max-w-bounds overflow-y-auto overflow-x-clip 2xl:max-h-bounds'>
-      <div className='relative flex w-fit shrink-0 flex-col justify-between overflow-hidden border-l p-sm shadow-[15px_0_35px_-15px] shadow-[hsl(var(--content)/.05)] [body:not(:has(.dark-layout))_&]:shadow-none'>
-            <div className='flex h-10 px-sm items-center mb-lg'>
-              <Logo />
+        <div className='relative flex w-fit shrink-0 flex-col justify-between overflow-hidden border-l p-sm shadow-[15px_0_35px_-15px] shadow-[hsl(var(--content)/.05)] [body:not(:has(.dark-layout))_&]:shadow-none'>
+          <div className='mb-lg flex h-10 items-center px-sm'>
+            <Logo />
 
-              <Separator
-                className='mr-4'
-                orientation='vertical'
-              />
+            <Separator
+              className='mr-4'
+              orientation='vertical'
+            />
 
-              <Suspense fallback={<DotsLoader />}>
-                <Language />
-              </Suspense>
-            </div>
+            <Suspense fallback={<DotsLoader />}>
+              <Language />
+            </Suspense>
+          </div>
 
           <SocialNav>
             {personalInfo.socials?.map((social, i) => (
@@ -47,10 +47,7 @@ const MenuContent = async (props) => {
           <GridPattern />
         </div>
 
-
-          <Nav
-            items={data.navItems}
-          />
+        <Nav items={data.navItems} />
       </div>
     </MenuUiContent>
   );

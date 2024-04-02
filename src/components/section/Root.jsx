@@ -4,10 +4,7 @@ import { cn } from '@/utils';
 
 import ChangeTheme from '../change-theme';
 
-const Section = (
-  { as, theme, className, children, ...props },
-  ref,
-) => {
+const Section = ({ as, theme, className, children, ...props }, ref) => {
   const Tag = as || 'section';
 
   return (

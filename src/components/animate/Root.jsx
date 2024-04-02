@@ -18,7 +18,7 @@ const Animate = (
     },
     initial: 'hidden',
     [type]: 'visible',
-    exit: 'exit'
+    exit: 'exit',
   };
 
   config = config || defaultConfig;
