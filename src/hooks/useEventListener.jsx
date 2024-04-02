@@ -3,15 +3,15 @@
 import { useEffect, useRef } from 'react';
 
 const useEventListener = (ev, fn, el, opts) => {
-  const fnRef = useRef(fn);
+  fn = useRef(fn).current;
 
   useEffect(() => {
     const targetEl = el?.current ?? window;
 
-    targetEl.addEventListener(ev, fnRef.current, opts);
+    targetEl.addEventListener(ev, fn, opts);
 
-    return () => targetEl.removeEventListener(ev, fnRef.current, opts);
-  }, [ev, el, opts]);
+    return () => targetEl.removeEventListener(ev, fn, opts);
+  }, [el, ev, fn, opts]);
 };
 
 export default useEventListener;
