@@ -104,7 +104,7 @@ const FooterContent = async ({ theme, className, ...props }) => {
             <Logo
               aria-hidden
               tabIndex={-1}
-              className='pointer-events-none absolute bottom-0 left-1/2 -z-10 h-auto w-[calc(var(--w)*.95)] -translate-x-1/2 translate-y-1/2 touch-none select-none p-0 opacity-[.035] [--w:100vw] 2xl:[--w:--max-w]'
+              className='pointer-events-none absolute bottom-0 left-1/2 -z-10 h-auto w-[calc(var(--w)*.95)] -translate-x-1/2 translate-y-1/2 touch-none select-none p-0 text-muted [--w:100vw] 2xl:[--w:--max-w]'
             />
 
             <GridPattern className='pointer-events-none inset-x-auto -top-px left-1/2 w-screen -translate-x-1/2' />
