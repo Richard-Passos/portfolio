@@ -1,18 +1,11 @@
 import { NextPage, Section } from '@/components';
-import { cn } from '@/utils';
 
 import Sections from './sections';
 
-const AboutView = ({ className, ...props }) => {
+const AboutView = () => {
   return (
-    <main
-      className={cn(
-        'dark-layout dark flex w-full max-w-bounds flex-col items-center justify-center',
-        className,
-      )}
-      {...props}
-    >
-      <Sections.Hero />
+    <>
+      <Sections.Hero className='dark-layout' />
 
       <Sections.Background />
 
@@ -21,7 +14,7 @@ const AboutView = ({ className, ...props }) => {
       <Sections.Values theme='light' />
 
       <Section
-        className='flex w-full items-center justify-center'
+        className='flex items-center justify-center'
         theme='dark'
       >
         <NextPage
@@ -29,7 +22,7 @@ const AboutView = ({ className, ...props }) => {
           text='Contact'
         />
       </Section>
-    </main>
+    </>
   );
 };
 

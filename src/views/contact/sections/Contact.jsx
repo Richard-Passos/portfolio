@@ -31,7 +31,7 @@ const ContactViewContactSection = async ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'grid w-full max-w-screen-xl gap-x-sm gap-y-md pb-[calc(theme(spacing.lg)*1.5)] max-2xl:min-h-0 sm:w-9/10 sm:gap-y-sm md:grid-cols-3 lg:grid-cols-2 lg:gap-x-md',
+        'grid max-w-screen-xl gap-x-sm gap-y-md pb-[calc(theme(spacing.lg)*1.5)] max-2xl:min-h-0 sm:w-9/10 sm:gap-y-sm md:grid-cols-3 lg:grid-cols-2 lg:gap-x-md',
         className,
       )}
       {...props}

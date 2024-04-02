@@ -8,10 +8,10 @@ import Sections from './sections';
 const ProjectView = async ({ promises }) => {
   const { data = {}, meta: { adjacentIds = {} } = {} } = await promises.data;
 
-  if (!data.title) notFound();
+  if (!data.slug) notFound();
 
   return (
-    <main className='flex w-full max-w-bounds flex-col items-center'>
+    <>
       <Sections.Hero
         data={data}
         adjacentIds={adjacentIds}
@@ -37,7 +37,7 @@ const ProjectView = async ({ promises }) => {
 
         <Lines />
       </div>
-    </main>
+    </>
   );
 };
 

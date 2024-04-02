@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import { globalsApi } from '@/api';
 import { Footer, Header, Providers, SmoothScroll } from '@/components';
 import { Cursor, ErrorBoundary } from '@/components/ui';
+import { AnimatePresence } from '@/components/animate';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
 
@@ -27,7 +28,11 @@ const Layout = ({ children }) => {
             <Header />
 
             <ErrorBoundary.Provider>
-              <ErrorBoundary>{children}</ErrorBoundary>
+              <ErrorBoundary>
+                <AnimatePresence mode='popLayout'>
+                {children}
+                </AnimatePresence>
+                </ErrorBoundary>
             </ErrorBoundary.Provider>
 
             <Footer />

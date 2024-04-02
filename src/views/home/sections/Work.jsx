@@ -14,7 +14,7 @@ import { cn } from '@/utils';
 const HomeViewWorkSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn('relative flex flex-col items-center', className)}
+      className={cn('flex flex-col items-center', className)}
       {...props}
     >
       <h2 className='mb-md flex w-full flex-col'>

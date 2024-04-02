@@ -1,17 +1,10 @@
 import { Bg, Lines, NextPage } from '@/components';
-import { cn } from '@/utils';
 
 import Sections from './sections';
 
-const WorkView = ({ className, ...props }) => {
+const WorkView = () => {
   return (
-    <main
-      className={cn(
-        'flex w-full max-w-bounds flex-col items-center justify-center',
-        className,
-      )}
-      {...props}
-    >
+    <>
       <Sections.Hero />
 
       <Sections.Mission
@@ -39,7 +32,7 @@ const WorkView = ({ className, ...props }) => {
 
         <Lines />
       </div>
-    </main>
+    </>
   );
 };
 

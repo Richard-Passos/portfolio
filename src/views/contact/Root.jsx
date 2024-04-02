@@ -1,22 +1,14 @@
-import { cn } from '@/utils';
-
 import Sections from './sections';
 
-const ContactView = ({ className, ...props }) => {
+const ContactView = () => {
   return (
-    <main
-      className={cn(
-        'dark-layout dark flex w-full max-w-bounds flex-col items-center',
-        className,
-      )}
-      {...props}
-    >
-      <Sections.Hero />
+    <>
+      <Sections.Hero className='dark-layout' />
 
       <Sections.Contact theme='light' />
 
       <Sections.Services theme='dark' />
-    </main>
+    </>
   );
 };
 

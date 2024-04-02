@@ -1,22 +1,22 @@
 import Sections from './sections';
 import Texts from './texts';
 
-const HomeView = () => {
+const HomeView = async () => {
   return (
-    <main className='w-full max-w-bounds'>
+      <>
       <Sections.Hero theme='light' />
 
-      <Sections.Work
-        id='scrollTo'
-        theme='dark'
-      />
+<Sections.Work
+  id='scrollTo'
+  theme='dark'
+/>
 
-      <Texts.First theme='light' />
+<Texts.First theme='light' />
 
-      <Sections.About theme='dark' />
+<Sections.About theme='dark' />
 
-      <Texts.Second theme='dark' />
-    </main>
+<Texts.Second theme='dark' />
+</>
   );
 };
 

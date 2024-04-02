@@ -5,7 +5,6 @@ import { DotsLoader, Lines } from '@/components';
 import { MagneticButton } from '@/components/button';
 import { Badge, Icon, Text } from '@/components/ui';
 import { PlusIcon } from '@/components/ui/icon/icons';
-import { cn } from '@/utils';
 
 import Show from './show';
 
@@ -15,20 +14,14 @@ const ROLES = ['all', 'design', 'development'],
     { data: 'grid', icon: 'Grid' },
   ];
 
-const ProjectsView = async ({ className, ...props }) => {
+const ProjectsView = async () => {
   const { data = [] } = await projectsApi.get();
 
   return (
-    <main
-      className={cn(
-        'dark-layout dark relative flex w-full max-w-bounds flex-col items-center gap-lg py-lg',
-        className,
-      )}
-      {...props}
-    >
+    <>
       <Text.Title
         asChild
-        className='w-9/10 max-w-screen-lg max-sm:text-center'
+        className='w-9/10 max-w-screen-lg dark-layout max-sm:text-center mb-lg pt-lg'
         variants={{ size: 'lg' }}
       >
         <h1>
@@ -43,6 +36,7 @@ const ProjectsView = async ({ className, ...props }) => {
       </Text.Title>
 
       <Show
+      className='pb-lg'
         defaultData={{ role: ROLES[0], type: TYPES[0].data, projects: data }}
       >
         <div className='flex w-full flex-wrap-reverse items-center justify-center gap-sm sm:justify-between'>
@@ -97,7 +91,7 @@ const ProjectsView = async ({ className, ...props }) => {
 
       <Lines />
       <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-20' />
-    </main>
+    </>
   );
 };
 

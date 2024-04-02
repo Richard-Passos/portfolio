@@ -10,13 +10,14 @@ const ErrorView = ({ error, reset }) => {
   const { data } = useContext(ErrorContext);
 
   return (
-    <main className='dark-layout dark flex w-full max-w-bounds flex-col items-center'>
+    <>
       <Sections.Hero
+        className='dark-layout'
         data={data}
         error={error}
         reset={reset}
       />
-    </main>
+    </>
   );
 };
 

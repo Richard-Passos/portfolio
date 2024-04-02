@@ -8,19 +8,20 @@ const Animate = (
   { variants = [], type = 'animate', config, ...props },
   ref,
 ) => {
-  const [hidden, visible] = variants;
+  const [hidden, visible, exit] = variants;
 
   const defaultConfig = {
     variants: {
       hidden,
       visible,
+      exit,
     },
     initial: 'hidden',
     [type]: 'visible',
+    exit: 'exit'
   };
 
   config = config || defaultConfig;
-  console.log('-  config   -', config);
 
   return (
     <MotionChild

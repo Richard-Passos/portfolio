@@ -6,7 +6,7 @@ const WorkViewMissionSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'flex w-full flex-col items-center justify-center',
+        'fle flex-col items-center justify-center',
         className,
       )}
       {...props}

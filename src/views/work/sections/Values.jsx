@@ -17,7 +17,7 @@ const WorkViewValuesSection = ({ className, ...props }) => {
   return (
     <ScrollAnimate config={animationConfig}>
       <Section
-        className={cn('flex w-full flex-col items-center gap-md', className)}
+        className={cn('flex flex-col items-center gap-md', className)}
         {...props}
       >
         <Text.Title

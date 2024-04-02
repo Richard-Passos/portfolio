@@ -11,7 +11,7 @@ import { cn } from '@/utils';
 const HomeViewSkillsSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn('flex w-full flex-col items-center', className)}
+      className={cn('flex flex-col items-center', className)}
       {...props}
     >
       <Carousel
