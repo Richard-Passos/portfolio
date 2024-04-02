@@ -9,15 +9,15 @@ import MenuUiOverlay from '../ui/menu/Overlay';
 
 const MenuOverlay = (props) => {
   const { isOpen } = useContext(MenuContext),
-    Lenis = useLenis();
+    lenis = useLenis();
 
   useEffect(() => {
     if (isOpen) {
-      Lenis.stop();
+      lenis.stop();
     } else {
-      Lenis.start();
+      lenis.start();
     }
-  }, [isOpen]);
+  }, [lenis, isOpen]);
 
   return <MenuUiOverlay {...props} />;
 };
