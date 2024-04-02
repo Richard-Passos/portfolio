@@ -29,7 +29,7 @@ const Button = (
   return (
     <ButtonUi
       asChild={asLink}
-      className={cn('group relative overflow-hidden delay-100', className)}
+      className={cn('group relative overflow-hidden delay-100 transition-color', className)}
       ref={ref}
       variants={variants}
       {...props}
