@@ -35,15 +35,15 @@ const WorkViewValuesSection = ({ className, ...props }) => {
 
         <div className='relative w-full'>
           <Values className='mx-auto w-9/10 max-w-screen-xl'>
-            {values.map(({ icon, title, description }) => (
-              <Values.Item key={title}>
+            {values.map((data) => (
+              <Values.Item key={data.title}>
                 <Values.Icon>
-                  <Icon name={icon} />
+                  <Icon {...data.icon} />
                 </Values.Icon>
 
-                <Values.Title>{title}</Values.Title>
+                <Values.Title>{data.title}</Values.Title>
 
-                <Values.Description>{description}</Values.Description>
+                <Values.Description>{data.description}</Values.Description>
               </Values.Item>
             ))}
           </Values>

@@ -1,18 +1,24 @@
 import { ScrollTitle, Section, TextScrollAnimate } from '@/components';
 import { ScrollAnimate } from '@/components/scroll-animate';
-import { Separator, Text } from '@/components/ui';
+import { Image, Separator, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const AboutViewBackgroundSection = ({ className, ...props }) => {
+const AboutViewBackgroundSection = ({ className, data={}, ...props }) => {
   const animationConfig = {
-    scrollConfig: { offset: ['1 1', '1 0'] },
-    prop: '--y',
-    propPoints: ['0%', '50%'],
+    y1: {
+      scrollConfig: { offset: ['1 1', '1 0'] },
+      prop: '--y',
+      propPoints: ['0%', '50%'],
+    },
+    y2: {
+      scrollConfig: { offset: ['1 1', '1 0'] },
+      prop: 'y',
+      propPoints: ['-7.5%', '7.5%'],
+    }
   };
 
   return (
 <Section
-hasTransition={false}
       className={cn(
         'flex flex-col items-center',
         className,
@@ -20,58 +26,50 @@ hasTransition={false}
       {...props}
     >
       <h2 className='mb-md w-full'>
-        <ScrollTitle title='WHO I AM' />
+        {data.title?.map((w) => <ScrollTitle title={w} />)}
       </h2>
 
       <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
         <Text className='text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
-          <TextScrollAnimate text='We help our clients entertain, inform, and inspire the world.' />
+          <TextScrollAnimate text={data.subtitle} />
         </Text>
 
-        <div className='sm:max-w-lg sm:justify-self-end'>
-          <Text className='mb-4 text-muted-content max-sm:text-center sm:indent-4'>
-            I&apos;m Richard an awesome full stack developer based in Brazil.
-            When I&apos;m not coding, you can catch me in the gaming world —
-            I&apos;m a huge fan, especially when it comes to rogue-like games.
+          <Text className='mb-4 text-muted-content sm:max-w-lg sm:justify-self-end max-sm:text-center sm:indent-4'>
+            {data.description}
           </Text>
-
-          <Text className='text-muted-content max-sm:text-center sm:indent-4'>
-            I&apos;m Richard an awesome full stack developer based in Brazil.
-            When I&apos;m not coding, you can catch me in the gaming world —
-            I&apos;m a huge fan, especially when it comes to rogue-like games.
-          </Text>
-        </div>
       </section>
 
-      <section className='grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-md'>
-        <ScrollAnimate config={animationConfig}>
-          <div className='w-full rounded-3xl bg-blue-500 max-md:aspect-video md:h-2/3 md:translate-y-[--y] lg:h-9/10 lg:translate-y-[calc(var(--y)*20/90)]' />
+      {
+          data.blocks?.map((data) => 
+      <section key={data.title} className='grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-md'>
+        <ScrollAnimate config={animationConfig.y1}>
+          <div className='w-full rounded-3xl overflow-hidden relative max-md:aspect-video md:h-2/3 md:translate-y-[--y] lg:h-9/10 lg:translate-y-[calc(var(--y)*20/90)]' >
+            <div className='absolute -inset-y-[7.5%] inset-x-0'>
+            <ScrollAnimate.Transform config={animationConfig.y2}>
+            <Image
+              className='object-cover size-full'
+              {...data.image}
+            />
+            </ScrollAnimate.Transform>
+            </div>
+          </div>
+
         </ScrollAnimate>
 
-        <section className='md:py-lg'>
+        
+            <section  className='md:py-lg'>
           <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>
-            · Background
+            · {data.title}
           </Text.Subtitle>
 
           <Separator className='mb-sm' />
 
-          <Text className='mb-sm text-xl font-medium'>
-            <TextScrollAnimate
-              className='sm:first:*:ml-4'
-              text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat officiis inventore eius facere sunt ut culpa. Eaque iste pariatur a doloribus enim alias rerum! Ab ex incidunt, aliquid nostrum rem, non quasi molestiae eos dolorum quo labore repudiandae minus alias?'
-            />
-          </Text>
-
-          <Text className='text-xl font-medium'>
-            <TextScrollAnimate
-              className='sm:first:*:ml-4'
-              text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci explicabo similique cum maxime praesentium nam inventore reiciendis iste ad, sequi, eligendi rem eum maiores. Aliquid beatae voluptatem praesentium perferendis quam?'
-            />
+          <Text className='text-lg/relaxed text-muted-content'>
+              {data.description}
           </Text>
         </section>
       </section>
-
-
+          )}
     </Section>
   );
 };

@@ -1,22 +1,9 @@
 import { Section } from '@/components';
 import { ScrollAnimateTransform } from '@/components/scroll-animate';
-import { Separator, Text } from '@/components/ui';
+import { Image, Separator, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const EXTRA_CONTENT = [
-  {
-    title: 'Personality',
-    content:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum suscipit reiciendis enim maxime facilis molestiae distinctio cupiditate obcaecati eligendi eveniet, tempore iure, tempora, neque laudantium.',
-  },
-  {
-    title: 'Mission',
-    content:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione rem deserunt, fugiat doloribus provident consectetur.',
-  },
-];
-
-const AboutViewExtraSection = ({ className, ...props }) => {
+const AboutViewExtraSection = ({ className, data=[], ...props }) => {
   const animationConfig = {
     y1: {
       prop: 'y',
@@ -24,8 +11,12 @@ const AboutViewExtraSection = ({ className, ...props }) => {
     },
     y2: {
       prop: 'y',
-      propPoints: ['20%', '-40%'],
+      propPoints: ['-7.5%', '7.5%'],
     },
+    y3: {
+      prop: 'y',
+      propPoints: ['20%', '-40%'],
+    }
   };
 
   return (
@@ -37,29 +28,47 @@ const AboutViewExtraSection = ({ className, ...props }) => {
       {...props}
     >
       <ul className='max-w-screen-sm space-y-md sm:py-md'>
-        {EXTRA_CONTENT.map(({ title, content }) => (
+        {data.items?.map((data) => (
           <li
             className='flex flex-col'
-            key={title}
+            key={data.title}
           >
             <Text.Subtitle className='mb-xs text-xs uppercase text-muted-content'>
-              · {title}
+              · {data.title}
             </Text.Subtitle>
 
             <Separator className='mb-sm' />
 
-            <Text className='text-xl font-medium'>{content}</Text>
+            <Text className='text-lg font-medium first-letter:uppercase'>{data.description}</Text>
           </li>
         ))}
       </ul>
 
       <div className='relative md:row-start-1'>
         <ScrollAnimateTransform config={animationConfig.y1}>
-          <span className='size-full rounded-3xl bg-blue-500 max-md:aspect-[1/1.4] max-md:!translate-y-0 lg:aspect-[1/1.4]' />
+          <div className='size-full overflow-hidden rounded-3xl max-md:aspect-[1/1.4] max-md:!translate-y-0 lg:aspect-[1/1.4]' >
+            <div className='absolute -inset-y-[7.5%] inset-x-0'>
+            <ScrollAnimateTransform config={animationConfig.y2}>
+            <Image
+              className='object-cover size-full'
+              {...data.images?.[0]}
+            />
+            </ScrollAnimateTransform>
+            </div>
+          </div>
         </ScrollAnimateTransform>
 
-        <ScrollAnimateTransform config={animationConfig.y2}>
-          <span className='absolute bottom-0 right-0 aspect-[1/1.4] w-2/3 rounded-3xl bg-red-500 shadow-md [--tw-translate-x:25%] max-lg:hidden' />
+        <ScrollAnimateTransform config={animationConfig.y3}>
+          <div className='absolute overflow-hidden bottom-0 right-0 aspect-[1/1.4] w-2/3 rounded-3xl shadow-md [--tw-translate-x:25%] max-lg:hidden' >
+            <div className='absolute -inset-y-[7.5%] inset-x-0'>
+            <ScrollAnimateTransform config={animationConfig.y2}>
+            <Image
+              className='object-cover size-full'
+              {...data.images?.[1]}
+            />
+            </ScrollAnimateTransform>
+            </div>
+          </div>
         </ScrollAnimateTransform>
       </div>
     </Section>

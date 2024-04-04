@@ -8,7 +8,7 @@ import HorizontalScroll from './HorizontalScroll';
 import StatsChanger from './StatsChanger';
 import Title from './Title';
 
-const CONTACT_VIEW_HERO_SECTION_ICONS = ['Rocket', 'Smile', 'Globe'];
+const CONTACT_VIEW_HERO_SECTION_ICONS = [{src: '/images/rocket.svg', title: 'Rocket'}, {src: '/images/smile.svg', title: 'Smile'}, {src: '/images/globe.svg', title: 'Globe'}];
 
 const ContactViewHeroSection = ({ className, ...props }) => {
   const animationConfig = {
@@ -36,9 +36,9 @@ const ContactViewHeroSection = ({ className, ...props }) => {
           <div className='relative mb-md flex w-full justify-center overflow-hidden border-b'>
             {CONTACT_VIEW_HERO_SECTION_ICONS.map((icon) => (
               <Icon
-                className='aspect-square h-auto w-[33.333%] fill-muted first:-translate-x-full last:translate-x-full odd:absolute odd:bottom-0 odd:translate-y-[70%] even:-mb-[15%]'
-                key={icon}
-                name={icon}
+                className='aspect-square h-auto w-[33.333%] text-muted first:-translate-x-full last:translate-x-full odd:absolute odd:bottom-0 odd:translate-y-[70%] even:-mb-[15%]'
+                key={icon.src}
+                {...icon}
               />
             ))}
           </div>

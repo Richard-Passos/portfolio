@@ -2,73 +2,73 @@ const skills = {
   hard: [
     {
       title: 'React.js',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'Node.js',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'React Native',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'Next.js',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'JavaScript',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'Jest',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'MongoDB',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'Git',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'TailwindCSS',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'Styled-components',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'HTML',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'CSS',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
@@ -76,73 +76,73 @@ const skills = {
   soft: [
     {
       title: 'React.js',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'Node.js',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'React Native',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'Next.js',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'JavaScript',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'Jest',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'MongoDB',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'Git',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'TailwindCSS',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'Styled-components',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'HTML',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },
     {
       title: 'CSS',
-      icon: 'Grid',
+      icon: {src: '/images/grid.svg'},
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
     },

@@ -60,7 +60,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             <HomeViewSkillsSectionCarouselItem
               idx={i}
               key={data.title}
-              {...data}
+              data={data}
             />
           ))}
         </Carousel.Track>
@@ -111,7 +111,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             <HomeViewSkillsSectionCarouselItem
               idx={i}
               key={data.title}
-              {...data}
+              data={data}
             />
           ))}
         </Carousel.Track>
@@ -122,10 +122,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
 
 const HomeViewSkillsSectionCarouselItem = ({
   idx,
-  title,
-  icon,
-  description,
-  className,
+  data = {},
   ...props
 }) => {
   return (
@@ -138,14 +135,14 @@ const HomeViewSkillsSectionCarouselItem = ({
 
         <div className='relative row-span-2 flex size-full items-center justify-center'>
           <SkillCard.Icon>
-            <Icon name={icon} />
+            <Icon {...data.icon} />
           </SkillCard.Icon>
 
-          <SkillCard.Description>{description}</SkillCard.Description>
+          <SkillCard.Description>{data.description}</SkillCard.Description>
         </div>
 
         <div className='flex items-center justify-between gap-6 self-end'>
-          <SkillCard.Title>{title}</SkillCard.Title>
+          <SkillCard.Title>{data.title}</SkillCard.Title>
 
           <SkillCard.Action>
             <PlusIcon className='transition-transform duration-300 ease-backOut group-data-open:rotate-[135deg]' />
@@ -153,7 +150,7 @@ const HomeViewSkillsSectionCarouselItem = ({
         </div>
 
         <SkillCard.WaterMark>
-          <Icon name={icon} />
+          <Icon {...data.icon} />
         </SkillCard.WaterMark>
       </Carousel.Item>
     </SkillCard>

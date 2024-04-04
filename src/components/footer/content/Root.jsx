@@ -44,7 +44,7 @@ const FooterContent = async ({ theme, className, ...props }) => {
         {...props}
       >
         <ScrollAnimate config={animationConfig.y}>
-          <div className='relative z-10 flex flex-col gap-1.5 border-b border-border/60 py-md [--y:calc(var(--smooth-y)*var(--h))] dark:border-border/20 sm:translate-y-[--y]'>
+          <div className='relative z-10 flex flex-col gap-1.5 py-md [--y:calc(var(--smooth-y)*var(--h))] dark:border-border/20 sm:translate-y-[--y]'>
             <Text className='text-muted-content'>
               is your great ideas ready to fly?
             </Text>
@@ -65,7 +65,7 @@ const FooterContent = async ({ theme, className, ...props }) => {
               </MagneticButton>
             </div>
 
-            <span className='absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-main shadow-[0_25px_35px_-15px] shadow-[hsl(--content/.2)]' />
+            <span className='absolute inset-y-0 left-1/2 -z-10 border-b border-border/60 w-screen -translate-x-1/2 bg-main shadow-[0_25px_35px_-15px] shadow-[hsl(--content/.2)]' />
           </div>
         </ScrollAnimate>
 
@@ -94,11 +94,11 @@ const FooterContent = async ({ theme, className, ...props }) => {
             </div>
 
             <SocialNav>
-              {personalInfo.socials?.map((social, i) => (
+              {personalInfo.socials?.map((data, i) => (
                 <SocialNav.Item
                   index={i}
-                  key={social.href}
-                  {...social}
+                  key={data.href}
+                  data={data}
                 />
               ))}
             </SocialNav>

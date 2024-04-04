@@ -1,13 +1,14 @@
+import { cn } from '@/utils';
 import { forwardRef } from 'react';
 
-import Icons from './icons';
+import Svg from 'react-inlinesvg';
 
-const Icon = ({ name, ...props }, ref) => {
-  const Tag = Icons[name] || Icons.Question;
 
+const Icon = ({className, ...props}, ref) => {
   return (
-    <Tag
-      ref={ref}
+    <Svg
+    className={cn('size-8 *:fill-current', className)}
+       ref={ref}
       {...props}
     />
   );

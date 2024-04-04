@@ -9,7 +9,7 @@ import { cn } from '@/utils';
 const DataChangerItem = ({ asChild, idx, className, ...props }, ref) => {
   const { activeIdx } = useContext(DataChangerContext);
 
-  const Tag = asChild ? Slot : 'li',
+  const Tag = asChild ? Slot : 'div',
     isActive = activeIdx === idx;
 
   return (

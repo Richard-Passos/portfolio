@@ -5,7 +5,7 @@ import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { values } from '@/constants';
 import { cn } from '@/utils';
 
-const AboutViewValuesSection = ({  className, ...props }) => {
+const AboutViewValuesSection = ({  className, data={}, ...props }) => {
   const animationConfig = {
     scroll: 'scrollY',
     scrollPoints: [0, 400],
@@ -17,7 +17,6 @@ const AboutViewValuesSection = ({  className, ...props }) => {
   return (
     <ScrollAnimate config={animationConfig}>
       <Section
-      hasTransition={false}
         className={cn(
           'flex flex-col items-center gap-md',
           className,
@@ -25,29 +24,32 @@ const AboutViewValuesSection = ({  className, ...props }) => {
         {...props}
       >
         <Text.Title
-          className='w-9/10 max-w-screen-xl text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
+        aria-label={data.tile}
+          className='w-9/10 max-w-screen-xl whitespace-pre-line text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
           id='carousel-skills-heading-0'
         >
-          My <br />{' '}
-          <span className='relative inline'>
-            values{' '}
+          {data.title?.split(' ').map((w, i, arr) => i === arr.length - 1 ?  <span className='relative inline'>
+            {w}
+
             <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
-              Always improving
+              {data.subtitle}
             </Badge>
-          </span>
+          </span>: `${w} `)}
         </Text.Title>
+
+        <span className='sr-only'>{data.subtitle}</span>
 
         <div className='relative w-full'>
           <Values className='mx-auto w-9/10 max-w-screen-xl'>
-            {values.map(({ icon, title, description }) => (
-              <Values.Item key={title}>
+            {data.items?.map((data) => (
+              <Values.Item key={data.title}>
                 <Values.Icon>
-                  <Icon name={icon} />
+                  <Icon aria-hidden {...data.icon} />
                 </Values.Icon>
 
-                <Values.Title>{title}</Values.Title>
+                <Values.Title>{data.title}</Values.Title>
 
-                <Values.Description>{description}</Values.Description>
+                <Values.Description>{data.description}</Values.Description>
               </Values.Item>
             ))}
           </Values>

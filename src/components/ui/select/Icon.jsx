@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 const SelectIcon = ({ className, ...props }, ref) => {
   return (
     <Icon
-      className={cn('h-3.5 w-3.5', className)}
+      className={cn('size-3.5', className)}
       ref={ref}
       {...props}
     />

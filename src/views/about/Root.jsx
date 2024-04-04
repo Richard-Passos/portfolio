@@ -1,29 +1,23 @@
-import { NextPage, Section } from '@/components';
-
 import Sections from './sections';
+import { pagesApi } from '@/api';
+import { capitalize } from '@/utils';
 
-const AboutView = () => {
-  return (
-    <>
-      <Sections.Hero theme='dark' />
+const AboutView = async () => {
+  const {sections = []} = (await pagesApi.getOne('about')).data || {}
 
-      <Sections.Background theme='dark' />
+  let lastTheme = ''
 
-      <Sections.Extra theme='light' />
+  return sections.map(({slug = '', ...data}) => {
+    let Section = Sections[slug.split(/[-_]/g).map(capitalize).join('')]
 
-      <Sections.Values theme='light' />
+    Section =  Section && (
+      <Section hasTransition={slug !== 'hero' && lastTheme !== data.theme} {...data}/>
+    )
 
-      <Section
-        className='flex items-center justify-center'
-        theme='dark'
-      >
-        <NextPage
-          href='/contact'
-          text='Contact'
-        />
-      </Section>
-    </>
-  );
+    lastTheme = data.theme
+
+    return Section
+  })
 };
 
 export default AboutView;

@@ -42,14 +42,17 @@ const globals = [
     },
     socials: [
       {
+        icon: {src: '/images/github.svg'},
         label: 'Github',
         href: 'https://github.com/Richard-Passos',
       },
       {
+        icon: {src: '/images/instagram.svg'},
         label: 'Instagram',
         href: 'https://www.instagram.com/richardp.dev',
       },
       {
+        icon: {src: '/images/linkedin.svg'},
         label: 'Linkedin',
         href: 'https://www.linkedin.com/in/richardp-dev',
       },

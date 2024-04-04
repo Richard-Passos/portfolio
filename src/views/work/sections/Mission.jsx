@@ -22,9 +22,9 @@ const WorkViewMissionSection = ({ className, ...props }) => {
 
 const WorkViewMissionListSection = (props) => {
   const content = [
-    { text: 'Improve', icon: 'Rocket' },
-    { text: 'Inspire ', icon: 'Globe' },
-    { text: 'Repeat', icon: 'Smile' },
+    { text: 'Improve', icon: {src: '/images/rocket.svg'} },
+    { text: 'Inspire ', icon: {src: '/images/globe.svg'} },
+    { text: 'Repeat', icon: {src: '/images/smile.svg'} },
   ];
 
   return (
@@ -42,17 +42,17 @@ const WorkViewMissionListSection = (props) => {
             <span>{text}</span>{' '}
             <Icon
               className='size-[1em] rotate-[--rotate]'
-              name={icon}
+              {...icon}
             />{' '}
             <span className='opacity-30 dark:opacity-10'>{text}</span>{' '}
             <Icon
               className='size-[1em] rotate-[--rotate] opacity-30 dark:opacity-10'
-              name={icon}
+              {...icon}
             />{' '}
             <span className='opacity-30 dark:opacity-10'>{text}</span>{' '}
             <Icon
               className='size-[1em] rotate-[--rotate]'
-              name={icon}
+              {...icon}
             />
           </ListHorizontalScroll.Item>
         </Text.Title>

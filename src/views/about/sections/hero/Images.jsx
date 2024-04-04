@@ -1,9 +1,10 @@
 import { ScrollAnimate } from '@/components/scroll-animate';
+import { Image } from '@/components/ui';
 import { cn } from '@/utils';
 
 const SCROLL_OFFSET = ['0 1', '0 0'];
 
-const AboutViewHeroImagesSeciton = ({ className, ...props }) => {
+const AboutViewHeroImagesSeciton = ({ className,data = [], ...props }) => {
   const animationConfig = {
     y: {
       scrollConfig: {
@@ -39,11 +40,13 @@ const AboutViewHeroImagesSeciton = ({ className, ...props }) => {
             )}
             {...props}
           >
-            {[...Array(3)].map((_, i) => (
+            {data.map((data) => (
               <li
-                className='aspect-[1/1.4] w-full rounded-3xl bg-blue-500 odd:bg-red-500 even:z-10 max-sm:last:hidden sm:first:translate-x-[--x] sm:first:-rotate-[--rotate] sm:last:-translate-x-[--x] sm:last:rotate-[--rotate] sm:odd:mt-[25%] sm:odd:translate-y-[--y]'
-                key={i}
-              />
+                className='aspect-[1/1.4] overflow-hidden w-full rounded-3xl even:z-10 max-sm:last:hidden sm:first:translate-x-[--x] sm:first:-rotate-[--rotate] sm:last:-translate-x-[--x] sm:last:rotate-[--rotate] sm:odd:mt-[25%] sm:odd:translate-y-[--y]'
+                key={data.src}
+              >
+                <Image className='size-full object-cover' {...data}/>
+              </li>
             ))}
           </ul>
         </ScrollAnimate>

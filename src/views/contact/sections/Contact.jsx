@@ -41,8 +41,8 @@ const ContactViewContactSection = async ({ className, ...props }) => {
           {CONTACT_VIEW_HERO_SECTION_ICONS.map((icon) => (
             <Icon
               className='aspect-square h-auto w-[33.333%] fill-muted first:-translate-x-1/2 last:translate-x-1/2 odd:-mt-[15%] even:absolute even:top-0 even:-translate-y-[70%]'
-              key={icon}
-              name={icon}
+              key={icon.src}
+              {...icon}
             />
           ))}
         </div>
@@ -63,11 +63,11 @@ const ContactViewContactSection = async ({ className, ...props }) => {
         </ul>
 
         <nav className='grid gap-2'>
-          {personalInfo.socials?.map((social, i) => (
+          {personalInfo.socials?.map((data, i) => (
             <SocialNav.Item
               index={i}
-              key={social.href}
-              {...social}
+              key={data.href}
+              data={data}
             />
           ))}
         </nav>

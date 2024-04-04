@@ -6,10 +6,9 @@ import { cn } from '@/utils';
 import IconChanger from './IconChanger';
 import Images from './Images';
 
-const AboutViewHeroSection = ({ className, ...props }) => {
+const AboutViewHeroSection = ({ className,data, ...props }) => {
   return (
       <Section
-      hasTransition={false}
       forceHeaderTheme
       className={cn(
         'flex flex-col items-center gap-lg',
@@ -20,30 +19,32 @@ const AboutViewHeroSection = ({ className, ...props }) => {
       <div className='w-9/10 max-w-screen-lg space-y-sm'>
         <TextTitle
           asChild
-          className='max-sm:text-center'
+          aria-label={data.title}
+          className='max-sm:text-center whitespace-pre-line'
           variants={{ size: 'lg' }}
         >
           <h1>
-            Heart conquer
-            <br />
-            -ing{' '}
+            {data.title?.split(' ').map((w, i, arr) => i === arr.length - 1 ? 
             <span className='relative inline'>
-              person{' '}
+              {w}
+
               <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
-                Gotta know more
+                {data.subtitle}
               </Badge>
-            </span>
+            </span>: `${w} `)}
           </h1>
         </TextTitle>
 
+        <span className='sr-only'>{data.subtitle}</span>
+
         <div className='relative grid grid-cols-2 place-items-center'>
-          <IconChanger />
+          <IconChanger data={data.icons} />
 
           <span className='absolute h-px w-full bg-border transition-bg' />
         </div>
       </div>
 
-      <Images />
+      <Images data={data.images} />
 
       <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-30' />
     </Section>

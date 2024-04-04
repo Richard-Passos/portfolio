@@ -12,8 +12,8 @@ import Show from '../show';
 
 const ROLES = ['all', 'design', 'development'],
   TYPES = [
-    { data: 'list', icon: 'List' },
-    { data: 'grid', icon: 'Grid' },
+    { data: 'list', icon: {src: '/images/list.svg'} },
+    { data: 'grid', icon: {src: '/images/grid.svg'} },
   ];
 
 const ProjectsHeroSection = async ({ className, ...props }) => {
@@ -70,7 +70,7 @@ const ProjectsHeroSection = async ({ className, ...props }) => {
               >
                 <Icon
                   aria-hidden
-                  name={icon}
+                  {...icon}
                 />
               </Show.Types.Trigger>
             ))}

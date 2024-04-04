@@ -35,12 +35,12 @@ const MenuContent = async (props) => {
           </div>
 
           <SocialNav className='max-md:hidden'>
-            {personalInfo.socials?.map((social, i) => (
+            {personalInfo.socials?.map((data, i) => (
               <SocialNav.Item
                 index={i}
-                key={social.href}
-                {...social}
-              />
+                key={data.href}
+                data={data}
+                />
             ))}
           </SocialNav>
 

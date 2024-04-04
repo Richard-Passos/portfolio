@@ -4,9 +4,7 @@ import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Icon } from '@/components/ui';
 import { cn } from '@/utils';
 
-const ICONS = ['Smile', 'Globe', 'Rocket'];
-
-const AboutViewHeroIconChangerSection = ({ className, ...props }) => {
+const AboutViewHeroIconChangerSection = ({ className,data =[], ...props }) => {
   const animationConfig = {
     x: {
       prop: 'x',
@@ -28,7 +26,7 @@ const AboutViewHeroIconChangerSection = ({ className, ...props }) => {
       <DataChanger
         className={cn('z-10 col-end-3', className)}
         duration={2500}
-        lastIdx={ICONS.length - 1}
+        lastIdx={data.length - 1}
         {...props}
       >
         <DataChanger.Action asChild>
@@ -40,15 +38,15 @@ const AboutViewHeroIconChangerSection = ({ className, ...props }) => {
           >
             <ScrollAnimateTransform config={animationConfig.rotate}>
               <div className='relative flex size-full items-center justify-center'>
-                {ICONS.map((icon, i) => (
+                {data.map((icon, i) => (
                   <DataChanger.Item
                     asChild
                     idx={i}
-                    key={icon}
+                    key={icon.src}
                   >
                     <Icon
                       className='transition-[clip-path] [clip-path:inset(100%_0_0_0)] data-active:duration-500 data-active:[clip-path:inset(0)]'
-                      name={icon}
+                      {...icon}
                     />
                   </DataChanger.Item>
                 ))}

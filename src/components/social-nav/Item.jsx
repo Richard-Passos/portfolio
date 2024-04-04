@@ -1,10 +1,10 @@
-import { capitalize, cn } from '@/utils';
+import { cn } from '@/utils';
 
 import Button from '../button';
 import { Icon } from '../ui';
 import { Text } from '../ui/text';
 
-const SocialNavItem = ({ className, variants, label, ...props }) => {
+const SocialNavItem = ({ className, variants, data = {}, ...props }) => {
   return (
     <Button.Magnetic
       asLink
@@ -14,16 +14,17 @@ const SocialNavItem = ({ className, variants, label, ...props }) => {
       )}
       limit={0.2}
       variants={{ color: 'main', ...variants }}
+      href={data.href}
       {...props}
     >
       <Icon
         aria-hidden
         className='size-6'
-        name={capitalize(label)}
+        {...data.icon}
       />
 
       <Text className='mr-auto text-xs lowercase first-letter:uppercase'>
-        {label}
+        {data.label}
       </Text>
     </Button.Magnetic>
   );
