@@ -4,7 +4,7 @@ const NotFoundView = ({ data = {} }) => {
   return (
     <>
       <Sections.Hero
-        className='dark-layout'
+      theme='dark'
         data={data}
       />
     </>

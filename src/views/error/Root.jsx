@@ -12,7 +12,7 @@ const ErrorView = ({ error, reset }) => {
   return (
     <>
       <Sections.Hero
-        className='dark-layout'
+        theme='dark'
         data={data}
         error={error}
         reset={reset}

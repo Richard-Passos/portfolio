@@ -3,7 +3,7 @@ import Sections from './sections';
 const ContactView = () => {
   return (
     <>
-      <Sections.Hero className='dark-layout' />
+      <Sections.Hero theme='dark' />
 
       <Sections.Contact theme='light' />
 

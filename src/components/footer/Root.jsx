@@ -12,9 +12,9 @@ const Footer = ({ className, ...props }) => {
       )}
       {...props}
     >
-      <Overlay className='dark' />
+      <Overlay theme='dark' />
 
-      <Content />
+      <Content theme='light' />
     </footer>
   );
 };

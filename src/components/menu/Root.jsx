@@ -3,6 +3,7 @@ import { Menu as MenuUi, Portal } from '../ui';
 import Content from './Content';
 import Overlay from './Overlay';
 import Trigger from './Trigger';
+import State from './State';
 
 const Menu = (props) => {
   return (
@@ -16,18 +17,21 @@ const Menu = (props) => {
         </Button>
       </MenuUi.Trigger>
 
+        <State>
       <MenuUi.Portal>
         <Content />
 
         <Overlay />
       </MenuUi.Portal>
+          </State>
 
+        <State>
       <Portal
-        asChild
-        className='!fixed right-sm top-sm z-[60]'
+        className='fixed pointer-events-none right-sm top-sm z-[60]'
       >
         <Trigger />
       </Portal>
+      </State>
     </MenuUi>
   );
 };

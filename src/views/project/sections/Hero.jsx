@@ -1,4 +1,4 @@
-import { Bg, Button, Lines, ScrollIndicator } from '@/components';
+import { Button, ScrollIndicator, Section } from '@/components';
 import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Image, Text } from '@/components/ui';
 import {
@@ -11,7 +11,6 @@ import { cn } from '@/utils';
 const ProjectViewHeroSection = ({
   data = {},
   className,
-  theme,
   adjacentIds = {},
   ...props
 }) => {
@@ -21,15 +20,16 @@ const ProjectViewHeroSection = ({
   };
 
   return (
-    <section
+    <Section
+    hasTransition={false}
+    forceHeaderTheme
       className={cn(
-        'relative flex min-h-svh w-full flex-col items-center pb-lg',
-        theme,
+        'flex max-2xl:min-h-svh w-full flex-col items-center pt-0',
         className,
       )}
       {...props}
     >
-      <div className='flex min-h-[65svh] w-9/10 max-w-screen-lg items-center justify-center py-lg'>
+      <div className='flex max-2xl:min-h-[65svh] 2xl:h-[65svh] 2xl:max-h-bounds w-9/10 max-w-screen-lg items-center justify-center py-lg'>
         <Text.Title
           asChild
           className='text-center'
@@ -91,14 +91,11 @@ const ProjectViewHeroSection = ({
             />
           </ScrollAnimateTransform>
         </div>
-        <span className='absolute inset-0 bg-[radial-gradient(hsl(var(--inverted)/.5)_25%,hsl(var(--inverted)/.25)_75%,transparent)]' />
+        <span className='absolute inset-0 bg-[radial-gradient(hsl(var(--inverted)/.25)_25%,hsl(var(--inverted)/.15)_75%,transparent)]' />
       </div>
 
-      <Bg />
-
-      <Lines />
       <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-30' />
-    </section>
+    </Section>
   );
 };
 

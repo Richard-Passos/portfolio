@@ -3,7 +3,7 @@ import { cn } from '@/utils';
 import Lines from '../lines';
 import { ScrollAnimate } from '../scroll-animate';
 
-const FooterOverlay = ({ className, ...props }) => {
+const FooterOverlay = ({ theme, className, ...props }) => {
   const animationConfig = {
     h: {
       scrollConfig: {
@@ -26,6 +26,7 @@ const FooterOverlay = ({ className, ...props }) => {
       <div
         className={cn(
           'pointer-events-none absolute inset-y-0 z-20 max-h-screen w-screen overflow-hidden',
+          theme,
           className,
         )}
         {...props}

@@ -14,9 +14,10 @@ const Layout = ({ children }) => {
     <html lang='en'>
       <Providers.GlobalState>
         <SmoothScroll>
+          <Header.GetState>
           <body
             className={cn(
-              'light relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app [--header-h:calc(theme(spacing.sm)*2+theme(spacing.10))]',
+              'relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app',
               font.variable,
             )}
             id='top'
@@ -29,12 +30,13 @@ const Layout = ({ children }) => {
 
             <ErrorBoundary.Provider>
               <ErrorBoundary>
-                <AnimatePresence mode='popLayout'>{children}</AnimatePresence>
+                <AnimatePresence mode='await'>{children}</AnimatePresence>
               </ErrorBoundary>
             </ErrorBoundary.Provider>
 
             <Footer />
           </body>
+          </Header.GetState>
         </SmoothScroll>
       </Providers.GlobalState>
     </html>

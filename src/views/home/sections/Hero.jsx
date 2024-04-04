@@ -1,9 +1,9 @@
-import { GridPattern, ScrollAnimate, ScrollIndicator } from '@/components';
+import { GridPattern, ScrollAnimate, ScrollIndicator, Section } from '@/components';
 import { Text } from '@/components/ui';
 import { SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
 
-const HomeViewHeroSection = ({ theme, className, ...props }) => {
+const HomeViewHeroSection = ({ className, ...props }) => {
   const animationConfig = {
     y: {
       scrollConfig: {
@@ -37,10 +37,11 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
   };
 
   return (
-    <section
+      <Section
+      hasTransition={false}
+      forceHeaderTheme
       className={cn(
-        'relative -mt-[--header-h] w-full overflow-hidden max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
-        theme,
+        '-mt-[--header-h] *:*:last:*:hidden pb-0 pt-0 overflow-hidden max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
         className,
       )}
       {...props}
@@ -107,7 +108,7 @@ const HomeViewHeroSection = ({ theme, className, ...props }) => {
       </ScrollAnimate.Transform>
 
       <ScrollIndicator className='absolute bottom-[min(9.5vw,3.75rem)] right-1/2 max-sm:translate-x-1/2 sm:right-[min(10vw,theme(spacing.16))]' />
-    </section>
+    </Section>
   );
 };
 

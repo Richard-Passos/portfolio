@@ -1,16 +1,16 @@
 import { projectsApi } from '@/api';
-import { Bg, Lines, Projects, ScrollTitle } from '@/components';
+import { Projects, ScrollTitle, Section } from '@/components';
 import { MagneticButton } from '@/components/button';
 import { Text } from '@/components/ui';
 import { PlusIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
 
-const WorkViewProjectsSection = ({ theme, className, ...props }) => {
+const WorkViewProjectsSection = ({ className, ...props }) => {
   return (
-    <section
+    <Section
+    hasTransition={false}
       className={cn(
-        'relative flex w-full flex-col items-center pb-lg',
-        theme,
+        'flex flex-col items-center',
         className,
       )}
       {...props}
@@ -43,11 +43,7 @@ const WorkViewProjectsSection = ({ theme, className, ...props }) => {
           <PlusIcon aria-hidden />
         </MagneticButton>
       </div>
-
-      <Bg />
-
-      <Lines />
-    </section>
+    </Section>
   );
 };
 

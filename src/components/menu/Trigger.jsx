@@ -27,7 +27,7 @@ const MenuTrigger = ({ className, ...props }, ref) => {
       <MenuUiTrigger asChild>
         <MagneticButton
           className={cn(
-            'data-open:primary !text-variant-content [--tw-scale-y:--tw-scale-x] [--variant-a:--primary] hover:[--variant-c:--primary-c] data-open:![--tw-scale-x:1]',
+            'data-open:primary pointer-events-auto !text-variant-content [--tw-scale-y:--tw-scale-x] [--variant-a:--primary] hover:[--variant-c:--primary-c] data-open:![--tw-scale-x:1]',
             className,
           )}
           variants={{ color: 'main' }}

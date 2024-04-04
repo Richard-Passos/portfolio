@@ -1,31 +1,34 @@
 import { globalsApi } from '@/api';
-import {
-  GridPattern,
-  HorizontalScroll,
-  ScrollAnimate,
-  ScrollIndicator,
-} from '@/components';
+import { GridPattern, ScrollAnimate, ScrollIndicator, Section } from '@/components';
 import { Text } from '@/components/ui';
 import { SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
 
-const WorkViewHeroSection = async ({ theme, className, ...props }) => {
+const WorkViewHeroSection = async ({ className, ...props }) => {
   const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
 
   const animationConfig = {
     y: {
       scrollConfig: {
-        offset: ['0 0', '.2 0'],
+        offset: ['0 0', '1 0'],
       },
-      prop: '--y',
-      propPoints: ['100%', '0%'],
+      prop: 'y',
+      propPoints: ['0%', '75%'],
     },
     scale: {
       scrollConfig: {
-        offset: ['0 0', '.2 0'],
+        offset: ['0 0', '1 0'],
       },
       prop: '--scale',
-      propPoints: [1, 0.75],
+      propPoints: [1, 0.85],
+    },
+    opacity: {
+      scrollConfig: {
+        offset: ['0 0', '.75 0'],
+      },
+
+      prop: '--opacity',
+      propPoints: [1, 0],
     },
     rotate: {
       scroll: 'scrollY',
@@ -37,65 +40,75 @@ const WorkViewHeroSection = async ({ theme, className, ...props }) => {
   };
 
   return (
-    <ScrollAnimate config={animationConfig.y}>
-      <ScrollAnimate config={animationConfig.scale}>
-        <section
-          className={cn(
-            'relative w-full [--h:100vh] sm:min-h-[calc(var(--h)*1.5)] 2xl:[--h:--max-h]',
-            className,
-          )}
-          {...props}
-        >
-          <div className='top-[calc(var(--header-h)/2)] sm:sticky'>
-            <div className='relative mx-auto w-[95%] sm:scale-[--scale]'>
-              <div className='fix-work-hero-y relative mx-auto flex w-9/10 flex-col items-center justify-center py-lg max-2xl:min-h-[calc(100svh-var(--header-h))] 2xl:h-screen 2xl:max-h-bounds'>
-                <Text.Title className='mb-sm overflow-y-clip text-center text-[min(18vw,14rem)]/[1] font-extrabold uppercase tracking-tighter'>
-                  <div className='relative sm:translate-y-[--y]'>
-                    <span className='sm:absolute sm:bottom-full sm:left-1/2 sm:-translate-x-1/2'>
-                      Beyond
-                    </span>{' '}
-                    <span>Results</span>
-                  </div>
+      <Section
+      hasTransition={false}
+      forceHeaderTheme
+      className={cn(
+        '-mt-[--header-h] *:*:last:*:hidden pb-0 pt-0 overflow-hidden max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
+        className,
+      )}
+      {...props}
+    >
+      <ScrollAnimate.Transform config={animationConfig.y}>
+        <ScrollAnimate config={animationConfig.scale}>
+          <ScrollAnimate config={animationConfig.opacity}>
+            <div className='relative flex size-full items-center justify-center px-[--inset] pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-svh max-sm:!translate-y-0 2xl:[--w:--max-w]'>
+              <div className='w-9/10 pb-[--inset] sm:scale-[--scale] sm:opacity-[--opacity]'>
+                <Text.Title
+                  aria-label='Turning heads and conquering hearts.'
+                  asChild
+                  className='mb-sm w-full text-center [--x:--spacing-lg] lg:text-[min(9vw,theme(fontSize.9xl))]/[1]'
+                  variants={{ size: 'xl' }}
+                >
+                  <h1>
+                    <div aria-hidden>
+                      <span className='lg:-translate-x-[--x]'>
+                      Beyond code, 
+                      </span>
+
+                      <br />
+
+                      <span className='lg:translate-x-[--x]'>
+                       boundaries <span className='outline-text'>&</span>
+                      </span>
+
+                      <br />
+
+                      <div className='flex w-full items-end justify-evenly'>
+                        <span>results</span>
+
+                        <span className='max-w-sm -translate-y-3.5 text-start text-[.12em]/[1.15] font-normal normal-case tracking-normal text-muted-content max-lg:hidden'>
+                        Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.
+                        </span>
+                      </div>
+                    </div>
+                  </h1>
                 </Text.Title>
 
-                <div className='mb-md grid w-full max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
-                  <Text className='col-span-full max-w-md justify-self-center text-center font-medium text-muted-content md:col-span-4'>
-                    Helping brands achieve digital prominence. I bring a passion
-                    for cutting-edge technology and a commitment to transforming
-                    ideas into impactful, user-centric solutions.
+                <div className='mx-auto grid max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
+                  <Text className='col-span-full max-w-lg justify-self-center text-center text-muted-content sm:col-span-4 lg:sr-only'>
+                  Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.
                   </Text>
+
 
                   <Text className='text-xs font-semibold md:-order-1'>
                     {personalInfo.availability}
                   </Text>
 
                   <ScrollAnimate.Transform config={animationConfig.rotate}>
-                    <SmileIcon className='h-6 w-6 justify-self-end' />
+                    <SmileIcon className='justify-self-end size-6 md:col-end-7' />
                   </ScrollAnimate.Transform>
                 </div>
-
-                <ScrollIndicator />
               </div>
 
-              <GridPattern className='rounded-3xl' />
+              <GridPattern className='inset-[--inset] top-[--header-h] rounded-3xl' />
             </div>
+          </ScrollAnimate>
+        </ScrollAnimate>
+      </ScrollAnimate.Transform>
 
-            <ul className='absolute inset-y-0 left-1/2 -z-50 flex w-screen -translate-x-1/2 flex-col justify-around'>
-              {[...Array(3)].map((_, i) => (
-                <li key={i}>
-                  <HorizontalScroll
-                    baseVelocity={i % 2 === 0 ? -1 : 1.5}
-                    className='text-[min(32vmin,16rem)]/[1] font-extrabold uppercase tracking-tighter text-muted [--gap:.2em]'
-                  >
-                    <span>Beyond</span> ·
-                  </HorizontalScroll>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      </ScrollAnimate>
-    </ScrollAnimate>
+      <ScrollIndicator className='absolute bottom-[min(9.5vw,3.75rem)] right-1/2 max-sm:translate-x-1/2 sm:right-[min(10vw,theme(spacing.16))]' />
+    </Section>
   );
 };
 

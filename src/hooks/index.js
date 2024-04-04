@@ -10,3 +10,4 @@ export { default as useSmooth } from './useSmooth';
 export { default as useTimeout } from './useTimeout';
 export { default as useTimer } from './useTimer';
 export { default as useToast } from './useToast';
+export { default as useWindowSize } from './useWindowSize';

@@ -1,4 +1,4 @@
-import { Lines, ScrollTitle, TextScrollAnimate } from '@/components';
+import { ScrollTitle, Section, TextScrollAnimate } from '@/components';
 import { ScrollAnimate } from '@/components/scroll-animate';
 import { Separator, Text } from '@/components/ui';
 import { cn } from '@/utils';
@@ -11,9 +11,10 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
   };
 
   return (
-    <section
+<Section
+hasTransition={false}
       className={cn(
-        'relative flex w-full flex-col items-center pb-lg lg:pt-md',
+        'flex flex-col items-center',
         className,
       )}
       {...props}
@@ -70,8 +71,8 @@ const AboutViewBackgroundSection = ({ className, ...props }) => {
         </section>
       </section>
 
-      <Lines />
-    </section>
+
+    </Section>
   );
 };
 

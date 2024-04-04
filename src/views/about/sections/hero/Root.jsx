@@ -1,4 +1,4 @@
-import { Lines } from '@/components';
+import { Section } from '@/components';
 import { Badge } from '@/components/ui';
 import { TextTitle } from '@/components/ui/text';
 import { cn } from '@/utils';
@@ -8,9 +8,11 @@ import Images from './Images';
 
 const AboutViewHeroSection = ({ className, ...props }) => {
   return (
-    <section
+      <Section
+      hasTransition={false}
+      forceHeaderTheme
       className={cn(
-        'relative flex w-full flex-col items-center gap-lg py-lg',
+        'flex flex-col items-center gap-lg',
         className,
       )}
       {...props}
@@ -43,9 +45,8 @@ const AboutViewHeroSection = ({ className, ...props }) => {
 
       <Images />
 
-      <Lines />
       <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-30' />
-    </section>
+    </Section>
   );
 };
 

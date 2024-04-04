@@ -1,4 +1,4 @@
-import { Lines } from '@/components';
+import { Section } from '@/components';
 import { ScrollAnimate } from '@/components/scroll-animate';
 import { Icon } from '@/components/ui';
 import { Text } from '@/components/ui/text';
@@ -20,9 +20,11 @@ const ContactViewHeroSection = ({ className, ...props }) => {
   };
 
   return (
-    <section
+    <Section
+    hasTransition={false}
+    forceHeaderTheme
       className={cn(
-        'relative flex w-full flex-col items-center py-lg',
+        'flex flex-col items-center',
         className,
       )}
       {...props}
@@ -56,8 +58,7 @@ const ContactViewHeroSection = ({ className, ...props }) => {
       </div>
 
       <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-20' />
-      <Lines />
-    </section>
+    </Section>
   );
 };
 

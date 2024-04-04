@@ -1,11 +1,11 @@
-import { Bg, Lines, Values } from '@/components';
+import { Section, Values } from '@/components';
 import { ScrollAnimate } from '@/components/scroll-animate';
 import { Badge, Icon, Text } from '@/components/ui';
 import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { values } from '@/constants';
 import { cn } from '@/utils';
 
-const AboutViewValuesSection = ({ theme, className, ...props }) => {
+const AboutViewValuesSection = ({  className, ...props }) => {
   const animationConfig = {
     scroll: 'scrollY',
     scrollPoints: [0, 400],
@@ -16,10 +16,10 @@ const AboutViewValuesSection = ({ theme, className, ...props }) => {
 
   return (
     <ScrollAnimate config={animationConfig}>
-      <section
+      <Section
+      hasTransition={false}
         className={cn(
-          'relative flex w-full flex-col items-center gap-md pb-lg',
-          theme,
+          'flex flex-col items-center gap-md',
           className,
         )}
         {...props}
@@ -62,11 +62,7 @@ const AboutViewValuesSection = ({ theme, className, ...props }) => {
             className='absolute bottom-0 left-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] rotate-[--rotate] fill-muted max-lg:hidden'
           />
         </div>
-
-        <Bg />
-
-        <Lines />
-      </section>
+      </Section>
     </ScrollAnimate>
   );
 };

@@ -61,7 +61,7 @@
     --border: 0 0% 90%;
   }
 
-  .light .primary {
+  .light > .primary {
     @apply text-content;
 
     --main: 0 0% 4.7%;
@@ -83,8 +83,7 @@
     --border: 0 0% 12%;
   }
 
-  .dark,
-  body:has(.dark-layout) {
+  .dark {
     @apply text-content;
 
     --main: 0 0% 4.7%;
@@ -118,8 +117,7 @@
     --border: 0 0% 12%;
   }
 
-  .dark .primary,
-  body:has(.dark-layout) .primary {
+  .dark > .primary {
     @apply text-content;
 
     --main: 0 0% 98%;

@@ -5,9 +5,9 @@ import Sections from './sections';
 const AboutView = () => {
   return (
     <>
-      <Sections.Hero className='dark-layout' />
+      <Sections.Hero theme='dark' />
 
-      <Sections.Background />
+      <Sections.Background theme='dark' />
 
       <Sections.Extra theme='light' />
 

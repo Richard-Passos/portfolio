@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
-import { Bg, DotsLoader, Lines, NextProject } from '@/components';
+import {  DotsLoader, NextProject, Section } from '@/components';
 
 import Sections from './sections';
 
@@ -30,13 +30,9 @@ const ProjectView = async ({ promises }) => {
         />
       </Suspense>
 
-      <div className='dark relative flex w-full items-center justify-center pb-lg max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
+      <Section hasTransition={false} theme='dark' className='flex items-center justify-center 2xl:h-screen 2xl:max-h-bounds'>
         <NextProject id={adjacentIds.next} />
-
-        <Bg />
-
-        <Lines />
-      </div>
+      </Section>
     </>
   );
 };

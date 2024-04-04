@@ -1,10 +1,10 @@
-import { Bg, Lines, TextScrollAnimate } from '@/components';
+import { Section, TextScrollAnimate } from '@/components';
 import { ScrollAnimate } from '@/components/scroll-animate';
 import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
-const HomeViewSecondText = ({ theme, className, ...props }) => {
+const HomeViewSecondText = ({  className, ...props }) => {
   const animationConfig = {
     scroll: 'scrollY',
     scrollPoints: [0, 400],
@@ -14,11 +14,12 @@ const HomeViewSecondText = ({ theme, className, ...props }) => {
   };
 
   return (
-    <ScrollAnimate config={animationConfig}>
-      <div
+      <ScrollAnimate config={animationConfig}>
+      <Section
+      as='div'
+      hasTransition={false}
         className={cn(
-          'relative flex w-full items-center justify-center py-lg max-2xl:min-h-screen max-2xl:overflow-hidden 2xl:h-screen 2xl:max-h-bounds',
-          theme,
+          'flex items-center justify-center max-2xl:overflow-hidden 2xl:h-screen 2xl:max-h-bounds',
           className,
         )}
         {...props}
@@ -30,12 +31,10 @@ const HomeViewSecondText = ({ theme, className, ...props }) => {
         <SmileIcon className='absolute left-0 top-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] -translate-x-1/2 rotate-[--rotate] fill-muted' />
 
         <GlobeIcon className='absolute bottom-0 right-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] translate-x-1/2 -rotate-[--rotate] fill-muted' />
-
-        <Bg />
-
-        <Lines />
-      </div>
+      </Section>
     </ScrollAnimate>
+
+
   );
 };
 

@@ -1,11 +1,11 @@
-import { Bg, Lines, NextPage } from '@/components';
+import { NextPage, Section } from '@/components';
 
 import Sections from './sections';
 
 const WorkView = () => {
   return (
     <>
-      <Sections.Hero />
+      <Sections.Hero theme='light'/>
 
       <Sections.Mission
         id='scrollTo'
@@ -14,7 +14,7 @@ const WorkView = () => {
 
       <Sections.Services theme='light' />
 
-      <Sections.Projects />
+      <Sections.Projects theme='light' />
 
       <Sections.WhyMe theme='dark' />
 
@@ -22,16 +22,12 @@ const WorkView = () => {
 
       <Sections.Values theme='dark' />
 
-      <div className='dark relative flex w-full items-center justify-center pb-lg max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds'>
+      <Section hasTransition={false} theme='dark' className='flex items-center justify-center 2xl:h-screen 2xl:max-h-bounds'>
         <NextPage
           href='/about'
           text='About me'
         />
-
-        <Bg />
-
-        <Lines />
-      </div>
+      </Section>
     </>
   );
 };

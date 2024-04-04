@@ -1,8 +1,8 @@
-import { Bg, Lines, ScrollAnimate, TextScrollAnimate } from '@/components';
+import { ScrollAnimate, Section, TextScrollAnimate } from '@/components';
 import { Image, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const ProjectViewAboutSection = ({ data = {}, className, theme, ...props }) => {
+const ProjectViewAboutSection = ({ data = {}, className, ...props }) => {
   const animationConfig = {
     y1: {
       prop: 'y',
@@ -26,10 +26,10 @@ const ProjectViewAboutSection = ({ data = {}, className, theme, ...props }) => {
   ];
 
   return (
-    <section
+    <Section
+    hasTransition={false}
       className={cn(
-        'relative z-10 flex w-9/10 flex-col items-center justify-center pb-lg max-2xl:min-h-screen',
-        theme,
+        'z-10 flex w-9/10 flex-col items-center justify-center',
         className,
       )}
       {...props}
@@ -65,7 +65,7 @@ const ProjectViewAboutSection = ({ data = {}, className, theme, ...props }) => {
                 {...data.thumbnail}
               />
             </ScrollAnimate.Transform>
-          </div>{' '}
+          </div>
         </div>
         <ScrollAnimate config={animationConfig.y2}>
           <div className='relative size-full translate-y-[calc(var(--y)*theme(spacing.lg))] overflow-hidden rounded-3xl max-sm:hidden sm:col-span-5'>
@@ -97,10 +97,7 @@ const ProjectViewAboutSection = ({ data = {}, className, theme, ...props }) => {
           </li>
         ))}
       </ul>
-
-      <Bg />
-      <Lines />
-    </section>
+    </Section>
   );
 };
 

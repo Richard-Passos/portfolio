@@ -8,6 +8,7 @@ import { ScrollAnimate } from '../../scroll-animate';
 import SocialNav from '../../social-nav';
 import { Logo, Text } from '../../ui';
 import { ArrowUpIcon, HandHornsIcon, HeartIcon } from '../../ui/icon/icons';
+import { HeaderChangeTheme } from '@/components/header';
 
 const SCROLL_OFFSET = ['0 1', '1 1'];
 
@@ -32,7 +33,8 @@ const FooterContent = async ({ theme, className, ...props }) => {
   };
 
   return (
-    <ScrollAnimate config={animationConfig.x}>
+    <HeaderChangeTheme theme={theme}>
+      <ScrollAnimate config={animationConfig.x}>
       <div
         className={cn(
           'flex w-9/10 max-w-screen-xl flex-col [--h:100vh] max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
@@ -112,6 +114,7 @@ const FooterContent = async ({ theme, className, ...props }) => {
         </ScrollAnimate>
       </div>
     </ScrollAnimate>
+    </HeaderChangeTheme>
   );
 };
 

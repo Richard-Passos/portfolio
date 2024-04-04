@@ -31,12 +31,12 @@ const ContactViewContactSection = async ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'grid max-w-screen-xl gap-x-sm gap-y-md pb-[calc(theme(spacing.lg)*1.5)] max-2xl:min-h-0 sm:w-9/10 sm:gap-y-sm md:grid-cols-3 lg:grid-cols-2 lg:gap-x-md',
+        'gap-md flex items-center justify-center max-md:flex-col py-[--py] [--py:calc(theme(spacing.lg)*1.5)] sm:w-9/10 max-lg:gap-x-sm',
         className,
       )}
       {...props}
     >
-      <div className='dark w-9/10 self-end justify-self-center rounded-lg border bg-main p-sm shadow-md sm:w-full lg:p-[calc(var(--spacing-sm)*1.5)]'>
+      <div className='primary w-9/10 rounded-md bg-main md:max-w-60 p-sm shadow-md sm:w-full'>
         <div className='relative mb-sm flex w-full justify-center overflow-hidden border-t'>
           {CONTACT_VIEW_HERO_SECTION_ICONS.map((icon) => (
             <Icon
@@ -47,7 +47,7 @@ const ContactViewContactSection = async ({ className, ...props }) => {
           ))}
         </div>
 
-        <ul className='mb-sm mt-auto grid gap-xs lg:grid-cols-2'>
+        <ul className='mb-sm mt-auto grid gap-xs'>
           {extraInfo.map(({ title, content }) => (
             <li
               className='rounded-sm border bg-main p-4'
@@ -62,7 +62,7 @@ const ContactViewContactSection = async ({ className, ...props }) => {
           ))}
         </ul>
 
-        <nav className='grid gap-2 lg:grid-cols-3'>
+        <nav className='grid gap-2'>
           {personalInfo.socials?.map((social, i) => (
             <SocialNav.Item
               index={i}
@@ -73,7 +73,7 @@ const ContactViewContactSection = async ({ className, ...props }) => {
         </nav>
       </div>
 
-      <div className='h-fit w-full self-center rounded-lg border bg-main p-sm shadow-md sm:p-[calc(var(--spacing-sm)*1.5)] md:max-lg:col-span-2'>
+      <div className='h-fit w-full md:max-w-fit rounded-lg border bg-main p-sm shadow-md sm:p-[calc(var(--spacing-sm)*1.5)]'>
         <section className='mb-md'>
           <Text.Title className='mb-6 text-base font-medium'>
             To:{' '}
@@ -105,7 +105,7 @@ const ContactViewContactSection = async ({ className, ...props }) => {
         </section>
       </div>
 
-      <ul className='absolute inset-y-[calc(var(--spacing-lg)/2)] left-1/2 -z-20 flex w-screen -translate-x-1/2 flex-col justify-between max-sm:hidden'>
+      <ul className='absolute h-fit  -z-10 flex w-screen flex-col justify-between max-sm:hidden'>
         {[...Array(3)].map((_, i) => (
           <li key={i}>
             <HorizontalScroll

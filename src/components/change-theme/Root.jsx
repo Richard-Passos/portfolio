@@ -4,7 +4,9 @@ import Bg from '../bg';
 import Lines from '../lines';
 import { ScrollAnimate } from '../scroll-animate';
 
-const ChangeTheme = ({ className, ...props }) => {
+import { HeaderChangeTheme } from '../header';
+
+const ChangeTheme = ({ theme, forceHeaderTheme, className,hasTransition = true, ...props }) => { 
   const animationConfig = {
     scrollConfig: {
       offset: ['0 1', '0 0'],
@@ -14,14 +16,16 @@ const ChangeTheme = ({ className, ...props }) => {
   };
 
   return (
-    <div
+    <HeaderChangeTheme theme={theme} force={forceHeaderTheme}>
+      <div
       className={cn(
         'pointer-events-none absolute inset-0 flex items-center justify-center',
+        theme,
         className,
       )}
       {...props}
     >
-      <ScrollAnimate config={animationConfig}>
+      {hasTransition && <ScrollAnimate config={animationConfig}>
         <div className='absolute top-px h-20 w-screen'>
           <div className='relative h-[--h] w-full -translate-y-full rotate-180 overflow-hidden'>
             <div className='pointer-events-auto absolute left-1/2 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] overflow-hidden rounded-[50%] bg-main transition-bg'>
@@ -29,14 +33,14 @@ const ChangeTheme = ({ className, ...props }) => {
             </div>
           </div>
         </div>
-      </ScrollAnimate>
+      </ScrollAnimate>}
 
       <Bg asChild>
         <div>
           <Lines className='z-0' />
         </div>
       </Bg>
-    </div>
+    </div></HeaderChangeTheme>
   );
 };
 
