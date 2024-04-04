@@ -16,7 +16,7 @@ const Root = async ({ className, ...props }) => {
       {...props}
     >
       <div
-        className='relative size-full bg-current'
+        className='relative size-full bg-current [mask-repeat:no-repeat]'
         style={{
           maskImage: `url(${personalInfo?.logo.src})`,
         }}

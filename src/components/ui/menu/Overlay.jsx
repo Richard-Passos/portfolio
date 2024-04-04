@@ -13,7 +13,7 @@ const MenuOverlay = ({ className, ...props }, ref) => {
       ref={ref}
       data-state={state}
       className={cn(
-        'pointer-events-auto absolute inset-0 bg-main/20 transition-opacity duration-300 data-closed:pointer-events-none data-closed:opacity-0 [body:has(.dark-layout)_&]:bg-main/80',
+        'pointer-events-auto absolute inset-0 bg-main/20 transition-opacity duration-300 data-closed:pointer-events-none data-closed:opacity-0 dark:bg-main/80',
         className,
       )}
       {...props}
