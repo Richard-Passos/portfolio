@@ -10,14 +10,14 @@ const AboutViewHeroSection = ({ className, data, ...props }) => {
   return (
     <Section
       forceHeaderTheme
-      className={cn('flex flex-col items-center gap-lg', className)}
+      className={cn('flex flex-col items-center', className)}
       {...props}
     >
-      <div className='w-9/10 max-w-screen-lg space-y-sm'>
+      <div className='w-9/10 mb-lg max-w-screen-lg'>
         <TextTitle
           asChild
           aria-label={data.title}
-          className='whitespace-pre-line max-sm:text-center'
+          className='whitespace-pre-line mb-sm max-sm:text-center'
           variants={{ size: 'lg' }}
         >
           <h1>
@@ -29,7 +29,7 @@ const AboutViewHeroSection = ({ className, data, ...props }) => {
                 >
                   {w}
 
-                  <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
+                  <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] first-letter:uppercase lowercase tracking-normal'>
                     {data.subtitle}
                   </Badge>
                 </span>
@@ -45,13 +45,13 @@ const AboutViewHeroSection = ({ className, data, ...props }) => {
         <div className='relative grid grid-cols-2 place-items-center'>
           <IconChanger data={data.icons} />
 
-          <span className='absolute h-px w-full bg-border transition-bg' />
+          <span className='absolute h-px w-full bg-border' />
         </div>
       </div>
 
       <Images data={data.images} />
 
-      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-30' />
+      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-30' />
     </Section>
   );
 };

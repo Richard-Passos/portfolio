@@ -4,43 +4,39 @@ import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Icon } from '@/components/ui';
 import { cn } from '@/utils';
 
-const AboutViewHeroIconChangerSection = ({
-  className,
-  data = [],
-  ...props
-}) => {
-  const animationConfig = {
-    x: {
-      prop: 'x',
-      propPoints: ['-25%', '25%'],
+const DATA_CHANGER_DURATION = 2500,
+  ANIMATION_CONFIG = {
+  x: {
+    prop: 'x',
+    propPoints: ['-25%', '25%'],
+  },
+  rotate: {
+    scroll: 'scrollY',
+    scrollPoints: [0, 400],
+    prop: 'rotate',
+    propPoints: ['0deg', '360deg'],
+    transformConfig: {
+      clamp: false,
     },
-    rotate: {
-      scroll: 'scrollY',
-      scrollPoints: [0, 400],
-      prop: 'rotate',
-      propPoints: ['0deg', '360deg'],
-      transformConfig: {
-        clamp: false,
-      },
-    },
-  };
+  },
+};
 
+const AboutViewHeroIconChangerSection = ({ className, data = [], ...props }) => {
   return (
-    <ScrollAnimateTransform config={animationConfig.x}>
+    <ScrollAnimateTransform config={ANIMATION_CONFIG.x}>
       <DataChanger
         className={cn('z-10 col-end-3', className)}
-        duration={2500}
+        duration={DATA_CHANGER_DURATION}
         lastIdx={data.length - 1}
         {...props}
       >
         <DataChanger.Action asChild>
           <MagneticButton
-            aria-label='Change icon'
             className='[&_svg]:size-[40%]'
             limit={0.2}
             variants={{ size: 'lg' }}
           >
-            <ScrollAnimateTransform config={animationConfig.rotate}>
+            <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate}>
               <div className='relative flex size-full items-center justify-center'>
                 {data.map((icon, i) => (
                   <DataChanger.Item
