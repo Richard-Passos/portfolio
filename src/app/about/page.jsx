@@ -8,14 +8,14 @@ const AboutPage = async () => {
 };
 
 const generateMetadata = async () => {
-  const { data = {} } = await pagesApi.getOne('about');
+   const { metadata = {} } = (await pagesApi.getOne('about')).data || {};
 
   return {
-    title: data.title,
-    description: data.description,
+    title: metadata.title,
+    description: metadata.description,
     openGraph: {
-      title: data.title,
-      description: data.description,
+      title: metadata.title,
+      description: metadata.description,
     },
   };
 };
