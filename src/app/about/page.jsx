@@ -2,7 +2,7 @@ import { pagesApi } from '@/api';
 import { AboutView } from '@/views';
 
 const AboutPage = async () => {
-  const data = await pagesApi.getOne('about');
+  const {data} = await pagesApi.getOne('about');
 
   return <AboutView data={data} />;
 };
