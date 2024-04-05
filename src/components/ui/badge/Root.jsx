@@ -5,7 +5,7 @@ import { cn, cnv } from '@/utils';
 import variantColors from '../variantColors';
 
 const Badge = ({ asChild, variants, className, ...props }) => {
-  const Tag = asChild ? Slot : 'div';
+  const Tag = asChild ? Slot : 'span';
 
   return (
     <Tag
@@ -22,7 +22,7 @@ const badgeStyles = {
 };
 
 const badgeVariants = cnv({
-  base: 'inline-flex items-center rounded-full border border-transparent px-2.5 py-1 text-xs font-semibold',
+  base: 'rounded-full border border-transparent px-2.5 py-1 text-xs font-semibold',
   variants: {
     color: variantColors,
     style: badgeStyles,
