@@ -2,7 +2,6 @@ import { Section, Values } from '@/components';
 import { ScrollAnimate } from '@/components/scroll-animate';
 import { Badge, Icon, Text } from '@/components/ui';
 import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
-import { values } from '@/constants';
 import { cn } from '@/utils';
 
 const AboutViewValuesSection = ({  className, data={}, ...props }) => {
@@ -28,7 +27,7 @@ const AboutViewValuesSection = ({  className, data={}, ...props }) => {
           className='w-9/10 max-w-screen-xl whitespace-pre-line text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
           id='carousel-skills-heading-0'
         >
-          {data.title?.split(' ').map((w, i, arr) => i === arr.length - 1 ?  <span className='relative inline'>
+          {data.title?.split(' ').map((w, i, arr) => i === arr.length - 1 ?  <span key={i} className='relative inline'>
             {w}
 
             <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>

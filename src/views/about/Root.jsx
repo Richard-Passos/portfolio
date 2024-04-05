@@ -1,9 +1,8 @@
 import Sections from './sections';
-import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
 
-const AboutView = async () => {
-  const {sections = []} = (await pagesApi.getOne('about')).data || {}
+const AboutView = ({data = {}}) => {
+  const {sections = []} = data
 
   let lastTheme = ''
 

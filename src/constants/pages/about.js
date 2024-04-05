@@ -113,7 +113,11 @@ const aboutPage = {
         href: '/contact'
       }
     }
-  ]
+  ],
+  metadata: {
+    title: 'About',
+    description: 'About Richard Passos, his background, personality, mission and values.',
+  }
 }
 
 export default aboutPage

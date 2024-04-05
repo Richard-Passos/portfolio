@@ -26,7 +26,7 @@ const AboutViewBackgroundSection = ({ className, data={}, ...props }) => {
       {...props}
     >
       <h2 className='mb-md w-full'>
-        {data.title?.map((w) => <ScrollTitle title={w} />)}
+        {data.title?.map((w, i) => <ScrollTitle key={i} title={w} />)}
       </h2>
 
       <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>

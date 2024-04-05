@@ -25,7 +25,7 @@ const AboutViewHeroSection = ({ className,data, ...props }) => {
         >
           <h1>
             {data.title?.split(' ').map((w, i, arr) => i === arr.length - 1 ? 
-            <span className='relative inline'>
+            <span key={i} className='relative inline'>
               {w}
 
               <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>

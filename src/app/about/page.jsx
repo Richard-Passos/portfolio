@@ -1,15 +1,25 @@
 import { AboutView } from '@/views';
+import { pagesApi } from '@/api';
 
-const AboutPage = () => {
-  return <AboutView />;
+
+const AboutPage = async () => {
+  const data = await pagesApi.getOne('about')
+
+  return <AboutView data={data} />;
 };
 
-const metadata = {
-  title: 'About',
-  description:
-    'About Richard Passos, his background, personality, mission and values.',
-};
+const generateMetadata = async () => {
+  const { data = {} } = await pagesApi.getOne('about');
 
+  return {
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+    },
+  };
+};
 export default AboutPage;
-export { metadata };
+export { generateMetadata };
 
