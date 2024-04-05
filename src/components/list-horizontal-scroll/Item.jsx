@@ -27,7 +27,7 @@ const ListHorizontalScrollItem = ({
     <ScrollAnimate config={animationConfig}>
       <li
         className={cn(
-          'relative flex items-center justify-center border-y bg-main py-[.75em] text-[clamp(1.5rem,4.5vw,2.5rem)]/[1] font-bold uppercase transition-colors odd:-rotate-[.5deg] even:rotate-[.5deg]',
+          'relative flex items-center justify-center border-y bg-main py-[.75em] text-[clamp(1.5rem,4.5vw,2.5rem)]/none font-bold uppercase transition-colors odd:-rotate-[.5deg] even:rotate-[.5deg]',
           className,
         )}
         style={{

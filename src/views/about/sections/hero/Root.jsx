@@ -17,7 +17,7 @@ const AboutViewHeroSection = ({ className, data, ...props }) => {
         <TextTitle
           asChild
           aria-label={data.title}
-          className='whitespace-pre-line max-sm:text-center'
+          className='whitespace-pre-line'
           variants={{ size: 'lg' }}
         >
           <h1>

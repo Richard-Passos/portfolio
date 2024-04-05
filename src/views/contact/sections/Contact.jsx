@@ -110,7 +110,7 @@ const ContactViewContactSection = async ({ className, ...props }) => {
           <li key={i}>
             <HorizontalScroll
               baseVelocity={i % 2 === 0 ? 1 : -1.5}
-              className='text-[min(32vmin,16rem)]/[1] font-extrabold uppercase tracking-tighter text-muted [--gap:.2em]'
+              className='text-[min(32vmin,16rem)]/none font-extrabold uppercase tracking-tighter text-muted [--gap:.2em]'
             >
               <span>Contact me</span> ·
             </HorizontalScroll>

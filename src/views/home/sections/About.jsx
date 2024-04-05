@@ -122,7 +122,7 @@ const Grid = async ({ className, ...props }) => {
           my local time
         </Text.Subtitle>
 
-        <Text className='text-[14vw]/[1] font-bold sm:text-[min(8vw,6rem)]/[1]'>
+        <Text className='text-[14vw]/none font-bold sm:text-[min(8vw,6rem)]/none'>
           <LocalTime />
         </Text>
       </BentoGrid.Item>

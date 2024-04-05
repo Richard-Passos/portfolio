@@ -10,7 +10,7 @@ const Menu = (props) => {
     <MenuUi {...props}>
       <MenuUi.Trigger asChild>
         <Button
-          className='rounded-sm sm:hidden'
+          className='rounded-sm sm:hidden transition-none'
           variants={{ size: 'sm', color: 'main' }}
         >
           Menu

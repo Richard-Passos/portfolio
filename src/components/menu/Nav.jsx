@@ -44,7 +44,7 @@ const MenuNav = ({ className, items = [], ...props }) => {
         {items.map((data, i) => (
           <li
             className={cn(
-              'absolute w-full text-[min(32vmin,16rem)]/[1] font-extrabold uppercase tracking-tighter text-muted transition-[transform,opacity] duration-300',
+              'absolute w-full text-[min(32vmin,16rem)]/none font-extrabold uppercase tracking-tighter text-muted transition-[transform,opacity] duration-300',
               isActive !== i && 'scale-y-75 opacity-0',
             )}
             key={`Infinity scroll ${data.href}`}

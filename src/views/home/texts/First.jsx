@@ -44,7 +44,7 @@ const HomeViewFirstText = (props) => {
           <ScrollAnimate config={animationConfig.clipPath}>
             <ScrollAnimate.Transform config={animationConfig.y}>
               <div className='row-span-2 flex items-center py-md [clip-path:inset(0_-1%_0_0)]'>
-                <Text className='relative translate-x-[--x] text-[clamp(8rem,44vw,32rem)]/[1] font-bold tracking-tighter'>
+                <Text className='relative translate-x-[--x] text-[clamp(8rem,44vw,32rem)]/none font-bold tracking-tighter'>
                   <span className='outline-text text-muted-content'>BUT</span>
 
                   <span

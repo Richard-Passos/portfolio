@@ -62,7 +62,7 @@ const WorkViewHeroSection = async ({ className, ...props }) => {
                 <Text.Title
                   aria-label='Turning heads and conquering hearts.'
                   asChild
-                  className='mb-sm w-full text-center [--x:--spacing-lg] lg:text-[min(9vw,theme(fontSize.9xl))]/[1]'
+                  className='mb-sm w-full text-center [--x:--spacing-lg] lg:text-[min(9vw,theme(fontSize.9xl))]/none'
                   variants={{ size: 'xl' }}
                 >
                   <h1>
