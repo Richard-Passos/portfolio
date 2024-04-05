@@ -16,6 +16,8 @@ const ANIMATION_CONFIG = {
 };
 
 const AboutViewBackgroundSection = ({ className, data = {}, ...props }) => {
+  const {block = {}} = data
+
   return (
     <Section
       className={cn('flex flex-col items-center', className)}
@@ -40,9 +42,7 @@ const AboutViewBackgroundSection = ({ className, data = {}, ...props }) => {
         </Text>
       </section>
 
-      {data.blocks?.map((data) => (
         <section
-          key={data.title}
           className='grid mt-lg w-9/10 max-w-screen-lg gap-md md:grid-cols-2 max-lg:gap-x-sm'
         >
           <ScrollAnimate config={ANIMATION_CONFIG.y1}>
@@ -50,7 +50,7 @@ const AboutViewBackgroundSection = ({ className, data = {}, ...props }) => {
                 <ScrollAnimate.Transform config={ANIMATION_CONFIG.y2}>
                   <Image
                     className='w-full h-[115%] object-cover'
-                    {...data.image}
+                    {...block.image}
                   />
                 </ScrollAnimate.Transform>
             </div>
@@ -58,17 +58,16 @@ const AboutViewBackgroundSection = ({ className, data = {}, ...props }) => {
 
           <section className='md:py-lg'>
             <Text.Subtitle className='text-xs uppercase text-muted-content'>
-              · {data.title}
+              · {block.title}
             </Text.Subtitle>
 
             <Separator className='mb-xs' />
 
             <Text className='mt-sm text-lg/relaxed first-letter:uppercase text-muted-content'>
-              {data.description}
+              {block.description}
             </Text>
           </section>
         </section>
-      ))}
     </Section>
   );
 };
