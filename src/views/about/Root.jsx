@@ -12,7 +12,7 @@ const AboutView = ({ data = {} }) => {
 
     Section = Section && (
       <Section
-        hasTransition={slug !== 'hero' && lastTheme !== data.theme}
+        hasTransition={slug.toLowerCase() !== 'hero' && lastTheme !== data.theme}
         {...data}
       />
     );
