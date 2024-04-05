@@ -14,10 +14,10 @@ const ErrorHeroSection = ({ error, className, reset, ...props }) => {
 
   return (
     <Section
-    hasTransition={false}
-    forceHeaderTheme
+      hasTransition={false}
+      forceHeaderTheme
       className={cn(
-        '-mt-[--header-h] flex max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))]',
+        '-mt-[--header-h] flex flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))] max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
         className,
       )}
       {...props}
@@ -29,7 +29,7 @@ const ErrorHeroSection = ({ error, className, reset, ...props }) => {
       >
         <h1>Ops...</h1>
       </Text.Title>
-      
+
       <Text className='mb-4 w-9/10 max-w-screen-xl text-center text-2xl font-semibold first-letter:uppercase'>
         Something went wrong!
       </Text>

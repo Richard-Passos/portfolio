@@ -8,7 +8,11 @@ import HorizontalScroll from './HorizontalScroll';
 import StatsChanger from './StatsChanger';
 import Title from './Title';
 
-const CONTACT_VIEW_HERO_SECTION_ICONS = [{src: '/images/rocket.svg', title: 'Rocket'}, {src: '/images/smile.svg', title: 'Smile'}, {src: '/images/globe.svg', title: 'Globe'}];
+const CONTACT_VIEW_HERO_SECTION_ICONS = [
+  { src: '/images/rocket.svg', title: 'Rocket' },
+  { src: '/images/smile.svg', title: 'Smile' },
+  { src: '/images/globe.svg', title: 'Globe' },
+];
 
 const ContactViewHeroSection = ({ className, ...props }) => {
   const animationConfig = {
@@ -21,12 +25,9 @@ const ContactViewHeroSection = ({ className, ...props }) => {
 
   return (
     <Section
-    hasTransition={false}
-    forceHeaderTheme
-      className={cn(
-        'flex flex-col items-center',
-        className,
-      )}
+      hasTransition={false}
+      forceHeaderTheme
+      className={cn('flex flex-col items-center', className)}
       {...props}
     >
       <Title />

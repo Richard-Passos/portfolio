@@ -6,8 +6,7 @@ const ContactPage = () => {
 
 const metadata = {
   title: 'Contact',
-  description:
-    'Richard passos contact details and contact form.',
+  description: 'Richard passos contact details and contact form.',
 };
 
 export default ContactPage;

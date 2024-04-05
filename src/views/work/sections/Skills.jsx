@@ -120,11 +120,7 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
   );
 };
 
-const HomeViewSkillsSectionCarouselItem = ({
-  idx,
-  data = {},
-  ...props
-}) => {
+const HomeViewSkillsSectionCarouselItem = ({ idx, data = {}, ...props }) => {
   return (
     <SkillCard
       asChild

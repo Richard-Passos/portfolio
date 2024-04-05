@@ -1,4 +1,9 @@
-import { GridPattern, ScrollAnimate, ScrollIndicator, Section } from '@/components';
+import {
+  GridPattern,
+  ScrollAnimate,
+  ScrollIndicator,
+  Section,
+} from '@/components';
 import { Text } from '@/components/ui';
 import { SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
@@ -37,11 +42,11 @@ const HomeViewHeroSection = ({ className, ...props }) => {
   };
 
   return (
-      <Section
+    <Section
       hasTransition={false}
       forceHeaderTheme
       className={cn(
-        '-mt-[--header-h] *:*:last:*:hidden pb-0 pt-0 overflow-hidden max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
+        '-mt-[--header-h] overflow-hidden pb-0 pt-0 *:*:last:*:hidden max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
         className,
       )}
       {...props}
@@ -49,7 +54,7 @@ const HomeViewHeroSection = ({ className, ...props }) => {
       <ScrollAnimate.Transform config={animationConfig.y}>
         <ScrollAnimate config={animationConfig.scale}>
           <ScrollAnimate config={animationConfig.opacity}>
-            <div className='relative flex size-full items-center justify-center px-[--inset] pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-svh max-sm:!translate-y-0 2xl:[--w:--max-w]'>
+            <div className='relative flex size-full items-center justify-center px-[--inset] pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] [--w:100vw] [--inset:calc(var(--w)*.025)] max-2xl:min-h-svh max-sm:!translate-y-0 2xl:[--w:--max-w]'>
               <div className='w-9/10 pb-[--inset] sm:scale-[--scale] sm:opacity-[--opacity]'>
                 <Text.Title
                   aria-label='Turning heads and conquering hearts.'

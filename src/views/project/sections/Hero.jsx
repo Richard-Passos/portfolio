@@ -21,15 +21,15 @@ const ProjectViewHeroSection = ({
 
   return (
     <Section
-    hasTransition={false}
-    forceHeaderTheme
+      hasTransition={false}
+      forceHeaderTheme
       className={cn(
-        'flex max-2xl:min-h-svh w-full flex-col items-center pt-0',
+        'flex w-full flex-col items-center pt-0 max-2xl:min-h-svh',
         className,
       )}
       {...props}
     >
-      <div className='flex max-2xl:min-h-[65svh] 2xl:h-[65svh] 2xl:max-h-bounds w-9/10 max-w-screen-lg items-center justify-center py-lg'>
+      <div className='flex w-9/10 max-w-screen-lg items-center justify-center py-lg max-2xl:min-h-[65svh] 2xl:h-[65svh] 2xl:max-h-bounds'>
         <Text.Title
           asChild
           className='text-center'

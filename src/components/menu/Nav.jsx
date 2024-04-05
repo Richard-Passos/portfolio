@@ -22,10 +22,10 @@ const MenuNav = ({ className, items = [], ...props }) => {
         {items?.map((data, i) => (
           <div
             key={data.href}
-            className='w-fit transition-[transform,opacity] [--opacity:.25] group-hover:[&:not(:hover)]:scale-x-95 group-hover:[&:not(:hover)]:opacity-[--opacity] dark:[--opacity:.05]'
+            className='w-fit transition-[transform,opacity] [--opacity:.25] dark:[--opacity:.05] group-hover:[&:not(:hover)]:scale-x-95 group-hover:[&:not(:hover)]:opacity-[--opacity]'
           >
             <MagneticLink
-              className='justify-start rounded-sm transition-none px-8 py-4 text-[13vw] sm:text-7xl font-extrabold uppercase tracking-tighter no-underline'
+              className='justify-start rounded-sm px-8 py-4 text-[13vw] font-extrabold uppercase tracking-tighter no-underline transition-none sm:text-7xl'
               limit={0.15}
               href={data.href}
               onMouseEnter={() => setIsActive(i)}

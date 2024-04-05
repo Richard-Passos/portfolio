@@ -1,28 +1,29 @@
-'use client'
+'use client';
 
-import { useEventListener } from '@/hooks';
-import { setHeaderHeight } from '@/redux';
-import { cn } from '@/utils';
 import { Slot } from '@radix-ui/react-slot';
 import { useCallback, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { useEventListener } from '@/hooks';
+import { setHeaderHeight } from '@/redux';
+import { cn } from '@/utils';
+
 const HeaderState = ({ className, ...props }) => {
-  const {theme} = useSelector((data) => data.header),
-  ref = useRef(null),
-  dispatch = useDispatch()
+  const { theme } = useSelector((data) => data.header),
+    ref = useRef(null),
+    dispatch = useDispatch();
 
   const handleSetHeight = useCallback(() => {
-    const {height} = ref.current.getBoundingClientRect()
+    const { height } = ref.current.getBoundingClientRect();
 
-    dispatch(setHeaderHeight(height))
-  }, [ref.current, dispatch])
+    dispatch(setHeaderHeight(height));
+  }, [ref.current, dispatch]);
 
-  useEventListener('resize', handleSetHeight)
-  
+  useEventListener('resize', handleSetHeight);
+
   useEffect(() => {
-    handleSetHeight()
-  }, [])
+    handleSetHeight();
+  }, []);
 
   return (
     <Slot

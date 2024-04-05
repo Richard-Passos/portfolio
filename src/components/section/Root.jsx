@@ -5,7 +5,15 @@ import { cn } from '@/utils';
 import ChangeTheme from '../change-theme';
 
 const Section = (props, ref) => {
-  const { as, hasTransition = true, theme, className, children, forceHeaderTheme, ...rest } = props
+  const {
+    as,
+    hasTransition = true,
+    theme,
+    className,
+    children,
+    forceHeaderTheme,
+    ...rest
+  } = props;
   const Tag = as || 'section';
 
   return (
@@ -21,7 +29,11 @@ const Section = (props, ref) => {
     >
       {children}
 
-      <ChangeTheme hasTransition={hasTransition} forceHeaderTheme={forceHeaderTheme} theme={theme} />
+      <ChangeTheme
+        hasTransition={hasTransition}
+        forceHeaderTheme={forceHeaderTheme}
+        theme={theme}
+      />
     </Tag>
   );
 };

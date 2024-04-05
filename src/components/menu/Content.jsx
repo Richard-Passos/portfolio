@@ -19,9 +19,9 @@ const MenuContent = async (props) => {
       data-lenis-prevent
       {...props}
     >
-      <div className='relative flex max-md:flex-col size-full max-w-bounds overflow-y-auto overflow-x-clip 2xl:max-h-bounds'>
-        <div className='relative flex md:w-fit shrink-0 flex-col justify-between overflow-hidden p-sm dark:!shadow-[hsl(var(--content)/.05)] dark:shadow-[0_15px_35px_-15px] md:dark:shadow-[15px_0_35px_-15px]'>
-          <div className='md:mb-lg flex h-10 items-center px-sm'>
+      <div className='relative flex size-full max-w-bounds overflow-y-auto overflow-x-clip max-md:flex-col 2xl:max-h-bounds'>
+        <div className='relative flex shrink-0 flex-col justify-between overflow-hidden p-sm dark:shadow-[0_15px_35px_-15px] dark:!shadow-[hsl(var(--content)/.05)] md:w-fit md:dark:shadow-[15px_0_35px_-15px]'>
+          <div className='flex h-10 items-center px-sm md:mb-lg'>
             <Logo />
 
             <Separator
@@ -40,7 +40,7 @@ const MenuContent = async (props) => {
                 index={i}
                 key={data.href}
                 data={data}
-                />
+              />
             ))}
           </SocialNav>
 

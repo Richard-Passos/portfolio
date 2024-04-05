@@ -6,10 +6,10 @@ import { cn } from '@/utils';
 const NotFoundHeroSection = ({ className, ...props }) => {
   return (
     <Section
-    hasTransition={false}
-    forceHeaderTheme
+      hasTransition={false}
+      forceHeaderTheme
       className={cn(
-        '-mt-[--header-h] flex 2xl:h-screen 2xl:max-h-bounds max-2xl:min-h-svh flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))]',
+        '-mt-[--header-h] flex flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))] max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
         className,
       )}
       {...props}

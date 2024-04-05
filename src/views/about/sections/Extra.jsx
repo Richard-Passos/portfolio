@@ -3,7 +3,7 @@ import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Image, Separator, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const AboutViewExtraSection = ({ className, data=[], ...props }) => {
+const AboutViewExtraSection = ({ className, data = [], ...props }) => {
   const animationConfig = {
     y1: {
       prop: 'y',
@@ -16,7 +16,7 @@ const AboutViewExtraSection = ({ className, data=[], ...props }) => {
     y3: {
       prop: 'y',
       propPoints: ['20%', '-40%'],
-    }
+    },
   };
 
   return (
@@ -39,34 +39,36 @@ const AboutViewExtraSection = ({ className, data=[], ...props }) => {
 
             <Separator className='mb-sm' />
 
-            <Text className='text-lg font-medium first-letter:uppercase'>{data.description}</Text>
+            <Text className='text-lg font-medium first-letter:uppercase'>
+              {data.description}
+            </Text>
           </li>
         ))}
       </ul>
 
       <div className='relative md:row-start-1'>
         <ScrollAnimateTransform config={animationConfig.y1}>
-          <div className='size-full overflow-hidden rounded-3xl max-md:aspect-[1/1.4] max-md:!translate-y-0 lg:aspect-[1/1.4]' >
+          <div className='size-full overflow-hidden rounded-3xl max-md:aspect-[1/1.4] max-md:!translate-y-0 lg:aspect-[1/1.4]'>
             <div className='absolute -inset-y-[7.5%] inset-x-0'>
-            <ScrollAnimateTransform config={animationConfig.y2}>
-            <Image
-              className='object-cover size-full'
-              {...data.images?.[0]}
-            />
-            </ScrollAnimateTransform>
+              <ScrollAnimateTransform config={animationConfig.y2}>
+                <Image
+                  className='size-full object-cover'
+                  {...data.images?.[0]}
+                />
+              </ScrollAnimateTransform>
             </div>
           </div>
         </ScrollAnimateTransform>
 
         <ScrollAnimateTransform config={animationConfig.y3}>
-          <div className='absolute overflow-hidden bottom-0 right-0 aspect-[1/1.4] w-2/3 rounded-3xl shadow-md [--tw-translate-x:25%] max-lg:hidden' >
+          <div className='absolute bottom-0 right-0 aspect-[1/1.4] w-2/3 overflow-hidden rounded-3xl shadow-md [--tw-translate-x:25%] max-lg:hidden'>
             <div className='absolute -inset-y-[7.5%] inset-x-0'>
-            <ScrollAnimateTransform config={animationConfig.y2}>
-            <Image
-              className='object-cover size-full'
-              {...data.images?.[1]}
-            />
-            </ScrollAnimateTransform>
+              <ScrollAnimateTransform config={animationConfig.y2}>
+                <Image
+                  className='size-full object-cover'
+                  {...data.images?.[1]}
+                />
+              </ScrollAnimateTransform>
             </div>
           </div>
         </ScrollAnimateTransform>

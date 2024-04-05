@@ -1,9 +1,9 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { createContext, useEffect, useState } from 'react';
 
 import { useEventListener, useTimeout } from '@/hooks';
-import { usePathname } from 'next/navigation';
 
 const KEYS = ['Escape'];
 
@@ -19,7 +19,7 @@ const MenuProvider = ({ deleteDelay = 700, value, ...props }) => {
   const [isOpen, setIsOpen] = useState(false),
     [isDeleted, setIsDeleted] = useState(true),
     { reset, clear } = useTimeout(() => setIsDeleted(true), deleteDelay),
-    pathname = usePathname()
+    pathname = usePathname();
 
   const state = isOpen ? 'open' : 'closed';
 
@@ -38,8 +38,8 @@ const MenuProvider = ({ deleteDelay = 700, value, ...props }) => {
   useEventListener('keyup', (ev) => KEYS.includes(ev.key) && handleSetIsOpen);
 
   useEffect(() => {
-    setIsOpen(false)
-  }, [pathname])
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <MenuContext.Provider

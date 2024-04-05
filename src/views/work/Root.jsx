@@ -5,7 +5,7 @@ import Sections from './sections';
 const WorkView = () => {
   return (
     <>
-      <Sections.Hero theme='light'/>
+      <Sections.Hero theme='light' />
 
       <Sections.Mission
         id='scrollTo'
@@ -22,7 +22,11 @@ const WorkView = () => {
 
       <Sections.Values theme='dark' />
 
-      <Section hasTransition={false} theme='dark' className='flex items-center justify-center 2xl:h-screen 2xl:max-h-bounds'>
+      <Section
+        hasTransition={false}
+        theme='dark'
+        className='flex items-center justify-center 2xl:h-screen 2xl:max-h-bounds'
+      >
         <NextPage
           href='/about'
           text='About me'

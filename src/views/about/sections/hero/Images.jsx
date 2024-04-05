@@ -4,7 +4,7 @@ import { cn } from '@/utils';
 
 const SCROLL_OFFSET = ['0 1', '0 0'];
 
-const AboutViewHeroImagesSeciton = ({ className,data = [], ...props }) => {
+const AboutViewHeroImagesSeciton = ({ className, data = [], ...props }) => {
   const animationConfig = {
     y: {
       scrollConfig: {
@@ -42,10 +42,13 @@ const AboutViewHeroImagesSeciton = ({ className,data = [], ...props }) => {
           >
             {data.map((data) => (
               <li
-                className='aspect-[1/1.4] overflow-hidden w-full rounded-3xl even:z-10 max-sm:last:hidden sm:first:translate-x-[--x] sm:first:-rotate-[--rotate] sm:last:-translate-x-[--x] sm:last:rotate-[--rotate] sm:odd:mt-[25%] sm:odd:translate-y-[--y]'
+                className='aspect-[1/1.4] w-full overflow-hidden rounded-3xl even:z-10 max-sm:last:hidden sm:first:translate-x-[--x] sm:first:-rotate-[--rotate] sm:last:-translate-x-[--x] sm:last:rotate-[--rotate] sm:odd:mt-[25%] sm:odd:translate-y-[--y]'
                 key={data.src}
               >
-                <Image className='size-full object-cover' {...data}/>
+                <Image
+                  className='size-full object-cover'
+                  {...data}
+                />
               </li>
             ))}
           </ul>

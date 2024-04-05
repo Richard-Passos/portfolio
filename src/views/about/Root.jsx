@@ -1,22 +1,26 @@
-import Sections from './sections';
 import { capitalize } from '@/utils';
 
-const AboutView = ({data = {}}) => {
-  const {sections = []} = data
+import Sections from './sections';
 
-  let lastTheme = ''
+const AboutView = ({ data = {} }) => {
+  const { sections = [] } = data;
 
-  return sections.map(({slug = '', ...data}) => {
-    let Section = Sections[slug.split(/[-_]/g).map(capitalize).join('')]
+  let lastTheme = '';
 
-    Section =  Section && (
-      <Section hasTransition={slug !== 'hero' && lastTheme !== data.theme} {...data}/>
-    )
+  return sections.map(({ slug = '', ...data }) => {
+    let Section = Sections[slug.split(/[-_]/g).map(capitalize).join('')];
 
-    lastTheme = data.theme
+    Section = Section && (
+      <Section
+        hasTransition={slug !== 'hero' && lastTheme !== data.theme}
+        {...data}
+      />
+    );
 
-    return Section
-  })
+    lastTheme = data.theme;
+
+    return Section;
+  });
 };
 
 export default AboutView;

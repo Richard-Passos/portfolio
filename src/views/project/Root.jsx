@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
-import {  DotsLoader, NextProject, Section } from '@/components';
+import { DotsLoader, NextProject, Section } from '@/components';
 
 import Sections from './sections';
 
@@ -30,7 +30,11 @@ const ProjectView = async ({ promises }) => {
         />
       </Suspense>
 
-      <Section hasTransition={false} theme='dark' className='flex items-center justify-center 2xl:h-screen 2xl:max-h-bounds'>
+      <Section
+        hasTransition={false}
+        theme='dark'
+        className='flex items-center justify-center 2xl:h-screen 2xl:max-h-bounds'
+      >
         <NextProject id={adjacentIds.next} />
       </Section>
     </>

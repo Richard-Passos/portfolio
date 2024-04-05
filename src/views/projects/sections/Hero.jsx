@@ -1,5 +1,3 @@
-import { cn } from '@/utils';
-
 import { Suspense } from 'react';
 
 import { projectsApi } from '@/api';
@@ -7,13 +5,14 @@ import { DotsLoader, Section } from '@/components';
 import { MagneticButton } from '@/components/button';
 import { Badge, Icon, Text } from '@/components/ui';
 import { PlusIcon } from '@/components/ui/icon/icons';
+import { cn } from '@/utils';
 
 import Show from '../show';
 
 const ROLES = ['all', 'design', 'development'],
   TYPES = [
-    { data: 'list', icon: {src: '/images/list.svg'} },
-    { data: 'grid', icon: {src: '/images/grid.svg'} },
+    { data: 'list', icon: { src: '/images/list.svg' } },
+    { data: 'grid', icon: { src: '/images/grid.svg' } },
   ];
 
 const ProjectsHeroSection = async ({ className, ...props }) => {
@@ -21,12 +20,9 @@ const ProjectsHeroSection = async ({ className, ...props }) => {
 
   return (
     <Section
-    hasTransition={false}
-    forceHeaderTheme
-      className={cn(
-        'flex flex-col items-center justify-center',
-        className,
-      )}
+      hasTransition={false}
+      forceHeaderTheme
+      className={cn('flex flex-col items-center justify-center', className)}
       {...props}
     >
       <Text.Title
@@ -99,7 +95,7 @@ const ProjectsHeroSection = async ({ className, ...props }) => {
         </Suspense>
       </Show>
 
-        <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-30' />
+      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-30' />
     </Section>
   );
 };

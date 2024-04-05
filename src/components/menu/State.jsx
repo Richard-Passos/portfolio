@@ -1,11 +1,12 @@
-'use client'
+'use client';
 
-import { cn } from '@/utils';
 import { Slot } from '@radix-ui/react-slot';
 import { useSelector } from 'react-redux';
 
+import { cn } from '@/utils';
+
 const MenuState = ({ className, ...props }) => {
-  const {theme} = useSelector((data) => data.header);
+  const { theme } = useSelector((data) => data.header);
 
   return (
     <Slot

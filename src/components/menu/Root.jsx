@@ -2,8 +2,8 @@ import Button from '../button';
 import { Menu as MenuUi, Portal } from '../ui';
 import Content from './Content';
 import Overlay from './Overlay';
-import Trigger from './Trigger';
 import State from './State';
+import Trigger from './Trigger';
 
 const Menu = (props) => {
   return (
@@ -17,20 +17,18 @@ const Menu = (props) => {
         </Button>
       </MenuUi.Trigger>
 
-        <State>
-      <MenuUi.Portal>
-        <Content />
+      <State>
+        <MenuUi.Portal>
+          <Content />
 
-        <Overlay />
-      </MenuUi.Portal>
-          </State>
+          <Overlay />
+        </MenuUi.Portal>
+      </State>
 
-        <State>
-      <Portal
-        className='fixed pointer-events-none right-sm top-sm z-[60]'
-      >
-        <Trigger />
-      </Portal>
+      <State>
+        <Portal className='pointer-events-none fixed right-sm top-sm z-[60]'>
+          <Trigger />
+        </Portal>
       </State>
     </MenuUi>
   );

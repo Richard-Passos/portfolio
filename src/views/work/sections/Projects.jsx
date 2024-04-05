@@ -8,11 +8,8 @@ import { cn } from '@/utils';
 const WorkViewProjectsSection = ({ className, ...props }) => {
   return (
     <Section
-    hasTransition={false}
-      className={cn(
-        'flex flex-col items-center',
-        className,
-      )}
+      hasTransition={false}
+      className={cn('flex flex-col items-center', className)}
       {...props}
     >
       <h2 className='mb-md flex w-full flex-col'>

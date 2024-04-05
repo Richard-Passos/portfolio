@@ -4,7 +4,7 @@ import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
-const HomeViewSecondText = ({  className, ...props }) => {
+const HomeViewSecondText = ({ className, ...props }) => {
   const animationConfig = {
     scroll: 'scrollY',
     scrollPoints: [0, 400],
@@ -14,10 +14,10 @@ const HomeViewSecondText = ({  className, ...props }) => {
   };
 
   return (
-      <ScrollAnimate config={animationConfig}>
+    <ScrollAnimate config={animationConfig}>
       <Section
-      as='div'
-      hasTransition={false}
+        as='div'
+        hasTransition={false}
         className={cn(
           'flex items-center justify-center max-2xl:overflow-hidden 2xl:h-screen 2xl:max-h-bounds',
           className,
@@ -33,8 +33,6 @@ const HomeViewSecondText = ({  className, ...props }) => {
         <GlobeIcon className='absolute bottom-0 right-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] translate-x-1/2 -rotate-[--rotate] fill-muted' />
       </Section>
     </ScrollAnimate>
-
-
   );
 };
 

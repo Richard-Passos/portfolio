@@ -1,11 +1,9 @@
-import Sections from './sections'
-
-
+import Sections from './sections';
 
 const ProjectsView = () => {
   return (
     <>
-    <Sections.Hero theme='dark'/>
+      <Sections.Hero theme='dark' />
     </>
   );
 };

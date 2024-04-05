@@ -27,7 +27,7 @@ const ProjectViewAboutSection = ({ data = {}, className, ...props }) => {
 
   return (
     <Section
-    hasTransition={false}
+      hasTransition={false}
       className={cn(
         'z-10 flex w-9/10 flex-col items-center justify-center',
         className,

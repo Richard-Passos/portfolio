@@ -15,27 +15,27 @@ const Layout = ({ children }) => {
       <Providers.GlobalState>
         <SmoothScroll>
           <Header.GetState>
-          <body
-            className={cn(
-              'relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app',
-              font.variable,
-            )}
-            id='top'
-          >
-            <Cursor>
-              <Cursor.Content />
-            </Cursor>
+            <body
+              className={cn(
+                'relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app',
+                font.variable,
+              )}
+              id='top'
+            >
+              <Cursor>
+                <Cursor.Content />
+              </Cursor>
 
-            <Header />
+              <Header />
 
-            <ErrorBoundary.Provider>
-              <ErrorBoundary>
-                <AnimatePresence mode='await'>{children}</AnimatePresence>
-              </ErrorBoundary>
-            </ErrorBoundary.Provider>
+              <ErrorBoundary.Provider>
+                <ErrorBoundary>
+                  <AnimatePresence mode='await'>{children}</AnimatePresence>
+                </ErrorBoundary>
+              </ErrorBoundary.Provider>
 
-            <Footer />
-          </body>
+              <Footer />
+            </body>
           </Header.GetState>
         </SmoothScroll>
       </Providers.GlobalState>

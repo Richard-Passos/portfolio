@@ -1,5 +1,10 @@
 import { globalsApi } from '@/api';
-import { GridPattern, ScrollAnimate, ScrollIndicator, Section } from '@/components';
+import {
+  GridPattern,
+  ScrollAnimate,
+  ScrollIndicator,
+  Section,
+} from '@/components';
 import { Text } from '@/components/ui';
 import { SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
@@ -40,11 +45,11 @@ const WorkViewHeroSection = async ({ className, ...props }) => {
   };
 
   return (
-      <Section
+    <Section
       hasTransition={false}
       forceHeaderTheme
       className={cn(
-        '-mt-[--header-h] *:*:last:*:hidden pb-0 pt-0 overflow-hidden max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
+        '-mt-[--header-h] overflow-hidden pb-0 pt-0 *:*:last:*:hidden max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
         className,
       )}
       {...props}
@@ -52,7 +57,7 @@ const WorkViewHeroSection = async ({ className, ...props }) => {
       <ScrollAnimate.Transform config={animationConfig.y}>
         <ScrollAnimate config={animationConfig.scale}>
           <ScrollAnimate config={animationConfig.opacity}>
-            <div className='relative flex size-full items-center justify-center px-[--inset] pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-2xl:min-h-svh max-sm:!translate-y-0 2xl:[--w:--max-w]'>
+            <div className='relative flex size-full items-center justify-center px-[--inset] pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] [--w:100vw] [--inset:calc(var(--w)*.025)] max-2xl:min-h-svh max-sm:!translate-y-0 2xl:[--w:--max-w]'>
               <div className='w-9/10 pb-[--inset] sm:scale-[--scale] sm:opacity-[--opacity]'>
                 <Text.Title
                   aria-label='Turning heads and conquering hearts.'
@@ -63,13 +68,13 @@ const WorkViewHeroSection = async ({ className, ...props }) => {
                   <h1>
                     <div aria-hidden>
                       <span className='lg:-translate-x-[--x]'>
-                      Beyond code, 
+                        Beyond code,
                       </span>
 
                       <br />
 
                       <span className='lg:translate-x-[--x]'>
-                       boundaries <span className='outline-text'>&</span>
+                        boundaries <span className='outline-text'>&</span>
                       </span>
 
                       <br />
@@ -78,7 +83,10 @@ const WorkViewHeroSection = async ({ className, ...props }) => {
                         <span>results</span>
 
                         <span className='max-w-sm -translate-y-3.5 text-start text-[.12em]/[1.15] font-normal normal-case tracking-normal text-muted-content max-lg:hidden'>
-                        Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.
+                          Helping brands achieve digital prominence. I bring a
+                          passion for cutting-edge technology and a commitment
+                          to transforming ideas into impactful, user-centric
+                          solutions.
                         </span>
                       </div>
                     </div>
@@ -87,16 +95,17 @@ const WorkViewHeroSection = async ({ className, ...props }) => {
 
                 <div className='mx-auto grid max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
                   <Text className='col-span-full max-w-lg justify-self-center text-center text-muted-content sm:col-span-4 lg:sr-only'>
-                  Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.
+                    Helping brands achieve digital prominence. I bring a passion
+                    for cutting-edge technology and a commitment to transforming
+                    ideas into impactful, user-centric solutions.
                   </Text>
-
 
                   <Text className='text-xs font-semibold md:-order-1'>
                     {personalInfo.availability}
                   </Text>
 
                   <ScrollAnimate.Transform config={animationConfig.rotate}>
-                    <SmileIcon className='justify-self-end size-6 md:col-end-7' />
+                    <SmileIcon className='size-6 justify-self-end md:col-end-7' />
                   </ScrollAnimate.Transform>
                 </div>
               </div>

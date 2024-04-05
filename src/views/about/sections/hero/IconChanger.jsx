@@ -4,7 +4,11 @@ import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Icon } from '@/components/ui';
 import { cn } from '@/utils';
 
-const AboutViewHeroIconChangerSection = ({ className,data =[], ...props }) => {
+const AboutViewHeroIconChangerSection = ({
+  className,
+  data = [],
+  ...props
+}) => {
   const animationConfig = {
     x: {
       prop: 'x',

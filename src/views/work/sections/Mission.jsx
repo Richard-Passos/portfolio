@@ -22,9 +22,9 @@ const WorkViewMissionSection = ({ className, ...props }) => {
 
 const WorkViewMissionListSection = (props) => {
   const content = [
-    { text: 'Improve', icon: {src: '/images/rocket.svg'} },
-    { text: 'Inspire ', icon: {src: '/images/globe.svg'} },
-    { text: 'Repeat', icon: {src: '/images/smile.svg'} },
+    { text: 'Improve', icon: { src: '/images/rocket.svg' } },
+    { text: 'Inspire ', icon: { src: '/images/globe.svg' } },
+    { text: 'Repeat', icon: { src: '/images/smile.svg' } },
   ];
 
   return (

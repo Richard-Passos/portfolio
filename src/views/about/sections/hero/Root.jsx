@@ -6,32 +6,37 @@ import { cn } from '@/utils';
 import IconChanger from './IconChanger';
 import Images from './Images';
 
-const AboutViewHeroSection = ({ className,data, ...props }) => {
+const AboutViewHeroSection = ({ className, data, ...props }) => {
   return (
-      <Section
+    <Section
       forceHeaderTheme
-      className={cn(
-        'flex flex-col items-center gap-lg',
-        className,
-      )}
+      className={cn('flex flex-col items-center gap-lg', className)}
       {...props}
     >
       <div className='w-9/10 max-w-screen-lg space-y-sm'>
         <TextTitle
           asChild
           aria-label={data.title}
-          className='max-sm:text-center whitespace-pre-line'
+          className='whitespace-pre-line max-sm:text-center'
           variants={{ size: 'lg' }}
         >
           <h1>
-            {data.title?.split(' ').map((w, i, arr) => i === arr.length - 1 ? 
-            <span key={i} className='relative inline'>
-              {w}
+            {data.title?.split(' ').map((w, i, arr) =>
+              i === arr.length - 1 ? (
+                <span
+                  key={i}
+                  className='relative inline'
+                >
+                  {w}
 
-              <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
-                {data.subtitle}
-              </Badge>
-            </span>: `${w} `)}
+                  <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
+                    {data.subtitle}
+                  </Badge>
+                </span>
+              ) : (
+                `${w} `
+              ),
+            )}
           </h1>
         </TextTitle>
 
