@@ -29,11 +29,11 @@ const ScrollTitle = ({ dir = 'ltr', className, variants, title, ...props }) => {
     <TextTitle
       asChild
       className={cn(
-        'w-full overflow-hidden text-[16vw]/[1] font-bold',
+        'w-full overflow-hidden',
         className,
       )}
       ref={containerRef}
-      variants={{ size: 'xl', ...variants }}
+      variants={{ size: 'lg', ...variants }}
       {...props}
     >
       <span>
