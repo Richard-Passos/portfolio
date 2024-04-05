@@ -31,7 +31,7 @@ const AboutViewValuesSection = ({ className, data = {}, ...props }) => {
       >
         <Text.Title
           aria-label={data.tile}
-          className='w-9/10 max-w-screen-xl whitespace-pre-line'
+          className='w-9/10 max-w-screen-xl whitespace-pre-line text-[16vw]/none'
           variants={{ size: 'lg' }}
         >
           {data.title?.split(' ').map((w, i, arr) =>
