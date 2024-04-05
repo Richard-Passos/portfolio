@@ -42,7 +42,7 @@ const AboutViewValuesSection = ({ className, data = {}, ...props }) => {
                 >
                   {w}
 
-                  <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] first-letter:uppercase lowercase tracking-normal'>
+                  <Badge className='absolute max-sm:translate-y-1/3 bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1em] w-max py-[.75em] text-[.24em] sm:text-[.17em] first-letter:uppercase lowercase tracking-normal'>
                     {data.subtitle}
                   </Badge>
                 </span>
