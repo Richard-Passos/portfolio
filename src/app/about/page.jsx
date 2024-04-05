@@ -1,4 +1,5 @@
 import { pagesApi } from '@/api';
+import { capitalize } from '@/utils';
 import { AboutView } from '@/views';
 
 const AboutPage = async () => {
@@ -11,10 +12,10 @@ const generateMetadata = async () => {
    const { metadata = {} } = (await pagesApi.getOne('about')).data || {};
 
   return {
-    title: metadata.title,
+    title: capitalize(metadata.title),
     description: metadata.description,
     openGraph: {
-      title: metadata.title,
+      title: capitalize(metadata.title),
       description: metadata.description,
     },
   };
