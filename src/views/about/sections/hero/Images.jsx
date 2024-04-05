@@ -1,15 +1,19 @@
-import { ScrollAnimate } from '@/components/scroll-animate';
+import { ScrollAnimate } from '@/components';
 import { Image } from '@/components/ui';
 import { cn } from '@/utils';
 
 const SCROLL_OFFSET = ['0 1', '0 0'],
  ANIMATION_CONFIG = {
-  y: {
+  y1: {
     scrollConfig: {
       offset: SCROLL_OFFSET,
     },
     prop: '--y',
     propPoints: ['-5%', '0%'],
+  },
+  y2: {
+    prop: 'y',
+    propPoints: ['-13%', '0%']
   },
   x: {
     scrollConfig: {
@@ -29,7 +33,7 @@ const SCROLL_OFFSET = ['0 1', '0 0'],
 
 const AboutViewHeroImagesSeciton = ({ className, data = [], ...props }) => {
   return (
-    <ScrollAnimate config={ANIMATION_CONFIG.y}>
+    <ScrollAnimate config={ANIMATION_CONFIG.y1}>
       <ScrollAnimate config={ANIMATION_CONFIG.x}>
         <ScrollAnimate config={ANIMATION_CONFIG.rotate}>
           <ul
@@ -44,10 +48,12 @@ const AboutViewHeroImagesSeciton = ({ className, data = [], ...props }) => {
                 className='aspect-[1/1.4] shadow-md bg-muted w-full overflow-hidden rounded-3xl even:z-10 max-sm:last:hidden sm:first:translate-x-[--x] sm:first:-rotate-[--rotate] sm:last:-translate-x-[--x] sm:last:rotate-[--rotate] sm:odd:mt-[25%] sm:odd:translate-y-[--y]'
                 key={data.src}
               >
+                <ScrollAnimate.Transform config={ANIMATION_CONFIG.y2}>
                 <Image
-                  className='size-full object-cover'
+                  className='w-full h-[115%] object-cover'
                   {...data}
                 />
+                </ScrollAnimate.Transform>
               </li>
             ))}
           </ul>
