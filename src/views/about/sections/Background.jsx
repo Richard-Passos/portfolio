@@ -32,10 +32,10 @@ const AboutViewBackgroundSection = ({ className, data = {}, ...props }) => {
 
       <section className='mt-md grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
         <Text className='text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
-          <TextScrollAnimate text={data.subtitle} />
+          <TextScrollAnimate className='first:first-letter:uppercase' text={data.subtitle} />
         </Text>
 
-        <Text className='text-muted-content max-sm:text-center sm:max-w-lg sm:justify-self-end'>
+        <Text className='text-muted-content max-sm:text-center first-letter:uppercase sm:max-w-lg sm:justify-self-end'>
           {data.description}
         </Text>
       </section>
@@ -63,7 +63,7 @@ const AboutViewBackgroundSection = ({ className, data = {}, ...props }) => {
 
             <Separator className='mb-xs' />
 
-            <Text className='mt-sm text-lg/relaxed text-muted-content'>
+            <Text className='mt-sm text-lg/relaxed first-letter:uppercase text-muted-content'>
               {data.description}
             </Text>
           </section>
