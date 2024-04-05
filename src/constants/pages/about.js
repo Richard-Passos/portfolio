@@ -42,7 +42,7 @@ const aboutPage = {
         subtitle: 'Just someone who wanna conquer minds and hearts.',
         description:
           "I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
-        blocks: [
+        block:
           {
             title: 'Background',
             description:
@@ -54,7 +54,6 @@ const aboutPage = {
               height: 3737,
             },
           },
-        ],
       },
     },
     {
