@@ -13,7 +13,7 @@ import { services } from '@/constants';
 import { useChangeKeyWhenFalsy, useFormField } from '@/hooks';
 import { capitalize } from '@/utils';
 
-const ContactFormSelect = (props) => {
+const ContactFormSelect = ({placeholder, ...props}) => {
   const { name } = useFormField(),
     { register, watch } = useFormContext();
 
@@ -31,7 +31,7 @@ const ContactFormSelect = (props) => {
     >
       <FormControl customRegister={{ ref }}>
         <Select.Trigger>
-          <Select.Value placeholder='Select a service...' />
+          <Select.Value placeholder={placeholder} />
 
           <Select.Icon
             asChild
@@ -42,7 +42,6 @@ const ContactFormSelect = (props) => {
         </Select.Trigger>
       </FormControl>
 
-      <Select.Portal>
         <Select.Content>
           <Select.Viewport>
             {services.map(({ title = '' }) => (
@@ -63,7 +62,6 @@ const ContactFormSelect = (props) => {
             <ChevronDownIcon className='h-3.5 w-3.5' />
           </Select.ScrollButton.Down>
         </Select.Content>
-      </Select.Portal>
     </Select>
   );
 };

@@ -5,29 +5,19 @@ import { PaperPlaneIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
 
 import Form from '../form';
-import { CONTACT_VIEW_HERO_SECTION_ICONS } from './hero/Root';
 
-const ContactViewContactSection = async ({ className, ...props }) => {
+const ContactViewContactSection = async ({ className, data = {}, ...props }) => {
   const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
 
-  const extraInfo = [
-    {
-      title: 'Availability',
-      content: personalInfo.availability,
-    },
-    {
-      title: 'Local time',
-      content: <LocalTime key='local-time' />,
-    },
-    {
-      title: 'Location',
-      content: `${personalInfo.location?.country}, ${personalInfo.location?.state}`,
-    },
-    {
-      title: 'Cleber',
-      content: 'Lorem, ipsum',
-    },
-  ];
+  const {info = {}, form = {}} = data
+
+  const infoData = {
+    availability: personalInfo.availability,
+    'local-time': <LocalTime key='local-time' />,
+    location: `${personalInfo.location?.country}, ${personalInfo.location?.state}`,
+    'buy-coffee': <Link key='buy-coffee' href={personalInfo.buyCoffee?.href}>{personalInfo.buyCoffee?.label}</Link>
+  }
+
   return (
     <Section
       className={cn(
@@ -36,11 +26,11 @@ const ContactViewContactSection = async ({ className, ...props }) => {
       )}
       {...props}
     >
-      <div className='primary w-9/10 rounded-md bg-main p-sm shadow-md sm:w-full md:max-w-60'>
+      <div className='primary w-9/10 rounded-lg bg-main p-sm shadow-md sm:w-full md:max-w-60'>
         <div className='relative mb-sm flex w-full justify-center overflow-hidden border-t'>
-          {CONTACT_VIEW_HERO_SECTION_ICONS.map((icon) => (
+          {info.icons?.map((icon) => (
             <Icon
-              className='aspect-square h-auto w-[33.333%] fill-muted first:-translate-x-1/2 last:translate-x-1/2 odd:-mt-[15%] even:absolute even:top-0 even:-translate-y-[70%]'
+              className='aspect-square h-auto w-[33.333%] text-muted first:-translate-x-1/2 last:translate-x-1/2 odd:-mt-[15%] even:absolute even:top-0 even:-translate-y-[70%]'
               key={icon.src}
               {...icon}
             />
@@ -48,16 +38,16 @@ const ContactViewContactSection = async ({ className, ...props }) => {
         </div>
 
         <ul className='mb-sm mt-auto grid gap-xs'>
-          {extraInfo.map(({ title, content }) => (
+          {info.items?.map((data) => (
             <li
               className='rounded-sm border bg-main p-4'
-              key={title}
+              key={data.title}
             >
               <Text.Title className='mb-0.5 text-xs uppercase text-muted-content'>
-                {title}
+                {data.title}
               </Text.Title>
 
-              <Text className='text-sm'>{content}</Text>
+              <Text className='text-sm first-letter:uppercase'>{infoData[data.slug?.toLowerCase()]}</Text>
             </li>
           ))}
         </ul>
@@ -76,23 +66,23 @@ const ContactViewContactSection = async ({ className, ...props }) => {
       <div className='h-fit w-full rounded-lg border bg-main p-sm shadow-md sm:p-[calc(var(--spacing-sm)*1.5)] md:max-w-fit'>
         <section className='mb-md'>
           <Text.Title className='mb-6 text-base font-medium'>
-            To:{' '}
+            <span className='first-letter:uppercase lowercase'>{form.title}:</span>{' '}
             <span className='ml-2 rounded-sm bg-muted px-3 py-1'>
               {personalInfo.email}
             </span>
           </Text.Title>
 
-          <Form />
+          <Form data={{fields: form.fields, submit: form.submit}} />
         </section>
 
         <section>
-          <Text.Title className='mb-2 text-sm font-medium text-muted-content'>
-            Or just email me at
+          <Text.Title className='mb-2 text-sm font-medium first-letter:uppercase lowercase text-muted-content'>
+            {form.subtitle}:
           </Text.Title>
 
           <Link
             className='group relative h-14 w-full justify-between gap-5 break-all rounded-sm border bg-main p-5'
-            href={`mailto:${personalInfo.email}?subject=👋 Hey ${personalInfo.name?.first}, I'd like to hire you!`}
+            href={`mailto:${personalInfo.email}?subject=${form.subject}`}
           >
             <div className='relative flex items-center justify-center overflow-hidden'>
               <PaperPlaneIcon className='h-5 w-5 transition-transform duration-0 ease-backOut group-hover:-translate-y-full group-hover:translate-x-full group-hover:duration-500' />
@@ -112,7 +102,7 @@ const ContactViewContactSection = async ({ className, ...props }) => {
               baseVelocity={i % 2 === 0 ? 1 : -1.5}
               className='text-[min(32vmin,16rem)]/none font-extrabold uppercase tracking-tighter text-muted [--gap:.2em]'
             >
-              <span>Contact me</span> ·
+              <span>{data.title}</span> ·
             </HorizontalScroll>
           </li>
         ))}

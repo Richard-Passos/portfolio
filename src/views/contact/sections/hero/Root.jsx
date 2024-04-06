@@ -1,6 +1,5 @@
-import { Section } from '@/components';
-import { ScrollAnimate } from '@/components/scroll-animate';
-import { Icon } from '@/components/ui';
+import { Section, ScrollAnimate } from '@/components';
+import { Icon, Image } from '@/components/ui';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
@@ -8,20 +7,22 @@ import HorizontalScroll from './HorizontalScroll';
 import StatsChanger from './StatsChanger';
 import Title from './Title';
 
-const CONTACT_VIEW_HERO_SECTION_ICONS = [
-  { src: '/images/rocket.svg', title: 'Rocket' },
-  { src: '/images/smile.svg', title: 'Smile' },
-  { src: '/images/globe.svg', title: 'Globe' },
-];
+const ANIMATION_CONFIG = {
+  y1: {
+  scrollConfig: {
+    offset: ['0 1', '0 0'],
+  },
+  prop: '--y',
+  propPoints: [1, 0],
+  },
+  y2: {
+  prop: 'y',
+  propPoints: ['-13%', '0%'],
+  }
+};
 
-const ContactViewHeroSection = ({ className, ...props }) => {
-  const animationConfig = {
-    scrollConfig: {
-      offset: ['0 1', '0 0'],
-    },
-    prop: '--y',
-    propPoints: [1, 0],
-  };
+const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
+  const {block = {}} = data
 
   return (
     <Section
@@ -30,12 +31,12 @@ const ContactViewHeroSection = ({ className, ...props }) => {
       className={cn('flex flex-col items-center', className)}
       {...props}
     >
-      <Title />
+      <Title className='z-20' data={data} />
 
-      <div className='relative grid w-9/10 max-w-screen-lg items-end gap-md sm:grid-cols-2'>
+      <div className='relative mt-lg grid w-9/10 max-w-screen-lg items-end gap-md sm:grid-cols-2'>
         <div className='flex h-fit flex-col justify-between sm:pb-md'>
-          <div className='relative mb-md flex w-full justify-center overflow-hidden border-b'>
-            {CONTACT_VIEW_HERO_SECTION_ICONS.map((icon) => (
+          <div className='relative flex w-full justify-center overflow-hidden border-b'>
+            {block.icons?.map((icon) => (
               <Icon
                 className='aspect-square h-auto w-[33.333%] text-muted first:-translate-x-full last:translate-x-full odd:absolute odd:bottom-0 odd:translate-y-[70%] even:-mb-[15%]'
                 key={icon.src}
@@ -44,24 +45,27 @@ const ContactViewHeroSection = ({ className, ...props }) => {
             ))}
           </div>
 
-          <HorizontalScroll />
+          <HorizontalScroll text={block.title} className='mt-md' />
 
-          <Text className='mb-sm max-w-xs text-muted-content'>
-            Ready for lift-off? Ping, tweet, message or poke — and we will get
-            back as soon as possible.
+          <Text className='max-w-xs mt-md text-muted-content'>
+            {block.description}
           </Text>
 
-          <StatsChanger />
+          <StatsChanger className='mt-sm'/>
         </div>
-        <ScrollAnimate config={animationConfig}>
-          <div className='relative z-10 aspect-[1/1.4] h-fit w-full rounded-3xl bg-red-500 shadow-md max-sm:hidden sm:-translate-y-[var(--y)*(theme(spacing.lg)*2.5)]' />
+        
+        <ScrollAnimate config={ANIMATION_CONFIG.y1}>
+          <div className='relative z-10 aspect-[1/1.4] h-fit w-full rounded-3xl bg-muted overflow-hidden shadow-md max-sm:hidden sm:-translate-y-[var(--y)*(theme(spacing.lg)*2.5)]' >
+            <ScrollAnimate.Transform config={ANIMATION_CONFIG.y2}>
+<Image className='w-full h-[115%] object-cover' {...block.image}/>
+              </ScrollAnimate.Transform>
+          </div>
         </ScrollAnimate>
       </div>
 
-      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-20' />
+      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-20' />
     </Section>
   );
 };
 
 export default ContactViewHeroSection;
-export { CONTACT_VIEW_HERO_SECTION_ICONS };

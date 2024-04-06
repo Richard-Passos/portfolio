@@ -2,29 +2,28 @@ import { HorizontalScroll } from '@/components';
 import { TextTitle } from '@/components/ui/text';
 import { cn } from '@/utils';
 
-const ContactViewHeroHorizontalScrollSection = ({ className, ...props }) => {
+const ContactViewHeroHorizontalScrollSection = ({ className, text, ...props }) => {
   return (
     <div
-      className={cn('relative mb-md', className)}
+      className={cn('relative', className)}
       {...props}
     >
       <TextTitle
-        aria-hidden
         asChild
-        className='font-medium opacity-0'
+        className='font-medium opacity-0 line-clamp-1'
         variants={{ size: 'lg' }}
       >
-        <span>A</span>
+        <span>{text}</span>
       </TextTitle>
 
-      <div className='absolute top-0 w-[90vw] max-w-screen-lg'>
+      <div aria-hidden className='absolute top-0 w-[90vw] max-w-screen-lg'>
         <HorizontalScroll className='absolute left-1/2 w-screen max-w-bounds -translate-x-1/2'>
           <TextTitle
             asChild
             className='font-medium'
             variants={{ size: 'lg' }}
           >
-            <span>Hello · Olá · Ciao · Salut · 你好 ·&nbsp;</span>
+            <span>{text}</span>
           </TextTitle>
         </HorizontalScroll>
       </div>
