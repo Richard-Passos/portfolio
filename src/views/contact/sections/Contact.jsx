@@ -37,7 +37,7 @@ const ContactViewContactSection = async ({
       )}
       {...props}
     >
-      <div className='primary w-9/10 rounded-lg bg-main p-sm shadow-md sm:w-full md:max-w-60'>
+      <div className='primary w-9/10 rounded-lg shrink-[2] bg-main p-sm shadow-md sm:w-full lg:max-w-60'>
         <div className='relative mb-sm flex w-full justify-center overflow-hidden border-t'>
           {info.icons?.map((icon) => (
             <Icon
@@ -76,7 +76,7 @@ const ContactViewContactSection = async ({
         </nav>
       </div>
 
-      <div className='h-fit w-full rounded-lg border bg-main p-sm shadow-md sm:p-[calc(var(--spacing-sm)*1.5)] md:max-w-fit'>
+      <div className='h-fit w-full rounded-lg shrink border bg-main p-sm shadow-md lg:p-[calc(var(--spacing-sm)*1.5)] md:max-w-fit'>
         <section className='mb-md'>
           <Text.Title className='mb-6 text-base font-medium'>
             <span className='lowercase first-letter:uppercase'>
@@ -114,10 +114,10 @@ const ContactViewContactSection = async ({
         {[...Array(3)].map((_, i) => (
           <li key={i}>
             <HorizontalScroll
-              baseVelocity={i % 2 === 0 ? 1 : -1.5}
+              baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
               className='text-[min(32vmin,16rem)]/none font-extrabold uppercase tracking-tighter text-muted [--gap:.2em]'
             >
-              <span>{data.title}</span> ·
+              {data.title}
             </HorizontalScroll>
           </li>
         ))}

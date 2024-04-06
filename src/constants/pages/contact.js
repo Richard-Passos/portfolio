@@ -7,9 +7,7 @@ const contactPage = {
       data: {
         title: `Drowning with \ngreat ideas?`,
         subtitle: "Let's make'em fly",
-        block: {
-          title: 'Hello · Olá · Ciao · Salut · 你好 · ',
-          description:
+        description:
             'Ready for lift-off? Ping, tweet, message or poke — and we will get back as soon as possible.',
           image: {
             src: '/images/parallax-00.jpg',
@@ -23,13 +21,12 @@ const contactPage = {
             { src: '/images/globe.svg', title: 'Globe' },
           ],
         },
-      },
     },
     {
       slug: 'contact',
       theme: 'light',
       data: {
-        title: 'Contact',
+        title: 'Hello · Olá · Ciao · Salut · 你好 ·',
         info: {
           icons: [
             { src: '/images/rocket.svg', title: 'Rocket' },
@@ -65,7 +62,7 @@ const contactPage = {
               label: 'Name',
               optionalText: '',
               control: 'input',
-              placeholder: 'Jhon',
+              placeholder: 'John Doe',
               description: 'Your name.',
               defaultValue: '',
               config: [

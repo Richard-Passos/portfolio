@@ -56,7 +56,7 @@ const ContactForm = async ({ className, data = {}, ...props }) => {
       })}
 
       <Form.Submit asChild>
-        <MagneticButton className='h-12 place-self-center max-sm:aspect-auto max-sm:px-6 sm:h-28'>
+        <MagneticButton className='h-12 place-self-center max-sm:aspect-auto max-sm:px-6 md:max-lg:w-full sm:h-auto sm:max-h-28'>
           <PaperPlaneIcon
             aria-hidden
             className='scale-90 max-sm:hidden'
