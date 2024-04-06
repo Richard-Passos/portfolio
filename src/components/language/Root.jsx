@@ -57,7 +57,6 @@ const Language = ({ className, ...props }) => {
         </Select.Icon>
       </Select.Trigger>
 
-      <Select.Portal>
         <Select.Content>
           <Select.Viewport>
             {languages.map((lang) => (
@@ -78,7 +77,6 @@ const Language = ({ className, ...props }) => {
             <ChevronDownIcon className='h-3.5 w-3.5' />
           </Select.ScrollButton.Down>
         </Select.Content>
-      </Select.Portal>
     </Select>
   );
 };
