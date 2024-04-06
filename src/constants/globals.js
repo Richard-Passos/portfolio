@@ -57,7 +57,10 @@ const globals = [
         href: 'https://www.linkedin.com/in/richardp-dev',
       },
     ],
-    buyMeACoffeHref: 'https://www.buymeacoffee.com/richardp.dev',
+    buyCoffee: {
+      label: 'Buy me a coffee',
+      href: 'https://www.buymeacoffee.com/richardp.dev'
+    },
     availability: 'Available to work',
   },
 ];
