@@ -130,16 +130,16 @@ const Grid = async ({ className, ...props }) => {
       <BentoGrid.Item className='hover:light border-none p-0 text-center [grid-area:item-7]'>
         <Link
           className='flex h-full w-full flex-col gap-1.5 rounded-inherit border p-5 no-underline transition-all hover:focus-visible:outline-main '
-          href={personalInfo.buyMeACoffeHref}
+          href={personalInfo.buyCoffee?.href}
         >
           <div className='mb-3 flex aspect-square h-10 items-center justify-center rounded-sm border transition-border'>
             <Icons.Coffee className='h-6 w-6' />
           </div>
 
-          <Text>Buy me a coffee</Text>
+          <Text>{personalInfo.buyCoffee?.label}</Text>
 
           <Text.Small className='font-normal transition-colors'>
-            buymeacoffee.com
+            {personalInfo.buyCoffee?.href?.replace(/^(?:https?:\/\/)?(?:[^@/\n]+@)?(?:www\.)?([^:/?\n]+).*/igm, '$1')}
           </Text.Small>
         </Link>
       </BentoGrid.Item>
