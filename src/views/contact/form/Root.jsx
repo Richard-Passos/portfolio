@@ -10,7 +10,7 @@ const CONTROLS = {
   input: Input,
   textarea: Textarea,
   select: Select,
-}
+};
 
 const ContactForm = async ({ className, data = {}, ...props }) => {
   return (
@@ -22,29 +22,37 @@ const ContactForm = async ({ className, data = {}, ...props }) => {
       data={data.fields}
       {...props}
     >
-      {data.fields?.map((data) =>  {
-        const Control = CONTROLS[data.control?.toLowerCase()]
+      {data.fields?.map((data) => {
+        const Control = CONTROLS[data.control?.toLowerCase()];
 
-          return (
+        return (
           <Form.Field
-          key={data.name}
-        className='sm:col-span-2 sm:last-of-type:col-span-3'
-        name={data.name}
-      >
-        <Form.Label>{data.label} {data.optionalText && <span className='text-xs text-muted-content lowercase'>({data.optionalText})</span>}</Form.Label>
+            key={data.name}
+            className='sm:col-span-2 sm:last-of-type:col-span-3'
+            name={data.name}
+          >
+            <Form.Label>
+              {data.label}{' '}
+              {data.optionalText && (
+                <span className='text-xs lowercase text-muted-content'>
+                  ({data.optionalText})
+                </span>
+              )}
+            </Form.Label>
 
-        {
-          data.control?.toLowerCase() !== 'select' ? <Form.Control>
-          <Control placeholder={data.placeholder}/>
-        </Form.Control> :
-          <Control placeholder={data.placeholder}/>
-        }
+            {data.control?.toLowerCase() !== 'select' ? (
+              <Form.Control>
+                <Control placeholder={data.placeholder} />
+              </Form.Control>
+            ) : (
+              <Control placeholder={data.placeholder} />
+            )}
 
-        <Form.Description>{data.description}</Form.Description>
+            <Form.Description>{data.description}</Form.Description>
 
-        <Form.Message />
-      </Form.Field>
-        )
+            <Form.Message />
+          </Form.Field>
+        );
       })}
 
       <Form.Submit asChild>

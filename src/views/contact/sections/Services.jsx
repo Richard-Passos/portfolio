@@ -1,5 +1,5 @@
-import { ScrollTitle,ScrollAnimate, Section, Services } from '@/components';
-import {  } from '@/components/scroll-animate';
+import { ScrollAnimate, ScrollTitle, Section, Services } from '@/components';
+import '@/components/scroll-animate';
 import { Image, Separator } from '@/components/ui';
 import { services } from '@/constants';
 import { cn } from '@/utils';
@@ -13,12 +13,10 @@ const ANIMATION_CONFIG = {
   y2: {
     prop: 'y',
     propPoints: ['-13%', '0%'],
-  } 
+  },
 };
 
 const ContactViewServicesSection = ({ className, data = {}, ...props }) => {
-  
-
   return (
     <Section
       className={cn('flex flex-col items-center', className)}
@@ -33,12 +31,15 @@ const ContactViewServicesSection = ({ className, data = {}, ...props }) => {
         ))}
       </h2>
 
-      <div className='grid mt-md w-9/10 max-w-screen-lg gap-md sm:grid-cols-2'>
+      <div className='mt-md grid w-9/10 max-w-screen-lg gap-md sm:grid-cols-2'>
         <ScrollAnimate config={ANIMATION_CONFIG.y1}>
-          <div className='h-1/2 translate-y-[--y] rounded-3xl bg-muted overflow-hidden max-sm:hidden md:h-2/3 md:translate-y-[calc(var(--y)/2)]' >
-          <ScrollAnimate.Transform config={ANIMATION_CONFIG.y2}>
-<Image className='w-full h-[115%] object-cover' {...data.image}/>
-              </ScrollAnimate.Transform>
+          <div className='h-1/2 translate-y-[--y] overflow-hidden rounded-3xl bg-muted max-sm:hidden md:h-2/3 md:translate-y-[calc(var(--y)/2)]'>
+            <ScrollAnimate.Transform config={ANIMATION_CONFIG.y2}>
+              <Image
+                className='h-[115%] w-full object-cover'
+                {...data.image}
+              />
+            </ScrollAnimate.Transform>
           </div>
         </ScrollAnimate>
 

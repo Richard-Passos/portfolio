@@ -3,13 +3,13 @@ import { capitalize } from '@/utils';
 import { AboutView } from '@/views';
 
 const AboutPage = async () => {
-  const {data} = await pagesApi.getOne('about');
+  const { data } = await pagesApi.getOne('about');
 
   return <AboutView data={data} />;
 };
 
 const generateMetadata = async () => {
-   const { metadata = {} } = (await pagesApi.getOne('about')).data || {};
+  const { metadata = {} } = (await pagesApi.getOne('about')).data || {};
 
   return {
     title: capitalize(metadata.title),

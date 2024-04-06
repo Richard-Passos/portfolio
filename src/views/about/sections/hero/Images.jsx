@@ -3,33 +3,33 @@ import { Image } from '@/components/ui';
 import { cn } from '@/utils';
 
 const SCROLL_OFFSET = ['0 1', '0 0'],
- ANIMATION_CONFIG = {
-  y1: {
-    scrollConfig: {
-      offset: SCROLL_OFFSET,
+  ANIMATION_CONFIG = {
+    y1: {
+      scrollConfig: {
+        offset: SCROLL_OFFSET,
+      },
+      prop: '--y',
+      propPoints: ['-5%', '0%'],
     },
-    prop: '--y',
-    propPoints: ['-5%', '0%'],
-  },
-  y2: {
-    prop: 'y',
-    propPoints: ['-13%', '0%']
-  },
-  x: {
-    scrollConfig: {
-      offset: SCROLL_OFFSET,
+    y2: {
+      prop: 'y',
+      propPoints: ['-13%', '0%'],
     },
-    prop: '--smooth-x',
-    propPoints: [1, 0],
-  },
-  rotate: {
-    scrollConfig: {
-      offset: SCROLL_OFFSET,
+    x: {
+      scrollConfig: {
+        offset: SCROLL_OFFSET,
+      },
+      prop: '--smooth-x',
+      propPoints: [1, 0],
     },
-    prop: '--rotate',
-    propPoints: ['15deg', '0deg'],
-  },
-};
+    rotate: {
+      scrollConfig: {
+        offset: SCROLL_OFFSET,
+      },
+      prop: '--rotate',
+      propPoints: ['15deg', '0deg'],
+    },
+  };
 
 const AboutViewHeroImagesSeciton = ({ className, data = [], ...props }) => {
   return (
@@ -45,14 +45,14 @@ const AboutViewHeroImagesSeciton = ({ className, data = [], ...props }) => {
           >
             {data.map((data) => (
               <li
-                className='aspect-[1/1.4] shadow-md bg-muted w-full overflow-hidden rounded-3xl even:z-10 max-sm:last:hidden sm:first:translate-x-[--x] sm:first:-rotate-[--rotate] sm:last:-translate-x-[--x] sm:last:rotate-[--rotate] sm:odd:mt-[25%] sm:odd:translate-y-[--y]'
+                className='aspect-[1/1.4] w-full overflow-hidden rounded-3xl bg-muted shadow-md even:z-10 max-sm:last:hidden sm:first:translate-x-[--x] sm:first:-rotate-[--rotate] sm:last:-translate-x-[--x] sm:last:rotate-[--rotate] sm:odd:mt-[25%] sm:odd:translate-y-[--y]'
                 key={data.src}
               >
                 <ScrollAnimate.Transform config={ANIMATION_CONFIG.y2}>
-                <Image
-                  className='w-full h-[115%] object-cover'
-                  {...data}
-                />
+                  <Image
+                    className='h-[115%] w-full object-cover'
+                    {...data}
+                  />
                 </ScrollAnimate.Transform>
               </li>
             ))}

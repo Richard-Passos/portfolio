@@ -48,24 +48,24 @@ const AboutViewExtraSection = ({ className, data = [], ...props }) => {
 
       <div className='relative md:row-start-1'>
         <ScrollAnimateTransform config={ANIMATION_CONFIG.y1}>
-          <div className='w-6-full overflow-hidden rounded-3xl aspect-[1/1.4] md:max-lg:h-full max-md:!translate-y-0'>
-              <ScrollAnimateTransform config={ANIMATION_CONFIG.y2}>
-                <Image
-                  className='w-full h-[115%] object-cover'
-                  {...data.images?.[0]}
-                />
-              </ScrollAnimateTransform>
+          <div className='w-6-full aspect-[1/1.4] overflow-hidden rounded-3xl max-md:!translate-y-0 md:max-lg:h-full'>
+            <ScrollAnimateTransform config={ANIMATION_CONFIG.y2}>
+              <Image
+                className='h-[115%] w-full object-cover'
+                {...data.images?.[0]}
+              />
+            </ScrollAnimateTransform>
           </div>
         </ScrollAnimateTransform>
 
         <ScrollAnimateTransform config={ANIMATION_CONFIG.y3}>
-          <div className='absolute bottom-0 right-0 aspect-[1/1.4] w-2/3 overflow-hidden rounded-3xl shadow-md translate-x-md max-lg:hidden'>
-              <ScrollAnimateTransform config={ANIMATION_CONFIG.y2}>
-                <Image
-                  className='w-full h-[115%] object-cover'
-                  {...data.images?.[1]}
-                />
-              </ScrollAnimateTransform>
+          <div className='absolute bottom-0 right-0 aspect-[1/1.4] w-2/3 translate-x-md overflow-hidden rounded-3xl shadow-md max-lg:hidden'>
+            <ScrollAnimateTransform config={ANIMATION_CONFIG.y2}>
+              <Image
+                className='h-[115%] w-full object-cover'
+                {...data.images?.[1]}
+              />
+            </ScrollAnimateTransform>
           </div>
         </ScrollAnimateTransform>
       </div>

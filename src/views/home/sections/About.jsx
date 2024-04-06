@@ -139,7 +139,10 @@ const Grid = async ({ className, ...props }) => {
           <Text>{personalInfo.buyCoffee?.label}</Text>
 
           <Text.Small className='font-normal transition-colors'>
-            {personalInfo.buyCoffee?.href?.replace(/^(?:https?:\/\/)?(?:[^@/\n]+@)?(?:www\.)?([^:/?\n]+).*/igm, '$1')}
+            {personalInfo.buyCoffee?.href?.replace(
+              /^(?:https?:\/\/)?(?:[^@/\n]+@)?(?:www\.)?([^:/?\n]+).*/gim,
+              '$1',
+            )}
           </Text.Small>
         </Link>
       </BentoGrid.Item>

@@ -29,7 +29,7 @@ const AboutViewHeroSection = ({ className, data, ...props }) => {
                 >
                   {w}
 
-                    <Badge className='absolute max-sm:translate-y-1/3 bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content w-max px-[1em] py-[.75em] text-[.24em] sm:text-[.17em] first-letter:uppercase lowercase tracking-normal'>
+                  <Badge className='absolute bottom-0 right-0 w-max -translate-x-4 -rotate-12 border-variant-content px-[1em] py-[.75em] text-[.24em] lowercase tracking-normal first-letter:uppercase max-sm:translate-y-1/3 sm:text-[.17em]'>
                     {data.subtitle}
                   </Badge>
                 </span>
@@ -49,7 +49,10 @@ const AboutViewHeroSection = ({ className, data, ...props }) => {
         </div>
       </div>
 
-      <Images className='mt-lg' data={data.images} />
+      <Images
+        className='mt-lg'
+        data={data.images}
+      />
 
       <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-30' />
     </Section>

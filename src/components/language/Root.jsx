@@ -57,26 +57,26 @@ const Language = ({ className, ...props }) => {
         </Select.Icon>
       </Select.Trigger>
 
-        <Select.Content>
-          <Select.Viewport>
-            {languages.map((lang) => (
-              <LanguageSelectItem
-                key={lang}
-                value={lang.toLowerCase()}
-              >
-                {lang}
-              </LanguageSelectItem>
-            ))}
-          </Select.Viewport>
+      <Select.Content>
+        <Select.Viewport>
+          {languages.map((lang) => (
+            <LanguageSelectItem
+              key={lang}
+              value={lang.toLowerCase()}
+            >
+              {lang}
+            </LanguageSelectItem>
+          ))}
+        </Select.Viewport>
 
-          <Select.ScrollButton.Up>
-            <ChevronUpIcon className='h-3.5 w-3.5' />
-          </Select.ScrollButton.Up>
+        <Select.ScrollButton.Up>
+          <ChevronUpIcon className='h-3.5 w-3.5' />
+        </Select.ScrollButton.Up>
 
-          <Select.ScrollButton.Down>
-            <ChevronDownIcon className='h-3.5 w-3.5' />
-          </Select.ScrollButton.Down>
-        </Select.Content>
+        <Select.ScrollButton.Down>
+          <ChevronDownIcon className='h-3.5 w-3.5' />
+        </Select.ScrollButton.Down>
+      </Select.Content>
     </Select>
   );
 };

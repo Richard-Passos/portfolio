@@ -13,7 +13,7 @@ import { services } from '@/constants';
 import { useChangeKeyWhenFalsy, useFormField } from '@/hooks';
 import { capitalize } from '@/utils';
 
-const ContactFormSelect = ({placeholder, ...props}) => {
+const ContactFormSelect = ({ placeholder, ...props }) => {
   const { name } = useFormField(),
     { register, watch } = useFormContext();
 
@@ -42,26 +42,26 @@ const ContactFormSelect = ({placeholder, ...props}) => {
         </Select.Trigger>
       </FormControl>
 
-        <Select.Content>
-          <Select.Viewport>
-            {services.map(({ title = '' }) => (
-              <ContactFormSelectItem
-                key={title}
-                value={title.toLowerCase()}
-              >
-                {capitalize(title)}
-              </ContactFormSelectItem>
-            ))}
-          </Select.Viewport>
+      <Select.Content>
+        <Select.Viewport>
+          {services.map(({ title = '' }) => (
+            <ContactFormSelectItem
+              key={title}
+              value={title.toLowerCase()}
+            >
+              {capitalize(title)}
+            </ContactFormSelectItem>
+          ))}
+        </Select.Viewport>
 
-          <Select.ScrollButton.Up>
-            <ChevronUpIcon className='h-3.5 w-3.5' />
-          </Select.ScrollButton.Up>
+        <Select.ScrollButton.Up>
+          <ChevronUpIcon className='h-3.5 w-3.5' />
+        </Select.ScrollButton.Up>
 
-          <Select.ScrollButton.Down>
-            <ChevronDownIcon className='h-3.5 w-3.5' />
-          </Select.ScrollButton.Down>
-        </Select.Content>
+        <Select.ScrollButton.Down>
+          <ChevronDownIcon className='h-3.5 w-3.5' />
+        </Select.ScrollButton.Down>
+      </Select.Content>
     </Select>
   );
 };

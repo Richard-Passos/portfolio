@@ -183,7 +183,7 @@
   }
 
   .outline-text {
-    @apply [background-clip:text] [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:theme(spacing[0.5])];
+    @apply [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:theme(spacing[0.5])] [background-clip:text];
   }
 
   .vertical-text {

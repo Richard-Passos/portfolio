@@ -28,10 +28,7 @@ const ScrollTitle = ({ dir = 'ltr', className, variants, title, ...props }) => {
   return (
     <TextTitle
       asChild
-      className={cn(
-        'w-full overflow-hidden text-[16vw]/none',
-        className,
-      )}
+      className={cn('w-full overflow-hidden text-[16vw]/none', className)}
       ref={containerRef}
       variants={{ size: 'lg', ...variants }}
       {...props}

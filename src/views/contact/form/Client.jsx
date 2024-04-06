@@ -8,18 +8,26 @@ import * as z from 'zod';
 import { Form, FormProvider } from '@/components/ui/form';
 import { capitalize } from '@/utils';
 
-const ContactFormClient = ({data = [], ...props}) => {
-  const schema  = z.object(
+const ContactFormClient = ({ data = [], ...props }) => {
+  const schema = z.object(
     data.reduce(
-      (obj, field = {}) => ({...obj, [field.name]: field.config?.reduce(
-        (obj, {name, params = []}) => obj[name]?.(...params), z)}
-      ), {}
-    )
+      (obj, field = {}) => ({
+        ...obj,
+        [field.name]: field.config?.reduce(
+          (obj, { name, params = [] }) => obj[name]?.(...params),
+          z,
+        ),
+      }),
+      {},
+    ),
   );
 
   const form = useForm({
     resolver: zodResolver(schema),
-    defaultValues: data.reduce((obj, field = {}) => ({...obj, [field.name]: field.defaultValue}), {}),
+    defaultValues: data.reduce(
+      (obj, field = {}) => ({ ...obj, [field.name]: field.defaultValue }),
+      {},
+    ),
   });
 
   const { reset } = form,

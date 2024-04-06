@@ -12,7 +12,9 @@ const ContactView = ({ data = {} }) => {
 
     Section = Section && (
       <Section
-        hasTransition={slug.toLowerCase() !== 'hero' && lastTheme !== data.theme}
+        hasTransition={
+          slug.toLowerCase() !== 'hero' && lastTheme !== data.theme
+        }
         {...data}
       />
     );

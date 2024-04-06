@@ -59,7 +59,7 @@ const globals = [
     ],
     buyCoffee: {
       label: 'Buy me a coffee',
-      href: 'https://www.buymeacoffee.com/richardp.dev'
+      href: 'https://www.buymeacoffee.com/richardp.dev',
     },
     availability: 'Available to work',
   },

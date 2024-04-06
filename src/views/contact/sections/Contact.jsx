@@ -6,17 +6,28 @@ import { cn } from '@/utils';
 
 import Form from '../form';
 
-const ContactViewContactSection = async ({ className, data = {}, ...props }) => {
+const ContactViewContactSection = async ({
+  className,
+  data = {},
+  ...props
+}) => {
   const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
 
-  const {info = {}, form = {}} = data
+  const { info = {}, form = {} } = data;
 
   const infoData = {
     availability: personalInfo.availability,
     'local-time': <LocalTime key='local-time' />,
     location: `${personalInfo.location?.country}, ${personalInfo.location?.state}`,
-    'buy-coffee': <Link key='buy-coffee' href={personalInfo.buyCoffee?.href}>{personalInfo.buyCoffee?.label}</Link>
-  }
+    'buy-coffee': (
+      <Link
+        key='buy-coffee'
+        href={personalInfo.buyCoffee?.href}
+      >
+        {personalInfo.buyCoffee?.label}
+      </Link>
+    ),
+  };
 
   return (
     <Section
@@ -47,7 +58,9 @@ const ContactViewContactSection = async ({ className, data = {}, ...props }) => 
                 {data.title}
               </Text.Title>
 
-              <Text className='text-sm first-letter:uppercase'>{infoData[data.slug?.toLowerCase()]}</Text>
+              <Text className='text-sm first-letter:uppercase'>
+                {infoData[data.slug?.toLowerCase()]}
+              </Text>
             </li>
           ))}
         </ul>
@@ -66,17 +79,19 @@ const ContactViewContactSection = async ({ className, data = {}, ...props }) => 
       <div className='h-fit w-full rounded-lg border bg-main p-sm shadow-md sm:p-[calc(var(--spacing-sm)*1.5)] md:max-w-fit'>
         <section className='mb-md'>
           <Text.Title className='mb-6 text-base font-medium'>
-            <span className='first-letter:uppercase lowercase'>{form.title}:</span>{' '}
+            <span className='lowercase first-letter:uppercase'>
+              {form.title}:
+            </span>{' '}
             <span className='ml-2 rounded-sm bg-muted px-3 py-1'>
               {personalInfo.email}
             </span>
           </Text.Title>
 
-          <Form data={{fields: form.fields, submit: form.submit}} />
+          <Form data={{ fields: form.fields, submit: form.submit }} />
         </section>
 
         <section>
-          <Text.Title className='mb-2 text-sm font-medium first-letter:uppercase lowercase text-muted-content'>
+          <Text.Title className='mb-2 text-sm font-medium lowercase text-muted-content first-letter:uppercase'>
             {form.subtitle}:
           </Text.Title>
 

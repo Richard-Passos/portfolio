@@ -1,4 +1,4 @@
-import { Section, ScrollAnimate } from '@/components';
+import { ScrollAnimate, Section } from '@/components';
 import { Icon, Image } from '@/components/ui';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
@@ -9,20 +9,20 @@ import Title from './Title';
 
 const ANIMATION_CONFIG = {
   y1: {
-  scrollConfig: {
-    offset: ['0 1', '0 0'],
-  },
-  prop: '--y',
-  propPoints: [1, 0],
+    scrollConfig: {
+      offset: ['0 1', '0 0'],
+    },
+    prop: '--y',
+    propPoints: [1, 0],
   },
   y2: {
-  prop: 'y',
-  propPoints: ['-13%', '0%'],
-  }
+    prop: 'y',
+    propPoints: ['-13%', '0%'],
+  },
 };
 
 const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
-  const {block = {}} = data
+  const { block = {} } = data;
 
   return (
     <Section
@@ -31,7 +31,10 @@ const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
       className={cn('flex flex-col items-center', className)}
       {...props}
     >
-      <Title className='z-20' data={data} />
+      <Title
+        className='z-20'
+        data={data}
+      />
 
       <div className='relative mt-lg grid w-9/10 max-w-screen-lg items-end gap-md sm:grid-cols-2'>
         <div className='flex h-fit flex-col justify-between sm:pb-md'>
@@ -45,20 +48,26 @@ const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
             ))}
           </div>
 
-          <HorizontalScroll text={block.title} className='mt-md' />
+          <HorizontalScroll
+            text={block.title}
+            className='mt-md'
+          />
 
-          <Text className='max-w-xs mt-md text-muted-content'>
+          <Text className='mt-md max-w-xs text-muted-content'>
             {block.description}
           </Text>
 
-          <StatsChanger className='mt-sm'/>
+          <StatsChanger className='mt-sm' />
         </div>
-        
+
         <ScrollAnimate config={ANIMATION_CONFIG.y1}>
-          <div className='relative z-10 aspect-[1/1.4] h-fit w-full rounded-3xl bg-muted overflow-hidden shadow-md max-sm:hidden sm:-translate-y-[var(--y)*(theme(spacing.lg)*2.5)]' >
+          <div className='relative z-10 aspect-[1/1.4] h-fit w-full overflow-hidden rounded-3xl bg-muted shadow-md max-sm:hidden sm:-translate-y-[var(--y)*(theme(spacing.lg)*2.5)]'>
             <ScrollAnimate.Transform config={ANIMATION_CONFIG.y2}>
-<Image className='w-full h-[115%] object-cover' {...block.image}/>
-              </ScrollAnimate.Transform>
+              <Image
+                className='h-[115%] w-full object-cover'
+                {...block.image}
+              />
+            </ScrollAnimate.Transform>
           </div>
         </ScrollAnimate>
       </div>
