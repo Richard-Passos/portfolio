@@ -4,7 +4,7 @@ import { cn } from '@/utils';
 
 const SCROLL_OFFSET = ['0 1', '0 .55'];
 
-const WorkVieWhyMeCardSection = ({ className, value, title, ...props }) => {
+const WorkVieWhyMeCardSection = ({ className, data = {}, ...props }) => {
   const animationConfig = {
     opacity: {
       scrollConfig: {
@@ -42,11 +42,11 @@ const WorkVieWhyMeCardSection = ({ className, value, title, ...props }) => {
             {...props}
           >
             <Text className='text-7xl font-bold tracking-tight sm:text-8xl'>
-              {value}
+              {data.description}
             </Text>
 
             <Text.Subtitle className='ml-auto whitespace-pre-line text-end text-2xl/none font-medium uppercase tracking-tight sm:text-3xl/none'>
-              {title}
+              {data.title}
             </Text.Subtitle>
           </li>
         </ScrollAnimate>
