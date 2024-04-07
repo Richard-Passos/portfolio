@@ -76,7 +76,7 @@ const ContactViewContactSection = async ({
         </nav>
       </div>
 
-      <div className='h-fit w-full rounded-lg shrink border bg-main p-sm shadow-md lg:p-[calc(var(--spacing-sm)*1.5)] md:max-w-fit'>
+      <div className='h-fit w-full rounded-lg shrink border bg-main p-sm shadow-md lg:p-[calc(var(--spacing-sm)*1.25)] md:max-w-fit'>
         <section className='mb-md'>
           <Text.Title className='mb-6 text-base font-medium'>
             <span className='lowercase first-letter:uppercase'>

@@ -8,14 +8,13 @@ import { cn } from '@/utils';
 const ContactViewHeroStatsChangerSection = ({ className, ...props }) => {
   return (
     <DataChanger
-      className={cn('mb-md flex w-fit items-center', className)}
+      className={cn('flex relative overflow-hidden items-center h-fit w-full max-w-xs p-xs gap-xs border bg-main rounded-full', className)}
       lastIdx={stats.length - 1}
       {...props}
     >
       <DataChanger.Action asChild>
         <MagneticButton
-          aria-label='Change statistic'
-          className='mr-4 h-14 focus-visible:outline-content [&_svg]:size-[40%]'
+          className='h-14 focus-visible:outline-content [&_svg]:size-[40%]'
           limit={0.4}
           variants={{ color: 'muted' }}
         >
@@ -23,25 +22,22 @@ const ContactViewHeroStatsChangerSection = ({ className, ...props }) => {
         </MagneticButton>
       </DataChanger.Action>
 
-      <ul className='relative w-32'>
         {stats.map(({ title, value }, i) => (
           <DataChanger.Item
-            className='mb-1.5'
             idx={i}
             key={title}
           >
-            <Text.Title className='text-sm/tight text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
+            <Text.Title className='text-xs uppercase transition-[clip-path] [clip-path:inset(100%_0_0_0)] group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
               {value}
             </Text.Title>
 
-            <Text className='text-xs text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
+            <Text className='text-sm mt-1.5 first-letter:uppercase text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
               {title}
             </Text>
           </DataChanger.Item>
         ))}
 
-        <DataChanger.Timerbar />
-      </ul>
+        <DataChanger.Timerbar className='absolute inset-x-xs bottom-0' />
     </DataChanger>
   );
 };

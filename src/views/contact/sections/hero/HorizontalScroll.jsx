@@ -14,25 +14,24 @@ const ContactViewHeroHorizontalScrollSection = ({
     >
       <TextTitle
         asChild
-        className='line-clamp-1 font-medium opacity-0'
-        variants={{ size: 'lg' }}
+        className='line-clamp-1 opacity-0'
+        variants={{ size: 'xl' }}
       >
-        <span>{text}</span>
+        <h1>{text}</h1>
       </TextTitle>
 
       <div
         aria-hidden
         className='absolute top-0 w-[90vw] max-w-screen-lg'
       >
-        <HorizontalScroll className='absolute left-1/2 w-screen max-w-bounds -translate-x-1/2'>
           <TextTitle
             asChild
-            className='font-medium'
-            variants={{ size: 'lg' }}
+            variants={{ size: 'xl' }}
           >
-            <span>{text}</span>
-          </TextTitle>
+        <HorizontalScroll baseVelocity={1.5} className='absolute left-1/2 w-screen max-w-bounds -translate-x-1/2'>
+            {text}&nbsp;
         </HorizontalScroll>
+          </TextTitle>
       </div>
     </div>
   );
