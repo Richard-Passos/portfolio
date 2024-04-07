@@ -44,13 +44,13 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             </Carousel.Progress>
 
             <Carousel.Actions>
-              <HomeViewSkillsSectionCarouselAciton type='prev'>
+              <HomeViewSkillsSectionCarouselAction type='prev'>
                 <ArrowLeftIcon />
-              </HomeViewSkillsSectionCarouselAciton>
+              </HomeViewSkillsSectionCarouselAction>
 
-              <HomeViewSkillsSectionCarouselAciton type='next'>
+              <HomeViewSkillsSectionCarouselAction type='next'>
                 <ArrowRightIcon />
-              </HomeViewSkillsSectionCarouselAciton>
+              </HomeViewSkillsSectionCarouselAction>
             </Carousel.Actions>
           </section>
         </div>
@@ -95,13 +95,13 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             </Carousel.Progress>
 
             <Carousel.Actions>
-              <HomeViewSkillsSectionCarouselAciton type='prev'>
+              <HomeViewSkillsSectionCarouselAction type='prev'>
                 <ArrowLeftIcon />
-              </HomeViewSkillsSectionCarouselAciton>
+              </HomeViewSkillsSectionCarouselAction>
 
-              <HomeViewSkillsSectionCarouselAciton type='next'>
+              <HomeViewSkillsSectionCarouselAction type='next'>
                 <ArrowRightIcon />
-              </HomeViewSkillsSectionCarouselAciton>
+              </HomeViewSkillsSectionCarouselAction>
             </Carousel.Actions>
           </section>
         </div>
@@ -153,7 +153,7 @@ const HomeViewSkillsSectionCarouselItem = ({ idx, data = {}, ...props }) => {
   );
 };
 
-const HomeViewSkillsSectionCarouselAciton = ({
+const HomeViewSkillsSectionCarouselAction = ({
   className,
   variants,
   children,
