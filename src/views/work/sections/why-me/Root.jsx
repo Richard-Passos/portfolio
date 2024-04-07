@@ -52,10 +52,10 @@ const WorkViewWhyMeSection = ({ className, ...props }) => {
         </Text.Subtitle>
 
         <ul className='grid w-9/10 max-w-screen-lg gap-sm md:grid-cols-2'>
-          {stats.map((data, i) => (
+          {stats.map((data) => (
             <Card
-              key={i}
-              {...data}
+              key={data.title}
+              data={data}
             />
           ))}
         </ul>
