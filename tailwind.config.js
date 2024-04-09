@@ -2,7 +2,7 @@ const getColor = (cssVar) => `hsl(var(${cssVar}))`;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ['variant', '.dark:not(:has(.light)) &'],
+  darkMode: ['variant', ['.dark:not(:has(.light)) &', '&.dark']],
   content: [
     './src/app/**/*.jsx',
     './src/components/**/*.jsx',
