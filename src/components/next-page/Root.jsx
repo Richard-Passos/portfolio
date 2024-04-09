@@ -20,7 +20,6 @@ const NextPage = ({ text, href, className, ...props }) => {
         />
 
         <MagneticButton
-          asLink
           className='absolute h-2/3 [&_svg]:size-[40%]'
           href={href}
           variants={{ color: 'main' }}

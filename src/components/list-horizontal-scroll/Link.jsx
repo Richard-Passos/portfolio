@@ -4,7 +4,6 @@ import { ArrowUpIcon } from '../ui/icon/icons';
 const ListHorizontalScrollLink = ({ variants, children, ...props }) => {
   return (
     <Button
-      asLink
       variants={{ color: 'main', ...variants }}
       {...props}
     >

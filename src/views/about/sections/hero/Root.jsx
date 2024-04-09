@@ -54,7 +54,7 @@ const AboutViewHeroSection = ({ className, data, ...props }) => {
         data={data.images}
       />
 
-      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-30' />
+      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-20' />
     </Section>
   );
 };

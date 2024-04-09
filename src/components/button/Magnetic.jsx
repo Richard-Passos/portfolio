@@ -6,7 +6,7 @@ import Magnetic from '../magnetic';
 import Button from './Root';
 
 const MagneticButton = (
-  { limit = 0.5, asLink, variants = {}, className, children, ...props },
+  { limit = 0.5, href, variants = {}, className, children, ...props },
   ref,
 ) => {
   return (
@@ -16,7 +16,7 @@ const MagneticButton = (
       {...props}
     >
       <Button
-        asLink={asLink}
+        href={href}
         className={cn(magneticButtonVariants(variants), className)}
         variants={{ color: variants.color }}
       >

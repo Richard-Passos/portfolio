@@ -12,7 +12,6 @@ const ScrollIndicator = ({ className, variants, ...props }) => {
       {...props}
     >
       <Button
-        asLink
         className={cn(
           'aspect-square rounded-sm bg-muted px-0 [--variant-a:--primary] hover:text-primary-content [&>span]:animate-scroll-indicator [&_svg]:size-[40%]',
           className,

@@ -12,7 +12,6 @@ const BackTop = ({ className, ...props }) => {
 
   return (
     <Button
-      asLink
       className={cn('text-xs font-bold uppercase', className)}
       href='#start'
       onClick={(ev) => {

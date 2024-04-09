@@ -6,7 +6,7 @@ import { Link } from '../ui';
 import ButtonUi from '../ui/button';
 
 const Button = (
-  { children, asLink, variants = {}, className, ...props },
+  { children, href, variants = {}, className, ...props },
   ref,
 ) => {
   const content = (
@@ -28,13 +28,14 @@ const Button = (
 
   return (
     <ButtonUi
-      asChild={asLink}
+      asChild={href}
       className={cn('group relative overflow-hidden delay-100', className)}
+      href={href}
       ref={ref}
       variants={variants}
       {...props}
     >
-      {asLink ? <Link className='no-underline'>{content}</Link> : content}
+      {href ? <Link className='no-underline'>{content}</Link> : content}
     </ButtonUi>
   );
 };

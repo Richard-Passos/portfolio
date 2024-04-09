@@ -18,7 +18,6 @@ const NextProject = async ({ id, className, ...props }) => {
 
       <div className='relative flex w-full flex-col items-center justify-center gap-[.2em] [clip-path:inset(-100%_0_0_0)]'>
         <MagneticButton
-          asLink
           className='peer absolute z-10 h-2/3 [&_svg]:size-[40%]'
           href={`/projects/${id}`}
           variants={{ color: 'main' }}
