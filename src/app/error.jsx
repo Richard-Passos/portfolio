@@ -10,19 +10,9 @@ const ErrorPage = (props) => {
   return <ErrorView data={data} {...props} />;
 };
 
-const generateMetadata = async () => {
-  const { metadata = {} } = (await pagesApi.getOne('error')).data || {};
-  console.log('-  metadata   -', metadata)
-
-  return {
-    title: capitalize(metadata.title),
-    description: metadata.description,
-    openGraph: {
-      title: capitalize(metadata.title),
-      description: metadata.description,
-    },
-  };
-};
+const metadata = {
+ title: 'Error' 
+}
 
 export default ErrorPage;
-export { generateMetadata };
+export { metadata };
