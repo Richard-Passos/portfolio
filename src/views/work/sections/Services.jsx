@@ -66,7 +66,6 @@ const WorkViewServicesSection = ({ className, ...props }) => {
         </div>
 
         <Button
-          asLink
           href='/contact'
           variants={{ color: 'main' }}
         >
