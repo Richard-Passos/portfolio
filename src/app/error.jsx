@@ -1,14 +1,28 @@
 'use client';
 
+import { ErrorContext } from '@/contexts';
 import { ErrorView } from '@/views';
+import { useContext } from 'react';
 
 const ErrorPage = (props) => {
-  return <ErrorView {...props} />;
+  const data = useContext(ErrorContext);
+
+  return <ErrorView data={data} {...props} />;
 };
 
-const metadata = {
-  title: 'Error',
+const generateMetadata = async () => {
+  const { metadata = {} } = (await pagesApi.getOne('error')).data || {};
+  console.log('-  metadata   -', metadata)
+
+  return {
+    title: capitalize(metadata.title),
+    description: metadata.description,
+    openGraph: {
+      title: capitalize(metadata.title),
+      description: metadata.description,
+    },
+  };
 };
 
 export default ErrorPage;
-export { metadata };
+export { generateMetadata };
