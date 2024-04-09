@@ -16,7 +16,7 @@ const HomeViewAboutSection = ({ className, ...props }) => {
   return (
     <Section
       className={cn(
-        'flex flex-col items-center gap-lg overflow-x-clip',
+        'flex flex-col items-center gap-lg max-2xl:overflow-x-clip',
         className,
       )}
       {...props}
