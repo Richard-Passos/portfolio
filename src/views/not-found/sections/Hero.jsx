@@ -9,7 +9,7 @@ const NotFoundHeroSection = ({ className, ...props }) => {
       hasTransition={false}
       forceHeaderTheme
       className={cn(
-        '-mt-[--header-h] flex flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))] max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
+        '-mt-[--header-h] flex flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))] min-h-svh',
         className,
       )}
       {...props}
@@ -31,14 +31,13 @@ const NotFoundHeroSection = ({ className, ...props }) => {
       </Text>
 
       <Button
-        asLink
         href='/'
       >
         Back Home
       </Button>
 
       <div className='absolute top-0 h-[--header-h] w-screen bg-main'>
-        <span className='absolute left-1/2 top-full h-px w-[95%] -translate-x-1/2 bg-border opacity-60 transition-all dark:opacity-30' />
+        <span className='absolute left-1/2 top-full h-px w-[95%] -translate-x-1/2 bg-border opacity-60 transition-all dark:opacity-20' />
       </div>
     </Section>
   );
