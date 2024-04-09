@@ -15,7 +15,7 @@ import { cn } from '@/utils';
 const HomeViewAboutSection = ({ className, ...props }) => {
   return (
     <Section
-      className={cn('flex flex-col items-center gap-lg', className)}
+      className={cn('flex flex-col items-center gap-lg overflow-x-clip', className)}
       {...props}
     >
       <h2 className='flex w-full flex-col'>
@@ -26,9 +26,7 @@ const HomeViewAboutSection = ({ className, ...props }) => {
         />
       </h2>
 
-      <div className='flex w-full justify-center overflow-x-clip'>
         <Grid />
-      </div>
 
       <ListContactPage />
     </Section>
@@ -41,12 +39,13 @@ const Grid = async ({ className, ...props }) => {
   return (
     <BentoGrid
       className={cn(
-        '[grid-template-areas:"item-1""item-2""item-3""item-4""item-5""item-6""item-7"] sm:[grid-template-areas:"item-1_item-1""item-2_item-3""item-4_item-5""item-6_item-7"] lg:[grid-template-areas:"._item-1_item-1""._item-1_item-1""item-2_item-3_item-4""item-2_item-3_item-5""item-6_item-6_item-7""item-6_item-6_item-7"]',
+        'w-9/10 max-w-screen-lg [grid-template-areas:"item-0""item-1""item-2""item-3""item-4""item-5""item-6"] sm:[grid-template-areas:"item-0_item-0""item-1_item-2""item-3_item-4""item-5_item-6"] lg:[grid-template-areas:"._item-0_item-0""._item-0_item-0""item-1_item-2_item-3""item-1_item-2_item-4""item-5_item-5_item-6""item-5_item-5_item-6"]',
         className,
       )}
       {...props}
     >
-      <BentoGrid.Item className='justify-between gap-3 [grid-area:item-1]'>
+      <BentoGrid.ScrollAnimate>
+      <BentoGrid.Item idx={0} className='justify-between flex-col min-h-60'>
         <Badge
           className='w-fit'
           variants={{ color: 'inverted', style: 'outline' }}
@@ -65,8 +64,10 @@ const Grid = async ({ className, ...props }) => {
           especially when it comes to rogue-like games.
         </Text>
       </BentoGrid.Item>
+      </BentoGrid.ScrollAnimate>
 
-      <BentoGrid.Item className='justify-between [grid-area:item-2]'>
+      <BentoGrid.ScrollAnimate>
+      <BentoGrid.Item idx={1} className='justify-between flex-col min-h-60'>
         <Icons.Globe />
 
         <Text className='text-4xl font-medium'>
@@ -74,9 +75,11 @@ const Grid = async ({ className, ...props }) => {
           {personalInfo.location?.gmt}
         </Text>
       </BentoGrid.Item>
+      </BentoGrid.ScrollAnimate>
 
-      <BentoGrid.Item className='gap-0 [grid-area:item-3]'>
-        <Icons.Fingerprint />
+      <BentoGrid.ScrollAnimate>
+      <BentoGrid.Item idx={2} className='flex-col min-h-60 gap-0 p-0'>
+        <Icons.Fingerprint className='mt-sm ml-sm' />
 
         <div className='my-auto flex flex-col items-center justify-center gap-sm'>
           <Text.Subtitle className='text-center text-3xl font-bold'>
@@ -100,24 +103,30 @@ const Grid = async ({ className, ...props }) => {
           </InfinityScroll>
         </div>
       </BentoGrid.Item>
+      </BentoGrid.ScrollAnimate>
 
-      <BentoGrid.Item className='min-h-0 justify-between gap-3 p-5 [grid-area:item-4]'>
-        <Icons.Rocket className='h-5 w-5' />
+      <BentoGrid.ScrollAnimate>
+      <BentoGrid.Item idx={3} className='justify-between flex-col'>
+        <Icons.Rocket className='h-6 w-6' />
 
         <Text className='font-medium leading-tight text-muted-content'>
           Improving a little bit every day.
         </Text>
       </BentoGrid.Item>
+      </BentoGrid.ScrollAnimate>
 
-      <BentoGrid.Item className='min-h-0 justify-between gap-3 p-5 [grid-area:item-5]'>
-        <Icons.GameController className='h-5 w-5' />
+      <BentoGrid.ScrollAnimate>
+      <BentoGrid.Item idx={4} className='justify-between flex-col'>
+        <Icons.GameController className='h-6 w-6' />
 
         <Text className='font-medium leading-tight text-muted-content'>
           I love to play games.
         </Text>
       </BentoGrid.Item>
+      </BentoGrid.ScrollAnimate>
 
-      <BentoGrid.Item className='items-center [grid-area:item-6]'>
+      <BentoGrid.ScrollAnimate>
+      <BentoGrid.Item idx={5} className='items-center flex-col justify-center min-h-60'>
         <Text.Subtitle className='text-xs uppercase text-muted-content'>
           my local time
         </Text.Subtitle>
@@ -126,19 +135,21 @@ const Grid = async ({ className, ...props }) => {
           <LocalTime />
         </Text>
       </BentoGrid.Item>
+      </BentoGrid.ScrollAnimate>
 
-      <BentoGrid.Item className='hover:light border-none p-0 text-center [grid-area:item-7]'>
+      <BentoGrid.ScrollAnimate>
+       <BentoGrid.Item idx={6} className='hover:primary border-none p-0 min-h-60'>
         <Link
-          className='flex h-full w-full flex-col gap-1.5 rounded-inherit border p-5 no-underline transition-all hover:focus-visible:outline-main '
+          className='flex size-full flex-col gap-1.5 bg-main rounded-inherit border p-sm no-underline transition-colors hover:focus-visible:outline-main'
           href={personalInfo.buyCoffee?.href}
         >
-          <div className='mb-3 flex aspect-square h-10 items-center justify-center rounded-sm border transition-border'>
+          <div className='mb-3 flex aspect-square h-10 items-center transition-border justify-center rounded-sm border'>
             <Icons.Coffee className='h-6 w-6' />
           </div>
 
-          <Text>{personalInfo.buyCoffee?.label}</Text>
+          <Text className='text-center'>{personalInfo.buyCoffee?.label}</Text>
 
-          <Text.Small className='font-normal transition-colors'>
+          <Text.Small className='font-normal transition-color text-center'>
             {personalInfo.buyCoffee?.href?.replace(
               /^(?:https?:\/\/)?(?:[^@/\n]+@)?(?:www\.)?([^:/?\n]+).*/gim,
               '$1',
@@ -146,6 +157,7 @@ const Grid = async ({ className, ...props }) => {
           </Text.Small>
         </Link>
       </BentoGrid.Item>
+      </BentoGrid.ScrollAnimate>
     </BentoGrid>
   );
 };
