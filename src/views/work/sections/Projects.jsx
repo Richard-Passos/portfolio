@@ -33,7 +33,6 @@ const WorkViewProjectsSection = ({ className, ...props }) => {
 
         <MagneticButton
           aria-label='More works'
-          asLink
           href='/projects'
           variants={{ color: 'main' }}
         >
