@@ -33,7 +33,7 @@ const ProjectView = async ({ promises }) => {
       <Section
         hasTransition={false}
         theme='dark'
-        className='flex items-center justify-center min-h-screen 2xl:min-h-bounds'
+        className='flex items-center justify-center'
       >
         <NextProject id={adjacentIds.next} />
       </Section>

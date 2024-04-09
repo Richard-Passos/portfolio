@@ -24,7 +24,7 @@ const ProjectViewHeroSection = ({
       hasTransition={false}
       forceHeaderTheme
       className={cn(
-        'flex w-full flex-col items-center pt-0 max-2xl:min-h-svh',
+        'flex w-full flex-col items-center pt-0 min-h-svh',
         className,
       )}
       {...props}
@@ -41,7 +41,6 @@ const ProjectViewHeroSection = ({
 
       <div className='mb-md flex w-9/10 max-w-screen-xl items-center justify-between'>
         <Button
-          asLink
           href={`/projects/${adjacentIds.prev}`}
           variants={{ color: 'main', size: 'sm' }}
         >
@@ -54,7 +53,6 @@ const ProjectViewHeroSection = ({
         <ScrollIndicator />
 
         <Button
-          asLink
           href={`/projects/${adjacentIds.next}`}
           variants={{ color: 'main', size: 'sm' }}
         >
@@ -71,7 +69,6 @@ const ProjectViewHeroSection = ({
       >
         {data.href && (
           <Button.Magnetic
-            asLink
             className='absolute z-10'
             href={data.href}
             aria-label='View live website'
@@ -94,7 +91,7 @@ const ProjectViewHeroSection = ({
         <span className='absolute inset-0 bg-[radial-gradient(hsl(var(--inverted)/.25)_25%,hsl(var(--inverted)/.15)_75%,transparent)]' />
       </div>
 
-      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-30' />
+      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 transition-all dark:opacity-20' />
     </Section>
   );
 };
