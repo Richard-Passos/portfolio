@@ -10,7 +10,7 @@ const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
     <Section
       forceHeaderTheme
       className={cn(
-        '-mt-[--header-h] flex w-9/10 max-w-screen-lg flex-col items-center pt-[calc(theme(spacing.lg)+var(--header-h))] max-2xl:min-h-svh',
+        '-mt-[--header-h] flex w-9/10 max-w-screen-lg flex-col items-center pt-[calc(theme(spacing.lg)+var(--header-h))] min-h-svh',
         className,
       )}
       {...props}
