@@ -19,7 +19,7 @@ const Section = (props, ref) => {
   return (
     <Tag
       className={cn(
-        'relative w-full py-lg min-h-screen 2xl:min-h-bounds',
+        'relative min-h-screen w-full py-lg 2xl:min-h-bounds',
         hasTransition && 'pt-[calc(theme(spacing.lg)*1.5)]',
         theme,
         className,

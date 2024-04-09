@@ -24,7 +24,7 @@ const ProjectViewHeroSection = ({
       hasTransition={false}
       forceHeaderTheme
       className={cn(
-        'flex w-full flex-col items-center pt-0 min-h-svh',
+        'flex min-h-svh w-full flex-col items-center pt-0',
         className,
       )}
       {...props}

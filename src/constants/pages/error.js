@@ -14,21 +14,20 @@ const errorPage = {
             label: 'Back Home',
             variants: {
               color: 'main',
-            }
+            },
           },
           {
             type: 'reset',
             label: 'Try again',
-          }
-          
-        ]
-      }
-    }
+          },
+        ],
+      },
+    },
   ],
   metadata: {
     title: 'Error',
-    description: 'Error page on Richard Passos portfolio.'
-  }
-}
+    description: 'Error page on Richard Passos portfolio.',
+  },
+};
 
-export default errorPage
+export default errorPage;

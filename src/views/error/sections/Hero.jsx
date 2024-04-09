@@ -7,10 +7,16 @@ import { Button } from '@/components/button';
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const ErrorViewHeroSection = ({ error, className, data = {}, reset, ...props }) => {
+const ErrorViewHeroSection = ({
+  error,
+  className,
+  data = {},
+  reset,
+  ...props
+}) => {
   const actionsTypes = {
-    reset: { onClick: reset }
-  } 
+    reset: { onClick: reset },
+  };
 
   useEffect(() => {
     console.error(error);
@@ -20,7 +26,7 @@ const ErrorViewHeroSection = ({ error, className, data = {}, reset, ...props }) 
     <Section
       forceHeaderTheme
       className={cn(
-        '-mt-[--header-h] flex flex-col w-9/10 max-w-screen-xl items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))] min-h-svh',
+        '-mt-[--header-h] flex min-h-svh w-9/10 max-w-screen-xl flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))]',
         className,
       )}
       {...props}
@@ -41,16 +47,16 @@ const ErrorViewHeroSection = ({ error, className, data = {}, reset, ...props }) 
         {data.description}
       </Text>
 
-      <div className='flex mt-md max-sm:flex-col sm:items-center justify-center gap-sm'>
-        {data.actions?.map(({label, type = '', ...data}) => 
-        <Button 
-        key={label} 
-        {...actionsTypes[type.toLowerCase()]} 
-        {...data}
-        >
-          {label}
+      <div className='mt-md flex justify-center gap-sm max-sm:flex-col sm:items-center'>
+        {data.actions?.map(({ label, type = '', ...data }) => (
+          <Button
+            key={label}
+            {...actionsTypes[type.toLowerCase()]}
+            {...data}
+          >
+            {label}
           </Button>
-        )}
+        ))}
       </div>
 
       <div className='absolute top-0 h-[--header-h] w-screen max-w-bounds bg-main'>

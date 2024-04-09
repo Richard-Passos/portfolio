@@ -5,7 +5,14 @@ import homePage from './home';
 import projectsPage from './projects';
 import workPage from './work';
 
-const pages = [aboutPage, contactPage, errorPage, homePage, projectsPage, workPage];
+const pages = [
+  aboutPage,
+  contactPage,
+  errorPage,
+  homePage,
+  projectsPage,
+  workPage,
+];
 
 export default pages;
-export { aboutPage, contactPage, errorPage,  homePage, projectsPage, workPage };
+export { aboutPage, contactPage, errorPage, homePage, projectsPage, workPage };
