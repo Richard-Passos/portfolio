@@ -23,7 +23,7 @@ const SocialNavItem = ({ className, variants, data = {}, ...props }) => {
         {...data.icon}
       />
 
-       <Text className='mr-auto text-xs lowercase overflow-hidden text-ellipsis whitespace-nowrap first-letter:uppercase'>
+      <Text className='mr-auto overflow-hidden text-ellipsis whitespace-nowrap text-xs lowercase first-letter:uppercase'>
         {data.label}
       </Text>
     </Button.Magnetic>

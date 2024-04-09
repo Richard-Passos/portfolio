@@ -65,14 +65,16 @@ const ContactViewFormSelect = ({ placeholder, ...props }) => {
   );
 };
 
-const ContactFormSelectItem = ({  children, ...props }) => {
+const ContactFormSelectItem = ({ children, ...props }) => {
   return (
     <Select.Item {...props}>
       <Select.Item.Indicator>
         <CheckIcon />
       </Select.Item.Indicator>
 
-      <Select.Item.Text className='first-letter:uppercase'>{children}</Select.Item.Text>
+      <Select.Item.Text className='first-letter:uppercase'>
+        {children}
+      </Select.Item.Text>
     </Select.Item>
   );
 };

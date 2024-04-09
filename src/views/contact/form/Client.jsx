@@ -46,6 +46,7 @@ const ContactFormClient = ({ data = [], ...props }) => {
     </FormProvider>
   );
 };
+
 const contactFormClientOnSubmit = (values) => {
   alert(
     Object.entries(values)

@@ -1,6 +1,6 @@
 import BentoGridItem from './Item';
-import BentoGridScrollAnimate from './ScrollAnimate';
 import BentoGridRoot from './Root';
+import BentoGridScrollAnimate from './ScrollAnimate';
 
 const BentoGrid = BentoGridRoot;
 
@@ -8,8 +8,4 @@ BentoGrid.Item = BentoGridItem;
 BentoGrid.ScrollAnimate = BentoGridScrollAnimate;
 
 export default BentoGrid;
-export { 
-  BentoGridRoot as BentoGrid, 
-  BentoGridItem,
-  BentoGridScrollAnimate,
-};
+export { BentoGridRoot as BentoGrid, BentoGridItem, BentoGridScrollAnimate };

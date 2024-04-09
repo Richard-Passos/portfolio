@@ -15,10 +15,7 @@ const CONTROLS = {
 const ContactViewForm = async ({ className, data = {}, ...props }) => {
   return (
     <ClientForm
-      className={cn(
-        'sm:grid-cols-4',
-        className,
-      )}
+      className={cn('sm:grid-cols-4', className)}
       data={data.fields}
       {...props}
     >
@@ -56,7 +53,7 @@ const ContactViewForm = async ({ className, data = {}, ...props }) => {
       })}
 
       <Form.Submit asChild>
-        <MagneticButton className='h-12 place-self-center max-sm:aspect-auto max-sm:px-6 sm:w-full sm:h-auto sm:max-w-28'>
+        <MagneticButton className='h-12 place-self-center max-sm:aspect-auto max-sm:px-6 sm:h-auto sm:w-full sm:max-w-28'>
           <PaperPlaneIcon
             aria-hidden
             className='scale-90 max-sm:hidden'

@@ -31,27 +31,29 @@ const ContactViewContactSection = async ({
 
   return (
     <Section
-    id='scrollTo'
+      id='scrollTo'
       className={cn(
-        'flex items-center justify-center gap-y-md sm:w-9/10 gap-x-sm pb-[calc(theme(spacing.lg)*1.5)] max-md:flex-col',
+        'flex items-center justify-center gap-x-sm gap-y-md pb-[calc(theme(spacing.lg)*1.5)] max-md:flex-col sm:w-9/10',
         className,
       )}
       {...props}
     >
-      <div className='primary min-w-48 max-md:w-9/10 grow rounded-lg bg-main p-sm shadow-md md:max-w-56'>
+      <div className='primary min-w-48 grow rounded-lg bg-main p-sm shadow-md max-md:w-9/10 md:max-w-56'>
         <div className='relative flex justify-center overflow-hidden border-t'>
           {info.icons?.map((icon) => (
-            <div className='aspect-square w-1/3 first:-translate-x-1/2 last:translate-x-1/2 odd:-mt-[15%] even:absolute even:top-0 even:-translate-y-[70%]'              key={icon.src}
+            <div
+              className='aspect-square w-1/3 first:-translate-x-1/2 last:translate-x-1/2 odd:-mt-[15%] even:absolute even:top-0 even:-translate-y-[70%]'
+              key={icon.src}
             >
-              <Icon 
-              className='size-full text-muted'
-              {...icon}
-            />
+              <Icon
+                className='size-full text-muted'
+                {...icon}
+              />
             </div>
           ))}
         </div>
 
-        <ul className='mt-sm grid sm:max-md:grid-cols-2 gap-xs'>
+        <ul className='mt-sm grid gap-xs sm:max-md:grid-cols-2'>
           {info.items?.map((data) => (
             <li
               className='rounded-sm border bg-main p-4'
@@ -68,7 +70,7 @@ const ContactViewContactSection = async ({
           ))}
         </ul>
 
-        <nav className='grid mt-sm sm:max-md:grid-cols-3 gap-2'>
+        <nav className='mt-sm grid gap-2 sm:max-md:grid-cols-3'>
           {personalInfo.socials?.map((data, i) => (
             <SocialNav.Item
               index={i}
@@ -79,7 +81,7 @@ const ContactViewContactSection = async ({
         </nav>
       </div>
 
-      <div className='rounded-lg border max-md:w-full grow lg:max-w-fit bg-main p-sm shadow-md lg:p-[calc(theme(spacing.sm)*1.25)]'>
+      <div className='grow rounded-lg border bg-main p-sm shadow-md max-md:w-full lg:max-w-fit lg:p-[calc(theme(spacing.sm)*1.25)]'>
         <section>
           <Text.Title className='text-base font-medium'>
             <span className='lowercase first-letter:uppercase'>
@@ -90,7 +92,10 @@ const ContactViewContactSection = async ({
             </span>
           </Text.Title>
 
-          <Form className='mt-6' data={form} />
+          <Form
+            className='mt-6'
+            data={form}
+          />
         </section>
 
         <section className='mt-md'>
@@ -99,7 +104,7 @@ const ContactViewContactSection = async ({
           </Text.Title>
 
           <Link
-            className='group mt-2 w-full relative h-14 gap-sm px-sm break-all transition-none rounded-sm border bg-main'
+            className='group relative mt-2 h-14 w-full gap-sm break-all rounded-sm border bg-main px-sm transition-none'
             href={`mailto:${personalInfo.email}?subject=${form.subject}`}
           >
             <div className='relative size-5 overflow-hidden'>
@@ -110,10 +115,10 @@ const ContactViewContactSection = async ({
 
             <span className='mx-auto'>{personalInfo.email}</span>
           </Link>
-        </section>  
+        </section>
       </div>
 
-       <ul className='absolute flex h-fit -z-10 gap-md w-screen flex-col max-md:hidden'>
+      <ul className='absolute -z-10 flex h-fit w-screen flex-col gap-md max-md:hidden'>
         {[...Array(3)].map((_, i) => (
           <li key={i}>
             <HorizontalScroll

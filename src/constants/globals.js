@@ -96,7 +96,7 @@ const globals = [
         title: '50ᐩ',
         description: `Clebers \n completed`,
       },
-    ]
+    ],
   },
 ];
 

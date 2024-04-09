@@ -44,7 +44,7 @@ const FooterContent = async ({ theme, className, ...props }) => {
           {...props}
         >
           <ScrollAnimate config={animationConfig.y}>
-            <div className='relative z-10 flex flex-col gap-1.5 py-md [--y:calc(var(--smooth-y)*var(--h))] dark:border-border/20 sm:translate-y-[--y]'>
+            <div className='relative z-10 flex flex-col gap-1.5 py-md [--y:calc(var(--smooth-y)*var(--h))] sm:translate-y-[--y] dark:border-border/20'>
               <Text className='text-muted-content'>
                 is your great ideas ready to fly?
               </Text>
