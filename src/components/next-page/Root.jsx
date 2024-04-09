@@ -14,11 +14,12 @@ const NextPage = ({ text, href, className, ...props }) => {
       <NextPageLinkHeading />
 
       <div className='relative flex w-full flex-col items-center justify-center gap-[.2em]'>
-        <NextPageLinkContent text={text} />
+        <NextPageLinkContent text={text}             className='text-muted'
+ />
 
         <MagneticButton
           asLink
-          className='absolute !h-2/3 [&_svg]:size-[40%]'
+          className='absolute h-2/3 [&_svg]:size-[40%]'
           href={href}
           variants={{ color: 'main' }}
         >
