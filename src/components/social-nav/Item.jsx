@@ -7,7 +7,6 @@ import { Text } from '../ui/text';
 const SocialNavItem = ({ className, variants, data = {}, ...props }) => {
   return (
     <Button.Magnetic
-      asLink
       className={cn(
         'aspect-auto h-12 rounded-sm [--variant-a:--primary] hover:z-10 hover:[--variant-c:--primary-c] [&>span>span]:px-6 [&_svg]:size-[none]',
         className,
