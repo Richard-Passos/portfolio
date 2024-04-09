@@ -1,5 +1,6 @@
 import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
+import { ContactView } from '@/views';
 
 const ContactPage = async () => {
   const { data } = await pagesApi.getOne('contact');
