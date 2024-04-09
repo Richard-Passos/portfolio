@@ -211,7 +211,7 @@ const contactPage = {
   ],
   metadata: {
     title: 'Contact',
-    description: 'Richard passos contact details and contact form.',
+    description: 'Richard Passos contact details and contact form.',
   },
 };
 
