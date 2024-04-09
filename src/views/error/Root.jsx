@@ -1,24 +1,28 @@
-'use client';
-
-import { useContext } from 'react';
-
-import { ErrorContext } from '@/contexts';
+import { capitalize } from '@/utils';
 
 import Sections from './sections';
 
-const ErrorView = ({ error, reset }) => {
-  const { data } = useContext(ErrorContext);
+const ErrorView = ({ data = {} }) => {
+  const { sections = [] } = data;
 
-  return (
-    <>
-      <Sections.Hero
-        theme='dark'
-        data={data}
-        error={error}
-        reset={reset}
+  let lastTheme = '';
+
+  return sections.map(({ slug = '', ...data }) => {
+    let Section = Sections[slug.split(/[-_]/g).map(capitalize).join('')];
+
+    Section = Section && (
+      <Section
+        hasTransition={
+          slug.toLowerCase() !== 'hero' && lastTheme !== data.theme
+        }
+        {...data}
       />
-    </>
-  );
+    );
+
+    lastTheme = data.theme;
+
+    return Section;
+  });
 };
 
 export default ErrorView;
