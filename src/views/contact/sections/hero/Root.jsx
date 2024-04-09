@@ -1,38 +1,21 @@
-import { ScrollAnimate, Section } from '@/components';
-import { Badge, Icon, Image } from '@/components/ui';
+import { Section } from '@/components';
+import { Badge } from '@/components/ui';
 import { Text, TextTitle } from '@/components/ui/text';
 import { cn } from '@/utils';
 
-import HorizontalScroll from './HorizontalScroll';
-import StatsChanger from './StatsChanger';
-
-const ANIMATION_CONFIG = {
-  y1: {
-    scrollConfig: {
-      offset: ['0 1', '0 0'],
-    },
-    prop: '--y',
-    propPoints: [1, 0],
-  },
-  y2: {
-    prop: 'y',
-    propPoints: ['-13%', '0%'],
-  },
-};
+import Grid from './Grid';
 
 const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      hasTransition={false}
       forceHeaderTheme
-      className={cn('flex flex-col items-center', className)}
+      className={cn('flex w-9/10 max-w-screen-lg flex-col items-center -mt-[--header-h] max-2xl:min-h-svh pt-[calc(theme(spacing.lg)+var(--header-h))]', className)}
       {...props}
     >
-      <div className='w-9/10 grid sm:grid-cols-2 gap-md max-w-screen-lg'>
       <TextTitle
           asChild
           aria-label={data.title}
-          className='whitespace-pre-line col-span-full'
+          className='whitespace-pre-line mr-auto'
           variants={{ size: 'lg' }}
         >
           <h1>
@@ -55,26 +38,11 @@ const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
           </h1>
         </TextTitle>
 
-          <div>
-           <div className='relative flex w-full mt-md max-w-xs justify-center overflow-hidden border-b'>
-            {data.icons?.map((icon) => (
-              <Icon
-                className='aspect-square h-auto w-[33.333%] text-muted first:-translate-x-full last:translate-x-full odd:absolute odd:bottom-0 odd:translate-y-[70%] even:-mb-[15%]'
-                key={icon.src}
-                {...icon}
-              />
-            ))}
-          </div>
-          
-          <Text className='mt-sm max-w-xs text-muted-content'>
-            {data.description}
-          </Text>
-          </div>
+      <Grid className='mt-md' data={data}/>
 
-          <StatsChanger />
-        </div>
-
-      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-20' />
+      <div className='bg-main absolute top-0 h-[--header-h] w-screen max-w-bounds'>
+      <span className='absolute top-full h-px w-[95%] left-1/2 -translate-x-1/2 bg-border opacity-60 dark:opacity-20' />
+      </div>
     </Section>
   );
 };
