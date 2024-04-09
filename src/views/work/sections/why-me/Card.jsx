@@ -42,11 +42,11 @@ const WorkVieWhyMeCardSection = ({ className, data = {}, ...props }) => {
             {...props}
           >
             <Text className='text-7xl font-bold tracking-tight sm:text-8xl'>
-              {data.description}
+              {data.title}
             </Text>
 
             <Text.Subtitle className='ml-auto whitespace-pre-line text-end text-2xl/none font-medium uppercase tracking-tight sm:text-3xl/none'>
-              {data.title}
+              {data.description}
             </Text.Subtitle>
           </li>
         </ScrollAnimate>
