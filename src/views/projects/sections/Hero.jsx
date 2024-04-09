@@ -95,7 +95,7 @@ const ProjectsHeroSection = async ({ className, ...props }) => {
         </Suspense>
       </Show>
 
-      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-30' />
+      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-20' />
     </Section>
   );
 };
