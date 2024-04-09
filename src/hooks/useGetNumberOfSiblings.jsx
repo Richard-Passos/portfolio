@@ -52,7 +52,7 @@ const useGetNumberOfSiblings = (
     returnJustOddNumber,
   ]);
 
-  return numberOfSiblings;
+  return numberOfSiblings === Infinity ? 0 : numberOfSiblings;
 };
 
 export default useGetNumberOfSiblings;
