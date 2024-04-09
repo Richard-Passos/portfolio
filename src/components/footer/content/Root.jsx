@@ -57,7 +57,6 @@ const FooterContent = async ({ theme, className, ...props }) => {
               <div className='absolute bottom-0 left-1/2 translate-x-[--x] translate-y-1/2'>
                 <MagneticButton
                   aria-label='Go to contact page'
-                  asLink
                   href='/contact'
                   variants={{ size: 'lg' }}
                 >
