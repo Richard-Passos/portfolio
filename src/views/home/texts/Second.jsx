@@ -19,7 +19,7 @@ const HomeViewSecondText = ({ className, ...props }) => {
         as='div'
         hasTransition={false}
         className={cn(
-          'flex items-center justify-center max-2xl:overflow-hidden 2xl:h-screen 2xl:max-h-bounds',
+          'flex items-center justify-center max-2xl:overflow-hidden',
           className,
         )}
         {...props}
