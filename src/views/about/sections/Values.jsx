@@ -1,6 +1,5 @@
 import { Section, Values } from '@/components';
 import {
-  ScrollAnimate,
   ScrollAnimateTransform,
 } from '@/components/scroll-animate';
 import { Badge, Icon, Text } from '@/components/ui';

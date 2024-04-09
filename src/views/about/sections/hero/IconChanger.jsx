@@ -21,7 +21,7 @@ const DATA_CHANGER_DURATION = 2500,
     },
   };
 
-const AboutViewHeroIconChangerSection = ({
+const AboutViewHeroSectionIconChanger = ({
   className,
   data = [],
   ...props
@@ -63,4 +63,4 @@ const AboutViewHeroIconChangerSection = ({
   );
 };
 
-export default AboutViewHeroIconChangerSection;
+export default AboutViewHeroSectionIconChanger;

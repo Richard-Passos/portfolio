@@ -31,7 +31,7 @@ const SCROLL_OFFSET = ['0 1', '0 0'],
     },
   };
 
-const AboutViewHeroImagesSeciton = ({ className, data = [], ...props }) => {
+const AboutViewHeroSectionImages = ({ className, data = [], ...props }) => {
   return (
     <ScrollAnimate config={ANIMATION_CONFIG.y1}>
       <ScrollAnimate config={ANIMATION_CONFIG.x}>
@@ -63,4 +63,4 @@ const AboutViewHeroImagesSeciton = ({ className, data = [], ...props }) => {
   );
 };
 
-export default AboutViewHeroImagesSeciton;
+export default AboutViewHeroSectionImages;
