@@ -25,7 +25,7 @@ const WorkView = () => {
       <Section
         hasTransition={false}
         theme='dark'
-        className='flex items-center justify-center 2xl:h-screen 2xl:max-h-bounds'
+        className='flex items-center justify-center'
       >
         <NextPage
           href='/about'
