@@ -96,6 +96,12 @@ module.exports = {
       outlineWidth: {
         DEFAULT: 2,
       },
+      minHeight: {
+        bounds: 'var(--max-h)',
+      },
+      minWidth: {
+        bounds: 'var(--max-w)',
+      },
       maxHeight: {
         bounds: 'var(--max-h)',
       },
