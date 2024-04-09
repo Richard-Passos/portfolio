@@ -37,7 +37,7 @@ const FooterContent = async ({ theme, className, ...props }) => {
       <ScrollAnimate config={animationConfig.x}>
         <div
           className={cn(
-            'flex w-9/10 max-w-screen-xl flex-col [--h:100vh] max-2xl:min-h-screen 2xl:h-screen 2xl:max-h-bounds 2xl:[--h:--max-h]',
+            'flex w-9/10 max-w-screen-xl flex-col [--h:100vh] min-h-screen 2xl:min-h-bounds 2xl:[--h:--max-h]',
             theme,
             className,
           )}
