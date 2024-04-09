@@ -13,7 +13,7 @@ const FormLabel = ({ className, ...props }, ref) => {
   return (
     <Label
       className={cn(
-        'w-fit translate-x-1.5 translate-y-1/2 bg-main px-2.5 lowercase transition-bg first-letter:uppercase',
+        'w-fit translate-x-1.5 translate-y-1/2 bg-main px-2.5 lowercase first-letter:uppercase',
         error && 'text-danger',
         className,
       )}
