@@ -37,7 +37,7 @@ const ChangeTheme = ({
           <ScrollAnimate config={animationConfig}>
             <div className='absolute top-px h-20 w-screen'>
               <div className='relative h-[--h] w-full -translate-y-full rotate-180 overflow-hidden'>
-                <div className='pointer-events-auto absolute left-1/2 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] overflow-hidden rounded-[50%] bg-main transition-bg'>
+                <div className='pointer-events-auto absolute left-1/2 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] overflow-hidden rounded-[50%] bg-main'>
                   <Lines className='z-0' />
                 </div>
               </div>
