@@ -13,7 +13,7 @@ const Lines = ({ className, ...props }) => {
     >
       {[...Array(LINES_AMOUNT)].map((_, i) => (
         <span
-          className='h-full w-full border-x transition-colors'
+          className='h-full w-full border-x'
           key={i}
         />
       ))}
