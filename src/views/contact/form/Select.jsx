@@ -11,9 +11,8 @@ import {
 } from '@/components/ui/icon/icons';
 import { services } from '@/constants';
 import { useChangeKeyWhenFalsy, useFormField } from '@/hooks';
-import { capitalize } from '@/utils';
 
-const ContactFormSelect = ({ placeholder, ...props }) => {
+const ContactViewFormSelect = ({ placeholder, ...props }) => {
   const { name } = useFormField(),
     { register, watch } = useFormContext();
 
@@ -47,35 +46,35 @@ const ContactFormSelect = ({ placeholder, ...props }) => {
           {services.map(({ title = '' }) => (
             <ContactFormSelectItem
               key={title}
-              value={title.toLowerCase()}
+              value={title.toLowerCase().replace(/_ /, '-')}
             >
-              {capitalize(title)}
+              {title}
             </ContactFormSelectItem>
           ))}
         </Select.Viewport>
 
         <Select.ScrollButton.Up>
-          <ChevronUpIcon className='h-3.5 w-3.5' />
+          <ChevronUpIcon className='size-3.5' />
         </Select.ScrollButton.Up>
 
         <Select.ScrollButton.Down>
-          <ChevronDownIcon className='h-3.5 w-3.5' />
+          <ChevronDownIcon className='size-3.5' />
         </Select.ScrollButton.Down>
       </Select.Content>
     </Select>
   );
 };
 
-const ContactFormSelectItem = ({ children, ...props }) => {
+const ContactFormSelectItem = ({  children, ...props }) => {
   return (
     <Select.Item {...props}>
       <Select.Item.Indicator>
         <CheckIcon />
       </Select.Item.Indicator>
 
-      <Select.Item.Text>{children}</Select.Item.Text>
+      <Select.Item.Text className='first-letter:uppercase'>{children}</Select.Item.Text>
     </Select.Item>
   );
 };
 
-export default ContactFormSelect;
+export default ContactViewFormSelect;
