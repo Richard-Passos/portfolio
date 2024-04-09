@@ -7,17 +7,20 @@ import { Button } from '@/components/button';
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const ErrorHeroSection = ({ error, className, reset, ...props }) => {
+const ErrorViewHeroSection = ({ error, className, data = {}, reset, ...props }) => {
+  const actionsTypes = {
+    reset: { onClick: reset }
+  } 
+
   useEffect(() => {
     console.error(error);
   }, [error]);
 
   return (
     <Section
-      hasTransition={false}
       forceHeaderTheme
       className={cn(
-        '-mt-[--header-h] flex flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))] max-2xl:min-h-svh 2xl:h-screen 2xl:max-h-bounds',
+        '-mt-[--header-h] flex flex-col w-9/10 max-w-screen-xl items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))] min-h-svh',
         className,
       )}
       {...props}
@@ -25,36 +28,36 @@ const ErrorHeroSection = ({ error, className, reset, ...props }) => {
       <Text.Title
         asChild
         variants={{ size: 'xl' }}
-        className='mb-2 w-9/10 max-w-screen-xl text-center'
+        className='text-center'
       >
-        <h1>Ops...</h1>
+        <h1>{data.title}</h1>
       </Text.Title>
 
-      <Text className='mb-4 w-9/10 max-w-screen-xl text-center text-2xl font-semibold first-letter:uppercase'>
-        Something went wrong!
+      <Text className='mt-2 text-center text-2xl font-semibold first-letter:uppercase'>
+        {data.subtitle}
       </Text>
 
-      <Text className='mb-md w-9/10 max-w-xl text-center text-muted-content first-letter:uppercase'>
-        Please try again or go back to Home page.{' '}
+      <Text className='mt-4 max-w-xl text-center text-muted-content first-letter:uppercase'>
+        {data.description}
       </Text>
 
-      <div className='flex w-fit max-w-9/10 flex-wrap items-center justify-center gap-sm'>
-        <Button
-          asLink
-          href='/'
-          variants={{ color: 'main' }}
+      <div className='flex mt-md max-sm:flex-col sm:items-center justify-center gap-sm'>
+        {data.actions?.map(({label, type = '', ...data}) => 
+        <Button 
+        key={label} 
+        {...actionsTypes[type.toLowerCase()]} 
+        {...data}
         >
-          Back Home
-        </Button>
-
-        <Button onClick={reset}>Try again</Button>
+          {label}
+          </Button>
+        )}
       </div>
 
-      <div className='absolute top-0 h-[--header-h] w-screen bg-main'>
-        <span className='absolute left-1/2 top-full h-px w-[95%] -translate-x-1/2 bg-border opacity-60 transition-all dark:opacity-30' />
+      <div className='absolute top-0 h-[--header-h] w-screen max-w-bounds bg-main'>
+        <span className='absolute left-1/2 top-full h-px w-[95%] -translate-x-1/2 bg-border opacity-60 dark:opacity-20' />
       </div>
     </Section>
   );
 };
 
-export default ErrorHeroSection;
+export default ErrorViewHeroSection;
