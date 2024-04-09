@@ -1,19 +1,19 @@
 const stats = [
   {
-    title: `Projects \n completed`,
-    description: '10ᐩ',
+    title: '10ᐩ',
+    description: `Projects \n completed`,
   },
   {
-    title: `Years of \n experience`,
-    description: '1ᐩ',
+    title: '1ᐩ',
+    description: `Years of \n experience`,
   },
   {
-    title: `Great \n projects`,
-    description: '100%',
+    title: '100%',
+    description: `Great \n projects`,
   },
   {
-    title: `Clebers \n completed`,
-    description: '50ᐩ',
+    title: '50ᐩ',
+    description: `Clebers \n completed`,
   },
 ];
 
