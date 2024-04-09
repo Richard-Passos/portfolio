@@ -5,21 +5,54 @@ const contactPage = {
       slug: 'hero',
       theme: 'dark',
       data: {
-        title: `Drowning with \ngreat ideas?`,
+        title: 'Drowning with \ngreat ideas?',
         subtitle: "Let's make'em fly",
         description:
             'Ready for lift-off? Ping, tweet, message or poke — and we will get back as soon as possible.',
-          image: {
-            src: '/images/parallax-00.jpg',
-            alt: '',
-            width: 2491,
-            height: 3737,
-          },
+            infinityText: 'Improve · Inspire · Repeat ·',
           icons: [
             { src: '/images/rocket.svg', title: 'Rocket' },
             { src: '/images/smile.svg', title: 'Smile' },
             { src: '/images/globe.svg', title: 'Globe' },
           ],
+          dataChanger: [
+            [
+              {
+                title: '10ᐩ',
+                description: 'Projects completed',
+              },
+              {
+                title: '1ᐩ',
+                description: 'Years of experience',
+              },
+              {
+                title: '100%',
+                description: 'Great projects',
+              },
+              {
+                title: '50ᐩ',
+                description: 'Clebers completed',
+              },
+            ],
+            [
+              {
+                title: '1',
+                description: 'Integrity · Curiosity',
+              },
+              {
+                title: '2',
+                description: 'Integrity · Curiosity',
+              },
+              {
+                title: '3',
+                description: 'Respect · Gratitude',
+              },
+              {
+                title: '4',
+                description: 'Respect · Gratitude',
+              },
+            ]
+          ]
         },
     },
     {
