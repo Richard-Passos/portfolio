@@ -1,7 +1,5 @@
 import { Section, Values } from '@/components';
-import {
-  ScrollAnimateTransform,
-} from '@/components/scroll-animate';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Badge, Icon, Text } from '@/components/ui';
 import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
