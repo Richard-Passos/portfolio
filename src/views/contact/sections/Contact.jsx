@@ -31,24 +31,27 @@ const ContactViewContactSection = async ({
 
   return (
     <Section
+    id='scrollTo'
       className={cn(
-        'flex items-center justify-center gap-md py-[--py] [--py:calc(theme(spacing.lg)*1.5)] max-lg:gap-x-sm max-md:flex-col sm:w-9/10',
+        'flex items-center justify-center gap-y-md sm:w-9/10 gap-x-sm pb-[calc(theme(spacing.lg)*1.5)] max-md:flex-col',
         className,
       )}
       {...props}
     >
-      <div className='primary w-9/10 rounded-lg shrink-[2] bg-main p-sm shadow-md sm:w-full lg:max-w-60'>
-        <div className='relative mb-sm flex w-full justify-center overflow-hidden border-t'>
+      <div className='primary min-w-48 max-md:w-9/10 grow rounded-lg bg-main p-sm shadow-md md:max-w-56'>
+        <div className='relative flex justify-center overflow-hidden border-t'>
           {info.icons?.map((icon) => (
-            <Icon
-              className='aspect-square h-auto w-[33.333%] text-muted first:-translate-x-1/2 last:translate-x-1/2 odd:-mt-[15%] even:absolute even:top-0 even:-translate-y-[70%]'
-              key={icon.src}
+            <div className='aspect-square w-1/3 first:-translate-x-1/2 last:translate-x-1/2 odd:-mt-[15%] even:absolute even:top-0 even:-translate-y-[70%]'              key={icon.src}
+            >
+              <Icon 
+              className='size-full text-muted'
               {...icon}
             />
+            </div>
           ))}
         </div>
 
-        <ul className='mb-sm mt-auto grid gap-xs'>
+        <ul className='mt-sm grid sm:max-md:grid-cols-2 gap-xs'>
           {info.items?.map((data) => (
             <li
               className='rounded-sm border bg-main p-4'
@@ -65,7 +68,7 @@ const ContactViewContactSection = async ({
           ))}
         </ul>
 
-        <nav className='grid gap-2'>
+        <nav className='grid mt-sm sm:max-md:grid-cols-3 gap-2'>
           {personalInfo.socials?.map((data, i) => (
             <SocialNav.Item
               index={i}
@@ -76,9 +79,9 @@ const ContactViewContactSection = async ({
         </nav>
       </div>
 
-      <div className='h-fit w-full rounded-lg shrink border bg-main p-sm shadow-md lg:p-[calc(var(--spacing-sm)*1.25)] md:max-w-fit'>
-        <section className='mb-md'>
-          <Text.Title className='mb-6 text-base font-medium'>
+      <div className='rounded-lg border max-md:w-full grow lg:max-w-fit bg-main p-sm shadow-md lg:p-[calc(theme(spacing.sm)*1.25)]'>
+        <section>
+          <Text.Title className='text-base font-medium'>
             <span className='lowercase first-letter:uppercase'>
               {form.title}:
             </span>{' '}
@@ -87,37 +90,37 @@ const ContactViewContactSection = async ({
             </span>
           </Text.Title>
 
-          <Form data={{ fields: form.fields, submit: form.submit }} />
+          <Form className='mt-6' data={form} />
         </section>
 
-        <section>
-          <Text.Title className='mb-2 text-sm font-medium lowercase text-muted-content first-letter:uppercase'>
+        <section className='mt-md'>
+          <Text.Title className='text-sm font-medium lowercase text-muted-content first-letter:uppercase'>
             {form.subtitle}:
           </Text.Title>
 
           <Link
-            className='group relative h-14 w-full justify-between gap-5 break-all rounded-sm border bg-main p-5'
+            className='group mt-2 w-full relative h-14 gap-sm px-sm break-all transition-none rounded-sm border bg-main'
             href={`mailto:${personalInfo.email}?subject=${form.subject}`}
           >
-            <div className='relative flex items-center justify-center overflow-hidden'>
-              <PaperPlaneIcon className='h-5 w-5 transition-transform duration-0 ease-backOut group-hover:-translate-y-full group-hover:translate-x-full group-hover:duration-500' />
+            <div className='relative size-5 overflow-hidden'>
+              <PaperPlaneIcon className='size-full transition-transform duration-0 group-hover:-translate-y-full group-hover:translate-x-full group-hover:duration-300' />
 
-              <PaperPlaneIcon className='absolute h-5 w-5 -translate-x-full translate-y-full transition-transform duration-0 ease-backOut group-hover:translate-x-0 group-hover:translate-y-0 group-hover:duration-500' />
+              <PaperPlaneIcon className='absolute inset-0 size-auto -translate-x-full translate-y-full transition-transform duration-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:duration-300' />
             </div>
 
             <span className='mx-auto'>{personalInfo.email}</span>
           </Link>
-        </section>
+        </section>  
       </div>
 
-      <ul className='absolute -z-10  flex h-fit w-screen flex-col justify-between max-sm:hidden'>
+       <ul className='absolute flex h-fit -z-10 gap-md w-screen flex-col max-md:hidden'>
         {[...Array(3)].map((_, i) => (
           <li key={i}>
             <HorizontalScroll
               baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
-              className='text-[min(32vmin,16rem)]/none font-extrabold uppercase tracking-tighter text-muted [--gap:.2em]'
+              className='text-[min(32vmin,16rem)]/none font-extrabold uppercase tracking-tighter text-muted'
             >
-              {data.title}
+              {data.title}&nbsp;
             </HorizontalScroll>
           </li>
         ))}
