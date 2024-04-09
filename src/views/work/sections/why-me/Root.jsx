@@ -34,7 +34,6 @@ const WorkViewWhyMeSection = ({ className, ...props }) => {
           </Text>
 
           <Button
-            asLink
             href='/about'
             variants={{ color: 'main', size: 'sm' }}
           >
