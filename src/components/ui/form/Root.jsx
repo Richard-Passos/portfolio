@@ -10,7 +10,7 @@ const Form = ({ className, onSubmit, ...props }, ref) => {
 
   return (
     <form
-      className={cn('space-y-6', className)}
+      className={cn('grid gap-xs', className)}
       onSubmit={handleSubmit(onSubmit)}
       ref={ref}
       {...props}
