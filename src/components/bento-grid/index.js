@@ -1,4 +1,4 @@
-import BentoGridItem from './Item';
+import BentoGridItem from './item';
 import BentoGridRoot from './Root';
 import BentoGridScrollAnimate from './ScrollAnimate';
 
