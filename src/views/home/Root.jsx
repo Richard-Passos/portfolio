@@ -1,23 +1,28 @@
+import { capitalize } from '@/utils';
+
 import Sections from './sections';
-import Texts from './texts';
 
-const HomeView = async () => {
-  return (
-    <>
-      <Sections.Hero theme='light' />
+const HomeView = ({ data = {} }) => {
+  const { sections = [] } = data;
 
-      <Sections.Work
-        id='scrollTo'
-        theme='dark'
+  let lastTheme = '';
+
+  return sections.map(({ slug = '', ...data }) => {
+    let Section = Sections[slug.split(/[-_]/g).map(capitalize).join('')];
+
+    Section = Section && (
+      <Section
+        hasTransition={
+          slug.toLowerCase() !== 'hero' && lastTheme !== data.theme
+        }
+        {...data}
       />
+    );
 
-      <Texts.First theme='light' />
+    lastTheme = data.theme;
 
-      <Sections.About theme='dark' />
-
-      <Texts.Second theme='dark' />
-    </>
-  );
+    return Section;
+  });
 };
 
 export default HomeView;

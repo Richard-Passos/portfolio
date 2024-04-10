@@ -31,7 +31,6 @@ const ContactViewContactSection = async ({
 
   return (
     <Section
-      id='scrollTo'
       className={cn(
         'flex items-center justify-center gap-x-sm gap-y-md pb-[calc(theme(spacing.lg)*1.5)] max-md:flex-col sm:w-9/10',
         className,

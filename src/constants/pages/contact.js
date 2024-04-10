@@ -58,6 +58,7 @@ const contactPage = {
     {
       slug: 'contact',
       theme: 'light',
+      id: 'scrollTo',
       data: {
         title: 'Hello · Olá · Ciao · Salut · 你好 ·',
         info: {
@@ -111,6 +112,7 @@ const contactPage = {
             },
             {
               name: 'email',
+              tye: 'email',
               label: 'Email',
               optionalText: '',
               control: 'input',

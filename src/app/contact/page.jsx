@@ -2,10 +2,10 @@ import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
 import { ContactView } from '@/views';
 
-const ContactPage = async () => {
+const ContactPage = async (props) => {
   const { data } = await pagesApi.getOne('contact');
 
-  return <ContactView data={data} />;
+  return <ContactView data={data} {...props} />;
 };
 
 const generateMetadata = async () => {

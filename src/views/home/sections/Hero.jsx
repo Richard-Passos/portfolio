@@ -8,111 +8,112 @@ import { Text } from '@/components/ui';
 import { SmileIcon } from '@/components/ui/icon/icons';
 import { cn } from '@/utils';
 
-const HomeViewHeroSection = ({ className, ...props }) => {
-  const animationConfig = {
-    y: {
-      scrollConfig: {
-        offset: ['0 0', '1 0'],
-      },
-      prop: 'y',
-      propPoints: ['0%', '75%'],
+const ANIMATION_CONFIG = {
+  y: {
+    scrollConfig: {
+      offset: ['0 0', '1 0'],
     },
-    scale: {
-      scrollConfig: {
-        offset: ['0 0', '1 0'],
-      },
-      prop: '--scale',
-      propPoints: [1, 0.85],
+    prop: 'y',
+    propPoints: ['0%', '75%'],
+  },
+  scale: {
+    scrollConfig: {
+      offset: ['0 0', '1 0'],
     },
-    opacity: {
-      scrollConfig: {
-        offset: ['0 0', '.75 0'],
-      },
+    prop: '--scale',
+    propPoints: [1, 0.85],
+  },
+  opacity: {
+    scrollConfig: {
+      offset: ['0 0', '.75 0'],
+    },
 
-      prop: '--opacity',
-      propPoints: [1, 0],
-    },
-    rotate: {
-      scroll: 'scrollY',
-      scrollPoints: [0, 400],
-      prop: 'rotate',
-      propPoints: ['0deg', '360deg'],
-      transformConfig: { clamp: false },
-    },
-  };
+    prop: '--opacity',
+    propPoints: [1, 0],
+  },
+  rotate: {
+    scroll: 'scrollY',
+    scrollPoints: [0, 400],
+    prop: 'rotate',
+    propPoints: ['0deg', '360deg'],
+    transformConfig: { clamp: false },
+  },
+};
 
+const HomeViewHeroSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      hasTransition={false}
       forceHeaderTheme
       className={cn(
-        '-mt-[--header-h] !min-h-0 overflow-y-clip py-0 *:*:last:*:hidden',
+        '-mt-[--header-h] min-h-svh overflow-y-clip py-0 *:*:last:*:hidden [--inset:calc(var(--w)*.025)] [--w:100vw] 2xl:[--w:--max-w]',
         className,
       )}
       {...props}
     >
-      <ScrollAnimate.Transform config={animationConfig.y}>
-        <ScrollAnimate config={animationConfig.scale}>
-          <ScrollAnimate config={animationConfig.opacity}>
-            <div className='relative flex min-h-svh items-center justify-center px-[--inset] pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))] [--inset:calc(var(--w)*.025)] [--w:100vw] max-sm:!translate-y-0 2xl:min-h-bounds 2xl:[--w:--max-w]'>
-              <div className='w-9/10 pb-[--inset] sm:scale-[--scale] sm:opacity-[--opacity]'>
+      <ScrollAnimate.Transform config={ANIMATION_CONFIG.y}>
+        <ScrollAnimate config={ANIMATION_CONFIG.scale}>
+          <ScrollAnimate config={ANIMATION_CONFIG.opacity}>
+            <div className='relative flex min-h-[inherit] items-center justify-center px-[--inset] py-lg max-sm:!translate-y-0'>
+              <div className='w-9/10 sm:scale-[--scale] pt-[--header-h] pb-[--inset] sm:opacity-[--opacity]'>
                 <Text.Title
-                  aria-label='Turning heads and conquering hearts.'
+                  aria-label={data.title}
                   asChild
-                  className='mb-sm w-full text-center [--x:--spacing-lg] lg:text-[min(9vw,theme(fontSize.9xl))]/none'
+                  className='w-full text-center lg:px-sm items-center flex flex-col'
                   variants={{ size: 'xl' }}
                 >
                   <h1>
-                    <div aria-hidden>
-                      <span className='lg:-translate-x-[--x]'>
-                        Turning heads
-                      </span>
+                    {data.title?.split(`\n`).map(
+                      (w, i, arr) => {
+                        const boldRegex = /<bold>(.*)<\/bold>/g
 
-                      <br />
+                        const hasBold =  boldRegex.test(w);
 
-                      <span className='lg:translate-x-[--x]'>
-                        <span className='outline-text'>&</span> conquering
-                      </span>
+                        const test = w.split(/<bold>(.*)<\/bold>/)
+                        console.log('-  test   -', test)
 
-                      <br />
+                        const Bold = w.replace(boldRegex, (group1) => <span className='outline-text'>{group1}</span>)
+                        console.log('-  Bold   -', Bold)
 
-                      <div className='flex w-full items-end justify-evenly'>
-                        <span>hearts</span>
+                        const content = hasBold ? Bold : w
 
-                        <span className='max-w-sm -translate-y-3.5 text-start text-[.12em]/[1.15] font-normal normal-case tracking-normal text-muted-content max-lg:hidden'>
-                          Hey there! I&apos;m Richard an awesome full stack
-                          developer — who cares building solid and scalable
-                          products with a great user experience.
+                        return i !== arr.length - 1 ? 
+                        <span className='lg:first:mr-auto lg:[&:nth-child(2)]:ml-auto' key={i}>
+                          {content}
+                          </span>
+                          : 
+                        <span key={i} className='flex w-full items-end justify-evenly'>
+                        {content}
+
+                          <span className='max-w-sm -translate-y-3.5 text-start text-[.12em]/tight font-normal normal-case tracking-normal first-letter:uppercase text-muted-content max-lg:hidden'>
+                            {data.description}
+                          </span>
                         </span>
-                      </div>
-                    </div>
+                      })}
                   </h1>
                 </Text.Title>
 
-                <div className='mx-auto grid max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
-                  <Text className='col-span-full max-w-lg justify-self-center text-center text-muted-content sm:col-span-4 lg:sr-only'>
-                    Hey there! I&apos;m Richard an awesome full stack developer
-                    — who cares building solid and scalable products with a
-                    great user experience.
+                <div className='mt-sm grid mx-auto max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
+                  <Text className='col-span-full max-w-lg justify-self-center text-center text-muted-content md:col-span-4 lg:sr-only'>
+                    {data.description}
                   </Text>
 
-                  <ScrollAnimate.Transform config={animationConfig.rotate}>
-                    <SmileIcon className='h-6 w-6 md:-order-1' />
+                  <ScrollAnimate.Transform config={ANIMATION_CONFIG.rotate}>
+                    <SmileIcon className='size-6 md:-order-1' />
                   </ScrollAnimate.Transform>
 
-                  <Text className='justify-self-end text-xs font-semibold md:col-end-7'>
-                    (2024)
+                  <Text className='justify-self-end text-xs font-semibold lg:col-end-7'>
+                    ({data.year})
                   </Text>
                 </div>
               </div>
 
-              <GridPattern className='inset-[--inset] top-[--header-h] rounded-3xl' />
+              <GridPattern className='inset-[--inset] top-[--header-h] rounded-lg' />
             </div>
           </ScrollAnimate>
         </ScrollAnimate>
       </ScrollAnimate.Transform>
 
-      <ScrollIndicator className='absolute bottom-[min(9.5vw,3.75rem)] right-1/2 max-sm:translate-x-1/2 sm:right-[min(10vw,theme(spacing.16))]' />
+      <ScrollIndicator className='absolute bottom-md max-sm:translate-y-1/2 sm:bottom-[--inset] right-1/2 max-sm:translate-x-1/2 sm:right-[--inset]' />
     </Section>
   );
 };

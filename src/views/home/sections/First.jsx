@@ -1,7 +1,7 @@
 import { ScrollAnimate, Section, TextScrollAnimate } from '@/components';
 import { Text } from '@/components/ui/text';
 
-const HomeViewFirstText = (props) => {
+const HomeViewFirstSection = (props) => {
   const animationConfig = {
     x: {
       scrollConfig: {
@@ -71,4 +71,4 @@ const HomeViewFirstText = (props) => {
   );
 };
 
-export default HomeViewFirstText;
+export default HomeViewFirstSection;

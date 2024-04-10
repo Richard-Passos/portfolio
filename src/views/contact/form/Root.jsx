@@ -39,7 +39,7 @@ const ContactViewForm = async ({ className, data = {}, ...props }) => {
 
             {data.control?.toLowerCase() !== 'select' ? (
               <Form.Control>
-                <Control placeholder={data.placeholder} />
+                <Control placeholder={data.placeholder} type={data.type} />
               </Form.Control>
             ) : (
               <Control placeholder={data.placeholder} />

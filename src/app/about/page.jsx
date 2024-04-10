@@ -2,10 +2,10 @@ import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
 import { AboutView } from '@/views';
 
-const AboutPage = async () => {
+const AboutPage = async (props) => {
   const { data } = await pagesApi.getOne('about');
 
-  return <AboutView data={data} />;
+  return <AboutView data={data} {...props} />;
 };
 
 const generateMetadata = async () => {

@@ -4,7 +4,7 @@ import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
-const HomeViewSecondText = ({ className, ...props }) => {
+const HomeViewCtaSection = ({ className, ...props }) => {
   const animationConfig = {
     scroll: 'scrollY',
     scrollPoints: [0, 400],
@@ -36,4 +36,4 @@ const HomeViewSecondText = ({ className, ...props }) => {
   );
 };
 
-export default HomeViewSecondText;
+export default HomeViewCtaSection;
