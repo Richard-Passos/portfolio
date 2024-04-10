@@ -15,7 +15,33 @@ const homePage = {
       theme: 'dark',
       id: 'scrollTo',
       data: {
-        
+        title: [
+          'About',
+          'work'
+        ],
+        subtitle: 'Just someone who wanna conquer minds and hearts.',
+        description:
+          "I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
+          block: {
+            title: 'Selected works',
+            action: { 
+              label:'More works',
+              href: '/projects',
+              variants: { 
+                color: 'main' 
+              }, 
+              icon: {
+                src: '/images/plus.svg',
+              }
+            }
+          },
+          list: {
+            items: ['Mission', 'Soft & hard skills', 'Services'],
+            action: {
+              href: '/work',
+              label: 'Explore'
+            }
+          }
       }
     },
     {
@@ -30,7 +56,17 @@ const homePage = {
       slug: 'about',
       theme: 'dark',
       data: {
-
+        title: [
+          'About',
+          'me'
+        ],
+        list: {
+          items: ['Background', 'Hobbys', 'Personality'],
+          action: {
+            href: '/about',
+            label: 'Explore'
+          }
+        }
       }
     },
     {
