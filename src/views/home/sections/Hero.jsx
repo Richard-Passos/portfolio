@@ -56,7 +56,7 @@ const HomeViewHeroSection = ({ className, data = {}, ...props }) => {
             <div className='relative flex min-h-[inherit] items-center justify-center px-[--inset] py-lg max-sm:!translate-y-0'>
               <div className='w-9/10 sm:scale-[--scale] pt-[--header-h] pb-[--inset] sm:opacity-[--opacity]'>
                 <Text.Title
-                  aria-label={data.title?.replace(/<bold>(.*)<\/bold>/, '$1')}
+                  aria-label={data.title?.replace(/<b>(.*)<\/b>/, '$1')}
                   asChild
                   className='w-full text-center lg:px-sm items-center flex flex-col'
                   variants={{ size: 'xl' }}
@@ -65,7 +65,7 @@ const HomeViewHeroSection = ({ className, data = {}, ...props }) => {
                     {data.title?.split(`\n`).map(
                       (w, i, arr) => {
                         // TODO fix with rich text
-                        const boldRegex = /(.*)<bold>(.*)<\/bold>(.*)/g
+                        const boldRegex = /(.*)<b>(.*)<\/b>(.*)/g
 
                         const hasBold = boldRegex.test(w)
 
