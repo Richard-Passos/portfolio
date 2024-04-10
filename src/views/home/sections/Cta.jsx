@@ -25,7 +25,7 @@ const HomeViewCtaSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
         className={cn(
-          'flex items-center justify-center max-2xl:overflow-hidden',
+          'flex items-center justify-center',
           className,
         )}
         {...props}
