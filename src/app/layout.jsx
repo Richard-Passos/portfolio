@@ -11,7 +11,7 @@ const font = Inter({ subsets: ['latin'], variable: '--font-app' });
 
 const Layout = ({ children }) => {
   return (
-    <html lang='en'>
+    <html lang='en' className='overflow-x-clip'>
       <Providers.GlobalState>
         <SmoothScroll>
           <Header.GetState>
