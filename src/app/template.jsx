@@ -1,6 +1,6 @@
 import { Animate } from '@/components';
 
-const animationVariants = [
+const ANIMATION_VARIANTS = [
   { y: '7.5rem', opacity: 0 },
   { y: '0rem', opacity: 1 },
   { y: '-7.5rem', opacity: 0 },
@@ -9,7 +9,7 @@ const animationVariants = [
 const Template = ({ children, ...props }) => {
   return (
     <Animate
-      variants={animationVariants}
+      variants={ANIMATION_VARIANTS}
       transition={{ duration: 0.5 }}
       {...props}
     >
