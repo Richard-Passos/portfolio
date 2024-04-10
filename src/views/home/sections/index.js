@@ -1,13 +1,13 @@
 import HomeViewAboutSection from './About';
+import HomeViewButSection from './But';
 import HomeViewCtaSection from './Cta';
-import HomeViewFirstSection from './First';
 import HomeViewHeroSection from './Hero';
 import HomeViewWorkSection from './Work';
 
 const HomeViewSections = {
   About: HomeViewAboutSection,
+  But: HomeViewButSection,
   Cta: HomeViewCtaSection,
-  First: HomeViewFirstSection,
   Hero: HomeViewHeroSection,
   Work: HomeViewWorkSection,
 };
@@ -15,8 +15,8 @@ const HomeViewSections = {
 export default HomeViewSections;
 export { 
   HomeViewAboutSection, 
+  HomeViewButSection, 
   HomeViewCtaSection, 
-  HomeViewFirstSection, 
   HomeViewHeroSection, 
   HomeViewWorkSection 
 };

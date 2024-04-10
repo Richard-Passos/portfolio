@@ -1,38 +1,47 @@
 import { Section, TextScrollAnimate } from '@/components';
-import { ScrollAnimate } from '@/components/scroll-animate';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
-const HomeViewCtaSection = ({ className, ...props }) => {
-  const animationConfig = {
+const ANIMATION_CONFIG = {
+  rotate1: {
     scroll: 'scrollY',
     scrollPoints: [0, 400],
-    prop: '--rotate',
+    prop: 'rotate',
     propPoints: ['0deg', '360deg'],
     transformConfig: { clamp: false },
-  };
+  },
+  rotate2: {
+    scroll: 'scrollY',
+    scrollPoints: [0, 400],
+    prop: 'rotate',
+    propPoints: ['0deg', '-360deg'],
+    transformConfig: { clamp: false },
+  },
+};
 
+const HomeViewCtaSection = ({ className, data = {}, ...props }) => {
   return (
-    <ScrollAnimate config={animationConfig}>
-      <Section
-        as='div'
-        hasTransition={false}
+    <Section
         className={cn(
           'flex items-center justify-center max-2xl:overflow-hidden',
           className,
         )}
         {...props}
       >
-        <Text className='w-9/10 max-w-screen-lg text-center text-4xl/tight font-semibold md:text-5xl/tight'>
-          <TextScrollAnimate text="If you're looking for a developer who's got the skills, passion and a problem solving mindset to make your ideas come true. Then..." />
+        <Text className='w-9/10 relative z-10 max-w-screen-lg text-center text-4xl/tight font-semibold md:text-5xl/tight'>
+          <TextScrollAnimate text={data.description} />
         </Text>
 
-        <SmileIcon className='absolute left-0 top-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] -translate-x-1/2 rotate-[--rotate] fill-muted' />
+          <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate1}>
+        <SmileIcon className='absolute left-0 top-0 size-[min(50vmin,theme(maxWidth.md))] -translate-x-1/2 text-muted' />
+    </ScrollAnimateTransform>
 
-        <GlobeIcon className='absolute bottom-0 right-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] translate-x-1/2 -rotate-[--rotate] fill-muted' />
+          <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate2}>
+        <GlobeIcon className='absolute bottom-0 right-0 size-[min(50vmin,theme(maxWidth.md))] translate-x-1/2 text-muted' />
+    </ScrollAnimateTransform>
       </Section>
-    </ScrollAnimate>
   );
 };
 

@@ -56,7 +56,7 @@ const HomeViewHeroSection = ({ className, data = {}, ...props }) => {
             <div className='relative flex min-h-[inherit] items-center justify-center px-[--inset] py-lg max-sm:!translate-y-0'>
               <div className='w-9/10 sm:scale-[--scale] pt-[--header-h] pb-[--inset] sm:opacity-[--opacity]'>
                 <Text.Title
-                  aria-label={data.title}
+                  aria-label={data.title?.replace(/<bold>(.*)<\/bold>/, '$1')}
                   asChild
                   className='w-full text-center lg:px-sm items-center flex flex-col'
                   variants={{ size: 'xl' }}
@@ -64,15 +64,12 @@ const HomeViewHeroSection = ({ className, data = {}, ...props }) => {
                   <h1>
                     {data.title?.split(`\n`).map(
                       (w, i, arr) => {
-                        const boldRegex = /<bold>(.*)<\/bold>/g
+                        // TODO fix with rich text
+                        const boldRegex = /(.*)<bold>(.*)<\/bold>(.*)/g
 
-                        const hasBold =  boldRegex.test(w);
+                        const hasBold = boldRegex.test(w)
 
-                        const test = w.split(/<bold>(.*)<\/bold>/)
-                        console.log('-  test   -', test)
-
-                        const Bold = w.replace(boldRegex, (group1) => <span className='outline-text'>{group1}</span>)
-                        console.log('-  Bold   -', Bold)
+                        const Bold = <>{w.replace(boldRegex, '$1')} <span className='outline-text'>{w.replace(boldRegex, '$2')}</span> {w.replace(boldRegex, '$3')}</>
 
                         const content = hasBold ? Bold : w
 
