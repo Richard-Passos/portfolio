@@ -26,6 +26,7 @@ const AboutViewBackgroundSection = ({ className, data = {}, ...props }) => {
       <h2 className='w-full'>
         {data.title?.map((w, i) => (
           <ScrollTitle
+            dir={i % 2 === 0 ? 'ltr' : 'rtl'}
             key={i}
             title={w}
           />
