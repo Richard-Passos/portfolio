@@ -1,216 +1,85 @@
-import { globalsApi } from '@/api';
 import {
-  InfinityScroll,
   BentoGrid,
   ListHorizontalScroll,
-  LocalTime,
   ScrollTitle,
   Section,
 } from '@/components';
-import { Badge, Link, Text } from '@/components/ui';
-import Icons from '@/components/ui/icon/icons';
-import { values } from '@/constants';
-import { cn } from '@/utils';
+import { capitalize, cn } from '@/utils';
 
-const HomeViewAboutSection = ({ className, ...props }) => {
+const HomeViewAboutSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
       className={cn(
-        'flex flex-col items-center gap-lg max-2xl:overflow-x-clip',
+        'flex flex-col items-center',
         className,
       )}
       {...props}
     >
-      <h2 className='flex w-full flex-col'>
-        <ScrollTitle title='ABOUT' />
-        <ScrollTitle
-          dir='rtl'
-          title='ME'
-        />
+      <h2 className='w-full'>
+        {data.title?.map((w, i) => (
+          <ScrollTitle
+            dir={i % 2 === 0 ? 'ltr' : 'rtl'}
+            key={i}
+            title={w}
+          />
+        ))}
       </h2>
 
-      <Grid />
+      <HomeViewAboutSectionGrid data={data.grid} className='mt-lg' />
 
-      <ListContactPage />
+      <HomeViewAboutSectionList data={data.list} className='mt-lg' />
     </Section>
   );
 };
 
-const Grid = async ({ className, ...props }) => {
-  const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
-
+const HomeViewAboutSectionGrid = ({ className, data = {}, style, ...props }) => {
   return (
     <BentoGrid
       className={cn(
-        'w-9/10 max-w-screen-lg [grid-template-areas:"item-0""item-1""item-2""item-3""item-4""item-5""item-6"] sm:[grid-template-areas:"item-0_item-0""item-1_item-2""item-3_item-4""item-5_item-6"] lg:[grid-template-areas:"._item-0_item-0""._item-0_item-0""item-1_item-2_item-3""item-1_item-2_item-4""item-5_item-5_item-6""item-5_item-5_item-6"]',
+        'w-9/10 max-w-screen-lg',
         className,
       )}
-      {...props}
+      style={{ ...(Object.entries(data.templates).reduce((obj, [key, val]) => ({...obj, [`--${key.toLowerCase()}-template`]: val}), {})), ...style}}      {...props}
     >
-      <BentoGrid.ScrollAnimate>
-        <BentoGrid.Item
-          idx={0}
-          className='min-h-60 flex-col justify-between'
-        >
-          <Badge
-            className='w-fit'
-            variants={{ color: 'inverted', style: 'outline' }}
-          >
-            #about
-          </Badge>
+      {data.items?.map(({type = '', data}, i) => {
+        const Item = BentoGrid.Item[type.split(/[_-]/g).map(capitalize).join('')] || BentoGrid.Item
 
-          <Text className='text-muted-content'>
-            <Icons.HandHorns
-              aria-hidden
-              className='inline-block size-4 -translate-y-0.5 fill-content'
-            />{' '}
-            <span className='inline text-content'>Hey —</span> I&apos;m Richard
-            an awesome full stack developer based in Brazil. When I&apos;m not
-            coding, you can catch me in the gaming world — I&apos;m a huge fan,
-            especially when it comes to rogue-like games.
-          </Text>
-        </BentoGrid.Item>
-      </BentoGrid.ScrollAnimate>
+        return( <BentoGrid.ScrollAnimate key={i}>
 
-      <BentoGrid.ScrollAnimate>
-        <BentoGrid.Item
-          idx={1}
-          className='min-h-60 flex-col justify-between'
-        >
-          <Icons.Globe />
+        <Item  idx={i} data={data}/>
+      </BentoGrid.ScrollAnimate>)
 
-          <Text className='text-4xl font-medium'>
-            Based in {personalInfo.location?.country},{' '}
-            {personalInfo.location?.gmt}
-          </Text>
-        </BentoGrid.Item>
-      </BentoGrid.ScrollAnimate>
-
-      <BentoGrid.ScrollAnimate>
-        <BentoGrid.Item
-          idx={2}
-          className='min-h-60 flex-col gap-0 p-0'
-        >
-          <Icons.Fingerprint className='ml-sm mt-sm' />
-
-          <div className='my-auto flex flex-col items-center justify-center gap-sm'>
-            <Text.Subtitle className='text-center text-3xl font-bold'>
-              My values
-            </Text.Subtitle>
-
-            <InfinityScroll
-              as='ul'
-              className='[--duration:7.5s] [--gap:theme(spacing.3)] hover:paused'
-            >
-              {values.map(({ title }, i) => (
-                <Badge
-                  asChild
-                  className='px-3.5 py-1.5 text-sm'
-                  key={title}
-                  variants={{ color: i % 2 === 0 ? 'primary' : 'muted' }}
-                >
-                  <li>{title}</li>
-                </Badge>
-              ))}
-            </InfinityScroll>
-          </div>
-        </BentoGrid.Item>
-      </BentoGrid.ScrollAnimate>
-
-      <BentoGrid.ScrollAnimate>
-        <BentoGrid.Item
-          idx={3}
-          className='flex-col justify-between'
-        >
-          <Icons.Rocket className='h-6 w-6' />
-
-          <Text className='font-medium leading-tight text-muted-content'>
-            Improving a little bit every day.
-          </Text>
-        </BentoGrid.Item>
-      </BentoGrid.ScrollAnimate>
-
-      <BentoGrid.ScrollAnimate>
-        <BentoGrid.Item
-          idx={4}
-          className='flex-col justify-between'
-        >
-          <Icons.GameController className='h-6 w-6' />
-
-          <Text className='font-medium leading-tight text-muted-content'>
-            I love to play games.
-          </Text>
-        </BentoGrid.Item>
-      </BentoGrid.ScrollAnimate>
-
-      <BentoGrid.ScrollAnimate>
-        <BentoGrid.Item
-          idx={5}
-          className='min-h-60 flex-col items-center justify-center'
-        >
-          <Text.Subtitle className='text-xs uppercase text-muted-content'>
-            my local time
-          </Text.Subtitle>
-
-          <Text className='text-[14vw]/none font-bold sm:text-[min(8vw,6rem)]/none'>
-            <LocalTime />
-          </Text>
-        </BentoGrid.Item>
-      </BentoGrid.ScrollAnimate>
-
-      <BentoGrid.ScrollAnimate>
-        <BentoGrid.Item
-          idx={6}
-          className='hover:primary min-h-60 border-none p-0'
-        >
-          <Link
-            className='flex size-full flex-col gap-1.5 rounded-inherit border bg-main p-sm no-underline transition-colors hover:focus-visible:outline-main'
-            href={personalInfo.buyCoffee?.href}
-          >
-            <div className='mb-3 flex aspect-square h-10 items-center justify-center rounded-sm border transition-border'>
-              <Icons.Coffee className='h-6 w-6' />
-            </div>
-
-            <Text className='text-center'>{personalInfo.buyCoffee?.label}</Text>
-
-            <Text.Small className='text-center font-normal transition-color'>
-              {personalInfo.buyCoffee?.href?.replace(
-                /^(?:https?:\/\/)?(?:[^@/\n]+@)?(?:www\.)?([^:/?\n]+).*/gim,
-                '$1',
-              )}
-            </Text.Small>
-          </Link>
-        </BentoGrid.Item>
-      </BentoGrid.ScrollAnimate>
+      }
+        )}
     </BentoGrid>
   );
 };
 
-const ListContactPage = ({ className, ...props }) => {
-  const content = ['Background', 'Hobbys', 'Personality'];
+const HomeViewAboutSectionList = ({ className, data = {}, ...props }) => {
+  const { action = {} } = data
 
   return (
     <div
-      className={cn('flex w-full flex-col items-center gap-md', className)}
+      className={cn('flex w-full flex-col items-center', className)}
       {...props}
     >
       <ListHorizontalScroll>
-        {content.map((content, i) => (
+        {data.items?.map((data, i) => (
           <ListHorizontalScroll.Item
-            baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? -1 : 1)}
-            className='[--gap:theme(spacing.4)] odd:rotate-[.5deg] even:-rotate-[.5deg]'
-            key={content}
+            baseVelocity={(1 + 0.35 * i) * (i % 2 !== 0 ? 1 : -1)}
+            className='[--gap:theme(spacing.4)]'
+            key={data}
           >
-            <span>{content}</span> ·{' '}
-            <span className='opacity-30 dark:opacity-10'>{content}</span>{' '}
+            <span>{data}</span> ·{' '}
+            <span className='opacity-30 dark:opacity-10'>{data}</span>{' '}
             <span className='opacity-30 dark:opacity-10'>·</span>{' '}
-            <span className='opacity-30 dark:opacity-10'>{content}</span> ·
+            <span className='opacity-30 dark:opacity-10'>{data}</span> ·
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll>
 
-      <ListHorizontalScroll.Link href='/about'>
-        Explore
+      <ListHorizontalScroll.Link className='mt-md' {...action}>
+        {action.label}
       </ListHorizontalScroll.Link>
     </div>
   );
