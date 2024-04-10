@@ -46,7 +46,7 @@ const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
           {block.title}
         </Text.Subtitle>
 
-        <ShowProjects className='mt-md' />
+        <HomeViewWorkSectionProjects className='mt-md' />
 
         <MagneticButton
         className='mt-md'
@@ -57,12 +57,12 @@ const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
         </MagneticButton>
       </div>
 
-      <ListWorkPage data={data.list} className='mt-lg' />
+      <HomeViewWorkSectionList data={data.list} className='mt-lg' />
     </Section>
   );
 };
 
-const ShowProjects = async ({ className, ...props }) => {
+const HomeViewWorkSectionProjects = async ({ className, ...props }) => {
   const { data = {} } = await projectsApi.getSelecteds()
 
   const projects = data.reduce(
@@ -120,12 +120,12 @@ const ShowProjects = async ({ className, ...props }) => {
   );
 };
 
-const ListWorkPage = ({ className, data = {}, ...props }) => {
+const HomeViewWorkSectionList = ({ className, data = {}, ...props }) => {
   const { action = {} } = data
 
   return (
     <div
-      className={cn('flex w-full flex-col items-center gap-md', className)}
+      className={cn('flex w-full flex-col items-center', className)}
       {...props}
     >
       <ListHorizontalScroll>
