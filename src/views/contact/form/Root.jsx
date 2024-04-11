@@ -1,6 +1,5 @@
 import { MagneticButton } from '@/components/button';
-import { Form, Input, Textarea } from '@/components/ui';
-import { PaperPlaneIcon } from '@/components/ui/icon/icons';
+import { Form, Icon, Input, Textarea } from '@/components/ui';
 import { cn } from '@/utils';
 
 import ClientForm from './Client';
@@ -13,13 +12,15 @@ const CONTROLS = {
 };
 
 const ContactViewForm = async ({ className, data = {}, ...props }) => {
+  const {fields = [], submit = {} } = data
+
   return (
     <ClientForm
       className={cn('sm:grid-cols-4', className)}
       data={data.fields}
       {...props}
     >
-      {data.fields?.map((data) => {
+      {fields?.map((data) => {
         const Control = CONTROLS[data.control?.toLowerCase()];
 
         return (
@@ -54,12 +55,13 @@ const ContactViewForm = async ({ className, data = {}, ...props }) => {
 
       <Form.Submit asChild>
         <MagneticButton className='h-12 place-self-center max-sm:aspect-auto max-sm:px-6 sm:h-auto sm:w-full sm:max-w-28'>
-          <PaperPlaneIcon
+          <Icon
             aria-hidden
-            className='scale-90 max-sm:hidden'
+            className='max-sm:hidden'
+            {...(submit.icon || {})}
           />
 
-          <span className='sm:sr-only'>{data.submit}</span>
+          <span className='sm:sr-only'>{submit.label}</span>
         </MagneticButton>
       </Form.Submit>
     </ClientForm>
