@@ -23,7 +23,6 @@ const BentoGridItemDescription = ({ className, data = {}, ...props }) => {
               const boldRegex = /(.*)<b>(.*)<\/b>(.*)/g
 
               const hasBold = boldRegex.test(w)
-              console.log('-  hasBold   -', hasBold)
 
               const Bold = <>{w.replace(boldRegex, '$1')} <span className='inline text-content'>{w.replace(boldRegex, '$2')}</span> {w.replace(boldRegex, '$3')} </>
 
