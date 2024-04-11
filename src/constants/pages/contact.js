@@ -258,7 +258,10 @@ const contactPage = {
               ],
             },
           ],
-          submit: 'Submit',
+          submit: {
+            icon: { src: '/images/paperplane.svg' },
+            label: 'Submit'
+          },
         },
       },
     },
