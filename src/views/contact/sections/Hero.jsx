@@ -1,9 +1,7 @@
-import { Section } from '@/components';
+import { BentoGrid, Section } from '@/components';
 import { Badge } from '@/components/ui';
-import { Text, TextTitle } from '@/components/ui/text';
-import { cn } from '@/utils';
-
-import Grid from './Grid';
+import { TextTitle } from '@/components/ui/text';
+import { capitalize, cn } from '@/utils';
 
 const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
   return (
@@ -41,15 +39,35 @@ const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
         </h1>
       </TextTitle>
 
-      <Grid
+      <ContactViewHeroSectionGrid
         className='mt-md'
-        data={data}
+        data={data.grid}
       />
 
       <div className='absolute top-0 h-[--header-h] w-screen max-w-bounds bg-main'>
         <span className='absolute left-1/2 top-full h-px w-[95%] -translate-x-1/2 bg-border opacity-60 dark:opacity-20' />
       </div>
     </Section>
+  );
+};
+
+const ContactViewHeroSectionGrid = ({ data = {}, style, ...props }) => {
+  return (
+    <BentoGrid
+    style={{ ...(Object.entries(data.templates).reduce((obj, [key, val]) => ({...obj, [`--${key.toLowerCase()}-template`]: val}), {})), ...style}}
+      {...props}
+    >
+      {data.items?.map(({type = '', data}, i) => {
+        const Item = BentoGrid.Item[type.split(/[_-]/g).map(capitalize).join('')] || BentoGrid.Item
+
+        return( 
+
+        <Item  key={i} idx={i} data={data}/>
+     )
+
+      }
+        )}
+        </BentoGrid>
   );
 };
 
