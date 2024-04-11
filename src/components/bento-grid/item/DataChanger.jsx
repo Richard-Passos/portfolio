@@ -1,0 +1,51 @@
+import { cn } from '@/utils';
+
+import Item from './Root'
+import DataChanger from '../../data-changer';
+import { MagneticButton } from '../../button';
+import { Icon, Text } from '../../ui';
+
+const BentoGridItemDataChanger = ({ className, data = {}, ...props }) => {
+  const {action = {} } = data 
+  return (
+    <DataChanger
+    asChild
+lastIdx={data.items?.length - 1}
+>
+    <Item
+          className={cn('p-xs items-center', className)}
+          {...props}
+        >
+      <DataChanger.Action asChild>
+        <MagneticButton
+          className='h-12 shrink-0 [&_svg]:size-[40%]'
+          aria-label={action.label}
+          {...action}
+          variants={{ color: 'muted', size: 'sm', ...(action.variants || {}) }}
+        >
+          <Icon {...(action.icon || {})} />
+        </MagneticButton>
+      </DataChanger.Action>
+
+      {data.items?.map((data, i) => (
+        <DataChanger.Item
+          idx={i}
+          key={data.title}
+        >
+          <Text.Title className='text-sm uppercase transition-[clip-path] [clip-path:inset(100%_0_0_0)] group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
+            {data.title}
+          </Text.Title>
+
+          <Text className='text-sm text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] first-letter:uppercase group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
+            {data.description}
+          </Text>
+        </DataChanger.Item>
+      ))}
+
+      <DataChanger.Timerbar className='absolute inset-x-0 bottom-0 w-auto' />
+        </Item>
+    </DataChanger>
+  );
+};
+
+export default BentoGridItemDataChanger;
