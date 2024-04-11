@@ -1,12 +1,12 @@
 import HomeViewContactSection from './Contact';
+import HomeViewHeroSection from './Hero';
 import HomeViewServicesSection from './Services';
-import HomeViewHeroSection from './hero';
 
 const HomeViewSections = {
   Contact: HomeViewContactSection,
-  Services: HomeViewServicesSection,
   Hero: HomeViewHeroSection,
+  Services: HomeViewServicesSection,
 };
 
 export default HomeViewSections;
-export { HomeViewContactSection, HomeViewServicesSection, HomeViewHeroSection };
+export { HomeViewContactSection, HomeViewHeroSection, HomeViewServicesSection,  };
