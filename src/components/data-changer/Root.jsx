@@ -4,12 +4,15 @@ import { forwardRef, useContext } from 'react';
 
 import { DataChangerContext, DataChangerProvider } from '@/contexts';
 import { isFunctionThanCall } from '@/utils';
+import { Slot } from '@radix-ui/react-slot';
 
-const DataChanger = forwardRef((props, ref) => {
+const DataChanger = forwardRef(({asChild, ...props}, ref) => {
   const { setIsPaused } = useContext(DataChangerContext);
 
+  const Tag = asChild ? Slot : 'section'
+
   return (
-    <section
+    <Tag
       ref={ref}
       {...props}
       onMouseEnter={(ev) => {
