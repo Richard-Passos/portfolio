@@ -1,12 +1,12 @@
 import { projectsApi } from '@/api';
 import {
+  Button,
   ListHorizontalScroll,
   Projects,
   ScrollTitle,
   Section,
   TextScrollAnimate,
 } from '@/components';
-import { MagneticButton } from '@/components/button';
 import { Icon, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -48,12 +48,12 @@ const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
 
         <HomeViewWorkSectionProjects className='mt-md' />
 
-        <MagneticButton
+        <Button.Magnetic
         className='mt-md'
           {...block.action}
         >
           <Icon aria-hidden {...block.action?.icon} />
-        </MagneticButton>
+        </Button.Magnetic>
       </div>
 
       <HomeViewWorkSectionList data={data.list} className='mt-lg' />
