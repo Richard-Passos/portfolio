@@ -2,73 +2,80 @@ import { cn } from '@/utils';
 
 import { MagneticButton } from '../button';
 import HorizontalScroll from '../horizontal-scroll';
-import { Text } from '../ui';
-import { ArrowUpIcon } from '../ui/icon/icons';
+import { Icon, Text } from '../ui';
 
-const NextPage = ({ text, href, className, ...props }) => {
+const NextPage = ({ className, data = {}, ...props }) => {
+  const { action = {} } = data
+
   return (
     <section
       className={cn('w-full space-y-sm', className)}
       {...props}
     >
-      <NextPageLinkHeading />
+      <NextPageLinkHeading >
+        {data.title}
+      </NextPageLinkHeading>
 
       <div className='relative flex w-full flex-col items-center justify-center gap-[.2em]'>
         <NextPageLinkContent
-          text={text}
+          baseVelocity={-1}
           className='text-muted'
-        />
+        >
+          {data.description}
+        </NextPageLinkContent>
 
         <MagneticButton
           className='absolute h-2/3 [&_svg]:size-[40%]'
-          href={href}
-          variants={{ color: 'main' }}
+          {...action.data}
         >
-          <ArrowUpIcon className='rotate-45' />
+          <Icon {...action.icon} />
         </MagneticButton>
 
         <NextPageLinkContent
-          baseVelocity={-1.5}
+          baseVelocity={1.5}
           className='relative z-10'
-          text={text}
-        />
+        >
+          {data.description}
+        </NextPageLinkContent>
       </div>
 
       <NextPageLinkHeading
         aria-hidden
         className='first:[&>*]:order-2'
-      />
+      >
+        {data.title}
+      </NextPageLinkHeading>
     </section>
   );
 };
 
-const NextPageLinkHeading = ({ className, ...props }) => {
+const NextPageLinkHeading = ({ className, children, ...props }) => {
   return (
     <div
       className={cn('mx-auto flex w-9/10 items-center gap-sm', className)}
       {...props}
     >
-      <Text.Title className='shrink-0 text-xs uppercase'>Next page</Text.Title>
+      <Text.Title className='shrink-0 text-xs uppercase'>{children}</Text.Title>
 
       <span className='h-px w-full bg-border' />
     </div>
   );
 };
 
-const NextPageLinkContent = ({ className, variants, text, ...props }) => {
+const NextPageLinkContent = ({ className, variants, children, ...props }) => {
   return (
     <Text.Title
       aria-hidden
       asChild
       className={cn(
-        'pointer-events-none font-bold [--gap:--font-blank-space]',
+        'pointer-events-none font-bold',
         className,
       )}
       variants={{ size: 'xl', ...variants }}
       {...props}
     >
       <HorizontalScroll>
-        <span>{text}</span> ·
+        {children}&nbsp;
       </HorizontalScroll>
     </Text.Title>
   );
