@@ -1,5 +1,6 @@
 import {
   BentoGrid,
+  Button,
   ListHorizontalScroll,
   ScrollTitle,
   Section,
