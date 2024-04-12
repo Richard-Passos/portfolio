@@ -4,6 +4,7 @@ import {
   ScrollTitle,
   Section,
 } from '@/components';
+import { Icon } from '@/components/ui';
 import { capitalize, cn } from '@/utils';
 
 const HomeViewAboutSection = ({ className, data = {}, ...props }) => {
@@ -39,7 +40,7 @@ const HomeViewAboutSectionGrid = ({ className, data = {}, style, ...props }) => 
         'w-9/10 max-w-screen-lg',
         className,
       )}
-      style={{ ...(Object.entries(data.templates).reduce((obj, [key, val]) => ({...obj, [`--${key.toLowerCase()}-template`]: val}), {})), ...style}}      {...props}
+      style={{ ...Object.entries(data.templates)?.reduce((obj, [key, val]) => ({...obj, [`--${key.toLowerCase()}-template`]: val}), {}), ...style}}      {...props}
     >
       {data.items?.map(({type = '', data}, i) => {
         const Item = BentoGrid.Item[type.split(/[_-]/g).map(capitalize).join('')] || BentoGrid.Item
@@ -78,9 +79,15 @@ const HomeViewAboutSectionList = ({ className, data = {}, ...props }) => {
         ))}
       </ListHorizontalScroll>
 
-      <ListHorizontalScroll.Link className='mt-md' {...action}>
-        {action.label}
-      </ListHorizontalScroll.Link>
+      <Button
+      {...action.data}
+    >
+      {action.data?.label}
+
+      <Button.Icon animation={action.animation}>
+        <Icon {...action.icon} />
+      </Button.Icon>
+    </Button>
     </div>
   );
 };
