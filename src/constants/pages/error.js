@@ -10,15 +10,20 @@ const errorPage = {
         description: 'Please try again or go back to Home page.',
         actions: [
           {
-            href: '/',
+            type: '',
+            data: {
+              href: '/',
             label: 'Back Home',
             variants: {
               color: 'main',
             },
+            }
           },
           {
             type: 'reset',
-            label: 'Try again',
+            data: {
+              label: 'Try again',
+            }
           },
         ],
       },
