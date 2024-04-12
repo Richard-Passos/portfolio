@@ -5,16 +5,14 @@ import HorizontalScroll from '../horizontal-scroll';
 import { Icon, Text } from '../ui';
 
 const NextPage = ({ className, data = {}, ...props }) => {
-  const { action = {} } = data
+  const { action = {} } = data;
 
   return (
     <section
       className={cn('w-full space-y-sm', className)}
       {...props}
     >
-      <NextPageLinkHeading >
-        {data.title}
-      </NextPageLinkHeading>
+      <NextPageLinkHeading>{data.title}</NextPageLinkHeading>
 
       <div className='relative flex w-full flex-col items-center justify-center gap-[.2em]'>
         <NextPageLinkContent
@@ -67,16 +65,11 @@ const NextPageLinkContent = ({ className, variants, children, ...props }) => {
     <Text.Title
       aria-hidden
       asChild
-      className={cn(
-        'pointer-events-none font-bold',
-        className,
-      )}
+      className={cn('pointer-events-none font-bold', className)}
       variants={{ size: 'xl', ...variants }}
       {...props}
     >
-      <HorizontalScroll>
-        {children}&nbsp;
-      </HorizontalScroll>
+      <HorizontalScroll>{children}&nbsp;</HorizontalScroll>
     </Text.Title>
   );
 };

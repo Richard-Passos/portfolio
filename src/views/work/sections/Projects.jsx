@@ -1,4 +1,10 @@
-import { Projects, Button, ScrollTitle, Section, TextScrollAnimate } from '@/components';
+import {
+  Button,
+  Projects,
+  ScrollTitle,
+  Section,
+  TextScrollAnimate,
+} from '@/components';
 import { Icon, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -18,61 +24,71 @@ const WorkViewProjectsSection = ({ className, data = {}, ...props }) => {
         ))}
       </h2>
 
-      <section className='mt-md flex max-sm:flex-col w-9/10 max-w-screen-xl gap-sm'>
-        {
-          data.subtitle && <Text className='text-4xl/tight font-medium basis-0 grow max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
-          <TextScrollAnimate
-            className='first:first-letter:uppercase'
-            text={data.subtitle}
-          />
-        </Text>
-        }
-
-        {
-          data.description && <section className='sm:max-w-lg flex flex-col max-sm:items-center grow basis-0 sm:ml-auto'>
-          <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
-            {data.description}
+      <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
+        {data.subtitle && (
+          <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+            <TextScrollAnimate
+              className='first:first-letter:uppercase'
+              text={data.subtitle}
+            />
           </Text>
-  
-          {
-            data.action && <Button
-            className='mt-md'
+        )}
+
+        {data.description && (
+          <section className='flex grow basis-0 flex-col max-sm:items-center sm:ml-auto sm:max-w-lg'>
+            <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
+              {data.description}
+            </Text>
+
+            {data.action && (
+              <Button
+                className='mt-md'
                 {...action.data}
               >
                 {action.data?.label}
-                
+
                 <Button.Icon animation={action.animation}>
                   <Icon {...action.icon} />
                 </Button.Icon>
               </Button>
-          }
+            )}
           </section>
-        }
+        )}
       </section>
 
-
-      <WorkViewProjectsSectionBlock className='mt-lg' data={data.block}/>
+      <WorkViewProjectsSectionBlock
+        className='mt-lg'
+        data={data.block}
+      />
     </Section>
   );
 };
 
-const WorkViewProjectsSectionBlock = ({ data = {}, className,  ...props }) => {
-  const { action = {} } = data
+const WorkViewProjectsSectionBlock = ({ data = {}, className, ...props }) => {
+  const { action = {} } = data;
 
-  return <section className={cn('flex w-9/10 max-w-screen-lg flex-col items-center', className)} {...props}>
-  <WorkViewProjectsSectionShow data={data.items} />
+  return (
+    <section
+      className={cn(
+        'flex w-9/10 max-w-screen-lg flex-col items-center',
+        className,
+      )}
+      {...props}
+    >
+      <WorkViewProjectsSectionShow data={data.items} />
 
-  <Button.Magnetic
-    className='mt-md'
-    {...action.data}
-  >
-    <Icon {...action.icon} />
-  </Button.Magnetic>
-</section>
-}
+      <Button.Magnetic
+        className='mt-md'
+        {...action.data}
+      >
+        <Icon {...action.icon} />
+      </Button.Magnetic>
+    </section>
+  );
+};
 
-const WorkViewProjectsSectionShow = ({data = [], className, ...props}) => {    
-  const {items, images} = data.reduce(
+const WorkViewProjectsSectionShow = ({ data = [], className, ...props }) => {
+  const { items, images } = data.reduce(
     (obj, { thumbnail, ...data }) => ({
       items: [...obj.items, data],
       images: [...obj.images, thumbnail],

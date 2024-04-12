@@ -25,20 +25,17 @@ const CursorContent = ({ className, smoothConfig, ...props }) => {
   );
 };
 
-const getContent = ({ type = '', className, ...data}) => {
+const getContent = ({ type = '', className, ...data }) => {
   const contents = {
     icon: (
       <Icon
-      className={cn('size-1/3', className)}
+        className={cn('size-1/3', className)}
         {...data}
       />
     ),
     text: (
       <span
-      className={cn(
-        'p-1 text-center font-semibold leading-none',
-        className,
-      )}
+        className={cn('p-1 text-center font-semibold leading-none', className)}
         {...data}
       >
         {data.text}

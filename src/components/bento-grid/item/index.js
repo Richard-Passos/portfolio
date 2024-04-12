@@ -1,4 +1,3 @@
-import ItemRoot from './Root';
 import ItemBold from './Bold';
 import ItemDataChanger from './DataChanger';
 import ItemDescription from './Description';
@@ -8,9 +7,10 @@ import ItemIndicator from './Indicator';
 import ItemInfinityScroll from './InfinityScroll';
 import ItemLink from './Link';
 import ItemLocalTime from './LocalTime';
+import ItemRoot from './Root';
 import ItemSimple from './Simple';
 
-const Item = ItemRoot
+const Item = ItemRoot;
 
 Item.Bold = ItemBold;
 Item.DataChanger = ItemDataChanger;
@@ -25,15 +25,15 @@ Item.Simple = ItemSimple;
 
 export default Item;
 export {
-ItemRoot as Item,
-ItemBold,
-ItemDataChanger,
-ItemDescription,
-ItemHorizontalScroll,
-ItemIcons,
-ItemIndicator,
-ItemInfinityScroll,
-ItemLink,
-ItemLocalTime,
-ItemSimple,
-}
+  ItemRoot as Item,
+  ItemBold,
+  ItemDataChanger,
+  ItemDescription,
+  ItemHorizontalScroll,
+  ItemIcons,
+  ItemIndicator,
+  ItemInfinityScroll,
+  ItemLink,
+  ItemLocalTime,
+  ItemSimple,
+};

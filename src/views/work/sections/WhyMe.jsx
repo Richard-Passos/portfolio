@@ -1,9 +1,15 @@
-import { Button, ScrollTitle, Section, Stats, TextScrollAnimate } from '@/components';
+import {
+  Button,
+  ScrollTitle,
+  Section,
+  Stats,
+  TextScrollAnimate,
+} from '@/components';
 import { Icon, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const WorkViewWhyMeSection = ({ className, data = {}, ...props }) => {
-  const { action = {} } = data
+  const { action = {} } = data;
 
   return (
     <Section
@@ -20,63 +26,67 @@ const WorkViewWhyMeSection = ({ className, data = {}, ...props }) => {
         ))}
       </h2>
 
-      <section className='mt-md flex max-sm:flex-col w-9/10 max-w-screen-xl gap-sm'>
-        {
-          data.subtitle && <Text className='text-4xl/tight font-medium basis-0 grow max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
-          <TextScrollAnimate
-            className='first:first-letter:uppercase'
-            text={data.subtitle}
-          />
-        </Text>
-        }
-
-        {
-          data.description && <section className='sm:max-w-lg flex flex-col max-sm:items-center grow basis-0 sm:ml-auto'>
-          <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
-            {data.description}
+      <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
+        {data.subtitle && (
+          <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+            <TextScrollAnimate
+              className='first:first-letter:uppercase'
+              text={data.subtitle}
+            />
           </Text>
-  
-          {
-            data.action && <Button
-            className='mt-md'
+        )}
+
+        {data.description && (
+          <section className='flex grow basis-0 flex-col max-sm:items-center sm:ml-auto sm:max-w-lg'>
+            <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
+              {data.description}
+            </Text>
+
+            {data.action && (
+              <Button
+                className='mt-md'
                 {...action.data}
               >
                 {action.data?.label}
-                
+
                 <Button.Icon animation={action.animation}>
                   <Icon {...action.icon} />
                 </Button.Icon>
               </Button>
-          }
+            )}
           </section>
-        }
+        )}
       </section>
 
-      <WorkViewWhyMeSectionBlock data={data.block} className='mt-lg'/>
+      <WorkViewWhyMeSectionBlock
+        data={data.block}
+        className='mt-lg'
+      />
     </Section>
   );
 };
 
-const WorkViewWhyMeSectionBlock = ({className, data = {}, ...props}) => {
-  return <section className={cn('w-9/10 max-w-screen-lg', className)} {...props}>
-  <Text.Subtitle className='text-2xl font-medium'>
-    {data.title}
-  </Text.Subtitle>
+const WorkViewWhyMeSectionBlock = ({ className, data = {}, ...props }) => {
+  return (
+    <section
+      className={cn('w-9/10 max-w-screen-lg', className)}
+      {...props}
+    >
+      <Text.Subtitle className='text-2xl font-medium'>
+        {data.title}
+      </Text.Subtitle>
 
-  <Stats>
-    {data.items?.map((data) => (
-      <Stats.Item
-        key={data.title}
-      >
-        <Stats.Title>
-      {data.title}
-        </Stats.Title>
+      <Stats>
+        {data.items?.map((data) => (
+          <Stats.Item key={data.title}>
+            <Stats.Title>{data.title}</Stats.Title>
 
-        <Stats.Description>{data.description}</Stats.Description>
-      </Stats.Item>
-    ))}
-  </Stats>
-</section>
-}
+            <Stats.Description>{data.description}</Stats.Description>
+          </Stats.Item>
+        ))}
+      </Stats>
+    </section>
+  );
+};
 
 export default WorkViewWhyMeSection;

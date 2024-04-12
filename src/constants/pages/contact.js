@@ -11,60 +11,68 @@ const contactPage = {
         subtitle: "Let's make'em fly",
         description:
           'Ready for lift-off? Ping, tweet, message or poke — and we will get back as soon as possible.',
-          grid: {
-            templates: {
-              default: '"item-0 .""item-1 item-1""item-2 item-2""item-3 item-3""item-4 item-4"',
-              sm: '"item-0 item-1 item-1 item-1""item-0 item-1 item-1 item-1""item-2 item-2 item-3 item-3"',
-              lg: '"item-0 item-1 item-1 item-1 item-2 item-2""item-0 item-1 item-1 item-1 item-3 item-3""item-4 item-4 item-4 item-4 item-4 item-4"'
-            },
-            items: [
-              {
-                type: 'icons',
-                data: [{ src: '/images/rocket.svg', title: 'Rocket'}, { src: '/images/smile.svg', title: 'Smile'}, { src: '/images/globe.svg', title: 'Globe'}]
-              },
-              {
-                type: 'indicator',
-                data: {
-                  description: 'Ready for lift-off? Ping, tweet, message or poke — and we will get back as soon as possible.'
-                }
-              },
-              {
-                type: 'data-changer',
-                data: {
-                  action: {
-                    type: '',
-                    icon: { src: '/images/rotate.svg' },
-                    data: {
-                      label: 'Change statistic',
-                    },
-                  },
-                  items: globals.find((data) => data.slug === 'personal-info')?.stats
-                }
-              },
-              {
-                type: 'data-changer',
-                data: {
-                  action: {
-                    type: '',
-                    icon: { src: '/images/rotate.svg' },
-                    data: {
-                      label: 'Change value',
-                    },
-                  },
-                  items: [
-                    
-                  ]
-                }
-              },
-              {
-                type: 'horizontal-scroll',
-                data: {
-                  icons: [{ src: '/images/smile.svg', title: 'Smile'}, { src: '/images/globe.svg', title: 'Globe'}],
-                  description: 'Improve · Inspire · Repeat ·'
-                }
-              }
-            ]
+        grid: {
+          templates: {
+            default:
+              '"item-0 .""item-1 item-1""item-2 item-2""item-3 item-3""item-4 item-4"',
+            sm: '"item-0 item-1 item-1 item-1""item-0 item-1 item-1 item-1""item-2 item-2 item-3 item-3"',
+            lg: '"item-0 item-1 item-1 item-1 item-2 item-2""item-0 item-1 item-1 item-1 item-3 item-3""item-4 item-4 item-4 item-4 item-4 item-4"',
           },
+          items: [
+            {
+              type: 'icons',
+              data: [
+                { src: '/images/rocket.svg', title: 'Rocket' },
+                { src: '/images/smile.svg', title: 'Smile' },
+                { src: '/images/globe.svg', title: 'Globe' },
+              ],
+            },
+            {
+              type: 'indicator',
+              data: {
+                description:
+                  'Ready for lift-off? Ping, tweet, message or poke — and we will get back as soon as possible.',
+              },
+            },
+            {
+              type: 'data-changer',
+              data: {
+                action: {
+                  type: '',
+                  icon: { src: '/images/rotate.svg' },
+                  data: {
+                    label: 'Change statistic',
+                  },
+                },
+                items: globals.find((data) => data.slug === 'personal-info')
+                  ?.stats,
+              },
+            },
+            {
+              type: 'data-changer',
+              data: {
+                action: {
+                  type: '',
+                  icon: { src: '/images/rotate.svg' },
+                  data: {
+                    label: 'Change value',
+                  },
+                },
+                items: [],
+              },
+            },
+            {
+              type: 'horizontal-scroll',
+              data: {
+                icons: [
+                  { src: '/images/smile.svg', title: 'Smile' },
+                  { src: '/images/globe.svg', title: 'Globe' },
+                ],
+                description: 'Improve · Inspire · Repeat ·',
+              },
+            },
+          ],
+        },
         infinityText: 'Improve · Inspire · Repeat ·',
         icons: [
           { src: '/images/rocket.svg', title: 'Rocket' },
@@ -223,7 +231,9 @@ const contactPage = {
                   params: [],
                 },
               ],
-              items: globals.find(data => data.slug === 'personal-info')?.services?.map(data => data.title)
+              items: globals
+                .find((data) => data.slug === 'personal-info')
+                ?.services?.map((data) => data.title),
             },
             {
               name: 'message',
@@ -255,7 +265,7 @@ const contactPage = {
             icon: { src: '/images/paperplane.svg' },
             data: {
               label: 'Submit',
-            }
+            },
           },
         },
       },

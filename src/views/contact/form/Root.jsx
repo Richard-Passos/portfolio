@@ -12,7 +12,7 @@ const CONTROLS = {
 };
 
 const ContactViewForm = async ({ className, data = {}, ...props }) => {
-  const {fields = [], action = {} } = data
+  const { fields = [], action = {} } = data;
 
   return (
     <ClientForm
@@ -40,10 +40,16 @@ const ContactViewForm = async ({ className, data = {}, ...props }) => {
 
             {data.control?.toLowerCase() !== 'select' ? (
               <Form.Control>
-                <Control placeholder={data.placeholder} type={data.type} />
+                <Control
+                  placeholder={data.placeholder}
+                  type={data.type}
+                />
               </Form.Control>
             ) : (
-              <Control placeholder={data.placeholder} data={data.items} />
+              <Control
+                placeholder={data.placeholder}
+                data={data.items}
+              />
             )}
 
             <Form.Description>{data.description}</Form.Description>
@@ -54,7 +60,10 @@ const ContactViewForm = async ({ className, data = {}, ...props }) => {
       })}
 
       <Form.Submit asChild>
-        <MagneticButton className='h-12 place-self-center max-sm:aspect-auto max-sm:px-6 sm:h-auto sm:w-full sm:max-w-28' {...action.data}>
+        <MagneticButton
+          className='h-12 place-self-center max-sm:aspect-auto max-sm:px-6 sm:h-auto sm:w-full sm:max-w-28'
+          {...action.data}
+        >
           <Icon
             className='max-sm:hidden'
             {...action.icon}

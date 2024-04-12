@@ -5,7 +5,12 @@ import { AboutView } from '@/views';
 const AboutPage = async (props) => {
   const { data } = await pagesApi.getOne('about');
 
-  return <AboutView data={data} {...props} />;
+  return (
+    <AboutView
+      data={data}
+      {...props}
+    />
+  );
 };
 
 const generateMetadata = async () => {

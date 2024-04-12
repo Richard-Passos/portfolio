@@ -5,7 +5,12 @@ import { ContactView } from '@/views';
 const ContactPage = async (props) => {
   const { data } = await pagesApi.getOne('contact');
 
-  return <ContactView data={data} {...props} />;
+  return (
+    <ContactView
+      data={data}
+      {...props}
+    />
+  );
 };
 
 const generateMetadata = async () => {

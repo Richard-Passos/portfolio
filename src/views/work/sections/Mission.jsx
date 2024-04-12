@@ -17,7 +17,7 @@ const WorkViewMissionSection = ({ className, data = {}, ...props }) => {
   );
 };
 
-const WorkViewMissionSectionList = ({data = [], ...props}) => {
+const WorkViewMissionSectionList = ({ data = [], ...props }) => {
   return (
     <ListHorizontalScroll {...props}>
       {data.map((data, i) => (
@@ -28,33 +28,29 @@ const WorkViewMissionSectionList = ({data = [], ...props}) => {
           variants={{ size: 'xl' }}
         >
           <ListHorizontalScroll.Item
-             baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
+            baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
           >
             <span>{data.text}</span>{' '}
-           <div               className='size-[1em] rotate-[--rotate]'
->
-             <Icon
-             className='size-full'
-              {...data.icon}
-            />
+            <div className='size-[1em] rotate-[--rotate]'>
+              <Icon
+                className='size-full'
+                {...data.icon}
+              />
             </div>{' '}
             <span className='opacity-30 dark:opacity-10'>{data.text}</span>{' '}
-            <div               className='size-[1em] rotate-[--rotate] opacity-30 dark:opacity-10'
->
-            <Icon
-                         className='size-full'
-
-              {...data.icon}
-            /></div>{' '}
+            <div className='size-[1em] rotate-[--rotate] opacity-30 dark:opacity-10'>
+              <Icon
+                className='size-full'
+                {...data.icon}
+              />
+            </div>{' '}
             <span className='opacity-30 dark:opacity-10'>{data.text}</span>{' '}
-           <div               className='size-[1em] rotate-[--rotate]'
->
-             <Icon
-              className='size-full'
-              {...data.icon}
-            />
-
-           </div>
+            <div className='size-[1em] rotate-[--rotate]'>
+              <Icon
+                className='size-full'
+                {...data.icon}
+              />
+            </div>
           </ListHorizontalScroll.Item>
         </Text.Title>
       ))}

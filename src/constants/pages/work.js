@@ -1,6 +1,6 @@
-import globals from '../globals'
-import projects from '../projects'
-import skills from '../skills'
+import globals from '../globals';
+import projects from '../projects';
+import skills from '../skills';
 
 const workPage = {
   slug: 'work',
@@ -10,17 +10,20 @@ const workPage = {
       theme: 'light',
       data: {
         title: `Beyond code, \nboundaries <b>&</b> \nresults`,
-        description: 'Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.',
-        text: globals.find(data => data.slug === 'personal-info')?.availability,
-        icon: { src: '/images/smile.svg', title: 'Smile' }
-      }
+        description:
+          'Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.',
+        text: globals.find((data) => data.slug === 'personal-info')
+          ?.availability,
+        icon: { src: '/images/smile.svg', title: 'Smile' },
+      },
     },
     {
       slug: 'mission',
       theme: 'dark',
       id: 'scrollTo',
       data: {
-        description: "That's my mission — Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit doloremque aspernatur architecto dolor eos. Harum minima modi deserunt culpa commodi! Facilis eveniet ad illo delectus?",
+        description:
+          "That's my mission — Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit doloremque aspernatur architecto dolor eos. Harum minima modi deserunt culpa commodi! Facilis eveniet ad illo delectus?",
         items: [
           {
             text: 'Improve',
@@ -35,17 +38,17 @@ const workPage = {
             icon: { src: '/images/smile.svg', title: 'Smile' },
           },
         ],
-      }
+      },
     },
     {
       slug: 'services',
       theme: 'light',
       data: {
-        title: [
-          'Services'
-        ],
-        subtitle: 'We help our clients entertain, inform, and inspire the world.',
-        description: 'We represent storytellers who shape culture and drive the future. From artists and creators to athletes and brands, our deep expertise and broad capabilities enable talent and companies to confidently grow their careers and businesses.',
+        title: ['Services'],
+        subtitle:
+          'We help our clients entertain, inform, and inspire the world.',
+        description:
+          'We represent storytellers who shape culture and drive the future. From artists and creators to athletes and brands, our deep expertise and broad capabilities enable talent and companies to confidently grow their careers and businesses.',
         block: {
           title: 'I could help you with...',
           image: {
@@ -55,56 +58,54 @@ const workPage = {
             height: 3737,
           },
           action: {
-              type: '',
-              icon: { src: '/images/arrow-up-right.svg' },
-              animation: 'slideUpRight',
-              data: {
-                label: 'Contact me',
-                href: '/contact',
-                variants: {
-                  color: 'main',
-                }
+            type: '',
+            icon: { src: '/images/arrow-up-right.svg' },
+            animation: 'slideUpRight',
+            data: {
+              label: 'Contact me',
+              href: '/contact',
+              variants: {
+                color: 'main',
               },
+            },
           },
-          items: globals.find((data) => data.slug === 'personal-info')?.services
-        }
-      }
+          items: globals.find((data) => data.slug === 'personal-info')
+            ?.services,
+        },
+      },
     },
     {
       slug: 'projects',
       theme: 'light',
       data: {
-        title: [
-          'Selected',
-          'works'
-        ],
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit dolores adipisci voluptates dolore inventore aperiam rerum possimus culpa nemo molestiae!',
+        title: ['Selected', 'works'],
+        description:
+          'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit dolores adipisci voluptates dolore inventore aperiam rerum possimus culpa nemo molestiae!',
         block: {
           action: {
             type: '',
             icon: { src: '/images/plus.svg' },
             data: {
-              label:'More works',
+              label: 'More works',
               href: '/projects',
               variants: {
                 color: 'main',
-              }
+              },
             },
+          },
+          items: projects.filter((data) => data.isSelected),
         },
-          items: projects.filter((data) => data.isSelected)
-        }
-      }
+      },
     },
     {
       slug: 'why-me',
       theme: 'dark',
       data: {
-        title: [
-          'Why pick',
-          'me'
-        ],
-        subtitle: 'We help our clients entertain, inform, and inspire the world.',
-        description: 'We represent storytellers who shape culture and drive the future. From artists and creators to athletes and brands, our deep expertise and broad capabilities enable talent and companies to confidently grow their careers and businesses.',
+        title: ['Why pick', 'me'],
+        subtitle:
+          'We help our clients entertain, inform, and inspire the world.',
+        description:
+          'We represent storytellers who shape culture and drive the future. From artists and creators to athletes and brands, our deep expertise and broad capabilities enable talent and companies to confidently grow their careers and businesses.',
         action: {
           type: '',
           icon: { src: '/images/arrow-up-right.svg' },
@@ -114,15 +115,15 @@ const workPage = {
             href: '/about',
             variants: {
               color: 'main',
-              size: 'sm'
-            }
+              size: 'sm',
+            },
           },
-      },
+        },
         block: {
           title: 'Some statistics...',
-          items:  globals.find((data) => data.slug === 'personal-info')?.stats
-        }
-      }
+          items: globals.find((data) => data.slug === 'personal-info')?.stats,
+        },
+      },
     },
     {
       slug: 'skills',
@@ -133,46 +134,44 @@ const workPage = {
           subtitle: 'The best in market',
           actions: [
             {
-              type: 'prev', 
+              type: 'prev',
               icon: { src: '/images/arrow-left.svg' },
               data: {
-                label: 'Previous skill'
-              }
-            }, 
-            { 
-              type: 'next', 
-              icon: 
-              { src: '/images/arrow-right.svg'},
+                label: 'Previous skill',
+              },
+            },
+            {
+              type: 'next',
+              icon: { src: '/images/arrow-right.svg' },
               data: {
-                label: 'Next skill', 
-              }
-            }
+                label: 'Next skill',
+              },
+            },
           ],
-          items: skills.hard
+          items: skills.hard,
         },
         {
           title: `Soft \nskills`,
           subtitle: 'The best as person',
           actions: [
             {
-              type: 'prev', 
+              type: 'prev',
               icon: { src: '/images/arrow-left.svg' },
               data: {
-                label: 'Previous skill'
-              }
-            }, 
-            { 
-              type: 'next', 
-              icon: 
-              { src: '/images/arrow-right.svg'},
+                label: 'Previous skill',
+              },
+            },
+            {
+              type: 'next',
+              icon: { src: '/images/arrow-right.svg' },
               data: {
-                label: 'Next skill', 
-              }
-            }
+                label: 'Next skill',
+              },
+            },
           ],
-          items: skills.soft
-        }
-      ]
+          items: skills.soft,
+        },
+      ],
     },
     {
       slug: 'values',
@@ -181,10 +180,14 @@ const workPage = {
         title: `My \nvalues`,
         subtitle: 'Always improving',
         block: {
-          items: globals.find((data) => data.slug === 'personal-info')?.values.work,
-          icons: [{ src: '/images/smile.svg', title: 'Smile' }, { src: '/images/globe.svg', title: 'Globe' }]
-        }
-      }
+          items: globals.find((data) => data.slug === 'personal-info')?.values
+            .work,
+          icons: [
+            { src: '/images/smile.svg', title: 'Smile' },
+            { src: '/images/globe.svg', title: 'Globe' },
+          ],
+        },
+      },
     },
     {
       slug: 'next-page',
@@ -195,24 +198,24 @@ const workPage = {
         action: {
           type: '',
           icon: {
-            src: '/images/arrow-up-right.svg'
+            src: '/images/arrow-up-right.svg',
           },
           data: {
             label: 'Go to about page',
             href: '/about',
             variants: {
-              color: 'main'
-            }
-          }
-        }
+              color: 'main',
+            },
+          },
+        },
       },
     },
   ],
   metadata: {
     title: 'Work',
     description:
-    'Richard passos work details, his mission, services, some projects, skills and more.',
-  }
-}
+      'Richard passos work details, his mission, services, some projects, skills and more.',
+  },
+};
 
-export default workPage
+export default workPage;

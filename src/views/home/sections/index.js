@@ -13,10 +13,10 @@ const HomeViewSections = {
 };
 
 export default HomeViewSections;
-export { 
-  HomeViewAboutSection, 
-  HomeViewButSection, 
-  HomeViewCtaSection, 
-  HomeViewHeroSection, 
-  HomeViewWorkSection 
+export {
+  HomeViewAboutSection,
+  HomeViewButSection,
+  HomeViewCtaSection,
+  HomeViewHeroSection,
+  HomeViewWorkSection,
 };

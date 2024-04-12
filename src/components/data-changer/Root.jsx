@@ -1,15 +1,15 @@
 'use client';
 
+import { Slot } from '@radix-ui/react-slot';
 import { forwardRef, useContext } from 'react';
 
 import { DataChangerContext, DataChangerProvider } from '@/contexts';
 import { isFunctionThanCall } from '@/utils';
-import { Slot } from '@radix-ui/react-slot';
 
-const DataChanger = forwardRef(({asChild, ...props}, ref) => {
+const DataChanger = forwardRef(({ asChild, ...props }, ref) => {
   const { setIsPaused } = useContext(DataChangerContext);
 
-  const Tag = asChild ? Slot : 'section'
+  const Tag = asChild ? Slot : 'section';
 
   return (
     <Tag

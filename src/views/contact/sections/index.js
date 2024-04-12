@@ -9,4 +9,4 @@ const HomeViewSections = {
 };
 
 export default HomeViewSections;
-export { HomeViewContactSection, HomeViewHeroSection, HomeViewServicesSection,  };
+export { HomeViewContactSection, HomeViewHeroSection, HomeViewServicesSection };

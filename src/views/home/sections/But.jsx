@@ -33,38 +33,43 @@ const ANIMATION_CONFIG = {
   },
 };
 
-const HomeViewButSection = ({className, data = {}, ...props}) => {
+const HomeViewButSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      className={cn('grid !min-h-[calc(var(--h)*1.5)] grid-rows-3 justify-items-center [--h:100vh] 2xl:[--h:--max-h]', className)}
+      className={cn(
+        'grid !min-h-[calc(var(--h)*1.5)] grid-rows-3 justify-items-center [--h:100vh] 2xl:[--h:--max-h]',
+        className,
+      )}
       {...props}
     >
-        <ScrollAnimate config={ANIMATION_CONFIG.x}>
-          <ScrollAnimate config={ANIMATION_CONFIG.clipPath}>
-            <ScrollAnimate.Transform config={ANIMATION_CONFIG.y}>
-              <div className='row-span-2 flex items-center py-md [clip-path:inset(0_-100%_0_0)]'>
-                <Text className='relative translate-x-[--x] uppercase text-[clamp(8rem,44vw,32rem)]/none font-bold tracking-tighter'>
-                  <span className='outline-text text-muted-content'>{data.title}</span>
+      <ScrollAnimate config={ANIMATION_CONFIG.x}>
+        <ScrollAnimate config={ANIMATION_CONFIG.clipPath}>
+          <ScrollAnimate.Transform config={ANIMATION_CONFIG.y}>
+            <div className='row-span-2 flex items-center py-md [clip-path:inset(0_-100%_0_0)]'>
+              <Text className='relative translate-x-[--x] text-[clamp(8rem,44vw,32rem)]/none font-bold uppercase tracking-tighter'>
+                <span className='outline-text text-muted-content'>
+                  {data.title}
+                </span>
 
-                  <span
-                    aria-hidden
-                    className='absolute left-0 pointer-events-none select-none [clip-path:--clip-path]'
-                  >
-                    {data.title}
-                  </span>
-                </Text>
-              </div>
-            </ScrollAnimate.Transform>
-          </ScrollAnimate>
+                <span
+                  aria-hidden
+                  className='pointer-events-none absolute left-0 select-none [clip-path:--clip-path]'
+                >
+                  {data.title}
+                </span>
+              </Text>
+            </div>
+          </ScrollAnimate.Transform>
         </ScrollAnimate>
+      </ScrollAnimate>
 
-        <ScrollAnimate config={ANIMATION_CONFIG.top}>
-          <div className='flex w-9/10 items-center justify-center'>
-            <Text className='relative top-[--top] text-center text-[clamp(2rem,6.6vw,6rem)]/tight font-semibold'>
-              <TextScrollAnimate text={data.description} />
-            </Text>
-          </div>
-        </ScrollAnimate>
+      <ScrollAnimate config={ANIMATION_CONFIG.top}>
+        <div className='flex w-9/10 items-center justify-center'>
+          <Text className='relative top-[--top] text-center text-[clamp(2rem,6.6vw,6rem)]/tight font-semibold'>
+            <TextScrollAnimate text={data.description} />
+          </Text>
+        </div>
+      </ScrollAnimate>
     </Section>
   );
 };

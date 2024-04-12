@@ -96,9 +96,14 @@ const aboutPage = {
         title: `My \nvalues`,
         subtitle: 'Always improving',
         block: {
-          items: globals.find((data) => data.slug === 'personal-info')?.values.personal,
-          icons: [{ src: '/images/globe.svg', title: 'Globe' }, { src: '/images/smile.svg', title: 'Smile' }]
-        }      },
+          items: globals.find((data) => data.slug === 'personal-info')?.values
+            .personal,
+          icons: [
+            { src: '/images/globe.svg', title: 'Globe' },
+            { src: '/images/smile.svg', title: 'Smile' },
+          ],
+        },
+      },
     },
     {
       slug: 'next-page',
@@ -108,16 +113,16 @@ const aboutPage = {
         description: 'Contact ·',
         action: {
           icon: {
-            src: '/images/arrow-up-right.svg'
+            src: '/images/arrow-up-right.svg',
           },
           data: {
             label: 'Go to contact page',
             href: '/contact',
             variants: {
-              color: 'main'
-            }
-          }
-        }
+              color: 'main',
+            },
+          },
+        },
       },
     },
   ],

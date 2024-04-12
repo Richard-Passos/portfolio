@@ -11,7 +11,7 @@ import { Icon, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
-  const { block = {} } = data
+  const { block = {} } = data;
 
   return (
     <Section
@@ -49,20 +49,26 @@ const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
         <HomeViewWorkSectionProjects className='mt-md' />
 
         <Button.Magnetic
-        className='mt-md'
+          className='mt-md'
           {...block.action}
         >
-          <Icon aria-hidden {...block.action?.icon} />
+          <Icon
+            aria-hidden
+            {...block.action?.icon}
+          />
         </Button.Magnetic>
       </div>
 
-      <HomeViewWorkSectionList data={data.list} className='mt-lg' />
+      <HomeViewWorkSectionList
+        data={data.list}
+        className='mt-lg'
+      />
     </Section>
   );
 };
 
 const HomeViewWorkSectionProjects = async ({ className, ...props }) => {
-  const { data = {} } = await projectsApi.getSelecteds()
+  const { data = {} } = await projectsApi.getSelecteds();
 
   const projects = data.reduce(
     (obj, { thumbnail, ...data }) => ({
@@ -120,7 +126,7 @@ const HomeViewWorkSectionProjects = async ({ className, ...props }) => {
 };
 
 const HomeViewWorkSectionList = ({ className, data = {}, ...props }) => {
-  const { action = {} } = data
+  const { action = {} } = data;
 
   return (
     <div
@@ -142,15 +148,13 @@ const HomeViewWorkSectionList = ({ className, data = {}, ...props }) => {
         ))}
       </ListHorizontalScroll>
 
-      <Button
-      {...action.data}
-    >
-      {action.data?.label}
+      <Button {...action.data}>
+        {action.data?.label}
 
-      <Button.Icon animation={action.animation}>
-        <Icon {...action.icon} />
-      </Button.Icon>
-    </Button>
+        <Button.Icon animation={action.animation}>
+          <Icon {...action.icon} />
+        </Button.Icon>
+      </Button>
     </div>
   );
 };

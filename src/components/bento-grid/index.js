@@ -1,6 +1,6 @@
-import BentoGridItem from './item';
 import BentoGridRoot from './Root';
 import BentoGridScrollAnimate from './ScrollAnimate';
+import BentoGridItem from './item';
 
 const BentoGrid = BentoGridRoot;
 

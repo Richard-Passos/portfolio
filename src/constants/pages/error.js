@@ -13,17 +13,17 @@ const errorPage = {
             type: '',
             data: {
               href: '/',
-            label: 'Back Home',
-            variants: {
-              color: 'main',
+              label: 'Back Home',
+              variants: {
+                color: 'main',
+              },
             },
-            }
           },
           {
             type: 'reset',
             data: {
               label: 'Try again',
-            }
+            },
           },
         ],
       },

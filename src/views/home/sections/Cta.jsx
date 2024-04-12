@@ -24,24 +24,21 @@ const ANIMATION_CONFIG = {
 const HomeViewCtaSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-        className={cn(
-          'flex items-center justify-center',
-          className,
-        )}
-        {...props}
-      >
-        <Text className='w-9/10 relative z-10 max-w-screen-lg text-center text-4xl/tight font-semibold md:text-5xl/tight'>
-          <TextScrollAnimate text={data.description} />
-        </Text>
+      className={cn('flex items-center justify-center', className)}
+      {...props}
+    >
+      <Text className='relative z-10 w-9/10 max-w-screen-lg text-center text-4xl/tight font-semibold md:text-5xl/tight'>
+        <TextScrollAnimate text={data.description} />
+      </Text>
 
-          <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate1}>
+      <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate1}>
         <SmileIcon className='absolute left-0 top-0 size-[min(50vmin,theme(maxWidth.md))] -translate-x-1/2 text-muted' />
-    </ScrollAnimateTransform>
+      </ScrollAnimateTransform>
 
-          <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate2}>
+      <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate2}>
         <GlobeIcon className='absolute bottom-0 right-0 size-[min(50vmin,theme(maxWidth.md))] translate-x-1/2 text-muted' />
-    </ScrollAnimateTransform>
-      </Section>
+      </ScrollAnimateTransform>
+    </Section>
   );
 };
 

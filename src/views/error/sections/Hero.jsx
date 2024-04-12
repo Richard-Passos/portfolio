@@ -48,7 +48,7 @@ const ErrorViewHeroSection = ({
       </Text>
 
       <div className='mt-md flex justify-center gap-sm max-sm:flex-col sm:items-center'>
-        {data.actions?.map(({type, data}) => (
+        {data.actions?.map(({ type, data }) => (
           <Button
             key={data.label}
             {...actionsTypes[type.toLowerCase()]}

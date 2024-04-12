@@ -54,20 +54,32 @@ const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
 const ContactViewHeroSectionGrid = ({ data = {}, style, ...props }) => {
   return (
     <BentoGrid
-    style={{ ...Object.entries(data.templates)?.reduce((obj, [key, val]) => ({...obj, [`--${key.toLowerCase()}-template`]: val}), {}), ...style}}
+      style={{
+        ...Object.entries(data.templates)?.reduce(
+          (obj, [key, val]) => ({
+            ...obj,
+            [`--${key.toLowerCase()}-template`]: val,
+          }),
+          {},
+        ),
+        ...style,
+      }}
       {...props}
     >
-      {data.items?.map(({type = '', data}, i) => {
-        const Item = BentoGrid.Item[type.split(/[_-]/g).map(capitalize).join('')] || BentoGrid.Item
+      {data.items?.map(({ type = '', data }, i) => {
+        const Item =
+          BentoGrid.Item[type.split(/[_-]/g).map(capitalize).join('')] ||
+          BentoGrid.Item;
 
-        return( 
-
-        <Item  key={i} idx={i} data={data}/>
-     )
-
-      }
-        )}
-        </BentoGrid>
+        return (
+          <Item
+            key={i}
+            idx={i}
+            data={data}
+          />
+        );
+      })}
+    </BentoGrid>
   );
 };
 

@@ -22,11 +22,11 @@ const ANIMATION_CONFIG = {
 
 const AboutViewValuesSection = ({ className, data = {}, ...props }) => {
   return (
-      <Section
-        className={cn('flex flex-col items-center', className)}
-        {...props}
-      >
-        <Text.Title
+    <Section
+      className={cn('flex flex-col items-center', className)}
+      {...props}
+    >
+      <Text.Title
         aria-label={data.title}
         className='w-9/10 max-w-screen-xl whitespace-pre-line text-[16vw]/none'
         variants={{ size: 'lg' }}
@@ -51,41 +51,52 @@ const AboutViewValuesSection = ({ className, data = {}, ...props }) => {
 
       <span className='sr-only'>{data.subtitle}</span>
 
-<AboutViewValuesSectionBlock className='mt-md' data={data.block}/>
-      </Section>
+      <AboutViewValuesSectionBlock
+        className='mt-md'
+        data={data.block}
+      />
+    </Section>
   );
 };
 
 const AboutViewValuesSectionBlock = ({ className, data = {}, ...props }) => {
-  return <div className={cn('relative w-full', className)} {...props}>
-  <Values className='mx-auto w-9/10 max-w-screen-xl'>
-    {data.items?.map((data) => (
-      <Values.Item key={data.title}>
-        <Values.Icon>
-          <Icon
-            aria-hidden
-            {...data.icon}
-          />
-        </Values.Icon>
+  return (
+    <div
+      className={cn('relative w-full', className)}
+      {...props}
+    >
+      <Values className='mx-auto w-9/10 max-w-screen-xl'>
+        {data.items?.map((data) => (
+          <Values.Item key={data.title}>
+            <Values.Icon>
+              <Icon
+                aria-hidden
+                {...data.icon}
+              />
+            </Values.Icon>
 
-        <Values.Title>{data.title}</Values.Title>
+            <Values.Title>{data.title}</Values.Title>
 
-        <Values.Description>{data.description}</Values.Description>
-      </Values.Item>
-    ))}
-  </Values>
+            <Values.Description>{data.description}</Values.Description>
+          </Values.Item>
+        ))}
+      </Values>
 
-  
-
-{data.icons?.map((data, i) => <ScrollAnimateTransform key={data.src} config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}>
-    <div className='absolute first-of-type:right-0 first-of-type:top-0 last-of-type:bottom-0 last-of-type:left-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] max-lg:hidden'>
-    <Icon
-      className='size-full text-muted'
-      {...data}
-    />
+      {data.icons?.map((data, i) => (
+        <ScrollAnimateTransform
+          key={data.src}
+          config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}
+        >
+          <div className='absolute -z-10 size-[min(50vmin,theme(maxWidth.md))] first-of-type:right-0 first-of-type:top-0 last-of-type:bottom-0 last-of-type:left-0 max-lg:hidden'>
+            <Icon
+              className='size-full text-muted'
+              {...data}
+            />
+          </div>
+        </ScrollAnimateTransform>
+      ))}
     </div>
-  </ScrollAnimateTransform>)}
-  </div>
-}
+  );
+};
 
 export default AboutViewValuesSection;

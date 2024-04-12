@@ -5,7 +5,12 @@ import { WorkView } from '@/views';
 const WorkPage = async (props) => {
   const { data } = await pagesApi.getOne('work');
 
-  return <WorkView data={data} {...props} />;
+  return (
+    <WorkView
+      data={data}
+      {...props}
+    />
+  );
 };
 
 const generateMetadata = async () => {

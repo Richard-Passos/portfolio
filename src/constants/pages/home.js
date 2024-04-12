@@ -6,124 +6,123 @@ const homePage = {
       theme: 'light',
       data: {
         title: `Turning heads \n<b>&</b> conquering \nhearts`,
-        description: "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
-        year: 2024
-      }
+        description:
+          "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        year: 2024,
+      },
     },
     {
       slug: 'work',
       theme: 'dark',
       id: 'scrollTo',
       data: {
-        title: [
-          'About',
-          'work'
-        ],
+        title: ['About', 'work'],
         subtitle: 'Just someone who wanna conquer minds and hearts.',
         description:
           "I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
-          block: {
-            title: 'Selected works',
-            action: { 
-                    type: '',
-                    icon: { src: '/images/plus.svg' },
-                    data: {
-                      label:'More works',
-                      href: '/projects',
-                      variants: { 
-                      color: 'main' 
-                    }, 
-                    },
-            }
+        block: {
+          title: 'Selected works',
+          action: {
+            type: '',
+            icon: { src: '/images/plus.svg' },
+            data: {
+              label: 'More works',
+              href: '/projects',
+              variants: {
+                color: 'main',
+              },
+            },
           },
-          list: {
-            items: ['Mission', 'Soft & hard skills', 'Services'],
-            action: {
-                    type: '',
-                    icon: { src: '/images/arrow-up-right.svg' },
-                    animation: 'slideUpRight',
-                    data: {
-                      label: 'Explore',
-                      href: '/work',
-                    },
-            }
-          }
-      }
+        },
+        list: {
+          items: ['Mission', 'Soft & hard skills', 'Services'],
+          action: {
+            type: '',
+            icon: { src: '/images/arrow-up-right.svg' },
+            animation: 'slideUpRight',
+            data: {
+              label: 'Explore',
+              href: '/work',
+            },
+          },
+        },
+      },
     },
     {
       slug: 'but',
       theme: 'light',
       data: {
         title: 'But',
-        description: "it's not just about the tech."
-      }
+        description: "it's not just about the tech.",
+      },
     },
     {
       slug: 'about',
       theme: 'dark',
       data: {
-        title: [
-          'About',
-          'me'
-        ],
+        title: ['About', 'me'],
         grid: {
           templates: {
             default: '"item-0""item-1""item-2""item-3""item-4""item-5""item-6"',
             sm: '"item-0 item-0""item-1 item-2""item-3 item-4""item-5 item-6"',
-            lg: '". item-0 item-0"". item-0 item-0""item-1 item-2 item-3""item-1 item-2 item-4""item-5 item-5 item-6""item-5 item-5 item-6"'
+            lg: '". item-0 item-0"". item-0 item-0""item-1 item-2 item-3""item-1 item-2 item-4""item-5 item-5 item-6""item-5 item-5 item-6"',
           },
           items: [
             {
               type: 'description',
               data: {
                 title: 'About',
-                description: "🤟 <b>Hey —</b> I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games."
-              }
+                description:
+                  "🤟 <b>Hey —</b> I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
+              },
             },
             {
               type: 'bold',
               data: {
-                icon: {src: '/images/globe.svg', title: 'Globe'},
-                description: "Based in Brazil, GMT-3"
-              }
+                icon: { src: '/images/globe.svg', title: 'Globe' },
+                description: 'Based in Brazil, GMT-3',
+              },
             },
             {
               type: 'infinity-scroll',
               data: {
-                icon: {src: '/images/fingerprint.svg', title: 'Fingerprint'},
+                icon: { src: '/images/fingerprint.svg', title: 'Fingerprint' },
                 title: 'My values',
-                items: ['Integrity', 'Curiosity', 'Respect', 'Gratitude']
-              }
+                items: ['Integrity', 'Curiosity', 'Respect', 'Gratitude'],
+              },
             },
             {
               type: 'simple',
               data: {
-                icon: {src: '/images/rocket.svg', title: 'Rocket'},
+                icon: { src: '/images/rocket.svg', title: 'Rocket' },
                 description: 'Improving a little bit every day.',
-              }
+              },
             },
             {
               type: 'simple',
               data: {
-                icon: {src: '/images/game-controller.svg', title: 'Game controller'},
+                icon: {
+                  src: '/images/game-controller.svg',
+                  title: 'Game controller',
+                },
                 description: 'I love to play games.',
-              }
+              },
             },
             {
               type: 'local-time',
               data: {
-                title: 'My local time'
-              }
+                title: 'My local time',
+              },
             },
             {
               type: 'link',
               data: {
                 href: 'https://www.buymeacoffee.com/richardp.dev',
-                icon: {src: '/images/mug.svg', title: 'Mug'},
-                title: 'Buy me a coffee'
-              }
-            }
-          ]
+                icon: { src: '/images/mug.svg', title: 'Mug' },
+                title: 'Buy me a coffee',
+              },
+            },
+          ],
         },
         list: {
           items: ['Background', 'Hobbys', 'Personality'],
@@ -135,18 +134,19 @@ const homePage = {
               label: 'Explore',
               href: '/about',
             },
-    }
-        }
-      }
+          },
+        },
+      },
     },
     {
       slug: 'cta',
       theme: 'dark',
       data: {
-        description: "If you're looking for a developer who's got the skills, passion and a problem solving mindset to make your ideas come true. Then..."
-      }
+        description:
+          "If you're looking for a developer who's got the skills, passion and a problem solving mindset to make your ideas come true. Then...",
+      },
     },
   ],
-}
+};
 
-export default homePage
+export default homePage;

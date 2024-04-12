@@ -11,10 +11,7 @@ import { capitalize, cn } from '@/utils';
 const HomeViewAboutSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      className={cn(
-        'flex flex-col items-center',
-        className,
-      )}
+      className={cn('flex flex-col items-center', className)}
       {...props}
     >
       <h2 className='w-full'>
@@ -27,38 +24,60 @@ const HomeViewAboutSection = ({ className, data = {}, ...props }) => {
         ))}
       </h2>
 
-      <HomeViewAboutSectionGrid data={data.grid} className='mt-lg' />
+      <HomeViewAboutSectionGrid
+        data={data.grid}
+        className='mt-lg'
+      />
 
-      <HomeViewAboutSectionList data={data.list} className='mt-lg' />
+      <HomeViewAboutSectionList
+        data={data.list}
+        className='mt-lg'
+      />
     </Section>
   );
 };
 
-const HomeViewAboutSectionGrid = ({ className, data = {}, style, ...props }) => {
+const HomeViewAboutSectionGrid = ({
+  className,
+  data = {},
+  style,
+  ...props
+}) => {
   return (
     <BentoGrid
-      className={cn(
-        'w-9/10 max-w-screen-lg',
-        className,
-      )}
-      style={{ ...Object.entries(data.templates)?.reduce((obj, [key, val]) => ({...obj, [`--${key.toLowerCase()}-template`]: val}), {}), ...style}}      {...props}
+      className={cn('w-9/10 max-w-screen-lg', className)}
+      style={{
+        ...Object.entries(data.templates)?.reduce(
+          (obj, [key, val]) => ({
+            ...obj,
+            [`--${key.toLowerCase()}-template`]: val,
+          }),
+          {},
+        ),
+        ...style,
+      }}
+      {...props}
     >
-      {data.items?.map(({type = '', data}, i) => {
-        const Item = BentoGrid.Item[type.split(/[_-]/g).map(capitalize).join('')] || BentoGrid.Item
+      {data.items?.map(({ type = '', data }, i) => {
+        const Item =
+          BentoGrid.Item[type.split(/[_-]/g).map(capitalize).join('')] ||
+          BentoGrid.Item;
 
-        return( <BentoGrid.ScrollAnimate key={i}>
-
-        <Item  idx={i} data={data}/>
-      </BentoGrid.ScrollAnimate>)
-
-      }
-        )}
+        return (
+          <BentoGrid.ScrollAnimate key={i}>
+            <Item
+              idx={i}
+              data={data}
+            />
+          </BentoGrid.ScrollAnimate>
+        );
+      })}
     </BentoGrid>
   );
 };
 
 const HomeViewAboutSectionList = ({ className, data = {}, ...props }) => {
-  const { action = {} } = data
+  const { action = {} } = data;
 
   return (
     <div
@@ -80,15 +99,13 @@ const HomeViewAboutSectionList = ({ className, data = {}, ...props }) => {
         ))}
       </ListHorizontalScroll>
 
-      <Button
-      {...action.data}
-    >
-      {action.data?.label}
+      <Button {...action.data}>
+        {action.data?.label}
 
-      <Button.Icon animation={action.animation}>
-        <Icon {...action.icon} />
-      </Button.Icon>
-    </Button>
+        <Button.Icon animation={action.animation}>
+          <Icon {...action.icon} />
+        </Button.Icon>
+      </Button>
     </div>
   );
 };
