@@ -249,9 +249,12 @@ const contactPage = {
               ],
             },
           ],
-          submit: {
+          action: {
+            type: '',
             icon: { src: '/images/paperplane.svg' },
-            label: 'Submit'
+            data: {
+              label: 'Submit',
+            }
           },
         },
       },
