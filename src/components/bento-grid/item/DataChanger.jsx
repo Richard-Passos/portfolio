@@ -19,11 +19,10 @@ lastIdx={data.items?.length - 1}
       <DataChanger.Action asChild>
         <MagneticButton
           className='h-12 shrink-0 [&_svg]:size-[40%]'
-          aria-label={action.label}
-          {...action}
-          variants={{ color: 'muted', size: 'sm', ...(action.variants || {}) }}
+          {...action.data}
+          variants={{ color: 'muted', size: 'sm', ...action.data?.variants }}
         >
-          <Icon {...(action.icon || {})} />
+          <Icon {...action.icon} />
         </MagneticButton>
       </DataChanger.Action>
 
