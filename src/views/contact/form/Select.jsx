@@ -9,7 +9,6 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
 } from '@/components/ui/icon/icons';
-import { services } from '@/constants';
 import { useChangeKeyWhenFalsy, useFormField } from '@/hooks';
 
 const ContactViewFormSelect = ({ placeholder, data = [], ...props }) => {
