@@ -82,21 +82,115 @@ const globals = [
     stats: [
       {
         title: '10ᐩ',
-        description: `Projects \n completed`,
+        description: `Projects \ncompleted`,
       },
       {
         title: '1ᐩ',
-        description: `Years of \n experience`,
+        description: `Years of \nexperience`,
       },
       {
         title: '100%',
-        description: `Great \n projects`,
+        description: `Great \nprojects`,
       },
       {
         title: '50ᐩ',
-        description: `Clebers \n completed`,
+        description: `Clebers \ncompleted`,
       },
     ],
+    values: {
+      work: [
+          {
+            icon: {
+              src: '/images/shield.svg',
+              alt: 'Integrity icon',
+              width: 150,
+              height: 150,
+            },
+            title: 'Integrity',
+            description:
+              'I remain true to my values, striving to act with honesty and transparency. This allows me to build solid and genuine relationships.',
+          },
+          {
+            icon: {
+              src: '/images/globe.svg',
+              alt: 'Curiosity icon',
+              width: 150,
+              height: 150,
+            },
+            title: 'Curiosity',
+            description:
+              'My innate curiosity drives me to explore new ideas and discover new paths. Every challenge is an opportunity for learning and personal growth.',
+          },
+          {
+            icon: {
+              src: '/images/puzzle.svg',
+              alt: 'Respect icon',
+              width: 150,
+              height: 150,
+            },
+            title: 'Respect',
+            description:
+              'I deeply value the people around me and their unique stories. I am always open to listening and learning from others, recognizing the importance of each voice and experience.',
+          },
+          {
+            icon: {
+              src: '/images/smile.svg',
+              alt: 'Gratitude icon',
+              width: 150,
+              height: 150,
+            },
+            title: 'Gratitude',
+            description:
+              'I cultivate a mindset of gratitude, recognizing and appreciating the little things in life. Gratitude keeps me focused and inspires me to live with purpose and fulfillment.',
+          },
+        ],
+      personal: [
+          {
+            icon: {
+              src: '/images/shield.svg',
+              alt: 'Integrity icon',
+              width: 150,
+              height: 150,
+            },
+            title: 'Integrity',
+            description:
+              'I remain true to my values, striving to act with honesty and transparency. This allows me to build solid and genuine relationships.',
+          },
+          {
+            icon: {
+              src: '/images/globe.svg',
+              alt: 'Curiosity icon',
+              width: 150,
+              height: 150,
+            },
+            title: 'Curiosity',
+            description:
+              'My innate curiosity drives me to explore new ideas and discover new paths. Every challenge is an opportunity for learning and personal growth.',
+          },
+          {
+            icon: {
+              src: '/images/puzzle.svg',
+              alt: 'Respect icon',
+              width: 150,
+              height: 150,
+            },
+            title: 'Respect',
+            description:
+              'I deeply value the people around me and their unique stories. I am always open to listening and learning from others, recognizing the importance of each voice and experience.',
+          },
+          {
+            icon: {
+              src: '/images/smile.svg',
+              alt: 'Gratitude icon',
+              width: 150,
+              height: 150,
+            },
+            title: 'Gratitude',
+            description:
+              'I cultivate a mindset of gratitude, recognizing and appreciating the little things in life. Gratitude keeps me focused and inspires me to live with purpose and fulfillment.',
+          },
+        ],
+    }
   },
 ];
 
