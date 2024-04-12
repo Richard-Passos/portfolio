@@ -6,7 +6,7 @@ import { Link } from '../ui';
 import ButtonUi from '../ui/button';
 
 const Button = (
-  { children, href, variants = {}, className, ...props },
+  { children, href, variants = {}, className, label, ...props },
   ref,
 ) => {
   const content = (
@@ -33,6 +33,7 @@ const Button = (
       href={href}
       ref={ref}
       variants={variants}
+      aria-label={label}
       {...props}
     >
       {href ? <Link className='no-underline'>{content}</Link> : content}
