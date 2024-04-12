@@ -3,13 +3,12 @@ import { Button } from '@/components/button';
 import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const NotFoundHeroSection = ({ className, ...props }) => {
+const NotFoundViewHeroSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      hasTransition={false}
       forceHeaderTheme
       className={cn(
-        '-mt-[--header-h] flex min-h-svh flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))]',
+        '-mt-[--header-h] flex min-h-svh w-9/10 max-w-screen-xl flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))]',
         className,
       )}
       {...props}
@@ -17,26 +16,35 @@ const NotFoundHeroSection = ({ className, ...props }) => {
       <Text.Title
         asChild
         variants={{ size: 'xl' }}
-        className='mb-2 w-9/10 max-w-screen-xl text-center'
+        className='text-center'
       >
-        <h1>404</h1>
+        <h1>{data.title}</h1>
       </Text.Title>
 
-      <Text className='mb-4 w-9/10 max-w-screen-xl text-center text-2xl font-semibold first-letter:uppercase'>
-        Page not found!
+      <Text className='mt-2 text-center text-2xl font-semibold first-letter:uppercase'>
+        {data.subtitle}
       </Text>
 
-      <Text className='mb-md w-9/10 max-w-xl text-center text-muted-content first-letter:uppercase'>
-        Ops... looks like you&apos;re lost. Please go back to Home page.
+      <Text className='mt-4 max-w-xl text-center text-muted-content first-letter:uppercase'>
+        {data.description}
       </Text>
 
-      <Button href='/'>Back Home</Button>
+      <section className='mt-md flex justify-center gap-sm max-sm:flex-col sm:items-center'>
+        {data.actions?.map(({ data }) => (
+          <Button
+            key={data.label}
+            {...data}
+          >
+            {data.label}
+          </Button>
+        ))}
+      </section>
 
-      <div className='absolute top-0 h-[--header-h] w-screen bg-main'>
-        <span className='absolute left-1/2 top-full h-px w-[95%] -translate-x-1/2 bg-border opacity-60 transition-all dark:opacity-20' />
+      <div className='absolute top-0 h-[--header-h] w-screen max-w-bounds bg-main'>
+        <span className='absolute left-1/2 top-full h-px w-[95%] -translate-x-1/2 bg-border opacity-60 dark:opacity-20' />
       </div>
     </Section>
   );
 };
 
-export default NotFoundHeroSection;
+export default NotFoundViewHeroSection;
