@@ -12,7 +12,7 @@ const CONTROLS = {
 };
 
 const ContactViewForm = async ({ className, data = {}, ...props }) => {
-  const {fields = [], submit = {} } = data
+  const {fields = [], action = {} } = data
 
   return (
     <ClientForm
@@ -54,14 +54,13 @@ const ContactViewForm = async ({ className, data = {}, ...props }) => {
       })}
 
       <Form.Submit asChild>
-        <MagneticButton className='h-12 place-self-center max-sm:aspect-auto max-sm:px-6 sm:h-auto sm:w-full sm:max-w-28'>
+        <MagneticButton className='h-12 place-self-center max-sm:aspect-auto max-sm:px-6 sm:h-auto sm:w-full sm:max-w-28' {...action.data}>
           <Icon
-            aria-hidden
             className='max-sm:hidden'
-            {...(submit.icon || {})}
+            {...action.icon}
           />
 
-          <span className='sm:sr-only'>{submit.label}</span>
+          <span className='sm:sr-only'>{action.data?.label}</span>
         </MagneticButton>
       </Form.Submit>
     </ClientForm>
