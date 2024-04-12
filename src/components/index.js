@@ -32,6 +32,7 @@ export { default as Section } from './section';
 export { default as Services } from './services';
 export { default as SkillCard } from './skill-card';
 export { default as SocialNav } from './social-nav';
+export { default as Stats } from './stats';
 export { default as TextRing } from './text-ring';
 export { default as TextScrollAnimate } from './text-scroll-animate';
 export { default as Toaster } from './toaster';
