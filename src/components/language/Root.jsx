@@ -16,7 +16,9 @@ const Language = ({ className, ...props }) => {
     pathname = usePathname(),
     searchParams = useSearchParams();
 
-  const currLang = pathname.match(LANG_REGEX)?.[0].slice(1) || DEFAULT_LANG;
+    const lang = pathname.match(LANG_REGEX)?.[0].slice(1)
+
+  const currLang = languages.find(data => data === lang) || DEFAULT_LANG;
 
   const onChange = (lang) => {
     const pathnameWithReplacedLang = pathname.replace(
