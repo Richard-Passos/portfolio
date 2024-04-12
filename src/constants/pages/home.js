@@ -25,21 +25,27 @@ const homePage = {
           block: {
             title: 'Selected works',
             action: { 
-              label:'More works',
-              href: '/projects',
-              variants: { 
-                color: 'main' 
-              }, 
-              icon: {
-                src: '/images/plus.svg',
-              }
+                    type: '',
+                    icon: { src: '/images/plus.svg' },
+                    data: {
+                      label:'More works',
+                      href: '/projects',
+                      variants: { 
+                      color: 'main' 
+                    }, 
+                    },
             }
           },
           list: {
             items: ['Mission', 'Soft & hard skills', 'Services'],
             action: {
-              href: '/work',
-              label: 'Explore'
+                    type: '',
+                    icon: { src: '/images/arrow-up-right.svg' },
+                    animation: 'slideUpRight',
+                    data: {
+                      label: 'Explore',
+                      href: '/work',
+                    },
             }
           }
       }
@@ -122,9 +128,14 @@ const homePage = {
         list: {
           items: ['Background', 'Hobbys', 'Personality'],
           action: {
-            href: '/about',
-            label: 'Explore'
-          }
+            type: '',
+            icon: { src: '/images/arrow-up-right.svg' },
+            animation: 'slideUpRight',
+            data: {
+              label: 'Explore',
+              href: '/about',
+            },
+    }
         }
       }
     },
