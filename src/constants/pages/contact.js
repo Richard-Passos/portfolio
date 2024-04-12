@@ -223,6 +223,7 @@ const contactPage = {
                   params: [],
                 },
               ],
+              items: globals.find(data => data.slug === 'personal-info')?.services?.map(data => data.title)
             },
             {
               name: 'message',

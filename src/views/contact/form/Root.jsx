@@ -43,7 +43,7 @@ const ContactViewForm = async ({ className, data = {}, ...props }) => {
                 <Control placeholder={data.placeholder} type={data.type} />
               </Form.Control>
             ) : (
-              <Control placeholder={data.placeholder} />
+              <Control placeholder={data.placeholder} data={data.items} />
             )}
 
             <Form.Description>{data.description}</Form.Description>

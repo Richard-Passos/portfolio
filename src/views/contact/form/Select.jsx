@@ -12,7 +12,7 @@ import {
 import { services } from '@/constants';
 import { useChangeKeyWhenFalsy, useFormField } from '@/hooks';
 
-const ContactViewFormSelect = ({ placeholder, ...props }) => {
+const ContactViewFormSelect = ({ placeholder, data = [], ...props }) => {
   const { name } = useFormField(),
     { register, watch } = useFormContext();
 
@@ -43,12 +43,12 @@ const ContactViewFormSelect = ({ placeholder, ...props }) => {
 
       <Select.Content>
         <Select.Viewport>
-          {services.map(({ title = '' }) => (
+          {data.map((data = '') => (
             <ContactFormSelectItem
-              key={title}
-              value={title.toLowerCase().replace(/_ /, '-')}
+              key={data}
+              value={data.toLowerCase().replace(/_ /, '-')}
             >
-              {title}
+              {data}
             </ContactFormSelectItem>
           ))}
         </Select.Viewport>
