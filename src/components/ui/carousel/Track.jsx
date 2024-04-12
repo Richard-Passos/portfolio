@@ -12,7 +12,7 @@ const CarouselTrack = ({ content, variant, className, ...props }) => {
       <CursorHover
         content={{
           type: 'icon',
-          name: 'Width',
+          src: '/images/exchange.svg',
           ...content,
         }}
         variant={{ scaleX: 1, scaleY: 1, ...variant }}
