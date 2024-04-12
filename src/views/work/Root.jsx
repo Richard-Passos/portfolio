@@ -1,39 +1,28 @@
-import { NextPage, Section } from '@/components';
+import { capitalize } from '@/utils';
 
 import Sections from './sections';
 
-const WorkView = () => {
-  return (
-    <>
-      <Sections.Hero theme='light' />
+const WorkView = ({ data = {} }) => {
+  const { sections = [] } = data;
 
-      <Sections.Mission
-        id='scrollTo'
-        theme='dark'
-      />
+  let lastTheme = '';
 
-      <Sections.Services theme='light' />
+  return sections.map(({ slug = '', ...data }) => {
+    let Section = Sections[slug.split(/[-_]/g).map(capitalize).join('')];
 
-      <Sections.Projects theme='light' />
-
-      <Sections.WhyMe theme='dark' />
-
-      <Sections.Skills theme='light' />
-
-      <Sections.Values theme='dark' />
-
+    Section = Section && (
       <Section
-        hasTransition={false}
-        theme='dark'
-        className='flex items-center justify-center'
-      >
-        <NextPage
-          href='/about'
-          text='About me'
-        />
-      </Section>
-    </>
-  );
+        hasTransition={
+          slug.toLowerCase() !== 'hero' && lastTheme !== data.theme
+        }
+        {...data}
+      />
+    );
+
+    lastTheme = data.theme;
+
+    return Section;
+  });
 };
 
 export default WorkView;
