@@ -50,8 +50,7 @@ const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
 
         <MagneticButton
         className='mt-md'
-          aria-label={block.action?.label}
-          {...(block.action || {})}
+          {...block.action}
         >
           <Icon aria-hidden {...block.action?.icon} />
         </MagneticButton>
@@ -143,9 +142,15 @@ const HomeViewWorkSectionList = ({ className, data = {}, ...props }) => {
         ))}
       </ListHorizontalScroll>
 
-      <ListHorizontalScroll.Link className='mt-md' {...action}>
-        {action.label}
-      </ListHorizontalScroll.Link>
+      <Button
+      {...action.data}
+    >
+      {action.data?.label}
+
+      <Button.Icon animation={action.animation}>
+        <Icon {...action.icon} />
+      </Button.Icon>
+    </Button>
     </div>
   );
 };
