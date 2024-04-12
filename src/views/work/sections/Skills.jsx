@@ -54,7 +54,7 @@ const HomeViewSkillsSection = ({ className, data = [], ...props }) => {
 
             <Carousel.Actions>
               {data.actions?.map((data) => 
-              <HomeViewSkillsSectionCarouselAction {...data}/>)}
+              <HomeViewSkillsSectionCarouselAction key={data.icon?.src} {...data}/>)}
             </Carousel.Actions>
           </section>
         </div>
