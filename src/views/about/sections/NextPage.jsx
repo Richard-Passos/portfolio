@@ -4,10 +4,10 @@ import { cn } from '@/utils';
 const AboutViewNextPageSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      className={cn('flex items-center justify-center', className)}
+      className={cn('!min-h-0', className)}
       {...props}
     >
-      <NextPage {...data} />
+      <NextPage data={data} />
     </Section>
   );
 };
