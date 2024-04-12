@@ -25,28 +25,28 @@ const CursorContent = ({ className, smoothConfig, ...props }) => {
   );
 };
 
-const getContent = (content = {}) => {
+const getContent = ({ type = '', className, ...data}) => {
   const contents = {
     icon: (
       <Icon
-        {...content}
-        className={cn('h-1/3 w-1/3', content.className)}
+      className={cn('size-1/3', className)}
+        {...data}
       />
     ),
     text: (
       <span
-        {...content}
-        className={cn(
-          'p-1 text-center font-semibold leading-none',
-          content.className,
-        )}
+      className={cn(
+        'p-1 text-center font-semibold leading-none',
+        className,
+      )}
+        {...data}
       >
-        {content.text}
+        {data.text}
       </span>
     ),
   };
 
-  content = contents[content.type?.toLowerCase()];
+  const content = contents[type.toLowerCase()];
 
   return content;
 };
