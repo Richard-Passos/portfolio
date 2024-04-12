@@ -1,5 +1,4 @@
-import { Projects, ScrollTitle, Section, TextScrollAnimate } from '@/components';
-import { MagneticButton } from '@/components/button';
+import { Projects, Button, ScrollTitle, Section, TextScrollAnimate } from '@/components';
 import { Icon, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -63,12 +62,12 @@ const WorkViewProjectsSectionBlock = ({ data = {}, className,  ...props }) => {
   return <section className={cn('flex w-9/10 max-w-screen-lg flex-col items-center', className)} {...props}>
   <WorkViewProjectsSectionShow data={data.items} />
 
-  <MagneticButton
+  <Button.Magnetic
     className='mt-md'
     {...action.data}
   >
     <Icon {...action.icon} />
-  </MagneticButton>
+  </Button.Magnetic>
 </section>
 }
 
