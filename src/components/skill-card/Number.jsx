@@ -12,4 +12,5 @@ const SkillCardNumber = ({ index, className, ...props }) => {
     </Text>
   );
 };
+
 export default SkillCardNumber;

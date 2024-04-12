@@ -38,4 +38,5 @@ const SkillCard = ({ asChild, className, ...props }) => {
     />
   );
 };
+
 export default SkillCard;

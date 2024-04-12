@@ -11,4 +11,5 @@ const SocialNav = ({ children, ...props }) => {
     </section>
   );
 };
+
 export default SocialNav;

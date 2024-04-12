@@ -15,4 +15,5 @@ const Tabs = ({ className, ...props }, ref) => {
     />
   );
 };
+
 export default forwardRef(Tabs);

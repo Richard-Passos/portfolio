@@ -15,4 +15,5 @@ const SkillCardAction = ({ className, variants, ...props }) => {
     />
   );
 };
+
 export default SkillCardAction;

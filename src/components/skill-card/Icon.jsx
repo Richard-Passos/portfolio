@@ -15,4 +15,5 @@ const SkillCardIcon = ({ className, children, ...props }) => {
     </div>
   );
 };
+
 export default SkillCardIcon;

@@ -13,4 +13,5 @@ const SkillCardWaterMark = ({ className, ...props }) => {
     />
   );
 };
+
 export default SkillCardWaterMark;

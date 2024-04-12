@@ -25,5 +25,6 @@ const generateMetadata = async () => {
     },
   };
 };
+
 export default WorkPage;
 export { generateMetadata };

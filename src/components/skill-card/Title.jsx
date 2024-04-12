@@ -10,4 +10,5 @@ const SkillCardTitle = ({ className, ...props }) => {
     />
   );
 };
+
 export default SkillCardTitle;
