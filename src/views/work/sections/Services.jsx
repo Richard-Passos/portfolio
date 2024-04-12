@@ -4,79 +4,123 @@ import {
   Section,
   Services,
   TextScrollAnimate,
+  ScrollAnimate
 } from '@/components';
-import { ScrollAnimate } from '@/components/scroll-animate';
-import { Separator, Text } from '@/components/ui';
-import { ArrowUpIcon } from '@/components/ui/icon/icons';
-import { services } from '@/constants';
+import { Icon, Image, Separator, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const WorkViewServicesSection = ({ className, ...props }) => {
-  const animationConfig = {
+const ANIMATION_CONFIG = {
+  y1: {
     scrollConfig: { offset: ['1 1', '1 0'] },
     prop: '--y',
     propPoints: ['0%', '100%'],
-  };
+  },
+  y2: {
+    prop: 'y',
+    propPoints: ['-13%', '0%'],
+  },
+};
 
+const WorkViewServicesSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
       className={cn('flex flex-col items-center', className)}
       {...props}
     >
-      <h2 className='mb-md w-full'>
-        <ScrollTitle title='SERVICES' />
+      <h2 className='w-full'>
+        {data.title?.map((w, i) => (
+          <ScrollTitle
+            dir={i % 2 === 0 ? 'ltr' : 'rtl'}
+            key={i}
+            title={w}
+          />
+        ))}
       </h2>
 
-      <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
-        <Text className='text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
-          <TextScrollAnimate text='We help our clients entertain, inform, and inspire the world.' />
+      <section className='mt-md flex max-sm:flex-col w-9/10 max-w-screen-xl gap-sm'>
+        {
+          data.subtitle && <Text className='text-4xl/tight font-medium basis-0 grow max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+          <TextScrollAnimate
+            className='first:first-letter:uppercase'
+            text={data.subtitle}
+          />
         </Text>
+        }
 
-        <Text className='text-muted-content max-sm:text-center sm:max-w-lg sm:justify-self-end'>
-          We represent storytellers who shape culture and drive the future. From
-          artists and creators to athletes and brands, our deep expertise and
-          broad capabilities enable talent and companies to confidently grow
-          their careers and businesses.
-        </Text>
+        {
+          data.description && <section className='sm:max-w-lg flex flex-col max-sm:items-center grow basis-0 sm:ml-auto'>
+          <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
+            {data.description}
+          </Text>
+  
+          {
+            data.action && <Button
+            className='mt-md'
+                {...action.data}
+              >
+                {action.data?.label}
+                
+                <Button.Icon animation={action.animation}>
+                  <Icon {...action.icon} />
+                </Button.Icon>
+              </Button>
+          }
+          </section>
+        }
       </section>
 
-      <section className='flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
-        <Text.Subtitle className='mr-auto text-2xl font-medium'>
-          I could help you with...
-        </Text.Subtitle>
 
-        <div className='grid gap-md sm:grid-cols-2'>
-          <ScrollAnimate config={animationConfig}>
-            <div className='h-1/2 translate-y-[--y] rounded-3xl bg-blue-500 max-sm:hidden md:h-2/3 md:translate-y-[calc(var(--y)/2)]' />
-          </ScrollAnimate>
-
-          <Services className='sm:py-md'>
-            {services.map(({ title, description }, i) => (
-              <Services.Item key={title}>
-                <Services.Number index={i} />
-
-                <Separator />
-
-                <Services.Title>{title}</Services.Title>
-
-                <Services.Description>{description}</Services.Description>
-              </Services.Item>
-            ))}
-          </Services>
-        </div>
-
-        <Button
-          href='/contact'
-          variants={{ color: 'main' }}
-        >
-          Contact me
-          <Button.Icon animation='slideUpRight'>
-            <ArrowUpIcon className='rotate-45' />
-          </Button.Icon>
-        </Button>
-      </section>
+      <WorkViewServicesSectionBlock className='mt-lg' data={data.block} />
     </Section>
   );
 };
+
+const WorkViewServicesSectionBlock = ({ data = {}, className, ...props }) => {
+  const { action = {} } = data
+
+  return <section className={cn('flex w-9/10 max-w-screen-lg flex-col items-center', className)} {...props}>
+  <Text.Subtitle className='mr-auto text-2xl font-medium'>
+    {data.title}
+  </Text.Subtitle>
+
+  <div className='grid gap-md sm:grid-cols-2 mt-md'>
+  <ScrollAnimate config={ANIMATION_CONFIG.y1}>
+      <div className='h-1/2 max-sm:hidden translate-y-[--y] overflow-hidden rounded-3xl bg-muted md:h-2/3 md:translate-y-[calc(var(--y)/2)]'>
+        <ScrollAnimate.Transform config={ANIMATION_CONFIG.y2}>
+          <Image
+            className='h-[115%] w-full object-cover'
+            {...data.image}
+          />
+        </ScrollAnimate.Transform>
+      </div>
+    </ScrollAnimate>
+
+    <Services className='sm:py-md'>
+      {data.items?.map((data, i) => (
+        <Services.Item key={data.title}>
+          <Services.Number index={i} />
+
+          <Separator />
+
+          <Services.Title>{data.title}</Services.Title>
+
+          <Services.Description>{data.description}</Services.Description>
+        </Services.Item>
+      ))}
+    </Services>
+  </div>
+
+  <Button
+  className='mt-md'
+      {...action.data}
+    >
+      {action.data?.label}
+
+      <Button.Icon animation={action.animation}>
+        <Icon {...action.icon} />
+      </Button.Icon>
+    </Button>
+</section>
+}
 
 export default WorkViewServicesSection;

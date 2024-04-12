@@ -1,42 +1,50 @@
 import { Button, Section, SkillCard } from '@/components';
 import { Badge, Carousel, Icon, Text } from '@/components/ui';
 import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
   PlusIcon,
 } from '@/components/ui/icon/icons';
-import { skills } from '@/constants';
 import { cn } from '@/utils';
 
-const HomeViewSkillsSection = ({ className, ...props }) => {
+const HomeViewSkillsSection = ({ className, data = [], ...props }) => {
   return (
     <Section
-      className={cn('flex flex-col items-center', className)}
+      className={cn('flex flex-col items-center gap-lg', className)}
       {...props}
     >
-      <Carousel
-        aria-labelledby='carousel-skills-heading-0'
-        className='mb-lg'
+      {data.map((data = {}, i) => <Carousel
+        aria-labelledby={`carousel-skills-heading-${i}`}
         options={{ slideFocus: true }}
       >
         <div className='flex w-9/10 max-w-screen-xl justify-between gap-md max-sm:flex-col sm:items-end'>
-          <Text.Title
-            className='text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
-            id='carousel-skills-heading-0'
-          >
-            Hard <br />{' '}
-            <span className='relative inline'>
-              skills{' '}
-              <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
-                The best in market
+        <Text.Title
+        aria-label={data.title}
+        className='whitespace-pre-line text-[16vw]/none'
+        variants={{ size: 'lg' }}
+      >
+        {data.title?.split(' ').map((w, i, arr) =>
+          i === arr.length - 1 ? (
+            <span
+              key={i}
+              className='relative inline'
+            >
+              {w}
+
+              <Badge className='absolute bottom-0 right-0 w-max -translate-x-4 -rotate-12 border-variant-content px-[1em] py-[.75em] text-[.24em] lowercase tracking-normal first-letter:uppercase max-sm:translate-y-1/3 sm:text-[.17em]'>
+                {data.subtitle}
               </Badge>
             </span>
-          </Text.Title>
+          ) : (
+            `${w} `
+          ),
+        )}
+      </Text.Title>
+
+      <span className='sr-only'>{data.subtitle}</span>
 
           <section className='flex w-full items-center gap-sm sm:max-w-xl'>
             <Carousel.ActiveIdx
               className='shrink-0'
-              itemsLength={skills.hard.length}
+              itemsLength={data.items?.length}
             />
 
             <Carousel.Progress variants={{ size: 'sm' }}>
@@ -44,19 +52,14 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             </Carousel.Progress>
 
             <Carousel.Actions>
-              <HomeViewSkillsSectionCarouselAction type='prev'>
-                <ArrowLeftIcon />
-              </HomeViewSkillsSectionCarouselAction>
-
-              <HomeViewSkillsSectionCarouselAction type='next'>
-                <ArrowRightIcon />
-              </HomeViewSkillsSectionCarouselAction>
+              {data.actions?.map((data) => 
+              <HomeViewSkillsSectionCarouselAction {...data}/>)}
             </Carousel.Actions>
           </section>
         </div>
 
         <Carousel.Track>
-          {skills.hard.map((data, i) => (
+          {data.items?.map((data, i) => (
             <HomeViewSkillsSectionCarouselItem
               idx={i}
               key={data.title}
@@ -64,59 +67,33 @@ const HomeViewSkillsSection = ({ className, ...props }) => {
             />
           ))}
         </Carousel.Track>
-      </Carousel>
-
-      <Carousel
-        aria-labelledby='carousel-skills-heading-1'
-        options={{ slideFocus: true }}
-      >
-        <div className='flex w-9/10 max-w-screen-xl justify-between gap-md max-sm:flex-col sm:items-end'>
-          <Text.Title
-            className='text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
-            id='carousel-skills-heading-0'
-          >
-            Soft <br />{' '}
-            <span className='relative inline'>
-              skills{' '}
-              <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
-                The best as person
-              </Badge>
-            </span>
-          </Text.Title>
-
-          <section className='flex w-full items-center gap-sm sm:max-w-xl'>
-            <Carousel.ActiveIdx
-              className='shrink-0'
-              itemsLength={skills.soft.length}
-            />
-
-            <Carousel.Progress variants={{ size: 'sm' }}>
-              <Carousel.Progress.Indicator />
-            </Carousel.Progress>
-
-            <Carousel.Actions>
-              <HomeViewSkillsSectionCarouselAction type='prev'>
-                <ArrowLeftIcon />
-              </HomeViewSkillsSectionCarouselAction>
-
-              <HomeViewSkillsSectionCarouselAction type='next'>
-                <ArrowRightIcon />
-              </HomeViewSkillsSectionCarouselAction>
-            </Carousel.Actions>
-          </section>
-        </div>
-
-        <Carousel.Track>
-          {skills.soft.map((data, i) => (
-            <HomeViewSkillsSectionCarouselItem
-              idx={i}
-              key={data.title}
-              data={data}
-            />
-          ))}
-        </Carousel.Track>
-      </Carousel>
+      </Carousel>)}
     </Section>
+  );
+};
+
+const HomeViewSkillsSectionCarouselAction = ({
+  className,
+  icon,
+  data = {},
+  ...props
+}) => {
+  return (
+    <Carousel.Action
+      asChild
+      {...props}
+    >
+      <Button
+        className={cn(
+          'aspect-square rounded-sm bg-muted px-0 text-content [--variant-a:--primary] hover:text-primary-content [&_svg]:size-[40%]',
+          className,
+        )}
+        {...data}
+        variants={{ color: 'main', size: 'sm', ...data.variants }}
+      >
+        <Icon {...icon}/>
+      </Button>
+    </Carousel.Action>
   );
 };
 
@@ -150,30 +127,6 @@ const HomeViewSkillsSectionCarouselItem = ({ idx, data = {}, ...props }) => {
         </SkillCard.WaterMark>
       </Carousel.Item>
     </SkillCard>
-  );
-};
-
-const HomeViewSkillsSectionCarouselAction = ({
-  className,
-  variants,
-  children,
-  ...props
-}) => {
-  return (
-    <Carousel.Action
-      asChild
-      {...props}
-    >
-      <Button
-        className={cn(
-          'aspect-square rounded-sm bg-muted px-0 text-content [--variant-a:--primary] hover:text-primary-content [&_svg]:size-[40%]',
-          className,
-        )}
-        variants={{ color: 'main', size: 'sm', ...variants }}
-      >
-        {children}
-      </Button>
-    </Carousel.Action>
   );
 };
 

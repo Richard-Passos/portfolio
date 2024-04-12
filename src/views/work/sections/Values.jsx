@@ -1,66 +1,91 @@
 import { Section, Values } from '@/components';
-import { ScrollAnimate } from '@/components/scroll-animate';
+import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Badge, Icon, Text } from '@/components/ui';
-import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
-import { values } from '@/constants';
 import { cn } from '@/utils';
 
-const WorkViewValuesSection = ({ className, ...props }) => {
-  const animationConfig = {
+const ANIMATION_CONFIG = {
+  rotate1: {
     scroll: 'scrollY',
     scrollPoints: [0, 400],
-    prop: '--rotate',
+    prop: 'rotate',
+    propPoints: ['0deg', '-360deg'],
+    transformConfig: { clamp: false },
+  },
+  rotate2: {
+    scroll: 'scrollY',
+    scrollPoints: [0, 400],
+    prop: 'rotate',
     propPoints: ['0deg', '360deg'],
     transformConfig: { clamp: false },
-  };
+  },
+};
 
+const WorkViewValuesSection = ({ className, data = {}, ...props }) => {
   return (
-    <ScrollAnimate config={animationConfig}>
       <Section
-        className={cn('flex flex-col items-center gap-md', className)}
+        className={cn('flex flex-col items-center', className)}
         {...props}
       >
         <Text.Title
-          className='w-9/10 max-w-screen-xl text-7xl font-extrabold uppercase tracking-tight sm:text-8xl'
-          id='carousel-skills-heading-0'
-        >
-          My <br />{' '}
-          <span className='relative inline'>
-            values{' '}
-            <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
-              Always improving
-            </Badge>
-          </span>
-        </Text.Title>
+        aria-label={data.title}
+        className='w-9/10 max-w-screen-xl whitespace-pre-line text-[16vw]/none'
+        variants={{ size: 'lg' }}
+      >
+        {data.title?.split(' ').map((w, i, arr) =>
+          i === arr.length - 1 ? (
+            <span
+              key={i}
+              className='relative inline'
+            >
+              {w}
 
-        <div className='relative w-full'>
-          <Values className='mx-auto w-9/10 max-w-screen-xl'>
-            {values.map((data) => (
-              <Values.Item key={data.title}>
-                <Values.Icon>
-                  <Icon {...data.icon} />
-                </Values.Icon>
+              <Badge className='absolute bottom-0 right-0 w-max -translate-x-4 -rotate-12 border-variant-content px-[1em] py-[.75em] text-[.24em] lowercase tracking-normal first-letter:uppercase max-sm:translate-y-1/3 sm:text-[.17em]'>
+                {data.subtitle}
+              </Badge>
+            </span>
+          ) : (
+            `${w} `
+          ),
+        )}
+      </Text.Title>
 
-                <Values.Title>{data.title}</Values.Title>
+      <span className='sr-only'>{data.subtitle}</span>
 
-                <Values.Description>{data.description}</Values.Description>
-              </Values.Item>
-            ))}
-          </Values>
-
-          <SmileIcon
-            aria-hidden
-            className='absolute right-0 top-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] -rotate-[--rotate] fill-muted max-lg:hidden'
-          />
-
-          <GlobeIcon
-            aria-hidden
-            className='absolute bottom-0 left-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] rotate-[--rotate] fill-muted max-lg:hidden'
-          />
-        </div>
+<WorkViewValuesSectionBlock className='mt-md' data={data.block}/>
       </Section>
-    </ScrollAnimate>
   );
 };
+
+const WorkViewValuesSectionBlock = ({ className, data = {}, ...props }) => {
+  return <div className={cn('relative w-full', className)} {...props}>
+  <Values className='mx-auto w-9/10 max-w-screen-xl'>
+    {data.items?.map((data) => (
+      <Values.Item key={data.title}>
+        <Values.Icon>
+          <Icon
+            aria-hidden
+            {...data.icon}
+          />
+        </Values.Icon>
+
+        <Values.Title>{data.title}</Values.Title>
+
+        <Values.Description>{data.description}</Values.Description>
+      </Values.Item>
+    ))}
+  </Values>
+
+  
+
+{data.icons?.map((data, i) => <ScrollAnimateTransform config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}>
+    <div className='absolute first-of-type:right-0 first-of-type:top-0 last-of-type:bottom-0 last-of-type:left-0 -z-10 size-[min(50vmin,theme(maxWidth.md))] max-lg:hidden'>
+    <Icon
+      className='size-full text-muted'
+      {...data}
+    />
+    </div>
+  </ScrollAnimateTransform>)}
+  </div>
+}
 
 export default WorkViewValuesSection;

@@ -1,66 +1,94 @@
-import { projectsApi } from '@/api';
-import { Projects, ScrollTitle, Section } from '@/components';
+import { Projects, ScrollTitle, Section, TextScrollAnimate } from '@/components';
 import { MagneticButton } from '@/components/button';
-import { Text } from '@/components/ui';
-import { PlusIcon } from '@/components/ui/icon/icons';
+import { Icon, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const WorkViewProjectsSection = ({ className, ...props }) => {
+const WorkViewProjectsSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      hasTransition={false}
       className={cn('flex flex-col items-center', className)}
       {...props}
     >
-      <h2 className='mb-md flex w-full flex-col'>
-        <ScrollTitle title='SELECTED' />
-        <ScrollTitle
-          dir='rtl'
-          title='WORKS'
-        />
+      <h2 className='w-full'>
+        {data.title?.map((w, i) => (
+          <ScrollTitle
+            dir={i % 2 === 0 ? 'ltr' : 'rtl'}
+            key={i}
+            title={w}
+          />
+        ))}
       </h2>
 
-      <section className='mb-lg grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
-        <Text className='text-muted-content max-sm:text-center sm:col-end-3 sm:max-w-lg sm:justify-self-end'>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit
-          dolores adipisci voluptates dolore inventore aperiam rerum possimus
-          culpa nemo molestiae!
+      <section className='mt-md flex max-sm:flex-col w-9/10 max-w-screen-xl gap-sm'>
+        {
+          data.subtitle && <Text className='text-4xl/tight font-medium basis-0 grow max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+          <TextScrollAnimate
+            className='first:first-letter:uppercase'
+            text={data.subtitle}
+          />
         </Text>
+        }
+
+        {
+          data.description && <section className='sm:max-w-lg flex flex-col max-sm:items-center grow basis-0 sm:ml-auto'>
+          <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
+            {data.description}
+          </Text>
+  
+          {
+            data.action && <Button
+            className='mt-md'
+                {...action.data}
+              >
+                {action.data?.label}
+                
+                <Button.Icon animation={action.animation}>
+                  <Icon {...action.icon} />
+                </Button.Icon>
+              </Button>
+          }
+          </section>
+        }
       </section>
 
-      <div className='flex w-9/10 max-w-screen-lg flex-col items-center gap-md'>
-        <WorkViewProjectsShowSection />
 
-        <MagneticButton
-          aria-label='More works'
-          href='/projects'
-          variants={{ color: 'main' }}
-        >
-          <PlusIcon aria-hidden />
-        </MagneticButton>
-      </div>
+      <WorkViewProjectsSectionBlock className='mt-lg' data={data.block}/>
     </Section>
   );
 };
 
-const WorkViewProjectsShowSection = async () => {
-  const selectedProjects = (await projectsApi.getSelecteds()).data || [];
+const WorkViewProjectsSectionBlock = ({ data = {}, className,  ...props }) => {
+  const { action = {} } = data
 
-  const projects = selectedProjects.reduce(
+  return <section className={cn('flex w-9/10 max-w-screen-lg flex-col items-center', className)} {...props}>
+  <WorkViewProjectsSectionShow data={data.items} />
+
+  <MagneticButton
+    className='mt-md'
+    {...action.data}
+  >
+    <Icon {...action.icon} />
+  </MagneticButton>
+</section>
+}
+
+const WorkViewProjectsSectionShow = ({data = [], className, ...props}) => {    
+  const {items, images} = data.reduce(
     (obj, { thumbnail, ...data }) => ({
-      data: [...obj.data, data],
+      items: [...obj.items, data],
       images: [...obj.images, thumbnail],
     }),
-    { data: [], images: [] },
+    { items: [], images: [] },
   );
 
   return (
     <Projects
-      className='w-full'
-      images={projects.images}
+      className={cn('w-full', className)}
+      images={images}
+      {...props}
     >
       <Projects.List className='max-sm:hidden'>
-        {projects.data.map((data, i) => (
+        {items.map((data, i) => (
           <Projects.List.Item
             href={`/projects/${data.slug}`}
             index={i}
@@ -80,7 +108,7 @@ const WorkViewProjectsShowSection = async () => {
       </Projects.List>
 
       <Projects.Grid className='sm:hidden'>
-        {projects.data.map((data, i) => (
+        {items.map((data, i) => (
           <Projects.Grid.Item
             href={`/projects/${data.slug}`}
             index={i}
