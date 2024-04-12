@@ -1,3 +1,5 @@
+import globals from '../globals';
+
 const contactPage = {
   slug: 'contact',
   sections: [
@@ -30,35 +32,24 @@ const contactPage = {
                 type: 'data-changer',
                 data: {
                   action: {
-                    label: 'Change statistic',
-                    icon: { src: '/images/rotate.svg' }
+                    type: '',
+                    icon: { src: '/images/rotate.svg' },
+                    data: {
+                      label: 'Change statistic',
+                    },
                   },
-                  items: [
-                    {
-                      title: '10ᐩ',
-                      description: `Projects \n completed`,
-                    },
-                    {
-                      title: '1ᐩ',
-                      description: `Years of \n experience`,
-                    },
-                    {
-                      title: '100%',
-                      description: `Great \n projects`,
-                    },
-                    {
-                      title: '50ᐩ',
-                      description: `Clebers \n completed`,
-                    },
-                  ]
+                  items: globals.find((data) => data.slug === 'personal-info')?.stats
                 }
               },
               {
                 type: 'data-changer',
                 data: {
                   action: {
-                    label: 'Change value',
-                    icon: { src: '/images/rotate.svg' }
+                    type: '',
+                    icon: { src: '/images/rotate.svg' },
+                    data: {
+                      label: 'Change value',
+                    },
                   },
                   items: [
                     
