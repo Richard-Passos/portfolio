@@ -12,6 +12,7 @@ const HomeViewSkillsSection = ({ className, data = [], ...props }) => {
       {...props}
     >
       {data.map((data = {}, i) => <Carousel
+      key={data.title}
         aria-labelledby={`carousel-skills-heading-${i}`}
         options={{ slideFocus: true }}
       >
