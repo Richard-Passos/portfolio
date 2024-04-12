@@ -42,7 +42,7 @@ const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
       </section>
 
       <div className='mt-lg flex w-9/10 max-w-screen-lg flex-col items-center'>
-        <Text.Subtitle className='text-xs uppercase text-muted-content'>
+        <Text.Subtitle className='text-xs mr-auto uppercase text-muted-content'>
           {block.title}
         </Text.Subtitle>
 
@@ -50,7 +50,7 @@ const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
 
         <Button.Magnetic
           className='mt-md'
-          {...block.action}
+          {...block.action.data}
         >
           <Icon
             aria-hidden
@@ -148,7 +148,7 @@ const HomeViewWorkSectionList = ({ className, data = {}, ...props }) => {
         ))}
       </ListHorizontalScroll>
 
-      <Button {...action.data}>
+      <Button className='mt-md' {...action.data}>
         {action.data?.label}
 
         <Button.Icon animation={action.animation}>

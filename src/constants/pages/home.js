@@ -43,6 +43,9 @@ const homePage = {
             data: {
               label: 'Explore',
               href: '/work',
+              variants: {
+                color: 'main',
+              },
             },
           },
         },
@@ -133,6 +136,9 @@ const homePage = {
             data: {
               label: 'Explore',
               href: '/about',
+              variants: {
+                color: 'main',
+              },
             },
           },
         },

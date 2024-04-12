@@ -35,7 +35,7 @@ const WorkViewProjectsSection = ({ className, data = {}, ...props }) => {
         )}
 
         {data.description && (
-          <section className='flex grow basis-0 flex-col max-sm:items-center sm:ml-auto sm:max-w-lg'>
+          <section className='flex grow basis-0 flex-col items-center sm:items-start sm:ml-auto sm:max-w-lg'>
             <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
               {data.description}
             </Text>
