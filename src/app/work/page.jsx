@@ -1,14 +1,24 @@
+import { pagesApi } from '@/api';
+import { capitalize } from '@/utils';
 import { WorkView } from '@/views';
 
-const WorkPage = () => {
-  return <WorkView />;
+const WorkPage = async (props) => {
+  const { data } = await pagesApi.getOne('work');
+
+  return <WorkView data={data} {...props} />;
 };
 
-const metadata = {
-  title: 'Work',
-  description:
-    'Richard passos work details, his mission, services, some projects, skills and more.',
-};
+const generateMetadata = async () => {
+  const { metadata = {} } = (await pagesApi.getOne('work')).data || {};
 
+  return {
+    title: capitalize(metadata.title),
+    description: metadata.description,
+    openGraph: {
+      title: capitalize(metadata.title),
+      description: metadata.description,
+    },
+  };
+};
 export default WorkPage;
-export { metadata };
+export { generateMetadata };
