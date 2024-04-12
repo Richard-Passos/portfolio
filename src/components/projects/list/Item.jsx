@@ -7,7 +7,7 @@ import { cn, isFunctionThanCall } from '@/utils';
 
 import { CursorLink } from '../../link';
 
-const ProjectsListItem = ({ className, index, ...props }) => {
+const ProjectsListItem = ({ className,content, index, ...props }) => {
   const { setActiveIdx } = useContext(ProjectsContext);
 
   return (
@@ -17,8 +17,8 @@ const ProjectsListItem = ({ className, index, ...props }) => {
         className,
       )}
       content={{
-        name: 'Eye',
-        className: 'size-1/2',
+        src: '/images/eye.svg',
+        ...content
       }}
       {...props}
       onMouseEnter={(ev) => {
