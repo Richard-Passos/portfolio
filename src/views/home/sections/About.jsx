@@ -90,18 +90,18 @@ const HomeViewAboutSectionGrid = ({
       }}
       {...props}
     >
-      {data.items?.map(({ type = '', data }, i) => {
+      {data.items?.map(({ type, data }, i) => {
         const Item =
           BentoGrid.Item[normCompName(type)]
 
-        return (
+        return  Item && (
           <BentoGrid.ScrollAnimate key={i}>
-            {
-              Item && <Item
+            
+              <Item
               idx={i}
               data={data}
             />
-            }
+            
           </BentoGrid.ScrollAnimate>
         );
       })}
