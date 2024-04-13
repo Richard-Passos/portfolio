@@ -48,7 +48,7 @@ const ProjectViewAboutSection = ({ data = {}, className, ...props }) => {
               <Text.Subtitle className='w-14 text-xs uppercase text-muted-content'>
                 {data.title}:
               </Text.Subtitle>{' '}
-              <Text className='text-sm font-semibold lowercase first-letter:uppercase sm:col-span-2'>
+              <Text className='text-sm font-semibold first-letter:uppercase sm:col-span-2'>
                 {data.description}
               </Text>
             </li>
