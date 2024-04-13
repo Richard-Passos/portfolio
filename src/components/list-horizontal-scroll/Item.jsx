@@ -4,36 +4,30 @@ import HorizontalScroll from '../horizontal-scroll';
 import { ScrollAnimate } from '../scroll-animate';
 
 const CLIP_PATHS = {
-  fromRight: 'inset(0 0 0 var(--size))',
-  fromLeft: 'inset(0 var(--size) 0 0)',
-};
+  rtl: ['inset(0 0 0 100%)', 'inset(0 0 0 0%)'],
+  ltr: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)'],
+},
+ ANIMATION_CONFIG = (dir) => ({
+  scrollConfig: {
+    offset: ['0 1', '0 .6'],
+  },
+  prop: 'clipPath',
+  propPoints: CLIP_PATHS[dir],
+})
 
 const ListHorizontalScrollItem = ({
   className,
   baseVelocity = 1,
   children,
-  style,
   ...props
 }) => {
-  const animationConfig = {
-    scrollConfig: {
-      offset: ['0 1', '0 .6'],
-    },
-    prop: '--size',
-    propPoints: ['100%', '0%'],
-  };
-
   return (
-    <ScrollAnimate config={animationConfig}>
+    <ScrollAnimate config={ANIMATION_CONFIG(baseVelocity >= 0 ? 'ltr' : 'rtl')}>
       <li
         className={cn(
-          'relative flex items-center justify-center border-y bg-main py-[.75em] text-[clamp(1.5rem,4.5vw,2.5rem)]/none font-bold uppercase transition-colors odd:-rotate-[.5deg] even:rotate-[.5deg]',
+          'relative overflow-hidden flex items-center justify-center border-y bg-main py-[.75em] text-[clamp(1.5rem,4.5vw,2.5rem)]/none font-bold uppercase odd:-rotate-[.5deg] even:rotate-[.5deg]',
           className,
         )}
-        style={{
-          clipPath: CLIP_PATHS[baseVelocity >= 0 ? 'fromLeft' : 'fromRight'],
-          ...style,
-        }}
         {...props}
       >
         <HorizontalScroll baseVelocity={baseVelocity}>
