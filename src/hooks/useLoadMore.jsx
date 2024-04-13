@@ -20,35 +20,31 @@ const useLoadMore = (getFn, setData,  params) => {
       return data
     }, [getFn])
 
-  const loadMore = () => {
+  const loadMore = async () => {
     try {
-      setState(state => ({...state, isLoading: true}));
+      setState(state => ({ ...state, isLoading: true }));
 
-      setState(async ({page, ...state}) => {
-        page = page + 1
-
-        const { data = [], meta = {} } = await handleFetch(`?page=${page}${params}`)
-  
+        const { data = [], meta = {} } = await handleFetch(`?page=${state.page + 1}${params}`)
+          
         setData((state) => [...state, ...data]);
 
-        console.log('-  page >= meta.totalPages   -', page >= meta.totalPages)
-        return {
+      setState(({page, ...state}) => ({
           ...state,
-          page,
-          isLastPage: page >= meta.totalPages
-        }
-      })
+          page: page + 1,
+          isLastPage: page + 1 >= meta.totalPages
+        })
+      )
     } catch (err) {
       throw new Error(err);
     } finally {
-      setState(state => ({...state, isLoading: false}));
+        setState(state => ({ ...state, isLoading: false }));
     }
   }
 
   useUpdateEffect(() => {
     setState({
       page: 1,
-      lsLoading: false,
+      isLoading: false,
       isLastPage: false
     })
   }, [params])

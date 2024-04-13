@@ -51,13 +51,13 @@ const ProjectsHeroSection = async ({ className, data = {}, ...props }) => {
 };
 
 const ProjectsHeroSectionBlock = ({ data = {}, ...props}) => {
-  const { types = [], items = [], roles = [],  action = {} } = data
+  const { items = [], types = [],  roles = [],  action = {} } = data
 
   return <ShowProjects
-  defaultData={{ type: types[0]?.type, projects: items }}
+  defaultState={{ projects: items, type: types[0]?.type,  }}
   {...props}
 >
-  <div className='flex w-full sm:items-center max-sm:flex-col-reverse justify-between gap-sm '>
+  <div className='flex w-full sm:items-center max-sm:flex-col-reverse justify-between gap-sm'>
     <ShowProjects.Roles>
       <Suspense fallback={<DotsLoader />}>
       {roles.map(({ type, data }) => (
@@ -71,14 +71,14 @@ const ProjectsHeroSectionBlock = ({ data = {}, ...props}) => {
       </Suspense>
     </ShowProjects.Roles>
 
-    <ShowProjects.Types className='sm:justify-end'>
+    <ShowProjects.Types>
       {types.map(({type, icon, data}) => (
         <ShowProjects.Types.Trigger
           key={data.label}
           type={type}
           asChild
         >
-          <MagneticButton className='data-active:primary [&_svg]:size-[40%] hover:z-10' {...data} variants={{ color: 'main', size: 'sm', ...data.variants }} >
+          <MagneticButton className='data-active:primary [&_svg]:size-[40%] hover:z-10 data-active:focus-visible:outline-primary-content' {...data} variants={{ color: 'main', size: 'sm', ...data.variants }} >
 
           <Icon
             {...icon}

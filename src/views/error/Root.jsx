@@ -2,7 +2,7 @@ import { capitalize } from '@/utils';
 
 import Sections from './sections';
 
-const ErrorView = ({ data = {}, ...props }) => {
+const ErrorView = ({ data = {}, error, reset }) => {
   const { sections = [] } = data;
 
   let lastTheme = '';
@@ -15,7 +15,8 @@ const ErrorView = ({ data = {}, ...props }) => {
         hasTransition={
           slug.toLowerCase() !== 'hero' && lastTheme !== data.theme
         }
-        {...props}
+        error={error} 
+        reset={reset} 
         {...data}
       />
     );

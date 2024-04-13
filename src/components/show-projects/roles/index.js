@@ -1,12 +1,12 @@
-import ProjectsViewShowRolesRoot from './Root';
-import ProjectsViewShowRolesTrigger from './Trigger';
+import ShowProjectsRolesRoot from './Root';
+import ShowProjectsRolesTrigger from './Trigger';
 
-const ProjectsViewShowRoles = ProjectsViewShowRolesRoot;
+const ShowProjectsRoles = ShowProjectsRolesRoot;
 
-ProjectsViewShowRoles.Trigger = ProjectsViewShowRolesTrigger;
+ShowProjectsRoles.Trigger = ShowProjectsRolesTrigger;
 
-export default ProjectsViewShowRoles;
+export default ShowProjectsRoles;
 export {
-  ProjectsViewShowRolesRoot as ProjectsViewShowRoles,
-  ProjectsViewShowRolesTrigger,
+  ShowProjectsRolesRoot as ShowProjectsRoles,
+  ShowProjectsRolesTrigger,
 };

@@ -85,7 +85,7 @@ const ContactViewServicesSection = async ({
         <Services className='sm:py-md'>
           {services.map((data, i) => (
             <Services.Item key={data.title}>
-              <Services.Number index={i} />
+              <Services.Number idx={i} />
 
               <Separator />
 

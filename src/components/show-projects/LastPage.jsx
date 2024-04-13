@@ -2,11 +2,11 @@
 
 import { cn } from '@/utils';
 import { Text } from '../ui/text';
-import { ProjectsShowContext } from '@/contexts';
+import { ShowProjectsContext } from '@/contexts';
 import { useContext } from 'react';
 
 const ShowProjectsLastPage = ({ className, ...props }) => {
-  const { isLastPage, projects = [] } = useContext(ProjectsShowContext);
+  const { isLastPage, projects = [] } = useContext(ShowProjectsContext);
 
   return isLastPage && !!projects.length && (
     <Text

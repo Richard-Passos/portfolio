@@ -72,7 +72,7 @@ const ContactViewContactSection = async ({
         <nav className='mt-sm grid gap-2 sm:max-md:grid-cols-3'>
           {personalInfo.socials?.map((data, i) => (
             <SocialNav.Item
-              index={i}
+              idx={i}
               key={data.href}
               data={data}
             />

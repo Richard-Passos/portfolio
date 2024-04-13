@@ -95,7 +95,7 @@ const FooterContent = async ({ theme, className, ...props }) => {
               <SocialNav>
                 {personalInfo.socials?.map((data, i) => (
                   <SocialNav.Item
-                    index={i}
+                    idx={i}
                     key={data.href}
                     data={data}
                   />

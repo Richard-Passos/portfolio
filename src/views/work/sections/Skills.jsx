@@ -108,8 +108,8 @@ const HomeViewSkillsSectionCarouselItem = ({ idx, data = {}, ...props }) => {
       asChild
       {...props}
     >
-      <Carousel.Item index={idx}>
-        <SkillCard.Number index={idx} />
+      <Carousel.Item idx={idx}>
+        <SkillCard.Number idx={idx} />
 
         <div className='relative row-span-2 flex size-full items-center justify-center'>
           <SkillCard.Icon>

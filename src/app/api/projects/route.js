@@ -14,6 +14,8 @@ const GET = (req) => {
     ),
     totalResults = projects.length;
 
+
+
   return Response.json({
     status: 200,
     data: results,

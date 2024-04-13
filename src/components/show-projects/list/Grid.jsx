@@ -6,12 +6,12 @@ const ShowProjectsItemsGrid = ({ className, data = [], ...props }) => {
         {data.map((data, i) => (
           <ProjectsGrid.Item
             href={`/projects/${data.slug}`}
-            index={i}
+            idx={i}
             key={data.slug}
           >
-            <ProjectsGrid.Number index={i} />
+            <ProjectsGrid.Number idx={i} />
 
-            <ProjectsGrid.Image index={i} />
+            <ProjectsGrid.Image idx={i} />
 
             <ProjectsGrid.Title text={data.title} />
 

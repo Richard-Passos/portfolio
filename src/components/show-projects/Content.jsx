@@ -1,21 +1,21 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { useCallback, useContext, useRef } from 'react';
+import { useCallback, useContext } from 'react';
 
-import { ProjectsShowContext } from '@/contexts';
+import { ShowProjectsContext } from '@/contexts';
 import { capitalize } from '@/utils';
 
 import List from './list'
 import { projectsApi } from '@/api';
 import { useUpdateEffect } from '@/hooks';
 
-const ProjectsViewShowContent = ({ className, ...props }) => {
-  const { type = '', projects = [], setProjects } = useContext(ProjectsShowContext),
+const ShowProjectsContent = ({ className, ...props }) => {
+  const { projects = [], setProjects, type = '' } = useContext(ShowProjectsContext),
   searchParams = useSearchParams();
 
-    const page = searchParams.get('page') || '1',  
-    role = searchParams.get('role') || 'all'
+    const page = +searchParams.get('page') || 1,  
+    role = searchParams.get('role').toLowerCase() || 'all'
 
   const { items, images } = projects.reduce(
     (obj, { thumbnail, ...data }) => ({
@@ -34,7 +34,7 @@ const ProjectsViewShowContent = ({ className, ...props }) => {
   }, [setProjects])
  
   useUpdateEffect(() => {
-      handleSetProjects(`?page${page}&role=${role.toLowerCase()}`);
+      handleSetProjects(`?page${page}&role=${role}`);
     }, [page, role]); 
 
   return !!projects.length && (
@@ -44,4 +44,4 @@ const ProjectsViewShowContent = ({ className, ...props }) => {
   );
 };
 
-export default ProjectsViewShowContent;
+export default ShowProjectsContent;

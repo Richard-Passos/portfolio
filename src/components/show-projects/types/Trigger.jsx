@@ -2,16 +2,16 @@
 
 import { useContext } from 'react';
 
-import { ProjectsShowContext } from '@/contexts';
+import { ShowProjectsContext } from '@/contexts';
 import {  isFunctionThanCall } from '@/utils';
 import { Slot } from '@radix-ui/react-slot';
 
-const ProjectsViewShowTypesTrigger = ({ asChild,
+const ShowProjectsTypesTrigger = ({ asChild,
   className,
   type,
   ...props
 }) => {
-  const { type: activeType, setType } = useContext(ProjectsShowContext);
+  const { type: activeType, setType } = useContext(ShowProjectsContext);
 
   const Tag = asChild ? Slot : 'button',
   isActive = activeType === type
@@ -29,4 +29,4 @@ const ProjectsViewShowTypesTrigger = ({ asChild,
   );
 };
 
-export default ProjectsViewShowTypesTrigger;
+export default ShowProjectsTypesTrigger;

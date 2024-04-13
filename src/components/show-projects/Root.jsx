@@ -1,9 +1,9 @@
-import { ProjectsShowProvider } from '@/contexts';
+import { ShowProjectsProvider } from '@/contexts';
 import { cn } from '@/utils';
 
 const ProjectsViewShow = ({ defaultData, className, ...props }) => {
   return (
-    <ProjectsShowProvider defaultData={defaultData}>
+    <ShowProjectsProvider defaultData={defaultData}>
       <div
         className={cn(
           'flex w-full flex-col items-center gap-md',
@@ -11,7 +11,7 @@ const ProjectsViewShow = ({ defaultData, className, ...props }) => {
         )}
         {...props}
       />
-    </ProjectsShowProvider>
+    </ShowProjectsProvider>
   );
 };
 

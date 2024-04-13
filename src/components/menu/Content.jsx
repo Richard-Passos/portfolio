@@ -37,7 +37,7 @@ const MenuContent = async (props) => {
           <SocialNav className='max-md:hidden'>
             {personalInfo.socials?.map((data, i) => (
               <SocialNav.Item
-                index={i}
+                idx={i}
                 key={data.href}
                 data={data}
               />

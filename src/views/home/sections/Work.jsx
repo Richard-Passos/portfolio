@@ -88,10 +88,10 @@ const HomeViewWorkSectionProjects = async ({ className, ...props }) => {
         {projects.data.map((data, i) => (
           <Projects.List.Item
             href={`/projects/${data.slug}`}
-            index={i}
+            idx={i}
             key={'projects-list-' + data.slug}
           >
-            <Projects.List.Number index={i} />
+            <Projects.List.Number idx={i} />
 
             <Projects.List.Content>
               <Projects.List.Title text={data.title} />
@@ -108,12 +108,12 @@ const HomeViewWorkSectionProjects = async ({ className, ...props }) => {
         {projects.data.map((data, i) => (
           <Projects.Grid.Item
             href={`/projects/${data.slug}`}
-            index={i}
+            idx={i}
             key={'projects-grid-' + data.slug}
           >
-            <Projects.Grid.Number index={i} />
+            <Projects.Grid.Number idx={i} />
 
-            <Projects.Grid.Image index={i} />
+            <Projects.Grid.Image idx={i} />
 
             <Projects.Grid.Title text={data.title} />
 

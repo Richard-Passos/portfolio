@@ -35,7 +35,7 @@ const ProjectsTableImages = ({ className, ...props }) => {
           >
             {/* eslint-disable-next-line jsx-a11y/alt-text */}
             <Image
-              className='size-full scale-[--scale] object-cover object-center transition-transform duration-500'
+              className='size-full scale-[--scale] object-cover transition-transform duration-500'
               style={{
                 '--scale': i > activeIdx ? 1.1 : 1,
               }}

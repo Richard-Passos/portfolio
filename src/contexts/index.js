@@ -9,6 +9,6 @@ export { default as MenuContext, MenuProvider } from './Menu';
 export { default as ProgressContext, ProgressProvider } from './Progress';
 export { default as ProjectsContext, ProjectsProvider } from './Projects';
 export {
-  default as ProjectsShowContext,
-  ProjectsShowProvider,
-} from './ProjectsShow';
+  default as ShowProjectsContext,
+  ShowProjectsProvider,
+} from './ShowProjects';

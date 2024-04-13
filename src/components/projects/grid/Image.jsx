@@ -8,10 +8,10 @@ import { cn } from '@/utils';
 import ScrollAnimate from '../../scroll-animate';
 import { Image } from '../../ui';
 
-const ProjectsGridImage = ({ index, className, ...props }) => {
+const ProjectsGridImage = ({ idx, className, ...props }) => {
   const { images } = useContext(ProjectsContext);
 
-  const img = images[index];
+  const img = images[idx];
 
   const animationConfig = {
     clipPath: {

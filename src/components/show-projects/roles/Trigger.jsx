@@ -8,7 +8,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { Link } from '../../ui';
 import { useQueryString } from '@/hooks';
 
-const ProjectsViewShowRolesTrigger = ({
+const ShowProjectsRolesTrigger = ({
   className,
   role,
   children,
@@ -16,7 +16,7 @@ const ProjectsViewShowRolesTrigger = ({
 }) => {
   const pathame = usePathname(),
    searchParams = useSearchParams(),
-   query = useQueryString([['role', role], ['page', 2]])
+   query = useQueryString([['role', role]])
 
    const activeRole = searchParams.get('role'),
    isActive = activeRole === role;
@@ -24,7 +24,7 @@ const ProjectsViewShowRolesTrigger = ({
   return (
     <Link
     className={cn(
-      'relative no-underline grow basis-24 z-10 border-none break-all h-8 rounded-sm text-xs uppercase transition-color hover:text-content data-active:text-primary-content focus-visible:outline-content',
+      'relative no-underline grow basis-24 z-10 border-none break-all h-8 rounded-sm text-xs uppercase hover:text-content data-active:text-primary-content focus-visible:outline-content',
       className,
     )}
     data-state={isActive ? 'active' : 'inactive'}
@@ -36,7 +36,7 @@ const ProjectsViewShowRolesTrigger = ({
       {isActive && (
         <motion.span
           className='absolute inset-0 -z-10 rounded-inherit bg-primary'
-          layoutId='projectsViewShowRolesTriggerActiveIndicator'
+          layoutId='showProjectsRolesTriggerActiveIndicator'
           transition={{
             type: 'spring',
             ...smoothConfig,
@@ -47,4 +47,4 @@ const ProjectsViewShowRolesTrigger = ({
   );
 };
 
-export default ProjectsViewShowRolesTrigger;
+export default ShowProjectsRolesTrigger;

@@ -13,12 +13,12 @@ const ANIAMTION_CONFIG = {
   propPoints: ['0%', '-100%'],
 };
 
-const ProjectsTableNumber = ({ className, index, ...props }) => {
-  const chars = `${index + 1}`.padStart(2, '0').split('');
+const ProjectsTableNumber = ({ className, idx, ...props }) => {
+  const chars = `${idx + 1}`.padStart(2, '0').split('');
 
   return (
     <Text
-      aria-label={index + 1}
+      aria-label={idx + 1}
       className={cn(
         'inline-flex translate-y-0.5 text-sm font-medium text-muted-content',
         className,

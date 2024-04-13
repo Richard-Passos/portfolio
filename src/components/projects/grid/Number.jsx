@@ -2,7 +2,7 @@ import { cn } from '@/utils';
 
 import { Text } from '../../ui/text';
 
-const ProjectsGridNumber = ({ className, index, ...props }) => {
+const ProjectsGridNumber = ({ className, idx, ...props }) => {
   return (
     <Text
       className={cn(
@@ -11,7 +11,7 @@ const ProjectsGridNumber = ({ className, index, ...props }) => {
       )}
       {...props}
     >
-      {`${index + 1}`.padStart(2, '0')}/
+      {`${idx + 1}`.padStart(2, '0')}/
     </Text>
   );
 };

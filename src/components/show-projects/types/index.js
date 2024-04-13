@@ -1,12 +1,12 @@
-import ProjectsViewShowTypesRoot from './Root';
-import ProjectsViewShowTypesTrigger from './Trigger';
+import ShowProjectsTypesRoot from './Root';
+import ShowProjectsTypesTrigger from './Trigger';
 
-const ProjectsViewShowTypes = ProjectsViewShowTypesRoot;
+const ShowProjectsTypes = ShowProjectsTypesRoot;
 
-ProjectsViewShowTypes.Trigger = ProjectsViewShowTypesTrigger;
+ShowProjectsTypes.Trigger = ShowProjectsTypesTrigger;
 
-export default ProjectsViewShowTypes;
+export default ShowProjectsTypes;
 export {
-  ProjectsViewShowTypesRoot as ProjectsViewShowTypes,
-  ProjectsViewShowTypesTrigger,
+  ShowProjectsTypesRoot as ShowProjectsTypes,
+  ShowProjectsTypesTrigger,
 };

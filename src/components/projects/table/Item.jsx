@@ -7,7 +7,7 @@ import { cn, isFunctionThanCall } from '@/utils';
 
 import { CursorLink } from '../../link';
 
-const ProjectsTableItem = ({ className, content, index, ...props }) => {
+const ProjectsTableItem = ({ className, content, idx, ...props }) => {
   const { setActiveIdx } = useContext(ProjectsContext);
 
   return (
@@ -23,7 +23,7 @@ const ProjectsTableItem = ({ className, content, index, ...props }) => {
       }}
       {...props}
       onMouseEnter={(ev) => {
-        setActiveIdx(index);
+        setActiveIdx(idx);
 
         isFunctionThanCall(props.onMouseEnter, ev);
       }}

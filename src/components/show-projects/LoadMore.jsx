@@ -2,23 +2,23 @@
 
 import { useContext, useEffect } from 'react';
 
-import { ProjectsShowContext } from '@/contexts';
+import { ShowProjectsContext } from '@/contexts';
 import { useLoadMore } from '@/hooks';
 import { isFunctionThanCall } from '@/utils';
 import { Slot } from '@radix-ui/react-slot';
 import { projectsApiGet } from '@/api/projects';
 import { useSearchParams } from 'next/navigation';
 
-const ProjectsViewShowLoadMore = ({ asChild, ...props }) => {
-  const { setProjects, isLastPage: isProjectsLastPage, setIsLastPage } = useContext(ProjectsShowContext),
+const ShowProjectsLoadMore = ({ asChild, ...props }) => {
+  const { setProjects, isLastPage: isProjectsLastPage, setIsLastPage } = useContext(ShowProjectsContext),
   searchParams = useSearchParams();
 
-  const role = searchParams.get('role')
+  const role = searchParams.get('role').toLowerCase()
  
   const { loadMore, isLoading, isLastPage } = useLoadMore(
     projectsApiGet,
     setProjects,
-    `&role${role}`,
+    `&role=${role}`,
   );
   
   const Tag = asChild ? Slot : 'button'
@@ -31,12 +31,12 @@ const ProjectsViewShowLoadMore = ({ asChild, ...props }) => {
       disabled={isLoading}
       data-state={isLoading ? 'loading' : 'loaded'}
       {...props}
-      onClick={(ev) => {
-        loadMore();
+      onClick={async (ev) => {
+        await loadMore();
 
         isFunctionThanCall(props.onClick, ev);
       }}
     />
 };
 
-export default ProjectsViewShowLoadMore;
+export default ShowProjectsLoadMore;

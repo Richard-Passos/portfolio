@@ -1,6 +1,6 @@
 import { cn } from '@/utils';
 
-const ProjectsViewShowRoles = ({ className, ...props }) => {
+const ShowProjectsRoles = ({ className, ...props }) => {
   return (
     <nav
       className={cn(
@@ -12,4 +12,4 @@ const ProjectsViewShowRoles = ({ className, ...props }) => {
   );
 };
 
-export default ProjectsViewShowRoles;
+export default ShowProjectsRoles;

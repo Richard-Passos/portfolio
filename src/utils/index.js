@@ -4,6 +4,6 @@ export { default as cnv } from './cnv';
 export { default as getOpstTheme } from './getOpstTheme';
 export { default as isExternalUrl } from './isExternalUrl';
 export { default as isFunctionThanCall } from './isFunctionThanCall';
-export { default as normalizeCompName } from './normalizeCompName';
+export { default as normCompName } from './normCompName';
 export { default as setRefs } from './setRefs';
 export { default as transformTemplate } from './transformTemplate';

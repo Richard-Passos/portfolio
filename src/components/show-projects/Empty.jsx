@@ -2,11 +2,11 @@
 
 import { cn } from '@/utils';
 import { Text } from '../ui/text';
-import { ProjectsShowContext } from '@/contexts';
+import { ShowProjectsContext } from '@/contexts';
 import { useContext } from 'react';
 
 const ShowProjectsEmpty = ({ className, ...props }) => {
-  const { projects } = useContext(ProjectsShowContext);
+  const { projects } = useContext(ShowProjectsContext);
 
   return !projects?.length && (
     <Text

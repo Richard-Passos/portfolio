@@ -107,7 +107,7 @@ const WorkViewServicesSectionBlock = ({ data = {}, className, ...props }) => {
         <Services className='sm:py-md'>
           {data.items?.map((data, i) => (
             <Services.Item key={data.title}>
-              <Services.Number index={i} />
+              <Services.Number idx={i} />
 
               <Separator />
 

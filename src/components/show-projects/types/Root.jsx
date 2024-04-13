@@ -1,10 +1,10 @@
 import { cn } from '@/utils';
 
-const ProjectsViewShowTypes = ({ className, ...props }) => {
+const ShowProjectsTypes = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'flex flex-wrap w-fit sm:max-w-md items-center justify-center gap-3',
+        'flex flex-wrap w-fit sm:max-w-md items-center justify-center gap-4',
         className,
       )}
       {...props}
@@ -12,4 +12,4 @@ const ProjectsViewShowTypes = ({ className, ...props }) => {
   );
 };
 
-export default ProjectsViewShowTypes;
+export default ShowProjectsTypes;
