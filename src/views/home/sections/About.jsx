@@ -4,8 +4,10 @@ import {
   ListHorizontalScroll,
   ScrollTitle,
   Section,
+  TextScrollAnimate,
 } from '@/components';
 import { Icon } from '@/components/ui';
+import { Text } from '@/components/ui/text';
 import { cn, normCompName } from '@/utils';
 
 const HomeViewAboutSection = ({ className, data = {}, ...props }) => {
