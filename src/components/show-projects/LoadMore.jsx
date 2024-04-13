@@ -29,7 +29,7 @@ const ShowProjectsLoadMore = ({ asChild, ...props }) => {
 
   useEffect(() => {
     setIsLastPage(isLastPage);
-  }, [isLastPage]);
+  }, [setIsLastPage, isLastPage]);
 
   return (
     !isProjectsLastPage && (
