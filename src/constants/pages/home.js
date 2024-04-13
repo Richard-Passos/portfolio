@@ -1,3 +1,5 @@
+import projects from '../projects';
+
 const homePage = {
   slug: 'home',
   sections: [
@@ -8,7 +10,8 @@ const homePage = {
         title: `Turning heads \n<b>&</b> conquering \nhearts`,
         description:
           "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
-        year: 2024,
+        text: (2024),
+        icon: { src: '/images/smile.svg', title: 'Smile' },
       },
     },
     {
@@ -22,6 +25,7 @@ const homePage = {
           "I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
         block: {
           title: 'Selected works',
+          items: projects.filter((data) => data.isSelected),
           action: {
             type: '',
             icon: { src: '/images/plus.svg' },
@@ -150,6 +154,10 @@ const homePage = {
       data: {
         description:
           "If you're looking for a developer who's got the skills, passion and a problem solving mindset to make your ideas come true. Then...",
+          icons: [
+            { src: '/images/smile.svg', title: 'Smile' },
+            { src: '/images/globe.svg', title: 'Globe' },
+          ],
       },
     },
   ],
