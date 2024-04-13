@@ -17,7 +17,7 @@ const ShowProjectsLoadMore = ({ asChild, ...props }) => {
     } = useContext(ShowProjectsContext),
     searchParams = useSearchParams();
 
-  const role = searchParams.get('role').toLowerCase();
+  const role = searchParams.get('role')?.toLowerCase();
 
   const { loadMore, isLoading, isLastPage } = useLoadMore(
     projectsApiGet,

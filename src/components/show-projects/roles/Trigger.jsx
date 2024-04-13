@@ -9,13 +9,13 @@ import { cn } from '@/utils';
 
 import { Link } from '../../ui';
 
-const ShowProjectsRolesTrigger = ({ className, role, children, ...props }) => {
+const ShowProjectsRolesTrigger = ({ className, role = '', children, ...props }) => {
   const pathame = usePathname(),
     searchParams = useSearchParams(),
     query = useQueryString([['role', role]]);
 
-  const activeRole = searchParams.get('role'),
-    isActive = activeRole === role;
+  const activeRole = searchParams.get('role')?.toLowerCase(),
+    isActive = activeRole === role.toLowerCase();
 
   return (
     <Link

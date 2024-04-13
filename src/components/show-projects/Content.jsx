@@ -19,7 +19,7 @@ const ShowProjectsContent = ({ className, ...props }) => {
     searchParams = useSearchParams();
 
   const page = +searchParams.get('page') || 1,
-    role = searchParams.get('role').toLowerCase() || 'all';
+    role = searchParams.get('role')?.toLowerCase()
 
   const { items, images } = projects.reduce(
     (obj, { thumbnail, ...data }) => ({
