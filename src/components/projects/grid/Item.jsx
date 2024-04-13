@@ -11,6 +11,7 @@ const ProjectsGridItem = ({ className, content, children, ...props }) => {
       )}
       content={{
         src: '/images/eye.svg',
+        className: 'size-[40%]',
         ...content,
       }}
       {...props}
