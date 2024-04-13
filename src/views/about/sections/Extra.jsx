@@ -27,19 +27,18 @@ const AboutViewExtraSection = ({ className, data = [], ...props }) => {
       )}
       {...props}
     >
-      <ul className='max-w-screen-sm space-y-md sm:py-md'>
+      <ul className='space-y-md sm:py-md'>
         {data.items?.map((data) => (
           <li
-            className='flex flex-col'
             key={data.title}
           >
             <Text.Subtitle className='text-xs uppercase text-muted-content'>
               · {data.title}
             </Text.Subtitle>
 
-            <Separator className='mb-xs' />
+            <Separator className='mt-xs' />
 
-            <Text className='mt-sm text-lg font-medium first-letter:uppercase'>
+            <Text className='mt-sm text-lg/relaxed font-medium first-letter:uppercase'>
               {data.description}
             </Text>
           </li>
@@ -48,7 +47,7 @@ const AboutViewExtraSection = ({ className, data = [], ...props }) => {
 
       <div className='relative md:row-start-1'>
         <ScrollAnimateTransform config={ANIMATION_CONFIG.y1}>
-          <div className='w-6-full aspect-[1/1.4] overflow-hidden rounded-3xl max-md:!translate-y-0 md:max-lg:h-full'>
+          <div className='w-full aspect-[1/1.4] overflow-hidden rounded-3xl max-md:!translate-y-0 md:max-lg:h-full'>
             <ScrollAnimateTransform config={ANIMATION_CONFIG.y2}>
               <Image
                 className='h-[115%] w-full object-cover'

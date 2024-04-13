@@ -37,7 +37,7 @@ const AboutViewHeroSectionIconChanger = ({
         <DataChanger.Action asChild>
           <MagneticButton
             className='[&_svg]:size-[40%]'
-            limit={0.2}
+            limit={0.35}
             variants={{ size: 'lg' }}
           >
             <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate}>
