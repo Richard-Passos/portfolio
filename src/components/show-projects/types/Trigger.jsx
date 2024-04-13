@@ -2,27 +2,23 @@
 
 import { useContext } from 'react';
 
-import { MagneticButton } from '@/components/button';
 import { ProjectsShowContext } from '@/contexts';
-import { cn, isFunctionThanCall } from '@/utils';
+import {  isFunctionThanCall } from '@/utils';
+import { Slot } from '@radix-ui/react-slot';
 
-const ProjectsViewShowTypesTrigger = ({
+const ProjectsViewShowTypesTrigger = ({ asChild,
   className,
   type,
-  variants,
   ...props
 }) => {
   const { type: activeType, setType } = useContext(ProjectsShowContext);
 
+  const Tag = asChild ? Slot : 'button',
+  isActive = activeType === type
+
   return (
-    <MagneticButton
-      className={cn('hover:z-10 hover:delay-0 [&_svg]:size-[40%]', className)}
-      limit={0.35}
-      variants={{
-        color: activeType === type ? 'primary' : 'main',
-        size: 'sm',
-        ...variants,
-      }}
+    <Tag
+      data-state={isActive? 'active' : 'inactive'}
       {...props}
       onClick={(ev) => {
         setType(type);

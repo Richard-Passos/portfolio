@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   height: 0,
-  theme: 'light',
+  theme: 'dark',
 };
 
 const headerSlice = createSlice({

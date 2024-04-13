@@ -1,11 +1,11 @@
 import ProjectsRoot from './Root';
 import ProjectsGrid from './grid';
-import ProjectsList from './list';
+import ProjectsTable from './table';
 
 const Projects = ProjectsRoot;
 
 Projects.Grid = ProjectsGrid;
-Projects.List = ProjectsList;
+Projects.Table = ProjectsTable;
 
 export default Projects;
-export { ProjectsRoot as Projects, ProjectsGrid, ProjectsList };
+export { ProjectsRoot as Projects, ProjectsGrid, ProjectsTable };

@@ -1,103 +1,129 @@
 import { Suspense } from 'react';
 
-import { projectsApi } from '@/api';
-import { DotsLoader, Section } from '@/components';
+import { DotsLoader, Section, ShowProjects } from '@/components';
 import { MagneticButton } from '@/components/button';
-import { Badge, Icon, Text } from '@/components/ui';
-import { PlusIcon } from '@/components/ui/icon/icons';
+import { Badge, Icon } from '@/components/ui';
 import { cn } from '@/utils';
 
-import Show from '../show';
+import { TextTitle } from '@/components/ui/text';
 
-const ROLES = ['all', 'design', 'development'],
-  TYPES = [
-    { data: 'list', icon: { src: '/images/list.svg' } },
-    { data: 'grid', icon: { src: '/images/grid.svg' } },
-  ];
-
-const ProjectsHeroSection = async ({ className, ...props }) => {
-  const { data = [] } = await projectsApi.get();
-
+const ProjectsHeroSection = async ({ className, data = {}, ...props }) => {
   return (
     <Section
-      hasTransition={false}
       forceHeaderTheme
-      className={cn('flex flex-col items-center justify-center', className)}
+      className={cn('-mt-[--header-h] flex min-h-svh w-9/10 max-w-screen-lg flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))]', className)}
       {...props}
     >
-      <Text.Title
-        asChild
-        className='mb-lg w-9/10 max-w-screen-lg max-sm:text-center'
-        variants={{ size: 'lg' }}
-      >
-        <h1>
-          Head turning{' '}
-          <span className='relative inline w-fit'>
-            projects{' '}
-            <Badge className='absolute bottom-0 right-0 -translate-x-4 -rotate-12 border-variant-content px-[1.5em] py-[.75em] text-[.17em] font-semibold normal-case tracking-normal'>
-              Gotta see&apos;m all
-            </Badge>
-          </span>
-        </h1>
-      </Text.Title>
-
-      <Show
-        className='pb-lg'
-        defaultData={{ role: ROLES[0], type: TYPES[0].data, projects: data }}
-      >
-        <div className='flex w-full flex-wrap-reverse items-center justify-center gap-sm sm:justify-between'>
-          <Show.Roles>
-            {ROLES.map((role) => (
-              <Show.Roles.Trigger
-                key={role}
-                role={role}
-              >
-                {role}
-              </Show.Roles.Trigger>
-            ))}
-          </Show.Roles>
-
-          <Show.Types>
-            {TYPES.map(({ data, icon }) => (
-              <Show.Types.Trigger
-                aria-label={`Toggle to ${data}`}
-                key={data}
-                type={data}
-              >
-                <Icon
-                  aria-hidden
-                  {...icon}
-                />
-              </Show.Types.Trigger>
-            ))}
-          </Show.Types>
-        </div>
-
-        <Suspense fallback={<DotsLoader />}>
-          <Show.Content />
-        </Suspense>
-
-        <Suspense
-          fallback={
-            <MagneticButton
-              disabled
-              variants={{ color: 'main' }}
-            >
-              <DotsLoader />
-            </MagneticButton>
-          }
+      <TextTitle
+          asChild
+          aria-label={data.title}
+          className='whitespace-pre-line mr-auto'
+          variants={{ size: 'lg' }}
         >
-          <Show.LoadMore>
-            <PlusIcon aria-hidden />
+          <h1>
+            {data.title?.split(' ').map((w, i, arr) =>
+              i === arr.length - 1 ? (
+                <span
+                  key={i}
+                  className='relative inline'
+                >
+                  {w}
 
-            <span className='sr-only'>More projects</span>
-          </Show.LoadMore>
-        </Suspense>
-      </Show>
+                  <Badge className='absolute bottom-0 right-0 w-max -translate-x-4 -rotate-12 border-variant-content px-[1em] py-[.75em] text-[.24em] lowercase tracking-normal first-letter:uppercase max-sm:translate-y-1/3 sm:text-[.17em]'>
+                    {data.subtitle}
+                  </Badge>
+                </span>
+              ) : (
+                `${w} `
+              ),
+            )}
+          </h1>
+        </TextTitle>
 
-      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-20' />
-    </Section>
+        <span className='sr-only'>{data.subtitle}</span>
+
+            <ProjectsHeroSectionBlock data={data.block} className='mt-lg' />
+
+            <div className='absolute top-0 h-[--header-h] w-screen max-w-bounds bg-main'>
+        <span className='absolute left-1/2 top-full h-px w-[95%] -translate-x-1/2 bg-border opacity-60 dark:opacity-20' />
+      </div>    </Section>
   );
 };
+
+const ProjectsHeroSectionBlock = ({ data = {}, ...props}) => {
+  const { types = [], items = [], roles = [],  action = {} } = data
+
+  return <ShowProjects
+  defaultData={{ type: types[0]?.type, projects: items }}
+  {...props}
+>
+  <div className='flex w-full sm:items-center max-sm:flex-col-reverse justify-between gap-sm '>
+    <ShowProjects.Roles>
+      <Suspense fallback={<DotsLoader />}>
+      {roles.map(({ type, data }) => (
+        <ShowProjects.Roles.Trigger
+          key={type}
+          role={type}
+        >
+          {data.label}
+        </ShowProjects.Roles.Trigger>
+      ))}
+      </Suspense>
+    </ShowProjects.Roles>
+
+    <ShowProjects.Types className='sm:justify-end'>
+      {types.map(({type, icon, data}) => (
+        <ShowProjects.Types.Trigger
+          key={data.label}
+          type={type}
+          asChild
+        >
+          <MagneticButton className='data-active:primary [&_svg]:size-[40%] hover:z-10' {...data} variants={{ color: 'main', size: 'sm', ...data.variants }} >
+
+          <Icon
+            {...icon}
+          />
+          </MagneticButton>
+        </ShowProjects.Types.Trigger>
+      ))}
+    </ShowProjects.Types>
+  </div>
+
+  <Suspense fallback={<DotsLoader />}>
+    <ShowProjects.Content />
+  </Suspense>
+
+  <ShowProjects.Empty>
+    {data.emptyText}
+  </ShowProjects.Empty>
+
+  <Suspense
+    fallback={
+      <MagneticButton
+        disabled
+        {...action.data}
+      >
+        <DotsLoader />
+      </MagneticButton>
+    }
+  >
+    <ShowProjects.LoadMore   
+
+ asChild>
+    <MagneticButton
+        {...action.data}
+      >
+      <Icon className='group-data-[state=loading]:hidden'  {...action.icon} />
+
+      <DotsLoader className='group-data-[state=loaded]:hidden' />
+      </MagneticButton>
+    </ShowProjects.LoadMore>
+  </Suspense>
+
+  <ShowProjects.LastPage>
+    {data.lastPageText}
+  </ShowProjects.LastPage>
+</ShowProjects>
+}
 
 export default ProjectsHeroSection;

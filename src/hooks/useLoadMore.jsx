@@ -1,33 +1,59 @@
 'use client';
 
+import { useCallback, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { useRef, useState } from 'react';
+import { useUpdateEffect } from '.';
 
-const useLoadMore = (setState, getFn) => {
-  const initialPage = +useSearchParams().get('page') || 1;
+const useLoadMore = (getFn, setData,  params) => {
+  const searchParams = useSearchParams()
 
-  const page = useRef(initialPage),
-    isLastPage = useRef(false),
-    [isFetching, setIsFetching] = useState(false);
 
-  const loadMore = async () => {
+  const [state, setState] = useState({
+    page: +searchParams.get('page') || 1,
+    isLoading: false,
+    isLastPage: false,
+  });
+
+    const handleFetch = useCallback(async (pathname) => {
+      const data = await getFn(pathname);
+
+      return data
+    }, [getFn])
+
+  const loadMore = () => {
     try {
-      setIsFetching(true);
+      setState(state => ({...state, isLoading: true}));
 
-      const res = await getFn(`?page=${page.current + 1}`);
+      setState(async ({page, ...state}) => {
+        page = page + 1
 
-      page.current++;
-      isLastPage.current = page.current >= res.meta.totalPages;
+        const { data = [], meta = {} } = await handleFetch(`?page=${page}${params}`)
+  
+        setData((state) => [...state, ...data]);
 
-      setState((state) => [...state, ...res.data]);
+        console.log('-  page >= meta.totalPages   -', page >= meta.totalPages)
+        return {
+          ...state,
+          page,
+          isLastPage: page >= meta.totalPages
+        }
+      })
     } catch (err) {
       throw new Error(err);
     } finally {
-      setIsFetching(false);
+      setState(state => ({...state, isLoading: false}));
     }
-  };
+  }
 
-  return { loadMore, isFetching, page, isLastPage };
+  useUpdateEffect(() => {
+    setState({
+      page: 1,
+      lsLoading: false,
+      isLastPage: false
+    })
+  }, [params])
+
+  return { loadMore, ...state };
 };
 
 export default useLoadMore;

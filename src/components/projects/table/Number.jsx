@@ -5,20 +5,20 @@ import { cn } from '@/utils';
 
 import { Text } from '../../ui/text';
 
-const ProjectsListNumber = ({ className, index, ...props }) => {
-  const chars = `${index + 1}`.padStart(2, '0').split('');
+const ANIAMTION_CONFIG = {
+  scrollConfig: {
+    offset: ['0 .9', '0 .7'],
+  },
+  prop: '--y',
+  propPoints: ['0%', '-100%'],
+};
 
-  const animationConfig = {
-    scrollConfig: {
-      offset: ['0 .9', '0 .7'],
-    },
-    prop: '--y',
-    propPoints: ['0%', '-100%'],
-  };
+const ProjectsTableNumber = ({ className, index, ...props }) => {
+  const chars = `${index + 1}`.padStart(2, '0').split('');
 
   return (
     <Text
-      ari-label={index + 1}
+      aria-label={index + 1}
       className={cn(
         'inline-flex translate-y-0.5 text-sm font-medium text-muted-content',
         className,
@@ -28,8 +28,7 @@ const ProjectsListNumber = ({ className, index, ...props }) => {
       {chars.map((char, i, arr) =>
         i === arr.length - 1 ? (
           <ScrollAnimate
-            aria-hidden
-            config={animationConfig}
+            config={ANIAMTION_CONFIG}
             key={i}
           >
             <span className='relative overflow-y-clip'>
@@ -42,7 +41,6 @@ const ProjectsListNumber = ({ className, index, ...props }) => {
           </ScrollAnimate>
         ) : (
           <span
-            aria-hidden
             key={i}
           >
             {char}
@@ -53,4 +51,4 @@ const ProjectsListNumber = ({ className, index, ...props }) => {
   );
 };
 
-export default ProjectsListNumber;
+export default ProjectsTableNumber;

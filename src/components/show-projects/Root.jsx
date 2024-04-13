@@ -6,7 +6,7 @@ const ProjectsViewShow = ({ defaultData, className, ...props }) => {
     <ProjectsShowProvider defaultData={defaultData}>
       <div
         className={cn(
-          'flex w-9/10 max-w-screen-lg flex-col items-center gap-md',
+          'flex w-full flex-col items-center gap-md',
           className,
         )}
         {...props}

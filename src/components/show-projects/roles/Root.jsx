@@ -2,9 +2,9 @@ import { cn } from '@/utils';
 
 const ProjectsViewShowRoles = ({ className, ...props }) => {
   return (
-    <section
+    <nav
       className={cn(
-        'isolate grid h-10 w-fit grid-cols-3 gap-1 rounded-md border bg-main p-1 text-muted-content',
+        'flex gap-1 w-full rounded-md sm:max-w-md border bg-main p-1 text-muted-content flex-wrap',
         className,
       )}
       {...props}

@@ -2,11 +2,11 @@ import { cn } from '@/utils';
 
 import { Text } from '../../ui/text';
 
-const ProjectsListYear = ({ className, ...props }) => {
+const ProjectsTableYear = ({ className, ...props }) => {
   return (
     <Text
       className={cn(
-        'text-sm font-medium max-sm:self-center max-sm:justify-self-end',
+        'text-sm grow font-medium text-end basis-0 sm:text-center',
         className,
       )}
       {...props}
@@ -14,4 +14,4 @@ const ProjectsListYear = ({ className, ...props }) => {
   );
 };
 
-export default ProjectsListYear;
+export default ProjectsTableYear;

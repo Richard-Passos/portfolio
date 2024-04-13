@@ -5,10 +5,10 @@ import { createContext, useState } from 'react';
 const ProjectsShowContext = createContext({
   projects: [],
   setProjects: () => {},
-  role: '',
-  setRole: () => {},
   type: '',
   setType: () => {},
+  isLastPage: false,
+  setIsLastPage: () => {},
 });
 
 const ProjectsShowProvider = ({ defaultData, value, ...props }) => {
@@ -26,8 +26,8 @@ const ProjectsShowProvider = ({ defaultData, value, ...props }) => {
       value={{
         ...data,
         setProjects: handleSetData('projects'),
-        setRole: handleSetData('role'),
         setType: handleSetData('type'),
+        setIsLastPage: handleSetData('isLastPage'),
         ...value,
       }}
       {...props}

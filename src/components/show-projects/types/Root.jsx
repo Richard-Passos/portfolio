@@ -4,7 +4,7 @@ const ProjectsViewShowTypes = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'flex flex-wrap items-center justify-center gap-3',
+        'flex flex-wrap w-fit sm:max-w-md items-center justify-center gap-3',
         className,
       )}
       {...props}

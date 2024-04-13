@@ -5,7 +5,7 @@ const Projects = ({ images, className, ...props }) => {
   return (
     <ProjectsProvider value={{ images }}>
       <div
-        className={cn('w-9/10 max-w-screen-lg', className)}
+        className={cn('w-full', className)}
         {...props}
       />
     </ProjectsProvider>
