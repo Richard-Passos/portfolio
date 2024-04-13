@@ -2,7 +2,7 @@ import { capitalize } from '@/utils';
 
 import Sections from './sections';
 
-const  NotFoundView = ({ data = {} }) => {
+const NotFoundView = ({ data = {} }) => {
   const { sections = [] } = data;
 
   let lastTheme = '';
@@ -25,4 +25,4 @@ const  NotFoundView = ({ data = {} }) => {
   });
 };
 
-export default  NotFoundView;
+export default NotFoundView;

@@ -1,34 +1,30 @@
 'use client';
 
 import { motion } from 'framer-motion';
-
-import { smoothConfig } from '@/hooks/useSmooth';
-import { cn, } from '@/utils';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { Link } from '../../ui';
+
 import { useQueryString } from '@/hooks';
+import { smoothConfig } from '@/hooks/useSmooth';
+import { cn } from '@/utils';
 
-const ShowProjectsRolesTrigger = ({
-  className,
-  role,
-  children,
-  ...props
-}) => {
+import { Link } from '../../ui';
+
+const ShowProjectsRolesTrigger = ({ className, role, children, ...props }) => {
   const pathame = usePathname(),
-   searchParams = useSearchParams(),
-   query = useQueryString([['role', role]])
+    searchParams = useSearchParams(),
+    query = useQueryString([['role', role]]);
 
-   const activeRole = searchParams.get('role'),
-   isActive = activeRole === role;
+  const activeRole = searchParams.get('role'),
+    isActive = activeRole === role;
 
   return (
     <Link
-    className={cn(
-      'relative no-underline grow basis-24 z-10 border-none break-all h-8 rounded-sm text-xs uppercase hover:text-content data-active:text-primary-content focus-visible:outline-content',
-      className,
-    )}
-    data-state={isActive ? 'active' : 'inactive'}
-    href={pathame + query}
+      className={cn(
+        'relative z-10 h-8 grow basis-24 break-all rounded-sm border-none text-xs uppercase no-underline hover:text-content focus-visible:outline-content data-active:text-primary-content',
+        className,
+      )}
+      data-state={isActive ? 'active' : 'inactive'}
+      href={pathame + query}
       {...props}
     >
       {children}

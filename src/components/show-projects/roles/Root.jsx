@@ -4,7 +4,7 @@ const ShowProjectsRoles = ({ className, ...props }) => {
   return (
     <nav
       className={cn(
-        'flex gap-1 w-full rounded-md sm:max-w-md border bg-main p-1 text-muted-content flex-wrap',
+        'flex w-full flex-wrap gap-1 rounded-md border bg-main p-1 text-muted-content sm:max-w-md',
         className,
       )}
       {...props}

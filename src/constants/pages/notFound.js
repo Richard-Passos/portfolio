@@ -7,7 +7,8 @@ const notFoundPage = {
       data: {
         title: '404',
         subtitle: 'Page not found!',
-        description: "Ops... looks like you're lost. Please go back to Home page.",
+        description:
+          "Ops... looks like you're lost. Please go back to Home page.",
         actions: [
           {
             type: '',
@@ -22,8 +23,8 @@ const notFoundPage = {
   ],
   metadata: {
     title: 'Error',
-    description: 'Not found page on Richatd Passos portfolio.'
-  }
-}
+    description: 'Not found page on Richatd Passos portfolio.',
+  },
+};
 
-export default notFoundPage
+export default notFoundPage;

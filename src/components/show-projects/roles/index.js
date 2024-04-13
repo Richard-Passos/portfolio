@@ -6,7 +6,4 @@ const ShowProjectsRoles = ShowProjectsRolesRoot;
 ShowProjectsRoles.Trigger = ShowProjectsRolesTrigger;
 
 export default ShowProjectsRoles;
-export {
-  ShowProjectsRolesRoot as ShowProjectsRoles,
-  ShowProjectsRolesTrigger,
-};
+export { ShowProjectsRolesRoot as ShowProjectsRoles, ShowProjectsRolesTrigger };

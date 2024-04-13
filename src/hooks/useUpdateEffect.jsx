@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 const { useEffect, useRef } = require('react');
 
@@ -11,4 +11,4 @@ const useUpdateEffect = (effect, deps) => {
   }, deps);
 };
 
-export default useUpdateEffect
+export default useUpdateEffect;

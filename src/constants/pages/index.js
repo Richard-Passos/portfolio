@@ -17,12 +17,12 @@ const pages = [
 ];
 
 export default pages;
-export { 
+export {
   aboutPage,
-   contactPage,
-   errorPage,
-   homePage,
-   notFoundPage,
-   projectsPage,
-   workPage 
-  };
+  contactPage,
+  errorPage,
+  homePage,
+  notFoundPage,
+  projectsPage,
+  workPage,
+};

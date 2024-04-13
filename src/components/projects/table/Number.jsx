@@ -40,11 +40,7 @@ const ProjectsTableNumber = ({ className, idx, ...props }) => {
             </span>
           </ScrollAnimate>
         ) : (
-          <span
-            key={i}
-          >
-            {char}
-          </span>
+          <span key={i}>{char}</span>
         ),
       )}
     </Text>

@@ -1,24 +1,20 @@
 'use client';
 
+import { Slot } from '@radix-ui/react-slot';
 import { useContext } from 'react';
 
 import { ShowProjectsContext } from '@/contexts';
-import {  isFunctionThanCall } from '@/utils';
-import { Slot } from '@radix-ui/react-slot';
+import { isFunctionThanCall } from '@/utils';
 
-const ShowProjectsTypesTrigger = ({ asChild,
-  className,
-  type,
-  ...props
-}) => {
+const ShowProjectsTypesTrigger = ({ asChild, className, type, ...props }) => {
   const { type: activeType, setType } = useContext(ShowProjectsContext);
 
   const Tag = asChild ? Slot : 'button',
-  isActive = activeType === type
+    isActive = activeType === type;
 
   return (
     <Tag
-      data-state={isActive? 'active' : 'inactive'}
+      data-state={isActive ? 'active' : 'inactive'}
       {...props}
       onClick={(ev) => {
         setType(type);

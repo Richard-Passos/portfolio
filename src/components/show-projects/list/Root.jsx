@@ -1,5 +1,5 @@
-import {Projects} from '../../projects'
+import { Projects } from '../../projects';
 
-const ShowProjectsList = Projects
+const ShowProjectsList = Projects;
 
 export default ShowProjectsList;

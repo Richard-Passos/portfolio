@@ -4,7 +4,7 @@ const ShowProjectsTypes = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'flex flex-wrap w-fit sm:max-w-md items-center justify-center gap-4',
+        'flex w-fit flex-wrap items-center justify-center gap-4 sm:max-w-md',
         className,
       )}
       {...props}

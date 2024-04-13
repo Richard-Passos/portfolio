@@ -44,7 +44,7 @@ const WorkViewHeroSection = ({ className, data = {}, ...props }) => {
     <Section
       forceHeaderTheme
       className={cn(
-        '-mt-[--header-h] min-h-svh overflow-y-clip py-0 [--w:100vw] [--inset:calc(var(--w)*.025)] *:*:last:*:hidden 2xl:[--w:--max-w]',
+        '-mt-[--header-h] min-h-svh overflow-y-clip py-0 [--inset:calc(var(--w)*.025)] [--w:100vw] *:*:last:*:hidden 2xl:[--w:--max-w]',
         className,
       )}
       {...props}

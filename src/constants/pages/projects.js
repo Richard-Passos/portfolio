@@ -1,4 +1,4 @@
-import projects from '../projects'
+import projects from '../projects';
 
 const projectsPage = {
   slug: 'projects',
@@ -11,43 +11,46 @@ const projectsPage = {
         subtitle: "Gotta see'm all",
         block: {
           emptyText: 'Sorry... none projects were found.',
-          lastPageText: 'Congrats! You really saw them all.',   
-          roles: [{
-            type: 'all',
-            data: {
-              label: 'All',
-            }
-          }, {
-            type: 'design',
-            data: {
-              label: 'Design',
-            }
-          }, {
-            type: 'development',
-            data: {
-              label: 'Development',
-            }
-          },
-        ],
+          lastPageText: 'Congrats! You really saw them all.',
+          roles: [
+            {
+              type: 'all',
+              data: {
+                label: 'All',
+              },
+            },
+            {
+              type: 'design',
+              data: {
+                label: 'Design',
+              },
+            },
+            {
+              type: 'development',
+              data: {
+                label: 'Development',
+              },
+            },
+          ],
           types: [
-            { 
+            {
               type: 'table',
-               icon: { 
-                src: '/images/list.svg' 
+              icon: {
+                src: '/images/list.svg',
+              },
+              data: {
+                label: 'Table',
+              },
             },
-            data: {
-              label: 'Table',
-            }
-          },
-            { 
+            {
               type: 'grid',
-               icon: { 
-                src: '/images/grid.svg' 
+              icon: {
+                src: '/images/grid.svg',
+              },
+              data: {
+                label: 'Grid',
+              },
             },
-            data: {
-              label: 'Grid',
-            }
-          },
           ],
           items: projects.slice(0, 5),
           action: {
@@ -60,14 +63,14 @@ const projectsPage = {
               },
             },
           },
-        }
-      }
-    }
+        },
+      },
+    },
   ],
   metadata: {
     title: 'Projects',
     description: 'Richard passos projects.',
-  }
-}
+  },
+};
 
-export default projectsPage
+export default projectsPage;

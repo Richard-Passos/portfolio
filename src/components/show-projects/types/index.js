@@ -6,7 +6,4 @@ const ShowProjectsTypes = ShowProjectsTypesRoot;
 ShowProjectsTypes.Trigger = ShowProjectsTypesTrigger;
 
 export default ShowProjectsTypes;
-export {
-  ShowProjectsTypesRoot as ShowProjectsTypes,
-  ShowProjectsTypesTrigger,
-};
+export { ShowProjectsTypesRoot as ShowProjectsTypes, ShowProjectsTypesTrigger };

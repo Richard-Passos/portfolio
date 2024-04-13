@@ -6,7 +6,7 @@ const ProjectsTableYear = ({ className, ...props }) => {
   return (
     <Text
       className={cn(
-        'text-sm grow font-medium text-end basis-0 sm:text-center',
+        'grow basis-0 text-end text-sm font-medium sm:text-center',
         className,
       )}
       {...props}

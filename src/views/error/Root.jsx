@@ -15,8 +15,8 @@ const ErrorView = ({ data = {}, error, reset }) => {
         hasTransition={
           slug.toLowerCase() !== 'hero' && lastTheme !== data.theme
         }
-        error={error} 
-        reset={reset} 
+        error={error}
+        reset={reset}
         {...data}
       />
     );

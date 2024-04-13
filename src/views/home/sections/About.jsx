@@ -99,7 +99,10 @@ const HomeViewAboutSectionList = ({ className, data = {}, ...props }) => {
         ))}
       </ListHorizontalScroll>
 
-      <Button className='mt-md' {...action.data}>
+      <Button
+        className='mt-md'
+        {...action.data}
+      >
         {action.data?.label}
 
         <Button.Icon animation={action.animation}>

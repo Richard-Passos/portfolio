@@ -5,10 +5,7 @@ const ProjectsViewShow = ({ defaultData, className, ...props }) => {
   return (
     <ShowProjectsProvider defaultData={defaultData}>
       <div
-        className={cn(
-          'flex w-full flex-col items-center gap-md',
-          className,
-        )}
+        className={cn('flex w-full flex-col items-center gap-md', className)}
         {...props}
       />
     </ShowProjectsProvider>
