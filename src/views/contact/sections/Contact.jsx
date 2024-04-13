@@ -32,12 +32,12 @@ const ContactViewContactSection = async ({
   return (
     <Section
       className={cn(
-        'flex items-center justify-center gap-x-sm gap-y-md pb-[calc(theme(spacing.lg)*1.5)] max-md:flex-col sm:w-9/10',
+        'flex items-center justify-center gap-x-sm gap-y-md py-[calc(theme(spacing.lg)*1.5)] max-md:flex-col sm:w-9/10',
         className,
       )}
       {...props}
     >
-      <div className='primary min-w-48 grow rounded-lg bg-main p-sm shadow-md max-md:w-9/10 md:max-w-56'>
+      <div className='primary basis-48 grow rounded-lg bg-main p-sm shadow-md dark:shadow-none max-md:w-9/10 md:max-w-56'>
         <div className='relative flex justify-center overflow-hidden border-t'>
           {info.icons?.map((icon) => (
             <div
@@ -58,12 +58,12 @@ const ContactViewContactSection = async ({
               className='rounded-sm border bg-main p-4'
               key={data.title}
             >
-              <Text.Title className='mb-0.5 text-xs uppercase text-muted-content'>
+              <Text.Title className='text-xs uppercase text-muted-content'>
                 {data.title}
               </Text.Title>
 
-              <Text className='text-sm first-letter:uppercase'>
-                {infoData[data.slug?.toLowerCase()]}
+              <Text className='mt-0.5 text-sm first-letter:uppercase'>
+                {infoData[data.slug?.toLowerCase().replace(/[ _]/, '-')]}
               </Text>
             </li>
           ))}
@@ -80,13 +80,13 @@ const ContactViewContactSection = async ({
         </nav>
       </div>
 
-      <div className='grow rounded-lg border bg-main p-sm shadow-md max-md:w-full lg:max-w-fit lg:p-[calc(theme(spacing.sm)*1.25)]'>
+      <div className='rounded-lg border bg-main p-sm shadow-md dark:shadow-none w-full md:w-fit lg:p-[calc(theme(spacing.sm)*1.25)]'>
         <section>
           <Text.Title className='text-base font-medium'>
-            <span className='lowercase first-letter:uppercase'>
+            <span className='first-letter:uppercase'>
               {form.title}:
             </span>{' '}
-            <span className='ml-2 rounded-sm bg-muted px-3 py-1'>
+            <span className='ml-2 rounded-sm bg-muted/75 px-3 py-1'>
               {personalInfo.email}
             </span>
           </Text.Title>
@@ -98,7 +98,7 @@ const ContactViewContactSection = async ({
         </section>
 
         <section className='mt-md'>
-          <Text.Title className='text-sm font-medium lowercase text-muted-content first-letter:uppercase'>
+          <Text.Title className='text-sm font-medium text-muted-content first-letter:uppercase'>
             {form.subtitle}:
           </Text.Title>
 
@@ -117,7 +117,7 @@ const ContactViewContactSection = async ({
         </section>
       </div>
 
-      <ul className='absolute -z-10 flex h-fit w-screen flex-col gap-md max-md:hidden'>
+      <ul aria-hidden className='absolute -z-10 flex h-fit w-screen flex-col gap-md max-md:hidden'>
         {[...Array(3)].map((_, i) => (
           <li key={i}>
             <HorizontalScroll

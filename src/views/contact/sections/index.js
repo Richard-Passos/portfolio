@@ -1,12 +1,12 @@
-import HomeViewContactSection from './Contact';
-import HomeViewHeroSection from './Hero';
-import HomeViewServicesSection from './Services';
+import ContactViewContactSection from './Contact';
+import ContactViewHeroSection from './Hero';
+import ContactViewServicesSection from './Services';
 
-const HomeViewSections = {
-  Contact: HomeViewContactSection,
-  Hero: HomeViewHeroSection,
-  Services: HomeViewServicesSection,
+const ContactViewSections = {
+  Contact: ContactViewContactSection,
+  Hero: ContactViewHeroSection,
+  Services: ContactViewServicesSection,
 };
 
-export default HomeViewSections;
-export { HomeViewContactSection, HomeViewHeroSection, HomeViewServicesSection };
+export default ContactViewSections;
+export { ContactViewContactSection, ContactViewHeroSection, ContactViewServicesSection };

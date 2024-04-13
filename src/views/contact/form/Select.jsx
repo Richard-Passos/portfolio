@@ -45,7 +45,7 @@ const ContactViewFormSelect = ({ placeholder, data = [], ...props }) => {
           {data.map((data = '') => (
             <ContactFormSelectItem
               key={data}
-              value={data.toLowerCase().replace(/_ /, '-')}
+              value={data.toLowerCase().replace(/ _/, '-')}
             >
               {data}
             </ContactFormSelectItem>

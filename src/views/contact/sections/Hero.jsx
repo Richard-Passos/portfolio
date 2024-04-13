@@ -1,7 +1,7 @@
 import { BentoGrid, Section } from '@/components';
 import { Badge } from '@/components/ui';
 import { TextTitle } from '@/components/ui/text';
-import { capitalize, cn } from '@/utils';
+import { cn, normCompName } from '@/utils';
 
 const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
   return (
@@ -39,6 +39,8 @@ const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
         </h1>
       </TextTitle>
 
+      <span className='sr-only'>{data.subtitle}</span>
+
       <ContactViewHeroSectionGrid
         className='mt-md'
         data={data.grid}
@@ -66,12 +68,11 @@ const ContactViewHeroSectionGrid = ({ data = {}, style, ...props }) => {
       }}
       {...props}
     >
-      {data.items?.map(({ type = '', data }, i) => {
+      {data.items?.map(({ type, data }, i) => {
         const Item =
-          BentoGrid.Item[type.split(/[_-]/g).map(capitalize).join('')] ||
-          BentoGrid.Item;
+          BentoGrid.Item[normCompName(type)]
 
-        return (
+        return Item && (
           <Item
             key={i}
             idx={i}

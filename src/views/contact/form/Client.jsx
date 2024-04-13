@@ -8,7 +8,7 @@ import * as z from 'zod';
 import { Form, FormProvider } from '@/components/ui/form';
 import { capitalize } from '@/utils';
 
-const ContactFormClient = ({ data = [], ...props }) => {
+const ContactViewFormClient = ({ data = [], ...props }) => {
   const schema = z.object(
     data.reduce(
       (obj, field = {}) => ({
@@ -31,7 +31,7 @@ const ContactFormClient = ({ data = [], ...props }) => {
   });
 
   const { reset } = form,
-    { isSubmitSuccessful } = form.formState;
+    { isSubmitSuccessful} = form.formState;
 
   useEffect(() => {
     if (isSubmitSuccessful) reset();
@@ -40,14 +40,14 @@ const ContactFormClient = ({ data = [], ...props }) => {
   return (
     <FormProvider {...form}>
       <Form
-        onSubmit={contactFormClientOnSubmit}
+        onSubmit={contactViewFormClientOnSubmit}
         {...props}
       />
     </FormProvider>
   );
 };
 
-const contactFormClientOnSubmit = (values) => {
+const contactViewFormClientOnSubmit = (values) => {
   alert(
     Object.entries(values)
       .map(([key, value]) => `${capitalize(key)}: ${value}`)
@@ -55,4 +55,4 @@ const contactFormClientOnSubmit = (values) => {
   );
 };
 
-export default ContactFormClient;
+export default ContactViewFormClient;

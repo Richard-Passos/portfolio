@@ -1,3 +1,3 @@
-import ContactForm from './Root';
+import ContactViewForm from './Root';
 
-export default ContactForm;
+export default ContactViewForm;
