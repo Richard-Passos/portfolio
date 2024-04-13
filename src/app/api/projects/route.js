@@ -6,13 +6,13 @@ const GET = (req) => {
   const { searchParams } = req.nextUrl;
 
   const page = searchParams.get('page') || 1,
-    role = searchParams.get('role') || 'all';
+    role = ((role) => (role && role !== 'undefined' ? role : 'all'))(searchParams.get('role')?.toLowerCase(''))
 
   const results = (
       role !== 'all'
         ? projects.filter((data) =>
             data.roles?.some(
-              (data) => data.toLowerCase() === role.toLowerCase(),
+              (data) => data.toLowerCase() === role,
             ),
           )
         : projects
