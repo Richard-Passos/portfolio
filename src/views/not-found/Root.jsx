@@ -1,4 +1,4 @@
-import { capitalize } from '@/utils';
+import { normCompName } from '@/utils';
 
 import Sections from './sections';
 
@@ -8,7 +8,7 @@ const NotFoundView = ({ data = {} }) => {
   let lastTheme = '';
 
   return sections.map(({ slug = '', ...data }) => {
-    let Section = Sections[slug.split(/[-_]/g).map(capitalize).join('')];
+    let Section = Sections[normCompName(slug)];
 
     Section = Section && (
       <Section
