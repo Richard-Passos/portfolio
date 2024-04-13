@@ -82,20 +82,20 @@ const AboutViewValuesSectionBlock = ({ className, data = {}, ...props }) => {
         ))}
       </Values>
 
-      <div className='absolute -z-10 inset-0'>
-      {data.icons?.map((data, i) => (
-        <ScrollAnimateTransform
-          key={data.src}
-          config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}
-        >
-          <div className='absolute size-[min(50vmin,theme(maxWidth.md))] last:right-0 last:top-0 first:bottom-0 first:left-0 max-lg:hidden'>
-            <Icon
-              className='size-full text-muted'
-              {...data}
-            />
-          </div>
-        </ScrollAnimateTransform>
-      ))}
+      <div className='absolute inset-0 -z-10'>
+        {data.icons?.map((data, i) => (
+          <ScrollAnimateTransform
+            key={data.src}
+            config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}
+          >
+            <div className='absolute size-[min(50vmin,theme(maxWidth.md))] first:bottom-0 first:left-0 last:right-0 last:top-0 max-lg:hidden'>
+              <Icon
+                className='size-full text-muted'
+                {...data}
+              />
+            </div>
+          </ScrollAnimateTransform>
+        ))}
       </div>
     </div>
   );

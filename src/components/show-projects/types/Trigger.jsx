@@ -6,7 +6,12 @@ import { useContext } from 'react';
 import { ShowProjectsContext } from '@/contexts';
 import { isFunctionThanCall } from '@/utils';
 
-const ShowProjectsTypesTrigger = ({ asChild, className, type = '', ...props }) => {
+const ShowProjectsTypesTrigger = ({
+  asChild,
+  className,
+  type = '',
+  ...props
+}) => {
   const { type: activeType = '', setType } = useContext(ShowProjectsContext);
 
   const Tag = asChild ? Slot : 'button',

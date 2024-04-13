@@ -33,88 +33,106 @@ const AboutViewBackgroundSection = ({ className, data = {}, ...props }) => {
         ))}
       </h2>
 
-      {(data.subtitle || data.description) && <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
-        {data.subtitle && (
-          <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
-            <TextScrollAnimate
-              className='first:first-letter:uppercase'
-              text={data.subtitle}
-            />
-          </Text>
-        )}
-
-        {data.description && (
-          <section className='flex grow basis-0 flex-col items-center sm:ml-auto sm:max-w-lg sm:items-start'>
-            <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
-              {data.description}
+      {(data.subtitle || data.description) && (
+        <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
+          {data.subtitle && (
+            <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+              <TextScrollAnimate
+                className='first:first-letter:uppercase'
+                text={data.subtitle}
+              />
             </Text>
+          )}
 
-            {data.action && (
-              <Button
-                className='mt-md'
-                {...action.data}
-              >
-                {action.data?.label}
+          {data.description && (
+            <section className='flex grow basis-0 flex-col items-center sm:ml-auto sm:max-w-lg sm:items-start'>
+              <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
+                {data.description}
+              </Text>
 
-                <Button.Icon animation={action.animation}>
-                  <Icon {...action.icon} />
-                </Button.Icon>
-              </Button>
-            )}
-          </section>
-        )}
-      </section>}
+              {data.action && (
+                <Button
+                  className='mt-md'
+                  {...action.data}
+                >
+                  {action.data?.label}
 
-      {
-        data.blocks?.map((data, i) => <AboutViewBackgroundSectionBlock key={i} className='mt-lg' data={data} />)
-      }
+                  <Button.Icon animation={action.animation}>
+                    <Icon {...action.icon} />
+                  </Button.Icon>
+                </Button>
+              )}
+            </section>
+          )}
+        </section>
+      )}
+
+      {data.blocks?.map((data, i) => (
+        <AboutViewBackgroundSectionBlock
+          key={i}
+          className='mt-lg'
+          data={data}
+        />
+      ))}
     </Section>
   );
 };
 
-const AboutViewBackgroundSectionBlock = ({ className, data = {}, ...props}) => {
-  return <section
-   className={cn(
-    'group grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-lg',
-    className,
-  )}
-  {...props}
->
-  <ul className='space-y-md sm:py-md'>
-    {data.items?.map((data) => (
-      <li
-        key={data.title}
-      >
-        <Text.Subtitle className='text-xs uppercase text-muted-content'>
-          · {data.title}
-        </Text.Subtitle>
+const AboutViewBackgroundSectionBlock = ({
+  className,
+  data = {},
+  ...props
+}) => {
+  return (
+    <section
+      className={cn(
+        'group grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-lg',
+        className,
+      )}
+      {...props}
+    >
+      <ul className='space-y-md sm:py-md'>
+        {data.items?.map((data) => (
+          <li key={data.title}>
+            <Text.Subtitle className='text-xs uppercase text-muted-content'>
+              · {data.title}
+            </Text.Subtitle>
 
-        <Separator className='mt-xs' />
+            <Separator className='mt-xs' />
 
-        <section className='mt-sm space-y-xs'>
-      {data.description?.split(`\n`).map((p, i) => <Text key={i} className='leading-relaxed tracking-wide first-letter:uppercase'>
-      {p}
-    </Text>)}
-    </section>
-      </li>
-    ))}
-  </ul>
+            <section className='mt-sm space-y-xs'>
+              {data.description?.split(`\n`).map((p, i) => (
+                <Text
+                  key={i}
+                  className='leading-relaxed tracking-wide first-letter:uppercase'
+                >
+                  {p}
+                </Text>
+              ))}
+            </section>
+          </li>
+        ))}
+      </ul>
 
-      <div className='size-full group-odd:-order-1 relative overflow-hidden rounded-3xl'>
+      <div className='relative size-full overflow-hidden rounded-3xl group-odd:-order-1'>
         <ScrollAnimate.Transform config={ANIMATION_CONFIG.y}>
           <Image
-            className='absolute h-[115%] inset-x-0 top-0 object-cover'
+            className='absolute inset-x-0 top-0 h-[115%] object-cover'
             {...data.image}
           />
         </ScrollAnimate.Transform>
 
         <ScrollAnimate config={ANIMATION_CONFIG.rotate}>
-        <div className='size-[10%] group-odd:rotate-[--rotate] group-even:-rotate-[--rotate] absolute group-odd:bottom-xs group-odd:right-xs group-even:top-xs group-even:left-xs' >
-        <Icon className='size-full text-muted-content' {...data.icon}/>
-        </div>
+          <div className='absolute size-[10%] group-odd:bottom-xs group-odd:right-xs group-odd:rotate-[--rotate] group-even:left-xs group-even:top-xs group-even:-rotate-[--rotate]'>
+            <Icon
+              className='size-full text-muted-content'
+              {...data.icon}
+            />
+          </div>
         </ScrollAnimate>
       </div>
-</section>
-}
+    </section>
+  );
+};
 
 export default AboutViewBackgroundSection;

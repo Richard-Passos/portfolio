@@ -37,7 +37,7 @@ const ContactViewContactSection = async ({
       )}
       {...props}
     >
-      <div className='primary basis-48 grow rounded-lg bg-main p-sm shadow-md dark:shadow-none max-md:w-9/10 md:max-w-56'>
+      <div className='primary grow basis-48 rounded-lg bg-main p-sm shadow-md max-md:w-9/10 md:max-w-56 dark:shadow-none'>
         <div className='relative flex justify-center overflow-hidden border-t'>
           {info.icons?.map((icon) => (
             <div
@@ -80,12 +80,10 @@ const ContactViewContactSection = async ({
         </nav>
       </div>
 
-      <div className='rounded-lg border bg-main p-sm shadow-md dark:shadow-none w-full md:w-fit lg:p-[calc(theme(spacing.sm)*1.25)]'>
+      <div className='w-full rounded-lg border bg-main p-sm shadow-md md:w-fit lg:p-[calc(theme(spacing.sm)*1.25)] dark:shadow-none'>
         <section>
           <Text.Title className='text-base font-medium'>
-            <span className='first-letter:uppercase'>
-              {form.title}:
-            </span>{' '}
+            <span className='first-letter:uppercase'>{form.title}:</span>{' '}
             <span className='ml-2 rounded-sm bg-muted/75 px-3 py-1'>
               {personalInfo.email}
             </span>
@@ -117,7 +115,10 @@ const ContactViewContactSection = async ({
         </section>
       </div>
 
-      <ul aria-hidden className='absolute -z-10 flex h-fit w-screen flex-col gap-md max-md:hidden'>
+      <ul
+        aria-hidden
+        className='absolute -z-10 flex h-fit w-screen flex-col gap-md max-md:hidden'
+      >
         {[...Array(3)].map((_, i) => (
           <li key={i}>
             <HorizontalScroll

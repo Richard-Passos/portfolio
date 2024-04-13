@@ -1,8 +1,8 @@
 import { globalsApi } from '@/api';
 import { cn } from '@/utils';
 
-import Link from '../link';
 import Icon from '../icon';
+import Link from '../link';
 
 const Root = async ({ className, ...props }) => {
   const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
@@ -16,7 +16,10 @@ const Root = async ({ className, ...props }) => {
       href='/'
       {...props}
     >
-       <Icon className='size-full' src={personalInfo?.logo.src}/>
+      <Icon
+        className='size-full'
+        src={personalInfo?.logo.src}
+      />
     </Link>
   );
 };

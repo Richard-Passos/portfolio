@@ -32,19 +32,19 @@ const HomeViewCtaSection = ({ className, data = {}, ...props }) => {
       </Text>
 
       <div className='absolute inset-0 -z-10'>
-      {data.icons?.map((data, i) => (
-        <ScrollAnimateTransform
-          key={data.src}
-          config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}
-        >
-          <div className='absolute size-[min(50vmin,theme(maxWidth.md))] first:left-0 first:top-0 last:bottom-0 last:right-0'>
-            <Icon
-              className='size-full text-muted'
-              {...data}
-            />
-          </div>
-        </ScrollAnimateTransform>
-      ))}
+        {data.icons?.map((data, i) => (
+          <ScrollAnimateTransform
+            key={data.src}
+            config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}
+          >
+            <div className='absolute size-[min(50vmin,theme(maxWidth.md))] first:left-0 first:top-0 last:bottom-0 last:right-0'>
+              <Icon
+                className='size-full text-muted'
+                {...data}
+              />
+            </div>
+          </ScrollAnimateTransform>
+        ))}
       </div>
     </Section>
   );

@@ -9,7 +9,12 @@ import { cn } from '@/utils';
 
 import { Link } from '../../ui';
 
-const ShowProjectsRolesTrigger = ({ className, role = '', children, ...props }) => {
+const ShowProjectsRolesTrigger = ({
+  className,
+  role = '',
+  children,
+  ...props
+}) => {
   const pathame = usePathname(),
     searchParams = useSearchParams(),
     query = useQueryString([['role', role]]);

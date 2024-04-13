@@ -108,9 +108,12 @@ const HomeViewHeroSection = ({ className, data = {}, ...props }) => {
                   </Text>
 
                   <ScrollAnimate.Transform config={ANIMATION_CONFIG.rotate}>
-                   <div className='size-6 md:-order-1'>
-                   <Icon className='size-full' {...data.icon} />
-                   </div>
+                    <div className='size-6 md:-order-1'>
+                      <Icon
+                        className='size-full'
+                        {...data.icon}
+                      />
+                    </div>
                   </ScrollAnimate.Transform>
 
                   <Text className='justify-self-end text-xs font-semibold lg:col-end-7'>

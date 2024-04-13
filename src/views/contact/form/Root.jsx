@@ -69,7 +69,9 @@ const ContactViewForm = async ({ className, data = {}, ...props }) => {
             {...action.icon}
           />
 
-          <span className='sm:sr-only first-letter:uppercase'>{action.data?.label}</span>
+          <span className='first-letter:uppercase sm:sr-only'>
+            {action.data?.label}
+          </span>
         </MagneticButton>
       </Form.Submit>
     </ClientForm>

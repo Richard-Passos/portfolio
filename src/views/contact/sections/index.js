@@ -9,4 +9,8 @@ const ContactViewSections = {
 };
 
 export default ContactViewSections;
-export { ContactViewContactSection, ContactViewHeroSection, ContactViewServicesSection };
+export {
+  ContactViewContactSection,
+  ContactViewHeroSection,
+  ContactViewServicesSection,
+};

@@ -69,15 +69,16 @@ const ContactViewHeroSectionGrid = ({ data = {}, style, ...props }) => {
       {...props}
     >
       {data.items?.map(({ type, data }, i) => {
-        const Item =
-          BentoGrid.Item[normCompName(type)]
+        const Item = BentoGrid.Item[normCompName(type)];
 
-        return Item && (
-          <Item
-            key={i}
-            idx={i}
-            data={data}
-          />
+        return (
+          Item && (
+            <Item
+              key={i}
+              idx={i}
+              data={data}
+            />
+          )
         );
       })}
     </BentoGrid>

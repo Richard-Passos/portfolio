@@ -6,14 +6,14 @@ const GET = (req) => {
   const { searchParams } = req.nextUrl;
 
   const page = searchParams.get('page') || 1,
-    role = ((role) => (role && role !== 'undefined' ? role : 'all'))(searchParams.get('role')?.toLowerCase(''))
+    role = ((role) => (role && role !== 'undefined' ? role : 'all'))(
+      searchParams.get('role')?.toLowerCase(''),
+    );
 
   const results = (
       role !== 'all'
         ? projects.filter((data) =>
-            data.roles?.some(
-              (data) => data.toLowerCase() === role,
-            ),
+            data.roles?.some((data) => data.toLowerCase() === role),
           )
         : projects
     ).slice((page - 1) * RES_PER_PAGE, page * RES_PER_PAGE),

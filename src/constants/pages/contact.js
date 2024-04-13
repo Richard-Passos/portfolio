@@ -282,12 +282,13 @@ const contactPage = {
             width: 2491,
             height: 3737,
           },
-          items: globals.find((data) => data.slug === 'personal-info')?.services,
+          items: globals.find((data) => data.slug === 'personal-info')
+            ?.services,
           icons: [
             { src: '/images/globe.svg', title: 'Globe' },
             { src: '/images/smile.svg', title: 'Smile' },
           ],
-        }
+        },
       },
     },
   ],

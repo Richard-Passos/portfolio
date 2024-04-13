@@ -26,37 +26,39 @@ const HomeViewAboutSection = ({ className, data = {}, ...props }) => {
         ))}
       </h2>
 
-      {(data.subtitle || data.description) && <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
-        {data.subtitle && (
-          <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
-            <TextScrollAnimate
-              className='first:first-letter:uppercase'
-              text={data.subtitle}
-            />
-          </Text>
-        )}
-
-        {data.description && (
-          <section className='flex grow basis-0 flex-col items-center sm:ml-auto sm:max-w-lg sm:items-start'>
-            <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
-              {data.description}
+      {(data.subtitle || data.description) && (
+        <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
+          {data.subtitle && (
+            <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+              <TextScrollAnimate
+                className='first:first-letter:uppercase'
+                text={data.subtitle}
+              />
             </Text>
+          )}
 
-            {data.action && (
-              <Button
-                className='mt-md'
-                {...action.data}
-              >
-                {action.data?.label}
+          {data.description && (
+            <section className='flex grow basis-0 flex-col items-center sm:ml-auto sm:max-w-lg sm:items-start'>
+              <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
+                {data.description}
+              </Text>
 
-                <Button.Icon animation={action.animation}>
-                  <Icon {...action.icon} />
-                </Button.Icon>
-              </Button>
-            )}
-          </section>
-        )}
-      </section>}
+              {data.action && (
+                <Button
+                  className='mt-md'
+                  {...action.data}
+                >
+                  {action.data?.label}
+
+                  <Button.Icon animation={action.animation}>
+                    <Icon {...action.icon} />
+                  </Button.Icon>
+                </Button>
+              )}
+            </section>
+          )}
+        </section>
+      )}
 
       <HomeViewAboutSectionGrid
         className='mt-lg'
@@ -93,18 +95,17 @@ const HomeViewAboutSectionGrid = ({
       {...props}
     >
       {data.items?.map(({ type, data }, i) => {
-        const Item =
-          BentoGrid.Item[normCompName(type)]
+        const Item = BentoGrid.Item[normCompName(type)];
 
-        return  Item && (
-          <BentoGrid.ScrollAnimate key={i}>
-            
+        return (
+          Item && (
+            <BentoGrid.ScrollAnimate key={i}>
               <Item
-              idx={i}
-              data={data}
-            />
-            
-          </BentoGrid.ScrollAnimate>
+                idx={i}
+                data={data}
+              />
+            </BentoGrid.ScrollAnimate>
+          )
         );
       })}
     </BentoGrid>

@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 const RadioGroupIndicator = ({ className, ...props }, ref) => {
   return (
     <Indicator
-      className={cn('rounded-inherit size-2 *:size-full', className)}
+      className={cn('size-2 rounded-inherit *:size-full', className)}
       ref={ref}
       {...props}
     />

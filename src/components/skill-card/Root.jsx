@@ -20,7 +20,7 @@ const SkillCard = ({ asChild, className, ...props }) => {
       )}
       data-state={isOpen ? 'open' : 'closed'}
       {...props}
-      onClick={(ev) => { 
+      onClick={(ev) => {
         setIsOpen((state) => !state);
 
         isFunctionThanCall(props.onClick, ev);

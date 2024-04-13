@@ -6,7 +6,10 @@ import { cn } from '@/utils';
 const HomeViewSkillsSection = ({ className, data = [], ...props }) => {
   return (
     <Section
-      className={cn('flex flex-col items-center justify-center gap-lg', className)}
+      className={cn(
+        'flex flex-col items-center justify-center gap-lg',
+        className,
+      )}
       {...props}
     >
       {data.map((data = {}, i) => (

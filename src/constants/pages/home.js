@@ -10,7 +10,7 @@ const homePage = {
         title: `Turning heads \n<b>&</b> conquering \nhearts`,
         description:
           "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
-        text: (2024),
+        text: 2024,
         icon: { src: '/images/smile.svg', title: 'Smile' },
       },
     },
@@ -154,10 +154,10 @@ const homePage = {
       data: {
         description:
           "If you're looking for a developer who's got the skills, passion and a problem solving mindset to make your ideas come true. Then...",
-          icons: [
-            { src: '/images/smile.svg', title: 'Smile' },
-            { src: '/images/globe.svg', title: 'Globe' },
-          ],
+        icons: [
+          { src: '/images/smile.svg', title: 'Smile' },
+          { src: '/images/globe.svg', title: 'Globe' },
+        ],
       },
     },
   ],

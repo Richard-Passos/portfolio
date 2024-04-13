@@ -31,7 +31,7 @@ const ContactViewFormClient = ({ data = [], ...props }) => {
   });
 
   const { reset } = form,
-    { isSubmitSuccessful} = form.formState;
+    { isSubmitSuccessful } = form.formState;
 
   useEffect(() => {
     if (isSubmitSuccessful) reset();
