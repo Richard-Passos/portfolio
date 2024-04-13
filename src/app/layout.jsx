@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
           <Header.GetState>
             <body
               className={cn(
-                'relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app',
+                'relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app [&[data-scroll-locked]]:!mr-0',
                 font.variable,
               )}
               id='top'
