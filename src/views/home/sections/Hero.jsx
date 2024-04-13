@@ -89,7 +89,7 @@ const HomeViewHeroSection = ({ className, data = {}, ...props }) => {
                       ) : (
                         <span
                           key={i}
-                          className='flex w-full items-end justify-evenly'
+                          className='flex w-full items-end justify-evenly gap-sm'
                         >
                           {content}
 
