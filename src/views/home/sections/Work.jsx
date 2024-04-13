@@ -1,21 +1,18 @@
-import { projectsApi } from '@/api';
 import {
   Button,
   ListHorizontalScroll,
-  Projects,
   ScrollTitle,
   Section,
   TextScrollAnimate,
 } from '@/components';
+import { ShowProjectsList } from '@/components/show-projects';
 import { Icon, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
-  const { block = {} } = data;
-
   return (
     <Section
-      className={cn('flex flex-col items-center', className)}
+      className={cn('flex flex-col items-center justify-center', className)}
       {...props}
     >
       <h2 className='w-full'>
@@ -28,36 +25,39 @@ const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
         ))}
       </h2>
 
-      <section className='mt-md grid w-9/10 max-w-screen-xl gap-sm sm:grid-cols-2'>
-        <Text className='text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
-          <TextScrollAnimate
-            className='first:first-letter:uppercase'
-            text={data.subtitle}
-          />
-        </Text>
+      {(data.subtitle || data.description) && <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
+        {data.subtitle && (
+          <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+            <TextScrollAnimate
+              className='first:first-letter:uppercase'
+              text={data.subtitle}
+            />
+          </Text>
+        )}
 
-        <Text className='text-muted-content first-letter:uppercase max-sm:text-center sm:max-w-lg sm:justify-self-end'>
-          {data.description}
-        </Text>
-      </section>
+        {data.description && (
+          <section className='flex grow basis-0 flex-col items-center sm:ml-auto sm:max-w-lg sm:items-start'>
+            <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
+              {data.description}
+            </Text>
 
-      <div className='mt-lg flex w-9/10 max-w-screen-lg flex-col items-center'>
-        <Text.Subtitle className='mr-auto text-xs uppercase text-muted-content'>
-          {block.title}
-        </Text.Subtitle>
+            {data.action && (
+              <Button
+                className='mt-md'
+                {...action.data}
+              >
+                {action.data?.label}
 
-        <HomeViewWorkSectionProjects className='mt-md' />
+                <Button.Icon animation={action.animation}>
+                  <Icon {...action.icon} />
+                </Button.Icon>
+              </Button>
+            )}
+          </section>
+        )}
+      </section>}
 
-        <Button.Magnetic
-          className='mt-md'
-          {...block.action.data}
-        >
-          <Icon
-            aria-hidden
-            {...block.action?.icon}
-          />
-        </Button.Magnetic>
-      </div>
+      <HomeViewWorkSectionBlock className='mt-lg' data={data.block} />
 
       <HomeViewWorkSectionList
         data={data.list}
@@ -67,10 +67,10 @@ const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
   );
 };
 
-const HomeViewWorkSectionProjects = async ({ className, ...props }) => {
-  const { data = {} } = await projectsApi.getSelecteds();
+const HomeViewWorkSectionBlock = ({ className, data = {}, ...props }) => {
+  const { action = {} } = data
 
-  const projects = data.reduce(
+  const items = data.items?.reduce(
     (obj, { thumbnail, ...data }) => ({
       data: [...obj.data, data],
       images: [...obj.images, thumbnail],
@@ -79,49 +79,26 @@ const HomeViewWorkSectionProjects = async ({ className, ...props }) => {
   );
 
   return (
-    <Projects
-      className={cn('w-full', className)}
-      images={projects.images}
-      {...props}
-    >
-      <Projects.List className='max-sm:hidden'>
-        {projects.data.map((data, i) => (
-          <Projects.List.Item
-            href={`/projects/${data.slug}`}
-            idx={i}
-            key={'projects-list-' + data.slug}
-          >
-            <Projects.List.Number idx={i} />
+    <div className={cn('flex w-9/10 max-w-screen-lg flex-col items-center', className)} {...props} >
+        <Text.Subtitle className='mr-auto text-xs uppercase text-muted-content'>
+          {data.title}
+        </Text.Subtitle>
 
-            <Projects.List.Content>
-              <Projects.List.Title text={data.title} />
+        <ShowProjectsList className='mt-md' images={items.images} >
+          <ShowProjectsList.Table className='max-sm:hidden' data={items.data}/>
 
-              <Projects.List.Roles data={data.roles} />
-            </Projects.List.Content>
-          </Projects.List.Item>
-        ))}
+          <ShowProjectsList.Grid className='sm:hidden' data={items.data}/>
+        </ShowProjectsList>
 
-        <Projects.List.Images />
-      </Projects.List>
-
-      <Projects.Grid className='sm:hidden'>
-        {projects.data.map((data, i) => (
-          <Projects.Grid.Item
-            href={`/projects/${data.slug}`}
-            idx={i}
-            key={'projects-grid-' + data.slug}
-          >
-            <Projects.Grid.Number idx={i} />
-
-            <Projects.Grid.Image idx={i} />
-
-            <Projects.Grid.Title text={data.title} />
-
-            <Projects.Grid.Roles data={data.roles} />
-          </Projects.Grid.Item>
-        ))}
-      </Projects.Grid>
-    </Projects>
+        <Button.Magnetic
+          className='mt-md'
+          {...action.data}
+        >
+          <Icon
+            {...action?.icon}
+          />
+        </Button.Magnetic>
+      </div>
   );
 };
 

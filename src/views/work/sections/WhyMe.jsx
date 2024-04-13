@@ -13,7 +13,7 @@ const WorkViewWhyMeSection = ({ className, data = {}, ...props }) => {
 
   return (
     <Section
-      className={cn('flex flex-col items-center', className)}
+      className={cn('flex flex-col items-center justify-center', className)}
       {...props}
     >
       <h2 className='w-full'>

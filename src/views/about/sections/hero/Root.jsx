@@ -10,7 +10,7 @@ const AboutViewHeroSection = ({ className, data, ...props }) => {
   return (
     <Section
       forceHeaderTheme
-      className={cn('flex flex-col items-center', className)}
+      className={cn('flex flex-col items-center justify-center', className)}
       {...props}
     >
       <div className='w-9/10 max-w-screen-lg'>

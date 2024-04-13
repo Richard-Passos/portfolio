@@ -23,7 +23,7 @@ const ANIMATION_CONFIG = {
 const AboutViewValuesSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      className={cn('flex flex-col items-center', className)}
+      className={cn('flex flex-col items-center justify-center', className)}
       {...props}
     >
       <Text.Title

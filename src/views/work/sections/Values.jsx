@@ -23,7 +23,7 @@ const ANIMATION_CONFIG = {
 const WorkViewValuesSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      className={cn('flex flex-col items-center', className)}
+      className={cn('flex flex-col items-center justify-center', className)}
       {...props}
     >
       <Text.Title
@@ -82,12 +82,13 @@ const WorkViewValuesSectionBlock = ({ className, data = {}, ...props }) => {
         ))}
       </Values>
 
+      <div className='absolute -z-0 inset-0'>
       {data.icons?.map((data, i) => (
         <ScrollAnimateTransform
           key={data.src}
           config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}
         >
-          <div className='absolute -z-10 size-[min(50vmin,theme(maxWidth.md))] first-of-type:right-0 first-of-type:top-0 last-of-type:bottom-0 last-of-type:left-0 max-lg:hidden'>
+          <div className='absolute size-[min(50vmin,theme(maxWidth.md))] first:right-0 first:top-0 last:bottom-0 last:left-0 max-lg:hidden'>
             <Icon
               className='size-full text-muted'
               {...data}
@@ -95,6 +96,7 @@ const WorkViewValuesSectionBlock = ({ className, data = {}, ...props }) => {
           </div>
         </ScrollAnimateTransform>
       ))}
+      </div>
     </div>
   );
 };

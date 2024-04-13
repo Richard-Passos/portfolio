@@ -1,6 +1,6 @@
 import { Section, TextScrollAnimate } from '@/components';
 import { ScrollAnimateTransform } from '@/components/scroll-animate';
-import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
+import { Icon } from '@/components/ui';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
@@ -31,13 +31,21 @@ const HomeViewCtaSection = ({ className, data = {}, ...props }) => {
         <TextScrollAnimate text={data.description} />
       </Text>
 
-      <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate1}>
-        <SmileIcon className='absolute left-0 top-0 size-[min(50vmin,theme(maxWidth.md))] -translate-x-1/2 text-muted' />
-      </ScrollAnimateTransform>
-
-      <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate2}>
-        <GlobeIcon className='absolute bottom-0 right-0 size-[min(50vmin,theme(maxWidth.md))] translate-x-1/2 text-muted' />
-      </ScrollAnimateTransform>
+      <div className='absolute inset-0 -z-10'>
+      {data.icons?.map((data, i) => (
+        <ScrollAnimateTransform
+          key={data.src}
+          config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}
+        >
+          <div className='absolute size-[min(50vmin,theme(maxWidth.md))] first:left-0 first:top-0 last:bottom-0 last:right-0'>
+            <Icon
+              className='size-full text-muted'
+              {...data}
+            />
+          </div>
+        </ScrollAnimateTransform>
+      ))}
+      </div>
     </Section>
   );
 };

@@ -4,8 +4,7 @@ import {
   ScrollIndicator,
   Section,
 } from '@/components';
-import { Text } from '@/components/ui';
-import { SmileIcon } from '@/components/ui/icon/icons';
+import { Icon, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const ANIMATION_CONFIG = {
@@ -109,11 +108,11 @@ const HomeViewHeroSection = ({ className, data = {}, ...props }) => {
                   </Text>
 
                   <ScrollAnimate.Transform config={ANIMATION_CONFIG.rotate}>
-                    <SmileIcon className='size-6 md:-order-1' />
+                    <Icon className='size-6 md:-order-1' {...data.icon} />
                   </ScrollAnimate.Transform>
 
                   <Text className='justify-self-end text-xs font-semibold lg:col-end-7'>
-                    ({data.year})
+                    {data.text}
                   </Text>
                 </div>
               </div>

@@ -6,12 +6,12 @@ import {
   Section,
 } from '@/components';
 import { Icon } from '@/components/ui';
-import { capitalize, cn } from '@/utils';
+import { cn, normCompName } from '@/utils';
 
 const HomeViewAboutSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      className={cn('flex flex-col items-center', className)}
+      className={cn('flex flex-col items-center justify-center', className)}
       {...props}
     >
       <h2 className='w-full'>
@@ -24,14 +24,46 @@ const HomeViewAboutSection = ({ className, data = {}, ...props }) => {
         ))}
       </h2>
 
+      {(data.subtitle || data.description) && <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
+        {data.subtitle && (
+          <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+            <TextScrollAnimate
+              className='first:first-letter:uppercase'
+              text={data.subtitle}
+            />
+          </Text>
+        )}
+
+        {data.description && (
+          <section className='flex grow basis-0 flex-col items-center sm:ml-auto sm:max-w-lg sm:items-start'>
+            <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
+              {data.description}
+            </Text>
+
+            {data.action && (
+              <Button
+                className='mt-md'
+                {...action.data}
+              >
+                {action.data?.label}
+
+                <Button.Icon animation={action.animation}>
+                  <Icon {...action.icon} />
+                </Button.Icon>
+              </Button>
+            )}
+          </section>
+        )}
+      </section>}
+
       <HomeViewAboutSectionGrid
-        data={data.grid}
         className='mt-lg'
+        data={data.grid}
       />
 
       <HomeViewAboutSectionList
-        data={data.list}
         className='mt-lg'
+        data={data.list}
       />
     </Section>
   );
@@ -60,15 +92,16 @@ const HomeViewAboutSectionGrid = ({
     >
       {data.items?.map(({ type = '', data }, i) => {
         const Item =
-          BentoGrid.Item[type.split(/[_-]/g).map(capitalize).join('')] ||
-          BentoGrid.Item;
+          BentoGrid.Item[normCompName(type)]
 
         return (
           <BentoGrid.ScrollAnimate key={i}>
-            <Item
+            {
+              Item && <Item
               idx={i}
               data={data}
             />
+            }
           </BentoGrid.ScrollAnimate>
         );
       })}
