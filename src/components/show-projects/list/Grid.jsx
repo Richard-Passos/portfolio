@@ -1,6 +1,6 @@
 import ProjectsGrid from '../../projects/grid';
 
-const ShowProjectsItemsGrid = ({ className, data = [], ...props }) => {
+const ShowProjectsItemsGrid = ({ data = [], ...props }) => {
   return (
     <ProjectsGrid {...props}>
       {data.map((data, i) => (

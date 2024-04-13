@@ -1,6 +1,6 @@
 import ProjectsTable from '../../projects/table';
 
-const ShowProjectsListTable = ({ className, data = [], ...props }) => {
+const ShowProjectsListTable = ({ data = [], ...props }) => {
   return (
     <ProjectsTable {...props}>
       {data.map((data, i) => (
