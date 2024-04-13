@@ -58,7 +58,7 @@ const ProjectsHeroSectionBlock = ({ data = {}, ...props }) => {
 
   return (
     <ShowProjects
-      defaultState={{ projects: items, type: types[0]?.type }}
+      defaultState={{ items, type: types[0]?.type }}
       {...props}
     >
       <div className='flex w-full justify-between gap-sm max-sm:flex-col-reverse sm:items-center'>
