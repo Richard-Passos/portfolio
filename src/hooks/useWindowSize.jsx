@@ -20,7 +20,7 @@ const useWindowSize = () => {
 
   useEffect(() => {
     handleSetWindowSize();
-  }, []);
+  }, [handleSetWindowSize]);
 
   return windowSize;
 };

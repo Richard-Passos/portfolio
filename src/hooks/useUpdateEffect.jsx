@@ -6,9 +6,9 @@ const useUpdateEffect = (effect, deps) => {
   const isFirstMount = useRef(true);
 
   useEffect(() => {
-    if (!isFirstMount.current) effect();
+    if (!isFirstMount.current) return effect();
     else isFirstMount.current = false;
-  }, deps);
+  }, [effect, ...deps]);
 };
 
 export default useUpdateEffect;
