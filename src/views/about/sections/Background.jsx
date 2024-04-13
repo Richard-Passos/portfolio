@@ -1,17 +1,19 @@
 import { Button, ScrollTitle, Section, TextScrollAnimate } from '@/components';
 import { ScrollAnimate } from '@/components/scroll-animate';
-import { Image, Separator, Text } from '@/components/ui';
+import { Icon, Image, Separator, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const ANIMATION_CONFIG = {
-  y1: {
-    scrollConfig: { offset: ['1 1', '1 0'] },
-    prop: '--y',
-    propPoints: ['0%', '50%'],
-  },
-  y2: {
+  y: {
     prop: 'y',
     propPoints: ['-13%', '0%'],
+  },
+  rotate: {
+    scroll: 'scrollY',
+    scrollPoints: [0, 400],
+    prop: '--rotate',
+    propPoints: ['0deg', '360deg'],
+    transformConfig: { clamp: false },
   },
 };
 
@@ -63,35 +65,55 @@ const AboutViewBackgroundSection = ({ className, data = {}, ...props }) => {
         )}
       </section>}
 
-      <AboutViewBackgroundSectionBlock className='mt-lg' data={data.block} />
+      {
+        data.blocks?.map((data, i) => <AboutViewBackgroundSectionBlock key={i} className='mt-lg' data={data} />)
+      }
     </Section>
   );
 };
 
 const AboutViewBackgroundSectionBlock = ({ className, data = {}, ...props}) => {
-  return <section className={cn('grid w-9/10 max-w-screen-lg gap-md max-lg:gap-x-sm md:grid-cols-2', className)} {...props}>
-  <ScrollAnimate config={ANIMATION_CONFIG.y1}>
-    <div className='relative w-full overflow-hidden rounded-3xl bg-muted max-md:aspect-square md:h-2/3 md:translate-y-[--y] lg:h-9/10 lg:translate-y-[calc(var(--y)*20/90)]'>
-      <ScrollAnimate.Transform config={ANIMATION_CONFIG.y2}>
-        <Image
-          className='h-[115%] w-full object-cover'
-          {...data.image}
-        />
-      </ScrollAnimate.Transform>
-    </div>
-  </ScrollAnimate>
+  return <section
+   className={cn(
+    'group grid w-9/10 max-w-screen-lg gap-x-sm gap-y-md md:grid-cols-2 lg:gap-x-lg',
+    className,
+  )}
+  {...props}
+>
+  <ul className='space-y-md sm:py-md'>
+    {data.items?.map((data) => (
+      <li
+        key={data.title}
+      >
+        <Text.Subtitle className='text-xs uppercase text-muted-content'>
+          · {data.title}
+        </Text.Subtitle>
 
-  <section className='md:py-lg'>
-    <Text.Subtitle className='text-xs uppercase text-muted-content'>
-      · {data.title}
-    </Text.Subtitle>
+        <Separator className='mt-xs' />
 
-    <Separator className='mt-xs' />
+        <section className='mt-sm space-y-xs'>
+      {data.description?.split(`\n`).map((p, i) => <Text key={i} className='leading-relaxed tracking-wide first-letter:uppercase'>
+      {p}
+    </Text>)}
+    </section>
+      </li>
+    ))}
+  </ul>
 
-    <Text className='mt-sm text-lg/relaxed text-muted-content first-letter:uppercase'>
-      {data.description}
-    </Text>
-  </section>
+      <div className='size-full group-odd:-order-1 relative overflow-hidden rounded-3xl'>
+        <ScrollAnimate.Transform config={ANIMATION_CONFIG.y}>
+          <Image
+            className='absolute h-[115%] inset-x-0 top-0 object-cover'
+            {...data.image}
+          />
+        </ScrollAnimate.Transform>
+
+        <ScrollAnimate config={ANIMATION_CONFIG.rotate}>
+        <div className='size-[10%] group-odd:rotate-[--rotate] group-even:-rotate-[--rotate] absolute group-odd:bottom-xs group-odd:right-xs group-even:top-xs group-even:left-xs' >
+        <Icon className='size-full text-muted-content' {...data.icon}/>
+        </div>
+        </ScrollAnimate>
+      </div>
 </section>
 }
 
