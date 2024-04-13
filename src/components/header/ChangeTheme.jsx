@@ -41,7 +41,7 @@ const HeaderChangeTheme = ({ theme, force, ...props }) => {
 
   useEffect(() => {
     if (force) dispatch(setHeaderTheme(theme));
-  }, [force, theme]);
+  }, [force, dispatch, theme]);
 
   return (
     <Slot

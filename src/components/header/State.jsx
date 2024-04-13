@@ -17,13 +17,13 @@ const HeaderState = ({ className, ...props }) => {
     const { height } = ref.current.getBoundingClientRect();
 
     dispatch(setHeaderHeight(height));
-  }, [ref.current, dispatch]);
+  }, [ref, dispatch]);
 
   useEventListener('resize', handleSetHeight);
 
   useEffect(() => {
     handleSetHeight();
-  }, []);
+  }, [handleSetHeight]);
 
   return (
     <Slot
