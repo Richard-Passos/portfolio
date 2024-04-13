@@ -275,12 +275,19 @@ const contactPage = {
       theme: 'dark',
       data: {
         title: ['Services'],
-        image: {
-          src: '/images/parallax-00.jpg',
-          alt: '',
-          width: 2491,
-          height: 3737,
-        },
+        block: {
+          image: {
+            src: '/images/parallax-00.jpg',
+            alt: '',
+            width: 2491,
+            height: 3737,
+          },
+          items: globals.find((data) => data.slug === 'personal-info')?.services,
+          icons: [
+            { src: '/images/globe.svg', title: 'Globe' },
+            { src: '/images/smile.svg', title: 'Smile' },
+          ],
+        }
       },
     },
   ],
