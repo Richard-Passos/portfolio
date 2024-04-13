@@ -7,6 +7,7 @@ export { default as useIsExternalUrl } from './useIsExternalUrl';
 export { default as useLoadMore } from './useLoadMore';
 export { default as useLocalTime } from './useLocalTime';
 export { default as useQueryString } from './useQueryString';
+export { default as useSetProjects } from './useSetProjects';
 export { default as useSmooth } from './useSmooth';
 export { default as useTimeout } from './useTimeout';
 export { default as useTimer } from './useTimer';
