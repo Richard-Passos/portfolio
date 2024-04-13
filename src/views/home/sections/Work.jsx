@@ -7,7 +7,7 @@ import {
 } from '@/components';
 import { ShowProjectsList } from '@/components/show-projects';
 import { Icon, Text } from '@/components/ui';
-import { cn } from '@/utils';
+import { cn, normProjects } from '@/utils';
 
 const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
   return (
