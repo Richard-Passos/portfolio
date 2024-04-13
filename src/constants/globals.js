@@ -4,20 +4,32 @@ const globals = [
     slug: 'header',
     navItems: [
       {
-        label: 'Home',
-        href: '/',
+        type: '',
+        data: {
+          href: '/',
+          label: 'Home',
+        }
       },
       {
-        label: 'Work',
-        href: '/work',
+        type: '',
+        data: {
+          href: '/work',
+          label: 'Work',
+        }
       },
       {
-        label: 'About',
-        href: '/about',
+        type: '',
+        data: {
+          href: '/about',
+          label: 'About',
+        }
       },
       {
-        label: 'Contact',
-        href: '/contact',
+        type: '',
+        data: {
+          href: '/contact',
+          label: 'Contact',
+        }
       },
     ],
   },
