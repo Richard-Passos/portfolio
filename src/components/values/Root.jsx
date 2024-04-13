@@ -4,7 +4,7 @@ const Values = ({ className, ...props }) => {
   return (
     <ul
       className={cn(
-        'grid gap-sm sm:grid-cols-2 sm:grid-rows-2 lg:grid-cols-3',
+        'grid gap-sm sm:grid-cols-2 lg:grid-cols-3',
         className,
       )}
       {...props}

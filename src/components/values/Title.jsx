@@ -5,7 +5,7 @@ import { TextSubtitle } from '../ui/text';
 const ValuesTitle = ({ className, ...props }) => {
   return (
     <TextSubtitle
-      className={cn('mt-6 text-2xl', className)}
+      className={cn('mt-6 text-2xl first-letter:uppercase', className)}
       {...props}
     />
   );

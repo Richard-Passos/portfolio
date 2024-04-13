@@ -5,7 +5,7 @@ import { Text } from '../ui/text';
 const ServicesDescription = ({ className, ...props }) => {
   return (
     <Text
-      className={cn('text-sm leading-relaxed text-muted-content', className)}
+      className={cn('text-sm leading-relaxed first-letter:uppercase text-muted-content', className)}
       {...props}
     />
   );

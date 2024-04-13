@@ -2,11 +2,11 @@ import { cn } from '@/utils';
 
 import { Text } from '../ui/text';
 
-const SkillCardTitle = ({ className, ...props }) => {
+const SkillCardDescription = ({ className, ...props }) => {
   return (
     <Text
       className={cn(
-        'w-9/10 -translate-y-2 text-center text-xs font-medium opacity-0 duration-300 group-data-open:translate-y-0 group-data-open:opacity-100 group-data-open:delay-150',
+        'w-9/10 -translate-y-2 text-center first-letter:uppercase text-xs font-medium opacity-0 duration-300 group-data-open:translate-y-0 group-data-open:opacity-100 group-data-open:delay-150',
         className,
       )}
       {...props}
@@ -14,4 +14,4 @@ const SkillCardTitle = ({ className, ...props }) => {
   );
 };
 
-export default SkillCardTitle;
+export default SkillCardDescription;

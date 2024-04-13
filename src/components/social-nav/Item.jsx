@@ -1,14 +1,14 @@
 import { cn } from '@/utils';
 
-import Button from '../button';
+import { MagneticButton } from '../button';
 import { Icon } from '../ui';
 import { Text } from '../ui/text';
 
 const SocialNavItem = ({ className, variants, data = {}, ...props }) => {
   return (
-    <Button.Magnetic
+    <MagneticButton
       className={cn(
-        'aspect-auto h-12 rounded-sm [--variant-a:--primary] hover:z-10 hover:[--variant-c:--primary-c] [&>span>span]:px-6 [&_svg]:size-[none]',
+        'aspect-auto h-12 rounded-sm [--variant-a:--primary] hover:z-10 hover:[--variant-c:--primary-c] [&>span>span]:px-6 [&_svg]:size-6',
         className,
       )}
       limit={0.2}
@@ -17,15 +17,14 @@ const SocialNavItem = ({ className, variants, data = {}, ...props }) => {
       {...props}
     >
       <Icon
-        aria-hidden
-        className='size-6 shrink-0'
+        className='shrink-0'
         {...data.icon}
       />
 
       <Text className='mr-auto overflow-hidden text-ellipsis whitespace-nowrap text-xs lowercase first-letter:uppercase'>
         {data.label}
       </Text>
-    </Button.Magnetic>
+    </MagneticButton>
   );
 };
 

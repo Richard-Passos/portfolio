@@ -14,7 +14,7 @@ const ShowProjectsRolesTrigger = ({ className, role = '', children, ...props }) 
     searchParams = useSearchParams(),
     query = useQueryString([['role', role]]);
 
-  const activeRole = searchParams.get('role')?.toLowerCase(),
+  const activeRole = searchParams.get('role')?.toLowerCase() || 'all',
     isActive = activeRole === role.toLowerCase();
 
   return (

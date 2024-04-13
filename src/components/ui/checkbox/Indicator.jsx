@@ -1,20 +1,17 @@
 'use client';
 
 import { Indicator } from '@radix-ui/react-checkbox';
-import { Slot } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
 
 import { cn } from '@/utils';
 
-const CheckboxIndicator = ({ className, children, ...props }, ref) => {
+const CheckboxIndicator = ({ className, ...props }, ref) => {
   return (
     <Indicator
-      className={cn('h-3 w-3', className)}
+      className={cn('size-3 *:size-full', className)}
       ref={ref}
       {...props}
-    >
-      <Slot className='h-full w-full'>{children}</Slot>
-    </Indicator>
+    />
   );
 };
 

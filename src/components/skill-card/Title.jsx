@@ -5,7 +5,7 @@ import { TextSubtitle } from '../ui/text';
 const SkillCardTitle = ({ className, ...props }) => {
   return (
     <TextSubtitle
-      className={cn('text-sm text-muted-content', className)}
+      className={cn('text-sm text-muted-content first-letter:uppercase', className)}
       {...props}
     />
   );
