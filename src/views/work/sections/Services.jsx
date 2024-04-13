@@ -37,7 +37,7 @@ const WorkViewServicesSection = ({ className, data = {}, ...props }) => {
         ))}
       </h2>
 
-      <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
+      {(data.subtitle || data.description) && <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
         {data.subtitle && (
           <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
             <TextScrollAnimate
@@ -67,7 +67,7 @@ const WorkViewServicesSection = ({ className, data = {}, ...props }) => {
             )}
           </section>
         )}
-      </section>
+      </section>}
 
       <WorkViewServicesSectionBlock
         className='mt-lg'

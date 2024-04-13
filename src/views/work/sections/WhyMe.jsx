@@ -26,7 +26,7 @@ const WorkViewWhyMeSection = ({ className, data = {}, ...props }) => {
         ))}
       </h2>
 
-      <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
+      {(data.subtitle || data.description) && <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
         {data.subtitle && (
           <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
             <TextScrollAnimate
@@ -56,11 +56,11 @@ const WorkViewWhyMeSection = ({ className, data = {}, ...props }) => {
             )}
           </section>
         )}
-      </section>
+      </section>}
 
       <WorkViewWhyMeSectionBlock
-        data={data.block}
         className='mt-lg'
+        data={data.block}
       />
     </Section>
   );
@@ -76,7 +76,7 @@ const WorkViewWhyMeSectionBlock = ({ className, data = {}, ...props }) => {
         {data.title}
       </Text.Subtitle>
 
-      <Stats>
+      <Stats className='mt-md'>
         {data.items?.map((data) => (
           <Stats.Item key={data.title}>
             <Stats.Title>{data.title}</Stats.Title>

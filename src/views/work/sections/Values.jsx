@@ -82,13 +82,13 @@ const WorkViewValuesSectionBlock = ({ className, data = {}, ...props }) => {
         ))}
       </Values>
 
-      <div className='absolute -z-0 inset-0'>
+      <div className='absolute -z-10 inset-0'>
       {data.icons?.map((data, i) => (
         <ScrollAnimateTransform
           key={data.src}
           config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}
         >
-          <div className='absolute size-[min(50vmin,theme(maxWidth.md))] first:right-0 first:top-0 last:bottom-0 last:left-0 max-lg:hidden'>
+          <div className='absolute size-[min(50vmin,theme(maxWidth.md))] last:right-0 last:top-0 first:bottom-0 first:left-0 max-lg:hidden'>
             <Icon
               className='size-full text-muted'
               {...data}

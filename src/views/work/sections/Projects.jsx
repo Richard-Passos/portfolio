@@ -1,10 +1,10 @@
 import {
   Button,
-  Projects,
   ScrollTitle,
   Section,
   TextScrollAnimate,
 } from '@/components';
+import { ShowProjectsList } from '@/components/show-projects';
 import { Icon, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
@@ -24,7 +24,7 @@ const WorkViewProjectsSection = ({ className, data = {}, ...props }) => {
         ))}
       </h2>
 
-      <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
+      {(data.subtitle || data.description) && <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
         {data.subtitle && (
           <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
             <TextScrollAnimate
@@ -54,7 +54,7 @@ const WorkViewProjectsSection = ({ className, data = {}, ...props }) => {
             )}
           </section>
         )}
-      </section>
+      </section>}
 
       <WorkViewProjectsSectionBlock
         className='mt-lg'
@@ -67,6 +67,14 @@ const WorkViewProjectsSection = ({ className, data = {}, ...props }) => {
 const WorkViewProjectsSectionBlock = ({ data = {}, className, ...props }) => {
   const { action = {} } = data;
 
+  const items = data.items?.reduce(
+    (obj, { thumbnail, ...data }) => ({
+      data: [...obj.data, data],
+      images: [...obj.images, thumbnail],
+    }),
+    { data: [], images: [] },
+  );
+
   return (
     <section
       className={cn(
@@ -75,7 +83,11 @@ const WorkViewProjectsSectionBlock = ({ data = {}, className, ...props }) => {
       )}
       {...props}
     >
-      <WorkViewProjectsSectionShow data={data.items} />
+      <ShowProjectsList images={items.images} >
+          <ShowProjectsList.Table className='max-sm:hidden' data={items.data}/>
+
+          <ShowProjectsList.Grid className='sm:hidden' data={items.data}/>
+        </ShowProjectsList>
 
       <Button.Magnetic
         className='mt-md'
@@ -84,62 +96,6 @@ const WorkViewProjectsSectionBlock = ({ data = {}, className, ...props }) => {
         <Icon {...action.icon} />
       </Button.Magnetic>
     </section>
-  );
-};
-
-const WorkViewProjectsSectionShow = ({ data = [], className, ...props }) => {
-  const { items, images } = data.reduce(
-    (obj, { thumbnail, ...data }) => ({
-      items: [...obj.items, data],
-      images: [...obj.images, thumbnail],
-    }),
-    { items: [], images: [] },
-  );
-
-  return (
-    <Projects
-      className={cn('w-full', className)}
-      images={images}
-      {...props}
-    >
-      <Projects.List className='max-sm:hidden'>
-        {items.map((data, i) => (
-          <Projects.List.Item
-            href={`/projects/${data.slug}`}
-            idx={i}
-            key={'projects-list-' + data.title}
-          >
-            <Projects.List.Number idx={i} />
-
-            <Projects.List.Content>
-              <Projects.List.Title text={data.title} />
-
-              <Projects.List.Roles data={data.roles} />
-            </Projects.List.Content>
-          </Projects.List.Item>
-        ))}
-
-        <Projects.List.Images />
-      </Projects.List>
-
-      <Projects.Grid className='sm:hidden'>
-        {items.map((data, i) => (
-          <Projects.Grid.Item
-            href={`/projects/${data.slug}`}
-            idx={i}
-            key={'projects-grid-' + data.title}
-          >
-            <Projects.Grid.Number idx={i} />
-
-            <Projects.Grid.Image idx={i} />
-
-            <Projects.Grid.Title text={data.title} />
-
-            <Projects.Grid.Roles data={data.roles} />
-          </Projects.Grid.Item>
-        ))}
-      </Projects.Grid>
-    </Projects>
   );
 };
 
