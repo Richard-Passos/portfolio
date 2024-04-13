@@ -8,11 +8,11 @@ import { cn } from '@/utils';
 import { Text } from '../ui/text';
 
 const ShowProjectsLastPage = ({ className, ...props }) => {
-  const { isLastPage, projects = [] } = useContext(ShowProjectsContext);
+  const [{ isLastPage, items = [] }] = useContext(ShowProjectsContext);
 
   return (
     isLastPage &&
-    !!projects.length && (
+    !!items.length && (
       <Text
         className={cn('text-muted-content', className)}
         {...props}

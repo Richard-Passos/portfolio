@@ -8,10 +8,10 @@ import { cn } from '@/utils';
 import { Text } from '../ui/text';
 
 const ShowProjectsEmpty = ({ className, ...props }) => {
-  const { projects } = useContext(ShowProjectsContext);
+  const [{ items }] = useContext(ShowProjectsContext);
 
   return (
-    !projects?.length && (
+    !items?.length && (
       <Text
         className={cn('text-muted-content', className)}
         {...props}

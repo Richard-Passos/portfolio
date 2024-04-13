@@ -12,17 +12,17 @@ const ShowProjectsTypesTrigger = ({
   type = '',
   ...props
 }) => {
-  const { type: activeType = '', setType } = useContext(ShowProjectsContext);
+  const [state, setState] = useContext(ShowProjectsContext);
 
   const Tag = asChild ? Slot : 'button',
-    isActive = activeType.toLowerCase() === type.toLowerCase();
+    isActive = state.type?.toLowerCase() === type.toLowerCase();
 
   return (
     <Tag
       data-state={isActive ? 'active' : 'inactive'}
       {...props}
       onClick={(ev) => {
-        setType(type);
+        setState((state => ({...state, type})));
 
         isFunctionThanCall(props.onClick, ev);
       }}
