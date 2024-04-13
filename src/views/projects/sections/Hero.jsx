@@ -43,8 +43,8 @@ const ProjectsHeroSection = async ({ className, data = {}, ...props }) => {
       </TextTitle>
       <span className='sr-only'>{data.subtitle}</span>
       <ProjectsHeroSectionBlock
+        className='mt-md'
         data={data.block}
-        className='mt-lg'
       />
       <div className='absolute top-0 h-[--header-h] w-screen max-w-bounds bg-main'>
         <span className='absolute left-1/2 top-full h-px w-[95%] -translate-x-1/2 bg-border opacity-60 dark:opacity-20' />
