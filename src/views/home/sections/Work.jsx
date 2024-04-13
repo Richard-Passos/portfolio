@@ -75,13 +75,7 @@ const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
 const HomeViewWorkSectionBlock = ({ className, data = {}, ...props }) => {
   const { action = {} } = data;
 
-  const items = data.items?.reduce(
-    (obj, { thumbnail, ...data }) => ({
-      data: [...obj.data, data],
-      images: [...obj.images, thumbnail],
-    }),
-    { data: [], images: [] },
-  );
+  const items = normProjects(data.items)
 
   return (
     <div

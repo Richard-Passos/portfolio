@@ -1,7 +1,7 @@
 import { Button, ScrollTitle, Section, TextScrollAnimate } from '@/components';
 import { ShowProjectsList } from '@/components/show-projects';
 import { Icon, Text } from '@/components/ui';
-import { cn } from '@/utils';
+import { cn, normProjects } from '@/utils';
 
 const WorkViewProjectsSection = ({ className, data = {}, ...props }) => {
   return (
@@ -64,13 +64,7 @@ const WorkViewProjectsSection = ({ className, data = {}, ...props }) => {
 const WorkViewProjectsSectionBlock = ({ data = {}, className, ...props }) => {
   const { action = {} } = data;
 
-  const items = data.items?.reduce(
-    (obj, { thumbnail, ...data }) => ({
-      data: [...obj.data, data],
-      images: [...obj.images, thumbnail],
-    }),
-    { data: [], images: [] },
-  );
+  const items = normProjects(data.items)
 
   return (
     <section
