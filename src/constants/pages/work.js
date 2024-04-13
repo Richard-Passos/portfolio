@@ -180,11 +180,10 @@ const workPage = {
         title: `My \nvalues`,
         subtitle: 'Always improving',
         block: {
-          items: globals.find((data) => data.slug === 'personal-info')?.values
-            .work,
+          items: globals.find((data) => data.slug === 'personal-info')?.values.work,
           icons: [
-            { src: '/images/smile.svg', title: 'Smile' },
             { src: '/images/globe.svg', title: 'Globe' },
+            { src: '/images/smile.svg', title: 'Smile' },
           ],
         },
       },
