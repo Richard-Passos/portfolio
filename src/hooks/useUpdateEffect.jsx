@@ -1,14 +1,18 @@
 'use client';
 
-const { useEffect, useRef } = require('react');
+import { useEffect, useRef } from 'react';
 
 const useUpdateEffect = (effect, deps) => {
-  const isFirstMount = useRef(true);
+  const isMounted = useRef(false);
 
   useEffect(() => {
-    if (!isFirstMount.current) return effect();
-    else isFirstMount.current = false;
-  }, [effect, ...deps]);
+    isMounted.current = false;
+  }, []);
+
+  useEffect(() => {
+    if (isMounted.current) return effect();
+    else isMounted.current = true;
+  }, deps);
 };
 
 export default useUpdateEffect;
