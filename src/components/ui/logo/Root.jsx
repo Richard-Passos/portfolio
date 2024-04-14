@@ -5,7 +5,7 @@ import Icon from '../icon';
 import Link from '../link';
 
 const Root = async ({ className, ...props }) => {
-  const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
+  const personalInfo = (await globalsApi.getOne('personal-info')).data?.data || {};
 
   return (
     <Link

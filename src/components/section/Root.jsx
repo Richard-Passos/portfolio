@@ -21,7 +21,7 @@ const Section = (props, ref) => {
       className={cn(
         'relative min-h-screen w-full py-lg 2xl:min-h-bounds',
         hasTransition && 'pt-[calc(theme(spacing.lg)*1.5)]',
-        theme,
+        `theme-${theme}`,
         className,
       )}
       ref={ref}
