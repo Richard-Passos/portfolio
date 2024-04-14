@@ -27,7 +27,7 @@
     --radius-lg: 1rem;
   }
 
-  .light {
+  .theme-light {
     @apply text-content;
 
     --main: 0 0% 98%;
@@ -61,7 +61,7 @@
     --border: 0 0% 90%;
   }
 
-  .light .primary {
+  .theme-light:not(:has([class*='theme-'] .theme-primary)) .theme-primary, .theme-light.theme-primary, .theme-light > .theme-primary, .theme-light > :not([class*='theme-']) .theme-primary {
     @apply text-content;
 
     --main: 0 0% 4.7%;
@@ -83,7 +83,7 @@
     --border: 0 0% 12%;
   }
 
-  .dark {
+  .theme-dark {
     @apply text-content;
 
     --main: 0 0% 4.7%;
@@ -117,7 +117,7 @@
     --border: 0 0% 12%;
   }
 
-  .dark:not(:has(.light)) .primary {
+  .theme-dark:not(:has([class*='theme-'] .theme-primary)) .theme-primary, .theme-dark.theme-primary, .theme-dark > .theme-primary, .theme-dark > :not([class*='theme-']) .theme-primary {
     @apply text-content;
 
     --main: 0 0% 98%;
@@ -143,7 +143,7 @@
     @apply outline-none [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted-content/25 hover:[&::-webkit-scrollbar-thumb]:bg-muted-content/50 [&::-webkit-scrollbar]:w-2.5;
   }
 
-  *:focus-visible {
+  :focus-visible {
     @apply outline;
   }
 
