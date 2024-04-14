@@ -14,7 +14,7 @@ const contactPage = {
         grid: {
           templates: {
             default:
-              '"item-0 .""item-1 item-1""item-2 item-2""item-3 item-3""item-4 item-4"',
+              '"item-0""item-1""item-2""item-3""item-4"',
             sm: '"item-0 item-1 item-1 item-1""item-0 item-1 item-1 item-1""item-2 item-2 item-3 item-3""item-4 item-4 item-4 item-4"',
             lg: '"item-0 item-1 item-1 item-1 item-2 item-2""item-0 item-1 item-1 item-1 item-3 item-3""item-4 item-4 item-4 item-4 item-4 item-4"',
           },
