@@ -15,7 +15,7 @@ const contactPage = {
           templates: {
             default:
               '"item-0 .""item-1 item-1""item-2 item-2""item-3 item-3""item-4 item-4"',
-            sm: '"item-0 item-1 item-1 item-1""item-0 item-1 item-1 item-1""item-2 item-2 item-3 item-3"',
+            sm: '"item-0 item-1 item-1 item-1""item-0 item-1 item-1 item-1""item-2 item-2 item-3 item-3""item-4 item-4 item-4 item-4"',
             lg: '"item-0 item-1 item-1 item-1 item-2 item-2""item-0 item-1 item-1 item-1 item-3 item-3""item-4 item-4 item-4 item-4 item-4 item-4"',
           },
           items: [
@@ -44,8 +44,7 @@ const contactPage = {
                     label: 'Change statistic',
                   },
                 },
-                items: globals.find((data) => data.slug === 'personal-info')
-                  ?.stats,
+                items: globals.find((data) => data.slug === 'personal-info')?.data.stats,
               },
             },
             {
@@ -232,8 +231,7 @@ const contactPage = {
                 },
               ],
               items: globals
-                .find((data) => data.slug === 'personal-info')
-                ?.services?.map((data) => data.title),
+                .find((data) => data.slug === 'personal-info')?.data.services?.map((data) => data.title),
             },
             {
               name: 'message',
@@ -282,8 +280,7 @@ const contactPage = {
             width: 2491,
             height: 3737,
           },
-          items: globals.find((data) => data.slug === 'personal-info')
-            ?.services,
+          items: globals.find((data) => data.slug === 'personal-info')?.data.services,
           icons: [
             { src: '/images/globe.svg', title: 'Globe' },
             { src: '/images/smile.svg', title: 'Smile' },
