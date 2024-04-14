@@ -2,18 +2,18 @@
 
 import { useLenis } from '@studio-freight/react-lenis';
 
-import { cn, isFunctionThanCall } from '@/utils';
+import { isFunctionThanCall } from '@/utils';
 
-import Button from '../button';
-import { ArrowUpIcon } from '../ui/icon/icons';
+import { Slot } from '@radix-ui/react-slot';
 
-const BackTop = ({ className, ...props }) => {
+const BackTop = ({asChild, ...props}) => {
   const lenis = useLenis();
 
+  const Tag = asChild ? Slot : 'button'
+
   return (
-    <Button
-      className={cn('text-xs font-bold uppercase', className)}
-      href='#start'
+    <Tag
+      {...props}
       onClick={(ev) => {
         lenis.scrollTo('start', {
           duration: 2,
@@ -23,14 +23,7 @@ const BackTop = ({ className, ...props }) => {
 
         isFunctionThanCall(props.onClick, ev);
       }}
-      variants={{ color: 'main', size: 'sm' }}
-      {...props}
-    >
-      <Button.Icon animation='slideUp'>
-        <ArrowUpIcon />
-      </Button.Icon>
-      Back top
-    </Button>
+    />
   );
 };
 
