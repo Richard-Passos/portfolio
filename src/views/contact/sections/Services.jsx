@@ -1,4 +1,3 @@
-import { globalsApi } from '@/api';
 import {
   Button,
   ScrollAnimate,
@@ -9,7 +8,6 @@ import {
 } from '@/components';
 import '@/components/scroll-animate';
 import { Icon, Image, Separator } from '@/components/ui';
-import { GlobeIcon, SmileIcon } from '@/components/ui/icon/icons';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/utils';
 
@@ -44,9 +42,6 @@ const ContactViewServicesSection = async ({
   data = {},
   ...props
 }) => {
-  const { services = [] } =
-    (await globalsApi.getOne('personal-info')).data || {};
-
   return (
     <Section
       className={cn('flex flex-col items-center justify-center', className)}

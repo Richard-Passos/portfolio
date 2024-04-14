@@ -83,7 +83,7 @@ const ProjectsHeroSectionBlock = ({ data = {}, ...props }) => {
               asChild
             >
               <MagneticButton
-                className='data-active:primary hover:z-10 data-active:focus-visible:outline-primary-content [&_svg]:size-[40%]'
+                className='data-active:theme-primary hover:z-10 data-active:focus-visible:outline-primary-content [&_svg]:size-[40%]'
                 {...data}
                 variants={{ color: 'main', size: 'sm', ...data.variants }}
               >
