@@ -11,7 +11,7 @@ import Nav from './Nav';
 import State from './State';
 
 const Header = async ({ className, ...props }) => {
-  const { data = {} } = await globalsApi.getOne('header');
+  const { data = {} } = (await globalsApi.getOne('header')).data || {};
 
   return (
     <State>

@@ -10,7 +10,7 @@ const HeaderGetState = ({ className, style, ...props }) => {
 
   return (
     <Slot
-      className={cn(theme, className)}
+      className={cn(`theme-${theme}`, className)}
       style={{ '--header-h': `${height}px`, ...style }}
       {...props}
     />

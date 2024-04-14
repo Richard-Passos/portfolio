@@ -28,7 +28,7 @@ const HeaderState = ({ className, ...props }) => {
   return (
     <Slot
       ref={ref}
-      className={cn(theme, className)}
+      className={cn(`theme-${theme}`, className)}
       {...props}
     />
   );
