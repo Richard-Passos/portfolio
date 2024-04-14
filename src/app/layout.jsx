@@ -47,14 +47,14 @@ const Layout = ({ children }) => {
 };
 
 const generateMetadata = async () => {
-  const { data = {} } = await globalsApi.getOne('personal-info');
+  const { data = {} } = (await globalsApi.getOne('personal-info')).data;
 
   return {
     title: {
       default: `${data.name?.first} ${data.name?.last}`,
       template: `%s · ${data.name?.first} ${data.name?.last}`,
     },
-    description: data.summary,
+    description: data.description,
     openGraph: {
       title: {
         default: `${data.name?.first} ${data.name?.last}`,
