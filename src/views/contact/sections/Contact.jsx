@@ -11,7 +11,7 @@ const ContactViewContactSection = async ({
   data = {},
   ...props
 }) => {
-  const personalInfo = (await globalsApi.getOne('personal-info')).data || {};
+  const personalInfo = (await globalsApi.getOne('personal-info')).data?.data || {};
 
   const { info = {}, form = {} } = data;
 
@@ -37,7 +37,7 @@ const ContactViewContactSection = async ({
       )}
       {...props}
     >
-      <div className='primary grow basis-48 rounded-lg bg-main p-sm shadow-md max-md:w-9/10 md:max-w-56 dark:shadow-none'>
+      <div className='theme-primary grow basis-48 rounded-lg bg-main p-sm shadow-md max-md:w-9/10 md:max-w-56 dark:shadow-none'>
         <div className='relative flex justify-center overflow-hidden border-t'>
           {info.icons?.map((icon) => (
             <div
