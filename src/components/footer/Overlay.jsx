@@ -3,30 +3,29 @@ import { cn } from '@/utils';
 import Lines from '../lines';
 import { ScrollAnimate } from '../scroll-animate';
 
-const FooterOverlay = ({ theme, className, ...props }) => {
-  const animationConfig = {
-    h: {
-      scrollConfig: {
-        offset: ['0 1', '.95 1'],
-      },
-      prop: '--h',
-      propPoints: ['79px', '0px'],
+const ANIMATION_CONFIG = {
+  h: {
+    scrollConfig: {
+      offset: ['0 1', '.95 1'],
     },
-    opacity: {
-      scrollConfig: {
-        offset: ['0 1', '.95 1'],
-      },
-      prop: 'opacity',
-      propPoints: [0.8, 0],
+    prop: '--h',
+    propPoints: ['79px', '0px'],
+  },
+  opacity: {
+    scrollConfig: {
+      offset: ['0 1', '.95 1'],
     },
-  };
+    prop: 'opacity',
+    propPoints: [0.8, 0],
+  },
+};
 
+const FooterOverlay = ({ className, ...props }) => {
   return (
-    <ScrollAnimate config={animationConfig.h}>
+    <ScrollAnimate config={ANIMATION_CONFIG.h}>
       <div
         className={cn(
           'pointer-events-none absolute inset-y-0 z-20 max-h-screen w-screen overflow-hidden',
-          theme,
           className,
         )}
         {...props}
@@ -36,8 +35,8 @@ const FooterOverlay = ({ theme, className, ...props }) => {
             <Lines className='absolute' />
           </div>
         </div>
-        <ScrollAnimate config={animationConfig.opacity}>
-          <span className='absolute inset-0 -translate-y-1/4 bg-gradient-to-b from-main to-transparent' />
+        <ScrollAnimate config={ANIMATION_CONFIG.opacity}>
+          <span className='absolute inset-0 bg-gradient-to-b -translate-y-[17.5%] from-main via-transparent to-transparent' />
         </ScrollAnimate>{' '}
       </div>
     </ScrollAnimate>

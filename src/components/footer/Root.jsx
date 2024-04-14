@@ -1,28 +1,31 @@
-import { cn } from '@/utils';
+import { cn, getOpstTheme } from '@/utils';
 
 import Lines from '../lines';
 import Overlay from './Overlay';
-import Content from './content';
+import Content from './Content';
+import { globalsApi } from '@/api';
 
-const Footer = ({ className, ...props }) => {
+const Footer = async ({ className, ...props }) => {
+  const { theme, data = {} } = (await globalsApi.getOne('footer')).data || {}
+
   return (
     <footer
       className={cn(
-        'relative flex w-full max-w-bounds flex-col items-center overflow-y-clip pt-[--pt] [--pt:calc(theme(spacing.lg)*.5)]',
+        'relative flex w-full max-w-bounds flex-col items-center justify-center overflow-y-clip pt-[--pt] [--pt:calc(theme(spacing.lg)*.5)]',
+        `theme-${getOpstTheme(theme)}`,
         className,
       )}
       {...props}
     >
-      <div className='dark absolute top-0 h-[--pt] w-screen bg-main'>
+      <div className='absolute top-0 h-[--pt] w-screen bg-main'>
         <Lines className='z-0' />
       </div>
 
       <Overlay
-        theme='dark'
         className='top-[--pt]'
       />
 
-      <Content theme='light' />
+      <Content theme={theme} data={data} />
     </footer>
   );
 };
