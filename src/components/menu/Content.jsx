@@ -11,8 +11,8 @@ import MenuUiContent from '../ui/menu/Content';
 import Nav from './Nav';
 
 const MenuContent = async (props) => {
-  const { data = {} } = await globalsApi.getOne('header'),
-    personalInfo = (await globalsApi.getOne('personal-info')).data || {};
+  const { data = {} } = (await globalsApi.getOne('header')).data || {},
+    personalInfo = (await globalsApi.getOne('personal-info')).data?.data || {};
 
   return (
     <MenuUiContent
