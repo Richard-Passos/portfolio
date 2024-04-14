@@ -28,7 +28,7 @@ const ChangeTheme = ({
       <div
         className={cn(
           'pointer-events-none absolute inset-0 flex items-center justify-center',
-          theme,
+          `theme-${theme}`,
           className,
         )}
         {...props}
