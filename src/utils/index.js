@@ -5,6 +5,8 @@ export { default as getOpstTheme } from './getOpstTheme';
 export { default as isExternalUrl } from './isExternalUrl';
 export { default as isFunctionThanCall } from './isFunctionThanCall';
 export { default as normCompName } from './normCompName';
+export { default as normId } from './normId';
+export { default as normKey } from './normKey';
 export { default as normProjects } from './normProjects';
 export { default as setRefs } from './setRefs';
 export { default as transformTemplate } from './transformTemplate';
