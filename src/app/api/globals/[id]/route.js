@@ -1,9 +1,10 @@
 import { globals } from '@/constants';
+import { normId } from '@/utils';
 
 const GET = async (_, { params: { id = '' } }) => {
-  id = id.toLowerCase();
+  id = normId(id)
 
-  const data = globals.find(({ slug }) => slug === id?.replace(/[_ ]/g, '-'));
+  const data = globals.find(({ slug }) => normId(slug) === id);
 
   return Response.json({
     status: 200,

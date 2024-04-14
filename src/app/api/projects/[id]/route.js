@@ -1,10 +1,11 @@
 import { projects } from '@/constants';
+import { normId } from '@/utils';
 
 const GET = async (_, { params: { id = '' } }) => {
-  id = id.toLowerCase();
+  id = normId(id)
 
   const dataIdx = projects.findIndex(
-    ({ slug }) => slug === id.replace(/[_ ]/g, '-'),
+    ({ slug }) => normId(slug) === id,
   );
 
   const data = projects[dataIdx],
