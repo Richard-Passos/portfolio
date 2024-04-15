@@ -1,6 +1,6 @@
 import { Button, ScrollTitle, Section, TextScrollAnimate } from '@/components';
 import { ScrollAnimateTransform } from '@/components/scroll-animate';
-import { Image } from '@/components/ui';
+import { Icon, Image } from '@/components/ui';
 import { Text } from '@/components/ui/text';
 import { cn, normKey } from '@/utils';
 

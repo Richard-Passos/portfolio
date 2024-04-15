@@ -65,6 +65,7 @@ const ProjectViewHeroSection = ({ className, project = {}, data = {}, ...props }
       <section className='mt-md flex w-9/10 max-w-screen-xl items-center justify-between'>
         {data.actions?.map((action) => 
         <Button
+          key={action.data?.label}
           {...action.data}
           href={`${action.data?.href}/${project.adjacentIds?.[action.type]}`}
         >
