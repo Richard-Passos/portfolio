@@ -2,9 +2,10 @@ import { cn } from '@/utils';
 
 import { MagneticButton } from '../button';
 import HorizontalScroll from '../horizontal-scroll';
-import { Icon, Text } from '../ui';
+import { Icon, Image, Text } from '../ui';
 
 const NextPage = ({ className, data = {}, ...props }) => {
+  console.log('-  data   -', data)
   const { action = {} } = data;
 
   return (
@@ -14,7 +15,7 @@ const NextPage = ({ className, data = {}, ...props }) => {
     >
       <NextPageLinkHeading>{data.title}</NextPageLinkHeading>
 
-      <div className='relative flex w-full flex-col items-center justify-center gap-[.2em]'>
+      <div className='relative flex w-full flex-col items-center justify-center gap-[.2em] [clip-path:inset(calc(theme(spacing.lg)*-1)_0_0_0)]'>
         <NextPageLinkContent
           baseVelocity={-1}
           className='text-muted'
@@ -23,15 +24,29 @@ const NextPage = ({ className, data = {}, ...props }) => {
         </NextPageLinkContent>
 
         <MagneticButton
-          className='absolute h-2/3 [&_svg]:size-[40%]'
+          className='peer absolute h-2/3 z-10 [&_svg]:size-[40%]'
           {...action.data}
         >
           <Icon {...action.icon} />
         </MagneticButton>
 
+        {
+          data.image && 
+          <>
+          <div className='absolute duration-500 rounded-3xl overflow-hidden top-0 bg-muted w-9/10 max-w-screen-md aspect-square transition-transform peer-hover:-translate-y-lg'>
+          <Image
+          className='size-full object-cover'
+          {...data.image}
+        />
+          </div>
+        
+        <span className='pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-main/75' />
+        </>
+        }
+
         <NextPageLinkContent
           baseVelocity={1.5}
-          className='relative z-10'
+          className='relative z-20'
         >
           {data.description}
         </NextPageLinkContent>
