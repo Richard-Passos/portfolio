@@ -1,15 +1,29 @@
-import { ScrollTitle, Section } from '@/components';
+import { Button, ScrollTitle, Section, TextScrollAnimate } from '@/components';
 import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Image } from '@/components/ui';
-import { cn } from '@/utils';
+import { Text } from '@/components/ui/text';
+import { cn, normKey } from '@/utils';
 
-const ProjectViewImagesSection = async ({ promise, className, ...props }) => {
-  const data = (await promise).data?.images || [];
+const ANIMATION_CONFIG = {
+  prop: 'y',
+  propPoints: ['-13%', '0%'],
+};
 
-  const animationConfig = {
-    prop: 'y',
-    propPoints: ['-15%', '15%'],
-  };
+const ProjectViewImagesSection = async ({ promise, project = {}, className, data = {}, ...props }) => {
+  const {images = []} = (await promise)?.data || {}
+
+  const infoDescriptions = [
+    project.roles?.join(' & '),
+    project.client,
+    project.year,
+ ]
+
+  const infoItems = data.infoItems?.map((data, i) => ({...data, description: infoDescriptions[i]}))
+
+  const imagesTypes = {
+    'full': 'col-span-full aspect-video',
+    '1/2': 'aspect-[1/1.25]',
+  }
 
   return (
     <Section
@@ -19,39 +33,90 @@ const ProjectViewImagesSection = async ({ promise, className, ...props }) => {
       )}
       {...props}
     >
-      <h2 className='mb-lg flex w-full flex-col'>
-        <ScrollTitle title='GREAT' />
-        <ScrollTitle
-          dir='rtl'
-          title='IMAGES'
-        />
+      <h2 className='w-full'>
+        {data.title?.map((w, i) => (
+          <ScrollTitle
+            dir={i % 2 === 0 ? 'ltr' : 'rtl'}
+            key={i}
+            title={w}
+          />
+        ))}
       </h2>
 
-      <ul className='flex w-9/10 flex-col gap-sm'>
-        {data.map((img) => (
+      {(data.subtitle || data.description) && (
+        <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
+          {data.subtitle && (
+            <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+              <TextScrollAnimate
+                className='first:first-letter:uppercase'
+                text={data.subtitle}
+              />
+            </Text>
+          )}
+
+          {data.description && (
+            <section className='flex grow basis-0 flex-col items-center sm:ml-auto sm:max-w-lg sm:items-start'>
+              <Text className='text-muted-content first-letter:uppercase max-sm:text-center'>
+                {data.description}
+              </Text>
+
+              {data.action && (
+                <Button
+                  className='mt-md'
+                  {...action.data}
+                >
+                  {action.data?.label}
+
+                  <Button.Icon animation={action.animation}>
+                    <Icon {...action.icon} />
+                  </Button.Icon>
+                </Button>
+              )}
+            </section>
+          )}
+        </section>
+      )}
+
+<div className='grid sm:grid-cols-3 w-9/10 mt-lg max-w-screen-xl gap-md relative'>
+<div className='sm:sticky top-md h-fit'>
+        <Text.Title className='uppercase text-2xl'>
+          {project.title}
+        </Text.Title>
+
+        <ul className='space-y-2 mt-4 max-w-52'>
+          {infoItems?.map((data) => (
+            <li
+              className='grid w-full sm:grid-cols-3 gap-x-sm gap-y-1.5'
+              key={data.title}
+            >
+              <Text.Subtitle className='text-xs uppercase text-muted-content'>
+                {data.title}:
+              </Text.Subtitle>
+
+              <Text className='text-sm font-semibold first-letter:uppercase sm:col-span-2'>
+                {data.description}
+              </Text>
+            </li>
+          ))}
+        </ul>
+        </div>
+
+      <ul className='col-span-2 grid sm:grid-cols-2 gap-sm'>
+        {images.map(({type = '', data = {}}) => (
           <li
-            className='relative flex aspect-square w-full items-center justify-center overflow-hidden'
-            key={img.src}
+            className={cn('overflow-hidden rounded-3xl w-full bg-muted', imagesTypes[normKey(type)])}
+            key={data.src}
           >
-            <Image
-              className='size-1/3 rounded-md object-cover shadow-lg max-sm:hidden'
-              {...img}
-            />
-
-            <div className='absolute -inset-y-[7.5%] inset-x-0 -z-10'>
-              <ScrollAnimateTransform config={animationConfig}>
-                <Image
-                  quality={100}
-                  className='size-full object-cover'
-                  {...img}
-                />
-              </ScrollAnimateTransform>
-            </div>
-
-            <span className='absolute inset-0 -z-10 bg-main/10' />
+            <ScrollAnimateTransform config={ANIMATION_CONFIG}>
+              <Image
+                className='h-[115%] w-full object-cover'
+                {...data}
+              />
+            </ScrollAnimateTransform>
           </li>
         ))}
       </ul>
+</div>
     </Section>
   );
 };

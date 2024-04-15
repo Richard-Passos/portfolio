@@ -1,44 +1,44 @@
-import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
-
-import { DotsLoader, NextProject, Section } from '@/components';
+import { normCompName } from '@/utils';
 
 import Sections from './sections';
+import { Suspense } from 'react';
+import { DotsLoader } from '@/components';
 
-const ProjectView = async ({ promises }) => {
-  const { data = {}, meta: { adjacentIds = {} } = {} } = await promises.data;
+const ProjectView = ({ data = {}, promise }) => {
+  const { project = {}, sections = [] } = data;
 
-  if (!data.slug) notFound();
+  let lastTheme = '';
 
-  return (
-    <>
-      <Sections.Hero
-        data={data}
-        adjacentIds={adjacentIds}
-        theme='light'
+  return sections.map(({ slug = '', ...data }) => {
+    slug = slug.toLowerCase()
+
+    let Section = Sections[normCompName(slug)];
+
+    Section = Section && (slug === 'images' ? (
+      <Suspense fallback={<DotsLoader/>}>
+        <Section
+        hasTransition={
+          lastTheme !== data.theme
+        }
+        promise={promise}
+        project={{...project.data, adjacentIds: project.meta?.adjacentIds}}
+        {...data}
       />
-
-      <Sections.About
-        data={data}
-        theme='light'
-      />
-
-      <Suspense fallback={<DotsLoader />}>
-        <Sections.Images
-          promise={promises.images}
-          theme='dark'
-        />
       </Suspense>
-
+    ) : (
       <Section
-        hasTransition={false}
-        theme='dark'
-        className='flex items-center justify-center'
-      >
-        <NextProject id={adjacentIds.next} />
-      </Section>
-    </>
-  );
+        hasTransition={
+          slug.toLowerCase() !== 'hero' && lastTheme !== data.theme
+        }
+        project={{...project.data, adjacentIds: project.meta?.adjacentIds}}
+        {...data}
+      />
+    ))
+
+    lastTheme = data.theme;
+
+    return Section;
+  });
 };
 
 export default ProjectView;
