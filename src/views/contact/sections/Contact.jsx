@@ -20,14 +20,12 @@ const ContactViewContactSection = async ({
     availability: personalInfo.availability,
     localTime: <LocalTime key='local-time' />,
     location: `${personalInfo.location?.country}, ${personalInfo.location?.state}`,
-    buyCoffee: (
-      <Link
+    buyCoffee: <Link
         key='buy-coffee'
         href={personalInfo.buyCoffee?.href}
       >
         {personalInfo.buyCoffee?.label}
-      </Link>
-    ),
+      </Link>,
   };
 
   return (
