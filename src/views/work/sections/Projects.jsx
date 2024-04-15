@@ -64,7 +64,7 @@ const WorkViewProjectsSection = ({ className, data = {}, ...props }) => {
 const WorkViewProjectsSectionBlock = ({ data = {}, className, ...props }) => {
   const { action = {} } = data;
 
-  const items = normProjects(data.items)
+  const items = normProjects(data.items);
 
   return (
     <section

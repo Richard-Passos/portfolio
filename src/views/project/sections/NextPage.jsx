@@ -2,16 +2,21 @@ import { projectsApi } from '@/api';
 import { NextPage, Section } from '@/components';
 import { cn } from '@/utils';
 
-const ProjectViewNextPageSection = async ({ project = {}, className, data = {}, ...props }) => {
+const ProjectViewNextPageSection = async ({
+  project = {},
+  className,
+  data = {},
+  ...props
+}) => {
   const { adjacentIds = {} } = project;
 
-  const nextProject = (await projectsApi.getOne(adjacentIds.next)).data || {}
+  const nextProject = (await projectsApi.getOne(adjacentIds.next)).data || {};
 
   data = {
-    ...data, 
+    ...data,
     description: `${nextProject.title} ·`,
-    image: nextProject.thumbnail
-  }
+    image: nextProject.thumbnail,
+  };
 
   return (
     <Section

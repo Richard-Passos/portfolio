@@ -11,7 +11,8 @@ const ContactViewContactSection = async ({
   data = {},
   ...props
 }) => {
-  const personalInfo = (await globalsApi.getOne('personal-info')).data?.data || {};
+  const personalInfo =
+    (await globalsApi.getOne('personal-info')).data?.data || {};
 
   const { info = {}, form = {} } = data;
 

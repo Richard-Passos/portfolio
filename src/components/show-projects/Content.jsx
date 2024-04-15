@@ -3,19 +3,19 @@
 import { useContext } from 'react';
 
 import { ShowProjectsContext } from '@/contexts';
+import { useSetProjects } from '@/hooks';
 import { normCompName, normProjects } from '@/utils';
 
 import List from './list';
-import { useSetProjects } from '@/hooks';
 
 const ShowProjectsContent = ({ className, ...props }) => {
   const [state, setState] = useContext(ShowProjectsContext);
 
-  const { data, images } = normProjects(state.items)
-  
+  const { data, images } = normProjects(state.items);
+
   const ListType = List[normCompName(state.type)];
 
-  useSetProjects(setState)
+  useSetProjects(setState);
 
   return (
     !!state.items?.length && (

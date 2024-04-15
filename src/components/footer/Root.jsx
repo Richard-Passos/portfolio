@@ -1,12 +1,12 @@
+import { globalsApi } from '@/api';
 import { cn, getOpstTheme } from '@/utils';
 
 import Lines from '../lines';
-import Overlay from './Overlay';
 import Content from './Content';
-import { globalsApi } from '@/api';
+import Overlay from './Overlay';
 
 const Footer = async ({ className, ...props }) => {
-  const { theme, data = {} } = (await globalsApi.getOne('footer')).data || {}
+  const { theme, data = {} } = (await globalsApi.getOne('footer')).data || {};
 
   return (
     <footer
@@ -21,11 +21,12 @@ const Footer = async ({ className, ...props }) => {
         <Lines className='z-0' />
       </div>
 
-      <Overlay
-        className='top-[--pt]'
-      />
+      <Overlay className='top-[--pt]' />
 
-      <Content theme={theme} data={data} />
+      <Content
+        theme={theme}
+        data={data}
+      />
     </footer>
   );
 };

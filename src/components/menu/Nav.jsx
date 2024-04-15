@@ -19,7 +19,7 @@ const MenuNav = ({ className, items = [], ...props }) => {
       {...props}
     >
       <nav className='group relative z-10 flex w-9/10 max-w-xl flex-col justify-center'>
-        {items.map(({data = {}}, i) => (
+        {items.map(({ data = {} }, i) => (
           <div
             key={data.href}
             className='w-fit transition-[transform,opacity] [--opacity:.25] dark:[--opacity:.05] group-hover:[&:not(:hover)]:scale-x-95 group-hover:[&:not(:hover)]:opacity-[--opacity]'
@@ -41,7 +41,7 @@ const MenuNav = ({ className, items = [], ...props }) => {
         aria-hidden
         className='absolute flex w-full items-center justify-center'
       >
-        {items.map(({data = {}}, i) => (
+        {items.map(({ data = {} }, i) => (
           <li
             className={cn(
               'absolute w-full text-[min(32vmin,16rem)]/none font-extrabold uppercase tracking-tighter text-muted transition-[transform,opacity] duration-300',

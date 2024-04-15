@@ -75,7 +75,7 @@ const HomeViewWorkSection = ({ className, data = {}, ...props }) => {
 const HomeViewWorkSectionBlock = ({ className, data = {}, ...props }) => {
   const { action = {} } = data;
 
-  const items = normProjects(data.items)
+  const items = normProjects(data.items);
 
   return (
     <div

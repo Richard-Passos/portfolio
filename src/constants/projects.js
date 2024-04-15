@@ -28,7 +28,7 @@ const projects = [
           alt: 'project-00',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -37,7 +37,7 @@ const projects = [
           alt: 'project-01',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -46,7 +46,7 @@ const projects = [
           alt: 'project-02',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: 'full',
@@ -55,7 +55,7 @@ const projects = [
           alt: 'project-03',
           width: 500,
           height: 500,
-        }
+        },
       },
       {
         type: '1/2',
@@ -64,7 +64,7 @@ const projects = [
           alt: 'project-04',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -73,7 +73,7 @@ const projects = [
           alt: 'project-05',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: 'full',
@@ -82,7 +82,7 @@ const projects = [
           alt: 'project-06',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -91,7 +91,7 @@ const projects = [
           alt: 'project-07',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: '1/2',
@@ -100,7 +100,7 @@ const projects = [
           alt: 'project-08',
           width: 500,
           height: 500,
-        }
+        },
       },
     ],
   },
@@ -133,7 +133,7 @@ const projects = [
           alt: 'project-00',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -142,7 +142,7 @@ const projects = [
           alt: 'project-01',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -151,7 +151,7 @@ const projects = [
           alt: 'project-02',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: 'full',
@@ -160,7 +160,7 @@ const projects = [
           alt: 'project-03',
           width: 500,
           height: 500,
-        }
+        },
       },
       {
         type: '1/2',
@@ -169,7 +169,7 @@ const projects = [
           alt: 'project-04',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -178,7 +178,7 @@ const projects = [
           alt: 'project-05',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: 'full',
@@ -187,7 +187,7 @@ const projects = [
           alt: 'project-06',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -196,7 +196,7 @@ const projects = [
           alt: 'project-07',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: '1/2',
@@ -205,7 +205,7 @@ const projects = [
           alt: 'project-08',
           width: 500,
           height: 500,
-        }
+        },
       },
     ],
   },
@@ -238,7 +238,7 @@ const projects = [
           alt: 'project-00',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -247,7 +247,7 @@ const projects = [
           alt: 'project-01',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -256,7 +256,7 @@ const projects = [
           alt: 'project-02',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: 'full',
@@ -265,7 +265,7 @@ const projects = [
           alt: 'project-03',
           width: 500,
           height: 500,
-        }
+        },
       },
       {
         type: '1/2',
@@ -274,7 +274,7 @@ const projects = [
           alt: 'project-04',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -283,7 +283,7 @@ const projects = [
           alt: 'project-05',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: 'full',
@@ -292,7 +292,7 @@ const projects = [
           alt: 'project-06',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -301,7 +301,7 @@ const projects = [
           alt: 'project-07',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: '1/2',
@@ -310,7 +310,7 @@ const projects = [
           alt: 'project-08',
           width: 500,
           height: 500,
-        }
+        },
       },
     ],
   },
@@ -343,7 +343,7 @@ const projects = [
           alt: 'project-00',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -352,7 +352,7 @@ const projects = [
           alt: 'project-01',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -361,7 +361,7 @@ const projects = [
           alt: 'project-02',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: 'full',
@@ -370,7 +370,7 @@ const projects = [
           alt: 'project-03',
           width: 500,
           height: 500,
-        }
+        },
       },
       {
         type: '1/2',
@@ -379,7 +379,7 @@ const projects = [
           alt: 'project-04',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -388,7 +388,7 @@ const projects = [
           alt: 'project-05',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: 'full',
@@ -397,7 +397,7 @@ const projects = [
           alt: 'project-06',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -406,7 +406,7 @@ const projects = [
           alt: 'project-07',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: '1/2',
@@ -415,7 +415,7 @@ const projects = [
           alt: 'project-08',
           width: 500,
           height: 500,
-        }
+        },
       },
     ],
   },
@@ -448,7 +448,7 @@ const projects = [
           alt: 'project-00',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -457,7 +457,7 @@ const projects = [
           alt: 'project-01',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -466,7 +466,7 @@ const projects = [
           alt: 'project-02',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: 'full',
@@ -475,7 +475,7 @@ const projects = [
           alt: 'project-03',
           width: 500,
           height: 500,
-        }
+        },
       },
       {
         type: '1/2',
@@ -484,7 +484,7 @@ const projects = [
           alt: 'project-04',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -493,7 +493,7 @@ const projects = [
           alt: 'project-05',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: 'full',
@@ -502,7 +502,7 @@ const projects = [
           alt: 'project-06',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -511,7 +511,7 @@ const projects = [
           alt: 'project-07',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: '1/2',
@@ -520,7 +520,7 @@ const projects = [
           alt: 'project-08',
           width: 500,
           height: 500,
-        }
+        },
       },
     ],
   },
@@ -553,7 +553,7 @@ const projects = [
           alt: 'project-00',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -562,7 +562,7 @@ const projects = [
           alt: 'project-01',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -571,7 +571,7 @@ const projects = [
           alt: 'project-02',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: 'full',
@@ -580,7 +580,7 @@ const projects = [
           alt: 'project-03',
           width: 500,
           height: 500,
-        }
+        },
       },
       {
         type: '1/2',
@@ -589,7 +589,7 @@ const projects = [
           alt: 'project-04',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -598,7 +598,7 @@ const projects = [
           alt: 'project-05',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: 'full',
@@ -607,7 +607,7 @@ const projects = [
           alt: 'project-06',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -616,7 +616,7 @@ const projects = [
           alt: 'project-07',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: '1/2',
@@ -625,7 +625,7 @@ const projects = [
           alt: 'project-08',
           width: 500,
           height: 500,
-        }
+        },
       },
     ],
   },
@@ -658,7 +658,7 @@ const projects = [
           alt: 'project-00',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -667,7 +667,7 @@ const projects = [
           alt: 'project-01',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -676,7 +676,7 @@ const projects = [
           alt: 'project-02',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: 'full',
@@ -685,7 +685,7 @@ const projects = [
           alt: 'project-03',
           width: 500,
           height: 500,
-        }
+        },
       },
       {
         type: '1/2',
@@ -694,7 +694,7 @@ const projects = [
           alt: 'project-04',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -703,7 +703,7 @@ const projects = [
           alt: 'project-05',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: 'full',
@@ -712,7 +712,7 @@ const projects = [
           alt: 'project-06',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -721,7 +721,7 @@ const projects = [
           alt: 'project-07',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: '1/2',
@@ -730,7 +730,7 @@ const projects = [
           alt: 'project-08',
           width: 500,
           height: 500,
-        }
+        },
       },
     ],
   },
@@ -763,7 +763,7 @@ const projects = [
           alt: 'project-00',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -772,7 +772,7 @@ const projects = [
           alt: 'project-01',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -781,7 +781,7 @@ const projects = [
           alt: 'project-02',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: 'full',
@@ -790,7 +790,7 @@ const projects = [
           alt: 'project-03',
           width: 500,
           height: 500,
-        }
+        },
       },
       {
         type: '1/2',
@@ -799,7 +799,7 @@ const projects = [
           alt: 'project-04',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -808,7 +808,7 @@ const projects = [
           alt: 'project-05',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: 'full',
@@ -817,7 +817,7 @@ const projects = [
           alt: 'project-06',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -826,7 +826,7 @@ const projects = [
           alt: 'project-07',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: '1/2',
@@ -835,7 +835,7 @@ const projects = [
           alt: 'project-08',
           width: 500,
           height: 500,
-        }
+        },
       },
     ],
   },
@@ -868,7 +868,7 @@ const projects = [
           alt: 'project-00',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -877,7 +877,7 @@ const projects = [
           alt: 'project-01',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -886,7 +886,7 @@ const projects = [
           alt: 'project-02',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: 'full',
@@ -895,7 +895,7 @@ const projects = [
           alt: 'project-03',
           width: 500,
           height: 500,
-        }
+        },
       },
       {
         type: '1/2',
@@ -904,7 +904,7 @@ const projects = [
           alt: 'project-04',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -913,7 +913,7 @@ const projects = [
           alt: 'project-05',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: 'full',
@@ -922,7 +922,7 @@ const projects = [
           alt: 'project-06',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -931,7 +931,7 @@ const projects = [
           alt: 'project-07',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: '1/2',
@@ -940,7 +940,7 @@ const projects = [
           alt: 'project-08',
           width: 500,
           height: 500,
-        }
+        },
       },
     ],
   },
@@ -973,7 +973,7 @@ const projects = [
           alt: 'project-00',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -982,7 +982,7 @@ const projects = [
           alt: 'project-01',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -991,7 +991,7 @@ const projects = [
           alt: 'project-02',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: 'full',
@@ -1000,7 +1000,7 @@ const projects = [
           alt: 'project-03',
           width: 500,
           height: 500,
-        }
+        },
       },
       {
         type: '1/2',
@@ -1009,7 +1009,7 @@ const projects = [
           alt: 'project-04',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: '1/2',
@@ -1018,7 +1018,7 @@ const projects = [
           alt: 'project-05',
           width: 1200,
           height: 782,
-        }
+        },
       },
       {
         type: 'full',
@@ -1027,7 +1027,7 @@ const projects = [
           alt: 'project-06',
           width: 810,
           height: 810,
-        }
+        },
       },
       {
         type: '1/2',
@@ -1036,7 +1036,7 @@ const projects = [
           alt: 'project-07',
           width: 904,
           height: 510,
-        }
+        },
       },
       {
         type: '1/2',
@@ -1045,7 +1045,7 @@ const projects = [
           alt: 'project-08',
           width: 500,
           height: 500,
-        }
+        },
       },
     ],
   },

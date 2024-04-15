@@ -3,41 +3,47 @@ import { Image, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const ANIMATION_CONFIG = {
-    prop: 'y',
-    propPoints: ['-13%', '0%'],
+  prop: 'y',
+  propPoints: ['-13%', '0%'],
 };
 
-const ProjectViewAboutSection = ({ project = {}, data = {}, className, ...props }) => {
+const ProjectViewAboutSection = ({
+  project = {},
+  data = {},
+  className,
+  ...props
+}) => {
   const infoDescriptions = [
-    project.roles?.join(' & '),
-    project.client,
-    project.year,
- ],
- objectiveDescriptions = [
-  project.problem,
-  project.solution
- ]
+      project.roles?.join(' & '),
+      project.client,
+      project.year,
+    ],
+    objectiveDescriptions = [project.problem, project.solution];
 
-  const infoItems = data.infoItems?.map((data, i) => ({...data, description: infoDescriptions[i]})),
-  objectiveItems = data.objectiveItems?.map((data, i) => ({...data, description: objectiveDescriptions[i]}))
+  const infoItems = data.infoItems?.map((data, i) => ({
+      ...data,
+      description: infoDescriptions[i],
+    })),
+    objectiveItems = data.objectiveItems?.map((data, i) => ({
+      ...data,
+      description: objectiveDescriptions[i],
+    }));
 
   return (
     <Section
       className={cn(
-        'grid sm:grid-cols-3 w-9/10 max-w-screen-xl gap-md',
+        'grid w-9/10 max-w-screen-xl gap-md sm:grid-cols-3',
         className,
       )}
       {...props}
     >
-        <div className='sm:sticky top-md h-fit'>
-        <Text className='uppercase font-bold text-2xl'>
-          {project.title}
-        </Text>
+      <div className='top-md h-fit sm:sticky'>
+        <Text className='text-2xl font-bold uppercase'>{project.title}</Text>
 
-        <ul className='space-y-2 mt-4 max-w-52'>
+        <ul className='mt-4 max-w-52 space-y-2'>
           {infoItems?.map((data) => (
             <li
-              className='grid w-full sm:grid-cols-3 gap-x-sm gap-y-1.5'
+              className='grid w-full gap-x-sm gap-y-1.5 sm:grid-cols-3'
               key={data.title}
             >
               <Text.Subtitle className='text-xs uppercase text-muted-content'>
@@ -50,41 +56,40 @@ const ProjectViewAboutSection = ({ project = {}, data = {}, className, ...props 
             </li>
           ))}
         </ul>
-        </div>
+      </div>
 
       <div className='col-span-2'>
-          <Text.Title variants={{size: 'lg'}} className='normal-case first-letter:uppercase'>
-            {project.subtitle}
-          </Text.Title>
+        <Text.Title
+          variants={{ size: 'lg' }}
+          className='normal-case first-letter:uppercase'
+        >
+          {project.subtitle}
+        </Text.Title>
 
         <Text className='mt-4 max-w-2xl text-lg/relaxed font-medium'>
           {project.description}
         </Text>
 
-      <div className='mt-lg aspect-video rounded-3xl bg-muted overflow-hidden'>
-            <ScrollAnimate.Transform config={ANIMATION_CONFIG}>
-              <Image
-                className='h-[115%] w-full object-cover'
-                {...project.thumbnail}
-              />
-            </ScrollAnimate.Transform>
-      </div>
+        <div className='mt-lg aspect-video overflow-hidden rounded-3xl bg-muted'>
+          <ScrollAnimate.Transform config={ANIMATION_CONFIG}>
+            <Image
+              className='h-[115%] w-full object-cover'
+              {...project.thumbnail}
+            />
+          </ScrollAnimate.Transform>
+        </div>
 
-      <ul className='mt-md flex sm:ml-auto flex-col gap-md max-w-screen-sm'>
-        {objectiveItems?.map((data) => (
-          <li
-            key={data.title}
-          >
-            <Text.Subtitle className='uppercase'>
-              {data.title}
-            </Text.Subtitle>
+        <ul className='mt-md flex max-w-screen-sm flex-col gap-md sm:ml-auto'>
+          {objectiveItems?.map((data) => (
+            <li key={data.title}>
+              <Text.Subtitle className='uppercase'>{data.title}</Text.Subtitle>
 
-            <Text className='mt-sm text-xl text-muted-content'>
-              {data.description}
-            </Text>
-          </li>
-        ))}
-      </ul>
+              <Text className='mt-sm text-xl text-muted-content'>
+                {data.description}
+              </Text>
+            </li>
+          ))}
+        </ul>
       </div>
     </Section>
   );

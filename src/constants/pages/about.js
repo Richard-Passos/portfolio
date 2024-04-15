@@ -97,8 +97,8 @@ const aboutPage = {
         title: `My \nvalues`,
         subtitle: 'Always improving',
         block: {
-          items: globals.find((data) => data.slug === 'personal-info')?.data.values
-            .personal,
+          items: globals.find((data) => data.slug === 'personal-info')?.data
+            .values.personal,
           icons: [
             { src: '/images/smile.svg', title: 'Smile' },
             { src: '/images/globe.svg', title: 'Globe' },

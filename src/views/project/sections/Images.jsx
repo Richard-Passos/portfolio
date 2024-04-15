@@ -9,21 +9,30 @@ const ANIMATION_CONFIG = {
   propPoints: ['-13%', '0%'],
 };
 
-const ProjectViewImagesSection = async ({ promise, project = {}, className, data = {}, ...props }) => {
-  const {images = []} = (await promise)?.data || {}
+const ProjectViewImagesSection = async ({
+  promise,
+  project = {},
+  className,
+  data = {},
+  ...props
+}) => {
+  const { images = [] } = (await promise)?.data || {};
 
   const infoDescriptions = [
     project.roles?.join(' & '),
     project.client,
     project.year,
- ]
+  ];
 
-  const infoItems = data.infoItems?.map((data, i) => ({...data, description: infoDescriptions[i]}))
+  const infoItems = data.infoItems?.map((data, i) => ({
+    ...data,
+    description: infoDescriptions[i],
+  }));
 
   const imagesTypes = {
-    'full': 'col-span-full aspect-video',
+    full: 'col-span-full aspect-video',
     '1/2': 'aspect-[1/1.25]',
-  }
+  };
 
   return (
     <Section
@@ -77,46 +86,49 @@ const ProjectViewImagesSection = async ({ promise, project = {}, className, data
         </section>
       )}
 
-<div className='grid sm:grid-cols-3 w-9/10 mt-lg max-w-screen-xl gap-md relative'>
-<div className='sm:sticky top-md h-fit'>
-        <Text.Title className='uppercase text-2xl'>
-          {project.title}
-        </Text.Title>
+      <div className='relative mt-lg grid w-9/10 max-w-screen-xl gap-md sm:grid-cols-3'>
+        <div className='top-md h-fit sm:sticky'>
+          <Text.Title className='text-2xl uppercase'>
+            {project.title}
+          </Text.Title>
 
-        <ul className='space-y-2 mt-4 max-w-52'>
-          {infoItems?.map((data) => (
+          <ul className='mt-4 max-w-52 space-y-2'>
+            {infoItems?.map((data) => (
+              <li
+                className='grid w-full gap-x-sm gap-y-1.5 sm:grid-cols-3'
+                key={data.title}
+              >
+                <Text.Subtitle className='text-xs uppercase text-muted-content'>
+                  {data.title}:
+                </Text.Subtitle>
+
+                <Text className='text-sm font-semibold first-letter:uppercase sm:col-span-2'>
+                  {data.description}
+                </Text>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <ul className='col-span-2 grid gap-sm sm:grid-cols-2'>
+          {images.map(({ type = '', data = {} }) => (
             <li
-              className='grid w-full sm:grid-cols-3 gap-x-sm gap-y-1.5'
-              key={data.title}
+              className={cn(
+                'w-full overflow-hidden rounded-3xl bg-muted',
+                imagesTypes[normKey(type)],
+              )}
+              key={data.src}
             >
-              <Text.Subtitle className='text-xs uppercase text-muted-content'>
-                {data.title}:
-              </Text.Subtitle>
-
-              <Text className='text-sm font-semibold first-letter:uppercase sm:col-span-2'>
-                {data.description}
-              </Text>
+              <ScrollAnimateTransform config={ANIMATION_CONFIG}>
+                <Image
+                  className='h-[115%] w-full object-cover'
+                  {...data}
+                />
+              </ScrollAnimateTransform>
             </li>
           ))}
         </ul>
-        </div>
-
-      <ul className='col-span-2 grid sm:grid-cols-2 gap-sm'>
-        {images.map(({type = '', data = {}}) => (
-          <li
-            className={cn('overflow-hidden rounded-3xl w-full bg-muted', imagesTypes[normKey(type)])}
-            key={data.src}
-          >
-            <ScrollAnimateTransform config={ANIMATION_CONFIG}>
-              <Image
-                className='h-[115%] w-full object-cover'
-                {...data}
-              />
-            </ScrollAnimateTransform>
-          </li>
-        ))}
-      </ul>
-</div>
+      </div>
     </Section>
   );
 };

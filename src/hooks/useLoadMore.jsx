@@ -2,12 +2,13 @@
 
 import { useSearchParams } from 'next/navigation';
 import { useCallback, useRef } from 'react';
+
 import { useUpdateEffect } from '.';
 
 const useLoadMore = (getFn, setState, params) => {
   const searchParams = useSearchParams();
 
-  const page = useRef(+searchParams.get('page') || 1)
+  const page = useRef(+searchParams.get('page') || 1);
 
   const loadMore = useCallback(async () => {
     try {
@@ -27,10 +28,10 @@ const useLoadMore = (getFn, setState, params) => {
     } finally {
       setState((state) => ({ ...state, isLoading: false }));
     }
-  }, [setState, getFn, page, params])
+  }, [setState, getFn, page, params]);
 
   useUpdateEffect(() => {
-    page.current = 1
+    page.current = 1;
 
     setState((state) => ({
       ...state,

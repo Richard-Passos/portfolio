@@ -12,7 +12,8 @@ const workPage = {
         title: `Beyond code, \nboundaries <b>&</b> \nresults`,
         description:
           'Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.',
-        text: globals.find((data) => data.slug === 'personal-info')?.data.availability,
+        text: globals.find((data) => data.slug === 'personal-info')?.data
+          .availability,
         icon: { src: '/images/smile.svg', title: 'Smile' },
       },
     },
@@ -68,7 +69,8 @@ const workPage = {
               },
             },
           },
-          items: globals.find((data) => data.slug === 'personal-info')?.data.services,
+          items: globals.find((data) => data.slug === 'personal-info')?.data
+            .services,
         },
       },
     },
@@ -119,7 +121,8 @@ const workPage = {
         },
         block: {
           title: 'Some statistics...',
-          items: globals.find((data) => data.slug === 'personal-info')?.data.stats,
+          items: globals.find((data) => data.slug === 'personal-info')?.data
+            .stats,
         },
       },
     },
@@ -178,8 +181,8 @@ const workPage = {
         title: `My \nvalues`,
         subtitle: 'Always improving',
         block: {
-          items: globals.find((data) => data.slug === 'personal-info')?.data.values
-            .work,
+          items: globals.find((data) => data.slug === 'personal-info')?.data
+            .values.work,
           icons: [
             { src: '/images/globe.svg', title: 'Globe' },
             { src: '/images/smile.svg', title: 'Smile' },

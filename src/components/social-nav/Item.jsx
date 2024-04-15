@@ -17,9 +17,7 @@ const SocialNavItem = ({ className, variants, data = {}, ...props }) => {
       {...props}
     >
       <div className='size-6 shrink-0'>
-      <Icon
-        {...data.icon}
-      />
+        <Icon {...data.icon} />
       </div>
 
       <Text className='mr-auto overflow-hidden text-ellipsis whitespace-nowrap text-xs lowercase first-letter:uppercase'>

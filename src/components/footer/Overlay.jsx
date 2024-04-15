@@ -36,7 +36,7 @@ const FooterOverlay = ({ className, ...props }) => {
           </div>
         </div>
         <ScrollAnimate config={ANIMATION_CONFIG.opacity}>
-          <span className='absolute inset-0 bg-gradient-to-b -translate-y-[17.5%] from-main via-transparent to-transparent' />
+          <span className='absolute inset-0 -translate-y-[17.5%] bg-gradient-to-b from-main via-transparent to-transparent' />
         </ScrollAnimate>{' '}
       </div>
     </ScrollAnimate>

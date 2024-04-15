@@ -22,7 +22,7 @@ const ShowProjectsTypesTrigger = ({
       data-state={isActive ? 'active' : 'inactive'}
       {...props}
       onClick={(ev) => {
-        setState((state => ({...state, type})));
+        setState((state) => ({ ...state, type }));
 
         isFunctionThanCall(props.onClick, ev);
       }}

@@ -2,12 +2,15 @@
 
 import { createContext, useState } from 'react';
 
-const ShowProjectsContext = createContext([{
-  items: [],
-  type: '',
-  isLastPage: false,
-  isLoading: false,
-}, () => {}]);
+const ShowProjectsContext = createContext([
+  {
+    items: [],
+    type: '',
+    isLastPage: false,
+    isLoading: false,
+  },
+  () => {},
+]);
 
 const ShowProjectsProvider = ({ defaultState, value, ...props }) => {
   const [state, setState] = useState(defaultState);
@@ -17,10 +20,10 @@ const ShowProjectsProvider = ({ defaultState, value, ...props }) => {
       value={[
         {
           ...state,
-        ...value,
-      },
-      setState,
-    ]}
+          ...value,
+        },
+        setState,
+      ]}
       {...props}
     />
   );

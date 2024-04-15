@@ -15,16 +15,13 @@ const ShowProjectsLoadMore = ({ asChild, ...props }) => {
 
   const role = searchParams.get('role')?.toLowerCase();
 
-  const loadMore = useLoadMore(
-    projectsApiGet,
-    setState,
-    `&role=${role}`,
-  );
+  const loadMore = useLoadMore(projectsApiGet, setState, `&role=${role}`);
 
   const Tag = asChild ? Slot : 'button';
 
   return (
-    !state.isLastPage && !!state.items?.length && (
+    !state.isLastPage &&
+    !!state.items?.length && (
       <Tag
         disabled={state.isLoading}
         data-state={state.isLoading ? 'loading' : 'loaded'}

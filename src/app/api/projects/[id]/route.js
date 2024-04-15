@@ -2,11 +2,9 @@ import { projects } from '@/constants';
 import { normId } from '@/utils';
 
 const GET = async (_, { params: { id = '' } }) => {
-  id = normId(id)
+  id = normId(id);
 
-  const dataIdx = projects.findIndex(
-    ({ slug }) => normId(slug) === id,
-  );
+  const dataIdx = projects.findIndex(({ slug }) => normId(slug) === id);
 
   const data = projects[dataIdx],
     adjacentIds = {

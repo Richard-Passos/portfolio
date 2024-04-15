@@ -1,15 +1,14 @@
 'use client';
 
+import { Slot } from '@radix-ui/react-slot';
 import { useLenis } from '@studio-freight/react-lenis';
 
 import { isFunctionThanCall } from '@/utils';
 
-import { Slot } from '@radix-ui/react-slot';
-
-const BackTop = ({asChild, ...props}) => {
+const BackTop = ({ asChild, ...props }) => {
   const lenis = useLenis();
 
-  const Tag = asChild ? Slot : 'button'
+  const Tag = asChild ? Slot : 'button';
 
   return (
     <Tag

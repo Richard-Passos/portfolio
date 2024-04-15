@@ -8,31 +8,31 @@ const globals = [
           data: {
             href: '/',
             label: 'Home',
-          }
+          },
         },
         {
           type: '',
           data: {
             href: '/work',
             label: 'Work',
-          }
+          },
         },
         {
           type: '',
           data: {
             href: '/about',
             label: 'About',
-          }
+          },
         },
         {
           type: '',
           data: {
             href: '/contact',
             label: 'Contact',
-          }
+          },
         },
       ],
-    }
+    },
   },
   {
     slug: 'footer',
@@ -44,45 +44,45 @@ const globals = [
         action: {
           type: '',
           icon: {
-            src: '/images/arrow-up-right.svg'
+            src: '/images/arrow-up-right.svg',
           },
           data: {
             href: '/contact',
             label: 'Go to contact page',
             variants: {
-              size: 'lg'
-            }
-          }
-        }
+              size: 'lg',
+            },
+          },
+        },
       },
       personal: {
         smalls: [
           {
             href: 'https://github.com/Richard-Passos',
-            label: 'Made with ❤️ by <a>Richard</a>'
+            label: 'Made with ❤️ by <a>Richard</a>',
           },
           {
             href: 'https://www.linkedin.com/in/richardp-dev/',
-            label: '© 2024 <a>Richard Passos</a>'
-          }
+            label: '© 2024 <a>Richard Passos</a>',
+          },
         ],
         action: {
           type: '',
           icon: {
-            src: '/images/arrow-up.svg'
+            src: '/images/arrow-up.svg',
           },
           animation: 'slideUp',
           data: {
             label: 'Back top',
             variants: {
-              color: 'main', 
-              size: 'sm'
-            }
-          }
+              color: 'main',
+              size: 'sm',
+            },
+          },
         },
-        socialsTitle: 'Socials'
-      }
-    }
+        socialsTitle: 'Socials',
+      },
+    },
   },
   {
     slug: 'personal-info',
@@ -256,8 +256,8 @@ const globals = [
           },
         ],
       },
-    }
-  }
+    },
+  },
 ];
 
 export default globals;

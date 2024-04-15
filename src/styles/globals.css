@@ -61,7 +61,10 @@
     --border: 0 0% 90%;
   }
 
-  .theme-light:not(:has([class*='theme-'] .theme-primary)) .theme-primary, .theme-light.theme-primary, .theme-light > .theme-primary, .theme-light > :not([class*='theme-']) .theme-primary {
+  .theme-light:not(:has([class*='theme-'] .theme-primary)) .theme-primary,
+  .theme-light.theme-primary,
+  .theme-light > .theme-primary,
+  .theme-light > :not([class*='theme-']) .theme-primary {
     @apply text-content;
 
     --main: 0 0% 4.7%;
@@ -117,7 +120,10 @@
     --border: 0 0% 12%;
   }
 
-  .theme-dark:not(:has([class*='theme-'] .theme-primary)) .theme-primary, .theme-dark.theme-primary, .theme-dark > .theme-primary, .theme-dark > :not([class*='theme-']) .theme-primary {
+  .theme-dark:not(:has([class*='theme-'] .theme-primary)) .theme-primary,
+  .theme-dark.theme-primary,
+  .theme-dark > .theme-primary,
+  .theme-dark > :not([class*='theme-']) .theme-primary {
     @apply text-content;
 
     --main: 0 0% 98%;

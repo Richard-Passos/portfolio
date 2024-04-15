@@ -23,7 +23,8 @@ const HeaderNav = ({ className, items = [], ...props }) => {
     >
       {items.map(({ data = {} }, i) => {
         const isActive =
-          isHover === i || (pathname === data.href && isHover === DEFAULT_IS_HOVER);
+          isHover === i ||
+          (pathname === data.href && isHover === DEFAULT_IS_HOVER);
 
         return (
           <Link
