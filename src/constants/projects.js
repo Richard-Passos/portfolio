@@ -10,7 +10,7 @@ const projects = [
     client: 'Jhon doe',
     description:
       'The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.',
-    problem:
+    challenge:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
     solution:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
@@ -20,89 +20,108 @@ const projects = [
       width: 1200,
       height: 782,
     },
-    images: [
+    demoImages: [
       {
-        type: 'full',
-        data: {
-          src: '/images/project-00.jpg',
-          alt: 'project-00',
-          width: 1200,
-          height: 782,
-        },
-      },
+      src: '/images/project-01.png',
+      alt: 'Project 01 image',
+      width: 810,
+      height: 810,
+    },
       {
-        type: '1/2',
-        data: {
-          src: '/images/project-01.png',
-          alt: 'project-01',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-02.jpg',
-          alt: 'project-02',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-03.png',
-          alt: 'project-03',
-          width: 500,
-          height: 500,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-04.jpg',
-          alt: 'project-04',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-05.jpg',
-          alt: 'project-05',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-06.png',
-          alt: 'project-06',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-07.jpg',
-          alt: 'project-07',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-08.png',
-          alt: 'project-08',
-          width: 500,
-          height: 500,
-        },
-      },
+      src: '/images/project-02.jpg',
+      alt: 'Project 02 image',
+      width: 904,
+      height: 510,
+    }
     ],
+    images: {
+        templates: {
+          default: '"item-0 item-0""item-1 item-2""item-3 item-3""item-4 item-5""item-6 item-6""item-7 item-8""item-9 item-9"',
+        },
+      items: [
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-00.jpg',
+            alt: 'project-00',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-01.png',
+            alt: 'project-01',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-02.jpg',
+            alt: 'project-02',
+            width: 904,
+            height: 510,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-03.png',
+            alt: 'project-03',
+            width: 500,
+            height: 500,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-04.jpg',
+            alt: 'project-04',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-05.jpg',
+            alt: 'project-05',
+            width: 1200,
+            height: 782,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-06.png',
+            alt: 'project-06',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-07.jpg',
+            alt: 'project-07',
+            width: 904,
+            height: 510,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-08.png',
+            alt: 'project-08',
+            width: 500,
+            height: 500,
+          }
+      },
+    ]
+    },
   },
   {
     href: '#',
@@ -115,7 +134,7 @@ const projects = [
     client: 'Jhon doe',
     description:
       'The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.',
-    problem:
+    challenge:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
     solution:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
@@ -125,89 +144,108 @@ const projects = [
       width: 810,
       height: 810,
     },
-    images: [
+    demoImages: [
       {
-        type: 'full',
-        data: {
-          src: '/images/project-00.jpg',
-          alt: 'project-00',
-          width: 1200,
-          height: 782,
-        },
-      },
+      src: '/images/project-01.png',
+      alt: 'Project 01 image',
+      width: 810,
+      height: 810,
+    },
       {
-        type: '1/2',
-        data: {
-          src: '/images/project-01.png',
-          alt: 'project-01',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-02.jpg',
-          alt: 'project-02',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-03.png',
-          alt: 'project-03',
-          width: 500,
-          height: 500,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-04.jpg',
-          alt: 'project-04',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-05.jpg',
-          alt: 'project-05',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-06.png',
-          alt: 'project-06',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-07.jpg',
-          alt: 'project-07',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-08.png',
-          alt: 'project-08',
-          width: 500,
-          height: 500,
-        },
-      },
+      src: '/images/project-02.jpg',
+      alt: 'Project 02 image',
+      width: 904,
+      height: 510,
+    }
     ],
+    images: {
+        templates: {
+          default: '"item-0 item-0""item-1 item-2""item-3 item-3""item-4 item-5""item-6 item-6""item-7 item-8""item-9 item-9"',
+        },
+      items: [
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-00.jpg',
+            alt: 'project-00',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-01.png',
+            alt: 'project-01',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-02.jpg',
+            alt: 'project-02',
+            width: 904,
+            height: 510,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-03.png',
+            alt: 'project-03',
+            width: 500,
+            height: 500,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-04.jpg',
+            alt: 'project-04',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-05.jpg',
+            alt: 'project-05',
+            width: 1200,
+            height: 782,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-06.png',
+            alt: 'project-06',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-07.jpg',
+            alt: 'project-07',
+            width: 904,
+            height: 510,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-08.png',
+            alt: 'project-08',
+            width: 500,
+            height: 500,
+          }
+      },
+    ]
+    },
   },
   {
     href: '#',
@@ -220,7 +258,7 @@ const projects = [
     client: 'Jhon doe',
     description:
       'The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.',
-    problem:
+    challenge:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
     solution:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
@@ -230,89 +268,108 @@ const projects = [
       width: 904,
       height: 510,
     },
-    images: [
+    demoImages: [
       {
-        type: 'full',
-        data: {
-          src: '/images/project-00.jpg',
-          alt: 'project-00',
-          width: 1200,
-          height: 782,
-        },
-      },
+      src: '/images/project-01.png',
+      alt: 'Project 01 image',
+      width: 810,
+      height: 810,
+    },
       {
-        type: '1/2',
-        data: {
-          src: '/images/project-01.png',
-          alt: 'project-01',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-02.jpg',
-          alt: 'project-02',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-03.png',
-          alt: 'project-03',
-          width: 500,
-          height: 500,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-04.jpg',
-          alt: 'project-04',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-05.jpg',
-          alt: 'project-05',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-06.png',
-          alt: 'project-06',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-07.jpg',
-          alt: 'project-07',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-08.png',
-          alt: 'project-08',
-          width: 500,
-          height: 500,
-        },
-      },
+      src: '/images/project-02.jpg',
+      alt: 'Project 02 image',
+      width: 904,
+      height: 510,
+    }
     ],
+    images: {
+        templates: {
+          default: '"item-0 item-0""item-1 item-2""item-3 item-3""item-4 item-5""item-6 item-6""item-7 item-8""item-9 item-9"',
+        },
+      items: [
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-00.jpg',
+            alt: 'project-00',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-01.png',
+            alt: 'project-01',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-02.jpg',
+            alt: 'project-02',
+            width: 904,
+            height: 510,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-03.png',
+            alt: 'project-03',
+            width: 500,
+            height: 500,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-04.jpg',
+            alt: 'project-04',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-05.jpg',
+            alt: 'project-05',
+            width: 1200,
+            height: 782,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-06.png',
+            alt: 'project-06',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-07.jpg',
+            alt: 'project-07',
+            width: 904,
+            height: 510,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-08.png',
+            alt: 'project-08',
+            width: 500,
+            height: 500,
+          }
+      },
+    ]
+    },
   },
   {
     href: '#',
@@ -325,7 +382,7 @@ const projects = [
     client: 'Jhon doe',
     description:
       'The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.',
-    problem:
+    challenge:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
     solution:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
@@ -335,89 +392,108 @@ const projects = [
       width: 500,
       height: 500,
     },
-    images: [
+    demoImages: [
       {
-        type: 'full',
-        data: {
-          src: '/images/project-00.jpg',
-          alt: 'project-00',
-          width: 1200,
-          height: 782,
-        },
-      },
+      src: '/images/project-01.png',
+      alt: 'Project 01 image',
+      width: 810,
+      height: 810,
+    },
       {
-        type: '1/2',
-        data: {
-          src: '/images/project-01.png',
-          alt: 'project-01',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-02.jpg',
-          alt: 'project-02',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-03.png',
-          alt: 'project-03',
-          width: 500,
-          height: 500,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-04.jpg',
-          alt: 'project-04',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-05.jpg',
-          alt: 'project-05',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-06.png',
-          alt: 'project-06',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-07.jpg',
-          alt: 'project-07',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-08.png',
-          alt: 'project-08',
-          width: 500,
-          height: 500,
-        },
-      },
+      src: '/images/project-02.jpg',
+      alt: 'Project 02 image',
+      width: 904,
+      height: 510,
+    }
     ],
+    images: {
+        templates: {
+          default: '"item-0 item-0""item-1 item-2""item-3 item-3""item-4 item-5""item-6 item-6""item-7 item-8""item-9 item-9"',
+        },
+      items: [
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-00.jpg',
+            alt: 'project-00',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-01.png',
+            alt: 'project-01',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-02.jpg',
+            alt: 'project-02',
+            width: 904,
+            height: 510,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-03.png',
+            alt: 'project-03',
+            width: 500,
+            height: 500,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-04.jpg',
+            alt: 'project-04',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-05.jpg',
+            alt: 'project-05',
+            width: 1200,
+            height: 782,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-06.png',
+            alt: 'project-06',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-07.jpg',
+            alt: 'project-07',
+            width: 904,
+            height: 510,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-08.png',
+            alt: 'project-08',
+            width: 500,
+            height: 500,
+          }
+      },
+    ]
+    },
   },
   {
     href: '#',
@@ -430,7 +506,7 @@ const projects = [
     client: 'Jhon doe',
     description:
       'The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.',
-    problem:
+    challenge:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
     solution:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
@@ -440,89 +516,108 @@ const projects = [
       width: 1200,
       height: 782,
     },
-    images: [
+    demoImages: [
       {
-        type: 'full',
-        data: {
-          src: '/images/project-00.jpg',
-          alt: 'project-00',
-          width: 1200,
-          height: 782,
-        },
-      },
+      src: '/images/project-01.png',
+      alt: 'Project 01 image',
+      width: 810,
+      height: 810,
+    },
       {
-        type: '1/2',
-        data: {
-          src: '/images/project-01.png',
-          alt: 'project-01',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-02.jpg',
-          alt: 'project-02',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-03.png',
-          alt: 'project-03',
-          width: 500,
-          height: 500,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-04.jpg',
-          alt: 'project-04',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-05.jpg',
-          alt: 'project-05',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-06.png',
-          alt: 'project-06',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-07.jpg',
-          alt: 'project-07',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-08.png',
-          alt: 'project-08',
-          width: 500,
-          height: 500,
-        },
-      },
+      src: '/images/project-02.jpg',
+      alt: 'Project 02 image',
+      width: 904,
+      height: 510,
+    }
     ],
+    images: {
+        templates: {
+          default: '"item-0 item-0""item-1 item-2""item-3 item-3""item-4 item-5""item-6 item-6""item-7 item-8""item-9 item-9"',
+        },
+      items: [
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-00.jpg',
+            alt: 'project-00',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-01.png',
+            alt: 'project-01',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-02.jpg',
+            alt: 'project-02',
+            width: 904,
+            height: 510,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-03.png',
+            alt: 'project-03',
+            width: 500,
+            height: 500,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-04.jpg',
+            alt: 'project-04',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-05.jpg',
+            alt: 'project-05',
+            width: 1200,
+            height: 782,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-06.png',
+            alt: 'project-06',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-07.jpg',
+            alt: 'project-07',
+            width: 904,
+            height: 510,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-08.png',
+            alt: 'project-08',
+            width: 500,
+            height: 500,
+          }
+      },
+    ]
+    },
   },
   {
     href: '#',
@@ -535,7 +630,7 @@ const projects = [
     client: 'Jhon doe',
     description:
       'The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.',
-    problem:
+    challenge:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
     solution:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
@@ -545,89 +640,108 @@ const projects = [
       width: 1200,
       height: 782,
     },
-    images: [
+    demoImages: [
       {
-        type: 'full',
-        data: {
-          src: '/images/project-00.jpg',
-          alt: 'project-00',
-          width: 1200,
-          height: 782,
-        },
-      },
+      src: '/images/project-01.png',
+      alt: 'Project 01 image',
+      width: 810,
+      height: 810,
+    },
       {
-        type: '1/2',
-        data: {
-          src: '/images/project-01.png',
-          alt: 'project-01',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-02.jpg',
-          alt: 'project-02',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-03.png',
-          alt: 'project-03',
-          width: 500,
-          height: 500,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-04.jpg',
-          alt: 'project-04',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-05.jpg',
-          alt: 'project-05',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-06.png',
-          alt: 'project-06',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-07.jpg',
-          alt: 'project-07',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-08.png',
-          alt: 'project-08',
-          width: 500,
-          height: 500,
-        },
-      },
+      src: '/images/project-02.jpg',
+      alt: 'Project 02 image',
+      width: 904,
+      height: 510,
+    }
     ],
+    images: {
+        templates: {
+          default: '"item-0 item-0""item-1 item-2""item-3 item-3""item-4 item-5""item-6 item-6""item-7 item-8""item-9 item-9"',
+        },
+      items: [
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-00.jpg',
+            alt: 'project-00',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-01.png',
+            alt: 'project-01',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-02.jpg',
+            alt: 'project-02',
+            width: 904,
+            height: 510,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-03.png',
+            alt: 'project-03',
+            width: 500,
+            height: 500,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-04.jpg',
+            alt: 'project-04',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-05.jpg',
+            alt: 'project-05',
+            width: 1200,
+            height: 782,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-06.png',
+            alt: 'project-06',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-07.jpg',
+            alt: 'project-07',
+            width: 904,
+            height: 510,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-08.png',
+            alt: 'project-08',
+            width: 500,
+            height: 500,
+          }
+      },
+    ]
+    },
   },
   {
     href: '#',
@@ -640,7 +754,7 @@ const projects = [
     client: 'Jhon doe',
     description:
       'The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.',
-    problem:
+    challenge:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
     solution:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
@@ -650,89 +764,108 @@ const projects = [
       width: 810,
       height: 810,
     },
-    images: [
+    demoImages: [
       {
-        type: 'full',
-        data: {
-          src: '/images/project-00.jpg',
-          alt: 'project-00',
-          width: 1200,
-          height: 782,
-        },
-      },
+      src: '/images/project-01.png',
+      alt: 'Project 01 image',
+      width: 810,
+      height: 810,
+    },
       {
-        type: '1/2',
-        data: {
-          src: '/images/project-01.png',
-          alt: 'project-01',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-02.jpg',
-          alt: 'project-02',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-03.png',
-          alt: 'project-03',
-          width: 500,
-          height: 500,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-04.jpg',
-          alt: 'project-04',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-05.jpg',
-          alt: 'project-05',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-06.png',
-          alt: 'project-06',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-07.jpg',
-          alt: 'project-07',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-08.png',
-          alt: 'project-08',
-          width: 500,
-          height: 500,
-        },
-      },
+      src: '/images/project-02.jpg',
+      alt: 'Project 02 image',
+      width: 904,
+      height: 510,
+    }
     ],
+    images: {
+        templates: {
+          default: '"item-0 item-0""item-1 item-2""item-3 item-3""item-4 item-5""item-6 item-6""item-7 item-8""item-9 item-9"',
+        },
+      items: [
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-00.jpg',
+            alt: 'project-00',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-01.png',
+            alt: 'project-01',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-02.jpg',
+            alt: 'project-02',
+            width: 904,
+            height: 510,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-03.png',
+            alt: 'project-03',
+            width: 500,
+            height: 500,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-04.jpg',
+            alt: 'project-04',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-05.jpg',
+            alt: 'project-05',
+            width: 1200,
+            height: 782,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-06.png',
+            alt: 'project-06',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-07.jpg',
+            alt: 'project-07',
+            width: 904,
+            height: 510,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-08.png',
+            alt: 'project-08',
+            width: 500,
+            height: 500,
+          }
+      },
+    ]
+    },
   },
   {
     href: '#',
@@ -745,7 +878,7 @@ const projects = [
     client: 'Jhon doe',
     description:
       'The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.',
-    problem:
+    challenge:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
     solution:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
@@ -755,89 +888,108 @@ const projects = [
       width: 904,
       height: 510,
     },
-    images: [
+    demoImages: [
       {
-        type: 'full',
-        data: {
-          src: '/images/project-00.jpg',
-          alt: 'project-00',
-          width: 1200,
-          height: 782,
-        },
-      },
+      src: '/images/project-01.png',
+      alt: 'Project 01 image',
+      width: 810,
+      height: 810,
+    },
       {
-        type: '1/2',
-        data: {
-          src: '/images/project-01.png',
-          alt: 'project-01',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-02.jpg',
-          alt: 'project-02',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-03.png',
-          alt: 'project-03',
-          width: 500,
-          height: 500,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-04.jpg',
-          alt: 'project-04',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-05.jpg',
-          alt: 'project-05',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-06.png',
-          alt: 'project-06',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-07.jpg',
-          alt: 'project-07',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-08.png',
-          alt: 'project-08',
-          width: 500,
-          height: 500,
-        },
-      },
+      src: '/images/project-02.jpg',
+      alt: 'Project 02 image',
+      width: 904,
+      height: 510,
+    }
     ],
+    images: {
+        templates: {
+          default: '"item-0 item-0""item-1 item-2""item-3 item-3""item-4 item-5""item-6 item-6""item-7 item-8""item-9 item-9"',
+        },
+      items: [
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-00.jpg',
+            alt: 'project-00',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-01.png',
+            alt: 'project-01',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-02.jpg',
+            alt: 'project-02',
+            width: 904,
+            height: 510,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-03.png',
+            alt: 'project-03',
+            width: 500,
+            height: 500,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-04.jpg',
+            alt: 'project-04',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-05.jpg',
+            alt: 'project-05',
+            width: 1200,
+            height: 782,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-06.png',
+            alt: 'project-06',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-07.jpg',
+            alt: 'project-07',
+            width: 904,
+            height: 510,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-08.png',
+            alt: 'project-08',
+            width: 500,
+            height: 500,
+          }
+      },
+    ]
+    },
   },
   {
     href: '#',
@@ -850,7 +1002,7 @@ const projects = [
     client: 'Jhon doe',
     description:
       'The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.',
-    problem:
+    challenge:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
     solution:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
@@ -860,89 +1012,108 @@ const projects = [
       width: 500,
       height: 500,
     },
-    images: [
+    demoImages: [
       {
-        type: 'full',
-        data: {
-          src: '/images/project-00.jpg',
-          alt: 'project-00',
-          width: 1200,
-          height: 782,
-        },
-      },
+      src: '/images/project-01.png',
+      alt: 'Project 01 image',
+      width: 810,
+      height: 810,
+    },
       {
-        type: '1/2',
-        data: {
-          src: '/images/project-01.png',
-          alt: 'project-01',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-02.jpg',
-          alt: 'project-02',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-03.png',
-          alt: 'project-03',
-          width: 500,
-          height: 500,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-04.jpg',
-          alt: 'project-04',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-05.jpg',
-          alt: 'project-05',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-06.png',
-          alt: 'project-06',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-07.jpg',
-          alt: 'project-07',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-08.png',
-          alt: 'project-08',
-          width: 500,
-          height: 500,
-        },
-      },
+      src: '/images/project-02.jpg',
+      alt: 'Project 02 image',
+      width: 904,
+      height: 510,
+    }
     ],
+    images: {
+        templates: {
+          default: '"item-0 item-0""item-1 item-2""item-3 item-3""item-4 item-5""item-6 item-6""item-7 item-8""item-9 item-9"',
+        },
+      items: [
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-00.jpg',
+            alt: 'project-00',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-01.png',
+            alt: 'project-01',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-02.jpg',
+            alt: 'project-02',
+            width: 904,
+            height: 510,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-03.png',
+            alt: 'project-03',
+            width: 500,
+            height: 500,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-04.jpg',
+            alt: 'project-04',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-05.jpg',
+            alt: 'project-05',
+            width: 1200,
+            height: 782,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-06.png',
+            alt: 'project-06',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-07.jpg',
+            alt: 'project-07',
+            width: 904,
+            height: 510,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-08.png',
+            alt: 'project-08',
+            width: 500,
+            height: 500,
+          }
+      },
+    ]
+    },
   },
   {
     href: '#',
@@ -955,7 +1126,7 @@ const projects = [
     client: 'Jhon doe',
     description:
       'The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.',
-    problem:
+    challenge:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
     solution:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?',
@@ -965,89 +1136,108 @@ const projects = [
       width: 1200,
       height: 782,
     },
-    images: [
+    demoImages: [
       {
-        type: 'full',
-        data: {
-          src: '/images/project-00.jpg',
-          alt: 'project-00',
-          width: 1200,
-          height: 782,
-        },
-      },
+      src: '/images/project-01.png',
+      alt: 'Project 01 image',
+      width: 810,
+      height: 810,
+    },
       {
-        type: '1/2',
-        data: {
-          src: '/images/project-01.png',
-          alt: 'project-01',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-02.jpg',
-          alt: 'project-02',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-03.png',
-          alt: 'project-03',
-          width: 500,
-          height: 500,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-04.jpg',
-          alt: 'project-04',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-05.jpg',
-          alt: 'project-05',
-          width: 1200,
-          height: 782,
-        },
-      },
-      {
-        type: 'full',
-        data: {
-          src: '/images/project-06.png',
-          alt: 'project-06',
-          width: 810,
-          height: 810,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-07.jpg',
-          alt: 'project-07',
-          width: 904,
-          height: 510,
-        },
-      },
-      {
-        type: '1/2',
-        data: {
-          src: '/images/project-08.png',
-          alt: 'project-08',
-          width: 500,
-          height: 500,
-        },
-      },
+      src: '/images/project-02.jpg',
+      alt: 'Project 02 image',
+      width: 904,
+      height: 510,
+    }
     ],
+    images: {
+        templates: {
+          default: '"item-0 item-0""item-1 item-2""item-3 item-3""item-4 item-5""item-6 item-6""item-7 item-8""item-9 item-9"',
+        },
+      items: [
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-00.jpg',
+            alt: 'project-00',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-01.png',
+            alt: 'project-01',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-02.jpg',
+            alt: 'project-02',
+            width: 904,
+            height: 510,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-03.png',
+            alt: 'project-03',
+            width: 500,
+            height: 500,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-04.jpg',
+            alt: 'project-04',
+            width: 1200,
+            height: 782,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-05.jpg',
+            alt: 'project-05',
+            width: 1200,
+            height: 782,
+          }
+      },
+        {
+          aspectRatio: '16/9',
+          data: {
+            src: '/images/project-06.png',
+            alt: 'project-06',
+            width: 810,
+            height: 810,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-07.jpg',
+            alt: 'project-07',
+            width: 904,
+            height: 510,
+          }
+      },
+      {
+        aspectRatio: '1/1.25',
+        data: {
+            src: '/images/project-08.png',
+            alt: 'project-08',
+            width: 500,
+            height: 500,
+          }
+      },
+    ]
+    },
   },
 ];
 
