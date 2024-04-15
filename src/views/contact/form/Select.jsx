@@ -10,6 +10,7 @@ import {
   ChevronUpIcon,
 } from '@/components/ui/icon/icons';
 import { useChangeKeyWhenFalsy, useFormField } from '@/hooks';
+import { normId } from '@/utils';
 
 const ContactViewFormSelect = ({ placeholder, data = [], ...props }) => {
   const { name } = useFormField(),
@@ -45,7 +46,7 @@ const ContactViewFormSelect = ({ placeholder, data = [], ...props }) => {
           {data.map((data = '') => (
             <ContactFormSelectItem
               key={data}
-              value={data.toLowerCase().replace(/ _/, '-')}
+              value={normId(data)}
             >
               {data}
             </ContactFormSelectItem>
