@@ -23,7 +23,7 @@ const notFoundPage = {
   ],
   metadata: {
     title: 'Error',
-    description: 'Not found page on Richatd Passos portfolio.',
+    description: 'Not found page on Richard Passos portfolio.',
   },
 };
 
