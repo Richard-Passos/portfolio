@@ -2,7 +2,7 @@ import { globalsApi } from '@/api';
 import { HorizontalScroll, LocalTime, Section, SocialNav } from '@/components';
 import { Icon, Link, Text } from '@/components/ui';
 import { PaperPlaneIcon } from '@/components/ui/icon/icons';
-import { cn } from '@/utils';
+import { cn, normKey } from '@/utils';
 
 import Form from '../form';
 
@@ -17,9 +17,9 @@ const ContactViewContactSection = async ({
 
   const infoData = {
     availability: personalInfo.availability,
-    'local-time': <LocalTime key='local-time' />,
+    localTime: <LocalTime key='local-time' />,
     location: `${personalInfo.location?.country}, ${personalInfo.location?.state}`,
-    'buy-coffee': (
+    buyCoffee: (
       <Link
         key='buy-coffee'
         href={personalInfo.buyCoffee?.href}
@@ -32,7 +32,7 @@ const ContactViewContactSection = async ({
   return (
     <Section
       className={cn(
-        'flex items-center justify-center gap-x-sm gap-y-md py-[calc(theme(spacing.lg)*1.5)] max-md:flex-col sm:w-9/10',
+        'flex items-center justify-center gap-x-sm gap-y-md py-[calc(var(--py)*1.5)] max-md:flex-col sm:w-9/10',
         className,
       )}
       {...props}
@@ -63,7 +63,7 @@ const ContactViewContactSection = async ({
               </Text.Title>
 
               <Text className='mt-0.5 text-sm first-letter:uppercase'>
-                {infoData[data.slug?.toLowerCase().replace(/[ _]/, '-')]}
+                {infoData[normKey(data.slug)]}
               </Text>
             </li>
           ))}
