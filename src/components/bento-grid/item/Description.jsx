@@ -12,7 +12,7 @@ const BentoGridItemDescription = ({ className, data = {}, ...props }) => {
     >
       <Badge
         className='w-fit'
-        variants={{ color: 'inverted', style: 'outline' }}
+        variants={{ color: 'muted' }}
       >
         #{data.title}
       </Badge>
