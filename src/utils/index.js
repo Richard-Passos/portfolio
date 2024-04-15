@@ -8,5 +8,6 @@ export { default as normCompName } from './normCompName';
 export { default as normId } from './normId';
 export { default as normKey } from './normKey';
 export { default as normProjects } from './normProjects';
+export { default as normTemplates } from './normTemplates';
 export { default as setRefs } from './setRefs';
 export { default as transformTemplate } from './transformTemplate';
