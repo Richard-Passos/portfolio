@@ -22,6 +22,15 @@ const projectPage = {
             },
           },
           {
+            type: 'magnetic',
+            icon: {
+              src: '/images/eye.svg'
+            },
+            data: {
+              label: 'View project'
+            }
+          },
+          {
             type: 'next',
             icon: {
               src: '/images/arrow-right.svg',
@@ -37,13 +46,6 @@ const projectPage = {
             },
           },
         ],
-      },
-    },
-    {
-      slug: 'about',
-      theme: 'light',
-      id: 'scrollTo',
-      data: {
         infoItems: [
           {
             title: 'Roles',
@@ -57,28 +59,10 @@ const projectPage = {
         ],
         objectiveItems: [
           {
-            title: 'The problem',
+            title: 'The challenge',
           },
           {
             title: 'The solution',
-          },
-        ],
-      },
-    },
-    {
-      slug: 'images',
-      theme: 'dark',
-      data: {
-        title: ['Great', 'images'],
-        infoItems: [
-          {
-            title: 'Roles',
-          },
-          {
-            title: 'Client',
-          },
-          {
-            title: 'Year',
           },
         ],
       },
@@ -88,18 +72,32 @@ const projectPage = {
       theme: 'dark',
       data: {
         title: 'Next project',
-        action: {
-          icon: {
-            src: '/images/arrow-up-right.svg',
-          },
-          data: {
-            label: 'Go to next project',
-            href: '/contact',
-            variants: {
-              color: 'main',
+        actions: [
+          {
+            type: '',
+            icon: {
+              src: '/images/arrow-up-right.svg',
+            },
+            data: {
+              label: 'Go to next project',
+              variants: {
+                color: 'main',
+              },
             },
           },
-        },
+          {
+            type: '',
+            icon: { src: '/images/arrow-up.svg' },
+            animation: 'slideUp',
+            data: {
+              label: 'All projects',
+              href: '/projects',
+              variants: {
+                color: 'main',
+              },
+            },
+          },
+        ]
       },
     },
   ],
