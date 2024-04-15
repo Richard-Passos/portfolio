@@ -10,8 +10,10 @@ const AboutViewHeroSection = ({ className, data, ...props }) => {
   return (
     <Section
       forceHeaderTheme
-      className={cn('flex flex-col items-center justify-center', className)}
-      {...props}
+      className={cn(
+        '-mt-[--header-h] flex min-h-svh flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))]',
+        className,
+      )}      {...props}
     >
       <div className='w-9/10 max-w-screen-lg'>
         <TextTitle
@@ -54,8 +56,9 @@ const AboutViewHeroSection = ({ className, data, ...props }) => {
         data={data.images}
       />
 
-      <span className='absolute top-0 h-px w-[95%] bg-border opacity-60 dark:opacity-20' />
-    </Section>
+    <div className='absolute top-0 h-[--header-h] w-full bg-main'>
+        <span className='absolute left-1/2 top-full h-px w-[95%] -translate-x-1/2 bg-border opacity-60 dark:opacity-20' />
+      </div>    </Section>
   );
 };
 
