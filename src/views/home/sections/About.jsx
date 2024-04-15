@@ -8,7 +8,7 @@ import {
 } from '@/components';
 import { Icon } from '@/components/ui';
 import { Text } from '@/components/ui/text';
-import { cn, normCompName } from '@/utils';
+import { cn, normCompName, normTemplates } from '@/utils';
 
 const HomeViewAboutSection = ({ className, data = {}, ...props }) => {
   return (
@@ -83,13 +83,7 @@ const HomeViewAboutSectionGrid = ({
     <BentoGrid
       className={cn('w-9/10 max-w-screen-lg', className)}
       style={{
-        ...Object.entries(data.templates)?.reduce(
-          (obj, [key, val]) => ({
-            ...obj,
-            [`--${key.toLowerCase()}-template`]: val,
-          }),
-          {},
-        ),
+        ...normTemplates(data.templates),
         ...style,
       }}
       {...props}
