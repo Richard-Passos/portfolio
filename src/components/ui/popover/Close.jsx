@@ -10,7 +10,7 @@ const PopoverClose = ({ className, ...props }, ref) => {
     <Close
       aria-label='Close'
       className={cn(
-        'absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-sm transition-colors hover:bg-content/20 disabled:pointer-events-none disabled:opacity-50 [&>svg]:h-4 [&>svg]:w-4',
+        'absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-sm transition-colors hover:bg-content/20 disabled:pointer-events-none disabled:opacity-50 [&>svg]:size-4',
         className,
       )}
       ref={ref}
