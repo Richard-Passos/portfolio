@@ -1,7 +1,7 @@
 import { BentoGrid, Section } from '@/components';
 import { Badge } from '@/components/ui';
 import { TextTitle } from '@/components/ui/text';
-import { cn, normCompName } from '@/utils';
+import { cn, normCompName, normTemplates } from '@/utils';
 
 const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
   return (
@@ -57,13 +57,7 @@ const ContactViewHeroSectionGrid = ({ data = {}, style, ...props }) => {
   return (
     <BentoGrid
       style={{
-        ...Object.entries(data.templates)?.reduce(
-          (obj, [key, val]) => ({
-            ...obj,
-            [`--${key.toLowerCase()}-template`]: val,
-          }),
-          {},
-        ),
+        ...normTemplates(data.templates),
         ...style,
       }}
       {...props}
