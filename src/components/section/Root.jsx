@@ -19,8 +19,8 @@ const Section = (props, ref) => {
   return (
     <Tag
       className={cn(
-        'relative min-h-screen w-full py-lg 2xl:min-h-bounds',
-        hasTransition && 'pt-[calc(theme(spacing.lg)*1.5)]',
+        'relative min-h-screen w-full py-[--py] [--py:theme(spacing.lg)] 2xl:min-h-bounds',
+        hasTransition && 'pt-[calc(var(--py)*1.5)]',
         `theme-${theme}`,
         className,
       )}
