@@ -3,6 +3,7 @@ import ItemDataChanger from './DataChanger';
 import ItemDescription from './Description';
 import ItemHorizontalScroll from './HorizontalScroll';
 import ItemIcons from './Icons';
+import ItemImage from './Image';
 import ItemIndicator from './Indicator';
 import ItemInfinityScroll from './InfinityScroll';
 import ItemLink from './Link';
@@ -17,6 +18,7 @@ Item.DataChanger = ItemDataChanger;
 Item.Description = ItemDescription;
 Item.HorizontalScroll = ItemHorizontalScroll;
 Item.Icons = ItemIcons;
+Item.Image = ItemImage;
 Item.Indicator = ItemIndicator;
 Item.InfinityScroll = ItemInfinityScroll;
 Item.Link = ItemLink;
@@ -31,6 +33,7 @@ export {
   ItemDescription,
   ItemHorizontalScroll,
   ItemIcons,
+  ItemImage,
   ItemIndicator,
   ItemInfinityScroll,
   ItemLink,
