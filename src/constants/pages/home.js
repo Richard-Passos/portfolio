@@ -1,3 +1,4 @@
+import globals from '../globals';
 import projects from '../projects';
 
 const homePage = {
@@ -10,7 +11,7 @@ const homePage = {
         title: `Turning heads \n<b>&</b> conquering \nhearts`,
         description:
           "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
-        text: 2024,
+        text: '(2024)',
         icon: { src: '/images/smile.svg', title: 'Smile' },
       },
     },
@@ -20,9 +21,9 @@ const homePage = {
       id: 'scrollTo',
       data: {
         title: ['About', 'work'],
-        subtitle: 'Just someone who wanna conquer minds and hearts.',
+        subtitle: 'Just someone who wanna conquer minds',
         description:
-          "I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
+          "My obsession is to deliver a digital experience that not only serves a great purpose, but give your business an unfair advantage.",
         block: {
           title: 'Selected works',
           items: projects.filter((data) => data.isSelected),
@@ -95,7 +96,8 @@ const homePage = {
               data: {
                 icon: { src: '/images/fingerprint.svg', title: 'Fingerprint' },
                 title: 'My values',
-                items: ['Integrity', 'Curiosity', 'Respect', 'Gratitude'],
+                items: globals.find((data) => data.slug === 'personal-info')?.data
+                .values.personal.map((data) => data.title),
               },
             },
             {
