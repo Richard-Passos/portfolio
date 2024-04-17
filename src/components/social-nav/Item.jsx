@@ -8,19 +8,19 @@ const SocialNavItem = ({ className, variants, data = {}, ...props }) => {
   return (
     <MagneticButton
       className={cn(
-        'aspect-auto h-12 rounded-sm [--variant-a:--primary] hover:z-10 hover:[--variant-c:--primary-c] [&>span>span]:px-6 [&_svg]:size-full',
+        'aspect-auto h-12 rounded-sm *:*:justify-start hover:z-10 [&_svg]:size-full',
         className,
       )}
       limit={0.2}
-      variants={{ color: 'main', ...variants }}
+      variants={{ color: 'main', style: 'alternate', ...variants }}
       href={data.href}
       {...props}
     >
-      <div className='size-6 shrink-0'>
+      <div className='size-6 ml-6 shrink-0'>
         <Icon {...data.icon} />
       </div>
 
-      <Text className='mr-auto overflow-hidden text-ellipsis whitespace-nowrap text-xs lowercase first-letter:uppercase'>
+      <Text className='overflow-hidden mr-6 text-ellipsis whitespace-nowrap text-xs lowercase first-letter:uppercase'>
         {data.label}
       </Text>
     </MagneticButton>

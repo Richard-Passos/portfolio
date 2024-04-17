@@ -27,10 +27,10 @@ const MenuTrigger = ({ className, ...props }, ref) => {
       <MenuUiTrigger asChild>
         <MagneticButton
           className={cn(
-            'data-open:theme-primary pointer-events-auto !text-variant-content [--tw-scale-y:--tw-scale-x] [--variant-a:--primary] hover:[--variant-c:--primary-c] data-open:![--tw-scale-x:1]',
+            '[--tw-scale-y:--tw-scale-x] data-open:theme-primary pointer-events-auto data-open:![--tw-scale-x:1]',
             className,
           )}
-          variants={{ color: 'main' }}
+          variants={{ color: 'main', style: 'alternate' }}
         >
           <Icon>
             <TimesIcon className='pointer-events-none group-data-closed:opacity-0' />

@@ -13,10 +13,10 @@ const ScrollIndicator = ({ className, variants, ...props }) => {
     >
       <Button
         className={cn(
-          'aspect-square rounded-sm bg-muted px-0 [--variant-a:--primary] hover:text-primary-content [&>span]:animate-scroll-indicator [&_svg]:size-[40%]',
+          'aspect-square rounded-sm bg-muted px-0 [&>span]:animate-scroll-indicator [&_svg]:size-[40%]',
           className,
         )}
-        variants={{ color: 'main', size: 'sm', ...variants }}
+        variants={{ color: 'main', size: 'sm', style: 'alternate', ...variants }}
       >
         <ArrowDownIcon className='absolute bottom-[150%] translate-y-1/2' />
 

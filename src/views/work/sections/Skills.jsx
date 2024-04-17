@@ -93,11 +93,11 @@ const HomeViewSkillsSectionCarouselAction = ({
     >
       <Button
         className={cn(
-          'aspect-square rounded-sm bg-muted px-0 [--variant-a:--primary] hover:text-primary-content [&_svg]:size-[40%]',
+          'aspect-square rounded-sm bg-muted px-0 [&_svg]:size-[40%]',
           className,
         )}
         {...data}
-        variants={{ color: 'main', size: 'sm', ...data.variants }}
+        variants={{ color: 'main', size: 'sm', style: 'alternate', ...data.variants }}
       >
         <Icon {...icon} />
       </Button>
