@@ -90,7 +90,7 @@ const HomeViewWorkSectionBlock = ({ className, data = {}, ...props }) => {
       </Text.Subtitle>
 
       <ShowProjectsList
-        className='mt-md'
+        className='mt-sm'
         images={items.images}
       >
         <ShowProjectsList.Table
