@@ -12,16 +12,15 @@ const Button = (
   const content = (
     <>
       <span
-        className={cn(
-          'relative z-10 flex size-full items-center justify-center rounded-inherit',
-          buttonSizes[variants.size || 'md'],
-        )}
+        className=
+          'relative z-10 flex size-full items-center justify-center rounded-inherit gap-[inherit]'
+        
       >
         {children}
       </span>
 
-      <div className='absolute inset-0 translate-y-full overflow-hidden rounded-[50%_50%_0_0] transition-[transform,border-radius] duration-500 group-hover:translate-y-0 group-hover:rounded-none'>
-        <span className='size-full bg-variant-active transition-bg' />
+      <div className={cn('absolute inset-0 transition-[clip-path] duration-500 group-hover:[clip-path:inset(0_round_0)] [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] flex items-center justify-center bg-variant-active gap-[inherit]', variants.style === 'alternate' && 'bg-primary text-primary-content z-10')}>
+        {variants.style === 'alternate' && children}
       </div>
     </>
   );
@@ -29,14 +28,15 @@ const Button = (
   return (
     <ButtonUi
       asChild={href}
-      className={cn('group relative overflow-hidden delay-100', className)}
-      href={href}
-      ref={ref}
-      variants={variants}
+      className={cn('group relative overflow-hidden transition-none',           buttonSizes[variants.size || 'md'],
+      className)}
+      ref={ref} 
+      variants={{...variants, style: 'solid'}}
       aria-label={label}
       {...props}
     >
-      {href ? <Link className='no-underline'>{content}</Link> : content}
+      {href ? <Link       href={href}
+ className='no-underline'>{content}</Link> : content}
     </ButtonUi>
   );
 };

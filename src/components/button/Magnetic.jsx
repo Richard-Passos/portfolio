@@ -18,7 +18,7 @@ const MagneticButton = (
       <Button
         href={href}
         className={cn(magneticButtonVariants(variants), className)}
-        variants={{ color: variants.color }}
+        variants={variants}
       >
         <Magnetic
           className='flex size-full items-center justify-center gap-[inherit] rounded-inherit'
