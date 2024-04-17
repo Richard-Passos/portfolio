@@ -29,12 +29,12 @@ const BentoGridItemDescription = ({ className, data = {}, ...props }) => {
               {w.replace(boldRegex, '$1')}{' '}
               <span className='inline text-content'>
                 {w.replace(boldRegex, '$2')}
-              </span>{' '}
-              {w.replace(boldRegex, '$3')}{' '}
+              </span>{' '}  
+              {w.replace(boldRegex, '$3')}.{' '}
             </>
           );
 
-          return hasBold ? Bold : `${w}.`;
+          return hasBold ? Bold : w && `${w}.`;
         })}
       </Text>
     </Item>
