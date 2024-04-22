@@ -36,4 +36,3 @@ export { default as Stats } from './stats';
 export { default as TextRing } from './text-ring';
 export { default as TextScrollAnimate } from './text-scroll-animate';
 export { default as Toaster } from './toaster';
-export { default as Values } from './values';
