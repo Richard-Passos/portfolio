@@ -29,7 +29,7 @@ const HomeViewAboutSection = ({ className, data = {}, ...props }) => {
       {(data.subtitle || data.description) && (
         <section className='mt-md flex w-9/10 max-w-screen-xl gap-sm max-sm:flex-col'>
           {data.subtitle && (
-            <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-5xl/tight'>
+            <Text className='grow basis-0 text-4xl/tight font-medium max-sm:text-center sm:max-w-lg md:text-[2.75rem]/tight'>
               <TextScrollAnimate
                 className='first:first-letter:uppercase'
                 text={data.subtitle}
