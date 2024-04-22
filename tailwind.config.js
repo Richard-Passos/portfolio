@@ -5,10 +5,9 @@ module.exports = {
   darkMode: [
     'variant',
     [
-      '.theme-dark:not(:has([class*="theme-"] &)) &',
       '&.theme-dark',
-      '.theme-dark > &',
-      '.theme-dark > :not([class*="theme-"]) &',
+      '.theme-dark > &:not([class*="theme-"])',
+      '.theme-dark:not(:has([class*="theme-"] &)) &',
     ],
   ],
   content: [
