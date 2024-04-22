@@ -29,13 +29,13 @@ const BentoGridItemDataChanger = ({ className, data = {}, ...props }) => {
         {data.items?.map((data, i) => (
           <DataChanger.Item
             idx={i}
-            key={data.title}
+            key={data.title + i}
           >
             <Text.Title className='text-sm uppercase transition-[clip-path] [clip-path:inset(100%_0_0_0)] group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
               {data.title}
             </Text.Title>
 
-            <Text className='text-sm text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] first-letter:uppercase group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
+            <Text className='text-sm text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] first-letter:uppercase group-data-active:duration-500 line-clamp-1 group-data-active:[clip-path:inset(0)]'>
               {data.description}
             </Text>
           </DataChanger.Item>
