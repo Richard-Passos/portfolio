@@ -7,7 +7,7 @@ const BentoGridItemIcons = ({ className, data = [], ...props }) => {
   return (
     <Item
       className={cn(
-        'items-end justify-center p-0 max-sm:w-1/2 max-sm:pt-xs',
+        'items-end justify-center p-0 min-h-14',
         className,
       )}
       {...props}
