@@ -65,6 +65,7 @@ const HomeViewSkillsSection = ({ className, data = [], ...props }) => {
             </section>
           </div>
 
+          <div className='relative w-full flex justify-center items-center'>
           <Carousel.Track>
             {data.items?.map((data, i) => (
               <HomeViewSkillsSectionCarouselItem
@@ -74,6 +75,9 @@ const HomeViewSkillsSection = ({ className, data = [], ...props }) => {
               />
             ))}
           </Carousel.Track>
+
+          <Text.Title variants={{size: 'xl'}} asChild><span aria-hidden className='text-[16vw]/none text-muted opacity-40 absolute -z-10 dark:opacity-10'>{data.title}</span></Text.Title>
+          </div>
         </Carousel>
       ))}
     </Section>
