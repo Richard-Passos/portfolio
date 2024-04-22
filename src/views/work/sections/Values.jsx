@@ -1,7 +1,7 @@
-import { Section, Values } from '@/components';
+import { BentoGrid, Section } from '@/components';
 import { ScrollAnimateTransform } from '@/components/scroll-animate';
 import { Badge, Icon, Text } from '@/components/ui';
-import { cn } from '@/utils';
+import { cn, normTemplates } from '@/utils';
 
 const ANIMATION_CONFIG = {
   rotate1: {
@@ -51,36 +51,10 @@ const WorkViewValuesSection = ({ className, data = {}, ...props }) => {
 
       <span className='sr-only'>{data.subtitle}</span>
 
-      <WorkViewValuesSectionBlock
-        className='mt-md'
-        data={data.block}
+      <div className='mt-md w-full relative flex items-center justify-center'>
+      <WorkViewValuesSectionGrid
+        data={data.grid}
       />
-    </Section>
-  );
-};
-
-const WorkViewValuesSectionBlock = ({ className, data = {}, ...props }) => {
-  return (
-    <div
-      className={cn('relative w-full', className)}
-      {...props}
-    >
-      <Values className='mx-auto w-9/10 max-w-screen-xl'>
-        {data.items?.map((data) => (
-          <Values.Item key={data.title}>
-            <Values.Icon>
-              <Icon
-                aria-hidden
-                {...data.icon}
-              />
-            </Values.Icon>
-
-            <Values.Title>{data.title}</Values.Title>
-
-            <Values.Description>{data.description}</Values.Description>
-          </Values.Item>
-        ))}
-      </Values>
 
       <div className='absolute inset-0 -z-10'>
         {data.icons?.map((data, i) => (
@@ -97,7 +71,29 @@ const WorkViewValuesSectionBlock = ({ className, data = {}, ...props }) => {
           </ScrollAnimateTransform>
         ))}
       </div>
-    </div>
+      </div>
+    </Section>
+  );
+};
+
+const WorkViewValuesSectionGrid = ({ className, data = {}, style, ...props }) => {
+  return (
+    <BentoGrid
+      className={cn('w-9/10 max-w-screen-xl gap-sm', className)}
+      style={{
+        ...normTemplates(data.templates),
+        ...style,
+      }}
+      {...props}
+    >
+      {data.items?.map((data, i) => 
+              <BentoGrid.Item.Value
+                key={data.title}
+                idx={i}
+                data={data}
+              />
+        )}
+    </BentoGrid>
   );
 };
 
