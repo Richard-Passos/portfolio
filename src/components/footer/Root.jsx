@@ -8,20 +8,22 @@ import Overlay from './Overlay';
 const Footer = async ({ className, ...props }) => {
   const { theme, data = {} } = (await globalsApi.getOne('footer')).data || {};
 
+  const opstTheme = getOpstTheme(theme)
+
   return (
     <footer
       className={cn(
         'relative flex w-full max-w-bounds flex-col items-center justify-center overflow-y-clip pt-[--pt] [--pt:calc(theme(spacing.lg)*.5)]',
-        `theme-${getOpstTheme(theme)}`,
+        `theme-${opstTheme}`,
         className,
       )}
       {...props}
     >
-      <div className='absolute top-0 h-[--pt] w-screen bg-main'>
+      <div className={cn('absolute top-0 h-[--pt] w-screen bg-main', `theme-${opstTheme}`)} >
         <Lines className='z-0' />
       </div>
 
-      <Overlay className='top-[--pt]' />
+      <Overlay className={cn('top-[--pt]', `theme-${opstTheme}`)}  />
 
       <Content
         theme={theme}
