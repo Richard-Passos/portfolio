@@ -10,7 +10,7 @@ const WorkViewMissionSection = ({ className, data = {}, ...props }) => {
     >
       <WorkViewMissionSectionList data={data.items} />
 
-      <Text className='mt-md w-9/10 max-w-xl text-center text-xl/relaxed font-medium'>
+      <Text className='mt-md w-9/10 max-w-2xl text-center text-lg/relaxed font-medium'>
         {data.description}
       </Text>
     </Section>
@@ -38,13 +38,13 @@ const WorkViewMissionSectionList = ({ data = [], ...props }) => {
               />
             </div>{' '}
             <span className='opacity-30 dark:opacity-10'>{data.text}</span>{' '}
-            <div className='size-[1em] rotate-[--rotate] opacity-30 dark:opacity-10'>
+            <div className='size-[1em] rotate-[--rotate] opacity-30 dark:opacity-10 max-sm:hidden'>
               <Icon
                 className='size-full'
                 {...data.icon}
               />
             </div>{' '}
-            <span className='opacity-30 dark:opacity-10'>{data.text}</span>{' '}
+            <span className='opacity-30 dark:opacity-10 max-sm:hidden'>{data.text}</span>{' '}
             <div className='size-[1em] rotate-[--rotate]'>
               <Icon
                 className='size-full'
