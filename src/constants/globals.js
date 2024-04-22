@@ -39,8 +39,8 @@ const globals = [
     theme: 'light',
     data: {
       cta: {
-        title: `Let's work \ntogether`,
-        subtitle: 'Is your great ideas ready to fly?',
+        title: `Let's make \nthem fly`,
+        subtitle: 'Is your great ideas ready?',
         action: {
           type: '',
           icon: {
@@ -131,17 +131,17 @@ const globals = [
         {
           title: 'Front end',
           description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non optio corporis sequi, dolores nostrum, praesentium omnis commodi sint enim ducimus molestiae necessitatibus consequatur et fugiat nobis magnam asperiores culpa harum?',
+            'I craft captivating user interfaces with pixel-perfect precision, prioritizing seamless interactions and delightful micro animations to elevate user engagement.',
         },
         {
           title: 'Back end',
           description:
-            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem culpa dolor vel rerum! Quaerat delectus earum tempore accusamus itaque mollitia asperiores voluptate ea. Labore, officiis quae ad dolorum ea temporibus.',
+            'I engineer robust back-end systems that power your platform with efficiency and reliability, ensuring seamless data management and scalable functionality.',
         },
         {
           title: 'Full stack',
           description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad delectus dolore, veniam accusamus beatae nulla sequi numquam alias rerum vel, distinctio vero dolor necessitatibus commodi cum debitis porro, maxime ratione.',
+          'I integrate end-to-end solutions using cutting-edge front and back end technologies to deliver high-impact results that prioritize user experience, scalability, and performance, ensuring a seamless digital experience.',
         },
       ],
       stats: [
@@ -158,64 +158,64 @@ const globals = [
           description: `Great \nprojects`,
         },
         {
-          title: '50ᐩ',
-          description: `Clebers \ncompleted`,
+          title: '100%',
+          description: `On-time \ndeliveries`,
         },
       ],
       values: {
         work: [
           {
             icon: {
-              src: '/images/shield.svg',
-              alt: 'Integrity icon',
-              width: 150,
-              height: 150,
+              src: '/images/graduation-cap.svg',
+              alt: 'Learning-oriented icon',
+              width: 24,
+              height: 24,
             },
-            title: 'Integrity',
+            title: 'Learning',
             description:
-              'I remain true to my values, striving to act with honesty and transparency. This allows me to build solid and genuine relationships.',
+              'Embracing a mindset of lifelong learning to stay updated with the latest technologies, frameworks, and best practices.',
           },
           {
             icon: {
-              src: '/images/globe.svg',
-              alt: 'Curiosity icon',
-              width: 150,
-              height: 150,
+              src: '/images/trophy.svg',
+              alt: 'Trophy icon',
+              width: 24,
+              height: 24,
             },
-            title: 'Curiosity',
+            title: 'Excellence',
             description:
-              'My innate curiosity drives me to explore new ideas and discover new paths. Every challenge is an opportunity for learning and personal growth.',
+              'Commitment to excellence drives the pursuit of mastery in all aspects of development, ensuring the delivery of top-tier solutions.',
           },
           {
             icon: {
-              src: '/images/puzzle.svg',
-              alt: 'Respect icon',
-              width: 150,
-              height: 150,
+              src: '/images/check-badge.svg',
+              alt: 'Check badge icon',
+              width: 24,
+              height: 24,
             },
-            title: 'Respect',
+            title: 'Quality-oriented',
             description:
-              'I deeply value the people around me and their unique stories. I am always open to listening and learning from others, recognizing the importance of each voice and experience.',
+              'Dedicated to mastering all aspects of development, my commitment to excellence guarantees top-tier solutions.',
           },
           {
             icon: {
               src: '/images/smile.svg',
-              alt: 'Gratitude icon',
-              width: 150,
-              height: 150,
+              alt: 'Smile icon',
+              width: 24,
+              height: 24,
             },
-            title: 'Gratitude',
+            title: 'Customer-oriented',
             description:
-              'I cultivate a mindset of gratitude, recognizing and appreciating the little things in life. Gratitude keeps me focused and inspires me to live with purpose and fulfillment.',
+              'Keeping the end-user in mind when developing software, ensuring that their needs and expectations are met or exceeded.',
           },
-        ],
+      ],
         personal: [
           {
             icon: {
               src: '/images/shield.svg',
               alt: 'Integrity icon',
-              width: 150,
-              height: 150,
+              width: 24,
+              height: 24,
             },
             title: 'Integrity',
             description:
@@ -225,8 +225,8 @@ const globals = [
             icon: {
               src: '/images/globe.svg',
               alt: 'Curiosity icon',
-              width: 150,
-              height: 150,
+              width: 24,
+              height: 24,
             },
             title: 'Curiosity',
             description:
@@ -236,8 +236,8 @@ const globals = [
             icon: {
               src: '/images/puzzle.svg',
               alt: 'Respect icon',
-              width: 150,
-              height: 150,
+              width: 24,
+              height: 24,
             },
             title: 'Respect',
             description:
@@ -247,8 +247,8 @@ const globals = [
             icon: {
               src: '/images/smile.svg',
               alt: 'Gratitude icon',
-              width: 150,
-              height: 150,
+              width: 24,
+              height: 24,
             },
             title: 'Gratitude',
             description:
