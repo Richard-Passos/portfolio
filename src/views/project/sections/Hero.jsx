@@ -151,12 +151,12 @@ const ProjectViewHeroSectionGrid = ({
       }}
       {...props}
     >
-      {data.items?.map(({aspectRatio, data}, i) => <BentoGrid.ScrollAnimate key={i}>
+      {data.items?.map(({aspectRatio, data}, i) => <BentoGrid.ScrollAnimate key={data.src}>
               <BentoGrid.Item.Image
                 idx={i}
                 data={data}
                 className='rounded-3xl'
-                style={{ aspectRatio: aspectRatio}}
+                style={{ aspectRatio }}
               />
             </BentoGrid.ScrollAnimate>
           
