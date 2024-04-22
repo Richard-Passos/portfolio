@@ -21,9 +21,9 @@ const homePage = {
       id: 'scrollTo',
       data: {
         title: ['About', 'work'],
-        subtitle: 'Just someone who wanna conquer minds',
-        description:
-          "My obsession is to deliver a digital experience that not only serves a great purpose, but give your business an unfair advantage.",
+        subtitle: 'Enter a universe where excellence is the norm',
+         description:
+          "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate. Discover the impact of a partnership that propels you to digital prominence.",
         block: {
           title: 'Selected works',
           items: projects.filter((data) => data.isSelected),
@@ -155,7 +155,7 @@ const homePage = {
       theme: 'dark',
       data: {
         description:
-          "If you're looking for a developer who's got the skills, passion and a problem solving mindset to make your ideas come true. Then...",
+          "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let's team up and...",
         icons: [
           { src: '/images/smile.svg', title: 'Smile' },
           { src: '/images/globe.svg', title: 'Globe' },

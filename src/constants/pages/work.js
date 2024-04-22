@@ -11,7 +11,7 @@ const workPage = {
       data: {
         title: `Beyond code, \nboundaries <b>&</b> \nresults`,
         description:
-          'Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and a commitment to transforming ideas into impactful, user-centric solutions.',
+          'Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and crafting high-impact, user-centered solutions.',
         text: globals.find((data) => data.slug === 'personal-info')?.data
           .availability,
         icon: { src: '/images/smile.svg', title: 'Smile' },
@@ -23,7 +23,7 @@ const workPage = {
       id: 'scrollTo',
       data: {
         description:
-          "That's my mission — Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit doloremque aspernatur architecto dolor eos. Harum minima modi deserunt culpa commodi! Facilis eveniet ad illo delectus?",
+          "That's my mission — each line of code refines my skills, offering high-impact solutions. Every project inspires clients, coworkers, and community, fostering enduring positive impact. Consistent repetition breeds excellence, driving digital prominence.",
         items: [
           {
             text: 'Improve',
@@ -45,10 +45,10 @@ const workPage = {
       theme: 'light',
       data: {
         title: ['Services'],
-        subtitle:
-          'We help our clients entertain, inform, and inspire the world.',
+         subtitle:
+          'I shape beyond boundaries solutions',
         description:
-          'We represent storytellers who shape culture and drive the future. From artists and creators to athletes and brands, our deep expertise and broad capabilities enable talent and companies to confidently grow their careers and businesses.',
+          "My solutions go beyond technological boundaries, they're not just algorithms and code. They are developed to generate high-impact results, driving you to digital prominence.",
         block: {
           title: 'I could help you with...',
           image: {
@@ -80,7 +80,7 @@ const workPage = {
       data: {
         title: ['Selected', 'works'],
         description:
-          'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit dolores adipisci voluptates dolore inventore aperiam rerum possimus culpa nemo molestiae!',
+          'Each project is a tailored masterpiece, meticulously crafted to engage users with intuitive interfaces, great interactions and captivating experiences.',
         block: {
           action: {
             type: '',
@@ -103,9 +103,9 @@ const workPage = {
       data: {
         title: ['Why pick', 'me'],
         subtitle:
-          'We help our clients entertain, inform, and inspire the world.',
+          'Turning heads and conquering hearts',
         description:
-          'We represent storytellers who shape culture and drive the future. From artists and creators to athletes and brands, our deep expertise and broad capabilities enable talent and companies to confidently grow their careers and businesses.',
+          "After head turning projects and a heart conquering personality just one click away, choose me to unlock boundless potential for your next project.",
         action: {
           type: '',
           icon: { src: '/images/arrow-up-right.svg' },
@@ -179,15 +179,20 @@ const workPage = {
       theme: 'dark',
       data: {
         title: `My \nvalues`,
-        subtitle: 'Always improving',
-        block: {
+        subtitle: 'Elevating standards',
+        grid: {
+          templates: {
+            default: '"item-0""item-1""item-2""item-3"',
+            sm: '"item-0 item-1""item-2 item-3"',
+            lg: '"item-0 item-1 ."". item-2 item-3"'
+          },
           items: globals.find((data) => data.slug === 'personal-info')?.data
             .values.work,
+          },
           icons: [
             { src: '/images/globe.svg', title: 'Globe' },
             { src: '/images/smile.svg', title: 'Smile' },
           ],
-        },
       },
     },
     {
@@ -195,7 +200,7 @@ const workPage = {
       theme: 'dark',
       data: {
         title: 'Next page',
-        description: 'About ·',
+        description: 'About me ·',
         action: {
           type: '',
           icon: {

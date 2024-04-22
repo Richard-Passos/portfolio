@@ -1,4 +1,5 @@
 import globals from '../globals';
+import skills from '../skills';
 
 const contactPage = {
   slug: 'contact',
@@ -13,7 +14,7 @@ const contactPage = {
           'Ready for lift-off? Ping, tweet, message or poke — and we will get back as soon as possible.',
         grid: {
           templates: {
-            default: '"item-0""item-1""item-2""item-3""item-4"',
+            default: '"item-0 .""item-1 item-1""item-2 item-2""item-3 item-3""item-4 item-4"',
             sm: '"item-0 item-1 item-1 item-1""item-0 item-1 item-1 item-1""item-2 item-2 item-3 item-3""item-4 item-4 item-4 item-4"',
             lg: '"item-0 item-1 item-1 item-1 item-2 item-2""item-0 item-1 item-1 item-1 item-3 item-3""item-4 item-4 item-4 item-4 item-4 item-4"',
           },
@@ -30,7 +31,7 @@ const contactPage = {
               type: 'indicator',
               data: {
                 description:
-                  'Ready for lift-off? Ping, tweet, message or poke — and we will get back as soon as possible.',
+                  "I'm here ready to dive deep to rescue your great ideas from drowning — together, let's harness their potential and fly'em to digital prominence.",
               },
             },
             {
@@ -57,7 +58,7 @@ const contactPage = {
                     label: 'Change value',
                   },
                 },
-                items: [],
+                items: [{title: 'Hard skills', description: skills.hard?.map(data => data.title).join(', ')}, {title: 'Soft skills', description: skills.soft?.map(data => data.title).join(', ')}],
               },
             },
             {
@@ -67,55 +68,11 @@ const contactPage = {
                   { src: '/images/smile.svg', title: 'Smile' },
                   { src: '/images/globe.svg', title: 'Globe' },
                 ],
-                description: 'Improve · Inspire · Repeat ·',
+                description: "Turning heads & conquering hearts — Improve · Inspire · Repeat —",
               },
             },
           ],
         },
-        infinityText: 'Improve · Inspire · Repeat ·',
-        icons: [
-          { src: '/images/rocket.svg', title: 'Rocket' },
-          { src: '/images/smile.svg', title: 'Smile' },
-          { src: '/images/globe.svg', title: 'Globe' },
-        ],
-        dataChanger: [
-          [
-            {
-              title: '10ᐩ',
-              description: 'Projects completed',
-            },
-            {
-              title: '1ᐩ',
-              description: 'Years of experience',
-            },
-            {
-              title: '100%',
-              description: 'Great projects',
-            },
-            {
-              title: '50ᐩ',
-              description: 'Clebers completed',
-            },
-          ],
-          [
-            {
-              title: '1',
-              description: 'Integrity · Curiosity',
-            },
-            {
-              title: '2',
-              description: 'Integrity · Curiosity',
-            },
-            {
-              title: '3',
-              description: 'Respect · Gratitude',
-            },
-            {
-              title: '4',
-              description: 'Respect · Gratitude',
-            },
-          ],
-        ],
       },
     },
     {
