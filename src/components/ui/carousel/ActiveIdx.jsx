@@ -7,7 +7,7 @@ import { cn } from '@/utils';
 
 import { Text } from '../text';
 
-const CarouselActiveIdx = ({ itemsLength, className, ...props }) => {
+const CarouselActiveIdx = ({ itemsLength = '', className, ...props }) => {
   const { activeIdx } = useContext(CarouselContext);
 
   return (
@@ -26,7 +26,7 @@ const CarouselActiveIdx = ({ itemsLength, className, ...props }) => {
 
         <span className='invisible'>00</span>
       </span>
-      — {itemsLength}
+      — {itemsLength.toString().padStart(2, '0')}
     </Text>
   );
 };
