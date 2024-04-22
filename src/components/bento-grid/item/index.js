@@ -10,6 +10,7 @@ import ItemLink from './Link';
 import ItemLocalTime from './LocalTime';
 import ItemRoot from './Root';
 import ItemSimple from './Simple';
+import ItemValue from './Value';
 
 const Item = ItemRoot;
 
@@ -24,6 +25,7 @@ Item.InfinityScroll = ItemInfinityScroll;
 Item.Link = ItemLink;
 Item.LocalTime = ItemLocalTime;
 Item.Simple = ItemSimple;
+Item.Value = ItemValue;
 
 export default Item;
 export {
@@ -39,4 +41,5 @@ export {
   ItemLink,
   ItemLocalTime,
   ItemSimple,
+  ItemValue,
 };
