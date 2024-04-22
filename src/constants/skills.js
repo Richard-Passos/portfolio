@@ -2,149 +2,119 @@ const skills = {
   hard: [
     {
       title: 'React.js',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/react.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'A declarative, efficient, and flexible JavaScript library for building user interfaces.',
     },
     {
       title: 'Node.js',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/nodejs.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'A server-side JavaScript runtime environment for building scalable, high-performance applications.',
     },
     {
       title: 'React Native',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/react.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Build cross-platform mobile applications with ease.',
     },
     {
       title: 'Next.js',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/nextjs.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'React framework for building server-rendered and statically-generated web applications.',
     },
     {
       title: 'JavaScript',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/javascript.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Backbone of dynamic web development, enabling interactive and responsive user experiences.',
     },
     {
       title: 'Jest',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/jest.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'A powerful JavaScript testing framework for seamless unit and integration testing.',
     },
     {
       title: 'MongoDB',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/mongodb.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'A powerful, flexible NoSQL database solution for modern application development.',
     },
     {
       title: 'Git',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/git.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Version control system for efficient collaboration and code management.',
     },
     {
       title: 'TailwindCSS',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/tailwindcss.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Utility-first CSS framework for rapid development.',
     },
     {
       title: 'Styled-components',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/styled-components.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'CSS-in-JS for seamless styling and component-based design.',
     },
     {
       title: 'HTML',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/html.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Foundation of web development, used to create the structure and content of web pages.',
     },
     {
       title: 'CSS',
-      icon: { src: '/images/grid.svg' },
+      icon: { src: '/images/css.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Styling language for web development, shaping the visual presentation of websites.',
     },
   ],
   soft: [
     {
-      title: 'React.js',
-      icon: { src: '/images/grid.svg' },
+      title: 'Problem-solving',
+      icon: { src: '/images/puzzle.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Ability to analyze complex issues and create effective solutions, ensuring seamless functionality and user satisfaction.',
     },
     {
-      title: 'Node.js',
-      icon: { src: '/images/grid.svg' },
+      title: 'Detail-oriented',
+      icon: { src: '/images/eye.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Enable efficient identification and resolution of technical challenges, resulting in robust solutions and heightened client satisfaction.',
     },
     {
-      title: 'React Native',
-      icon: { src: '/images/grid.svg' },
+      title: 'Communication',
+      icon: { src: '/images/chat.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Clear and concise communication fosters collaboration within teams and facilitates understanding between clients and developers, ensuring project alignment.',
     },
     {
-      title: 'Next.js',
-      icon: { src: '/images/grid.svg' },
+      title: 'Adaptability',
+      icon: { src: '/images/adjustments.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Flexibility in embracing new technologies and methodologies facilitates agile development and ensures project relevance',
     },
     {
-      title: 'JavaScript',
-      icon: { src: '/images/grid.svg' },
+      title: 'Time management',
+      icon: { src: '/images/calendar.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Efficiently managing tasks and deadlines optimizes project timelines and enhances client satisfaction with timely deliverables.',
     },
     {
-      title: 'Jest',
-      icon: { src: '/images/grid.svg' },
+      title: 'Critical thinking',
+      icon: { src: '/images/compass.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Evaluating project requirements and potential solutions with discernment ensures effective decision-making and successful project execution.',
     },
     {
-      title: 'MongoDB',
-      icon: { src: '/images/grid.svg' },
+      title: 'Synthetic thinking',
+      icon: { src: '/images/share.svg' },
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
-    },
-    {
-      title: 'Git',
-      icon: { src: '/images/grid.svg' },
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
-    },
-    {
-      title: 'TailwindCSS',
-      icon: { src: '/images/grid.svg' },
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
-    },
-    {
-      title: 'Styled-components',
-      icon: { src: '/images/grid.svg' },
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
-    },
-    {
-      title: 'HTML',
-      icon: { src: '/images/grid.svg' },
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
-    },
-    {
-      title: 'CSS',
-      icon: { src: '/images/grid.svg' },
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius beatae, cumque voluptatibus repellat rerum?',
+        'Enables holistic problem-solving by integrating diverse perspectives and technologies, delivering comprehensive solutions.',
     },
   ],
 };
