@@ -4,7 +4,7 @@ const BentoGrid = ({ className, style, ...props }) => {
   return (
     <ul
       className={cn(
-        'grid gap-xs [--template:--default-template] [grid-template-areas:--template] sm:[--template:--sm-template] md:[--template:--md-template] lg:[--template:--lg-template] xl:[--template:--xl-template] 2xl:[--template:--2xl-template]',
+        'grid gap-xs [--template:--default-template] [grid-template-areas:--template] sm:[--template:--sm-template] md:[--template:--md-template] lg:[--template:--lg-template] xl:[--template:--xl-template] 2xl:[--template:--2xl-template] grid-cols-[repeat(auto-fit,minmax(0px,1fr))]',
         className,
       )}
       style={{
