@@ -146,7 +146,7 @@
   }
 
   * {
-    @apply outline-none [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted-content/25 hover:[&::-webkit-scrollbar-thumb]:bg-muted-content/50 [&::-webkit-scrollbar]:w-2.5;
+    @apply outline-none;
   }
 
   :focus-visible {
