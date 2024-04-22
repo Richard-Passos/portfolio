@@ -23,7 +23,7 @@ const workPage = {
       id: 'scrollTo',
       data: {
         description:
-          "That's my mission — each line of code refines my skills, offering high-impact solutions. Every project inspires clients, coworkers, and community, fostering enduring positive impact. Consistent repetition breeds excellence, driving digital prominence.",
+          "That's my mission — Each line of code refines my skills, crafting high-impact solutions. Every project is an opportunity to inspire clients, coworkers, and the community, fostering enduring positive impact. Consistent repetition breeds excellence, driving digital prominence.",
         items: [
           {
             text: 'Improve',
