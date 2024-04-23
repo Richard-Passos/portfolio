@@ -12,7 +12,7 @@ const HeaderLink = ({
   className,
   children,
   isActive,
-  includesPathname,
+  shouldHide,
   ...props
 }) => {
   return (
@@ -31,8 +31,8 @@ const HeaderLink = ({
           <motion.span
             className={cn(
               'absolute bottom-1 h-[.15em] w-1/3 bg-primary',
-              !includesPathname &&
-                'opacity-0 transition-opacity group-hover/link:opacity-100 group-hover:opacity-100',
+                shouldHide &&
+                '!opacity-0 transition-opacity group-hover/link:!opacity-100 delay-150 group-hover:delay-0',
             )}
             layoutId='headerLinkActiveIndicator'
             style={{ borderRadius: '9999px' }}

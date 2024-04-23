@@ -1,8 +1,8 @@
 import { pagesApi } from '@/api';
 import { ErrorProvider } from '@/contexts';
 
-const ErrorBoundaryProvider = async ({ lang, value, ...props }) => {
-  const { data } = await pagesApi.getOne('error', `?lang=${lang}`);
+const ErrorBoundaryProvider = async ({ locale, value, ...props }) => {
+  const { data } = await pagesApi.getOne('error', `?locale=${locale}`);
 
   return (
     <ErrorProvider

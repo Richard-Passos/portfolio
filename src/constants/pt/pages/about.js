@@ -123,7 +123,7 @@ const aboutPage = {
           },
           data: {
             label: 'Ir para a página de contato',
-            href: '/pt/contato',
+            href: '/contato',
             variants: {
               color: 'main',
             },

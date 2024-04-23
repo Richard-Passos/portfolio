@@ -1,10 +1,17 @@
 import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
 import { NotFoundView } from '@/views';
-import lang from './lang';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { cookies } from 'next/headers';
 
 const NotFoundPage = async (props) => {
-  const { data } = await pagesApi.getOne('not-found', `?lang=${lang}`);
+  const cookie = cookies()
+
+  const locale = cookie.get('NEXT_LOCALE').value
+
+  unstable_setRequestLocale(locale);
+    
+  const { data } = await pagesApi.getOne('not-found', `?locale=${locale}`);
 
   return (
     <NotFoundView
@@ -15,7 +22,11 @@ const NotFoundPage = async (props) => {
 };
 
 const generateMetadata = async () => {
-  const { metadata = {} } = (await pagesApi.getOne('not-found', `?lang=${lang}`)).data || {};
+  const cookie = cookies()
+
+  const locale = cookie.get('NEXT_LOCALE').value
+
+  const { metadata = {} } = (await pagesApi.getOne('not-found', `?locale=${locale}`)).data || {};
 
   return {
     title: capitalize(metadata.title),

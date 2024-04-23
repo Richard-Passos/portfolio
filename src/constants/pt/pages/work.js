@@ -63,7 +63,7 @@ const workPage = {
             animation: 'slideUpRight',
             data: {
               label: 'Contratar',
-              href: '/pt/contato',
+              href: '/contato',
               variants: {
                 color: 'main',
               },
@@ -87,7 +87,7 @@ const workPage = {
             icon: { src: '/images/plus.svg' },
             data: {
               label: 'Mais trabalhos',
-              href: '/pt/projects',
+              href: '/projects',
               variants: {
                 color: 'main',
               },
@@ -112,7 +112,7 @@ const workPage = {
           animation: 'slideUpRight',
           data: {
             label: 'Sobre mim',
-            href: '/pt/sobre',
+            href: '/sobre',
             variants: {
               color: 'main',
               size: 'sm',
@@ -208,7 +208,7 @@ const workPage = {
           },
           data: {
             label: 'Ir para a página sobre mim',
-            href: '/pt/sobre',
+            href: '/sobre',
             variants: {
               color: 'main',
             },

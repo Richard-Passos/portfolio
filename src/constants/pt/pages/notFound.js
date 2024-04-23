@@ -13,7 +13,7 @@ const notFoundPage = {
           {
             type: '',
             data: {
-              href: '/pt',
+              href: '/',
               label: 'Página inicial',
             },
           },

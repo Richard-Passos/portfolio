@@ -19,7 +19,7 @@ const useChildrenCount = (parentRef, childrenRef, times = 2, justOdd = true) => 
 
   useEffect(() => {
     handleSetCount();
-  }, []);
+  }, [handleSetCount]);
 
   useEventListener('resize', handleSetCount)
 

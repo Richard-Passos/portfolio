@@ -2,35 +2,31 @@
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { languages } from '@/constants';
+import { locales } from '@/constants';
 import { cn } from '@/utils';
 
 import { Select } from '../ui';
 import { ChevronDownIcon, ChevronUpIcon } from '../ui/icon/icons';
 
-const DEFAULT_LANG = languages[0]?.toLowerCase(),
-  LANG_REGEX = /\/[a-z]{2}(?![^/])/;
+const DEFAULT_LOCALE = locales[0],
+  LOCALE_REGEX = /\/([a-z]{2})\/?([^/]+)?/i;
 
 const Language = ({ className, ...props }) => {
   const router = useRouter(),
     pathname = usePathname(),
     searchParams = useSearchParams();
+    
+  const locale = pathname.match(LOCALE_REGEX)?.[1]
 
-  const lang = pathname.match(LANG_REGEX)?.[0].slice(1);
+  const currLocale = locales.find((data) => data === locale) || DEFAULT_LOCALE;
 
-  const currLang = languages.find((data) => data === lang) || DEFAULT_LANG;
-
-  const onChange = (lang) => {
-    const pathnameWithReplacedLang = pathname.replace(
-      LANG_REGEX,
-      lang === DEFAULT_LANG ? '' : `/${lang}`,
+  const onChange = (locale) => {
+    const pathnameWithReplacedLocale = pathname.replace(
+      LOCALE_REGEX,
+      `/${locale}/$2`,
     );
 
-    const url = `${
-      currLang === DEFAULT_LANG && lang !== DEFAULT_LANG
-        ? '/' + lang + pathname
-        : pathnameWithReplacedLang
-    }?${searchParams}`;
+    const url = `${pathnameWithReplacedLocale}?${searchParams}`;
 
     router.push(url, {
       scroll: false,
@@ -39,7 +35,7 @@ const Language = ({ className, ...props }) => {
 
   return (
     <Select
-      defaultValue={currLang}
+      defaultValue={currLocale}
       onValueChange={onChange}
       {...props}
     >
@@ -61,12 +57,12 @@ const Language = ({ className, ...props }) => {
 
       <Select.Content>
         <Select.Viewport>
-          {languages.map((lang) => (
+          {locales.map((locale) => (
             <LanguageSelectItem
-              key={lang}
-              value={lang.toLowerCase()}
+              key={locale}
+              value={locale.toLowerCase()}
             >
-              {lang}
+              {locale}
             </LanguageSelectItem>
           ))}
         </Select.Viewport>

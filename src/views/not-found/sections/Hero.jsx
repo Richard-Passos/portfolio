@@ -30,7 +30,7 @@ const NotFoundViewHeroSection = ({ className, data = {}, ...props }) => {
       </Text>
 
       <section className='mt-md flex justify-center gap-sm max-sm:flex-col items-center'>
-        {data.actions?.map(({ data }) => (
+        {data.actions?.map(({ data = {} }) => (
           <Button
             key={data.label}
             {...data}

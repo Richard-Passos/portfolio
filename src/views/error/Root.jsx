@@ -12,6 +12,7 @@ const ErrorView = ({ data = {}, error, reset }) => {
 
     Section = Section && (
       <Section
+        id={slug}
         hasTransition={
           slug.toLowerCase() !== 'hero' && lastTheme !== data.theme
         }

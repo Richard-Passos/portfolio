@@ -10,9 +10,9 @@ import { Logo, Separator } from '../ui';
 import MenuUiContent from '../ui/menu/Content';
 import Nav from './Nav';
 
-const MenuContent = async ({lang, ...props}) => {
-  const { data = {} } = (await globalsApi.getOne('header', `?lang=${lang}`)).data || {},
-    personalInfo = (await globalsApi.getOne('personal-info', `?lang=${lang}`)).data?.data || {};
+const MenuContent = async ({locale, ...props}) => {
+  const { data = {} } = (await globalsApi.getOne('header', `?locale=${locale}`)).data || {},
+    personalInfo = (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data?.data || {};
 
   return (
     <MenuUiContent

@@ -7,7 +7,7 @@ const PAGE = 1,
 const GET = (req) => {
   const { searchParams } = req.nextUrl;
   
-  const { projects } = getConstants(searchParams.get('lang'))
+  const { projects = [] } = getConstants(searchParams.get('locale'))
 
   const page = searchParams.get('page') || PAGE,
     role = ((role) => (role && role !== 'undefined' ? role : ROLE))(

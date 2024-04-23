@@ -28,7 +28,7 @@ const projectsPage = {
             {
               type: 'development',
               data: {
-                label: 'Development',
+                label: 'Dev',
               },
             },
           ],

@@ -3,13 +3,13 @@ import { cn, normId } from '@/utils';
 
 import Icon from '../icon';
 import Link from '../link';
-import { languages } from '@/constants';
+import { locales } from '@/constants';
 
-const Root = async ({ lang, className, ...props }) => {
-  lang = normId(lang)
+const Root = async ({ locale, className, ...props }) => {
+  locale = normId(locale)
 
   const personalInfo =
-    (await globalsApi.getOne('personal-info', `?lang=${lang}`)).data?.data || {};
+    (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data?.data || {};
 
   return (
     <Link
@@ -17,7 +17,7 @@ const Root = async ({ lang, className, ...props }) => {
         'aspect-[2] h-10 -translate-x-2 overflow-hidden rounded-sm px-2 py-1 transition-none',
         className,
       )}
-      href={`/${lang === normId(languages[0]) ? '' : lang}`}
+      href={`/${locale === normId(locales[0]) ? '' : locale}`}
       {...props}
     >
       <Icon

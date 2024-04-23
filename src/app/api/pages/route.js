@@ -5,7 +5,7 @@ const RES_PER_PAGE = 5;
 const GET = async (req) => {
   const { searchParams } = req.nextUrl;
   
-  const { pages } = getConstants(searchParams.get('lang'))
+  const { pages = [] } = getConstants(searchParams.get('locale'))
 
   const page = searchParams.get('page') || 1;
 

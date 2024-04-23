@@ -6,28 +6,28 @@ const globals = [
         {
           type: '',
           data: {
-            href: '/pt',
+            href: '/',
             label: 'Início',
           },
         },
         {
           type: '',
           data: {
-            href: '/pt/work',
+            href: '/work',
             label: 'Trabalho',
           },
         },
         {
           type: '',
           data: {
-            href: '/pt/about',
+            href: '/about',
             label: 'Sobre',
           },
         },
         {
           type: '',
           data: {
-            href: '/pt/contact',
+            href: '/contact',
             label: 'Contato',
           },
         },
@@ -47,7 +47,7 @@ const globals = [
             src: '/images/arrow-up-right.svg',
           },
           data: {
-            href: '/pt/contact',
+            href: '/contact',
             label: 'Ir para página de contato',
             variants: {
               size: 'lg',

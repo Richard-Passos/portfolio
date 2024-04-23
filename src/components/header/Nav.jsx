@@ -7,41 +7,43 @@ import { cn } from '@/utils';
 
 import { NavigationMenu } from '../ui/navigation-menu';
 import Link from './Link';
+import { useUpdateEffect } from '@/hooks';
 
-const DEFAULT_IS_HOVER = undefined;
+const LOCALE_REGEX = /\/([a-z]{2})\/?([^/]+)?/i;
 
 const HeaderNav = ({ className, items = [], ...props }) => {
-  const [isHover, setIsHover] = useState(DEFAULT_IS_HOVER),
-    pathname = usePathname();
+  const     pathname = usePathname();
 
-  const includesPathname = items.some(({ data }) => data.href === pathname);
+  const [currActive, setCurrActive] = useState(pathname)
+
+    const locale = pathname.match(LOCALE_REGEX)?.[1]
+    
+    const getHref = (href = '') => `/${locale}${href === '/' ? '' : href}`
+
+  const includesPathname = 
+  items.some(({ data = {} }) => getHref(data.href) === pathname)
+
+  useUpdateEffect(() => setCurrActive(pathname), [pathname])
 
   return (
     <NavigationMenu
       className={cn('group', className)}
       {...props}
     >
-      {items.map(({ data = {} }, i) => {
-        const isActive =
-          isHover === i ||
-          (pathname === data.href && isHover === DEFAULT_IS_HOVER);
-
-        return (
+      {items.map(({ data = {} }) => ( 
           <Link
-            href={data.href}
-            isActive={isActive}
-            includesPathname={includesPathname}
+            isActive={getHref(data.href) === currActive}
+            shouldHide={!includesPathname}
             key={data.href}
-            onMouseEnter={() => setIsHover(i)}
+            onMouseEnter={() => setCurrActive(getHref(data.href))}
             onMouseLeave={() => {
-              if (includesPathname) setIsHover(DEFAULT_IS_HOVER);
+              if(includesPathname) setCurrActive(pathname)
             }}
             {...data}
           >
             {data.label}
           </Link>
-        );
-      })}
+          ))}
     </NavigationMenu>
   );
 };

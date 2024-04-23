@@ -1,10 +1,12 @@
 import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
 import { ContactView } from '@/views';
-import lang from '../lang';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
-const ContactPage = async (props) => {
-  const { data } = await pagesApi.getOne('contact', `?lang=${lang}`);
+const ContactPage = async ({ params: { locale }, ...props }) => {
+  unstable_setRequestLocale(locale);
+
+  const { data } = await pagesApi.getOne('contact', `?locale=${locale}`);
 
   return (
     <ContactView
@@ -14,8 +16,8 @@ const ContactPage = async (props) => {
   );
 };
 
-const generateMetadata = async () => {
-  const { metadata = {} } = (await pagesApi.getOne('contact', `?lang=${lang}`)).data || {};
+const generateMetadata = async ({ params: { locale } }) => {
+  const { metadata = {} } = (await pagesApi.getOne('contact', `?locale=${locale}`)).data || {};
 
   return {
     title: capitalize(metadata.title),

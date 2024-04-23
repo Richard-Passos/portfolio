@@ -6,14 +6,17 @@ import { AnimatePresence } from '@/components/animate';
 import { Cursor, ErrorBoundary } from '@/components/ui';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
-import lang from './lang';
+import { locales } from '@/constants';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 const font = Inter({ subsets: ['latin'], variable: '--font-app' });
 
-const Layout = ({ children }) => {
+const Layout = ({ children, params: { locale } }) => {
+  unstable_setRequestLocale(locale);
+
   return (
     <html
-      lang='en'
+      lang={locale}
       className='overflow-x-clip'
     >
       <Providers.GlobalState>
@@ -30,15 +33,15 @@ const Layout = ({ children }) => {
                 <Cursor.Content />
               </Cursor>
 
-              <Header lang={lang} />
+              <Header locale={locale} />
 
-              <ErrorBoundary.Provider lang={lang}>
+              <ErrorBoundary.Provider locale={locale}>
                 <ErrorBoundary>
                   <AnimatePresence mode='await'>{children}</AnimatePresence>
                 </ErrorBoundary>
               </ErrorBoundary.Provider>
 
-              <Footer lang={lang} />
+              <Footer locale={locale} />
             </body>
           </Header.GetState>
         </SmoothScroll>
@@ -47,8 +50,8 @@ const Layout = ({ children }) => {
   );
 };
 
-const generateMetadata = async () => {
-  const { data = {} } = (await globalsApi.getOne('personal-info', `?lang=${lang}`)).data;
+const generateMetadata = async ({ params: { locale } }) => {
+  const { data = {} } = (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data;
 
   return {
     title: {
@@ -66,5 +69,9 @@ const generateMetadata = async () => {
   };
 };
 
+const generateStaticParams = async () => {
+  return locales.map((locale) => ({ locale }));
+};
+
 export default Layout;
-export { generateMetadata };
+export { generateMetadata, generateStaticParams };

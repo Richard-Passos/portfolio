@@ -32,7 +32,7 @@ const homePage = {
             icon: { src: '/images/plus.svg' },
             data: {
               label: 'Mais trabalhos',
-              href: '/pt/projects',
+              href: '/projects',
               variants: {
                 color: 'main',
               },
@@ -47,7 +47,7 @@ const homePage = {
             animation: 'slideUpRight',
             data: {
               label: 'Explorar',
-              href: '/pt/work',
+              href: '/work',
               variants: {
                 color: 'main',
               },
@@ -141,7 +141,7 @@ const homePage = {
             animation: 'slideUpRight',
             data: {
               label: 'Explorar',
-              href: '/pt/about',
+              href: '/about',
               variants: {
                 color: 'main',
               },

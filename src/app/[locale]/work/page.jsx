@@ -1,10 +1,12 @@
 import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
 import { WorkView } from '@/views';
-import lang from '../lang';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
-const WorkPage = async (props) => {
-  const { data } = await pagesApi.getOne('work', `?lang=${lang}`);
+const WorkPage = async ({ params: { locale }, ...props }) => {
+  unstable_setRequestLocale(locale);
+
+  const { data } = await pagesApi.getOne('work', `?locale=${locale}`);
 
   return (
     <WorkView
@@ -14,8 +16,8 @@ const WorkPage = async (props) => {
   );
 };
 
-const generateMetadata = async () => {
-  const { metadata = {} } = (await pagesApi.getOne('work', `?lang=${lang}`)).data || {};
+const generateMetadata = async ({ params: { locale } }) => {
+  const { metadata = {} } = (await pagesApi.getOne('work', `?locale=${locale}`)).data || {};
 
   return {
     title: capitalize(metadata.title),

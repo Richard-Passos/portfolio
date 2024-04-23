@@ -12,7 +12,7 @@ const paginaDeErro = {
           {
             type: '',
             data: {
-              href: '/pt',
+              href: '/',
               label: 'Página inicial',
               variants: {
                 color: 'main',

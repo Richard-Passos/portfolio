@@ -13,7 +13,7 @@ const projectPage = {
             },
             animation: 'slideLeft',
             data: {
-              href: '/pt/projects',
+              href: '/projects',
               label: 'Anterior',
               variants: {
                 color: 'main',
@@ -37,7 +37,7 @@ const projectPage = {
             },
             animation: 'slideRight',
             data: {
-              href: '/pt/projects',
+              href: '/projects',
               label: 'Próximo',
               variants: {
                 color: 'main',
@@ -91,7 +91,7 @@ const projectPage = {
             animation: 'slideUp',
             data: {
               label: 'Todos os projetos',
-              href: '/pt/projects',
+              href: '/projects',
               variants: {
                 color: 'main',
               },

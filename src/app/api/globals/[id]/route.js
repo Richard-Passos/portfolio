@@ -5,7 +5,7 @@ const GET = async (req, { params: { id } }) => {
 
   const { searchParams } = req.nextUrl;
   
-  const { globals } = getConstants(searchParams.get('lang'))
+  const { globals = [] } = getConstants(searchParams.get('locale'))
 
   const data = globals.find(({ slug }) => normId(slug) === id);
 
