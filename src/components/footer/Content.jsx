@@ -27,7 +27,7 @@ const SCROLL_OFFSET = ['0 1', '1 1'],
     },
   };
 
-const FooterContent = ({ className, data = {}, ...props }) => {
+const FooterContent = ({ className, data = {}, lang, ...props }) => {
   return (
     <ScrollAnimate config={ANIMATION_CONFIG.x}>
       <Section
@@ -40,7 +40,7 @@ const FooterContent = ({ className, data = {}, ...props }) => {
       >
         <FooterContentCta data={data.cta} />
 
-        <FooterContentPersonal data={data.personal} />
+        <FooterContentPersonal data={data.personal} lang={lang} />
       </Section>
     </ScrollAnimate>
   );
@@ -81,9 +81,9 @@ const FooterContentCta = ({ className, data = {}, ...props }) => {
   );
 };
 
-const FooterContentPersonal = async ({ className, data = {}, ...props }) => {
+const FooterContentPersonal = async ({ lang, data = {}, className, ...props }) => {
   const personalInfo =
-      (await globalsApi.getOne('personal-info')).data?.data || {},
+      (await globalsApi.getOne('personal-info', `?lang=${lang}`)).data?.data || {},
     { action = {} } = data;
 
   return (
@@ -96,7 +96,7 @@ const FooterContentPersonal = async ({ className, data = {}, ...props }) => {
         {...props}
       >
         <div className='flex flex-col items-start'>
-          <Logo />
+          <Logo lang={lang} />
 
           <Text className='mt-1 max-w-52 text-sm font-medium'>
             {personalInfo.description}

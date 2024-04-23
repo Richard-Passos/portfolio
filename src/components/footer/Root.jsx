@@ -5,8 +5,8 @@ import Lines from '../lines';
 import Content from './Content';
 import Overlay from './Overlay';
 
-const Footer = async ({ className, ...props }) => {
-  const { theme, data = {} } = (await globalsApi.getOne('footer')).data || {};
+const Footer = async ({ lang, className, ...props }) => {
+  const { theme, data = {} } = (await globalsApi.getOne('footer', `?lang=${lang}`)).data || {};
 
   const opstTheme = getOpstTheme(theme)
 
@@ -28,6 +28,7 @@ const Footer = async ({ className, ...props }) => {
       <Content
         theme={theme}
         data={data}
+        lang={lang}
       />
     </footer>
   );
