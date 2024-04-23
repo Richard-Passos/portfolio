@@ -5,7 +5,6 @@ import HorizontalScroll from '../horizontal-scroll';
 import { Icon, Image, Text } from '../ui';
 
 const NextPage = ({ className, data = {}, ...props }) => {
-  console.log('-  data   -', data);
   const { action = {} } = data;
 
   return (
