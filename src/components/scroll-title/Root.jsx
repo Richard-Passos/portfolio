@@ -1,19 +1,18 @@
 'use client';
 
-import { Fragment, useRef } from 'react';
+import { useRef } from 'react';
 
-import { useGetNumberOfSiblings } from '@/hooks';
+import { useChildrenCount } from '@/hooks';
 import { cn } from '@/utils';
 
 import { ScrollAnimateTransform } from '../scroll-animate';
 import { TextTitle } from '../ui/text';
 
 const ScrollTitle = ({ dir = 'ltr', className, variants, title, ...props }) => {
-  const containerRef = useRef(null),
+  const parentRef = useRef(null),
     childrenRef = useRef(null);
 
-  const numberOfSiblings =
-    useGetNumberOfSiblings(containerRef, childrenRef, 'width', 1.5) + 1;
+  const childrenCount = useChildrenCount( parentRef, childrenRef, 1.5 ) + 1;
 
   const directions = {
     rtl: ['25%', '-25%'],
@@ -29,26 +28,22 @@ const ScrollTitle = ({ dir = 'ltr', className, variants, title, ...props }) => {
     <TextTitle
       asChild
       className={cn('w-full overflow-hidden text-[16vw]/none', className)}
-      ref={containerRef}
+      ref={parentRef}
       variants={{ size: 'lg', ...variants }}
       {...props}
     >
       <span>
         <ScrollAnimateTransform config={animationConfig}>
           <span className='flex w-full justify-center gap-font-blank-space whitespace-nowrap'>
-            <SecondaryTitle>
-              {[...Array(numberOfSiblings / 2)].map((_, i) => (
-                <Fragment key={'1-' + i}>{title} </Fragment>
-              ))}
-            </SecondaryTitle>
+              {[...Array(childrenCount / 2)].map((_, i) => <SecondaryTitle key={`First ${i}`} >
+                {title}
+              </SecondaryTitle>)}
 
             <span ref={childrenRef}>{title}</span>
 
-            <SecondaryTitle>
-              {[...Array(numberOfSiblings / 2)].map((_, i) => (
-                <Fragment key={'2-' + i}>{title} </Fragment>
-              ))}
-            </SecondaryTitle>
+            {[...Array(childrenCount / 2)].map((_, i) => <SecondaryTitle key={`Second ${i}`} >
+              {title}
+            </SecondaryTitle>)}
           </span>
         </ScrollAnimateTransform>
       </span>

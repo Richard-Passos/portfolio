@@ -2,32 +2,26 @@
 
 import { forwardRef, useRef } from 'react';
 
-import { useGetNumberOfSiblings } from '@/hooks';
+import { useChildrenCount } from '@/hooks';
 import { cn } from '@/utils';
 
 const InfinityScroll = ({ as, dir = 'ltr', className, children, ...props }) => {
-  const containerRef = useRef(null),
+  const parentRef = useRef(null),
     childrenRef = useRef(null);
 
-  const numberOfSiblings = useGetNumberOfSiblings(
-    containerRef,
-    childrenRef,
-    dir === 'btt' || dir === 'ttb' ? 'height' : 'width',
-  );
+  const childrenCount = useChildrenCount( parentRef, childrenRef );
 
   const Tag = as ?? 'div';
 
   const directions = {
-    btt: '[--initial-y:0%] [--final-y:-50%]',
     ltr: '[--initial-x:-50%] [--final-x:0%]',
-    ttb: '[--initial-y:-50%] [--final-y:0%]',
     rtl: '[--initial-x:0%] [--final-x:-50%]',
   };
 
   return (
     <div
       className='w-full overflow-hidden'
-      ref={containerRef}
+      ref={parentRef}
     >
       <Tag
         className={cn(
@@ -44,7 +38,7 @@ const InfinityScroll = ({ as, dir = 'ltr', className, children, ...props }) => {
           {children}
         </InfinityScrollChildren>
 
-        {[...Array(numberOfSiblings)].map((_, i) => (
+        {[...Array(childrenCount)].map((_, i) => (
           <InfinityScrollChildren
             aria-hidden
             key={i}

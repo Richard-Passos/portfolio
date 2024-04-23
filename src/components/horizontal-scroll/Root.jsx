@@ -11,7 +11,7 @@ import {
 } from 'framer-motion';
 import { forwardRef, useRef } from 'react';
 
-import { useGetNumberOfSiblings } from '@/hooks';
+import { useChildrenCount } from '@/hooks';
 import { cn, setRefs } from '@/utils';
 
 const HorizontalScroll = (
@@ -25,10 +25,10 @@ const HorizontalScroll = (
     clamp: false,
   });
 
-  const containerRef = useRef(null),
+  const parentRef = useRef(null),
     childrenRef = useRef(null);
 
-  const numberOfSiblings = useGetNumberOfSiblings(containerRef, childrenRef);
+  const childrenCount = useChildrenCount(parentRef, childrenRef);
 
   const x = useTransform(baseX, (v) => wrap(-50, 0, v));
 
@@ -50,7 +50,7 @@ const HorizontalScroll = (
   return (
     <div
       className={cn('w-full overflow-x-clip', className)}
-      ref={setRefs(ref, containerRef)}
+      ref={setRefs(ref, parentRef)}
       {...props}
     >
       <motion.div
@@ -64,7 +64,7 @@ const HorizontalScroll = (
           {children}
         </HorizontalScrollChildren>
 
-        {[...Array(numberOfSiblings || 1)].map((_, i) => (
+        {[...Array(childrenCount)].map((_, i) => (
           <HorizontalScrollChildren key={i}>
             {children}
           </HorizontalScrollChildren>
