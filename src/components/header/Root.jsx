@@ -10,8 +10,8 @@ import { Logo, Separator } from '../ui';
 import Nav from './Nav';
 import State from './State';
 
-const Header = async ({ className, ...props }) => {
-  const { data = {} } = (await globalsApi.getOne('header')).data || {};
+const Header = async ({ lang, className, ...props }) => {
+  const { data = {} } = (await globalsApi.getOne('header', `?lang=${lang}`)).data || {};
 
   return (
     <State>
@@ -22,7 +22,7 @@ const Header = async ({ className, ...props }) => {
         )}
         {...props}
       >
-        <Logo />
+        <Logo lang={lang} />
 
         <div className='flex h-10 items-center max-sm:hidden'>
           <Nav items={data.navItems} />
@@ -37,7 +37,7 @@ const Header = async ({ className, ...props }) => {
           </Suspense>
         </div>
 
-        <Menu />
+        <Menu lang={lang} />
       </header>
     </State>
   );
