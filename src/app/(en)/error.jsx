@@ -7,6 +7,7 @@ import { ErrorView } from '@/views';
 
 const ErrorPage = (props) => {
   const data = useContext(ErrorContext);
+  console.log('-  data   -', data)
 
   return (
     <ErrorView
@@ -16,9 +17,4 @@ const ErrorPage = (props) => {
   );
 };
 
-const metadata = {
-  title: 'Error',
-};
-
 export default ErrorPage;
-export { metadata };

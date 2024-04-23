@@ -1,9 +1,11 @@
-import { pages } from '@/constants';
+import { getConstants } from '@/utils';
 
 const RES_PER_PAGE = 5;
 
 const GET = async (req) => {
   const { searchParams } = req.nextUrl;
+  
+  const { pages } = getConstants(searchParams.get('lang'))
 
   const page = searchParams.get('page') || 1;
 

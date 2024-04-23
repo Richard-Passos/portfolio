@@ -1,12 +1,13 @@
 import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
-import { NotFoundView } from '@/views';
+import { AboutView } from '@/views';
+import lang from '../lang';
 
-const NotFoundPage = async (props) => {
-  const { data } = await pagesApi.getOne('not-found');
+const AboutPage = async (props) => {
+  const { data } = await pagesApi.getOne('about', `?lang=${lang}`);
 
   return (
-    <NotFoundView
+    <AboutView
       data={data}
       {...props}
     />
@@ -14,7 +15,7 @@ const NotFoundPage = async (props) => {
 };
 
 const generateMetadata = async () => {
-  const { metadata = {} } = (await pagesApi.getOne('not-found')).data || {};
+  const { metadata = {} } = (await pagesApi.getOne('about', `?lang=${lang}`)).data || {};
 
   return {
     title: capitalize(metadata.title),
@@ -26,5 +27,5 @@ const generateMetadata = async () => {
   };
 };
 
-export default NotFoundPage;
+export default AboutPage;
 export { generateMetadata };

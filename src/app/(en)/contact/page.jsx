@@ -1,9 +1,10 @@
 import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
 import { ContactView } from '@/views';
+import lang from '../lang';
 
 const ContactPage = async (props) => {
-  const { data } = await pagesApi.getOne('contact');
+  const { data } = await pagesApi.getOne('contact', `?lang=${lang}`);
 
   return (
     <ContactView
@@ -14,7 +15,7 @@ const ContactPage = async (props) => {
 };
 
 const generateMetadata = async () => {
-  const { metadata = {} } = (await pagesApi.getOne('contact')).data || {};
+  const { metadata = {} } = (await pagesApi.getOne('contact', `?lang=${lang}`)).data || {};
 
   return {
     title: capitalize(metadata.title),

@@ -1,8 +1,11 @@
-import { pages } from '@/constants';
-import { normId } from '@/utils';
+import { normId, getConstants } from '@/utils';
 
-const GET = async (_, { params: { id = '' } }) => {
+const GET = async (req, { params: { id } }) => {
   id = normId(id);
+
+  const { searchParams } = req.nextUrl;
+  
+  const { pages } = getConstants(searchParams.get('lang'))
 
   const data = pages.find(({ slug }) => normId(slug) === id);
 

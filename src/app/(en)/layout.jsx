@@ -6,6 +6,7 @@ import { AnimatePresence } from '@/components/animate';
 import { Cursor, ErrorBoundary } from '@/components/ui';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
+import lang from './lang';
 
 const font = Inter({ subsets: ['latin'], variable: '--font-app' });
 
@@ -29,15 +30,15 @@ const Layout = ({ children }) => {
                 <Cursor.Content />
               </Cursor>
 
-              <Header />
+              <Header lang={lang} />
 
-              <ErrorBoundary.Provider>
+              <ErrorBoundary.Provider lang={lang}>
                 <ErrorBoundary>
                   <AnimatePresence mode='await'>{children}</AnimatePresence>
                 </ErrorBoundary>
               </ErrorBoundary.Provider>
 
-              <Footer />
+              <Footer lang={lang} />
             </body>
           </Header.GetState>
         </SmoothScroll>
@@ -47,7 +48,7 @@ const Layout = ({ children }) => {
 };
 
 const generateMetadata = async () => {
-  const { data = {} } = (await globalsApi.getOne('personal-info')).data;
+  const { data = {} } = (await globalsApi.getOne('personal-info', `?lang=${lang}`)).data;
 
   return {
     title: {

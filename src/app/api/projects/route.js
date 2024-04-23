@@ -1,4 +1,4 @@
-import { projects } from '@/constants';
+import { getConstants } from '@/utils';
 
 const PAGE = 1,
   PER_PAGE = 5,
@@ -6,6 +6,8 @@ const PAGE = 1,
 
 const GET = (req) => {
   const { searchParams } = req.nextUrl;
+  
+  const { projects } = getConstants(searchParams.get('lang'))
 
   const page = searchParams.get('page') || PAGE,
     role = ((role) => (role && role !== 'undefined' ? role : ROLE))(

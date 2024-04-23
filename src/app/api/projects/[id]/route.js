@@ -1,8 +1,11 @@
-import { projects } from '@/constants';
-import { normId } from '@/utils';
+import { getConstants, normId } from '@/utils';
 
-const GET = async (_, { params: { id = '' } }) => {
+const GET = async (req, { params: { id } }) => {
   id = normId(id);
+
+  const { searchParams } = req.nextUrl;
+  
+  const { projects } = getConstants(searchParams.get('lang'))
 
   const dataIdx = projects.findIndex(({ slug }) => normId(slug) === id);
 

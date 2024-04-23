@@ -1,12 +1,13 @@
 import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
-import { WorkView } from '@/views';
+import { ProjectsView } from '@/views';
+import lang from '../lang';
 
-const WorkPage = async (props) => {
-  const { data } = await pagesApi.getOne('work');
+const ProjectsPage = async (props) => {
+  const { data } = await pagesApi.getOne('projects', `?lang=${lang}`);
 
   return (
-    <WorkView
+    <ProjectsView
       data={data}
       {...props}
     />
@@ -14,7 +15,7 @@ const WorkPage = async (props) => {
 };
 
 const generateMetadata = async () => {
-  const { metadata = {} } = (await pagesApi.getOne('work')).data || {};
+  const { metadata = {} } = (await pagesApi.getOne('projects', `?lang=${lang}`)).data || {};
 
   return {
     title: capitalize(metadata.title),
@@ -26,5 +27,5 @@ const generateMetadata = async () => {
   };
 };
 
-export default WorkPage;
+export default ProjectsPage;
 export { generateMetadata };

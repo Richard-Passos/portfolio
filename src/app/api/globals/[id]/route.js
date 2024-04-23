@@ -1,8 +1,11 @@
-import { globals } from '@/constants';
-import { normId } from '@/utils';
+import { getConstants, normId } from '@/utils';
 
-const GET = async (_, { params: { id = '' } }) => {
+const GET = async (req, { params: { id } }) => {
   id = normId(id);
+
+  const { searchParams } = req.nextUrl;
+  
+  const { globals } = getConstants(searchParams.get('lang'))
 
   const data = globals.find(({ slug }) => normId(slug) === id);
 
