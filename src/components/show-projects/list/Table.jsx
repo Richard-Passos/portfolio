@@ -5,7 +5,7 @@ const ShowProjectsListTable = ({ data = [], ...props }) => {
     <ProjectsTable {...props}>
       {data.map((data, i) => (
         <ProjectsTable.Item
-          href={`/projects/${data.slug}`}
+          href={`projects/${data.slug}`}
           idx={i}
           key={data.slug}
         >

@@ -5,7 +5,7 @@ const ShowProjectsItemsGrid = ({ data = [], ...props }) => {
     <ProjectsGrid {...props}>
       {data.map((data, i) => (
         <ProjectsGrid.Item
-          href={`/projects/${data.slug}`}
+          href={`projects/${data.slug}`}
           idx={i}
           key={data.slug}
         >
