@@ -10,8 +10,6 @@ const contactPage = {
       data: {
         title: 'Drowning with \ngreat ideas?',
         subtitle: "Let's make'em fly",
-        description:
-          'Ready for lift-off? Ping, tweet, message or poke — and we will get back as soon as possible.',
         grid: {
           templates: {
             default: '"item-0 .""item-1 item-1""item-2 item-2""item-3 item-3""item-4 item-4"',
@@ -31,7 +29,7 @@ const contactPage = {
               type: 'indicator',
               data: {
                 description:
-                  "I'm here ready to dive deep to rescue your great ideas from drowning — together, let's harness their potential and fly'em to digital prominence.",
+                  "I'm here ready to dive deep to rescue your great ideas from drowning you — together, let's harness their potential and fly'em to digital prominence.",
               },
             },
             {
@@ -55,7 +53,7 @@ const contactPage = {
                   type: '',
                   icon: { src: '/images/rotate.svg' },
                   data: {
-                    label: 'Change value',
+                    label: 'Change skill',
                   },
                 },
                 items: [{title: 'Hard skills', description: skills.hard?.map(data => data.title).join(', ')}, {title: 'Soft skills', description: skills.soft?.map(data => data.title).join(', ')}],
@@ -89,20 +87,29 @@ const contactPage = {
           ],
           items: [
             {
+              type: 'text',
               title: 'Availability',
-              slug: 'availability',
+              description: globals
+              .find((data) => data.slug === 'personal-info')
+              ?.data.availability
             },
             {
+              type: 'local-time',
               title: 'Local time',
-              slug: 'local-time',
             },
             {
+              type: 'text',
               title: 'Location',
-              slug: 'location',
+              description: Object.entries(globals
+                .find((data) => data.slug === 'personal-info')
+                ?.data.location)?.map(([key, value]) => (key === 'country' || key === 'state') && value).join(', ')
             },
             {
+              type: 'link',
               title: 'Coffee',
-              slug: 'buy-coffee',
+              ...globals
+              .find((data) => data.slug === 'personal-info')
+              ?.data.buyCoffee
             },
           ],
         },
@@ -117,7 +124,7 @@ const contactPage = {
               optionalText: '',
               control: 'input',
               placeholder: 'John Doe',
-              description: 'Your name.',
+              description: 'Your name and surname.',
               defaultValue: '',
               config: [
                 {
@@ -132,7 +139,7 @@ const contactPage = {
             },
             {
               name: 'email',
-              tye: 'email',
+              type: 'email',
               label: 'Email',
               optionalText: '',
               control: 'input',

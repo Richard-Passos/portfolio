@@ -40,7 +40,7 @@ const homePage = {
           },
         },
         list: {
-          items: ['Mission', 'Soft & hard skills', 'Services'],
+          items: ['Mission', 'Hard & soft skills', 'Services'],
           action: {
             type: '',
             icon: { src: '/images/arrow-up-right.svg' },
@@ -134,7 +134,7 @@ const homePage = {
           ],
         },
         list: {
-          items: ['Background', 'Hobbys', 'Personality'],
+          items: ['Background', 'Hobbies', 'Personality'],
           action: {
             type: '',
             icon: { src: '/images/arrow-up-right.svg' },

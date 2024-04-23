@@ -16,7 +16,7 @@ const skills = {
       title: 'React Native',
       icon: { src: '/images/react.svg' },
       description:
-        'Build cross-platform mobile applications with ease.',
+        'JavaScript library that uses React for agile development of cross-platform mobile applications.',
     },
     {
       title: 'Next.js',

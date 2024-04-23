@@ -1,5 +1,3 @@
-export { default as globals } from './globals';
+export * as en from './en';
+export * as pt from './pt';
 export { default as languages } from './languages';
-export { default as pages } from './pages';
-export { default as projects } from './projects';
-export { default as skills } from './skills';

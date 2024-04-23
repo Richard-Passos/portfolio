@@ -68,7 +68,7 @@ const aboutPage = {
               {
                 title: 'Personality',
                 description:
-                  "I'm an analytical and self-taught person, standing out for my dedication. I have a synthetic approach, where I turn complex information into intelligent and effective decisions. This approach not only simplifies the decision-making process but also allows me to find innovative solutions amidst apparent chaos.",
+                  "I'm an analytical and self-taught person, standing out for my dedication. I have a synthetic and critical approach, where I turn complex information into intelligent and effective decisions. This approach not only simplifies the decision-making process but also allows me to find innovative solutions amidst apparent chaos.",
               },
               {
                 title: 'Mission',

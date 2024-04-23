@@ -195,7 +195,7 @@ const globals = [
             },
             title: 'Quality-oriented',
             description:
-              'Dedicated to mastering all aspects of development, my commitment to excellence guarantees top-tier solutions.',
+              'Dedicated to mastering all aspects of development, my commitment to quality guarantees top-tier solutions.',
           },
           {
             icon: {
