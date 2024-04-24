@@ -63,7 +63,7 @@ const workPage = {
             animation: 'slideUpRight',
             data: {
               label: 'Contratar',
-              href: '/contato',
+              href: '/contact',
               variants: {
                 color: 'main',
               },
@@ -112,7 +112,7 @@ const workPage = {
           animation: 'slideUpRight',
           data: {
             label: 'Sobre mim',
-            href: '/sobre',
+            href: '/contact',
             variants: {
               color: 'main',
               size: 'sm',
@@ -208,7 +208,7 @@ const workPage = {
           },
           data: {
             label: 'Ir para a página sobre mim',
-            href: '/sobre',
+            href: '/about',
             variants: {
               color: 'main',
             },
