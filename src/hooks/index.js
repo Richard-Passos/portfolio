@@ -3,7 +3,6 @@ export { default as useChildrenCount } from './useChildrenCount'
 export { default as useEventListener } from './useEventListener';
 export { default as useFollowPointer } from './useFollowPointer';
 export { default as useFormField } from './useFormField';
-export { default as useIsExternalUrl } from './useIsExternalUrl';
 export { default as useLoadMore } from './useLoadMore';
 export { default as useLocalTime } from './useLocalTime';
 export { default as useQueryString } from './useQueryString';
@@ -13,4 +12,5 @@ export { default as useTimeout } from './useTimeout';
 export { default as useTimer } from './useTimer';
 export { default as useToast } from './useToast';
 export { default as useUpdateEffect } from './useUpdateEffect';
+export { default as useUpdateMotionValueEvent } from './useUpdateMotionValueEvent';
 export { default as useWindowSize } from './useWindowSize';
