@@ -3,6 +3,7 @@ import { cn } from '@/utils';
 import { Badge } from '../../ui';
 import { Text } from '../../ui/text';
 import Item from './Root';
+import { Fragment } from 'react';
 
 const BentoGridItemDescription = ({ className, data = {}, ...props }) => {
   return (
@@ -18,7 +19,7 @@ const BentoGridItemDescription = ({ className, data = {}, ...props }) => {
       </Badge>
 
       <Text className='text-muted-content'>
-        {data.description?.split('.').map((w) => {
+        {data.description?.split('.').map((w, i) => {
           // TODO fix with rich text
           const boldRegex = /(.*)<b>(.*)<\/b>(.*)/g;
 
@@ -34,7 +35,7 @@ const BentoGridItemDescription = ({ className, data = {}, ...props }) => {
             </>
           );
 
-          return hasBold ? Bold : w && `${w}.`;
+          return <Fragment key={i}>{hasBold ? Bold : w && `${w}.`}</Fragment>;
         })}
       </Text>
     </Item>
