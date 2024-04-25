@@ -7,13 +7,13 @@ import { useContext } from 'react';
 import { projectsApiGet } from '@/api/projects';
 import { ShowProjectsContext } from '@/contexts';
 import { useLoadMore } from '@/hooks';
-import { isFunctionThanCall } from '@/utils';
+import { isFunctionThanCall, normId } from '@/utils';
 
 const ShowProjectsLoadMore = ({ asChild, ...props }) => {
   const [state, setState] = useContext(ShowProjectsContext),
     searchParams = useSearchParams();
 
-  const role = searchParams.get('role')?.toLowerCase();
+  const role = normId(searchParams.get('role'))
 
   const loadMore = useLoadMore(projectsApiGet, setState, `&role=${role}`);
 
