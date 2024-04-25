@@ -12,11 +12,14 @@ const ScrollToLink = ({ href, ...props }, ref) => {
 
   return (
     <Link
-      href={href}
       ref={ref}
       {...props}
       onClick={(ev) => {
-        lenis.scrollTo(href);
+        lenis.scrollTo(href, {
+          duration: 2,
+          easing: (x) =>
+            x < 0.5 ? 8 * x ** 4 : 1 - Math.pow(-2 * x + 2, 4) / 2, // easeInOutQuart
+        });
 
         isFunctionThanCall(props.onClick, ev);
       }}
