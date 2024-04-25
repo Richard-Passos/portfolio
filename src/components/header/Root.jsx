@@ -9,8 +9,11 @@ import Menu from '../menu';
 import { Logo, Separator } from '../ui';
 import Nav from './Nav';
 import State from './State';
+import { useLocale } from 'next-intl';
 
-const Header = async ({ locale, className, ...props }) => {
+const Header = async ({ className, ...props }) => {
+  const locale = useLocale()
+
   const { data = {} } = (await globalsApi.getOne('header', `?locale=${locale}`)).data || {};
 
   return (
@@ -22,10 +25,10 @@ const Header = async ({ locale, className, ...props }) => {
         )}
         {...props}
       >
-        <Logo locale={locale} />
+        <Logo />
 
         <div className='flex h-10 items-center max-sm:hidden'>
-          <Nav items={data.navItems} />
+          <Nav items={data.navItems?.short} />
 
           <Separator
             className='mr-4'
@@ -37,7 +40,7 @@ const Header = async ({ locale, className, ...props }) => {
           </Suspense>
         </div>
 
-        <Menu locale={locale} />
+        <Menu />
       </header>
     </State>
   );
