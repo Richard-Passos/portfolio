@@ -12,7 +12,7 @@ const HomeView = ({ data = {} }) => {
 
     Section = Section && (
       <Section
-        id={slug}
+        key={slug}
         hasTransition={
           slug.toLowerCase() !== 'hero' && lastTheme !== data.theme
         }
