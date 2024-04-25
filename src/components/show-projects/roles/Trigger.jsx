@@ -1,13 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { useRouter, usePathname  } from '@/navigation';
 
 import { useQueryString } from '@/hooks';
 import { smoothConfig } from '@/hooks/useSmooth';
-import { cn } from '@/utils';
-
-import { Link } from '../../ui';
+import { cn, normId } from '@/utils';
+import { useSearchParams } from 'next/navigation';
 
 const ShowProjectsRolesTrigger = ({
   className,
@@ -15,28 +14,32 @@ const ShowProjectsRolesTrigger = ({
   children,
   ...props
 }) => {
-  const pathame = usePathname(),
-    searchParams = useSearchParams(),
-    query = useQueryString([['role', role]]);
+  const router = useRouter(),
+      pathame = usePathname(),
+      searchParams = useSearchParams(),
+    query = useQueryString({ role });
 
-  const activeRole = searchParams.get('role')?.toLowerCase() || 'all',
-    isActive = activeRole === role.toLowerCase();
+  const activeRole = normId(searchParams.get('role')) || 'all',
+    isActive = activeRole === normId(role);
 
   return (
-    <Link
+    <button
       className={cn(
-        'relative z-10 h-8 grow basis-24 break-all rounded-sm border-none text-xs uppercase no-underline hover:text-content focus-visible:outline-content data-active:text-primary-content',
+        'relative z-10 h-8 grow basis-24 break-all transition-color rounded-sm text-xs font-semibold uppercase hover:text-content focus-visible:outline-content data-active:text-primary-content',
         className,
       )}
       data-state={isActive ? 'active' : 'inactive'}
-      href={pathame + query}
+      onClick={() => router.replace(pathame + query)}
       {...props}
     >
       {children}
 
       {isActive && (
         <motion.span
-          className='absolute inset-0 -z-10 rounded-inherit bg-primary'
+          className='absolute inset-0 -z-10 bg-primary'
+          style={{
+            borderRadius: 'var(--radius-sm)'
+          }}
           layoutId='showProjectsRolesTriggerActiveIndicator'
           transition={{
             type: 'spring',
@@ -44,7 +47,7 @@ const ShowProjectsRolesTrigger = ({
           }}
         />
       )}
-    </Link>
+    </button>
   );
 };
 
