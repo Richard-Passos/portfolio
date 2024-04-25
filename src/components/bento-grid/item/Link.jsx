@@ -14,6 +14,7 @@ const BentoGridItemLink = ({ className, data = {}, ...props }) => {
       <Link
         className='hover:theme-primary flex size-full flex-col gap-1.5 rounded-inherit border bg-main p-sm no-underline transition-colors hover:focus-visible:outline-main'
         href={data.href}
+        isExternal={data.isExternal}
       >
         <div className='mb-3 flex aspect-square h-10 items-center justify-center rounded-sm border transition-border'>
           <Icon
