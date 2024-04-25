@@ -1,13 +1,14 @@
 import { globalsApi } from '@/api';
 import { cn } from '@/utils';
 
-import BackTop from '../back-top';
 import Button from '../button';
 import GridPattern from '../grid-pattern';
 import { ScrollAnimate } from '../scroll-animate';
 import Section from '../section';
 import SocialNav from '../social-nav';
 import { Icon, Link, Logo, Text } from '../ui';
+import { ScrollToLink } from '../link';
+import { useLocale } from 'next-intl';
 
 const SCROLL_OFFSET = ['0 1', '1 1'],
   ANIMATION_CONFIG = {
@@ -27,7 +28,7 @@ const SCROLL_OFFSET = ['0 1', '1 1'],
     },
   };
 
-const FooterContent = ({ className, data = {}, locale, ...props }) => {
+const FooterContent = ({ className, data = {}, ...props }) => {
   return (
     <ScrollAnimate config={ANIMATION_CONFIG.x}>
       <Section
@@ -40,7 +41,7 @@ const FooterContent = ({ className, data = {}, locale, ...props }) => {
       >
         <FooterContentCta data={data.cta} />
 
-        <FooterContentPersonal data={data.personal} locale={locale} />
+        <FooterContentPersonal data={data.personal} />
       </Section>
     </ScrollAnimate>
   );
@@ -81,7 +82,9 @@ const FooterContentCta = ({ className, data = {}, ...props }) => {
   );
 };
 
-const FooterContentPersonal = async ({ locale, data = {}, className, ...props }) => {
+const FooterContentPersonal = async ({ data = {}, className, ...props }) => {
+  const locale = useLocale()
+
   const personalInfo =
       (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data?.data || {},
     { action = {} } = data;
@@ -96,7 +99,7 @@ const FooterContentPersonal = async ({ locale, data = {}, className, ...props })
         {...props}
       >
         <div className='flex flex-col items-start'>
-          <Logo locale={locale} />
+          <Logo />
 
           <Text className='mt-1 max-w-52 text-sm font-medium'>
             {personalInfo.description}
@@ -130,9 +133,9 @@ const FooterContentPersonal = async ({ locale, data = {}, className, ...props })
             })}
           </section>
 
-          <BackTop asChild>
+          <ScrollToLink href='start' asChild>
             <Button
-              className='mt-md text-xs font-bold uppercase max-sm:hidden'
+              className='mt-md no-underline text-xs font-bold uppercase max-sm:hidden'
               {...action.data}
             >
               <Button.Icon animation={action.animation}>
@@ -141,7 +144,7 @@ const FooterContentPersonal = async ({ locale, data = {}, className, ...props })
 
               {action.data?.label}
             </Button>
-          </BackTop>
+          </ScrollToLink>
         </div>
 
         <section>

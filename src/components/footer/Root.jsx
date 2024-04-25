@@ -4,8 +4,11 @@ import { cn, getOpstTheme } from '@/utils';
 import Lines from '../lines';
 import Content from './Content';
 import Overlay from './Overlay';
+import { useLocale } from 'next-intl';
 
-const Footer = async ({ locale, className, ...props }) => {
+const Footer = async ({ className, ...props }) => {
+  const locale = useLocale()
+
   const { theme, data = {} } = (await globalsApi.getOne('footer', `?locale=${locale}`)).data || {};
 
   const opstTheme = getOpstTheme(theme)
@@ -28,7 +31,6 @@ const Footer = async ({ locale, className, ...props }) => {
       <Content
         theme={theme}
         data={data}
-        locale={locale}
       />
     </footer>
   );
