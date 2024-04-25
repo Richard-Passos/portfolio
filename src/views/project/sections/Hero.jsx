@@ -32,7 +32,7 @@ const ProjectViewHeroSection = ({
 
   return (
     <Section
-      forceHeaderTheme
+      forceTheme
       className={cn(
         '-mt-[--header-h] flex min-h-svh flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))]',
         className,

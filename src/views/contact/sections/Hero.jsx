@@ -6,7 +6,7 @@ import { cn, normCompName, normTemplates } from '@/utils';
 const ContactViewHeroSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      forceHeaderTheme
+      forceTheme
       className={cn(
         '-mt-[--header-h] flex min-h-svh w-9/10 max-w-screen-lg flex-col items-center justify-center pt-[calc(theme(spacing.lg)+var(--header-h))]',
         className,

@@ -42,7 +42,7 @@ const ANIMATION_CONFIG = {
 const WorkViewHeroSection = ({ className, data = {}, ...props }) => {
   return (
     <Section
-      forceHeaderTheme
+      forceTheme
       className={cn(
         '-mt-[--header-h] min-h-svh overflow-y-clip py-0 [--inset:calc(var(--w)*.025)] [--w:100vw] *:*:last:*:hidden 2xl:[--w:--max-w]',
         className,
