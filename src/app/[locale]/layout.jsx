@@ -6,7 +6,7 @@ import { AnimatePresence } from '@/components/animate';
 import { Cursor, ErrorBoundary } from '@/components/ui';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
-import { locales } from '@/constants';
+import { locales } from '@/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 const font = Inter({ subsets: ['latin'], variable: '--font-app' });
@@ -27,21 +27,20 @@ const Layout = ({ children, params: { locale } }) => {
                 'relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app [&[data-scroll-locked]]:!mr-0',
                 font.variable,
               )}
-              id='top'
             >
               <Cursor>
                 <Cursor.Content />
               </Cursor>
 
-              <Header locale={locale} />
+              <Header />
 
-              <ErrorBoundary.Provider locale={locale}>
+              <ErrorBoundary.Provider>
                 <ErrorBoundary>
                   <AnimatePresence mode='await'>{children}</AnimatePresence>
                 </ErrorBoundary>
               </ErrorBoundary.Provider>
 
-              <Footer locale={locale} />
+              <Footer />
             </body>
           </Header.GetState>
         </SmoothScroll>
@@ -69,9 +68,7 @@ const generateMetadata = async ({ params: { locale } }) => {
   };
 };
 
-const generateStaticParams = async () => {
-  return locales.map((locale) => ({ locale }));
-};
+const generateStaticParams = () => locales.map((locale) => ({ locale }));
 
 export default Layout;
 export { generateMetadata, generateStaticParams };
