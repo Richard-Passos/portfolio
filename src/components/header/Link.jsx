@@ -6,7 +6,6 @@ import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
 import { MagneticLink } from '../link';
-import { NavigationMenuLink } from '../ui/navigation-menu';
 
 const HeaderLink = ({
   className,
@@ -17,14 +16,12 @@ const HeaderLink = ({
 }) => {
   return (
     <MagneticLink
-      asChild
       className={cn(
         'group/link relative flex h-10 rounded-sm px-4 no-underline transition-none hover:z-10',
         className,
       )}
       {...props}
     >
-      <NavigationMenuLink>
         <span className='lowercase first-letter:capitalize'>{children}</span>
 
         {isActive && (
@@ -42,7 +39,6 @@ const HeaderLink = ({
             }}
           />
         )}
-      </NavigationMenuLink>
     </MagneticLink>
   );
 };
