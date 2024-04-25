@@ -1,50 +1,44 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-
 import { cn } from '@/utils';
 
-import { NavigationMenu } from '../ui/navigation-menu';
 import Link from './Link';
 import { useUpdateEffect } from '@/hooks';
-
-const LOCALE_REGEX = /\/([a-z]{2})\/?([^/]+)?/i;
+import { useSelectedLayoutSegment } from 'next/navigation';
+import { useState } from 'react';
 
 const HeaderNav = ({ className, items = [], ...props }) => {
-  const     pathname = usePathname();
+  const selectedLayoutSegment = useSelectedLayoutSegment();
 
-  const [currActive, setCurrActive] = useState(pathname)
+  const segment = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/'
 
-    const locale = pathname.match(LOCALE_REGEX)?.[1]
+  const [active, setActive] = useState(segment)
     
-    const getHref = (href = '') => `/${locale}${href === '/' ? '' : href}`
+  const includesSegment = 
+  items.some(({ data = {} }) => data.href === segment)
 
-  const includesPathname = 
-  items.some(({ data = {} }) => getHref(data.href) === pathname)
-
-  useUpdateEffect(() => setCurrActive(pathname), [pathname])
+  useUpdateEffect(() => setActive(segment), [segment])
 
   return (
-    <NavigationMenu
-      className={cn('group', className)}
+    <nav
+      className={cn('group flex w-full max-w-max justify-center items-center', className)}
       {...props}
     >
       {items.map(({ data = {} }) => ( 
           <Link
-            isActive={getHref(data.href) === currActive}
-            shouldHide={!includesPathname}
+            isActive={active === data.href}
+            shouldHide={!includesSegment}
             key={data.href}
-            onMouseEnter={() => setCurrActive(getHref(data.href))}
+            onMouseEnter={() => setActive(data.href)}
             onMouseLeave={() => {
-              if(includesPathname) setCurrActive(pathname)
+              if(includesSegment) setActive(segment)
             }}
             {...data}
           >
             {data.label}
           </Link>
           ))}
-    </NavigationMenu>
+    </nav>
   );
 };
 
