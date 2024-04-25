@@ -9,8 +9,11 @@ import SocialNav from '../social-nav';
 import { Logo, Separator } from '../ui';
 import MenuUiContent from '../ui/menu/Content';
 import Nav from './Nav';
+import { useLocale } from 'next-intl';
 
-const MenuContent = async ({locale, ...props}) => {
+const MenuContent = async (props) => {
+  const locale = useLocale()
+
   const { data = {} } = (await globalsApi.getOne('header', `?locale=${locale}`)).data || {},
     personalInfo = (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data?.data || {};
 
@@ -47,7 +50,7 @@ const MenuContent = async ({locale, ...props}) => {
           <GridPattern />
         </div>
 
-        <Nav items={data.navItems} />
+        <Nav items={data.navItems?.full} />
       </div>
     </MenuUiContent>
   );
