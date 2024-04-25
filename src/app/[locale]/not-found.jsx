@@ -1,11 +1,10 @@
 import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
 import { NotFoundView } from '@/views';
-import { useLocale } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getLocale, unstable_setRequestLocale } from 'next-intl/server';
 
 const NotFoundPage = async (props) => {
-  const locale = useLocale()
+  const locale = await getLocale()
 
   unstable_setRequestLocale(locale);
     
@@ -20,7 +19,7 @@ const NotFoundPage = async (props) => {
 };
 
 const generateMetadata = async () => {
-  const locale = useLocale()
+  const locale = await getLocale()
 
   const { metadata = {} } = (await pagesApi.getOne('not-found', `?locale=${locale}`)).data || {};
 

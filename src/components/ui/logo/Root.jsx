@@ -3,10 +3,10 @@ import { cn } from '@/utils';
 
 import Icon from '../icon';
 import Link from '../link';
-import { useLocale } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 
 const Root = async ({ className, ...props }) => {
-  const locale = useLocale()
+  const locale = await getLocale()
 
   const personalInfo =
     (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data?.data || {};

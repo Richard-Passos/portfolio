@@ -1,9 +1,9 @@
 import { pagesApi } from '@/api';
 import { ErrorProvider } from '@/contexts';
-import { useLocale } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 
 const ErrorBoundaryProvider = async ({ value, ...props }) => {
-  const locale = useLocale()
+  const locale = await getLocale()
 
   const { data } = await pagesApi.getOne('error', `?locale=${locale}`);
 
