@@ -2,36 +2,75 @@ const globals = [
   {
     slug: 'header',
     data: {
-      navItems: [
-        {
-          type: '',
-          data: {
-            href: '/',
-            label: 'Início',
+      navItems: {
+        short: [
+          {
+            type: '',
+            data: {
+              href: '/',
+              label: 'Início',
+            },
           },
-        },
-        {
-          type: '',
-          data: {
-            href: '/work',
-            label: 'Trabalho',
+          {
+            type: '',
+            data: {
+              href: '/work',
+              label: 'Trabalho',
+            },
           },
-        },
-        {
-          type: '',
-          data: {
-            href: '/about',
-            label: 'Sobre',
+          {
+            type: '',
+            data: {
+              href: '/about',
+              label: 'Sobre',
+            },
           },
-        },
-        {
-          type: '',
-          data: {
-            href: '/contact',
-            label: 'Contato',
+          {
+            type: '',
+            data: {
+              href: '/contact',
+              label: 'Contato',
+            },
           },
-        },
-      ],
+        ],
+        full: [
+          {
+            type: '',
+            data: {
+              href: '/',
+              label: 'Início',
+            },
+          },
+          {
+            type: '',
+            data: {
+              href: '/work',
+              label: 'Trabalho',
+            },
+          },
+          {
+            type: '',
+            data: {
+              href: '/projects',
+              label: 'Projetos',
+            },
+          },
+          {
+            type: '',
+            data: {
+              href: '/about',
+              label: 'Sobre',
+            },
+          },
+          {
+            type: '',
+            data: {
+              href: '/contact',
+              label: 'Contato',
+            },
+          },
+        ],
+      }
     },
   },
   {
@@ -59,10 +98,12 @@ const globals = [
         smalls: [
           {
             href: 'https://github.com/Richard-Passos',
+            isExternal: true,
             label: 'Feito com ❤️ por <a>Richard</a>',
           },
           {
             href: 'https://www.linkedin.com/in/richardp-dev/',
+            isExternal: true,
             label: '© 2024 <a>Richard Passos</a>',
           },
         ],
@@ -110,21 +151,25 @@ const globals = [
           icon: { src: '/images/github.svg' },
           label: 'Github',
           href: 'https://github.com/Richard-Passos',
+          isExternal: true,
         },
         {
           icon: { src: '/images/instagram.svg' },
           label: 'Instagram',
           href: 'https://www.instagram.com/richardp.dev',
+          isExternal: true,
         },
         {
           icon: { src: '/images/linkedin.svg' },
           label: 'Linkedin',
           href: 'https://www.linkedin.com/in/richardp-dev',
+          isExternal: true,
         },
       ],
       buyCoffee: {
         label: 'Me compre um café',
         href: 'https://www.buymeacoffee.com/richardp.dev',
+        isExternal: true,
       },
       availability: 'Disponível para trabalho',
       services: [

@@ -127,6 +127,7 @@ const homePage = {
               type: 'link',
               data: {
                 href: 'https://www.buymeacoffee.com/richardp.dev',
+                isExternal: true,
                 icon: { src: '/images/mug.svg', title: 'Caneca' },
                 title: 'Me compre um café',
               },
