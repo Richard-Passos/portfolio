@@ -2,36 +2,75 @@ const globals = [
   {
     slug: 'header',
     data: {
-      navItems: [
-        {
-          type: '',
-          data: {
-            href: '/',
-            label: 'Home',
+      navItems: {
+        short: [
+          {
+            type: '',
+            data: {
+              href: '/',
+              label: 'Home',
+            },
           },
-        },
-        {
-          type: '',
-          data: {
-            href: '/work',
-            label: 'Work',
+          {
+            type: '',
+            data: {
+              href: '/work',
+              label: 'Work',
+            },
           },
-        },
-        {
-          type: '',
-          data: {
-            href: '/about',
-            label: 'About',
+          {
+            type: '',
+            data: {
+              href: '/about',
+              label: 'About',
+            },
           },
-        },
-        {
-          type: '',
-          data: {
-            href: '/contact',
-            label: 'Contact',
+          {
+            type: '',
+            data: {
+              href: '/contact',
+              label: 'Contact',
+            },
           },
-        },
-      ],
+        ],
+        full: [
+          {
+            type: '',
+            data: {
+              href: '/',
+              label: 'Home',
+            },
+          },
+          {
+            type: '',
+            data: {
+              href: '/work',
+              label: 'Work',
+            },
+          },
+          {
+            type: '',
+            data: {
+              href: '/projects',
+              label: 'Projects',
+            },
+          },
+          {
+            type: '',
+            data: {
+              href: '/about',
+              label: 'About',
+            },
+          },
+          {
+            type: '',
+            data: {
+              href: '/contact',
+              label: 'Contact',
+            },
+          },
+        ],
+      }
     },
   },
   {
@@ -59,10 +98,12 @@ const globals = [
         smalls: [
           {
             href: 'https://github.com/Richard-Passos',
+            isExternal: true,
             label: 'Made with ❤️ by <a>Richard</a>',
           },
           {
             href: 'https://www.linkedin.com/in/richardp-dev/',
+            isExternal: true,
             label: '© 2024 <a>Richard Passos</a>',
           },
         ],
@@ -110,21 +151,25 @@ const globals = [
           icon: { src: '/images/github.svg' },
           label: 'Github',
           href: 'https://github.com/Richard-Passos',
+          isExternal: true,
         },
         {
           icon: { src: '/images/instagram.svg' },
           label: 'Instagram',
           href: 'https://www.instagram.com/richardp.dev',
+          isExternal: true,
         },
         {
           icon: { src: '/images/linkedin.svg' },
           label: 'Linkedin',
           href: 'https://www.linkedin.com/in/richardp-dev',
+          isExternal: true,
         },
       ],
       buyCoffee: {
         label: 'Buy me a coffee',
         href: 'https://www.buymeacoffee.com/richardp.dev',
+        isExternal: true,
       },
       availability: 'Available to work',
       services: [
