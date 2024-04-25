@@ -27,7 +27,6 @@ export { default as Link } from './link';
 export { default as Logo } from './logo';
 export { default as Menu } from './menu';
 export { default as Menubar } from './menubar';
-export { default as NavigationMenu } from './navigation-menu';
 export { default as Popover } from './popover';
 export { default as Portal } from './portal';
 export { default as Progress } from './progress';
