@@ -1,5 +1,5 @@
 import createMiddleware from 'next-intl/middleware';
-import { locales } from './constants';
+import { locales } from '@/navigation';
  
 const middleware = createMiddleware({
    locales,
