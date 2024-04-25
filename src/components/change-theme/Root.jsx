@@ -7,7 +7,7 @@ import { ScrollAnimate } from '../scroll-animate';
 
 const ChangeTheme = ({
   theme,
-  forceHeaderTheme,
+  forceTheme,
   className,
   hasTransition = true,
   ...props
@@ -23,7 +23,7 @@ const ChangeTheme = ({
   return (
     <HeaderChangeTheme
       theme={theme}
-      force={forceHeaderTheme}
+      force={forceTheme}
     >
       <div
         className={cn(

@@ -11,9 +11,10 @@ const Section = (props, ref) => {
     theme,
     className,
     children,
-    forceHeaderTheme,
+    forceTheme,
     ...rest
   } = props;
+
   const Tag = as || 'section';
 
   return (
@@ -31,7 +32,7 @@ const Section = (props, ref) => {
 
       <ChangeTheme
         hasTransition={hasTransition}
-        forceHeaderTheme={forceHeaderTheme}
+        forceTheme={forceTheme}
         theme={theme}
       />
     </Tag>
