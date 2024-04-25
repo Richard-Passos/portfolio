@@ -10,7 +10,7 @@ const useUpdateEffect = (effect, deps) => {
   }, []);
 
   useEffect(() => {
-    if (isMounted.current) return effect();
+    if (isMounted.current) return effect?.();
     else isMounted.current = true;
   }, deps);
 };
