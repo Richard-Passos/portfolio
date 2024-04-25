@@ -5,7 +5,7 @@ import Overlay from './Overlay';
 import State from './State';
 import Trigger from './Trigger';
 
-const Menu = ({locale, ...props}) => {
+const Menu = (props) => {
   return (
     <MenuUi {...props}>
       <MenuUi.Trigger asChild>
@@ -19,7 +19,7 @@ const Menu = ({locale, ...props}) => {
 
       <State>
         <MenuUi.Portal>
-          <Content locale={locale} />
+          <Content />
 
           <Overlay />
         </MenuUi.Portal>
