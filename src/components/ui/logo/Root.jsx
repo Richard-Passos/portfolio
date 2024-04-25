@@ -1,12 +1,12 @@
 import { globalsApi } from '@/api';
-import { cn, normId } from '@/utils';
+import { cn } from '@/utils';
 
 import Icon from '../icon';
 import Link from '../link';
-import { locales } from '@/constants';
+import { useLocale } from 'next-intl';
 
-const Root = async ({ locale, className, ...props }) => {
-  locale = normId(locale)
+const Root = async ({ className, ...props }) => {
+  const locale = useLocale()
 
   const personalInfo =
     (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data?.data || {};
@@ -17,12 +17,12 @@ const Root = async ({ locale, className, ...props }) => {
         'aspect-[2] h-10 -translate-x-2 overflow-hidden rounded-sm px-2 py-1 transition-none',
         className,
       )}
-      href={`/${locale === normId(locales[0]) ? '' : locale}`}
+      href='/'
       {...props}
     >
       <Icon
         className='size-full'
-        src={personalInfo?.logo.src}
+        src={personalInfo?.logo?.src}
       />
     </Link>
   );
