@@ -1,5 +1,4 @@
 export { default as Animate } from './animate';
-export { default as BackTop } from './back-top';
 export { default as BentoGrid } from './bento-grid';
 export { default as Bg } from './bg';
 export { default as Button } from './button';
