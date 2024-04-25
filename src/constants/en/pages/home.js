@@ -127,6 +127,7 @@ const homePage = {
               type: 'link',
               data: {
                 href: 'https://www.buymeacoffee.com/richardp.dev',
+                isExternal: true,
                 icon: { src: '/images/mug.svg', title: 'Mug' },
                 title: 'Buy me a coffee',
               },
@@ -161,7 +162,7 @@ const homePage = {
           { src: '/images/globe.svg', title: 'Globe' },
         ],
       },
-    },
+    }
   ],
 };
 
