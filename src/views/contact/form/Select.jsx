@@ -16,10 +16,10 @@ const ContactViewFormSelect = ({ placeholder, data = [], ...props }) => {
   const { name } = useFormField(),
     { register, watch } = useFormContext();
 
-  const currValue = watch(name),
+  const activeVal = watch(name),
     { onChange, ref, ...registerRest } = register(name);
 
-  const key = useChangeKeyWhenFalsy(currValue);
+  const key = useChangeKeyWhenFalsy(activeVal);
 
   return (
     <Select
