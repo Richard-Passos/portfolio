@@ -1,42 +1,23 @@
 'use client';
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-
-import { locales } from '@/constants';
+import { useRouter, locales, usePathname } from '@/navigation';
 import { cn } from '@/utils';
 
 import { Select } from '../ui';
 import { ChevronDownIcon, ChevronUpIcon } from '../ui/icon/icons';
-
-const DEFAULT_LOCALE = locales[0],
-  LOCALE_REGEX = /\/([a-z]{2})\/?([^/]+)?/i;
+import { useLocale } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 
 const Language = ({ className, ...props }) => {
-  const router = useRouter(),
-    pathname = usePathname(),
-    searchParams = useSearchParams();
-    
-  const locale = pathname.match(LOCALE_REGEX)?.[1]
-
-  const currLocale = locales.find((data) => data === locale) || DEFAULT_LOCALE;
-
-  const onChange = (locale) => {
-    const pathnameWithReplacedLocale = pathname.replace(
-      LOCALE_REGEX,
-      `/${locale}/$2`,
-    );
-
-    const url = `${pathnameWithReplacedLocale}?${searchParams}`;
-
-    router.push(url, {
-      scroll: false,
-    });
-  };
+  const activeLocale = useLocale(),
+  router = useRouter(),
+  pathname = usePathname(),
+  searchParams = useSearchParams()
 
   return (
     <Select
-      defaultValue={currLocale}
-      onValueChange={onChange}
+      defaultValue={activeLocale}
+      onValueChange={(locale) => router.replace(`${pathname}?${searchParams}`, { locale })}
       {...props}
     >
       <Select.Trigger
