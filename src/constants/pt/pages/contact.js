@@ -102,14 +102,17 @@ const contactPage = {
               title: 'Localização',
               description: Object.entries(globals
                 .find((data) => data.slug === 'personal-info')
-                ?.data.location)?.filter(([key]) => key === 'country' || key === 'state').map(([_, value]) => value).join(', ')
+                ?.data.location)?.map(([key, value]) => (key === 'country' || key === 'state') && value).filter(data => data).join(', ')
             },
             {
               type: 'link',
               title: 'Café',
-              ...globals
-              .find((data) => data.slug === 'personal-info')
-              ?.data.buyCoffee
+              ...Object.entries(globals
+                .find((data) => data.slug === 'personal-info')
+                ?.data).reduce(
+                  (obj, [key, value]) => key === 'buyCoffee' ? 
+                  { description: value.label, href: value.href, isExternal: value.isExternal}
+                  : obj, {})
             }
           ],
         },
@@ -194,7 +197,7 @@ const contactPage = {
                   params: [],
                 },
               ],
-              items: globals
+              items:  globals
                 .find((data) => data.slug === 'personal-info')
                 ?.data.services?.map((data) => data.title),
             },
