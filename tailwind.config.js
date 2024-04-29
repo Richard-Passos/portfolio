@@ -7,7 +7,7 @@ module.exports = {
     [
       '&.theme-dark',
       '.theme-dark > &:not([class*="theme-"])',
-      '.theme-dark:not(:has([class*="theme-"] &)) &',
+      '.theme-dark > :not([class*="theme-"]) &:not([class*="theme-"])',
     ],
   ],
   content: [
