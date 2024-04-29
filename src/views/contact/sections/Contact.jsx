@@ -46,7 +46,7 @@ const ContactViewContactSection = async ({
         </div>
 
         <ul className='mt-sm grid gap-xs sm:max-md:grid-cols-2'>
-          {info.items?.map((data) => {
+          {info.items?.map((data = {}) => {
             const type = normKey(data.type)
 
             const Type = infoTypes[type] || infoTypes.text
@@ -60,8 +60,9 @@ const ContactViewContactSection = async ({
                   {data.title}
                 </Text.Title>
   
-                <Type className='mt-0.5 text-sm first-letter:uppercase' {...(type === 'link' && {href: data.href })}>
-                  {data.description || data.label}
+                <Type className='mt-0.5 text-sm first-letter:uppercase' {...(type === 'link' && 
+                { href: data.href, isExternal: data.isExternal })}>
+                  {data.description}
                 </Type>
               </li>
             )
