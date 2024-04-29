@@ -8,7 +8,6 @@ import Section from '../section';
 import SocialNav from '../social-nav';
 import { Icon, Link, Logo, Text } from '../ui';
 import { ScrollToLink } from '../link';
-import { getLocale } from 'next-intl/server';
 
 const SCROLL_OFFSET = ['0 1', '1 1'],
   ANIMATION_CONFIG = {
@@ -83,10 +82,8 @@ const FooterContentCta = ({ className, data = {}, ...props }) => {
 };
 
 const FooterContentPersonal = async ({ data = {}, className, ...props }) => {
-  const locale = await getLocale()
-
   const personalInfo =
-      (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data?.data || {},
+      (await globalsApi.getOne('personal-info')).data?.data || {},
     { action = {} } = data;
 
   return (
