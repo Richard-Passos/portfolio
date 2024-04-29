@@ -10,7 +10,7 @@ Visit the live [website](https://richardp.vercel.app)
 
 ## 📝 Description
 
-My current portfolio.
+Where my professional expertise meets my personal passions. Come on in and take a look around! Explore captivating content that offers a quick look into my journey, interests, and creations. From work samples to personal insights, this portfolio is a window into who I am and what I do. Whether you're here to discover, connect, or collaborate, I invite you to explore and enjoy!
 
 <br/>
 
