@@ -3,8 +3,9 @@
 import { createContext } from 'react';
 
 const ErrorContext = createContext({
-  id: undefined,
-  data: {},
+  slug: undefined,
+  sections: {},
+  metadata: {}
 });
 
 const ErrorProvider = (props) => {
