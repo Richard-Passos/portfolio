@@ -9,12 +9,9 @@ import Menu from '../menu';
 import { Logo, Separator } from '../ui';
 import Nav from './Nav';
 import State from './State';
-import { getLocale } from 'next-intl/server';
 
 const Header = async ({ className, ...props }) => {
-  const locale = await getLocale()
-
-  const { data = {} } = (await globalsApi.getOne('header', `?locale=${locale}`)).data || {};
+  const { data = {} } = (await globalsApi.getOne('header')).data || {};
 
   return (
     <State>
