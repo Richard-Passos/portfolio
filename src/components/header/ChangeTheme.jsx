@@ -27,14 +27,14 @@ const HeaderChangeTheme = ({ theme, force, ...props }) => {
 
   const handleSetTheme = useCallback(() => {
     if (activeTheme !== theme) dispatch(setHeaderTheme(theme))
-  }, [activeTheme, theme, dispatch, setHeaderTheme])
+  }, [activeTheme, theme, dispatch])
 
   const onChange = (y) => {
     if(y === 1) handleSetTheme()
   }; 
 
-  useUpdateMotionValueEvent(y1, 'change', onChange)
-  useUpdateMotionValueEvent(y2, 'change', onChange)
+  useUpdateMotionValueEvent(y1, 'change', onChange, 0)
+  useUpdateMotionValueEvent(y2, 'change', onChange, 0)
 
     useEffect(() => {
       if (force) handleSetTheme()
