@@ -9,13 +9,10 @@ import SocialNav from '../social-nav';
 import { Logo, Separator } from '../ui';
 import MenuUiContent from '../ui/menu/Content';
 import Nav from './Nav';
-import { getLocale } from 'next-intl/server';
 
 const MenuContent = async (props) => {
-  const locale = await getLocale()
-
-  const { data = {} } = (await globalsApi.getOne('header', `?locale=${locale}`)).data || {},
-    personalInfo = (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data?.data || {};
+  const { data = {} } = (await globalsApi.getOne('header')).data || {},
+    personalInfo = (await globalsApi.getOne('personal-info')).data?.data || {};
 
   return (
     <MenuUiContent
