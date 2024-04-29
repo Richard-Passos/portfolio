@@ -5,11 +5,11 @@ import { normKey } from '@/utils';
   
 const i18nConfig = getRequestConfig(async ({ locale }) => {
   locale = normKey(locale)
-
+  
   if (!locales.includes(locale)) notFound();
  
   return {
-    message: (await import(`@/data/${locale}.json`))?.default
+    messages: (await import(`@/data/${locale}.json`))?.default
   };
 });
 
