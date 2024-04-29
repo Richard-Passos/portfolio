@@ -1,5 +1,2610 @@
 {
-  "Index": {
-    "title": "Hello world!"
+  "pages": {
+    "about": {
+      "sections": [
+        {
+          "slug": "hero",
+          "theme": "dark",
+          "data": {
+            "title": "Heart conquer\n-ing person",
+            "subtitle": "Gotta know more",
+            "icons": [
+              { "src": "/images/smile.svg", "title": "Smile" },
+              { "src": "/images/globe.svg", "title": "Globe" },
+              { "src": "/images/rocket.svg", "title": "Rocket" }
+            ],
+            "images": [
+              {
+                "src": "/images/parallax-00.jpg",
+                "alt": "",
+                "width": 2491,
+                "height": 3737
+              },
+              {
+                "src": "/images/parallax-01.jpg",
+                "alt": "",
+                "width": 2491,
+                "height": 3737
+              },
+              {
+                "src": "/images/parallax-02.jpg",
+                "alt": "",
+                "width": 2491,
+                "height": 3737
+              }
+            ]
+          }
+        },
+        {
+          "slug": "background",
+          "theme": "dark",
+          "data": {
+            "title": ["Who I am"],
+            "subtitle": "Just someone who wanna conquer hearts.",
+            "description": "I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "title": "Background",
+                    "description": "I have always been someone dedicated and studious, but up to a certain point, I never knew what I really wanted, couldn't imagine my future, someone without dreams. That didn't really bother me, perhaps due to a lack of sense of reality, but after certain experiences, like work and relationships, I realized that I needed dreams, I needed to find something that motivated me. After hours of research, truly pursuing something meaningful, I found development. \nIt was like a light bulb moment; when I read about what it involved, about what it meant to be a developer, I knew that's what I desired, a profession so enchanting that it fit me perfectly. Having found my goal, I began to dedicate myself insanely to make up for lost time, to recover years without dreams. Now I have my dreams, purposes, and I know exactly where I wanna be."
+                  }
+                ],
+                "image": {
+                  "src": "/images/parallax-00.jpg",
+                  "alt": "",
+                  "width": 2491,
+                  "height": 3737
+                },
+                "icon": {
+                  "src": "/images/smile.svg",
+                  "title": "Smile"
+                }
+              },
+              {
+                "items": [
+                  {
+                    "title": "Personality",
+                    "description": "I'm an analytical and self-taught person, standing out for my dedication. I have a synthetic and critical approach, where I turn complex information into intelligent and effective decisions. This approach not only simplifies the decision-making process but also allows me to find innovative solutions amidst apparent chaos."
+                  },
+                  {
+                    "title": "Mission",
+                    "description": "I've a mission to learn, cultivate, and make the most of. Learn from life and from people, from my successes and mistakes. Cultivate genuine relationships along the way. Make the most of opportunities and moments that life brings."
+                  }
+                ],
+                "image": {
+                  "src": "/images/parallax-00.jpg",
+                  "alt": "",
+                  "width": 2491,
+                  "height": 3737
+                },
+                "icon": {
+                  "src": "/images/globe.svg",
+                  "title": "Globe"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "slug": "values",
+          "theme": "light",
+          "data": {
+            "title": "My \nvalues",
+            "subtitle": "Elevating standards",
+            "grid": {
+              "templates": {
+                "default": "\"item-0\"\"item-1\"\"item-2\"\"item-3\"",
+                "sm": "\"item-0 item-1\"\"item-2 item-3\"",
+                "lg": "\"item-0 item-1 .\"\". item-2 item-3\""
+              },
+              "items": null
+            },
+            "icons": [
+              { "src": "/images/smile.svg", "title": "Smile" },
+              { "src": "/images/globe.svg", "title": "Globe" }
+            ]
+          }
+        },
+        {
+          "slug": "next-page",
+          "theme": "dark",
+          "data": {
+            "title": "Next page",
+            "description": "Contact ·",
+            "action": {
+              "icon": { "src": "/images/arrow-up-right.svg" },
+              "data": {
+                "label": "Go to contact page",
+                "href": "/contact",
+                "variants": { "color": "main" }
+              }
+            }
+          }
+        }
+      ],
+      "metadata": {
+        "title": "About",
+        "description": "About Richard Passos, his background, personality, mission and values."
+      }
+    },
+    "contact": {
+      "sections": [
+        {
+          "slug": "hero",
+          "theme": "dark",
+          "data": {
+            "title": "Drowning with \ngreat ideas?",
+            "subtitle": "Let's make'em fly",
+            "grid": {
+              "templates": {
+                "default": "\"item-0 .\"\"item-1 item-1\"\"item-2 item-2\"\"item-3 item-3\"\"item-4 item-4\"",
+                "sm": "\"item-0 item-1 item-1 item-1\"\"item-0 item-1 item-1 item-1\"\"item-2 item-2 item-3 item-3\"\"item-4 item-4 item-4 item-4\"",
+                "lg": "\"item-0 item-1 item-1 item-1 item-2 item-2\"\"item-0 item-1 item-1 item-1 item-3 item-3\"\"item-4 item-4 item-4 item-4 item-4 item-4\""
+              },
+              "items": [
+                {
+                  "type": "icons",
+                  "data": [
+                    { "src": "/images/rocket.svg", "title": "Rocket" },
+                    { "src": "/images/smile.svg", "title": "Smile" },
+                    { "src": "/images/globe.svg", "title": "Globe" }
+                  ]
+                },
+                {
+                  "type": "indicator",
+                  "data": {
+                    "description": "I'm here ready to dive deep to rescue your great ideas from drowning you — together, let's harness their potential and fly'em to digital prominence."
+                  }
+                },
+                {
+                  "type": "data-changer",
+                  "data": {
+                    "action": {
+                      "type": "",
+                      "icon": { "src": "/images/rotate.svg" },
+                      "data": {
+                        "label": "Change statistic"
+                      }
+                    },
+                    "items": null
+                  }
+                },
+                {
+                  "type": "data-changer",
+                  "data": {
+                    "action": {
+                      "type": "",
+                      "icon": { "src": "/images/rotate.svg" },
+                      "data": {
+                        "label": "Change skill"
+                      }
+                    },
+                    "items": [
+                      {
+                        "title": "Hard skills",
+                        "description": null
+                      },
+                      {
+                        "title": "Soft skills",
+                        "description": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "horizontal-scroll",
+                  "data": {
+                    "icons": [
+                      { "src": "/images/smile.svg", "title": "Smile" },
+                      { "src": "/images/globe.svg", "title": "Globe" }
+                    ],
+                    "description": "Turning heads & conquering hearts — Improve · Inspire · Repeat —"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "slug": "contact",
+          "theme": "light",
+          "id": "scrollTo",
+          "data": {
+            "title": "Hello · Olá · Ciao · Salut · 你好 ·",
+            "info": {
+              "icons": [
+                { "src": "/images/rocket.svg", "title": "Rocket" },
+                { "src": "/images/smile.svg", "title": "Smile" },
+                { "src": "/images/globe.svg", "title": "Globe" }
+              ],
+              "items": [
+                {
+                  "type": "text",
+                  "title": "Availability",
+                  "description": null
+                },
+                {
+                  "type": "local-time",
+                  "title": "Local time"
+                },
+                {
+                  "type": "text",
+                  "title": "Location",
+                  "description": null
+                },
+                {
+                  "type": "link",
+                  "title": "Coffee",
+                  "description": null,
+                  "href": null,
+                  "isExternal": null
+                }
+              ]
+            },
+            "form": {
+              "title": "To",
+              "subtitle": "Or just email me at",
+              "subject": "👋 Hey Richard, I'd like to hire you!",
+              "fields": [
+                {
+                  "name": "name",
+                  "label": "Name",
+                  "optionalText": "",
+                  "control": "input",
+                  "placeholder": "John Doe",
+                  "description": "Your name and surname.",
+                  "defaultValue": "",
+                  "config": [
+                    {
+                      "name": "string",
+                      "params": []
+                    },
+                    {
+                      "name": "min",
+                      "params": [2, "Please, that can't be your name."]
+                    }
+                  ]
+                },
+                {
+                  "name": "email",
+                  "type": "email",
+                  "label": "Email",
+                  "optionalText": "",
+                  "control": "input",
+                  "placeholder": "john@doe.com",
+                  "description": "Your professional email.",
+                  "defaultValue": "",
+                  "config": [
+                    {
+                      "name": "string",
+                      "params": []
+                    },
+                    {
+                      "name": "email",
+                      "params": ["Email adress looks a bit weird."]
+                    }
+                  ]
+                },
+                {
+                  "name": "subject",
+                  "label": "Subject",
+                  "optionalText": "optional",
+                  "control": "input",
+                  "placeholder": "I wanna hire you!",
+                  "description": "Subject you wanna talk about.",
+                  "defaultValue": "",
+                  "config": [
+                    {
+                      "name": "string",
+                      "params": []
+                    },
+                    {
+                      "name": "optional",
+                      "params": []
+                    }
+                  ]
+                },
+                {
+                  "name": "service",
+                  "label": "Service",
+                  "optionalText": "optional",
+                  "control": "select",
+                  "placeholder": "Select a service...",
+                  "description": "Select the service you want.",
+                  "defaultValue": "",
+                  "config": [
+                    {
+                      "name": "string",
+                      "params": []
+                    },
+                    {
+                      "name": "optional",
+                      "params": []
+                    }
+                  ],
+                  "items": null
+                },
+                {
+                  "name": "message",
+                  "label": "Message",
+                  "optionalText": "",
+                  "control": "textarea",
+                  "placeholder": "👋 Hey Richard! I would love if you could help me with...",
+                  "description": "Your message.",
+                  "defaultValue": "",
+                  "config": [
+                    {
+                      "name": "string",
+                      "params": []
+                    },
+                    {
+                      "name": "min",
+                      "params": [3, "Come on... you can do better than that."]
+                    },
+                    {
+                      "name": "max",
+                      "params": [300, "Come on... take it easy."]
+                    }
+                  ]
+                }
+              ],
+              "action": {
+                "type": "",
+                "icon": { "src": "/images/paperplane.svg" },
+                "data": {
+                  "label": "Submit"
+                }
+              }
+            }
+          }
+        },
+        {
+          "slug": "services",
+          "theme": "dark",
+          "data": {
+            "title": ["Services"],
+            "block": {
+              "image": {
+                "src": "/images/parallax-00.jpg",
+                "alt": "",
+                "width": 2491,
+                "height": 3737
+              },
+              "items": null,
+              "icons": [
+                { "src": "/images/globe.svg", "title": "Globe" },
+                { "src": "/images/smile.svg", "title": "Smile" }
+              ]
+            }
+          }
+        }
+      ],
+      "metadata": {
+        "title": "Contact",
+        "description": "Richard Passos contact details and contact form."
+      }
+    },
+    "error": {
+      "sections": [
+        {
+          "slug": "hero",
+          "theme": "dark",
+          "data": {
+            "title": "Ops...",
+            "subtitle": "Something went wrong!",
+            "description": "Please try again or go back to Home page.",
+            "actions": [
+              {
+                "type": "",
+                "data": {
+                  "href": "/",
+                  "label": "Back Home",
+                  "variants": {
+                    "color": "main"
+                  }
+                }
+              },
+              {
+                "type": "reset",
+                "data": {
+                  "label": "Try again"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "metadata": {
+        "title": "Error",
+        "description": "Error page on Richard Passos portfolio."
+      }
+    },
+    "home": {
+      "sections": [
+        {
+          "slug": "hero",
+          "theme": "light",
+          "data": {
+            "title": "Turning heads \n<b>&</b> conquering \nhearts",
+            "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+            "text": "(2024)",
+            "icon": {
+              "src": "/images/smile.svg",
+              "title": "Smile"
+            }
+          }
+        },
+        {
+          "slug": "work",
+          "theme": "dark",
+          "id": "scrollTo",
+          "data": {
+            "title": ["About", "work"],
+            "subtitle": "Enter a universe where excellence is the norm",
+            "description": "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate. Discover the impact of a partnership that propels you to digital prominence.",
+            "block": {
+              "title": "Selected works",
+              "items": null,
+              "action": {
+                "type": "",
+                "icon": {
+                  "src": "/images/plus.svg"
+                },
+                "data": {
+                  "label": "More works",
+                  "href": "/projects",
+                  "variants": {
+                    "color": "main"
+                  }
+                }
+              }
+            },
+            "list": {
+              "items": ["Mission", "Hard & soft skills", "Services"],
+              "action": {
+                "type": "",
+                "icon": {
+                  "src": "/images/arrow-up-right.svg"
+                },
+                "animation": "slideUpRight",
+                "data": {
+                  "label": "Explore",
+                  "href": "/work",
+                  "variants": {
+                    "color": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "slug": "but",
+          "theme": "light",
+          "data": {
+            "title": "But",
+            "description": "it's not just about the tech."
+          }
+        },
+        {
+          "slug": "about",
+          "theme": "dark",
+          "data": {
+            "title": ["About", "me"],
+            "grid": {
+              "templates": {
+                "default": "\"item-0\"\"item-1\"\"item-2\"\"item-3\"\"item-4\"\"item-5\"\"item-6\"",
+                "sm": "\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-4\"\"item-5 item-6\"",
+                "lg": "\". item-0 item-0\"\". item-0 item-0\"\"item-1 item-2 item-3\"\"item-1 item-2 item-4\"\"item-5 item-5 item-6\"\"item-5 item-5 item-6\""
+              },
+              "items": [
+                {
+                  "type": "description",
+                  "data": {
+                    "title": "About",
+                    "description": "🤟 <b>Hey —</b> I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games."
+                  }
+                },
+                {
+                  "type": "bold",
+                  "data": {
+                    "icon": {
+                      "src": "/images/globe.svg",
+                      "title": "Globe"
+                    },
+                    "description": "Based in Brazil, GMT-3"
+                  }
+                },
+                {
+                  "type": "infinity-scroll",
+                  "data": {
+                    "icon": {
+                      "src": "/images/fingerprint.svg",
+                      "title": "Fingerprint"
+                    },
+                    "title": "My values",
+                    "items": null
+                  }
+                },
+                {
+                  "type": "simple",
+                  "data": {
+                    "icon": {
+                      "src": "/images/rocket.svg",
+                      "title": "Rocket"
+                    },
+                    "description": "Improving a little bit every day."
+                  }
+                },
+                {
+                  "type": "simple",
+                  "data": {
+                    "icon": {
+                      "src": "/images/game-controller.svg",
+                      "title": "Game controller"
+                    },
+                    "description": "I love to play games."
+                  }
+                },
+                {
+                  "type": "local-time",
+                  "data": {
+                    "title": "My local time"
+                  }
+                },
+                {
+                  "type": "link",
+                  "data": {
+                    "href": "https://www.buymeacoffee.com/richardp.dev",
+                    "isExternal": true,
+                    "icon": {
+                      "src": "/images/mug.svg",
+                      "title": "Mug"
+                    },
+                    "title": "Buy me a coffee"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "items": ["Background", "Hobbies", "Personality"],
+              "action": {
+                "type": "",
+                "icon": {
+                  "src": "/images/arrow-up-right.svg"
+                },
+                "animation": "slideUpRight",
+                "data": {
+                  "label": "Explore",
+                  "href": "/about",
+                  "variants": {
+                    "color": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "slug": "cta",
+          "theme": "dark",
+          "data": {
+            "description": "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let's team up and...",
+            "icons": [
+              {
+                "src": "/images/smile.svg",
+                "title": "Smile"
+              },
+              {
+                "src": "/images/globe.svg",
+                "title": "Globe"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "notFound": {
+      "sections": [
+        {
+          "slug": "hero",
+          "theme": "dark",
+          "data": {
+            "title": "404",
+            "subtitle": "Page not found!",
+            "description": "Ops... looks like you're lost. Please go back to Home page.",
+            "actions": [
+              {
+                "type": "",
+                "data": {
+                  "href": "/",
+                  "label": "Back Home"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "metadata": {
+        "title": "Error",
+        "description": "Not found page on Richard Passos portfolio."
+      }
+    },
+    "project": {
+      "sections": [
+        {
+          "slug": "hero",
+          "theme": "light",
+          "data": {
+            "actions": [
+              {
+                "type": "prev",
+                "icon": {
+                  "src": "/images/arrow-left.svg"
+                },
+                "animation": "slideLeft",
+                "data": {
+                  "href": "/projects",
+                  "label": "Prev",
+                  "variants": {
+                    "color": "main",
+                    "size": "sm"
+                  }
+                }
+              },
+              {
+                "type": "magnetic",
+                "icon": {
+                  "src": "/images/eye.svg"
+                },
+                "data": {
+                  "label": "View project"
+                }
+              },
+              {
+                "type": "next",
+                "icon": {
+                  "src": "/images/arrow-right.svg"
+                },
+                "animation": "slideRight",
+                "data": {
+                  "href": "/projects",
+                  "label": "Next",
+                  "variants": {
+                    "color": "main",
+                    "size": "sm"
+                  }
+                }
+              }
+            ],
+            "infoItems": [
+              {
+                "title": "Roles"
+              },
+              {
+                "title": "Client"
+              },
+              {
+                "title": "Year"
+              }
+            ],
+            "objectiveItems": [
+              {
+                "title": "The challenge"
+              },
+              {
+                "title": "The solution"
+              }
+            ]
+          }
+        },
+        {
+          "slug": "next-page",
+          "theme": "dark",
+          "data": {
+            "title": "Next project",
+            "actions": [
+              {
+                "type": "",
+                "icon": {
+                  "src": "/images/arrow-up-right.svg"
+                },
+                "data": {
+                  "label": "Go to next project",
+                  "variants": {
+                    "color": "main"
+                  }
+                }
+              },
+              {
+                "type": "",
+                "icon": {
+                  "src": "/images/arrow-up.svg"
+                },
+                "animation": "slideUp",
+                "data": {
+                  "label": "All projects",
+                  "href": "/projects",
+                  "variants": {
+                    "color": "main"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "projects": {
+      "sections": [
+        {
+          "slug": "hero",
+          "theme": "dark",
+          "data": {
+            "title": "Head turning projects",
+            "subtitle": "Gotta see'm all",
+            "block": {
+              "emptyText": "Sorry... none projects were found.",
+              "lastPageText": "Congrats! You really saw them all.",
+              "roles": [
+                {
+                  "type": "all",
+                  "data": {
+                    "label": "All"
+                  }
+                },
+                {
+                  "type": "design",
+                  "data": {
+                    "label": "Design"
+                  }
+                },
+                {
+                  "type": "development",
+                  "data": {
+                    "label": "Dev"
+                  }
+                }
+              ],
+              "types": [
+                {
+                  "type": "table",
+                  "icon": {
+                    "src": "/images/list.svg"
+                  },
+                  "data": {
+                    "label": "Table"
+                  }
+                },
+                {
+                  "type": "grid",
+                  "icon": {
+                    "src": "/images/grid.svg"
+                  },
+                  "data": {
+                    "label": "Grid"
+                  }
+                }
+              ],
+              "items": null,
+              "action": {
+                "type": "",
+                "icon": {
+                  "src": "/images/plus.svg"
+                },
+                "data": {
+                  "label": "Load more works",
+                  "variants": {
+                    "color": "main"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "metadata": {
+        "title": "Projects",
+        "description": "Richard passos projects."
+      }
+    },
+    "work": {
+      "sections": [
+        {
+          "slug": "hero",
+          "theme": "light",
+          "data": {
+            "title": "Beyond code, \nboundaries <b>&</b> \nresults",
+            "description": "Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and crafting high-impact, user-centered solutions.",
+            "text": null,
+            "icon": { "src": "/images/smile.svg", "title": "Smile" }
+          }
+        },
+        {
+          "slug": "mission",
+          "theme": "dark",
+          "id": "scrollTo",
+          "data": {
+            "description": "That's my mission — Each line of code refines my skills, crafting high-impact solutions. Every project is an opportunity to inspire clients, coworkers, and the community, fostering enduring positive impact. Consistent repetition breeds excellence, driving digital prominence.",
+            "items": [
+              { "text": "Improve", "icon": { "src": "/images/rocket.svg", "title": "Rocket" } },
+              { "text": "Inspire", "icon": { "src": "/images/globe.svg", "title": "Globe" } },
+              { "text": "Repeat", "icon": { "src": "/images/smile.svg", "title": "Smile" } }
+            ]
+          }
+        },
+        {
+          "slug": "services",
+          "theme": "light",
+          "data": {
+            "title": ["Services"],
+            "subtitle": "I shape beyond boundaries solutions",
+            "description": "My solutions go beyond technological boundaries, they're not just algorithms and code. They are developed to generate high-impact results, driving you to digital prominence.",
+            "block": {
+              "title": "I could help you with...",
+              "image": { "src": "/images/parallax-00.jpg", "alt": "", "width": 2491, "height": 3737 },
+              "action": { "type": "", "icon": { "src": "/images/arrow-up-right.svg" }, "animation": "slideUpRight", "data": { "label": "Contact me", "href": "/contact", "variants": { "color": "main" } } },
+              "items": null
+            }
+          }
+        },
+        {
+          "slug": "projects",
+          "theme": "light",
+          "data": {
+            "title": ["Selected", "works"],
+            "description": "Each project is a tailored masterpiece, meticulously crafted to engage users with intuitive interfaces, great interactions and captivating experiences.",
+            "block": {
+              "action": { "type": "", "icon": { "src": "/images/plus.svg" }, "data": { "label": "More works", "href": "/projects", "variants": { "color": "main" } } },
+              "items": null
+            }
+          }
+        },
+        {
+          "slug": "why-me",
+          "theme": "dark",
+          "data": {
+            "title": ["Why pick", "me"],
+            "subtitle": "Turning heads and conquering hearts",
+            "description": "After head turning projects and a heart conquering personality just one click away, choose me to unlock boundless potential for your next project.",
+            "action": { "type": "", "icon": { "src": "/images/arrow-up-right.svg" }, "animation": "slideUpRight", "data": { "label": "About me", "href": "/about", "variants": { "color": "main", "size": "sm" } } },
+            "block": {
+              "title": "Some statistics...",
+              "items": null
+            }
+          }
+        },
+        {
+          "slug": "skills",
+          "theme": "light",
+          "data": [
+            {
+              "title": "Hard \nskills",
+              "subtitle": "The best in market",
+              "actions": [
+                { "type": "prev", "icon": { "src": "/images/arrow-left.svg" }, "data": { "label": "Previous skill" } },
+                { "type": "next", "icon": { "src": "/images/arrow-right.svg" }, "data": { "label": "Next skill" } }
+              ],
+              "items": null
+            },
+            {
+              "title": "Soft \nskills",
+              "subtitle": "The best as person",
+              "actions": [
+                { "type": "prev", "icon": { "src": "/images/arrow-left.svg" }, "data": { "label": "Previous skill" } },
+                { "type": "next", "icon": { "src": "/images/arrow-right.svg" }, "data": { "label": "Next skill" } }
+              ],
+              "items": null
+            }
+          ]
+        },
+        {
+          "slug": "values",
+          "theme": "dark",
+          "data": {
+            "title": "My \nvalues",
+            "subtitle": "Elevating standards",
+            "grid": {
+              "templates": { "default": "\"item-0\"\"item-1\"\"item-2\"\"item-3\"", "sm": "\"item-0 item-1\"\"item-2 item-3\"", "lg": "\"item-0 item-1 .\"\". item-2 item-3\"" },
+              "items": null
+            },
+            "icons": [
+              { "src": "/images/globe.svg", "title": "Globe" },
+              { "src": "/images/smile.svg", "title": "Smile" }
+            ]
+          }
+        },
+        {
+          "slug": "next-page",
+          "theme": "dark",
+          "data": {
+            "title": "Next page",
+            "description": "About me ·",
+            "action": { "type": "", "icon": { "src": "/images/arrow-up-right.svg" }, "data": { "label": "Go to about page", "href": "/about", "variants": { "color": "main" } } }
+          }
+        }
+      ],
+      "metadata": {
+        "title": "Work",
+        "description": "Richard passos work details, his mission, services, some projects, skills and more."
+      }
+    }
+  },
+  "header": {
+    "title": "Hello world!",
+    "data": {
+      "navItems": {
+        "short": [
+          {
+            "type": "",
+            "data": {
+              "href": "/",
+              "label": "Home"
+            }
+          },
+          {
+            "type": "",
+            "data": {
+              "href": "/work",
+              "label": "Work"
+            }
+          },
+          {
+            "type": "",
+            "data": {
+              "href": "/about",
+              "label": "About"
+            }
+          },
+          {
+            "type": "",
+            "data": {
+              "href": "/contact",
+              "label": "Contact"
+            }
+          }
+        ],
+        "full": [
+          {
+            "type": "",
+            "data": {
+              "href": "/",
+              "label": "Home"
+            }
+          },
+          {
+            "type": "",
+            "data": {
+              "href": "/work",
+              "label": "Work"
+            }
+          },
+          {
+            "type": "",
+            "data": {
+              "href": "/projects",
+              "label": "Projects"
+            }
+          },
+          {
+            "type": "",
+            "data": {
+              "href": "/about",
+              "label": "About"
+            }
+          },
+          {
+            "type": "",
+            "data": {
+              "href": "/contact",
+              "label": "Contact"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "footer": {
+    "theme": "light",
+    "data": {
+      "cta": {
+        "title": "Let's make \nthem fly",
+        "subtitle": "Is your great ideas ready?",
+        "action": {
+          "type": "",
+          "icon": {
+            "src": "/images/arrow-up-right.svg"
+          },
+          "data": {
+            "href": "/contact",
+            "label": "Go to contact page",
+            "variants": {
+              "size": "lg"
+            }
+          }
+        }
+      },
+      "personal": {
+        "smalls": [
+          {
+            "href": "https://github.com/Richard-Passos",
+            "isExternal": true,
+            "label": "Made with ❤️ by <a>Richard</a>"
+          },
+          {
+            "href": "https://www.linkedin.com/in/richardp-dev/",
+            "isExternal": true,
+            "label": "© 2024 <a>Richard Passos</a>"
+          }
+        ],
+        "action": {
+          "type": "",
+          "icon": {
+            "src": "/images/arrow-up.svg"
+          },
+          "animation": "slideUp",
+          "data": {
+            "label": "Back top",
+            "variants": {
+              "color": "main",
+              "size": "sm"
+            }
+          }
+        },
+        "socialsTitle": "Socials"
+      }
+    }
+  },
+  "personalInfo": {
+    "data": {
+      "name": {
+        "first": "Richard",
+        "last": "Passos"
+      },
+      "description": "An great full stack developer to fit your needs.",
+      "email": "hi.richardp@gmail.com",
+      "job": "Full stack developer",
+      "location": {
+        "country": "Brazil",
+        "state": "RS",
+        "gmt": "GMT-3"
+      },
+      "logo": {
+        "src": "/images/logo.svg",
+        "alt": "Richard Passos logo",
+        "width": 220,
+        "height": 110
+      },
+      "socials": [
+        {
+          "icon": {
+            "src": "/images/github.svg"
+          },
+          "label": "Github",
+          "href": "https://github.com/Richard-Passos",
+          "isExternal": true
+        },
+        {
+          "icon": {
+            "src": "/images/instagram.svg"
+          },
+          "label": "Instagram",
+          "href": "https://www.instagram.com/richardp.dev",
+          "isExternal": true
+        },
+        {
+          "icon": {
+            "src": "/images/linkedin.svg"
+          },
+          "label": "Linkedin",
+          "href": "https://www.linkedin.com/in/richardp-dev",
+          "isExternal": true
+        }
+      ],
+      "buyCoffee": {
+        "label": "Buy me a coffee",
+        "href": "https://www.buymeacoffee.com/richardp.dev",
+        "isExternal": true
+      },
+      "availability": "Available to work",
+      "services": [
+        {
+          "title": "Front end",
+          "description": "I craft captivating user interfaces with pixel-perfect precision, prioritizing seamless interactions and delightful micro animations to elevate user engagement."
+        },
+        {
+          "title": "Back end",
+          "description": "I engineer robust back-end systems that power your platform with efficiency and reliability, ensuring seamless data management and scalable functionality."
+        },
+        {
+          "title": "Full stack",
+          "description": "I integrate end-to-end solutions using cutting-edge front and back end technologies to deliver high-impact results that prioritize user experience, scalability, and performance, ensuring a seamless digital experience."
+        }
+      ],
+      "stats": [
+        {
+          "title": "10ᐩ",
+          "description": "Projects \ncompleted"
+        },
+        {
+          "title": "1ᐩ",
+          "description": "Years of \nexperience"
+        },
+        {
+          "title": "100%",
+          "description": "Great \nprojects"
+        },
+        {
+          "title": "100%",
+          "description": "On-time \ndeliveries"
+        }
+      ],
+      "values": {
+        "work": [
+          {
+            "icon": {
+              "src": "/images/graduation-cap.svg",
+              "alt": "Learning-oriented icon",
+              "width": 24,
+              "height": 24
+            },
+            "title": "Learning",
+            "description": "Embracing a mindset of lifelong learning to stay updated with the latest technologies, frameworks, and best practices."
+          },
+          {
+            "icon": {
+              "src": "/images/trophy.svg",
+              "alt": "Trophy icon",
+              "width": 24,
+              "height": 24
+            },
+            "title": "Excellence",
+            "description": "Commitment to excellence drives the pursuit of mastery in all aspects of development, ensuring the delivery of top-tier solutions."
+          },
+          {
+            "icon": {
+              "src": "/images/check-badge.svg",
+              "alt": "Check badge icon",
+              "width": 24,
+              "height": 24
+            },
+            "title": "Quality-oriented",
+            "description": "Dedicated to mastering all aspects of development, my commitment to quality guarantees top-tier solutions."
+          },
+          {
+            "icon": {
+              "src": "/images/smile.svg",
+              "alt": "Smile icon",
+              "width": 24,
+              "height": 24
+            },
+            "title": "Customer-oriented",
+            "description": "Keeping the end-user in mind when developing software, ensuring that their needs and expectations are met or exceeded."
+          }
+        ],
+        "personal": [
+          {
+            "icon": {
+              "src": "/images/shield.svg",
+              "alt": "Integrity icon",
+              "width": 24,
+              "height": 24
+            },
+            "title": "Integrity",
+            "description": "I remain true to my values, striving to act with honesty and transparency. This allows me to build solid and genuine relationships."
+          },
+          {
+            "icon": {
+              "src": "/images/globe.svg",
+              "alt": "Curiosity icon",
+              "width": 24,
+              "height": 24
+            },
+            "title": "Curiosity",
+            "description": "My innate curiosity drives me to explore new ideas and discover new paths. Every challenge is an opportunity for learning and personal growth."
+          },
+          {
+            "icon": {
+              "src": "/images/puzzle.svg",
+              "alt": "Respect icon",
+              "width": 24,
+              "height": 24
+            },
+            "title": "Respect",
+            "description": "I deeply value the people around me and their unique stories. I am always open to listening and learning from others, recognizing the importance of each voice and experience."
+          },
+          {
+            "icon": {
+              "src": "/images/smile.svg",
+              "alt": "Gratitude icon",
+              "width": 24,
+              "height": 24
+            },
+            "title": "Gratitude",
+            "description": "I cultivate a mindset of gratitude, recognizing and appreciating the little things in life. Gratitude keeps me focused and inspires me to live with purpose and fulfillment."
+          }
+        ]
+      }
+    }
+  },
+  "projects": [
+    {
+      "href":"#",
+      "title":"Project-00",
+      "subtitle":"An awesome subtitle!",
+      "slug":"project-00",
+      "isSelected":true,
+      "roles":[
+        "design"
+      ],
+      "year":2024,
+      "client":"Jhon doe",
+      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail":{
+        "src":"/images/project-00.jpg",
+        "alt":"Project 00 thumbnail",
+        "width":1200,
+        "height":782
+      },
+      "demoImages":[
+        {
+          "src":"/images/project-01.png",
+          "alt":"Project 01 image",
+          "width":810,
+          "height":810
+        },
+        {
+          "src":"/images/project-02.jpg",
+          "alt":"Project 02 image",
+          "width":904,
+          "height":510
+        }
+      ],
+      "images":{
+        "templates":{
+          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+        },
+        "items":[
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-00.jpg",
+              "alt":"project-00",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-01.png",
+              "alt":"project-01",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-02.jpg",
+              "alt":"project-02",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-03.png",
+              "alt":"project-03",
+              "width":500,
+              "height":500
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-04.jpg",
+              "alt":"project-04",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-05.jpg",
+              "alt":"project-05",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-06.png",
+              "alt":"project-06",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-07.jpg",
+              "alt":"project-07",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-08.png",
+              "alt":"project-08",
+              "width":500,
+              "height":500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "href":"#",
+      "title":"Project-01",
+      "subtitle":"An awesome subtitle!",
+      "slug":"project-01",
+      "isSelected":true,
+      "roles":[
+        "development"
+      ],
+      "year":2024,
+      "client":"Jhon doe",
+      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail":{
+        "src":"/images/project-01.png",
+        "alt":"Project 01 image",
+        "width":810,
+        "height":810
+      },
+      "demoImages":[
+        {
+          "src":"/images/project-01.png",
+          "alt":"Project 01 image",
+          "width":810,
+          "height":810
+        },
+        {
+          "src":"/images/project-02.jpg",
+          "alt":"Project 02 image",
+          "width":904,
+          "height":510
+        }
+      ],
+      "images":{
+        "templates":{
+          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+        },
+        "items":[
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-00.jpg",
+              "alt":"project-00",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-01.png",
+              "alt":"project-01",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-02.jpg",
+              "alt":"project-02",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-03.png",
+              "alt":"project-03",
+              "width":500,
+              "height":500
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-04.jpg",
+              "alt":"project-04",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-05.jpg",
+              "alt":"project-05",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-06.png",
+              "alt":"project-06",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-07.jpg",
+              "alt":"project-07",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-08.png",
+              "alt":"project-08",
+              "width":500,
+              "height":500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "href":"#",
+      "title":"Project-02",
+      "subtitle":"An awesome subtitle!",
+      "slug":"project-02",
+      "isSelected":true,
+      "roles":[
+        "design",
+        "development"
+      ],
+      "year":2024,
+      "client":"Jhon doe",
+      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail":{
+        "src":"/images/project-02.jpg",
+        "alt":"Project 02 image",
+        "width":904,
+        "height":510
+      },
+      "demoImages":[
+        {
+          "src":"/images/project-01.png",
+          "alt":"Project 01 image",
+          "width":810,
+          "height":810
+        },
+        {
+          "src":"/images/project-02.jpg",
+          "alt":"Project 02 image",
+          "width":904,
+          "height":510
+        }
+      ],
+      "images":{
+        "templates":{
+          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+        },
+        "items":[
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-00.jpg",
+              "alt":"project-00",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-01.png",
+              "alt":"project-01",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-02.jpg",
+              "alt":"project-02",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-03.png",
+              "alt":"project-03",
+              "width":500,
+              "height":500
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-04.jpg",
+              "alt":"project-04",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-05.jpg",
+              "alt":"project-05",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-06.png",
+              "alt":"project-06",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-07.jpg",
+              "alt":"project-07",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-08.png",
+              "alt":"project-08",
+              "width":500,
+              "height":500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "href":"#",
+      "title":"Project-03",
+      "subtitle":"An awesome subtitle!",
+      "slug":"project-03",
+      "isSelected":true,
+      "roles":[
+        "design",
+        "development"
+      ],
+      "year":2024,
+      "client":"Jhon doe",
+      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail":{
+        "src":"/images/project-03.png",
+        "alt":"Project 03 image",
+        "width":500,
+        "height":500
+      },
+      "demoImages":[
+        {
+          "src":"/images/project-01.png",
+          "alt":"Project 01 image",
+          "width":810,
+          "height":810
+        },
+        {
+          "src":"/images/project-02.jpg",
+          "alt":"Project 02 image",
+          "width":904,
+          "height":510
+        }
+      ],
+      "images":{
+        "templates":{
+          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+        },
+        "items":[
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-00.jpg",
+              "alt":"project-00",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-01.png",
+              "alt":"project-01",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-02.jpg",
+              "alt":"project-02",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-03.png",
+              "alt":"project-03",
+              "width":500,
+              "height":500
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-04.jpg",
+              "alt":"project-04",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-05.jpg",
+              "alt":"project-05",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-06.png",
+              "alt":"project-06",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-07.jpg",
+              "alt":"project-07",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-08.png",
+              "alt":"project-08",
+              "width":500,
+              "height":500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "href":"#",
+      "title":"Project-04",
+      "subtitle":"An awesome subtitle!",
+      "slug":"project-04",
+      "isSelected":true,
+      "roles":[
+        "design",
+        "development"
+      ],
+      "year":2024,
+      "client":"Jhon doe",
+      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail":{
+        "src":"/images/project-04.jpg",
+        "alt":"Project 04 image",
+        "width":1200,
+        "height":782
+      },
+      "demoImages":[
+        {
+          "src":"/images/project-01.png",
+          "alt":"Project 01 image",
+          "width":810,
+          "height":810
+        },
+        {
+          "src":"/images/project-02.jpg",
+          "alt":"Project 02 image",
+          "width":904,
+          "height":510
+        }
+      ],
+      "images":{
+        "templates":{
+          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+        },
+        "items":[
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-00.jpg",
+              "alt":"project-00",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-01.png",
+              "alt":"project-01",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-02.jpg",
+              "alt":"project-02",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-03.png",
+              "alt":"project-03",
+              "width":500,
+              "height":500
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-04.jpg",
+              "alt":"project-04",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-05.jpg",
+              "alt":"project-05",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-06.png",
+              "alt":"project-06",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-07.jpg",
+              "alt":"project-07",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-08.png",
+              "alt":"project-08",
+              "width":500,
+              "height":500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "href":"#",
+      "title":"Project-05",
+      "subtitle":"An awesome subtitle!",
+      "slug":"project-05",
+      "isSelected":false,
+      "roles":[
+        "design",
+        "development"
+      ],
+      "year":2024,
+      "client":"Jhon doe",
+      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail":{
+        "src":"/images/project-05.jpg",
+        "alt":"Project 05 image",
+        "width":1200,
+        "height":782
+      },
+      "demoImages":[
+        {
+          "src":"/images/project-01.png",
+          "alt":"Project 01 image",
+          "width":810,
+          "height":810
+        },
+        {
+          "src":"/images/project-02.jpg",
+          "alt":"Project 02 image",
+          "width":904,
+          "height":510
+        }
+      ],
+      "images":{
+        "templates":{
+          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+        },
+        "items":[
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-00.jpg",
+              "alt":"project-00",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-01.png",
+              "alt":"project-01",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-02.jpg",
+              "alt":"project-02",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-03.png",
+              "alt":"project-03",
+              "width":500,
+              "height":500
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-04.jpg",
+              "alt":"project-04",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-05.jpg",
+              "alt":"project-05",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-06.png",
+              "alt":"project-06",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-07.jpg",
+              "alt":"project-07",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-08.png",
+              "alt":"project-08",
+              "width":500,
+              "height":500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "href":"#",
+      "title":"Project-06",
+      "subtitle":"An awesome subtitle!",
+      "slug":"project-06",
+      "isSelected":false,
+      "roles":[
+        "design",
+        "development"
+      ],
+      "year":2024,
+      "client":"Jhon doe",
+      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail":{
+        "src":"/images/project-06.png",
+        "alt":"Project 06 image",
+        "width":810,
+        "height":810
+      },
+      "demoImages":[
+        {
+          "src":"/images/project-01.png",
+          "alt":"Project 01 image",
+          "width":810,
+          "height":810
+        },
+        {
+          "src":"/images/project-02.jpg",
+          "alt":"Project 02 image",
+          "width":904,
+          "height":510
+        }
+      ],
+      "images":{
+        "templates":{
+          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+        },
+        "items":[
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-00.jpg",
+              "alt":"project-00",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-01.png",
+              "alt":"project-01",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-02.jpg",
+              "alt":"project-02",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-03.png",
+              "alt":"project-03",
+              "width":500,
+              "height":500
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-04.jpg",
+              "alt":"project-04",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-05.jpg",
+              "alt":"project-05",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-06.png",
+              "alt":"project-06",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-07.jpg",
+              "alt":"project-07",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-08.png",
+              "alt":"project-08",
+              "width":500,
+              "height":500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "href":"#",
+      "title":"Project-07",
+      "subtitle":"An awesome subtitle!",
+      "slug":"project-07",
+      "isSelected":false,
+      "roles":[
+        "design",
+        "development"
+      ],
+      "year":2024,
+      "client":"Jhon doe",
+      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail":{
+        "src":"/images/project-07.jpg",
+        "alt":"Project 07 image",
+        "width":904,
+        "height":510
+      },
+      "demoImages":[
+        {
+          "src":"/images/project-01.png",
+          "alt":"Project 01 image",
+          "width":810,
+          "height":810
+        },
+        {
+          "src":"/images/project-02.jpg",
+          "alt":"Project 02 image",
+          "width":904,
+          "height":510
+        }
+      ],
+      "images":{
+        "templates":{
+          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+        },
+        "items":[
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-00.jpg",
+              "alt":"project-00",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-01.png",
+              "alt":"project-01",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-02.jpg",
+              "alt":"project-02",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-03.png",
+              "alt":"project-03",
+              "width":500,
+              "height":500
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-04.jpg",
+              "alt":"project-04",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-05.jpg",
+              "alt":"project-05",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-06.png",
+              "alt":"project-06",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-07.jpg",
+              "alt":"project-07",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-08.png",
+              "alt":"project-08",
+              "width":500,
+              "height":500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "href":"#",
+      "title":"Project-08",
+      "subtitle":"An awesome subtitle!",
+      "slug":"project-08",
+      "isSelected":false,
+      "roles":[
+        "design",
+        "development"
+      ],
+      "year":2024,
+      "client":"Jhon doe",
+      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail":{
+        "src":"/images/project-08.png",
+        "alt":"Project 08 image",
+        "width":500,
+        "height":500
+      },
+      "demoImages":[
+        {
+          "src":"/images/project-01.png",
+          "alt":"Project 01 image",
+          "width":810,
+          "height":810
+        },
+        {
+          "src":"/images/project-02.jpg",
+          "alt":"Project 02 image",
+          "width":904,
+          "height":510
+        }
+      ],
+      "images":{
+        "templates":{
+          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+        },
+        "items":[
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-00.jpg",
+              "alt":"project-00",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-01.png",
+              "alt":"project-01",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-02.jpg",
+              "alt":"project-02",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-03.png",
+              "alt":"project-03",
+              "width":500,
+              "height":500
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-04.jpg",
+              "alt":"project-04",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-05.jpg",
+              "alt":"project-05",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-06.png",
+              "alt":"project-06",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-07.jpg",
+              "alt":"project-07",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-08.png",
+              "alt":"project-08",
+              "width":500,
+              "height":500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "href":"#",
+      "title":"Project-09",
+      "subtitle":"An awesome subtitle!",
+      "slug":"project-09",
+      "isSelected":false,
+      "roles":[
+        "design",
+        "Development"
+      ],
+      "year":2024,
+      "client":"Jhon doe",
+      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail":{
+        "src":"/images/project-09.jpg",
+        "alt":"Project 09 image",
+        "width":1200,
+        "height":782
+      },
+      "demoImages":[
+        {
+          "src":"/images/project-01.png",
+          "alt":"Project 01 image",
+          "width":810,
+          "height":810
+        },
+        {
+          "src":"/images/project-02.jpg",
+          "alt":"Project 02 image",
+          "width":904,
+          "height":510
+        }
+      ],
+      "images":{
+        "templates":{
+          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+        },
+        "items":[
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-00.jpg",
+              "alt":"project-00",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-01.png",
+              "alt":"project-01",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-02.jpg",
+              "alt":"project-02",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-03.png",
+              "alt":"project-03",
+              "width":500,
+              "height":500
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-04.jpg",
+              "alt":"project-04",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-05.jpg",
+              "alt":"project-05",
+              "width":1200,
+              "height":782
+            }
+          },
+          {
+            "aspectRatio":"16/9",
+            "data":{
+              "src":"/images/project-06.png",
+              "alt":"project-06",
+              "width":810,
+              "height":810
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-07.jpg",
+              "alt":"project-07",
+              "width":904,
+              "height":510
+            }
+          },
+          {
+            "aspectRatio":"1/1.25",
+            "data":{
+              "src":"/images/project-08.png",
+              "alt":"project-08",
+              "width":500,
+              "height":500
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "skills": {
+    "hard":[
+      {
+        "title":"React.js",
+        "icon":{
+          "src":"/images/react.svg"
+        },
+        "description":"A declarative, efficient, and flexible JavaScript library for building user interfaces."
+      },
+      {
+        "title":"Node.js",
+        "icon":{
+          "src":"/images/nodejs.svg"
+        },
+        "description":"A server-side JavaScript runtime environment for building scalable, high-performance applications."
+      },
+      {
+        "title":"React Native",
+        "icon":{
+          "src":"/images/react.svg"
+        },
+        "description":"JavaScript library that uses React for agile development of cross-platform mobile applications."
+      },
+      {
+        "title":"Next.js",
+        "icon":{
+          "src":"/images/nextjs.svg"
+        },
+        "description":"React framework for building server-rendered and statically-generated web applications."
+      },
+      {
+        "title":"JavaScript",
+        "icon":{
+          "src":"/images/javascript.svg"
+        },
+        "description":"Backbone of dynamic web development, enabling interactive and responsive user experiences."
+      },
+      {
+        "title":"Jest",
+        "icon":{
+          "src":"/images/jest.svg"
+        },
+        "description":"A powerful JavaScript testing framework for seamless unit and integration testing."
+      },
+      {
+        "title":"MongoDB",
+        "icon":{
+          "src":"/images/mongodb.svg"
+        },
+        "description":"A powerful, flexible NoSQL database solution for modern application development."
+      },
+      {
+        "title":"Git",
+        "icon":{
+          "src":"/images/git.svg"
+        },
+        "description":"Version control system for efficient collaboration and code management."
+      },
+      {
+        "title":"TailwindCSS",
+        "icon":{
+          "src":"/images/tailwindcss.svg"
+        },
+        "description":"Utility-first CSS framework for rapid development."
+      },
+      {
+        "title":"Styled-components",
+        "icon":{
+          "src":"/images/styled-components.svg"
+        },
+        "description":"CSS-in-JS for seamless styling and component-based design."
+      },
+      {
+        "title":"HTML",
+        "icon":{
+          "src":"/images/html.svg"
+        },
+        "description":"Foundation of web development, used to create the structure and content of web pages."
+      },
+      {
+        "title":"CSS",
+        "icon":{
+          "src":"/images/css.svg"
+        },
+        "description":"Styling language for web development, shaping the visual presentation of websites."
+      }
+    ],
+    "soft":[
+      {
+        "title":"Problem-solving",
+        "icon":{
+          "src":"/images/puzzle.svg"
+        },
+        "description":"Ability to analyze complex issues and create effective solutions, ensuring seamless functionality and user satisfaction."
+      },
+      {
+        "title":"Detail-oriented",
+        "icon":{
+          "src":"/images/eye.svg"
+        },
+        "description":"Enable efficient identification and resolution of technical challenges, resulting in robust solutions and heightened client satisfaction."
+      },
+      {
+        "title":"Communication",
+        "icon":{
+          "src":"/images/chat.svg"
+        },
+        "description":"Clear and concise communication fosters collaboration within teams and facilitates understanding between clients and developers, ensuring project alignment."
+      },
+      {
+        "title":"Adaptability",
+        "icon":{
+          "src":"/images/adjustments.svg"
+        },
+        "description":"Flexibility in embracing new technologies and methodologies facilitates agile development and ensures project relevance"
+      },
+      {
+        "title":"Time management",
+        "icon":{
+          "src":"/images/calendar.svg"
+        },
+        "description":"Efficiently managing tasks and deadlines optimizes project timelines and enhances client satisfaction with timely deliverables."
+      },
+      {
+        "title":"Critical thinking",
+        "icon":{
+          "src":"/images/compass.svg"
+        },
+        "description":"Evaluating project requirements and potential solutions with discernment ensures effective decision-making and successful project execution."
+      },
+      {
+        "title":"Synthetic thinking",
+        "icon":{
+          "src":"/images/share.svg"
+        },
+        "description":"Enables holistic problem-solving by integrating diverse perspectives and technologies, delivering comprehensive solutions."
+      }
+    ]
   }
-}
+} 
