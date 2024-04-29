@@ -19,6 +19,7 @@ const Link = ({ asChild, className, isExternal, ...props }, ref) => {
       ref={ref}
       {...(isExternal && externalLinkProps)}
       {...props}
+      href={props.href ?? ''}
     />
   );
 };
