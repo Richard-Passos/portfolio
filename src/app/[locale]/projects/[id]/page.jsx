@@ -2,11 +2,13 @@ import { pagesApi, projectsApi } from '@/api';
 import { ProjectView } from '@/views';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-const ProjectPage = async ({ params: { id, locale } }) => {
+const ProjectPage = async ({ params: { locale, id  } }) => {
   unstable_setRequestLocale(locale);
 
-  const project = await projectsApi.getOne(id, `?locale=${locale}`),
-    data = (await pagesApi.getOne('project', `?locale=${locale}`)).data || {}
+  const projectPromise = projectsApi.getOne(id, `?locale=${locale}`),
+    dataPromise = pagesApi.getOne('project', `?locale=${locale}`)
+
+    const [ project = {}, { data = {} } ] = await Promise.all([projectPromise, dataPromise]) 
     
   return (
     <ProjectView
@@ -28,11 +30,5 @@ const generateMetadata = async ({ params: { id, locale } }) => {
   };
 };
 
-const generateStaticParams = async ({ params: { locale } }) => {
-  const { data = [] } = await projectsApi.getSelecteds(`?locale=${locale}`);
-
-  return data.map(({ slug }) => ({ id: slug }));
-};
-
 export default ProjectPage;
-export { generateMetadata, generateStaticParams };
+export { generateMetadata };
