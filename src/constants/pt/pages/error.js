@@ -1,4 +1,4 @@
-const paginaDeErro = {
+const errorPage = {
   slug: 'error',
   sections: [
     {
@@ -35,4 +35,4 @@ const paginaDeErro = {
   },
 };
 
-export default paginaDeErro;
+export default errorPage;
