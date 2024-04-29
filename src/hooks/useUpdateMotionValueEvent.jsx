@@ -3,7 +3,7 @@
 import { useMotionValueEvent } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
-const useUpdateMotionValueEvent = (val, ev, cb) => {
+const useUpdateMotionValueEvent = (val, ev, cb, defaultVal) => {
   const isMounted = useRef(false);
 
   useEffect(() => {
@@ -12,7 +12,11 @@ const useUpdateMotionValueEvent = (val, ev, cb) => {
 
   useMotionValueEvent(val, ev, (latest) => {
     if(isMounted.current) return cb?.(latest);
-    else isMounted.current = true
+    else {
+      isMounted.current = true
+
+      return defaultVal && cb?.(defaultVal);
+    }
   });
 };
 
