@@ -1,32 +1,30 @@
-<h1 align="center">:file_cabinet: Portfolio</h1>
+<h1 align="center">:file_cabinet: Richard Passos portfolio</h1>
 
 <br>
 
 ## :memo: Description
-
-My portfolio.
+My current portfolio.
 
 <br>
 
 ## :wrench: Technologies used
-
-- Next.js
-- Jest.js
-- TailwindCSS
-- JavaScript
+* Next.js
+* Next-intl
+* TailwindCSS
+* JavaScript
+* CSS
+* HTML
 
 <br>
 
 ## :rocket: Run project
-
 ```
-https://richard-passos.vercel.app
+https://richardp.vercel.app
 ```
 
 <br>
 
 ## :handshake: Team
-
 <table>
   <tr>
     <td align="center">
@@ -43,5 +41,4 @@ https://richard-passos.vercel.app
 <br>
 
 ## :dart: Status
-
 In progress
