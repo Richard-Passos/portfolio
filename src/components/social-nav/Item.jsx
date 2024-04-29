@@ -14,6 +14,7 @@ const SocialNavItem = ({ className, variants, data = {}, ...props }) => {
       limit={0.2}
       variants={{ color: 'main', style: 'alternate', ...variants }}
       href={data.href}
+      isExternal={data.isExternal}
       {...props}
     >
       <div className='size-6 ml-6 shrink-0'>
