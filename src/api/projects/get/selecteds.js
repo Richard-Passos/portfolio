@@ -1,19 +1,11 @@
+import { getData } from '@/utils';
+
 const projectsApiGetSelecteds = async (pathname = '', opts = {}) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects${pathname}`,
-    {
-      cache: 'no-store',
-      ...opts,
-    },
-  );
+  const res = await getData(`/projects${pathname}`, opts)
 
-  if (!res.ok) throw new Error('Failed to fetch data!');
+  if (res) res.data = res.data.filter((data) => data.isSelected);
 
-  const data = await res.json();
-
-  if (data) data.data = data.data.filter((data) => data.isSelected);
-
-  return data;
+  return res;
 };
 
 export default projectsApiGetSelecteds;

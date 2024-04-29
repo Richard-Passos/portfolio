@@ -1,17 +1,5 @@
-const globalsApiGet = async (pathname = '', opts = {}) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/globals${pathname}`,
-    {
-      cache: 'no-store',
-      ...opts,
-    },
-  );
+import { getData } from '@/utils';
 
-  if (!res.ok) throw new Error('Failed to fetch data!');
-
-  const data = await res.json();
-
-  return data;
-};
+const globalsApiGet = async (pathname = '', opts = {}) => await getData(`/globals${pathname}`, opts)
 
 export default globalsApiGet;
