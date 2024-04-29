@@ -50,7 +50,7 @@ const Layout = ({ children, params: { locale } }) => {
 };
 
 const generateMetadata = async ({ params: { locale } }) => {
-  const { data = {} } = (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data;
+  const { data = {} } = (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data || {}
 
   return {
     title: {
