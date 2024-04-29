@@ -12,7 +12,7 @@ const ProjectsView = ({ data = {} }) => {
 
     Section = Section && (
       <Section
-      key={slug}
+        key={slug}
         hasTransition={
           slug.toLowerCase() !== 'hero' && lastTheme !== data.theme
         }

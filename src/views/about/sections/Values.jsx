@@ -51,32 +51,35 @@ const AboutViewValuesSection = ({ className, data = {}, ...props }) => {
 
       <span className='sr-only'>{data.subtitle}</span>
 
-      <div className='mt-md w-full relative flex items-center justify-center'>
-      <AboutViewValuesSectionGrid
-        data={data.grid}
-      />
+      <div className='relative mt-md flex w-full items-center justify-center'>
+        <AboutViewValuesSectionGrid data={data.grid} />
 
-      <div className='absolute inset-0 -z-10'>
-        {data.icons?.map((data, i) => (
-          <ScrollAnimateTransform
-            key={data.src}
-            config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}
-          >
-            <div className='absolute size-[min(50vmin,theme(maxWidth.md))] first:bottom-0 first:left-0 last:right-0 last:top-0 max-lg:hidden'>
-              <Icon
-                className='size-full text-muted'
-                {...data}
-              />
-            </div>
-          </ScrollAnimateTransform>
-        ))}
-      </div>
+        <div className='absolute inset-0 -z-10'>
+          {data.icons?.map((data, i) => (
+            <ScrollAnimateTransform
+              key={data.src}
+              config={ANIMATION_CONFIG[`rotate${i % 2 === 0 ? 1 : 2}`]}
+            >
+              <div className='absolute size-[min(50vmin,theme(maxWidth.md))] first:bottom-0 first:left-0 last:right-0 last:top-0 max-lg:hidden'>
+                <Icon
+                  className='size-full text-muted'
+                  {...data}
+                />
+              </div>
+            </ScrollAnimateTransform>
+          ))}
+        </div>
       </div>
     </Section>
   );
 };
 
-const AboutViewValuesSectionGrid = ({ className, data = {}, style, ...props }) => {
+const AboutViewValuesSectionGrid = ({
+  className,
+  data = {},
+  style,
+  ...props
+}) => {
   return (
     <BentoGrid
       className={cn('w-9/10 max-w-screen-xl gap-sm', className)}
@@ -86,13 +89,13 @@ const AboutViewValuesSectionGrid = ({ className, data = {}, style, ...props }) =
       }}
       {...props}
     >
-      {data.items?.map((data, i) => 
-              <BentoGrid.Item.Value
-                key={data.title}
-                idx={i}
-                data={data}
-              />
-        )}
+      {data.items?.map((data, i) => (
+        <BentoGrid.Item.Value
+          key={data.title}
+          idx={i}
+          data={data}
+        />
+      ))}
     </BentoGrid>
   );
 };

@@ -47,9 +47,9 @@ const ContactViewContactSection = async ({
 
         <ul className='mt-sm grid gap-xs sm:max-md:grid-cols-2'>
           {info.items?.map((data = {}) => {
-            const type = normKey(data.type)
+            const type = normKey(data.type);
 
-            const Type = infoTypes[type] || infoTypes.text
+            const Type = infoTypes[type] || infoTypes.text;
 
             return (
               <li
@@ -59,13 +59,18 @@ const ContactViewContactSection = async ({
                 <Text.Title className='text-xs uppercase text-muted-content'>
                   {data.title}
                 </Text.Title>
-  
-                <Type className='mt-0.5 text-sm first-letter:uppercase' {...(type === 'link' && 
-                { href: data.href, isExternal: data.isExternal })}>
+
+                <Type
+                  className='mt-0.5 text-sm first-letter:uppercase'
+                  {...(type === 'link' && {
+                    href: data.href,
+                    isExternal: data.isExternal,
+                  })}
+                >
                   {data.description}
                 </Type>
               </li>
-            )
+            );
           })}
         </ul>
 

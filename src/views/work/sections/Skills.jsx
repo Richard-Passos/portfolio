@@ -65,18 +65,28 @@ const HomeViewSkillsSection = ({ className, data = [], ...props }) => {
             </section>
           </div>
 
-          <div className='relative w-full flex justify-center items-center'>
-          <Carousel.Track>
-            {data.items?.map((data, i) => (
-              <HomeViewSkillsSectionCarouselItem
-                idx={i}
-                key={data.title}
-                data={data}
-              />
-            ))}
-          </Carousel.Track>
+          <div className='relative flex w-full items-center justify-center'>
+            <Carousel.Track>
+              {data.items?.map((data, i) => (
+                <HomeViewSkillsSectionCarouselItem
+                  idx={i}
+                  key={data.title}
+                  data={data}
+                />
+              ))}
+            </Carousel.Track>
 
-          <Text.Title variants={{size: 'xl'}} asChild><span aria-hidden className='text-[16vw]/none text-muted opacity-40 absolute -z-10 dark:opacity-10'>{data.title}</span></Text.Title>
+            <Text.Title
+              variants={{ size: 'xl' }}
+              asChild
+            >
+              <span
+                aria-hidden
+                className='absolute -z-10 text-[16vw]/none text-muted opacity-40 dark:opacity-10'
+              >
+                {data.title}
+              </span>
+            </Text.Title>
           </div>
         </Carousel>
       ))}
@@ -101,7 +111,12 @@ const HomeViewSkillsSectionCarouselAction = ({
           className,
         )}
         {...data}
-        variants={{ color: 'main', size: 'sm', style: 'alternate', ...data.variants }}
+        variants={{
+          color: 'main',
+          size: 'sm',
+          style: 'alternate',
+          ...data.variants,
+        }}
       >
         <Icon {...icon} />
       </Button>

@@ -22,23 +22,23 @@ const HeaderLink = ({
       )}
       {...props}
     >
-        <span className='lowercase first-letter:capitalize'>{children}</span>
+      <span className='lowercase first-letter:capitalize'>{children}</span>
 
-        {isActive && (
-          <motion.span
-            className={cn(
-              'absolute bottom-1 h-[.15em] w-1/3 bg-primary',
-                shouldHide &&
-                '!opacity-0 transition-opacity group-hover/link:!opacity-100 delay-150 group-hover:delay-0',
-            )}
-            layoutId='headerLinkActiveIndicator'
-            style={{ borderRadius: '9999px' }}
-            transition={{
-              type: 'spring',
-              ...smoothConfig,
-            }}
-          />
-        )}
+      {isActive && (
+        <motion.span
+          className={cn(
+            'absolute bottom-1 h-[.15em] w-1/3 bg-primary',
+            shouldHide &&
+              '!opacity-0 transition-opacity delay-150 group-hover/link:!opacity-100 group-hover:delay-0',
+          )}
+          layoutId='headerLinkActiveIndicator'
+          style={{ borderRadius: '9999px' }}
+          transition={{
+            type: 'spring',
+            ...smoothConfig,
+          }}
+        />
+      )}
     </MagneticLink>
   );
 };

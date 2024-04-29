@@ -1,7 +1,8 @@
+import { unstable_setRequestLocale } from 'next-intl/server';
+
 import { pagesApi } from '@/api';
 import { capitalize } from '@/utils';
 import { ProjectsView } from '@/views';
-import { unstable_setRequestLocale } from 'next-intl/server';
 
 const ProjectsPage = async ({ params: { locale }, ...props }) => {
   unstable_setRequestLocale(locale);
@@ -17,7 +18,8 @@ const ProjectsPage = async ({ params: { locale }, ...props }) => {
 };
 
 const generateMetadata = async ({ params: { locale } }) => {
-  const { metadata = {} } = (await pagesApi.getOne('projects', `?locale=${locale}`)).data || {};
+  const { metadata = {} } =
+    (await pagesApi.getOne('projects', `?locale=${locale}`)).data || {};
 
   return {
     title: capitalize(metadata.title),

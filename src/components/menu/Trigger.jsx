@@ -27,7 +27,7 @@ const MenuTrigger = ({ className, ...props }, ref) => {
       <MenuUiTrigger asChild>
         <MagneticButton
           className={cn(
-            '[--tw-scale-y:--tw-scale-x] data-open:theme-primary pointer-events-auto data-open:![--tw-scale-x:1]',
+            'data-open:theme-primary pointer-events-auto [--tw-scale-y:--tw-scale-x] data-open:![--tw-scale-x:1]',
             className,
           )}
           variants={{ color: 'main', style: 'alternate' }}

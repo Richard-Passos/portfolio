@@ -1,8 +1,8 @@
 import { cn } from '@/utils';
 
-import Item from './Root';
-import { Image } from '../../ui';
 import { ScrollAnimateTransform } from '../../scroll-animate';
+import { Image } from '../../ui';
+import Item from './Root';
 
 const ANIMATION_CONFIG = {
   prop: 'y',
@@ -16,11 +16,11 @@ const BentoGridItemImage = ({ className, data = {}, ...props }) => {
       {...props}
     >
       <ScrollAnimateTransform config={ANIMATION_CONFIG}>
-                <Image
-                  className='h-[115%] w-full object-cover'
-                  {...data}
-                />
-              </ScrollAnimateTransform>
+        <Image
+          className='h-[115%] w-full object-cover'
+          {...data}
+        />
+      </ScrollAnimateTransform>
     </Item>
   );
 };

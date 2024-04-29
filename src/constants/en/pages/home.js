@@ -22,8 +22,8 @@ const homePage = {
       data: {
         title: ['About', 'work'],
         subtitle: 'Enter a universe where excellence is the norm',
-         description:
-          "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate. Discover the impact of a partnership that propels you to digital prominence.",
+        description:
+          'Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate. Discover the impact of a partnership that propels you to digital prominence.',
         block: {
           title: 'Selected works',
           items: projects.filter((data) => data.isSelected),
@@ -96,8 +96,9 @@ const homePage = {
               data: {
                 icon: { src: '/images/fingerprint.svg', title: 'Fingerprint' },
                 title: 'My values',
-                items: globals.find((data) => data.slug === 'personal-info')?.data
-                .values.personal.map((data) => data.title),
+                items: globals
+                  .find((data) => data.slug === 'personal-info')
+                  ?.data.values.personal.map((data) => data.title),
               },
             },
             {
@@ -162,7 +163,7 @@ const homePage = {
           { src: '/images/globe.svg', title: 'Globe' },
         ],
       },
-    }
+    },
   ],
 };
 

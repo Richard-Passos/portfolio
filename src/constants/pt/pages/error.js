@@ -7,7 +7,8 @@ const errorPage = {
       data: {
         title: 'Ops...',
         subtitle: 'Algo deu errado!',
-        description: 'Por favor, tente novamente ou volte para a página inicial.',
+        description:
+          'Por favor, tente novamente ou volte para a página inicial.',
         actions: [
           {
             type: '',

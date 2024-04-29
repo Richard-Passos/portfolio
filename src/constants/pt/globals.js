@@ -70,7 +70,7 @@ const globals = [
             },
           },
         ],
-      }
+      },
     },
   },
   {
@@ -186,7 +186,7 @@ const globals = [
         {
           title: 'Full stack',
           description:
-          'Integro soluções de ponta a ponta usando tecnologias front e back end de última geração para oferecer resultados impactantes que priorizam a experiência do usuário, escalabilidade e desempenho, garantindo uma experiência digital perfeita.',
+            'Integro soluções de ponta a ponta usando tecnologias front e back end de última geração para oferecer resultados impactantes que priorizam a experiência do usuário, escalabilidade e desempenho, garantindo uma experiência digital perfeita.',
         },
       ],
       stats: [
@@ -253,7 +253,7 @@ const globals = [
             description:
               'Mantenho o usuário final em mente ao desenvolver um software, garantindo que suas necessidades e expectativas sejam atendidas ou superadas.',
           },
-      ],
+        ],
         personal: [
           {
             icon: {

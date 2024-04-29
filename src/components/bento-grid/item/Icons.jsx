@@ -6,10 +6,7 @@ import Item from './Root';
 const BentoGridItemIcons = ({ className, data = [], ...props }) => {
   return (
     <Item
-      className={cn(
-        'items-end justify-center p-0 min-h-14',
-        className,
-      )}
+      className={cn('min-h-14 items-end justify-center p-0', className)}
       {...props}
     >
       {data?.map((icon) => (

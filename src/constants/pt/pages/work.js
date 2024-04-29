@@ -23,7 +23,7 @@ const workPage = {
       id: 'scrollTo',
       data: {
         description:
-          "Essa é minha missão — Cada linha de código melhora minhas habilidades, criando soluções impactantes. Cada projeto inspira clientes, colegas e comunidade, promovendo um impacto positivo e duradouro. A repetição consistente gera excelência, impulsionando ao topo digital.",
+          'Essa é minha missão — Cada linha de código melhora minhas habilidades, criando soluções impactantes. Cada projeto inspira clientes, colegas e comunidade, promovendo um impacto positivo e duradouro. A repetição consistente gera excelência, impulsionando ao topo digital.',
         items: [
           {
             text: 'Melhorar',
@@ -45,10 +45,9 @@ const workPage = {
       theme: 'light',
       data: {
         title: ['Serviços'],
-        subtitle:
-          'Eu moldo soluções além dos limites',
+        subtitle: 'Eu moldo soluções além dos limites',
         description:
-          "Minhas soluções vão além dos limites tecnológicos, elas não são apenas algoritmos e código. Elas são desenvolvidas para gerar resultados impactantes, levando você ao topo digital.",
+          'Minhas soluções vão além dos limites tecnológicos, elas não são apenas algoritmos e código. Elas são desenvolvidas para gerar resultados impactantes, levando você ao topo digital.',
         block: {
           title: 'Eu poderia te ajudar com...',
           image: {
@@ -102,10 +101,9 @@ const workPage = {
       theme: 'dark',
       data: {
         title: ['Por que', 'eu'],
-        subtitle:
-          'Dando show e encantando mentes',
+        subtitle: 'Dando show e encantando mentes',
         description:
-          "Após projetos que dão show e uma personalidade que encanta mentes a apenas um clique de distância, escolha-me para desbloquear um potencial ilimitado para o seu próximo projeto.",
+          'Após projetos que dão show e uma personalidade que encanta mentes a apenas um clique de distância, escolha-me para desbloquear um potencial ilimitado para o seu próximo projeto.',
         action: {
           type: '',
           icon: { src: '/images/arrow-up-right.svg' },
@@ -184,15 +182,15 @@ const workPage = {
           templates: {
             default: '"item-0""item-1""item-2""item-3"',
             sm: '"item-0 item-1""item-2 item-3"',
-            lg: '"item-0 item-1 ."". item-2 item-3"'
+            lg: '"item-0 item-1 ."". item-2 item-3"',
           },
           items: globals.find((data) => data.slug === 'personal-info')?.data
             .values.work,
-          },
-          icons: [
-            { src: '/images/globe.svg', title: 'Globo' },
-            { src: '/images/smile.svg', title: 'Sorriso' },
-          ],
+        },
+        icons: [
+          { src: '/images/globe.svg', title: 'Globo' },
+          { src: '/images/smile.svg', title: 'Sorriso' },
+        ],
       },
     },
     {

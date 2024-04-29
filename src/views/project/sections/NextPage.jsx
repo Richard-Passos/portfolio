@@ -10,20 +10,26 @@ const ProjectViewNextPageSection = async ({
   ...props
 }) => {
   const { adjacentIds = {} } = project,
-  { actions = [] } = data
+    { actions = [] } = data;
 
   const nextProject = (await projectsApi.getOne(adjacentIds.next)).data || {};
 
   data = {
     title: data.title,
     description: `${nextProject.title} ·`,
-    action: {...actions[0], data: {...actions[0]?.data, href: `/projects/${nextProject.slug}`}},
-    image: nextProject.thumbnail
+    action: {
+      ...actions[0],
+      data: { ...actions[0]?.data, href: `/projects/${nextProject.slug}` },
+    },
+    image: nextProject.thumbnail,
   };
 
   return (
     <Section
-      className={cn('!min-h-0 flex flex-col items-center justify-center', className)}
+      className={cn(
+        'flex !min-h-0 flex-col items-center justify-center',
+        className,
+      )}
       {...props}
     >
       <NextPage data={data} />

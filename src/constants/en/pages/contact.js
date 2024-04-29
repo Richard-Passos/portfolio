@@ -12,7 +12,8 @@ const contactPage = {
         subtitle: "Let's make'em fly",
         grid: {
           templates: {
-            default: '"item-0 .""item-1 item-1""item-2 item-2""item-3 item-3""item-4 item-4"',
+            default:
+              '"item-0 .""item-1 item-1""item-2 item-2""item-3 item-3""item-4 item-4"',
             sm: '"item-0 item-1 item-1 item-1""item-0 item-1 item-1 item-1""item-2 item-2 item-3 item-3""item-4 item-4 item-4 item-4"',
             lg: '"item-0 item-1 item-1 item-1 item-2 item-2""item-0 item-1 item-1 item-1 item-3 item-3""item-4 item-4 item-4 item-4 item-4 item-4"',
           },
@@ -56,7 +57,20 @@ const contactPage = {
                     label: 'Change skill',
                   },
                 },
-                items: [{title: 'Hard skills', description: skills.hard?.map(data => data.title).join(', ')}, {title: 'Soft skills', description: skills.soft?.map(data => data.title).join(', ')}],
+                items: [
+                  {
+                    title: 'Hard skills',
+                    description: skills.hard
+                      ?.map((data) => data.title)
+                      .join(', '),
+                  },
+                  {
+                    title: 'Soft skills',
+                    description: skills.soft
+                      ?.map((data) => data.title)
+                      .join(', '),
+                  },
+                ],
               },
             },
             {
@@ -66,7 +80,8 @@ const contactPage = {
                   { src: '/images/smile.svg', title: 'Smile' },
                   { src: '/images/globe.svg', title: 'Globe' },
                 ],
-                description: "Turning heads & conquering hearts — Improve · Inspire · Repeat —",
+                description:
+                  'Turning heads & conquering hearts — Improve · Inspire · Repeat —',
               },
             },
           ],
@@ -89,9 +104,8 @@ const contactPage = {
             {
               type: 'text',
               title: 'Availability',
-              description: globals
-              .find((data) => data.slug === 'personal-info')
-              ?.data.availability
+              description: globals.find((data) => data.slug === 'personal-info')
+                ?.data.availability,
             },
             {
               type: 'local-time',
@@ -100,19 +114,33 @@ const contactPage = {
             {
               type: 'text',
               title: 'Location',
-              description: Object.entries(globals
-                .find((data) => data.slug === 'personal-info')
-                ?.data.location)?.map(([key, value]) => (key === 'country' || key === 'state') && value).filter(data => data).join(', ')
+              description: Object.entries(
+                globals.find((data) => data.slug === 'personal-info')?.data
+                  .location,
+              )
+                ?.map(
+                  ([key, value]) =>
+                    (key === 'country' || key === 'state') && value,
+                )
+                .filter((data) => data)
+                .join(', '),
             },
             {
               type: 'link',
               title: 'Coffee',
-              ...Object.entries(globals
-                .find((data) => data.slug === 'personal-info')
-                ?.data).reduce(
-                  (obj, [key, value]) => key === 'buyCoffee' ? 
-                  { description: value.label, href: value.href, isExternal: value.isExternal}
-                  : obj, {})
+              ...Object.entries(
+                globals.find((data) => data.slug === 'personal-info')?.data,
+              ).reduce(
+                (obj, [key, value]) =>
+                  key === 'buyCoffee'
+                    ? {
+                        description: value.label,
+                        href: value.href,
+                        isExternal: value.isExternal,
+                      }
+                    : obj,
+                {},
+              ),
             },
           ],
         },

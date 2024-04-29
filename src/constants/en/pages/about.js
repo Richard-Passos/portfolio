@@ -100,15 +100,15 @@ const aboutPage = {
           templates: {
             default: '"item-0""item-1""item-2""item-3"',
             sm: '"item-0 item-1""item-2 item-3"',
-            lg: '"item-0 item-1 ."". item-2 item-3"'
+            lg: '"item-0 item-1 ."". item-2 item-3"',
           },
           items: globals.find((data) => data.slug === 'personal-info')?.data
             .values.personal,
-          },
-          icons: [
-            { src: '/images/smile.svg', title: 'Smile' },
-            { src: '/images/globe.svg', title: 'Globe' },
-          ],
+        },
+        icons: [
+          { src: '/images/smile.svg', title: 'Smile' },
+          { src: '/images/globe.svg', title: 'Globe' },
+        ],
       },
     },
     {

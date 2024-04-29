@@ -1,6 +1,7 @@
+import { unstable_setRequestLocale } from 'next-intl/server';
+
 import { pagesApi } from '@/api';
 import { HomeView } from '@/views';
-import { unstable_setRequestLocale } from 'next-intl/server';
 
 const HomePage = async ({ params: { locale }, ...props }) => {
   unstable_setRequestLocale(locale);

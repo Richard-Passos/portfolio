@@ -16,7 +16,12 @@ const ScrollIndicator = ({ className, variants, ...props }) => {
           'aspect-square rounded-sm bg-muted px-0 [&>span]:animate-scroll-indicator [&_svg]:size-[40%]',
           className,
         )}
-        variants={{ color: 'main', size: 'sm', style: 'alternate', ...variants }}
+        variants={{
+          color: 'main',
+          size: 'sm',
+          style: 'alternate',
+          ...variants,
+        }}
       >
         <ArrowDownIcon className='absolute bottom-[150%] translate-y-1/2' />
 

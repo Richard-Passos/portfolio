@@ -95,12 +95,12 @@ const HomeViewWorkSectionBlock = ({ className, data = {}, ...props }) => {
       >
         <ShowProjectsList.Table
           className='max-sm:hidden'
-          data={items.data?.map(data => ({...data, year: null}))}
+          data={items.data?.map((data) => ({ ...data, year: null }))}
         />
 
         <ShowProjectsList.Grid
           className='sm:hidden'
-          data={items.data?.map(data => ({...data, year: null}))}
+          data={items.data?.map((data) => ({ ...data, year: null }))}
         />
       </ShowProjectsList>
 

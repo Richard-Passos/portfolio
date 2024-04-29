@@ -3,11 +3,11 @@ import { cn } from '@/utils';
 
 import Button from '../button';
 import GridPattern from '../grid-pattern';
+import { ScrollToLink } from '../link';
 import { ScrollAnimate } from '../scroll-animate';
 import Section from '../section';
 import SocialNav from '../social-nav';
 import { Icon, Link, Logo, Text } from '../ui';
-import { ScrollToLink } from '../link';
 
 const SCROLL_OFFSET = ['0 1', '1 1'],
   ANIMATION_CONFIG = {
@@ -130,9 +130,12 @@ const FooterContentPersonal = async ({ data = {}, className, ...props }) => {
             })}
           </section>
 
-          <ScrollToLink href='start' asChild>
+          <ScrollToLink
+            href='start'
+            asChild
+          >
             <Button
-              className='mt-md no-underline text-xs font-bold uppercase max-sm:hidden'
+              className='mt-md text-xs font-bold uppercase no-underline max-sm:hidden'
               {...action.data}
             >
               <Button.Icon animation={action.animation}>

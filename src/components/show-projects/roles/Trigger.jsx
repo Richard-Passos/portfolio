@@ -1,12 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useRouter, usePathname  } from '@/navigation';
+import { useSearchParams } from 'next/navigation';
 
 import { useQueryString } from '@/hooks';
 import { smoothConfig } from '@/hooks/useSmooth';
+import { usePathname, useRouter } from '@/navigation';
 import { cn, normId } from '@/utils';
-import { useSearchParams } from 'next/navigation';
 
 const ShowProjectsRolesTrigger = ({
   className,
@@ -15,8 +15,8 @@ const ShowProjectsRolesTrigger = ({
   ...props
 }) => {
   const router = useRouter(),
-      pathame = usePathname(),
-      searchParams = useSearchParams(),
+    pathame = usePathname(),
+    searchParams = useSearchParams(),
     query = useQueryString({ role });
 
   const activeRole = normId(searchParams.get('role')) || 'all',
@@ -25,7 +25,7 @@ const ShowProjectsRolesTrigger = ({
   return (
     <button
       className={cn(
-        'relative z-10 h-8 grow basis-24 break-all transition-color rounded-sm text-xs font-semibold uppercase hover:text-content focus-visible:outline-content data-active:text-primary-content',
+        'relative z-10 h-8 grow basis-24 break-all rounded-sm text-xs font-semibold uppercase transition-color hover:text-content focus-visible:outline-content data-active:text-primary-content',
         className,
       )}
       data-state={isActive ? 'active' : 'inactive'}
@@ -38,7 +38,7 @@ const ShowProjectsRolesTrigger = ({
         <motion.span
           className='absolute inset-0 -z-10 bg-primary'
           style={{
-            borderRadius: 'var(--radius-sm)'
+            borderRadius: 'var(--radius-sm)',
           }}
           layoutId='showProjectsRolesTriggerActiveIndicator'
           transition={{

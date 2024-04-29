@@ -12,7 +12,8 @@ const contactPage = {
         subtitle: 'Vamos fazê-las voar',
         grid: {
           templates: {
-            default: '"item-0 .""item-1 item-1""item-2 item-2""item-3 item-3""item-4 item-4"',
+            default:
+              '"item-0 .""item-1 item-1""item-2 item-2""item-3 item-3""item-4 item-4"',
             sm: '"item-0 item-1 item-1 item-1""item-0 item-1 item-1 item-1""item-2 item-2 item-3 item-3""item-4 item-4 item-4 item-4"',
             lg: '"item-0 item-1 item-1 item-1 item-2 item-2""item-0 item-1 item-1 item-1 item-3 item-3""item-4 item-4 item-4 item-4 item-4 item-4"',
           },
@@ -56,7 +57,20 @@ const contactPage = {
                     label: 'Alterar skill',
                   },
                 },
-                items: [{title: 'Hard skills', description: skills.hard?.map(data => data.title).join(', ')}, {title: 'Soft skills', description: skills.soft?.map(data => data.title).join(', ')}],
+                items: [
+                  {
+                    title: 'Hard skills',
+                    description: skills.hard
+                      ?.map((data) => data.title)
+                      .join(', '),
+                  },
+                  {
+                    title: 'Soft skills',
+                    description: skills.soft
+                      ?.map((data) => data.title)
+                      .join(', '),
+                  },
+                ],
               },
             },
             {
@@ -66,7 +80,8 @@ const contactPage = {
                   { src: '/images/smile.svg', title: 'Sorriso' },
                   { src: '/images/globe.svg', title: 'Globo' },
                 ],
-                description: 'Dando show e encantando mentes — Melhorar · Inspirar · Repetir —',
+                description:
+                  'Dando show e encantando mentes — Melhorar · Inspirar · Repetir —',
               },
             },
           ],
@@ -89,9 +104,8 @@ const contactPage = {
             {
               type: 'text',
               title: 'Disponibilidade',
-              description: globals
-              .find((data) => data.slug === 'personal-info')
-              ?.data.availability
+              description: globals.find((data) => data.slug === 'personal-info')
+                ?.data.availability,
             },
             {
               type: 'local-time',
@@ -100,20 +114,34 @@ const contactPage = {
             {
               type: 'text',
               title: 'Localização',
-              description: Object.entries(globals
-                .find((data) => data.slug === 'personal-info')
-                ?.data.location)?.map(([key, value]) => (key === 'country' || key === 'state') && value).filter(data => data).join(', ')
+              description: Object.entries(
+                globals.find((data) => data.slug === 'personal-info')?.data
+                  .location,
+              )
+                ?.map(
+                  ([key, value]) =>
+                    (key === 'country' || key === 'state') && value,
+                )
+                .filter((data) => data)
+                .join(', '),
             },
             {
               type: 'link',
               title: 'Café',
-              ...Object.entries(globals
-                .find((data) => data.slug === 'personal-info')
-                ?.data).reduce(
-                  (obj, [key, value]) => key === 'buyCoffee' ? 
-                  { description: value.label, href: value.href, isExternal: value.isExternal}
-                  : obj, {})
-            }
+              ...Object.entries(
+                globals.find((data) => data.slug === 'personal-info')?.data,
+              ).reduce(
+                (obj, [key, value]) =>
+                  key === 'buyCoffee'
+                    ? {
+                        description: value.label,
+                        href: value.href,
+                        isExternal: value.isExternal,
+                      }
+                    : obj,
+                {},
+              ),
+            },
           ],
         },
         form: {
@@ -197,7 +225,7 @@ const contactPage = {
                   params: [],
                 },
               ],
-              items:  globals
+              items: globals
                 .find((data) => data.slug === 'personal-info')
                 ?.data.services?.map((data) => data.title),
             },
@@ -260,7 +288,8 @@ const contactPage = {
   ],
   metadata: {
     title: 'Contato',
-    description: 'Detalhes de contato de Richard Passos e formulário de contato.',
+    description:
+      'Detalhes de contato de Richard Passos e formulário de contato.',
   },
 };
 

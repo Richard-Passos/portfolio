@@ -8,7 +8,7 @@ const projectsPage = {
       theme: 'dark',
       data: {
         title: 'Projetos que \ndão show',
-        subtitle: "Tem que ver todos",
+        subtitle: 'Tem que ver todos',
         block: {
           emptyText: 'Desculpe... nenhum projeto foi encontrado.',
           lastPageText: 'Parabéns! Você realmente viu todos.',

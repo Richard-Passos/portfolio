@@ -7,7 +7,4 @@ const ProjectViewSections = {
 };
 
 export default ProjectViewSections;
-export {
-  ProjectViewHeroSection,
-  ProjectViewNextPageSection,
-};
+export { ProjectViewHeroSection, ProjectViewNextPageSection };

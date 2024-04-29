@@ -11,9 +11,9 @@ const useUpdateMotionValueEvent = (val, ev, cb, defaultVal) => {
   }, []);
 
   useMotionValueEvent(val, ev, (latest) => {
-    if(isMounted.current) return cb?.(latest);
+    if (isMounted.current) return cb?.(latest);
     else {
-      isMounted.current = true
+      isMounted.current = true;
 
       return defaultVal && cb?.(defaultVal);
     }

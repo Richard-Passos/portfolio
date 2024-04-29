@@ -1,9 +1,10 @@
-const normTemplates = (templates = {}) => Object.entries(templates)?.reduce(
-  (obj, [key, val]) => ({
-    ...obj,
-    [`--${key.toLowerCase()}-template`]: val,
-  }),
-  {},
-)
+const normTemplates = (templates = {}) =>
+  Object.entries(templates)?.reduce(
+    (obj, [key, val]) => ({
+      ...obj,
+      [`--${key.toLowerCase()}-template`]: val,
+    }),
+    {},
+  );
 
-export default normTemplates
+export default normTemplates;

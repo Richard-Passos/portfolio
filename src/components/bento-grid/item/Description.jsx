@@ -1,9 +1,10 @@
+import { Fragment } from 'react';
+
 import { cn } from '@/utils';
 
 import { Badge } from '../../ui';
 import { Text } from '../../ui/text';
 import Item from './Root';
-import { Fragment } from 'react';
 
 const BentoGridItemDescription = ({ className, data = {}, ...props }) => {
   return (
@@ -30,7 +31,7 @@ const BentoGridItemDescription = ({ className, data = {}, ...props }) => {
               {w.replace(boldRegex, '$1')}{' '}
               <span className='inline text-content'>
                 {w.replace(boldRegex, '$2')}
-              </span>{' '}  
+              </span>{' '}
               {w.replace(boldRegex, '$3')}.{' '}
             </>
           );

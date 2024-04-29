@@ -10,7 +10,7 @@ const homePage = {
       data: {
         title: `Dando show \n<b>&</b> encantando \nmentes`,
         description:
-          "Olá! Eu sou Richard, um incrível desenvolvedor full stack — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.",
+          'Olá! Eu sou Richard, um incrível desenvolvedor full stack — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.',
         text: '(2024)',
         icon: { src: '/images/smile.svg', title: 'Sorriso' },
       },
@@ -22,8 +22,8 @@ const homePage = {
       data: {
         title: ['Sobre', 'trabalho'],
         subtitle: 'Entre num mundo onde a excelência é a norma',
-         description:
-          "Cada detalhe é uma oportunidade. Cada linha de código que escrevo vai além da mera funcionalidade — elas moldam experiências digitais que cativam. Descubra o impacto de uma parceria que o impulsiona para o topo digital.",
+        description:
+          'Cada detalhe é uma oportunidade. Cada linha de código que escrevo vai além da mera funcionalidade — elas moldam experiências digitais que cativam. Descubra o impacto de uma parceria que o impulsiona para o topo digital.',
         block: {
           title: 'Trabalhos selecionados',
           items: projects.filter((data) => data.isSelected),
@@ -61,7 +61,7 @@ const homePage = {
       theme: 'light',
       data: {
         title: 'Mas',
-        description: "não é apenas sobre tech.",
+        description: 'não é apenas sobre tech.',
       },
     },
     {
@@ -81,7 +81,7 @@ const homePage = {
               data: {
                 title: 'Sobre',
                 description:
-                  "🤟 <b>Hey —</b> Eu sou Richard, um incrível desenvolvedor full stack do Brasil. Quando não estou codificando, você pode me encontrar no mundo dos jogos — sou um grande fã, especialmente quando se trata de jogos rogue-like.",
+                  '🤟 <b>Hey —</b> Eu sou Richard, um incrível desenvolvedor full stack do Brasil. Quando não estou codificando, você pode me encontrar no mundo dos jogos — sou um grande fã, especialmente quando se trata de jogos rogue-like.',
               },
             },
             {
@@ -94,10 +94,14 @@ const homePage = {
             {
               type: 'infinity-scroll',
               data: {
-                icon: { src: '/images/fingerprint.svg', title: 'Impressão digital' },
+                icon: {
+                  src: '/images/fingerprint.svg',
+                  title: 'Impressão digital',
+                },
                 title: 'Meus valores',
-                items: globals.find((data) => data.slug === 'personal-info')?.data
-                .values.personal.map((data) => data.title),
+                items: globals
+                  .find((data) => data.slug === 'personal-info')
+                  ?.data.values.personal.map((data) => data.title),
               },
             },
             {
@@ -135,7 +139,7 @@ const homePage = {
           ],
         },
         list: {
-          items: ['História', 'Personalidade', 'Hobbies',],
+          items: ['História', 'Personalidade', 'Hobbies'],
           action: {
             type: '',
             icon: { src: '/images/arrow-up-right.svg' },
@@ -156,7 +160,7 @@ const homePage = {
       theme: 'dark',
       data: {
         description:
-          "Pronto para elevar suas grandes ideias ao topo digital com um desenvolvedor que traz habilidade e paixão à mesa? Vamos trabalhar juntos e...",
+          'Pronto para elevar suas grandes ideias ao topo digital com um desenvolvedor que traz habilidade e paixão à mesa? Vamos trabalhar juntos e...',
         icons: [
           { src: '/images/smile.svg', title: 'Sorriso' },
           { src: '/images/globe.svg', title: 'Globo' },

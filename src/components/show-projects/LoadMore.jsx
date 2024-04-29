@@ -13,7 +13,7 @@ const ShowProjectsLoadMore = ({ asChild, ...props }) => {
   const [state, setState] = useContext(ShowProjectsContext),
     searchParams = useSearchParams();
 
-  const role = normId(searchParams.get('role'))
+  const role = normId(searchParams.get('role'));
 
   const loadMore = useLoadMore(projectsApiGet, setState, `&role=${role}`);
 

@@ -5,7 +5,7 @@ import { createContext } from 'react';
 const ErrorContext = createContext({
   slug: undefined,
   sections: {},
-  metadata: {}
+  metadata: {},
 });
 
 const ErrorProvider = (props) => {

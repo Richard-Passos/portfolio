@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
 import { Slot } from '@radix-ui/react-slot';
-import { Link as NavLink } from '@/navigation';
 import { forwardRef } from 'react';
 
+import { Link as NavLink } from '@/navigation';
 import { cn } from '@/utils';
 
 const Link = ({ asChild, className, isExternal, ...props }, ref) => {

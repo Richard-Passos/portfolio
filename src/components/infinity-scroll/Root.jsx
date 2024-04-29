@@ -9,7 +9,7 @@ const InfinityScroll = ({ as, dir = 'ltr', className, children, ...props }) => {
   const parentRef = useRef(null),
     childrenRef = useRef(null);
 
-  const childrenCount = useChildrenCount( parentRef, childrenRef );
+  const childrenCount = useChildrenCount(parentRef, childrenRef);
 
   const Tag = as ?? 'div';
 

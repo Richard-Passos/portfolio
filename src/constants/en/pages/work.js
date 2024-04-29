@@ -45,8 +45,7 @@ const workPage = {
       theme: 'light',
       data: {
         title: ['Services'],
-         subtitle:
-          'I shape beyond boundaries solutions',
+        subtitle: 'I shape beyond boundaries solutions',
         description:
           "My solutions go beyond technological boundaries, they're not just algorithms and code. They are developed to generate high-impact results, driving you to digital prominence.",
         block: {
@@ -102,10 +101,9 @@ const workPage = {
       theme: 'dark',
       data: {
         title: ['Why pick', 'me'],
-        subtitle:
-          'Turning heads and conquering hearts',
+        subtitle: 'Turning heads and conquering hearts',
         description:
-          "After head turning projects and a heart conquering personality just one click away, choose me to unlock boundless potential for your next project.",
+          'After head turning projects and a heart conquering personality just one click away, choose me to unlock boundless potential for your next project.',
         action: {
           type: '',
           icon: { src: '/images/arrow-up-right.svg' },
@@ -184,15 +182,15 @@ const workPage = {
           templates: {
             default: '"item-0""item-1""item-2""item-3"',
             sm: '"item-0 item-1""item-2 item-3"',
-            lg: '"item-0 item-1 ."". item-2 item-3"'
+            lg: '"item-0 item-1 ."". item-2 item-3"',
           },
           items: globals.find((data) => data.slug === 'personal-info')?.data
             .values.work,
-          },
-          icons: [
-            { src: '/images/globe.svg', title: 'Globe' },
-            { src: '/images/smile.svg', title: 'Smile' },
-          ],
+        },
+        icons: [
+          { src: '/images/globe.svg', title: 'Globe' },
+          { src: '/images/smile.svg', title: 'Smile' },
+        ],
       },
     },
     {

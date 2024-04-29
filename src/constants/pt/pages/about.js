@@ -43,7 +43,7 @@ const aboutPage = {
         title: ['Quem sou eu'],
         subtitle: 'Apenas alguém que quer encantar mentes.',
         description:
-          "Sou Richard, um incrível desenvolvedor full stack do Brasil. Quando não estou codificando, você pode me encontrar no mundo dos jogos — sou um grande fã, especialmente quando se trata de jogos rogue-like.",
+          'Sou Richard, um incrível desenvolvedor full stack do Brasil. Quando não estou codificando, você pode me encontrar no mundo dos jogos — sou um grande fã, especialmente quando se trata de jogos rogue-like.',
         blocks: [
           {
             items: [
@@ -68,12 +68,12 @@ const aboutPage = {
               {
                 title: 'Personalidade',
                 description:
-                  "Sou uma pessoa analítica e autodidata, destacando-me pela minha dedicação. Tenho uma abordagem sintética e crítica, onde transformo informações complexas em decisões inteligentes e eficazes. Essa abordagem não apenas simplifica o processo de tomada de decisão, mas também me permite encontrar soluções inovadoras em meio ao caos aparente.",
+                  'Sou uma pessoa analítica e autodidata, destacando-me pela minha dedicação. Tenho uma abordagem sintética e crítica, onde transformo informações complexas em decisões inteligentes e eficazes. Essa abordagem não apenas simplifica o processo de tomada de decisão, mas também me permite encontrar soluções inovadoras em meio ao caos aparente.',
               },
               {
                 title: 'Missão',
                 description:
-                  "Tenho uma missão para aprender, cultivar e aproveitar ao máximo. Aprender com a vida e com as pessoas, com meus sucessos e erros. Cultivar relacionamentos genuínos ao longo do caminho. Aproveitar ao máximo as oportunidades e momentos que a vida traz.",
+                  'Tenho uma missão para aprender, cultivar e aproveitar ao máximo. Aprender com a vida e com as pessoas, com meus sucessos e erros. Cultivar relacionamentos genuínos ao longo do caminho. Aproveitar ao máximo as oportunidades e momentos que a vida traz.',
               },
             ],
             image: {
@@ -100,15 +100,15 @@ const aboutPage = {
           templates: {
             default: '"item-0""item-1""item-2""item-3"',
             sm: '"item-0 item-1""item-2 item-3"',
-            lg: '"item-0 item-1 ."". item-2 item-3"'
+            lg: '"item-0 item-1 ."". item-2 item-3"',
           },
           items: globals.find((data) => data.slug === 'personal-info')?.data
             .values.personal,
-          },
-          icons: [
-            { src: '/images/smile.svg', title: 'Sorriso' },
-            { src: '/images/globe.svg', title: 'Globo' },
-          ],
+        },
+        icons: [
+          { src: '/images/smile.svg', title: 'Sorriso' },
+          { src: '/images/globe.svg', title: 'Globo' },
+        ],
       },
     },
     {

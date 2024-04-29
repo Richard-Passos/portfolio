@@ -24,11 +24,11 @@ const projectPage = {
           {
             type: 'magnetic',
             icon: {
-              src: '/images/eye.svg'
+              src: '/images/eye.svg',
             },
             data: {
-              label: 'View project'
-            }
+              label: 'View project',
+            },
           },
           {
             type: 'next',
@@ -97,7 +97,7 @@ const projectPage = {
               },
             },
           },
-        ]
+        ],
       },
     },
   ],

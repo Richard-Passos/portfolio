@@ -8,7 +8,7 @@ import Overlay from './Overlay';
 const Footer = async ({ className, ...props }) => {
   const { theme, data = {} } = (await globalsApi.getOne('footer')).data || {};
 
-  const opstTheme = getOpstTheme(theme)
+  const opstTheme = getOpstTheme(theme);
 
   return (
     <footer
@@ -19,11 +19,16 @@ const Footer = async ({ className, ...props }) => {
       )}
       {...props}
     >
-      <div className={cn('absolute top-0 h-[--pt] w-screen bg-main', `theme-${opstTheme}`)} >
+      <div
+        className={cn(
+          'absolute top-0 h-[--pt] w-screen bg-main',
+          `theme-${opstTheme}`,
+        )}
+      >
         <Lines className='z-0' />
       </div>
 
-      <Overlay className={cn('top-[--pt]', `theme-${opstTheme}`)}  />
+      <Overlay className={cn('top-[--pt]', `theme-${opstTheme}`)} />
 
       <Content
         theme={theme}

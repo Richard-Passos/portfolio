@@ -70,7 +70,7 @@ const globals = [
             },
           },
         ],
-      }
+      },
     },
   },
   {
@@ -186,7 +186,7 @@ const globals = [
         {
           title: 'Full stack',
           description:
-          'I integrate end-to-end solutions using cutting-edge front and back end technologies to deliver high-impact results that prioritize user experience, scalability, and performance, ensuring a seamless digital experience.',
+            'I integrate end-to-end solutions using cutting-edge front and back end technologies to deliver high-impact results that prioritize user experience, scalability, and performance, ensuring a seamless digital experience.',
         },
       ],
       stats: [
@@ -253,7 +253,7 @@ const globals = [
             description:
               'Keeping the end-user in mind when developing software, ensuring that their needs and expectations are met or exceeded.',
           },
-      ],
+        ],
         personal: [
           {
             icon: {

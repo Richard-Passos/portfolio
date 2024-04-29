@@ -4,8 +4,8 @@ const GET = async (req, { params: { id } }) => {
   id = normId(id);
 
   const { searchParams } = req.nextUrl;
-  
-  const { projects = [] } = getConstants(searchParams.get('locale'))
+
+  const { projects = [] } = getConstants(searchParams.get('locale'));
 
   const dataIdx = projects.findIndex(({ slug }) => normId(slug) === id);
 

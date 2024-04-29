@@ -51,14 +51,12 @@ const skills = {
     {
       title: 'TailwindCSS',
       icon: { src: '/images/tailwindcss.svg' },
-      description:
-        'Utility-first CSS framework for rapid development.',
+      description: 'Utility-first CSS framework for rapid development.',
     },
     {
       title: 'Styled-components',
       icon: { src: '/images/styled-components.svg' },
-      description:
-        'CSS-in-JS for seamless styling and component-based design.',
+      description: 'CSS-in-JS for seamless styling and component-based design.',
     },
     {
       title: 'HTML',

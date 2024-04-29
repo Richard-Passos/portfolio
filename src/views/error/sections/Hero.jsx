@@ -47,7 +47,7 @@ const ErrorViewHeroSection = ({
         {data.description}
       </Text>
 
-      <section className='mt-md flex justify-center gap-sm max-sm:flex-col items-center'>
+      <section className='mt-md flex items-center justify-center gap-sm max-sm:flex-col'>
         {data.actions?.map(({ type, data = {} }) => (
           <Button
             key={data.label}

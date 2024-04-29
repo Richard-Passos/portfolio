@@ -35,7 +35,7 @@ const BentoGridItemDataChanger = ({ className, data = {}, ...props }) => {
               {data.title}
             </Text.Title>
 
-            <Text className='text-sm text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] first-letter:uppercase group-data-active:duration-500 line-clamp-1 group-data-active:[clip-path:inset(0)]'>
+            <Text className='line-clamp-1 text-sm text-muted-content transition-[clip-path] [clip-path:inset(100%_0_0_0)] first-letter:uppercase group-data-active:duration-500 group-data-active:[clip-path:inset(0)]'>
               {data.description}
             </Text>
           </DataChanger.Item>

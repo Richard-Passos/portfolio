@@ -1,23 +1,26 @@
 'use client';
 
-import { useRouter, locales, usePathname } from '@/navigation';
+import { useLocale } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
+
+import { locales, usePathname, useRouter } from '@/navigation';
 import { cn } from '@/utils';
 
 import { Select } from '../ui';
 import { ChevronDownIcon, ChevronUpIcon } from '../ui/icon/icons';
-import { useLocale } from 'next-intl';
-import { useSearchParams } from 'next/navigation';
 
 const Language = ({ className, ...props }) => {
   const activeLocale = useLocale(),
-  router = useRouter(),
-  pathname = usePathname(),
-  searchParams = useSearchParams()
+    router = useRouter(),
+    pathname = usePathname(),
+    searchParams = useSearchParams();
 
   return (
     <Select
       defaultValue={activeLocale}
-      onValueChange={(locale) => router.replace(`${pathname}?${searchParams}`, { locale })}
+      onValueChange={(locale) =>
+        router.replace(`${pathname}?${searchParams}`, { locale })
+      }
       {...props}
     >
       <Select.Trigger

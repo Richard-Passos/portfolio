@@ -38,13 +38,15 @@ const WorkViewMissionSectionList = ({ data = [], ...props }) => {
               />
             </div>{' '}
             <span className='opacity-30 dark:opacity-10'>{data.text}</span>{' '}
-            <div className='size-[1em] rotate-[--rotate] opacity-30 dark:opacity-10 max-sm:hidden'>
+            <div className='size-[1em] rotate-[--rotate] opacity-30 max-sm:hidden dark:opacity-10'>
               <Icon
                 className='size-full'
                 {...data.icon}
               />
             </div>{' '}
-            <span className='opacity-30 dark:opacity-10 max-sm:hidden'>{data.text}</span>{' '}
+            <span className='opacity-30 max-sm:hidden dark:opacity-10'>
+              {data.text}
+            </span>{' '}
             <div className='size-[1em] rotate-[--rotate]'>
               <Icon
                 className='size-full'

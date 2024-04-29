@@ -17,11 +17,11 @@ const SocialNavItem = ({ className, variants, data = {}, ...props }) => {
       isExternal={data.isExternal}
       {...props}
     >
-      <div className='size-6 ml-6 shrink-0'>
+      <div className='ml-6 size-6 shrink-0'>
         <Icon {...data.icon} />
       </div>
 
-      <Text className='overflow-hidden mr-6 text-ellipsis whitespace-nowrap text-xs lowercase first-letter:uppercase'>
+      <Text className='mr-6 overflow-hidden text-ellipsis whitespace-nowrap text-xs lowercase first-letter:uppercase'>
         {data.label}
       </Text>
     </MagneticButton>

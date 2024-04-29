@@ -1,5 +1,5 @@
 export { default as useChangeKeyWhenFalsy } from './useChangeKeyWhenFalsy';
-export { default as useChildrenCount } from './useChildrenCount'
+export { default as useChildrenCount } from './useChildrenCount';
 export { default as useEventListener } from './useEventListener';
 export { default as useFollowPointer } from './useFollowPointer';
 export { default as useFormField } from './useFormField';

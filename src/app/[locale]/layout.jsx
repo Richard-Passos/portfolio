@@ -1,13 +1,13 @@
+import { unstable_setRequestLocale } from 'next-intl/server';
 import { Inter } from 'next/font/google';
 
 import { globalsApi } from '@/api';
 import { Footer, Header, Providers, SmoothScroll } from '@/components';
 import { AnimatePresence } from '@/components/animate';
 import { Cursor, ErrorBoundary } from '@/components/ui';
+import { locales } from '@/navigation';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
-import { locales } from '@/navigation';
-import { unstable_setRequestLocale } from 'next-intl/server';
 
 const font = Inter({ subsets: ['latin'], variable: '--font-app' });
 
@@ -50,7 +50,8 @@ const Layout = ({ children, params: { locale } }) => {
 };
 
 const generateMetadata = async ({ params: { locale } }) => {
-  const { data = {} } = (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data || {}
+  const { data = {} } =
+    (await globalsApi.getOne('personal-info', `?locale=${locale}`)).data || {};
 
   return {
     title: {

@@ -15,9 +15,9 @@ const Template = ({ children, ...props }) => {
       {...props}
     >
       <HeaderGetState>
-      <main className='relative flex w-full max-w-bounds flex-col items-center'>
-        {children}
-      </main>
+        <main className='relative flex w-full max-w-bounds flex-col items-center'>
+          {children}
+        </main>
       </HeaderGetState>
     </Animate>
   );

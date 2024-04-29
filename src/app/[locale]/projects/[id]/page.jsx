@@ -1,20 +1,20 @@
-import { pagesApi, projectsApi } from '@/api';
-import { ProjectView } from '@/views';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-const ProjectPage = async ({ params: { locale, id  } }) => {
+import { pagesApi, projectsApi } from '@/api';
+import { ProjectView } from '@/views';
+
+const ProjectPage = async ({ params: { locale, id } }) => {
   unstable_setRequestLocale(locale);
 
   const projectPromise = projectsApi.getOne(id, `?locale=${locale}`),
-    dataPromise = pagesApi.getOne('project', `?locale=${locale}`)
+    dataPromise = pagesApi.getOne('project', `?locale=${locale}`);
 
-    const [ project = {}, { data = {} } ] = await Promise.all([projectPromise, dataPromise]) 
-    
-  return (
-    <ProjectView
-      data={{ project, ...data }}
-    />
-  );
+  const [project = {}, { data = {} }] = await Promise.all([
+    projectPromise,
+    dataPromise,
+  ]);
+
+  return <ProjectView data={{ project, ...data }} />;
 };
 
 const generateMetadata = async ({ params: { id, locale } }) => {

@@ -828,9 +828,18 @@
           "data": {
             "description": "That's my mission — Each line of code refines my skills, crafting high-impact solutions. Every project is an opportunity to inspire clients, coworkers, and the community, fostering enduring positive impact. Consistent repetition breeds excellence, driving digital prominence.",
             "items": [
-              { "text": "Improve", "icon": { "src": "/images/rocket.svg", "title": "Rocket" } },
-              { "text": "Inspire", "icon": { "src": "/images/globe.svg", "title": "Globe" } },
-              { "text": "Repeat", "icon": { "src": "/images/smile.svg", "title": "Smile" } }
+              {
+                "text": "Improve",
+                "icon": { "src": "/images/rocket.svg", "title": "Rocket" }
+              },
+              {
+                "text": "Inspire",
+                "icon": { "src": "/images/globe.svg", "title": "Globe" }
+              },
+              {
+                "text": "Repeat",
+                "icon": { "src": "/images/smile.svg", "title": "Smile" }
+              }
             ]
           }
         },
@@ -843,8 +852,22 @@
             "description": "My solutions go beyond technological boundaries, they're not just algorithms and code. They are developed to generate high-impact results, driving you to digital prominence.",
             "block": {
               "title": "I could help you with...",
-              "image": { "src": "/images/parallax-00.jpg", "alt": "", "width": 2491, "height": 3737 },
-              "action": { "type": "", "icon": { "src": "/images/arrow-up-right.svg" }, "animation": "slideUpRight", "data": { "label": "Contact me", "href": "/contact", "variants": { "color": "main" } } },
+              "image": {
+                "src": "/images/parallax-00.jpg",
+                "alt": "",
+                "width": 2491,
+                "height": 3737
+              },
+              "action": {
+                "type": "",
+                "icon": { "src": "/images/arrow-up-right.svg" },
+                "animation": "slideUpRight",
+                "data": {
+                  "label": "Contact me",
+                  "href": "/contact",
+                  "variants": { "color": "main" }
+                }
+              },
               "items": null
             }
           }
@@ -856,7 +879,15 @@
             "title": ["Selected", "works"],
             "description": "Each project is a tailored masterpiece, meticulously crafted to engage users with intuitive interfaces, great interactions and captivating experiences.",
             "block": {
-              "action": { "type": "", "icon": { "src": "/images/plus.svg" }, "data": { "label": "More works", "href": "/projects", "variants": { "color": "main" } } },
+              "action": {
+                "type": "",
+                "icon": { "src": "/images/plus.svg" },
+                "data": {
+                  "label": "More works",
+                  "href": "/projects",
+                  "variants": { "color": "main" }
+                }
+              },
               "items": null
             }
           }
@@ -868,7 +899,16 @@
             "title": ["Why pick", "me"],
             "subtitle": "Turning heads and conquering hearts",
             "description": "After head turning projects and a heart conquering personality just one click away, choose me to unlock boundless potential for your next project.",
-            "action": { "type": "", "icon": { "src": "/images/arrow-up-right.svg" }, "animation": "slideUpRight", "data": { "label": "About me", "href": "/about", "variants": { "color": "main", "size": "sm" } } },
+            "action": {
+              "type": "",
+              "icon": { "src": "/images/arrow-up-right.svg" },
+              "animation": "slideUpRight",
+              "data": {
+                "label": "About me",
+                "href": "/about",
+                "variants": { "color": "main", "size": "sm" }
+              }
+            },
             "block": {
               "title": "Some statistics...",
               "items": null
@@ -883,8 +923,16 @@
               "title": "Hard \nskills",
               "subtitle": "The best in market",
               "actions": [
-                { "type": "prev", "icon": { "src": "/images/arrow-left.svg" }, "data": { "label": "Previous skill" } },
-                { "type": "next", "icon": { "src": "/images/arrow-right.svg" }, "data": { "label": "Next skill" } }
+                {
+                  "type": "prev",
+                  "icon": { "src": "/images/arrow-left.svg" },
+                  "data": { "label": "Previous skill" }
+                },
+                {
+                  "type": "next",
+                  "icon": { "src": "/images/arrow-right.svg" },
+                  "data": { "label": "Next skill" }
+                }
               ],
               "items": null
             },
@@ -892,8 +940,16 @@
               "title": "Soft \nskills",
               "subtitle": "The best as person",
               "actions": [
-                { "type": "prev", "icon": { "src": "/images/arrow-left.svg" }, "data": { "label": "Previous skill" } },
-                { "type": "next", "icon": { "src": "/images/arrow-right.svg" }, "data": { "label": "Next skill" } }
+                {
+                  "type": "prev",
+                  "icon": { "src": "/images/arrow-left.svg" },
+                  "data": { "label": "Previous skill" }
+                },
+                {
+                  "type": "next",
+                  "icon": { "src": "/images/arrow-right.svg" },
+                  "data": { "label": "Next skill" }
+                }
               ],
               "items": null
             }
@@ -906,7 +962,11 @@
             "title": "My \nvalues",
             "subtitle": "Elevating standards",
             "grid": {
-              "templates": { "default": "\"item-0\"\"item-1\"\"item-2\"\"item-3\"", "sm": "\"item-0 item-1\"\"item-2 item-3\"", "lg": "\"item-0 item-1 .\"\". item-2 item-3\"" },
+              "templates": {
+                "default": "\"item-0\"\"item-1\"\"item-2\"\"item-3\"",
+                "sm": "\"item-0 item-1\"\"item-2 item-3\"",
+                "lg": "\"item-0 item-1 .\"\". item-2 item-3\""
+              },
               "items": null
             },
             "icons": [
@@ -921,7 +981,15 @@
           "data": {
             "title": "Next page",
             "description": "About me ·",
-            "action": { "type": "", "icon": { "src": "/images/arrow-up-right.svg" }, "data": { "label": "Go to about page", "href": "/about", "variants": { "color": "main" } } }
+            "action": {
+              "type": "",
+              "icon": { "src": "/images/arrow-up-right.svg" },
+              "data": {
+                "label": "Go to about page",
+                "href": "/about",
+                "variants": { "color": "main" }
+              }
+            }
           }
         }
       ],
@@ -1230,1238 +1298,1210 @@
   },
   "projects": [
     {
-      "href":"#",
-      "title":"Project-00",
-      "subtitle":"An awesome subtitle!",
-      "slug":"project-00",
-      "isSelected":true,
-      "roles":[
-        "design"
-      ],
-      "year":2024,
-      "client":"Jhon doe",
-      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
-      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "thumbnail":{
-        "src":"/images/project-00.jpg",
-        "alt":"Project 00 thumbnail",
-        "width":1200,
-        "height":782
+      "href": "#",
+      "title": "Project-00",
+      "subtitle": "An awesome subtitle!",
+      "slug": "project-00",
+      "isSelected": true,
+      "roles": ["design"],
+      "year": 2024,
+      "client": "Jhon doe",
+      "description": "The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail": {
+        "src": "/images/project-00.jpg",
+        "alt": "Project 00 thumbnail",
+        "width": 1200,
+        "height": 782
       },
-      "demoImages":[
+      "demoImages": [
         {
-          "src":"/images/project-01.png",
-          "alt":"Project 01 image",
-          "width":810,
-          "height":810
+          "src": "/images/project-01.png",
+          "alt": "Project 01 image",
+          "width": 810,
+          "height": 810
         },
         {
-          "src":"/images/project-02.jpg",
-          "alt":"Project 02 image",
-          "width":904,
-          "height":510
+          "src": "/images/project-02.jpg",
+          "alt": "Project 02 image",
+          "width": 904,
+          "height": 510
         }
       ],
-      "images":{
-        "templates":{
-          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+      "images": {
+        "templates": {
+          "default": "\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
         },
-        "items":[
+        "items": [
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-00.jpg",
-              "alt":"project-00",
-              "width":1200,
-              "height":782
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-00.jpg",
+              "alt": "project-00",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-01.png",
-              "alt":"project-01",
-              "width":810,
-              "height":810
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-01.png",
+              "alt": "project-01",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-02.jpg",
-              "alt":"project-02",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-02.jpg",
+              "alt": "project-02",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-03.png",
-              "alt":"project-03",
-              "width":500,
-              "height":500
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-03.png",
+              "alt": "project-03",
+              "width": 500,
+              "height": 500
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-04.jpg",
-              "alt":"project-04",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-04.jpg",
+              "alt": "project-04",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-05.jpg",
-              "alt":"project-05",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-05.jpg",
+              "alt": "project-05",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-06.png",
-              "alt":"project-06",
-              "width":810,
-              "height":810
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-06.png",
+              "alt": "project-06",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-07.jpg",
-              "alt":"project-07",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-07.jpg",
+              "alt": "project-07",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-08.png",
-              "alt":"project-08",
-              "width":500,
-              "height":500
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-08.png",
+              "alt": "project-08",
+              "width": 500,
+              "height": 500
             }
           }
         ]
       }
     },
     {
-      "href":"#",
-      "title":"Project-01",
-      "subtitle":"An awesome subtitle!",
-      "slug":"project-01",
-      "isSelected":true,
-      "roles":[
-        "development"
-      ],
-      "year":2024,
-      "client":"Jhon doe",
-      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
-      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "thumbnail":{
-        "src":"/images/project-01.png",
-        "alt":"Project 01 image",
-        "width":810,
-        "height":810
+      "href": "#",
+      "title": "Project-01",
+      "subtitle": "An awesome subtitle!",
+      "slug": "project-01",
+      "isSelected": true,
+      "roles": ["development"],
+      "year": 2024,
+      "client": "Jhon doe",
+      "description": "The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail": {
+        "src": "/images/project-01.png",
+        "alt": "Project 01 image",
+        "width": 810,
+        "height": 810
       },
-      "demoImages":[
+      "demoImages": [
         {
-          "src":"/images/project-01.png",
-          "alt":"Project 01 image",
-          "width":810,
-          "height":810
+          "src": "/images/project-01.png",
+          "alt": "Project 01 image",
+          "width": 810,
+          "height": 810
         },
         {
-          "src":"/images/project-02.jpg",
-          "alt":"Project 02 image",
-          "width":904,
-          "height":510
+          "src": "/images/project-02.jpg",
+          "alt": "Project 02 image",
+          "width": 904,
+          "height": 510
         }
       ],
-      "images":{
-        "templates":{
-          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+      "images": {
+        "templates": {
+          "default": "\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
         },
-        "items":[
+        "items": [
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-00.jpg",
-              "alt":"project-00",
-              "width":1200,
-              "height":782
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-00.jpg",
+              "alt": "project-00",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-01.png",
-              "alt":"project-01",
-              "width":810,
-              "height":810
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-01.png",
+              "alt": "project-01",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-02.jpg",
-              "alt":"project-02",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-02.jpg",
+              "alt": "project-02",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-03.png",
-              "alt":"project-03",
-              "width":500,
-              "height":500
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-03.png",
+              "alt": "project-03",
+              "width": 500,
+              "height": 500
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-04.jpg",
-              "alt":"project-04",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-04.jpg",
+              "alt": "project-04",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-05.jpg",
-              "alt":"project-05",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-05.jpg",
+              "alt": "project-05",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-06.png",
-              "alt":"project-06",
-              "width":810,
-              "height":810
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-06.png",
+              "alt": "project-06",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-07.jpg",
-              "alt":"project-07",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-07.jpg",
+              "alt": "project-07",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-08.png",
-              "alt":"project-08",
-              "width":500,
-              "height":500
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-08.png",
+              "alt": "project-08",
+              "width": 500,
+              "height": 500
             }
           }
         ]
       }
     },
     {
-      "href":"#",
-      "title":"Project-02",
-      "subtitle":"An awesome subtitle!",
-      "slug":"project-02",
-      "isSelected":true,
-      "roles":[
-        "design",
-        "development"
-      ],
-      "year":2024,
-      "client":"Jhon doe",
-      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
-      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "thumbnail":{
-        "src":"/images/project-02.jpg",
-        "alt":"Project 02 image",
-        "width":904,
-        "height":510
+      "href": "#",
+      "title": "Project-02",
+      "subtitle": "An awesome subtitle!",
+      "slug": "project-02",
+      "isSelected": true,
+      "roles": ["design", "development"],
+      "year": 2024,
+      "client": "Jhon doe",
+      "description": "The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail": {
+        "src": "/images/project-02.jpg",
+        "alt": "Project 02 image",
+        "width": 904,
+        "height": 510
       },
-      "demoImages":[
+      "demoImages": [
         {
-          "src":"/images/project-01.png",
-          "alt":"Project 01 image",
-          "width":810,
-          "height":810
+          "src": "/images/project-01.png",
+          "alt": "Project 01 image",
+          "width": 810,
+          "height": 810
         },
         {
-          "src":"/images/project-02.jpg",
-          "alt":"Project 02 image",
-          "width":904,
-          "height":510
+          "src": "/images/project-02.jpg",
+          "alt": "Project 02 image",
+          "width": 904,
+          "height": 510
         }
       ],
-      "images":{
-        "templates":{
-          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+      "images": {
+        "templates": {
+          "default": "\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
         },
-        "items":[
+        "items": [
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-00.jpg",
-              "alt":"project-00",
-              "width":1200,
-              "height":782
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-00.jpg",
+              "alt": "project-00",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-01.png",
-              "alt":"project-01",
-              "width":810,
-              "height":810
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-01.png",
+              "alt": "project-01",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-02.jpg",
-              "alt":"project-02",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-02.jpg",
+              "alt": "project-02",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-03.png",
-              "alt":"project-03",
-              "width":500,
-              "height":500
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-03.png",
+              "alt": "project-03",
+              "width": 500,
+              "height": 500
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-04.jpg",
-              "alt":"project-04",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-04.jpg",
+              "alt": "project-04",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-05.jpg",
-              "alt":"project-05",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-05.jpg",
+              "alt": "project-05",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-06.png",
-              "alt":"project-06",
-              "width":810,
-              "height":810
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-06.png",
+              "alt": "project-06",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-07.jpg",
-              "alt":"project-07",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-07.jpg",
+              "alt": "project-07",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-08.png",
-              "alt":"project-08",
-              "width":500,
-              "height":500
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-08.png",
+              "alt": "project-08",
+              "width": 500,
+              "height": 500
             }
           }
         ]
       }
     },
     {
-      "href":"#",
-      "title":"Project-03",
-      "subtitle":"An awesome subtitle!",
-      "slug":"project-03",
-      "isSelected":true,
-      "roles":[
-        "design",
-        "development"
-      ],
-      "year":2024,
-      "client":"Jhon doe",
-      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
-      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "thumbnail":{
-        "src":"/images/project-03.png",
-        "alt":"Project 03 image",
-        "width":500,
-        "height":500
+      "href": "#",
+      "title": "Project-03",
+      "subtitle": "An awesome subtitle!",
+      "slug": "project-03",
+      "isSelected": true,
+      "roles": ["design", "development"],
+      "year": 2024,
+      "client": "Jhon doe",
+      "description": "The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail": {
+        "src": "/images/project-03.png",
+        "alt": "Project 03 image",
+        "width": 500,
+        "height": 500
       },
-      "demoImages":[
+      "demoImages": [
         {
-          "src":"/images/project-01.png",
-          "alt":"Project 01 image",
-          "width":810,
-          "height":810
+          "src": "/images/project-01.png",
+          "alt": "Project 01 image",
+          "width": 810,
+          "height": 810
         },
         {
-          "src":"/images/project-02.jpg",
-          "alt":"Project 02 image",
-          "width":904,
-          "height":510
+          "src": "/images/project-02.jpg",
+          "alt": "Project 02 image",
+          "width": 904,
+          "height": 510
         }
       ],
-      "images":{
-        "templates":{
-          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+      "images": {
+        "templates": {
+          "default": "\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
         },
-        "items":[
+        "items": [
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-00.jpg",
-              "alt":"project-00",
-              "width":1200,
-              "height":782
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-00.jpg",
+              "alt": "project-00",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-01.png",
-              "alt":"project-01",
-              "width":810,
-              "height":810
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-01.png",
+              "alt": "project-01",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-02.jpg",
-              "alt":"project-02",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-02.jpg",
+              "alt": "project-02",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-03.png",
-              "alt":"project-03",
-              "width":500,
-              "height":500
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-03.png",
+              "alt": "project-03",
+              "width": 500,
+              "height": 500
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-04.jpg",
-              "alt":"project-04",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-04.jpg",
+              "alt": "project-04",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-05.jpg",
-              "alt":"project-05",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-05.jpg",
+              "alt": "project-05",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-06.png",
-              "alt":"project-06",
-              "width":810,
-              "height":810
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-06.png",
+              "alt": "project-06",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-07.jpg",
-              "alt":"project-07",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-07.jpg",
+              "alt": "project-07",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-08.png",
-              "alt":"project-08",
-              "width":500,
-              "height":500
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-08.png",
+              "alt": "project-08",
+              "width": 500,
+              "height": 500
             }
           }
         ]
       }
     },
     {
-      "href":"#",
-      "title":"Project-04",
-      "subtitle":"An awesome subtitle!",
-      "slug":"project-04",
-      "isSelected":true,
-      "roles":[
-        "design",
-        "development"
-      ],
-      "year":2024,
-      "client":"Jhon doe",
-      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
-      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "thumbnail":{
-        "src":"/images/project-04.jpg",
-        "alt":"Project 04 image",
-        "width":1200,
-        "height":782
+      "href": "#",
+      "title": "Project-04",
+      "subtitle": "An awesome subtitle!",
+      "slug": "project-04",
+      "isSelected": true,
+      "roles": ["design", "development"],
+      "year": 2024,
+      "client": "Jhon doe",
+      "description": "The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail": {
+        "src": "/images/project-04.jpg",
+        "alt": "Project 04 image",
+        "width": 1200,
+        "height": 782
       },
-      "demoImages":[
+      "demoImages": [
         {
-          "src":"/images/project-01.png",
-          "alt":"Project 01 image",
-          "width":810,
-          "height":810
+          "src": "/images/project-01.png",
+          "alt": "Project 01 image",
+          "width": 810,
+          "height": 810
         },
         {
-          "src":"/images/project-02.jpg",
-          "alt":"Project 02 image",
-          "width":904,
-          "height":510
+          "src": "/images/project-02.jpg",
+          "alt": "Project 02 image",
+          "width": 904,
+          "height": 510
         }
       ],
-      "images":{
-        "templates":{
-          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+      "images": {
+        "templates": {
+          "default": "\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
         },
-        "items":[
+        "items": [
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-00.jpg",
-              "alt":"project-00",
-              "width":1200,
-              "height":782
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-00.jpg",
+              "alt": "project-00",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-01.png",
-              "alt":"project-01",
-              "width":810,
-              "height":810
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-01.png",
+              "alt": "project-01",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-02.jpg",
-              "alt":"project-02",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-02.jpg",
+              "alt": "project-02",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-03.png",
-              "alt":"project-03",
-              "width":500,
-              "height":500
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-03.png",
+              "alt": "project-03",
+              "width": 500,
+              "height": 500
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-04.jpg",
-              "alt":"project-04",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-04.jpg",
+              "alt": "project-04",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-05.jpg",
-              "alt":"project-05",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-05.jpg",
+              "alt": "project-05",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-06.png",
-              "alt":"project-06",
-              "width":810,
-              "height":810
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-06.png",
+              "alt": "project-06",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-07.jpg",
-              "alt":"project-07",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-07.jpg",
+              "alt": "project-07",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-08.png",
-              "alt":"project-08",
-              "width":500,
-              "height":500
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-08.png",
+              "alt": "project-08",
+              "width": 500,
+              "height": 500
             }
           }
         ]
       }
     },
     {
-      "href":"#",
-      "title":"Project-05",
-      "subtitle":"An awesome subtitle!",
-      "slug":"project-05",
-      "isSelected":false,
-      "roles":[
-        "design",
-        "development"
-      ],
-      "year":2024,
-      "client":"Jhon doe",
-      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
-      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "thumbnail":{
-        "src":"/images/project-05.jpg",
-        "alt":"Project 05 image",
-        "width":1200,
-        "height":782
+      "href": "#",
+      "title": "Project-05",
+      "subtitle": "An awesome subtitle!",
+      "slug": "project-05",
+      "isSelected": false,
+      "roles": ["design", "development"],
+      "year": 2024,
+      "client": "Jhon doe",
+      "description": "The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail": {
+        "src": "/images/project-05.jpg",
+        "alt": "Project 05 image",
+        "width": 1200,
+        "height": 782
       },
-      "demoImages":[
+      "demoImages": [
         {
-          "src":"/images/project-01.png",
-          "alt":"Project 01 image",
-          "width":810,
-          "height":810
+          "src": "/images/project-01.png",
+          "alt": "Project 01 image",
+          "width": 810,
+          "height": 810
         },
         {
-          "src":"/images/project-02.jpg",
-          "alt":"Project 02 image",
-          "width":904,
-          "height":510
+          "src": "/images/project-02.jpg",
+          "alt": "Project 02 image",
+          "width": 904,
+          "height": 510
         }
       ],
-      "images":{
-        "templates":{
-          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+      "images": {
+        "templates": {
+          "default": "\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
         },
-        "items":[
+        "items": [
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-00.jpg",
-              "alt":"project-00",
-              "width":1200,
-              "height":782
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-00.jpg",
+              "alt": "project-00",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-01.png",
-              "alt":"project-01",
-              "width":810,
-              "height":810
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-01.png",
+              "alt": "project-01",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-02.jpg",
-              "alt":"project-02",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-02.jpg",
+              "alt": "project-02",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-03.png",
-              "alt":"project-03",
-              "width":500,
-              "height":500
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-03.png",
+              "alt": "project-03",
+              "width": 500,
+              "height": 500
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-04.jpg",
-              "alt":"project-04",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-04.jpg",
+              "alt": "project-04",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-05.jpg",
-              "alt":"project-05",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-05.jpg",
+              "alt": "project-05",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-06.png",
-              "alt":"project-06",
-              "width":810,
-              "height":810
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-06.png",
+              "alt": "project-06",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-07.jpg",
-              "alt":"project-07",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-07.jpg",
+              "alt": "project-07",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-08.png",
-              "alt":"project-08",
-              "width":500,
-              "height":500
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-08.png",
+              "alt": "project-08",
+              "width": 500,
+              "height": 500
             }
           }
         ]
       }
     },
     {
-      "href":"#",
-      "title":"Project-06",
-      "subtitle":"An awesome subtitle!",
-      "slug":"project-06",
-      "isSelected":false,
-      "roles":[
-        "design",
-        "development"
-      ],
-      "year":2024,
-      "client":"Jhon doe",
-      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
-      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "thumbnail":{
-        "src":"/images/project-06.png",
-        "alt":"Project 06 image",
-        "width":810,
-        "height":810
+      "href": "#",
+      "title": "Project-06",
+      "subtitle": "An awesome subtitle!",
+      "slug": "project-06",
+      "isSelected": false,
+      "roles": ["design", "development"],
+      "year": 2024,
+      "client": "Jhon doe",
+      "description": "The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail": {
+        "src": "/images/project-06.png",
+        "alt": "Project 06 image",
+        "width": 810,
+        "height": 810
       },
-      "demoImages":[
+      "demoImages": [
         {
-          "src":"/images/project-01.png",
-          "alt":"Project 01 image",
-          "width":810,
-          "height":810
+          "src": "/images/project-01.png",
+          "alt": "Project 01 image",
+          "width": 810,
+          "height": 810
         },
         {
-          "src":"/images/project-02.jpg",
-          "alt":"Project 02 image",
-          "width":904,
-          "height":510
+          "src": "/images/project-02.jpg",
+          "alt": "Project 02 image",
+          "width": 904,
+          "height": 510
         }
       ],
-      "images":{
-        "templates":{
-          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+      "images": {
+        "templates": {
+          "default": "\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
         },
-        "items":[
+        "items": [
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-00.jpg",
-              "alt":"project-00",
-              "width":1200,
-              "height":782
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-00.jpg",
+              "alt": "project-00",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-01.png",
-              "alt":"project-01",
-              "width":810,
-              "height":810
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-01.png",
+              "alt": "project-01",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-02.jpg",
-              "alt":"project-02",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-02.jpg",
+              "alt": "project-02",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-03.png",
-              "alt":"project-03",
-              "width":500,
-              "height":500
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-03.png",
+              "alt": "project-03",
+              "width": 500,
+              "height": 500
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-04.jpg",
-              "alt":"project-04",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-04.jpg",
+              "alt": "project-04",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-05.jpg",
-              "alt":"project-05",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-05.jpg",
+              "alt": "project-05",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-06.png",
-              "alt":"project-06",
-              "width":810,
-              "height":810
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-06.png",
+              "alt": "project-06",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-07.jpg",
-              "alt":"project-07",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-07.jpg",
+              "alt": "project-07",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-08.png",
-              "alt":"project-08",
-              "width":500,
-              "height":500
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-08.png",
+              "alt": "project-08",
+              "width": 500,
+              "height": 500
             }
           }
         ]
       }
     },
     {
-      "href":"#",
-      "title":"Project-07",
-      "subtitle":"An awesome subtitle!",
-      "slug":"project-07",
-      "isSelected":false,
-      "roles":[
-        "design",
-        "development"
-      ],
-      "year":2024,
-      "client":"Jhon doe",
-      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
-      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "thumbnail":{
-        "src":"/images/project-07.jpg",
-        "alt":"Project 07 image",
-        "width":904,
-        "height":510
+      "href": "#",
+      "title": "Project-07",
+      "subtitle": "An awesome subtitle!",
+      "slug": "project-07",
+      "isSelected": false,
+      "roles": ["design", "development"],
+      "year": 2024,
+      "client": "Jhon doe",
+      "description": "The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail": {
+        "src": "/images/project-07.jpg",
+        "alt": "Project 07 image",
+        "width": 904,
+        "height": 510
       },
-      "demoImages":[
+      "demoImages": [
         {
-          "src":"/images/project-01.png",
-          "alt":"Project 01 image",
-          "width":810,
-          "height":810
+          "src": "/images/project-01.png",
+          "alt": "Project 01 image",
+          "width": 810,
+          "height": 810
         },
         {
-          "src":"/images/project-02.jpg",
-          "alt":"Project 02 image",
-          "width":904,
-          "height":510
+          "src": "/images/project-02.jpg",
+          "alt": "Project 02 image",
+          "width": 904,
+          "height": 510
         }
       ],
-      "images":{
-        "templates":{
-          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+      "images": {
+        "templates": {
+          "default": "\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
         },
-        "items":[
+        "items": [
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-00.jpg",
-              "alt":"project-00",
-              "width":1200,
-              "height":782
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-00.jpg",
+              "alt": "project-00",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-01.png",
-              "alt":"project-01",
-              "width":810,
-              "height":810
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-01.png",
+              "alt": "project-01",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-02.jpg",
-              "alt":"project-02",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-02.jpg",
+              "alt": "project-02",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-03.png",
-              "alt":"project-03",
-              "width":500,
-              "height":500
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-03.png",
+              "alt": "project-03",
+              "width": 500,
+              "height": 500
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-04.jpg",
-              "alt":"project-04",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-04.jpg",
+              "alt": "project-04",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-05.jpg",
-              "alt":"project-05",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-05.jpg",
+              "alt": "project-05",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-06.png",
-              "alt":"project-06",
-              "width":810,
-              "height":810
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-06.png",
+              "alt": "project-06",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-07.jpg",
-              "alt":"project-07",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-07.jpg",
+              "alt": "project-07",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-08.png",
-              "alt":"project-08",
-              "width":500,
-              "height":500
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-08.png",
+              "alt": "project-08",
+              "width": 500,
+              "height": 500
             }
           }
         ]
       }
     },
     {
-      "href":"#",
-      "title":"Project-08",
-      "subtitle":"An awesome subtitle!",
-      "slug":"project-08",
-      "isSelected":false,
-      "roles":[
-        "design",
-        "development"
-      ],
-      "year":2024,
-      "client":"Jhon doe",
-      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
-      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "thumbnail":{
-        "src":"/images/project-08.png",
-        "alt":"Project 08 image",
-        "width":500,
-        "height":500
+      "href": "#",
+      "title": "Project-08",
+      "subtitle": "An awesome subtitle!",
+      "slug": "project-08",
+      "isSelected": false,
+      "roles": ["design", "development"],
+      "year": 2024,
+      "client": "Jhon doe",
+      "description": "The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail": {
+        "src": "/images/project-08.png",
+        "alt": "Project 08 image",
+        "width": 500,
+        "height": 500
       },
-      "demoImages":[
+      "demoImages": [
         {
-          "src":"/images/project-01.png",
-          "alt":"Project 01 image",
-          "width":810,
-          "height":810
+          "src": "/images/project-01.png",
+          "alt": "Project 01 image",
+          "width": 810,
+          "height": 810
         },
         {
-          "src":"/images/project-02.jpg",
-          "alt":"Project 02 image",
-          "width":904,
-          "height":510
+          "src": "/images/project-02.jpg",
+          "alt": "Project 02 image",
+          "width": 904,
+          "height": 510
         }
       ],
-      "images":{
-        "templates":{
-          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+      "images": {
+        "templates": {
+          "default": "\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
         },
-        "items":[
+        "items": [
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-00.jpg",
-              "alt":"project-00",
-              "width":1200,
-              "height":782
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-00.jpg",
+              "alt": "project-00",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-01.png",
-              "alt":"project-01",
-              "width":810,
-              "height":810
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-01.png",
+              "alt": "project-01",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-02.jpg",
-              "alt":"project-02",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-02.jpg",
+              "alt": "project-02",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-03.png",
-              "alt":"project-03",
-              "width":500,
-              "height":500
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-03.png",
+              "alt": "project-03",
+              "width": 500,
+              "height": 500
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-04.jpg",
-              "alt":"project-04",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-04.jpg",
+              "alt": "project-04",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-05.jpg",
-              "alt":"project-05",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-05.jpg",
+              "alt": "project-05",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-06.png",
-              "alt":"project-06",
-              "width":810,
-              "height":810
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-06.png",
+              "alt": "project-06",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-07.jpg",
-              "alt":"project-07",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-07.jpg",
+              "alt": "project-07",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-08.png",
-              "alt":"project-08",
-              "width":500,
-              "height":500
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-08.png",
+              "alt": "project-08",
+              "width": 500,
+              "height": 500
             }
           }
         ]
       }
     },
     {
-      "href":"#",
-      "title":"Project-09",
-      "subtitle":"An awesome subtitle!",
-      "slug":"project-09",
-      "isSelected":false,
-      "roles":[
-        "design",
-        "Development"
-      ],
-      "year":2024,
-      "client":"Jhon doe",
-      "description":"The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
-      "challenge":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "solution":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
-      "thumbnail":{
-        "src":"/images/project-09.jpg",
-        "alt":"Project 09 image",
-        "width":1200,
-        "height":782
+      "href": "#",
+      "title": "Project-09",
+      "subtitle": "An awesome subtitle!",
+      "slug": "project-09",
+      "isSelected": false,
+      "roles": ["design", "Development"],
+      "year": 2024,
+      "client": "Jhon doe",
+      "description": "The virtual experience that invites partners and customers to explore the Starbucks Costa Rica-based coffee farm and the global research and development hub. Visitors can choose their guide, move at their own pace, and delve deeper into the coffee journey from seed to cup.",
+      "challenge": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "solution": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, itaque? Repudiandae, autem? Animi itaque obcaecati in error, inventore corrupti minima?",
+      "thumbnail": {
+        "src": "/images/project-09.jpg",
+        "alt": "Project 09 image",
+        "width": 1200,
+        "height": 782
       },
-      "demoImages":[
+      "demoImages": [
         {
-          "src":"/images/project-01.png",
-          "alt":"Project 01 image",
-          "width":810,
-          "height":810
+          "src": "/images/project-01.png",
+          "alt": "Project 01 image",
+          "width": 810,
+          "height": 810
         },
         {
-          "src":"/images/project-02.jpg",
-          "alt":"Project 02 image",
-          "width":904,
-          "height":510
+          "src": "/images/project-02.jpg",
+          "alt": "Project 02 image",
+          "width": 904,
+          "height": 510
         }
       ],
-      "images":{
-        "templates":{
-          "default":"\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
+      "images": {
+        "templates": {
+          "default": "\"item-0 item-0\"\"item-1 item-2\"\"item-3 item-3\"\"item-4 item-5\"\"item-6 item-6\"\"item-7 item-8\"\"item-9 item-9\""
         },
-        "items":[
+        "items": [
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-00.jpg",
-              "alt":"project-00",
-              "width":1200,
-              "height":782
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-00.jpg",
+              "alt": "project-00",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-01.png",
-              "alt":"project-01",
-              "width":810,
-              "height":810
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-01.png",
+              "alt": "project-01",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-02.jpg",
-              "alt":"project-02",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-02.jpg",
+              "alt": "project-02",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-03.png",
-              "alt":"project-03",
-              "width":500,
-              "height":500
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-03.png",
+              "alt": "project-03",
+              "width": 500,
+              "height": 500
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-04.jpg",
-              "alt":"project-04",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-04.jpg",
+              "alt": "project-04",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-05.jpg",
-              "alt":"project-05",
-              "width":1200,
-              "height":782
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-05.jpg",
+              "alt": "project-05",
+              "width": 1200,
+              "height": 782
             }
           },
           {
-            "aspectRatio":"16/9",
-            "data":{
-              "src":"/images/project-06.png",
-              "alt":"project-06",
-              "width":810,
-              "height":810
+            "aspectRatio": "16/9",
+            "data": {
+              "src": "/images/project-06.png",
+              "alt": "project-06",
+              "width": 810,
+              "height": 810
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-07.jpg",
-              "alt":"project-07",
-              "width":904,
-              "height":510
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-07.jpg",
+              "alt": "project-07",
+              "width": 904,
+              "height": 510
             }
           },
           {
-            "aspectRatio":"1/1.25",
-            "data":{
-              "src":"/images/project-08.png",
-              "alt":"project-08",
-              "width":500,
-              "height":500
+            "aspectRatio": "1/1.25",
+            "data": {
+              "src": "/images/project-08.png",
+              "alt": "project-08",
+              "width": 500,
+              "height": 500
             }
           }
         ]
@@ -2469,142 +2509,142 @@
     }
   ],
   "skills": {
-    "hard":[
+    "hard": [
       {
-        "title":"React.js",
-        "icon":{
-          "src":"/images/react.svg"
+        "title": "React.js",
+        "icon": {
+          "src": "/images/react.svg"
         },
-        "description":"A declarative, efficient, and flexible JavaScript library for building user interfaces."
+        "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces."
       },
       {
-        "title":"Node.js",
-        "icon":{
-          "src":"/images/nodejs.svg"
+        "title": "Node.js",
+        "icon": {
+          "src": "/images/nodejs.svg"
         },
-        "description":"A server-side JavaScript runtime environment for building scalable, high-performance applications."
+        "description": "A server-side JavaScript runtime environment for building scalable, high-performance applications."
       },
       {
-        "title":"React Native",
-        "icon":{
-          "src":"/images/react.svg"
+        "title": "React Native",
+        "icon": {
+          "src": "/images/react.svg"
         },
-        "description":"JavaScript library that uses React for agile development of cross-platform mobile applications."
+        "description": "JavaScript library that uses React for agile development of cross-platform mobile applications."
       },
       {
-        "title":"Next.js",
-        "icon":{
-          "src":"/images/nextjs.svg"
+        "title": "Next.js",
+        "icon": {
+          "src": "/images/nextjs.svg"
         },
-        "description":"React framework for building server-rendered and statically-generated web applications."
+        "description": "React framework for building server-rendered and statically-generated web applications."
       },
       {
-        "title":"JavaScript",
-        "icon":{
-          "src":"/images/javascript.svg"
+        "title": "JavaScript",
+        "icon": {
+          "src": "/images/javascript.svg"
         },
-        "description":"Backbone of dynamic web development, enabling interactive and responsive user experiences."
+        "description": "Backbone of dynamic web development, enabling interactive and responsive user experiences."
       },
       {
-        "title":"Jest",
-        "icon":{
-          "src":"/images/jest.svg"
+        "title": "Jest",
+        "icon": {
+          "src": "/images/jest.svg"
         },
-        "description":"A powerful JavaScript testing framework for seamless unit and integration testing."
+        "description": "A powerful JavaScript testing framework for seamless unit and integration testing."
       },
       {
-        "title":"MongoDB",
-        "icon":{
-          "src":"/images/mongodb.svg"
+        "title": "MongoDB",
+        "icon": {
+          "src": "/images/mongodb.svg"
         },
-        "description":"A powerful, flexible NoSQL database solution for modern application development."
+        "description": "A powerful, flexible NoSQL database solution for modern application development."
       },
       {
-        "title":"Git",
-        "icon":{
-          "src":"/images/git.svg"
+        "title": "Git",
+        "icon": {
+          "src": "/images/git.svg"
         },
-        "description":"Version control system for efficient collaboration and code management."
+        "description": "Version control system for efficient collaboration and code management."
       },
       {
-        "title":"TailwindCSS",
-        "icon":{
-          "src":"/images/tailwindcss.svg"
+        "title": "TailwindCSS",
+        "icon": {
+          "src": "/images/tailwindcss.svg"
         },
-        "description":"Utility-first CSS framework for rapid development."
+        "description": "Utility-first CSS framework for rapid development."
       },
       {
-        "title":"Styled-components",
-        "icon":{
-          "src":"/images/styled-components.svg"
+        "title": "Styled-components",
+        "icon": {
+          "src": "/images/styled-components.svg"
         },
-        "description":"CSS-in-JS for seamless styling and component-based design."
+        "description": "CSS-in-JS for seamless styling and component-based design."
       },
       {
-        "title":"HTML",
-        "icon":{
-          "src":"/images/html.svg"
+        "title": "HTML",
+        "icon": {
+          "src": "/images/html.svg"
         },
-        "description":"Foundation of web development, used to create the structure and content of web pages."
+        "description": "Foundation of web development, used to create the structure and content of web pages."
       },
       {
-        "title":"CSS",
-        "icon":{
-          "src":"/images/css.svg"
+        "title": "CSS",
+        "icon": {
+          "src": "/images/css.svg"
         },
-        "description":"Styling language for web development, shaping the visual presentation of websites."
+        "description": "Styling language for web development, shaping the visual presentation of websites."
       }
     ],
-    "soft":[
+    "soft": [
       {
-        "title":"Problem-solving",
-        "icon":{
-          "src":"/images/puzzle.svg"
+        "title": "Problem-solving",
+        "icon": {
+          "src": "/images/puzzle.svg"
         },
-        "description":"Ability to analyze complex issues and create effective solutions, ensuring seamless functionality and user satisfaction."
+        "description": "Ability to analyze complex issues and create effective solutions, ensuring seamless functionality and user satisfaction."
       },
       {
-        "title":"Detail-oriented",
-        "icon":{
-          "src":"/images/eye.svg"
+        "title": "Detail-oriented",
+        "icon": {
+          "src": "/images/eye.svg"
         },
-        "description":"Enable efficient identification and resolution of technical challenges, resulting in robust solutions and heightened client satisfaction."
+        "description": "Enable efficient identification and resolution of technical challenges, resulting in robust solutions and heightened client satisfaction."
       },
       {
-        "title":"Communication",
-        "icon":{
-          "src":"/images/chat.svg"
+        "title": "Communication",
+        "icon": {
+          "src": "/images/chat.svg"
         },
-        "description":"Clear and concise communication fosters collaboration within teams and facilitates understanding between clients and developers, ensuring project alignment."
+        "description": "Clear and concise communication fosters collaboration within teams and facilitates understanding between clients and developers, ensuring project alignment."
       },
       {
-        "title":"Adaptability",
-        "icon":{
-          "src":"/images/adjustments.svg"
+        "title": "Adaptability",
+        "icon": {
+          "src": "/images/adjustments.svg"
         },
-        "description":"Flexibility in embracing new technologies and methodologies facilitates agile development and ensures project relevance"
+        "description": "Flexibility in embracing new technologies and methodologies facilitates agile development and ensures project relevance"
       },
       {
-        "title":"Time management",
-        "icon":{
-          "src":"/images/calendar.svg"
+        "title": "Time management",
+        "icon": {
+          "src": "/images/calendar.svg"
         },
-        "description":"Efficiently managing tasks and deadlines optimizes project timelines and enhances client satisfaction with timely deliverables."
+        "description": "Efficiently managing tasks and deadlines optimizes project timelines and enhances client satisfaction with timely deliverables."
       },
       {
-        "title":"Critical thinking",
-        "icon":{
-          "src":"/images/compass.svg"
+        "title": "Critical thinking",
+        "icon": {
+          "src": "/images/compass.svg"
         },
-        "description":"Evaluating project requirements and potential solutions with discernment ensures effective decision-making and successful project execution."
+        "description": "Evaluating project requirements and potential solutions with discernment ensures effective decision-making and successful project execution."
       },
       {
-        "title":"Synthetic thinking",
-        "icon":{
-          "src":"/images/share.svg"
+        "title": "Synthetic thinking",
+        "icon": {
+          "src": "/images/share.svg"
         },
-        "description":"Enables holistic problem-solving by integrating diverse perspectives and technologies, delivering comprehensive solutions."
+        "description": "Enables holistic problem-solving by integrating diverse perspectives and technologies, delivering comprehensive solutions."
       }
     ]
   }
-} 
+}
