@@ -89,7 +89,7 @@ const pages = async (): Promise<Pages[]> => {
                   type: 'paragraph',
                   children: [
                     {
-                      text: 'Olá! Eu sou Richard, estudante de Ciência da Computação na UFRGS — também um dev que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.'
+                      text: 'Olá! Eu sou Richard, estudante de Ciência da Computação na UFRGS — também um dev que se preocupa em construir produtos sólidos e escaláveis.'
                     }
                   ]
                 }
@@ -101,7 +101,7 @@ const pages = async (): Promise<Pages[]> => {
               type: 'paragraph',
               children: [
                 {
-                  text: 'Olá! Eu sou Richard, estudante de Ciência da Computação na UFRGS — também um dev que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.'
+                  text: 'Olá! Eu sou Richard, estudante de Ciência da Computação na UFRGS — também um dev que se preocupa em construir produtos sólidos e escaláveis.'
                 }
               ]
             }
