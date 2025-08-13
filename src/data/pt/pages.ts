@@ -339,7 +339,7 @@ const pages = async (): Promise<Pages[]> => {
                           bold: true
                         },
                         {
-                          text: 'sou alguém que gosta de passar meu tempo com amigos e família, mas grande parte do meu lazer está nos jogos — rogue-like, souls-like, metroidvania, precision platformer, ... — que me desafiam e me divertem. Mesmo sendo mais reservado, valorizo a integridade e a simpatia na forma de me conectar com os outros.'
+                          text: ' sou alguém que gosta de passar meu tempo com amigos e família, mas grande parte do meu lazer está nos jogos — rogue-like, souls-like, metroidvania, precision platformer, ... — que me desafiam e me divertem. Mesmo sendo mais reservado, valorizo a integridade e a simpatia na forma de me conectar com os outros.'
                         }
                       ]
                     },
