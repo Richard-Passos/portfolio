@@ -5,7 +5,7 @@ const footer = async (): Promise<Footer> => {
     cta: {
       title: [
         {
-          text: 'Vamos gerar impacto'
+          text: 'Sem estresse'
         },
         {
           text: '!',
@@ -14,7 +14,7 @@ const footer = async (): Promise<Footer> => {
       ],
       subtitle: [
         {
-          text: 'Suas ótimas ideias estão prontas?'
+          text: 'Tem alguma ideia em mente?'
         }
       ],
       action: {
@@ -27,7 +27,7 @@ const footer = async (): Promise<Footer> => {
         type: 'paragraph',
         children: [
           {
-            text: 'O dev full stack — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.'
+            text: 'O dev — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.'
           }
         ]
       }
