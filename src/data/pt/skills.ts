@@ -75,7 +75,7 @@ const skills = async (): Promise<{
       },
       {
         slug: 'adaptability',
-        title: 'Adaptabilslugade',
+        title: 'Adaptabilidade',
         icon: '/icons/adjustments.svg'
       },
       {
