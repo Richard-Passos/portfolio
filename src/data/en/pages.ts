@@ -768,7 +768,7 @@ const pages = async (): Promise<Pages[]> => {
                 align: 'left',
                 children: [
                   {
-                    text: 'Why am'
+                    text: 'Why am '
                   },
                   {
                     text: 'I',
@@ -788,7 +788,7 @@ const pages = async (): Promise<Pages[]> => {
                     text: 'he fit'
                   },
                   {
-                    text: '',
+                    text: '?',
                     emphasize: true
                   }
                 ]
