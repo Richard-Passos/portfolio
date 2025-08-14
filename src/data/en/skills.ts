@@ -17,6 +17,11 @@ const skills = async (): Promise<{
         icon: '/icons/yii2.svg'
       },
       {
+        slug: 'mysql',
+        title: 'MySQL',
+        icon: '/icons/mysql.svg'
+      },
+      {
         slug: 'reactjs',
         title: 'React.js',
         icon: '/icons/react.svg'
