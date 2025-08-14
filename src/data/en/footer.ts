@@ -5,7 +5,7 @@ const footer = async (): Promise<Footer> => {
     cta: {
       title: [
         {
-          text: 'Let’s turn some heads'
+          text: 'No worries'
         },
         {
           text: '!',
@@ -14,7 +14,7 @@ const footer = async (): Promise<Footer> => {
       ],
       subtitle: [
         {
-          text: 'Is your great ideas ready?'
+          text: 'Thinking of something?'
         }
       ],
       action: {
@@ -27,7 +27,7 @@ const footer = async (): Promise<Footer> => {
         type: 'paragraph',
         children: [
           {
-            text: 'The full stack developer — who cares building solid and scalable products with a great user experience.'
+            text: 'The dev — who cares building solid and scalable products with a great user experience.'
           }
         ]
       }
@@ -51,7 +51,7 @@ const footer = async (): Promise<Footer> => {
     ],
     copyright: [
       {
-        text: '© 2024 '
+        text: '© 2025 '
       },
       {
         type: 'link',
