@@ -51,7 +51,7 @@ const footer = async (): Promise<Footer> => {
     ],
     copyright: [
       {
-        text: '© 2024 '
+        text: '© 2025 '
       },
       {
         type: 'link',
