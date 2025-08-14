@@ -7,6 +7,16 @@ const skills = async (): Promise<{
   return {
     hard: [
       {
+        slug: 'php',
+        title: 'PHP',
+        icon: '/icons/php.svg'
+      },
+      {
+        slug: 'yii2',
+        title: 'Yii2',
+        icon: '/icons/yii2.svg'
+      },
+      {
         slug: 'reactjs',
         title: 'React.js',
         icon: '/icons/react.svg'
