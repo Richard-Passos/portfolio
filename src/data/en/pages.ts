@@ -89,7 +89,7 @@ const pages = async (): Promise<Pages[]> => {
                   type: 'paragraph',
                   children: [
                     {
-                      text: 'Hey there! I’m Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.'
+                      text: 'Hey there! I’m Richard, a Computer Science student at UFRGS — also a developer who cares building solid and scalable products.'
                     }
                   ]
                 }
@@ -101,7 +101,7 @@ const pages = async (): Promise<Pages[]> => {
               type: 'paragraph',
               children: [
                 {
-                  text: 'Hey there! I’m Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.'
+                  text: 'Hey there! I’m Richard, a Computer Science student at UFRGS — also a developer who cares building solid and scalable products.'
                 }
               ]
             }
@@ -118,7 +118,7 @@ const pages = async (): Promise<Pages[]> => {
               type: 'paragraph',
               children: [
                 {
-                  text: '(2024)'
+                  text: '(2025)'
                 }
               ]
             }
@@ -201,83 +201,20 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'paragraph',
                 children: [
                   {
-                    text: 'A thoughtful collaborator',
+                    text: 'I’m a dedicated professional —',
                     bold: true
                   },
                   {
-                    text: ' who thrives on finding innovative solutions and textbracing'
+                    text: ' always striving to understand every detail and maintain a clear vision of the bigger picture, which helps me connect complex ideas and turn them into practical and efficient solutions.'
                   },
-                  {
-                    text: ' new perspectives',
-                    bold: true
-                  },
-                  {
-                    text: '. My approach is grounded in'
-                  },
-                  {
-                    text: ' keen observation',
-                    bold: true
-                  },
-                  {
-                    text: ' and'
-                  },
-                  {
-                    text: ' understanding',
-                    bold: true
-                  },
-                  {
-                    text: ' — allowing me to effectively navigate and connect'
-                  },
-                  {
-                    text: ' complex ideas',
-                    bold: true
-                  },
-                  {
-                    text: '.'
-                  }
                 ]
               },
               {
                 type: 'paragraph',
                 children: [
                   {
-                    text: 'I aim to blend effortlessly into your work culture, contributing to a'
+                    text: 'I believe in the value of teamwork and make it a point to integrate into the group’s culture. I aim to contribute to a dynamic and collaborative environment, where different perspectives turn into solid solutions.'
                   },
-                  {
-                    text: ' vibrant',
-                    bold: true
-                  },
-                  {
-                    text: ' and'
-                  },
-                  {
-                    text: ' synergistic atmosphere',
-                    bold: true
-                  },
-                  {
-                    text: ' where'
-                  },
-                  {
-                    text: ' ideas',
-                    bold: true
-                  },
-                  {
-                    text: ' and'
-                  },
-                  {
-                    text: ' goals',
-                    bold: true
-                  },
-                  {
-                    text: ' come together'
-                  },
-                  {
-                    text: ' seamlessly',
-                    bold: true
-                  },
-                  {
-                    text: '.'
-                  }
                 ]
               }
             ]
@@ -394,7 +331,15 @@ const pages = async (): Promise<Pages[]> => {
                           bold: true
                         },
                         {
-                          text: ` I’m Richard an awesome full stack developer from ${personal?.location.country}. When I’m not coding, you can catch me in the gaming world — I’m a huge fan, especially when it comes to rogue-like games.`
+                          text: ' I’m someone who enjoys spending time with friends and family, but a large part of my leisure is spent gaming — rogue-like, souls-like, metroidvania, precision platformer, … — which challenge and entertain me. Even though I’m more reserved, I value integrity and friendliness in the way I connect with others.'
+                        }
+                      ]
+                    },
+                    {
+                      type: 'paragraph',
+                      children: [
+                        {
+                          text: 'I also believe in enjoying the small moments — whether feeling the sun on my face, playing an intense game, or having a good conversation, these are the moments that truly matter.'
                         }
                       ]
                     }
@@ -527,7 +472,7 @@ const pages = async (): Promise<Pages[]> => {
           theme: 'dark',
           data: {
             description:
-              'Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let’s team up and...',
+              'Let’s turn ideas into efficient solutions together. Let’s make it happen.',
             icons: {
               left: {
                 src: '/icons/smile.svg',
@@ -632,7 +577,7 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'paragraph',
                 children: [
                   {
-                    text: 'That’s my mission — Each line of code improve my skills, crafting high-impact solutions. Every project is an opportunity to inspire clients, coworkers, and the community, fostering enduring positive impact. Consistent repetition breeds excellence, driving digital prominence.'
+                    text: 'That’s my mission — Each line of code improve my skills, crafting high-impact solutions. Every project is an opportunity to inspire clients, coworkers, and the community. Consistent repetition breeds excellence, driving digital prominence.'
                   }
                 ]
               }
@@ -814,7 +759,7 @@ const pages = async (): Promise<Pages[]> => {
                     ]
                   },
                   {
-                    text: ', choose me to unlock boundless potential for your next project.'
+                    text: '.'
                   }
                 ]
               }
@@ -965,7 +910,7 @@ const pages = async (): Promise<Pages[]> => {
                     type: 'paragraph',
                     children: [
                       {
-                        text: 'I’ve always been a curious and dedicated person, but for a while, I felt lost without a clear direction or passion. It wasn’t until I faced life that I discovered my true passion for development, which felt like a light bulb moment.'
+                        text: 'I’ve always been curious and dedicated, but for a while I felt without a clear direction. Starting at UFRGS and diving into development was a turning point: I discovered something that truly motivates and challenges me.'
                       }
                     ]
                   },
@@ -973,7 +918,7 @@ const pages = async (): Promise<Pages[]> => {
                     type: 'paragraph',
                     children: [
                       {
-                        text: 'This newfound interest was a turning point for me. Learning about the world of development sparked a deep excitement and sense of purpose. Now I have my dreams, purposes, and I know exactly where I wanna be.'
+                        text: 'Today, I’m just at the beginning of a long journey, full of learning and opportunities. Every project, every line of code, and every person I meet gives me even more certainty that I’m on the right path.'
                       }
                     ]
                   }
@@ -987,7 +932,7 @@ const pages = async (): Promise<Pages[]> => {
                     type: 'paragraph',
                     children: [
                       {
-                        text: 'I’m a curious and self-taught individual who loves exploring new perspectives and cultures. With a knack for problem-solving and a detail-oriented mindset, I turn complex ideas into clear, practical answers.'
+                        text: 'I’m a curious and self-taught person who loves exploring new perspectives and cultures, always making the most of life’s little details.'
                       }
                     ]
                   }
@@ -1015,7 +960,7 @@ const pages = async (): Promise<Pages[]> => {
                     type: 'paragraph',
                     children: [
                       {
-                        text: 'Gaming, watching series/movies, improving skills, getting into new cultures and enjoying quality time with close friends.'
+                        text: 'Gaming, watching series/movies, improving skills, getting into new cultures and enjoying quality time with close friends and family.'
                       }
                     ]
                   }
