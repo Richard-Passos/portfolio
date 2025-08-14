@@ -65,11 +65,6 @@ const skills = async (): Promise<{
         slug: 'tailwindCSS',
         title: 'TailwindCSS',
         icon: '/icons/tailwindcss.svg'
-      },
-      {
-        slug: 'styledComponents',
-        title: 'Styled-components',
-        icon: '/icons/styled-components.svg'
       }
     ],
     soft: [
