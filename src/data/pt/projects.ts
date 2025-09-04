@@ -8,7 +8,7 @@ const projects = async (): Promise<Project[]> => {
       href: 'https://fe-portal-ead.vercel.app',
       title: 'Portal Ead - Sead/UFRGS',
       roles: ['Design', 'Desenvolvimento'],
-      year: 2024,
+      year: 2025,
       description:
         'Portal-EAD é um portal web desenvolvido para um processo seletivo de desenvolvedor web na SEAD/UFRGS. O projeto demonstra proficiência em HTML, CSS, JavaScript e Bootstrap, com funcionalidades adicionais implementadas usando TypeScript para tipagem forte e manipulação segura do DOM.',
       thumbnail: {
