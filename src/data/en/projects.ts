@@ -3,6 +3,46 @@ import { Project } from '@/types';
 const projects = async (): Promise<Project[]> => {
   return [
     {
+      slug: 'portal-ead',
+      isSelected: true,
+      href: 'https://fe-portal-ead.vercel.app',
+      title: 'Portal Ead - Sead/UFRGS',
+      roles: ['Design', 'Development'],
+      year: 2025,
+      description:
+        'Portal-EAD is a web portal developed for a web developer selection process at SEAD/UFRGS. The project demonstrates proficiency in HTML, CSS, JavaScript, and Bootstrap, with additional functionality implemented using TypeScript for strong typing and safe DOM manipulation.',
+      thumbnail: {
+        src: '/images/portal-ead-thumbnail.webp',
+        alt: ''
+      },
+      banner: {
+        src: '/images/portal-ead-banner.webp',
+        alt: ''
+      },
+      images: [
+        {
+          id: 'image-00',
+          src: '/images/portal-ead-00.webp',
+          alt: ''
+        },
+        {
+          id: 'image-01',
+          src: '/images/portal-ead-01.webp',
+          alt: ''
+        },
+        {
+          id: 'image-02',
+          src: '/images/portal-ead-02.webp',
+          alt: ''
+        },
+        {
+          id: 'image-03',
+          src: '/images/portal-ead-03.webp',
+          alt: ''
+        },
+      ]
+    },
+    {
       slug: 'richard-portfolio',
       isSelected: true,
       href: 'https://richardp.vercel.app/en',
