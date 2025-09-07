@@ -22,6 +22,11 @@ const skills = async (): Promise<{
         icon: '/icons/css.svg'
       },
       {
+        slug: 'bootstrap',
+        title: 'Bootstrap',
+        icon: '/icons/bootstrap.svg'
+      },
+      {
         slug: 'typeScript',
         title: 'TypeScript',
         icon: '/icons/typescript.svg'
