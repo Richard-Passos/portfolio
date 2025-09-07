@@ -7,19 +7,24 @@ const skills = async (): Promise<{
   return {
     hard: [
       {
-        slug: 'php',
-        title: 'PHP',
-        icon: '/icons/php.svg'
+        slug: 'javaScript',
+        title: 'JavaScript',
+        icon: '/icons/javascript.svg'
       },
       {
-        slug: 'yii2',
-        title: 'Yii2',
-        icon: '/icons/yii2.svg'
+        slug: 'html',
+        title: 'HTML',
+        icon: '/icons/html.svg'
       },
       {
-        slug: 'mysql',
-        title: 'MySQL',
-        icon: '/icons/mysql.svg'
+        slug: 'css',
+        title: 'CSS',
+        icon: '/icons/css.svg'
+      },
+      {
+        slug: 'typeScript',
+        title: 'TypeScript',
+        icon: '/icons/typescript.svg'
       },
       {
         slug: 'reactjs',
@@ -42,11 +47,6 @@ const skills = async (): Promise<{
         icon: '/icons/nextjs.svg'
       },
       {
-        slug: 'TypeScript',
-        title: 'TypeScript',
-        icon: '/icons/typescript.svg'
-      },
-      {
         slug: 'jest',
         title: 'Jest',
         icon: '/icons/jest.svg'
@@ -55,6 +55,11 @@ const skills = async (): Promise<{
         slug: 'mongoDB',
         title: 'MongoDB',
         icon: '/icons/mongodb.svg'
+      },
+      {
+        slug: 'mysql',
+        title: 'MySQL',
+        icon: '/icons/mysql.svg'
       },
       {
         slug: 'git',
