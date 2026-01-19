@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { cn } from '@/utils';
 
@@ -15,18 +13,18 @@ type CarouselActionMoleculeOwnProps = {
 type CarouselActionMoleculeProps = CarouselActionMoleculeOwnProps &
   Omit<SlotProps, keyof CarouselActionMoleculeOwnProps>;
 
-const CarouselActionMolecule = (
-  { action, className, ...props }: CarouselActionMoleculeProps,
-  ref: CarouselActionMoleculeProps['ref']
-) => {
+const CarouselActionMolecule = ({
+  action,
+  className,
+  ...props
+}: CarouselActionMoleculeProps) => {
   return (
     <Slot
       className={cn('splide__arrow', ACTIONS[action], className)}
-      ref={ref}
       {...props}
     />
   );
 };
 
-export default forwardRef(CarouselActionMolecule);
+export default CarouselActionMolecule;
 export type { CarouselActionMoleculeProps };

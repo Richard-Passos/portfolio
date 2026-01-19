@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { lineLeftScrollAnim } from '@/animations/scroll';
 import { Title } from '@/components/atoms';
@@ -13,21 +13,20 @@ type AboutBlockTextOrganismOwnProps = {
     description: Node[];
   };
   titleProps?: Partial<TitleProps>;
-  wrapperProps?: Partial<ComponentPropsWithRef<'div'>>;
+  wrapperProps?: Partial<ComponentProps<'div'>>;
 };
 
 type AboutBlockTextOrganismProps = AboutBlockTextOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'section'>, keyof AboutBlockTextOrganismOwnProps>;
+  Omit<ComponentProps<'section'>, keyof AboutBlockTextOrganismOwnProps>;
 
-const AboutBlockTextOrganism = (
-  { data, titleProps, wrapperProps, ...props }: AboutBlockTextOrganismProps,
-  ref: AboutBlockTextOrganismProps['ref']
-) => {
+const AboutBlockTextOrganism = ({
+  data,
+  titleProps,
+  wrapperProps,
+  ...props
+}: AboutBlockTextOrganismProps) => {
   return (
-    <section
-      ref={ref}
-      {...props}
-    >
+    <section {...props}>
       <Title
         component='h3'
         order={4}
@@ -40,7 +39,7 @@ const AboutBlockTextOrganism = (
       <div
         {...wrapperProps}
         className={cn(
-          `mt-md flex items-start gap-md sm:ml-[5%]`,
+          `mt-md gap-md flex items-start sm:ml-[5%]`,
           wrapperProps?.className
         )}
       >
@@ -49,11 +48,11 @@ const AboutBlockTextOrganism = (
             config={lineLeftScrollAnim}
             layout
           >
-            <span className='absolute inset-0 border bg-body' />
+            <span className='bg-body absolute inset-0 border' />
           </ScrollAnimate>
         </span>
 
-        <section className='flex max-w-md flex-col gap-md'>
+        <section className='gap-md flex max-w-md flex-col'>
           {serialize(data.description, {
             paragraph: {
               className: 'text-sm leading-relaxed text-dimmed *:text-text'
@@ -65,5 +64,5 @@ const AboutBlockTextOrganism = (
   );
 };
 
-export default forwardRef(AboutBlockTextOrganism);
+export default AboutBlockTextOrganism;
 export type { AboutBlockTextOrganismProps };

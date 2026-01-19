@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentPropsWithoutRef, useMemo } from 'react';
+import { ComponentProps, useMemo } from 'react';
 
 import { CatalogContext } from '@/contexts';
 import {
@@ -16,7 +16,7 @@ type CatalogProviderOwnProps<T> = {
 
 type CatalogProviderProps<T> = CatalogProviderOwnProps<T> &
   Omit<
-    ComponentPropsWithoutRef<typeof CatalogContext.Provider>,
+    ComponentProps<typeof CatalogContext.Provider>,
     keyof CatalogProviderOwnProps<T> | 'value'
   >;
 

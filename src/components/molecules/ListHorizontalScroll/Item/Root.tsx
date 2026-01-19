@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { ScrollAnimate, Title } from '@/components/atoms';
 import HorizontalScroll, {
   HorizontalScrollProps
@@ -31,24 +29,20 @@ type ListHorizontalScrollItemMoleculeProps =
   ListHorizontalScrollItemMoleculeOwnProps &
     Omit<TitleProps, keyof ListHorizontalScrollItemMoleculeOwnProps>;
 
-const ListHorizontalScrollItemMolecule = (
-  {
-    className,
-    baseVelocity = 1,
-    children,
-    ...props
-  }: ListHorizontalScrollItemMoleculeProps,
-  ref: ListHorizontalScrollItemMoleculeProps['ref']
-) => {
+const ListHorizontalScrollItemMolecule = ({
+  className,
+  baseVelocity = 1,
+  children,
+  ...props
+}: ListHorizontalScrollItemMoleculeProps) => {
   return (
     <ScrollAnimate config={ANIMATION_CONFIG(baseVelocity >= 0 ? 'ltr' : 'rtl')}>
       <Title
         className={cn(
-          `border-x-0 border-y bg-body py-md odd:-rotate-[.5deg] even:rotate-[.5deg]`,
+          `bg-body py-md border-x-0 border-y odd:-rotate-[.5deg] even:rotate-[.5deg]`,
           className
         )}
         component='li'
-        ref={ref}
         {...props}
       >
         <HorizontalScroll baseVelocity={baseVelocity}>
@@ -59,5 +53,5 @@ const ListHorizontalScrollItemMolecule = (
   );
 };
 
-export default forwardRef(ListHorizontalScrollItemMolecule);
+export default ListHorizontalScrollItemMolecule;
 export type { ListHorizontalScrollItemMoleculeProps };

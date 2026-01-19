@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
 import Card, { CardRootProps } from '@/components/molecules/Card';
@@ -14,14 +12,14 @@ type TextCardOrganismOwnProps = {
 type TextCardOrganismProps = TextCardOrganismOwnProps &
   Omit<CardRootProps, keyof TextCardOrganismOwnProps>;
 
-const TextCardOrganism = (
-  { className, data, ...props }: TextCardOrganismProps,
-  ref: TextCardOrganismProps['ref']
-) => {
+const TextCardOrganism = ({
+  className,
+  data,
+  ...props
+}: TextCardOrganismProps) => {
   return (
     <Card.Root
       className={cn('h-full min-h-52', className)}
-      ref={ref}
       {...props}
     >
       <Title
@@ -35,5 +33,5 @@ const TextCardOrganism = (
   );
 };
 
-export default forwardRef(TextCardOrganism);
+export default TextCardOrganism;
 export type { TextCardOrganismProps };

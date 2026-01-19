@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Text } from '@/components/atoms';
 import { TextScrollAnimate } from '@/components/molecules';
 import { TextScrollAnimateProps } from '@/components/molecules/TextScrollAnimate';
@@ -21,18 +19,18 @@ type CtaTextBlockOrganismOwnProps = {
 type CtaTextBlockOrganismProps = CtaTextBlockOrganismOwnProps &
   Omit<CleanLayoutBlockProps, keyof CtaTextBlockOrganismOwnProps>;
 
-const CtaTextBlockOrganism = (
-  { data, className, ...props }: CtaTextBlockOrganismProps,
-  ref: CtaTextBlockOrganismProps['ref']
-) => {
+const CtaTextBlockOrganism = ({
+  data,
+  className,
+  ...props
+}: CtaTextBlockOrganismProps) => {
   return (
     <CleanLayoutBlock
-      className={cn(`min-h-screen 2xl:!min-h-bounds`, className)}
-      ref={ref}
+      className={cn(`2xl:!min-h-bounds min-h-screen`, className)}
       {...props}
     >
       <Text
-        className={`relative z-10 w-9/10 max-w-screen-lg text-center text-2xl font-semibold !leading-tight sm:text-4xl lg:text-[3.25rem]`}
+        className={`w-9by10 relative z-10 max-w-screen-lg text-center text-2xl !leading-tight font-semibold sm:text-4xl lg:text-[3.25rem]`}
       >
         <TextScrollAnimate text={data.description} />
       </Text>
@@ -45,5 +43,5 @@ const CtaTextBlockOrganism = (
   );
 };
 
-export default forwardRef(CtaTextBlockOrganism);
+export default CtaTextBlockOrganism;
 export type { CtaTextBlockOrganismProps };

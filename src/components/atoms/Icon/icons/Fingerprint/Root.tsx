@@ -1,21 +1,20 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type FingerprintIconAtomOwnProps = {};
 
 type FingerprintIconAtomProps = FingerprintIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof FingerprintIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof FingerprintIconAtomOwnProps>;
 
-const FingerprintIconAtom = (
-  { className, ...props }: FingerprintIconAtomProps,
-  ref: FingerprintIconAtomProps['ref']
-) => {
+const FingerprintIconAtom = ({
+  className,
+  ...props
+}: FingerprintIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Fingerprint'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +24,5 @@ const FingerprintIconAtom = (
   );
 };
 
-export default forwardRef(FingerprintIconAtom);
+export default FingerprintIconAtom;
 export type { FingerprintIconAtomProps };

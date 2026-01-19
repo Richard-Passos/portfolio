@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { imageYScrollAnim } from '@/animations/scroll';
 import Image, { ImageProps } from '@/components/atoms/Image';
 import ScrollAnimate from '@/components/atoms/ScrollAnimate';
@@ -13,10 +11,11 @@ type ImagesBlockImageOrganismOwnProps = {
 type ImagesBlockImageOrganismProps = ImagesBlockImageOrganismOwnProps &
   Omit<CardRootProps, keyof ImagesBlockImageOrganismOwnProps>;
 
-const ImagesBlockImageOrganism = (
-  { className, data, ...props }: ImagesBlockImageOrganismProps,
-  ref: ImagesBlockImageOrganismProps['ref']
-) => {
+const ImagesBlockImageOrganism = ({
+  className,
+  data,
+  ...props
+}: ImagesBlockImageOrganismProps) => {
   return (
     <CardRoot
       className={cn(
@@ -25,11 +24,10 @@ const ImagesBlockImageOrganism = (
       )}
       padding='xs'
       radius='xl'
-      ref={ref}
       {...props}
     >
       <div
-        className={`relative size-full overflow-hidden rounded-[calc(var(--paper-radius)-var(--card-padding))] bg-gray-1 shadow-2xl dark:bg-dark-6`}
+        className={`bg-gray-1 dark:bg-dark-6 relative size-full overflow-hidden rounded-[calc(var(--paper-radius)-var(--card-padding))] shadow-2xl`}
       >
         <ScrollAnimate config={imageYScrollAnim}>
           <div className='absolute h-[115%] w-full'>
@@ -48,5 +46,5 @@ const ImagesBlockImageOrganism = (
   );
 };
 
-export default forwardRef(ImagesBlockImageOrganism);
+export default ImagesBlockImageOrganism;
 export type { ImagesBlockImageOrganismProps };

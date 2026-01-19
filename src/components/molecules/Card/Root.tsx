@@ -1,5 +1,4 @@
 import { Card, CardProps, createPolymorphicComponent } from '@mantine/core';
-import { forwardRef } from 'react';
 
 import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
@@ -11,22 +10,18 @@ type CardMoleculeOwnProps = {
 type CardMoleculeProps = CardMoleculeOwnProps &
   Omit<CardProps, keyof CardMoleculeOwnProps | 'Section'>;
 
-const CardMolecule = (
-  { className, ...props }: CardMoleculeProps,
-  ref: CardMoleculeProps['ref']
-) => {
+const CardMolecule = ({ className, ...props }: CardMoleculeProps) => {
   return (
     <Card
-      className={cn('size-full border bg-body', className)}
+      className={cn('bg-body size-full border', className)}
       padding='lg'
       radius='md'
-      ref={ref}
       {...props}
     />
   );
 };
 
 export default createPolymorphicComponent<'div', CardMoleculeProps>(
-  forwardRef(CardMolecule)
+  CardMolecule
 );
 export type { CardMoleculeProps };

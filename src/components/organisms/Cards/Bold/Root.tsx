@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Icon, Title } from '@/components/atoms';
 import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
@@ -15,14 +13,14 @@ type BoldCardOrganismOwnProps = {
 type BoldCardOrganismProps = BoldCardOrganismOwnProps &
   Omit<CardRootProps, keyof BoldCardOrganismOwnProps>;
 
-const BoldCardOrganism = (
-  { className, data, ...props }: BoldCardOrganismProps,
-  ref: BoldCardOrganismProps['ref']
-) => {
+const BoldCardOrganism = ({
+  className,
+  data,
+  ...props
+}: BoldCardOrganismProps) => {
   return (
     <Card.Root
       className={cn('min-h-52 justify-between', className)}
-      ref={ref}
       {...props}
     >
       <div className='size-8'>
@@ -30,7 +28,7 @@ const BoldCardOrganism = (
       </div>
 
       <Title
-        className='mt-xs font-medium leading-none'
+        className='mt-xs leading-none font-medium'
         component='p'
         order={4}
       >
@@ -40,5 +38,5 @@ const BoldCardOrganism = (
   );
 };
 
-export default forwardRef(BoldCardOrganism);
+export default BoldCardOrganism;
 export type { BoldCardOrganismProps };

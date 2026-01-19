@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { imageYScrollAnim } from '@/animations/scroll';
 import { Image, Link, ScrollAnimate, Text, Title } from '@/components/atoms';
 import { LinkProps } from '@/components/atoms/Link';
@@ -13,17 +11,17 @@ type GridProjectCardOrganismOwnProps = {
 type GridProjectCardOrganismProps = GridProjectCardOrganismOwnProps &
   Omit<LinkProps, keyof GridProjectCardOrganismOwnProps>;
 
-const GridProjectCardOrganism = (
-  { className, data, ...props }: GridProjectCardOrganismProps,
-  ref: GridProjectCardOrganismProps['ref']
-) => {
+const GridProjectCardOrganism = ({
+  className,
+  data,
+  ...props
+}: GridProjectCardOrganismProps) => {
   return (
     <Link
       className={cn(
         'group/item block aspect-square w-full text-current',
         className
       )}
-      ref={ref}
       underline='never'
       {...props}
     >
@@ -32,7 +30,7 @@ const GridProjectCardOrganism = (
           className={`grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-hover/item:grid-rows-[1fr]`}
         >
           <div
-            className={`overflow-hidden transition-transform duration-300 translate-y-2 group-hover/item:translate-y-0`}
+            className={`translate-y-2 overflow-hidden transition-transform duration-300 group-hover/item:translate-y-0`}
           >
             <div className='px-md pb-1'>
               <Title
@@ -46,7 +44,7 @@ const GridProjectCardOrganism = (
         </div>
 
         <div
-          className={`dark:bg-6 relative grow overflow-hidden rounded-xl bg-gray-1`}
+          className={`dark:bg-6 bg-gray-1 relative grow overflow-hidden rounded-xl`}
         >
           <ScrollAnimate config={imageYScrollAnim}>
             <div className='absolute h-[115%] w-full'>
@@ -65,9 +63,9 @@ const GridProjectCardOrganism = (
           className={`grid origin-bottom grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-hover/item:grid-rows-[1fr]`}
         >
           <div
-            className={`overflow-hidden transition-transform duration-300 translate-y-2 group-hover/item:translate-y-0`}
+            className={`translate-y-2 overflow-hidden transition-transform duration-300 group-hover/item:translate-y-0`}
           >
-            <div className='flex gap-lg px-md pt-1'>
+            <div className='gap-lg px-md flex pt-1'>
               <Text className='col-span-3 text-sm font-medium'>
                 {values(data.roles)
                   .toSorted((a, b) => a.localeCompare(b))
@@ -88,5 +86,5 @@ const GridProjectCardOrganism = (
   );
 };
 
-export default forwardRef(GridProjectCardOrganism);
+export default GridProjectCardOrganism;
 export type { GridProjectCardOrganismProps };

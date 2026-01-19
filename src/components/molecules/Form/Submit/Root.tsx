@@ -1,7 +1,5 @@
 'use client';
 
-import { forwardRef } from 'react';
-
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useFormContext } from '@/hooks/contexts';
 
@@ -12,10 +10,10 @@ type FormSubmitMoleculeOwnProps = {
 type FormSubmitMoleculeProps = FormSubmitMoleculeOwnProps &
   Omit<SlotProps, keyof FormSubmitMoleculeOwnProps>;
 
-const FormSubmitMolecule = (
-  { shouldHandleLoading = true, ...props }: FormSubmitMoleculeProps,
-  ref: FormSubmitMoleculeProps['ref']
-) => {
+const FormSubmitMolecule = ({
+  shouldHandleLoading = true,
+  ...props
+}: FormSubmitMoleculeProps) => {
   const {
     formState: { isSubmitting }
   } = useFormContext();
@@ -26,13 +24,8 @@ const FormSubmitMolecule = (
     isLoading: shouldHandleLoading && isSubmitting
   } as typeof props;
 
-  return (
-    <Slot
-      ref={ref}
-      {...props}
-    />
-  );
+  return <Slot {...props} />;
 };
 
-export default forwardRef(FormSubmitMolecule);
+export default FormSubmitMolecule;
 export type { FormSubmitMoleculeProps };

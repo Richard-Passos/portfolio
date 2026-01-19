@@ -1,7 +1,6 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { forwardRef } from 'react';
 
 import Select, { SelectProps } from '@/components/atoms/Select';
 import { useSetSearchParams } from '@/hooks';
@@ -14,10 +13,10 @@ type CatalogSelectFilterMoleculeOwnProps = {
 type CatalogSelectFilterMoleculeProps = CatalogSelectFilterMoleculeOwnProps &
   Omit<SelectProps, keyof CatalogSelectFilterMoleculeOwnProps>;
 
-const CatalogSelectFilterMolecule = (
-  { query, ...props }: CatalogSelectFilterMoleculeProps,
-  ref: CatalogSelectFilterMoleculeProps['ref']
-) => {
+const CatalogSelectFilterMolecule = ({
+  query,
+  ...props
+}: CatalogSelectFilterMoleculeProps) => {
   const searchParams = useSearchParams(),
     setSearchParams = useSetSearchParams();
 
@@ -28,7 +27,6 @@ const CatalogSelectFilterMolecule = (
   return (
     <Select
       data-state={isActive ? 'active' : 'inactive'}
-      ref={ref}
       {...props}
       onClick={(ev) => {
         setSearchParams([{ key: name, value: !isActive ? value : '' }]);
@@ -39,5 +37,5 @@ const CatalogSelectFilterMolecule = (
   );
 };
 
-export default forwardRef(CatalogSelectFilterMolecule);
+export default CatalogSelectFilterMolecule;
 export type { CatalogSelectFilterMoleculeProps };

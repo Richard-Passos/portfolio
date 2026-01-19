@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Icon, Text, Title } from '@/components/atoms';
 import UnstyledLink from '@/components/atoms/Link/Unstyled';
 import { CardRoot, CardRootProps } from '@/components/molecules/Card';
@@ -18,18 +16,18 @@ type LinkCardOrganismOwnProps = {
 type LinkCardOrganismProps = LinkCardOrganismOwnProps &
   Omit<CardRootProps, keyof LinkCardOrganismOwnProps>;
 
-const LinkCardOrganism = (
-  { className, data, ...props }: LinkCardOrganismProps,
-  ref: LinkCardOrganismProps['ref']
-) => {
+const LinkCardOrganism = ({
+  className,
+  data,
+  ...props
+}: LinkCardOrganismProps) => {
   return (
     <CardRoot
       className={cn('min-h-52 overflow-visible border-transparent', className)}
-      ref={ref}
       {...props}
     >
       <UnstyledLink
-        className={`-m-[(var(--card-padding)_+_1px)] flex min-h-52 flex-col items-center justify-center rounded-inherit border p-[--card-padding] font-normal text-current no-underline hover:bg-gray-0 dark:hover:bg-dark-6`}
+        className={`rounded-inherit hover:bg-gray-0 dark:hover:bg-dark-6 -m-[(var(--card-padding)_+_1px)] flex min-h-52 flex-col items-center justify-center border p-(--card-padding) font-normal text-current no-underline`}
         href={data.href}
       >
         <div
@@ -48,7 +46,7 @@ const LinkCardOrganism = (
           {serialize(data.title)}
         </Title>
 
-        <Text className='text-center text-sm text-dimmed'>
+        <Text className='text-dimmed text-center text-sm'>
           {data.href.replace(urlRegex, '$3$4')}
         </Text>
       </UnstyledLink>
@@ -56,5 +54,5 @@ const LinkCardOrganism = (
   );
 };
 
-export default forwardRef(LinkCardOrganism);
+export default LinkCardOrganism;
 export type { LinkCardOrganismProps };

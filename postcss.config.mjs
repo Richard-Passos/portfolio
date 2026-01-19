@@ -11,7 +11,7 @@ const config = {
         'mantine-breakpoint-2xl': 'em(1536px)'
       }
     },
-    tailwindcss: {},
+    '@tailwindcss/postcss': {},
     autoprefixer: {}
   }
 };

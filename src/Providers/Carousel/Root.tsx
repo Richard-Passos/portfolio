@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentPropsWithoutRef, useId, useMemo, useState } from 'react';
+import { ComponentProps, useId, useMemo, useState } from 'react';
 
 import { CarouselContext } from '@/contexts';
 import {
@@ -11,7 +11,7 @@ import {
 type CarouselProviderOwnProps = {};
 
 type CarouselProviderProps = CarouselProviderOwnProps &
-  Omit<ComponentPropsWithoutRef<typeof CarouselContext.Provider>, 'value'>;
+  Omit<ComponentProps<typeof CarouselContext.Provider>, 'value'>;
 
 const CarouselProvider = (props: CarouselProviderProps) => {
   const [state, setState] = useState<CarouselContextInitialState['state']>(

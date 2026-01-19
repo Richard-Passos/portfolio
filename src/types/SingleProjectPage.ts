@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentProps } from 'react';
 
 import Blocks from '@/components/templates/SingleProject/Blocks';
 import { SingleProjectHeroProps } from '@/components/templates/SingleProject/Hero';
@@ -11,7 +11,7 @@ type SingleProjectPage = {
   label?: never;
   hero: SingleProjectHeroProps;
   blocks: {
-    [K in keyof typeof Blocks]: ComponentPropsWithoutRef<(typeof Blocks)[K]>;
+    [K in keyof typeof Blocks]: ComponentProps<(typeof Blocks)[K]>;
   };
   metadata: Metadata;
 };

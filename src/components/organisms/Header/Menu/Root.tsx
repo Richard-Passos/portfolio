@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { Fragment } from 'react';
 
 import { Icon, Link, Text } from '@/components/atoms';
 import { Action, Drawer, LocaleSelect } from '@/components/molecules';
@@ -15,10 +15,7 @@ type HeaderMenuOrganismOwnProps = Partial<Pick<DrawerRootProps, 'trigger'>>;
 type HeaderMenuOrganismProps = HeaderMenuOrganismOwnProps &
   Omit<DrawerRootProps, keyof HeaderMenuOrganismOwnProps>;
 
-const HeaderMenuOrganism = async (
-  props: HeaderMenuOrganismProps,
-  ref: HeaderMenuOrganismProps['ref']
-) => {
+const HeaderMenuOrganism = async (props: HeaderMenuOrganismProps) => {
   const locale = await getLocale();
 
   const [headerRes, selectedPagesRes, legalPagesRes, personalRes] =
@@ -48,7 +45,6 @@ const HeaderMenuOrganism = async (
   return (
     <Drawer.Root
       position='right'
-      ref={ref}
       trapFocus={false}
       {...props}
       trigger={
@@ -71,7 +67,7 @@ const HeaderMenuOrganism = async (
           className: 'flex grow flex-col p-0 pt-xl'
         }}
         className={cn(
-          `flex flex-col p-[--p] pt-[calc(var(--p)*1.5)] [--drawer-size:560px] [--p:theme(spacing.xl)] sm:[--p:theme(spacing.2xl)]`
+          `flex flex-col p-(--p) pt-[calc(var(--p)*1.5)] [--drawer-size:560px] [--p:var(--spacing-xl)] sm:[--p:var(--spacing-2xl)]`
         )}
         hasCloseButton={false}
         headerProps={{
@@ -91,7 +87,7 @@ const HeaderMenuOrganism = async (
           }}
         />
 
-        <div className='mt-auto flex flex-wrap gap-md px-md'>
+        <div className='gap-md px-md mt-auto flex flex-wrap'>
           <LocaleSelect
             aria-label={header.locale.label}
             className='mt-1'
@@ -99,7 +95,7 @@ const HeaderMenuOrganism = async (
           />
 
           {renderComp(
-            <div className='flex flex-wrap items-center gap-xs'>
+            <div className='gap-xs flex flex-wrap items-center'>
               {socials?.map((data) => (
                 <Action
                   aria-label={data.label}
@@ -122,20 +118,19 @@ const HeaderMenuOrganism = async (
 
         {renderComp(
           <Text
-            className='mt-md block px-md text-xs text-dimmed'
+            className='mt-md px-md text-dimmed block text-xs'
             component='small'
           >
             {legalPages.map((d, i, arr) => (
-              <>
+              <Fragment key={d.slug}>
                 <Link
                   className='text-[1em] text-inherit'
                   href={`/${d.slug}`}
-                  key={d.slug}
                 >
                   {d.label}
                 </Link>
                 .{i < arr.length - 1 ? ' ' : null}
-              </>
+              </Fragment>
             ))}
           </Text>,
           [!!legalPages.length]
@@ -145,5 +140,5 @@ const HeaderMenuOrganism = async (
   );
 };
 
-export default forwardRef(HeaderMenuOrganism);
+export default HeaderMenuOrganism;
 export type { HeaderMenuOrganismProps };

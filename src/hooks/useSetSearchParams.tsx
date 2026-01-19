@@ -2,7 +2,7 @@
 
 import { useSearchParams } from 'next/navigation';
 
-import { usePathname, useRouter } from '@/i18n/routing';
+import { usePathname, useRouter } from '@/i18n/navigation';
 import { normId } from '@/utils';
 
 const useSetSearchParams = () => {

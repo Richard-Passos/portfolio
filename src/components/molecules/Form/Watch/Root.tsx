@@ -1,6 +1,5 @@
 'use client';
 
-import { forwardRef } from 'react';
 import { useWatch } from 'react-hook-form';
 
 import { useFormContext } from '@/hooks/contexts';
@@ -12,10 +11,7 @@ type FormWatchMoleculeOwnProps = {};
 type FormWatchMoleculeProps = FormWatchMoleculeOwnProps &
   Omit<FormControlProps, keyof FormWatchMoleculeOwnProps>;
 
-const FormWatchMolecule = (
-  { name, ...props }: FormWatchMoleculeProps,
-  ref: FormWatchMoleculeProps['ref']
-) => {
+const FormWatchMolecule = ({ name, ...props }: FormWatchMoleculeProps) => {
   const { control } = useFormContext(),
     value = useWatch({
       control,
@@ -30,11 +26,10 @@ const FormWatchMolecule = (
   return (
     <FormControl
       name={name}
-      ref={ref}
       {...props}
     />
   );
 };
 
-export default forwardRef(FormWatchMolecule);
+export default FormWatchMolecule;
 export type { FormWatchMoleculeProps };

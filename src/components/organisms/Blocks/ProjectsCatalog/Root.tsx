@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Card, Catalog } from '@/components/molecules';
 import { Project } from '@/types';
 import { renderComp, serialize } from '@/utils';
@@ -19,20 +17,19 @@ type ProjectsCatalogBlockOrganismOwnProps = {
 type ProjectsCatalogBlockOrganismProps = ProjectsCatalogBlockOrganismOwnProps &
   Omit<PrimaryLayoutBlockProps, keyof ProjectsCatalogBlockOrganismOwnProps>;
 
-const ProjectsCatalogBlockOrganism = (
-  { data, ...props }: ProjectsCatalogBlockOrganismProps,
-  ref: ProjectsCatalogBlockOrganismProps['ref']
-) => {
+const ProjectsCatalogBlockOrganism = ({
+  data,
+  ...props
+}: ProjectsCatalogBlockOrganismProps) => {
   return (
     <PrimaryLayoutBlock
       data={{
         title: data.title
       }}
-      ref={ref}
       {...props}
     >
       <Catalog.Root
-        className='flex w-9/10 max-w-screen-xl gap-md max-md:flex-col md:justify-end'
+        className='gap-md w-9by10 flex max-w-screen-xl max-md:flex-col md:justify-end'
         items={data.items}
       >
         <section className='w-full max-w-48 md:max-w-36'>
@@ -62,5 +59,5 @@ const ProjectsCatalogBlockOrganism = (
   );
 };
 
-export default forwardRef(ProjectsCatalogBlockOrganism);
+export default ProjectsCatalogBlockOrganism;
 export type { ProjectsCatalogBlockOrganismProps };

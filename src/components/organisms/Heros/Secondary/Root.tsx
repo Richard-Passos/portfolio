@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { yFullScrollAnim } from '@/animations/scroll';
 import { Lines, ScrollAnimate, Title } from '@/components/atoms';
 import Action, { ActionProps } from '@/components/molecules/Action';
@@ -27,10 +25,11 @@ type SecondaryHeroOrganismOwnProps = {
 type SecondaryHeroOrganismProps = SecondaryHeroOrganismOwnProps &
   Omit<SectionProps, keyof SecondaryHeroOrganismOwnProps>;
 
-const SecondaryHeroOrganism = (
-  { data, className, ...props }: SecondaryHeroOrganismProps,
-  ref: SecondaryHeroOrganismProps['ref']
-) => {
+const SecondaryHeroOrganism = ({
+  data,
+  className,
+  ...props
+}: SecondaryHeroOrganismProps) => {
   return (
     <Section
       className={cn(
@@ -39,14 +38,13 @@ const SecondaryHeroOrganism = (
       )}
       forceTheme
       hasTransition={false}
-      ref={ref}
       {...props}
     >
       <div
-        className={`relative w-9/10 max-w-screen-lg pb-[calc(theme(spacing.2xl)*1.5)] pt-2xl`}
+        className={`pt-2xl w-9by10 relative max-w-screen-lg pb-[calc(var(--spacing-2xl)*1.5)]`}
       >
         <Title
-          className={`relative z-10 max-w-md break-words uppercase md:max-w-lg lg:max-w-xl xl:max-w-[75%]`}
+          className={`relative z-10 max-w-md wrap-break-word uppercase md:max-w-lg lg:max-w-xl xl:max-w-[75%]`}
           order={1}
         >
           {serialize(data.title)}
@@ -60,7 +58,7 @@ const SecondaryHeroOrganism = (
         )}
 
         {renderComp(
-          <section className='mt-xl flex items-center gap-xs'>
+          <section className='mt-xl gap-xs flex items-center'>
             {renderComp(
               <Action
                 as={data.actions?.secondary?.href ? 'link' : 'button'}
@@ -88,20 +86,20 @@ const SecondaryHeroOrganism = (
         )}
 
         <div
-          className={`absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg bg-white dark:bg-dark-8`}
+          className={`dark:bg-dark-8 absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg bg-white`}
         >
           <ScrollAnimate config={yFullScrollAnim}>
             <Lines
-              className={`top-auto h-screen !text-border opacity-60 translate-y-0 [background-size:83.333px_66.666px]`}
+              className={`text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60`}
             />
           </ScrollAnimate>
 
-          <span className='absolute inset-0 rounded-inherit border opacity-60' />
+          <span className='rounded-inherit absolute inset-0 border opacity-60' />
         </div>
       </div>
     </Section>
   );
 };
 
-export default forwardRef(SecondaryHeroOrganism);
+export default SecondaryHeroOrganism;
 export type { SecondaryHeroOrganismProps };

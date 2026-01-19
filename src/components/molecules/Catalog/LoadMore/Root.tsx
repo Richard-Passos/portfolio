@@ -1,7 +1,5 @@
 'use client';
 
-import { forwardRef } from 'react';
-
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useSetSearchParams } from '@/hooks';
 import { useCatalogContext } from '@/hooks/contexts';
@@ -11,10 +9,7 @@ type CatalogLoadMoreMoleculeOwnProps = {};
 type CatalogLoadMoreMoleculeProps = CatalogLoadMoreMoleculeOwnProps &
   Omit<SlotProps, keyof CatalogLoadMoreMoleculeOwnProps>;
 
-const CatalogLoadMoreMolecule = <T,>(
-  props: CatalogLoadMoreMoleculeProps,
-  ref: CatalogLoadMoreMoleculeProps['ref']
-) => {
+const CatalogLoadMoreMolecule = <T,>(props: CatalogLoadMoreMoleculeProps) => {
   const { page, isLastPage } = useCatalogContext<T>(),
     setSearchParams = useSetSearchParams();
 
@@ -22,7 +17,6 @@ const CatalogLoadMoreMolecule = <T,>(
 
   return (
     <Slot
-      ref={ref}
       {...props}
       onClick={async (ev) => {
         setSearchParams([{ key: 'page', value: `${page + 1}` }]);
@@ -33,5 +27,5 @@ const CatalogLoadMoreMolecule = <T,>(
   );
 };
 
-export default forwardRef(CatalogLoadMoreMolecule);
+export default CatalogLoadMoreMolecule;
 export type { CatalogLoadMoreMoleculeProps };

@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type MenuIconAtomOwnProps = {};
 
 type MenuIconAtomProps = MenuIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof MenuIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof MenuIconAtomOwnProps>;
 
-const MenuIconAtom = (
-  { className, ...props }: MenuIconAtomProps,
-  ref: MenuIconAtomProps['ref']
-) => {
+const MenuIconAtom = ({ className, ...props }: MenuIconAtomProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
       data-icon='Menu'
-      ref={ref}
       transform='scale(-1 1)'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
@@ -26,5 +22,5 @@ const MenuIconAtom = (
   );
 };
 
-export default forwardRef(MenuIconAtom);
+export default MenuIconAtom;
 export type { MenuIconAtomProps };

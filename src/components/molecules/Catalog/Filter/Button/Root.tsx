@@ -1,7 +1,6 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { forwardRef } from 'react';
 
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useSetSearchParams } from '@/hooks';
@@ -14,10 +13,10 @@ type CatalogButtonFilterMoleculeOwnProps = {
 type CatalogButtonFilterMoleculeProps = CatalogButtonFilterMoleculeOwnProps &
   Omit<SlotProps, keyof CatalogButtonFilterMoleculeOwnProps>;
 
-const CatalogButtonFilterMolecule = (
-  { query, ...props }: CatalogButtonFilterMoleculeProps,
-  ref: CatalogButtonFilterMoleculeProps['ref']
-) => {
+const CatalogButtonFilterMolecule = ({
+  query,
+  ...props
+}: CatalogButtonFilterMoleculeProps) => {
   const searchParams = useSearchParams(),
     setSearchParams = useSetSearchParams();
 
@@ -28,7 +27,6 @@ const CatalogButtonFilterMolecule = (
   return (
     <Slot
       data-state={isActive ? 'active' : 'inactive'}
-      ref={ref}
       {...props}
       onClick={(ev) => {
         setSearchParams([{ key: name, value: !isActive ? value : '' }]);
@@ -39,5 +37,5 @@ const CatalogButtonFilterMolecule = (
   );
 };
 
-export default forwardRef(CatalogButtonFilterMolecule);
+export default CatalogButtonFilterMolecule;
 export type { CatalogButtonFilterMoleculeProps };

@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Title } from '@/components/atoms';
 import { Action } from '@/components/molecules';
 import { ServiceCard } from '@/components/organisms/Cards';
@@ -25,23 +23,22 @@ type ServicesBlockOrganismOwnProps = {
 type ServicesBlockOrganismProps = ServicesBlockOrganismOwnProps &
   Omit<PrimaryLayoutBlockProps, keyof ServicesBlockOrganismOwnProps>;
 
-const ServicesBlockOrganism = (
-  { data, ...props }: ServicesBlockOrganismProps,
-  ref: ServicesBlockOrganismProps['ref']
-) => {
+const ServicesBlockOrganism = ({
+  data,
+  ...props
+}: ServicesBlockOrganismProps) => {
   return (
     <PrimaryLayoutBlock
       data={{
         title: data.title,
         description: data.description
       }}
-      ref={ref}
       {...props}
     >
-      <section className='flex w-9/10 max-w-screen-lg flex-col items-center'>
+      <section className='w-9by10 flex max-w-screen-lg flex-col items-center'>
         {renderComp(
           <Title
-            className={`mb-md mr-auto uppercase text-dimmed *:text-text`}
+            className={`mb-md text-dimmed *:text-text mr-auto uppercase`}
             component='h3'
             order={6}
           >
@@ -50,7 +47,7 @@ const ServicesBlockOrganism = (
           [data.subtitle]
         )}
 
-        <div className={`flex w-full items-start justify-end gap-md md:gap-xl`}>
+        <div className={`gap-md md:gap-xl flex w-full items-start justify-end`}>
           <ServicesBlockImage
             className={`grow basis-72 max-md:hidden`}
             data={{
@@ -59,7 +56,7 @@ const ServicesBlockOrganism = (
           />
 
           <ul
-            className={`m-0 flex max-w-lg grow basis-[theme(maxWidth.sm)] list-none flex-col gap-xs p-0 sm:py-xl`}
+            className={`gap-xs sm:py-xl m-0 flex max-w-lg grow basis-[theme(maxWidth.sm)] list-none flex-col p-0`}
           >
             {data.items.map((data) => (
               <li key={data.slug}>
@@ -86,5 +83,5 @@ const ServicesBlockOrganism = (
   );
 };
 
-export default forwardRef(ServicesBlockOrganism);
+export default ServicesBlockOrganism;
 export type { ServicesBlockOrganismProps };

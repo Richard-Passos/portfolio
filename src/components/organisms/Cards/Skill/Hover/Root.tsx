@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, useRef } from 'react';
+import { RefObject, useRef } from 'react';
 
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useHoverDelay } from '@/hooks';
@@ -13,11 +13,12 @@ type SkillCardHoverOrganismOwnProps = {
 type SkillCardHoverOrganismProps = SkillCardHoverOrganismOwnProps &
   Omit<SlotProps, keyof SkillCardHoverOrganismOwnProps>;
 
-const SkillCardHoverOrganism = (
-  { delay, ...props }: SkillCardHoverOrganismProps,
-  ref: SkillCardHoverOrganismProps['ref']
-) => {
-  const innerRef = useRef<HTMLElement>(null);
+const SkillCardHoverOrganism = ({
+  delay,
+  ref,
+  ...props
+}: SkillCardHoverOrganismProps) => {
+  const innerRef = useRef<HTMLElement>(null) as RefObject<HTMLElement>;
 
   const isHover = useHoverDelay(innerRef, delay);
 
@@ -30,5 +31,5 @@ const SkillCardHoverOrganism = (
   );
 };
 
-export default forwardRef(SkillCardHoverOrganism);
+export default SkillCardHoverOrganism;
 export type { SkillCardHoverOrganismProps };

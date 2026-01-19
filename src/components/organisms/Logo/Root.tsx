@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Icon } from '@/components/atoms';
 import ActionLink, {
   ActionLinkProps
@@ -13,16 +11,17 @@ type LogoOrganismOwnProps = {
 type LogoOrganismProps = LogoOrganismOwnProps &
   Omit<ActionLinkProps, keyof LogoOrganismOwnProps>;
 
-const LogoOrganism = (
-  { variant = 'primary', className, style, ...props }: LogoOrganismProps,
-  ref: LogoOrganismProps['ref']
-) => {
+const LogoOrganism = ({
+  variant = 'primary',
+  className,
+  style,
+  ...props
+}: LogoOrganismProps) => {
   return (
     <ActionLink
       className={cn('aspect-auto', className)}
       href='/'
       isIconOnly
-      ref={ref}
       size='md'
       style={{
         '--button-bg': 'transparent',
@@ -41,5 +40,5 @@ const LogoOrganism = (
   );
 };
 
-export default forwardRef(LogoOrganism);
+export default LogoOrganism;
 export type { LogoOrganismProps };

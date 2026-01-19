@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
 import { cn, serialize } from '@/utils';
@@ -11,18 +9,18 @@ type PrimaryHeroTitleOrganismOwnProps = {
 type PrimaryHeroTitleOrganismProps = PrimaryHeroTitleOrganismOwnProps &
   Omit<TitleProps, keyof PrimaryHeroTitleOrganismOwnProps>;
 
-const PrimaryHeroTitleOrganism = (
-  { className, children, ...props }: PrimaryHeroTitleOrganismProps,
-  ref: PrimaryHeroTitleOrganismProps['ref']
-) => {
+const PrimaryHeroTitleOrganism = ({
+  className,
+  children,
+  ...props
+}: PrimaryHeroTitleOrganismProps) => {
   return (
     <Title
       className={cn(
-        `w-full break-words uppercase tracking-tighter lg:leading-none`,
+        `w-full tracking-tighter wrap-break-word uppercase lg:leading-none`,
         className
       )}
       order={1}
-      ref={ref}
       {...props}
     >
       {serialize(children, {
@@ -44,5 +42,5 @@ const PrimaryHeroTitleOrganism = (
   );
 };
 
-export default forwardRef(PrimaryHeroTitleOrganism);
+export default PrimaryHeroTitleOrganism;
 export type { PrimaryHeroTitleOrganismProps };

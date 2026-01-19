@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Divider, Text, Title } from '@/components/atoms';
 import { DividerProps } from '@/components/atoms/Divider';
 import { TextProps } from '@/components/atoms/Text';
@@ -19,29 +17,25 @@ type ServiceCardOrganismOwnProps = {
 type ServiceCardOrganismProps = ServiceCardOrganismOwnProps &
   Omit<CardRootProps, keyof ServiceCardOrganismOwnProps>;
 
-const ServiceCardOrganism = (
-  {
-    className,
-    data,
-    indexProps,
-    dividerProps,
-    titleProps,
-    descriptionProps,
-    ...props
-  }: ServiceCardOrganismProps,
-  ref: ServiceCardOrganismProps['ref']
-) => {
+const ServiceCardOrganism = ({
+  className,
+  data,
+  indexProps,
+  dividerProps,
+  titleProps,
+  descriptionProps,
+  ...props
+}: ServiceCardOrganismProps) => {
   return (
     <Card.Root
       className={cn('border-transparent !bg-transparent', className)}
-      ref={ref}
       {...props}
     >
       <Text
         component='span'
         {...indexProps}
         className={cn(
-          'text-xs font-semibold text-dimmed',
+          'text-dimmed text-xs font-semibold',
           indexProps?.className
         )}
       >
@@ -65,7 +59,7 @@ const ServiceCardOrganism = (
       <Text
         {...descriptionProps}
         className={cn(
-          'mt-[calc(theme(spacing.xs)/2)] text-sm leading-relaxed text-dimmed',
+          'mt-[calc(theme(spacing.xs)/2)] text-dimmed text-sm leading-relaxed',
           descriptionProps?.className
         )}
       >
@@ -75,5 +69,5 @@ const ServiceCardOrganism = (
   );
 };
 
-export default forwardRef(ServiceCardOrganism);
+export default ServiceCardOrganism;
 export type { ServiceCardOrganismProps };

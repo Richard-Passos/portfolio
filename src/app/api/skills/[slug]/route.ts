@@ -4,9 +4,9 @@ import { defaultLocale } from '@/constants/locales';
 import { Locale, Skill } from '@/types';
 import { getTranslations, isType, normId } from '@/utils';
 
-type Params = {
+type Params = Promise<{
   slug: string;
-};
+}>;
 
 type SearchParams = {
   locale: Locale['value'];
@@ -30,7 +30,7 @@ type SkillsResponse =
 
 const GET = async (
   request: NextRequest,
-  { params: { slug } }: { params: Params }
+  { params: p }: { params: Params }
 ): Promise<ReturnType<typeof NextResponse.json<SkillsResponse>>> => {
   try {
     const { searchParams } = request.nextUrl;
@@ -39,6 +39,7 @@ const GET = async (
       locale: searchParams.get('locale')
     };
 
+    let { slug } = await p;
     slug = normId(slug);
 
     const locale = isType<SearchParams['locale']>(

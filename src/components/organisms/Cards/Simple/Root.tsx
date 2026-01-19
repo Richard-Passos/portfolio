@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Icon } from '@/components/atoms';
 import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
@@ -15,14 +13,14 @@ type SimpleCardOrganismOwnProps = {
 type SimpleCardOrganismProps = SimpleCardOrganismOwnProps &
   Omit<CardRootProps, keyof SimpleCardOrganismOwnProps>;
 
-const SimpleCardOrganism = (
-  { className, data, ...props }: SimpleCardOrganismProps,
-  ref: SimpleCardOrganismProps['ref']
-) => {
+const SimpleCardOrganism = ({
+  className,
+  data,
+  ...props
+}: SimpleCardOrganismProps) => {
   return (
     <Card.Root
       className={cn('justify-between', className)}
-      ref={ref}
       {...props}
     >
       <div className='size-6'>
@@ -40,5 +38,5 @@ const SimpleCardOrganism = (
   );
 };
 
-export default forwardRef(SimpleCardOrganism);
+export default SimpleCardOrganism;
 export type { SimpleCardOrganismProps };

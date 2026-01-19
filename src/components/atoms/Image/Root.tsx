@@ -1,6 +1,6 @@
 import { Image, ImageProps } from '@mantine/core';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
-import { ForwardedRef, forwardRef } from 'react';
+import { ForwardedRef } from 'react';
 
 type ImageAtomOwnProps = {
   ref?: ForwardedRef<HTMLImageElement>;
@@ -9,16 +9,15 @@ type ImageAtomOwnProps = {
 type ImageAtomProps = ImageAtomOwnProps &
   Omit<ImageProps & NextImageProps, keyof ImageAtomOwnProps>;
 
-const ImageAtom = (props: ImageAtomProps, ref: ImageAtomProps['ref']) => {
+const ImageAtom = (props: ImageAtomProps) => {
   return (
     // eslint-disable-next-line jsx-a11y/alt-text
     <Image
       component={NextImage}
-      ref={ref}
       {...props}
     />
   );
 };
 
-export default forwardRef(ImageAtom);
+export default ImageAtom;
 export type { ImageAtomProps };

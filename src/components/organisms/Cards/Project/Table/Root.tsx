@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Image, Link, Magnetic, Text, Title } from '@/components/atoms';
 import { LinkProps } from '@/components/atoms/Link';
 import { CardRoot } from '@/components/molecules/Card';
@@ -13,10 +11,11 @@ type TableProjectCardOrganismOwnProps = {
 type TableProjectCardOrganismProps = TableProjectCardOrganismOwnProps &
   Omit<LinkProps, keyof TableProjectCardOrganismOwnProps>;
 
-const TableProjectCardOrganism = (
-  { className, data, ...props }: TableProjectCardOrganismProps,
-  ref: TableProjectCardOrganismProps['ref']
-) => {
+const TableProjectCardOrganism = ({
+  className,
+  data,
+  ...props
+}: TableProjectCardOrganismProps) => {
   return (
     <Magnetic.Container>
       <Link
@@ -24,21 +23,20 @@ const TableProjectCardOrganism = (
           `group/item relative flex items-center justify-center font-normal text-current focus-visible:outline-0`,
           className
         )}
-        ref={ref}
         underline='never'
         {...props}
       >
         <CardRoot
           className={cn(
-            `flex-row items-start gap-xs px-[7.5%] py-xl transition-[scale,opacity] duration-300 ease-backOut group-focus-visible/item:outline`,
+            `gap-xs py-xl ease-backOut flex-row items-start px-[7.5%] transition-[scale,opacity] duration-300 group-focus-visible/item:outline`,
 
-            `group-hover/list:scale-x-90 group-hover/list:[>:has(+:hover)_&]:scale-x-95 group-hover/list:[>:hover+*_&]:scale-x-95 group-hover/list:[>:hover_&]:scale-100`,
+            `group-hover/list:[>:has(+:hover)_&]:scale-x-95 group-hover/list:[>:hover+*_&]:scale-x-95 group-hover/list:[>:hover_&]:scale-100 group-hover/list:scale-x-90`,
 
             'group-hover/list:[>:not(:hover)_&]:opacity-50'
           )}
         >
           <Text
-            className={`relative shrink-0 text-sm font-semibold text-dimmed translate-y-0.5`}
+            className={`text-dimmed relative shrink-0 translate-y-0.5 text-sm font-semibold`}
           >
             <span
               aria-hidden
@@ -52,16 +50,16 @@ const TableProjectCardOrganism = (
             </span>
           </Text>
 
-          <div className='flex grow items-center gap-x-sm gap-y-xs'>
+          <div className='gap-x-sm gap-y-xs flex grow items-center'>
             <Title
-              className={`mb-auto shrink-0 basis-full overflow-hidden text-ellipsis text-nowrap sm:basis-1/2`}
+              className={`mb-auto shrink-0 basis-full overflow-hidden text-nowrap text-ellipsis sm:basis-1/2`}
               order={4}
             >
               {data.title}
             </Title>
 
             <Text
-              className={`line-clamp-2 grow break-words text-sm font-medium lowercase sm:text-end`}
+              className={`line-clamp-2 grow text-sm font-medium wrap-break-word lowercase sm:text-end`}
             >
               {values(data.roles)
                 .toSorted((a, b) => a.localeCompare(b))
@@ -88,7 +86,7 @@ const TableProjectCardOrganism = (
         >
           <div className='pointer-events-none absolute z-10'>
             <div
-              className={`relative aspect-square w-72 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-opacity group-hover/item:opacity-100 dark:bg-dark-6`}
+              className={`bg-gray-1 dark:bg-dark-6 relative aspect-square w-72 overflow-hidden rounded-lg opacity-0 transition-opacity group-hover/item:opacity-100`}
             >
               <Image
                 alt={data.thumbnail.alt}
@@ -105,5 +103,5 @@ const TableProjectCardOrganism = (
   );
 };
 
-export default forwardRef(TableProjectCardOrganism);
+export default TableProjectCardOrganism;
 export type { TableProjectCardOrganismProps };

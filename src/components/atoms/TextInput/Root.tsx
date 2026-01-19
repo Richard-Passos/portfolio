@@ -3,7 +3,6 @@ import {
   TextInputProps,
   createPolymorphicComponent
 } from '@mantine/core';
-import { forwardRef } from 'react';
 
 import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
@@ -34,17 +33,14 @@ type TextInputAtomOwnProps = {
 type TextInputAtomProps = TextInputAtomOwnProps &
   Omit<TextInputProps, keyof TextInputAtomOwnProps>;
 
-const TextInputAtom = (
-  {
-    className,
-    size = 'sm',
-    variant = 'default',
-    disabled,
-    labelProps,
-    ...props
-  }: TextInputAtomProps,
-  ref: TextInputAtomProps['ref']
-) => {
+const TextInputAtom = ({
+  className,
+  size = 'sm',
+  variant = 'default',
+  disabled,
+  labelProps,
+  ...props
+}: TextInputAtomProps) => {
   return (
     <TextInput
       aria-disabled={disabled}
@@ -59,7 +55,6 @@ const TextInputAtom = (
         ...labelProps,
         className: cn('text-sm', labelProps?.className)
       }}
-      ref={ref}
       size={size}
       variant={variant}
       {...props}
@@ -68,6 +63,6 @@ const TextInputAtom = (
 };
 
 export default createPolymorphicComponent<'input', TextInputAtomProps>(
-  forwardRef(TextInputAtom)
+  TextInputAtom
 );
 export type { TextInputAtomProps };

@@ -1,4 +1,4 @@
-import { ReactNode, forwardRef } from 'react';
+import { ReactNode } from 'react';
 
 import { Action, ListHorizontalScroll } from '@/components/molecules';
 import { ActionProps } from '@/components/molecules/Action';
@@ -26,21 +26,15 @@ type ListPageBlockOrganismOwnProps = {
 type ListPageBlockOrganismProps = ListPageBlockOrganismOwnProps &
   Omit<CleanLayoutBlockProps, keyof ListPageBlockOrganismOwnProps>;
 
-const ListPageBlockOrganism = (
-  {
-    data,
-    listProps,
-    listItemProps,
-    actionProps,
-    ...props
-  }: ListPageBlockOrganismProps,
-  ref: ListPageBlockOrganismProps['ref']
-) => {
+const ListPageBlockOrganism = ({
+  data,
+  listProps,
+  listItemProps,
+  actionProps,
+  ...props
+}: ListPageBlockOrganismProps) => {
   return (
-    <CleanLayoutBlock
-      ref={ref}
-      {...props}
-    >
+    <CleanLayoutBlock {...props}>
       <ListHorizontalScroll.Root {...listProps}>
         {data.items.map((item, i) => (
           <ListHorizontalScroll.Item
@@ -48,7 +42,7 @@ const ListPageBlockOrganism = (
             key={item.id}
             {...listItemProps}
             className={cn(
-              `text-2xl uppercase [--gap:theme(spacing.sm)] sm:text-3xl`,
+              `[--gap:theme(spacing.sm)] text-2xl uppercase sm:text-3xl`,
               listItemProps?.className
             )}
           >
@@ -58,11 +52,11 @@ const ListPageBlockOrganism = (
 
             <span className={`opacity-30 dark:opacity-10`}>{item.text}</span>
 
-            <span className={`opacity-30 dark:opacity-10 max-sm:hidden`}>
+            <span className={`opacity-30 max-sm:hidden dark:opacity-10`}>
               {item.separator}
             </span>
 
-            <span className={`opacity-30 dark:opacity-10 max-sm:hidden`}>
+            <span className={`opacity-30 max-sm:hidden dark:opacity-10`}>
               {item.text}
             </span>
 
@@ -85,5 +79,5 @@ const ListPageBlockOrganism = (
   );
 };
 
-export default forwardRef(ListPageBlockOrganism);
+export default ListPageBlockOrganism;
 export type { ListPageBlockOrganismProps };

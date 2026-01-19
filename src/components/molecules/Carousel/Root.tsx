@@ -3,7 +3,7 @@
 // @ts-ignore
 import { Options, Splide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/core';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import CarouselProvider, { CarouselProviderProps } from '@/Providers/Carousel';
 import { useCarouselContext } from '@/hooks/contexts';
@@ -14,47 +14,45 @@ type CarouselMoleculeOwnProps = {
 };
 
 type CarouselMoleculeProps = CarouselMoleculeOwnProps &
-  Omit<ComponentPropsWithRef<typeof Splide>, keyof CarouselMoleculeOwnProps>;
+  Omit<ComponentProps<typeof Splide>, keyof CarouselMoleculeOwnProps>;
 
-const CarouselMolecule = forwardRef(
-  (
-    { options, className, ...props }: CarouselMoleculeProps,
-    ref: CarouselMoleculeProps['ref']
-  ) => {
-    const { setState } = useCarouselContext();
+const CarouselMolecule = ({
+  options,
+  className,
+  ref,
+  ...props
+}: CarouselMoleculeProps) => {
+  const { setState } = useCarouselContext();
 
-    options = {
-      autoWidth: true,
-      autoHeight: true,
-      focus: 'center',
-      trimSpace: false,
-      pagination: false,
-      gap: 'var(--mantine-spacing-xs)',
-      ...options
-    };
+  options = {
+    autoWidth: true,
+    autoHeight: true,
+    focus: 'center',
+    trimSpace: false,
+    pagination: false,
+    gap: 'var(--mantine-spacing-xs)',
+    ...options
+  };
 
-    return (
-      <Splide
-        className={cn('flex w-full flex-col items-center', className)}
-        hasTrack={false}
-        onMove={(carousel: any) => {
-          const end = carousel.length - 1,
-            rate = Math.min(carousel.index / end, 1);
+  return (
+    <Splide
+      className={cn('flex w-full flex-col items-center', className)}
+      hasTrack={false}
+      onMove={(carousel: any) => {
+        const end = carousel.length - 1,
+          rate = Math.min(carousel.index / end, 1);
 
-          setState({
-            activeIdx: carousel.index,
-            progress: rate
-          });
-        }}
-        options={options}
-        ref={ref}
-        tag='section'
-        {...props}
-      />
-    );
-  }
-);
-CarouselMolecule.displayName = 'CarouselMolecule';
+        setState({
+          activeIdx: carousel.index,
+          progress: rate
+        });
+      }}
+      options={options}
+      tag='section'
+      {...props}
+    />
+  );
+};
 
 type CarouselMoleculeWithProviderOwnProps = {};
 
@@ -65,18 +63,14 @@ type CarouselMoleculeWithProviderProps = CarouselMoleculeWithProviderOwnProps &
   >;
 
 const CarouselMoleculeWithProvider = (
-  props: CarouselMoleculeWithProviderProps,
-  ref: CarouselMoleculeWithProviderProps['ref']
+  props: CarouselMoleculeWithProviderProps
 ) => {
   return (
     <CarouselProvider>
-      <CarouselMolecule
-        ref={ref}
-        {...props}
-      />
+      <CarouselMolecule {...props} />
     </CarouselProvider>
   );
 };
 
-export default forwardRef(CarouselMoleculeWithProvider);
+export default CarouselMoleculeWithProvider;
 export type { CarouselMoleculeProps };

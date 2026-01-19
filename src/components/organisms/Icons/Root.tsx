@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import scrollAnimations from '@/animations/scroll';
 import { Icon, ScrollAnimate } from '@/components/atoms';
@@ -13,28 +13,24 @@ type IconsOrganismIcon = {
 type IconsOrganismOwnProps = {
   left: IconsOrganismIcon;
   right: IconsOrganismIcon;
-  leftProps?: Partial<ComponentPropsWithRef<'div'>>;
-  rightProps?: Partial<ComponentPropsWithRef<'div'>>;
+  leftProps?: Partial<ComponentProps<'div'>>;
+  rightProps?: Partial<ComponentProps<'div'>>;
 };
 
 type IconsOrganismProps = IconsOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'div'>, keyof IconsOrganismOwnProps>;
+  Omit<ComponentProps<'div'>, keyof IconsOrganismOwnProps>;
 
-const IconsOrganism = (
-  {
-    className,
-    left,
-    right,
-    leftProps,
-    rightProps,
-    ...props
-  }: IconsOrganismProps,
-  ref: IconsOrganismProps['ref']
-) => {
+const IconsOrganism = ({
+  className,
+  left,
+  right,
+  leftProps,
+  rightProps,
+  ...props
+}: IconsOrganismProps) => {
   return (
     <div
       className={cn('absolute inset-0 overflow-hidden', className)}
-      ref={ref}
       {...props}
     >
       <ScrollAnimate config={scrollAnimations[left.animation]}>
@@ -72,5 +68,5 @@ const IconsOrganism = (
   );
 };
 
-export default forwardRef(IconsOrganism);
+export default IconsOrganism;
 export type { IconsOrganismProps, IconsOrganismIcon };

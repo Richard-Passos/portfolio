@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type WidthIconAtomOwnProps = {};
 
 type WidthIconAtomProps = WidthIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof WidthIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof WidthIconAtomOwnProps>;
 
-const WidthIconAtom = (
-  { className, ...props }: WidthIconAtomProps,
-  ref: WidthIconAtomProps['ref']
-) => {
+const WidthIconAtom = ({ className, ...props }: WidthIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 stroke-current', className)}
       data-icon='Width'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -30,5 +26,5 @@ const WidthIconAtom = (
   );
 };
 
-export default forwardRef(WidthIconAtom);
+export default WidthIconAtom;
 export type { WidthIconAtomProps };

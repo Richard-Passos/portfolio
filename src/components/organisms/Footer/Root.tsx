@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 
@@ -10,10 +8,11 @@ type FooterOrganismOwnProps = Pick<Partial<SectionProps>, 'theme'>;
 type FooterOrganismProps = FooterOrganismOwnProps &
   Omit<SectionProps, keyof FooterOrganismOwnProps>;
 
-const FooterOrganism = (
-  { className, transitionProps, ...props }: FooterOrganismProps,
-  ref: FooterOrganismProps['ref']
-) => {
+const FooterOrganism = ({
+  className,
+  transitionProps,
+  ...props
+}: FooterOrganismProps) => {
   return (
     <Section
       bgProps={{
@@ -21,7 +20,6 @@ const FooterOrganism = (
       }}
       className={cn('max-w-bounds py-0', className)}
       component='footer'
-      ref={ref}
       theme='light'
       transitionProps={
         {
@@ -38,5 +36,5 @@ const FooterOrganism = (
   );
 };
 
-export default forwardRef(FooterOrganism);
+export default FooterOrganism;
 export type { FooterOrganismProps };

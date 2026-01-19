@@ -1,20 +1,13 @@
 import { Box, BoxProps, createPolymorphicComponent } from '@mantine/core';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
-type BoxAtomOwnProps = ComponentPropsWithRef<'div'>;
+type BoxAtomOwnProps = ComponentProps<'div'>;
 
 type BoxAtomProps = BoxAtomOwnProps & Omit<BoxProps, keyof BoxAtomOwnProps>;
 
-const BoxAtom = (props: BoxAtomProps, ref: BoxAtomProps['ref']) => {
-  return (
-    <Box
-      ref={ref}
-      {...props}
-    />
-  );
+const BoxAtom = (props: BoxAtomProps) => {
+  return <Box {...props} />;
 };
 
-export default createPolymorphicComponent<'div', BoxAtomProps>(
-  forwardRef(BoxAtom)
-);
+export default createPolymorphicComponent<'div', BoxAtomProps>(BoxAtom);
 export type { BoxAtomProps };

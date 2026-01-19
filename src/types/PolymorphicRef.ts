@@ -1,5 +1,5 @@
-import { ComponentPropsWithRef, ElementType } from 'react';
+import { ComponentProps, ElementType } from 'react';
 
-type PolymorphicRef<C extends ElementType> = ComponentPropsWithRef<C>['ref'];
+type PolymorphicRef<C extends ElementType> = ComponentProps<C>['ref'];
 
 export default PolymorphicRef;

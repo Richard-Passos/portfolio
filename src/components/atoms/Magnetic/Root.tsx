@@ -2,8 +2,8 @@
 
 import { Slot } from '@radix-ui/react-slot';
 import { deviceType } from 'detect-it';
-import { motion } from 'framer-motion';
-import { ComponentPropsWithRef, forwardRef, useEffect, useRef } from 'react';
+import { motion } from 'motion/react';
+import { ComponentProps, RefObject, useEffect, useRef } from 'react';
 
 import { useEventListener, useSmooth } from '@/hooks';
 import { useMagneticContext } from '@/hooks/contexts';
@@ -18,25 +18,23 @@ type MagneticAtomOwnProps = {
 };
 
 type MagneticAtomProps = MagneticAtomOwnProps &
-  Omit<ComponentPropsWithRef<typeof MotionChild>, keyof MagneticAtomOwnProps>;
+  Omit<ComponentProps<typeof MotionChild>, keyof MagneticAtomOwnProps>;
 
-const MagneticAtom = (
-  {
-    smoothConfig,
-    limit = { x: 0.35, y: 0.35 },
-    style,
-    ...props
-  }: MagneticAtomProps,
-  ref: MagneticAtomProps['ref']
-) => {
-  const innerRef = useRef<HTMLElement>(null),
+const MagneticAtom = ({
+  smoothConfig,
+  limit = { x: 0.35, y: 0.35 },
+  style,
+  ref,
+  ...props
+}: MagneticAtomProps) => {
+  const innerRef = useRef<HTMLElement>(null) as RefObject<HTMLElement>,
     { container } = useMagneticContext(),
     position = {
       x: useSmooth(0, { ...magneticAtomSmoothConfig, ...smoothConfig }),
       y: useSmooth(0, { ...magneticAtomSmoothConfig, ...smoothConfig })
     };
 
-  const element = useRef<HTMLElement | null>(null);
+  const element = useRef<HTMLElement>(null) as RefObject<HTMLElement>;
 
   const resetPosition = () => {
       position.x.set(0);
@@ -63,7 +61,7 @@ const MagneticAtom = (
     };
 
   useEffect(() => {
-    element.current = container.current ?? innerRef.current;
+    element.current = container?.current ?? innerRef.current;
   }, [container]);
 
   useEventListener('mousemove', updatePosition, element);
@@ -81,8 +79,8 @@ const MagneticAtom = (
   );
 };
 
-const MotionChild = motion(Slot);
+const MotionChild = motion.create(Slot);
 
-export default forwardRef(MagneticAtom);
+export default MagneticAtom;
 export { magneticAtomSmoothConfig };
 export type { MagneticAtomProps };

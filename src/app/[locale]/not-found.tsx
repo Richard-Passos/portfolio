@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 
 import { ErrorTemplate } from '@/components/templates';
 import { defaultPages } from '@/constants';
@@ -9,7 +9,7 @@ import { getLocale, pagesApi } from '@/utils/actions';
 const NotFoundPage = async () => {
   const locale = await getLocale();
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const res = await pagesApi.getOne<ErrorPage>({
     slug: defaultPages.notFound,

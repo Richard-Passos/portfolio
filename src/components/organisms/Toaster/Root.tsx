@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 import { Toaster, ToasterProps } from 'react-hot-toast';
 
 import { useThemeContext } from '@/hooks/contexts';
@@ -12,27 +12,23 @@ type ToasterOrganismOwnProps = ToasterProps & {
 };
 
 type ToasterOrganismProps = ToasterOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'div'>, keyof ToasterOrganismOwnProps>;
+  Omit<ComponentProps<'div'>, keyof ToasterOrganismOwnProps>;
 
-const ToasterOrganism = (
-  {
-    containerClassName,
-    containerStyle,
-    gutter,
-    position,
-    reverseOrder,
-    toastOptions,
-    children,
-    ...props
-  }: ToasterOrganismProps,
-  ref: ToasterOrganismProps['ref']
-) => {
+const ToasterOrganism = ({
+  containerClassName,
+  containerStyle,
+  gutter,
+  position,
+  reverseOrder,
+  toastOptions,
+  children,
+  ...props
+}: ToasterOrganismProps) => {
   const { theme } = useThemeContext();
 
   return (
     <div
       data-theme={theme}
-      ref={ref}
       {...props}
     >
       <Toaster
@@ -55,5 +51,5 @@ const ToasterOrganism = (
   );
 };
 
-export default forwardRef(ToasterOrganism);
+export default ToasterOrganism;
 export type { ToasterOrganismProps };

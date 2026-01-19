@@ -27,9 +27,9 @@ const HeaderContentOrganism = async () => {
 
   return (
     <>
-      <Logo className='-ml-[--button-padding-x]' />
+      <Logo className='-ml-(--button-padding-x)' />
 
-      <div className={`flex items-center gap-xs max-md:hidden`}>
+      <div className={`gap-xs flex items-center max-md:hidden`}>
         <HeaderNav items={navItem} />
 
         <LocaleSelect

@@ -1,5 +1,4 @@
 import { createPolymorphicComponent } from '@mantine/core';
-import { forwardRef } from 'react';
 
 import Box, { BoxProps } from '@/components/atoms/Box';
 import { PolymorphicRef } from '@/types';
@@ -20,10 +19,12 @@ type BentoGridMoleculeOwnProps = {
 type BentoGridMoleculeProps = BentoGridMoleculeOwnProps &
   Omit<BoxProps, keyof BentoGridMoleculeOwnProps>;
 
-const BentoGridMolecule = (
-  { templates, className, style, ...props }: BentoGridMoleculeProps,
-  ref: BentoGridMoleculeProps['ref']
-) => {
+const BentoGridMolecule = ({
+  templates,
+  className,
+  style,
+  ...props
+}: BentoGridMoleculeProps) => {
   templates = {
     sm: 'var(--base-template)',
     md: 'var(--sm-template)',
@@ -45,11 +46,10 @@ const BentoGridMolecule = (
   return (
     <Box
       className={cn(
-        `m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(0px,1fr))] gap-xs p-0 [--template:--base-template] [grid-template-areas:--template] sm:[--template:--sm-template] md:[--template:--md-template] lg:[--template:--lg-template] xl:[--template:--xl-template] 2xl:[--template:--2xl-template]`,
+        `gap-xs m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(0px,1fr))] p-0 [--template:--base-template] [grid-template-areas:--template] sm:[--template:--sm-template] md:[--template:--md-template] lg:[--template:--lg-template] xl:[--template:--xl-template] 2xl:[--template:--2xl-template]`,
         className
       )}
       component='ul'
-      ref={ref}
       style={{
         ...cssTemplates,
         ...style
@@ -60,6 +60,6 @@ const BentoGridMolecule = (
 };
 
 export default createPolymorphicComponent<'ul', BentoGridMoleculeProps>(
-  forwardRef(BentoGridMolecule)
+  BentoGridMolecule
 );
 export type { BentoGridMoleculeProps };

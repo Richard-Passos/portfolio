@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type GlobeIconAtomOwnProps = {};
 
 type GlobeIconAtomProps = GlobeIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof GlobeIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof GlobeIconAtomOwnProps>;
 
-const GlobeIconAtom = (
-  { className, ...props }: GlobeIconAtomProps,
-  ref: GlobeIconAtomProps['ref']
-) => {
+const GlobeIconAtom = ({ className, ...props }: GlobeIconAtomProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
       data-icon='Globe'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const GlobeIconAtom = (
   );
 };
 
-export default forwardRef(GlobeIconAtom);
+export default GlobeIconAtom;
 export type { GlobeIconAtomProps };

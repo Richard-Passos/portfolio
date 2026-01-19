@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { ScrollAnimate, Text, Title } from '@/components/atoms';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
 import { TextProps } from '@/components/atoms/Text';
@@ -53,35 +51,31 @@ type ButBlockOrganismOwnProps = {
 type ButBlockOrganismProps = ButBlockOrganismOwnProps &
   Omit<CleanLayoutBlockProps, keyof ButBlockOrganismOwnProps>;
 
-const ButBlockOrganism = (
-  {
-    data,
-    className,
-    titleProps,
-    descriptionProps,
-    ...props
-  }: ButBlockOrganismProps,
-  ref: ButBlockOrganismProps['ref']
-) => {
+const ButBlockOrganism = ({
+  data,
+  className,
+  titleProps,
+  descriptionProps,
+  ...props
+}: ButBlockOrganismProps) => {
   return (
     <CleanLayoutBlock
       className={cn(
         `grid !min-h-[calc(var(--h)*1.5)] grid-rows-3 items-stretch justify-stretch justify-items-center [--h:100vh] 2xl:[--h:--max-h]`,
         className
       )}
-      ref={ref}
       {...props}
     >
       <ScrollAnimate config={ANIMATION_CONFIG.x}>
         <ScrollAnimate config={ANIMATION_CONFIG.clipPath}>
           <ScrollAnimate config={ANIMATION_CONFIG.y}>
             <div
-              className={`row-span-2 flex items-center justify-center py-md translate-y-[--y] [clip-path:inset(0_-100%_0_0)]`}
+              className={`py-md row-span-2 flex translate-y-(--y) items-center justify-center [clip-path:inset(0_-100%_0_0)]`}
             >
               <Text
                 {...titleProps}
                 className={cn(
-                  `relative text-[clamp(8rem,44vw,32rem)]/none font-bold uppercase tracking-tighter translate-x-[--x]`,
+                  `relative translate-x-(--x) text-[clamp(8rem,44vw,32rem)]/none font-bold tracking-tighter uppercase`,
                   titleProps?.className
                 )}
               >
@@ -100,13 +94,13 @@ const ButBlockOrganism = (
       </ScrollAnimate>
 
       <ScrollAnimate config={ANIMATION_CONFIG.top}>
-        <div className='flex w-9/10 items-center justify-center'>
+        <div className='w-9by10 flex items-center justify-center'>
           <Title
             component='p'
             order={1}
             {...descriptionProps}
             className={cn(
-              'relative top-[--top] text-center font-medium',
+              'relative top-(--top) text-center font-medium',
               descriptionProps?.className
             )}
           >
@@ -121,5 +115,5 @@ const ButBlockOrganism = (
   );
 };
 
-export default forwardRef(ButBlockOrganism);
+export default ButBlockOrganism;
 export type { ButBlockOrganismProps };

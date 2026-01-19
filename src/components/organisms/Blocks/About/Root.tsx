@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { yFullScrollAnim } from '@/animations/scroll';
 import { Lines, ScrollAnimate } from '@/components/atoms';
@@ -11,45 +11,45 @@ type AboutBlockOrganismOwnProps = {
   data: PrimaryLayoutBlockProps['data'] & {
     texts: ({ id: string } & AboutBlockTextProps['data'])[];
   };
-  wrapperProps?: Partial<ComponentPropsWithRef<'section'>>;
+  wrapperProps?: Partial<ComponentProps<'section'>>;
 };
 
 type AboutBlockOrganismProps = AboutBlockOrganismOwnProps &
   Omit<PrimaryLayoutBlockProps, keyof AboutBlockOrganismOwnProps>;
 
-const AboutBlockOrganism = (
-  { data, wrapperProps, ...props }: AboutBlockOrganismProps,
-  ref: AboutBlockOrganismProps['ref']
-) => {
+const AboutBlockOrganism = ({
+  data,
+  wrapperProps,
+  ...props
+}: AboutBlockOrganismProps) => {
   return (
     <PrimaryLayoutBlock
       data={{
         title: data.title,
         description: data.description
       }}
-      ref={ref}
       {...props}
     >
       <section
         {...wrapperProps}
         className={cn(
-          `flex w-9/10 max-w-screen-lg gap-md md:gap-2xl`,
+          `gap-md md:gap-2xl w-9by10 flex max-w-screen-lg`,
           wrapperProps?.className
         )}
       >
         <div
-          className={`relative grow basis-48 overflow-hidden bg-white dark:bg-dark-8 max-sm:hidden`}
+          className={`dark:bg-dark-8 relative grow basis-48 overflow-hidden bg-white max-sm:hidden`}
         >
           <ScrollAnimate config={yFullScrollAnim}>
             <Lines
-              className={`h-screen !text-border opacity-60 translate-y-0 [background-size:83.333px_66.666px]`}
+              className={`text-border! h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60`}
             />
           </ScrollAnimate>
 
-          <span className='absolute inset-0 rounded-inherit border opacity-60' />
+          <span className='rounded-inherit absolute inset-0 border opacity-60' />
         </div>
 
-        <section className='flex max-w-xl grow flex-col gap-xl'>
+        <section className='gap-xl flex max-w-xl grow flex-col'>
           {data.texts.map(({ id, ...data }) => (
             <AboutBlockText
               data={data}
@@ -62,5 +62,5 @@ const AboutBlockOrganism = (
   );
 };
 
-export default forwardRef(AboutBlockOrganism);
+export default AboutBlockOrganism;
 export type { AboutBlockOrganismProps };

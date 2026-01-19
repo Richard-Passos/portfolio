@@ -4,6 +4,10 @@ import LegalPage from './LegalPage';
 import Page from './Page';
 import SingleProjectPage from './SingleProjectPage';
 
-type Pages = Page | ErrorPage | DeepPartial<SingleProjectPage> | LegalPage;
+type PartialSingleProjectPage = {
+  slug: string;
+} & DeepPartial<Omit<SingleProjectPage, 'slug'>>;
+
+type Pages = Page | ErrorPage | PartialSingleProjectPage | LegalPage;
 
 export default Pages;

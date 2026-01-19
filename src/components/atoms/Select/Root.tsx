@@ -1,5 +1,4 @@
 import { Select, SelectProps, createPolymorphicComponent } from '@mantine/core';
-import { forwardRef } from 'react';
 
 import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
@@ -30,18 +29,15 @@ type SelectAtomOwnProps = {
 type SelectAtomProps = SelectAtomOwnProps &
   Omit<SelectProps, keyof SelectAtomOwnProps>;
 
-const SelectAtom = (
-  {
-    className,
-    size = 'sm',
-    variant = 'default',
-    disabled,
-    comboboxProps,
-    labelProps,
-    ...props
-  }: SelectAtomProps,
-  ref: SelectAtomProps['ref']
-) => {
+const SelectAtom = ({
+  className,
+  size = 'sm',
+  variant = 'default',
+  disabled,
+  comboboxProps,
+  labelProps,
+  ...props
+}: SelectAtomProps) => {
   return (
     <Select
       aria-disabled={disabled}
@@ -86,7 +82,6 @@ const SelectAtom = (
         ...labelProps,
         className: cn('text-sm', labelProps?.className)
       }}
-      ref={ref}
       size={size}
       variant={variant}
       {...props}
@@ -94,7 +89,5 @@ const SelectAtom = (
   );
 };
 
-export default createPolymorphicComponent<'input', SelectAtomProps>(
-  forwardRef(SelectAtom)
-);
+export default createPolymorphicComponent<'input', SelectAtomProps>(SelectAtom);
 export type { SelectAtomProps };

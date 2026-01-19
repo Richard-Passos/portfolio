@@ -1,11 +1,11 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentProps } from 'react';
 
 type IntlProviderOrganismOwnProps = {};
 
 type IntlProviderOrganismProps = IntlProviderOrganismOwnProps &
   Omit<
-    ComponentPropsWithoutRef<typeof NextIntlClientProvider>,
+    ComponentProps<typeof NextIntlClientProvider>,
     keyof IntlProviderOrganismOwnProps
   >;
 

@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
@@ -8,20 +8,16 @@ import HeaderTheme from './Theme';
 type HeaderOrganismOwnProps = {};
 
 type HeaderOrganismProps = HeaderOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'header'>, keyof HeaderOrganismOwnProps>;
+  Omit<ComponentProps<'header'>, keyof HeaderOrganismOwnProps>;
 
-const HeaderOrganism = (
-  { className, ...props }: HeaderOrganismProps,
-  ref: HeaderOrganismProps['ref']
-) => {
+const HeaderOrganism = ({ className, ...props }: HeaderOrganismProps) => {
   return (
     <HeaderTheme>
       <header
         className={cn(
-          `absolute z-10 flex w-full max-w-bounds flex-wrap items-center justify-between px-[6%] py-lg sm:px-[4%] sm:py-xl`,
+          `max-w-bounds py-lg sm:py-xl absolute z-10 flex w-full flex-wrap items-center justify-between px-[6%] sm:px-[4%]`,
           className
         )}
-        ref={ref}
         {...props}
       >
         {/* Using like these so Header doesn't use async, because Slot doesn't work with async children */}
@@ -31,5 +27,5 @@ const HeaderOrganism = (
   );
 };
 
-export default forwardRef(HeaderOrganism);
+export default HeaderOrganism;
 export type { HeaderOrganismProps };

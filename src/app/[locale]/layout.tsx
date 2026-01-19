@@ -1,8 +1,9 @@
-import { ColorSchemeScript } from '@mantine/core';
+import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 import { PropsWithChildren } from 'react';
 
 import { Height, SmoothScroll } from '@/components/atoms';
@@ -13,25 +14,32 @@ import {
   Providers,
   Toaster
 } from '@/components/organisms';
-import { baseUrl, locales } from '@/constants';
+import { baseUrl } from '@/constants';
+import routing from '@/i18n/routing';
 import '@/styles/globals.css';
 import { defaultColorScheme } from '@/styles/theme';
-import { Locale } from '@/types';
+import { isLocale } from '@/utils';
 import { personalApi } from '@/utils/actions';
 
 type LayoutOwnProps = PropsWithChildren<{}>;
 
-type LayoutParams = { params: { locale: Locale['value'] } };
+// Has to be string to avoid next error with locale enums
+type LayoutParams = { params: Promise<{ locale: string }> };
 
 type LayoutProps = LayoutOwnProps & LayoutParams;
 
-const Layout = ({ params: { locale }, children }: LayoutProps) => {
-  unstable_setRequestLocale(locale);
+const Layout = async ({ params, children }: LayoutProps) => {
+  const { locale } = await params;
+
+  setRequestLocale(locale);
+
+  if (!isLocale(locale)) notFound();
 
   return (
     <html
       className={`overflow-x-clip has-[body[data-scroll-locked]]:overflow-y-hidden`}
       lang={locale}
+      {...mantineHtmlProps}
     >
       <head>
         <ColorSchemeScript defaultColorScheme={defaultColorScheme} />
@@ -48,7 +56,7 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
 
             <Height.Get name={['header', 'document']}>
               <main
-                className={`relative flex w-full max-w-bounds flex-col items-center max-2xl:grow 2xl:min-h-bounds`}
+                className={`max-w-bounds 2xl:min-h-bounds relative flex w-full flex-col items-center max-2xl:grow`}
               >
                 {children}
               </main>
@@ -72,8 +80,12 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
 };
 
 const generateMetadata = async ({
-  params: { locale }
+  params
 }: LayoutParams): Promise<Metadata> => {
+  const { locale } = await params;
+
+  if (!isLocale(locale)) return {};
+
   const res = await personalApi.get({ locale });
 
   if (!res.ok) return {};
@@ -100,7 +112,11 @@ const generateMetadata = async ({
   };
 };
 
-const generateStaticParams = () => locales.map((l) => ({ locale: l.value }));
+const generateStaticParams = () => {
+  const locales = routing.locales as string[]; // Has to be string to avoid next error with locale enums
+
+  return locales.map((locale) => ({ locale }));
+};
 
 export default Layout;
 export { generateMetadata, generateStaticParams };

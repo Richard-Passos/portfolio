@@ -1,21 +1,20 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type GameControllerIconAtomOwnProps = {};
 
 type GameControllerIconAtomProps = GameControllerIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof GameControllerIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof GameControllerIconAtomOwnProps>;
 
-const GameControllerIconAtom = (
-  { className, ...props }: GameControllerIconAtomProps,
-  ref: GameControllerIconAtomProps['ref']
-) => {
+const GameControllerIconAtom = ({
+  className,
+  ...props
+}: GameControllerIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Game controller'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +24,5 @@ const GameControllerIconAtom = (
   );
 };
 
-export default forwardRef(GameControllerIconAtom);
+export default GameControllerIconAtom;
 export type { GameControllerIconAtomProps };

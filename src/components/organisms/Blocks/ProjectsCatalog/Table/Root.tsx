@@ -1,7 +1,5 @@
 'use client';
 
-import { forwardRef } from 'react';
-
 import CatalogList, {
   CatalogListRootProps
 } from '@/components/molecules/Catalog/List';
@@ -15,14 +13,13 @@ type ProjectsCatalogTableBlockOrganismProps =
   ProjectsCatalogTableBlockOrganismOwnProps &
     Omit<CatalogListRootProps, keyof ProjectsCatalogTableBlockOrganismOwnProps>;
 
-const ProjectsCatalogTableBlockOrganism = (
-  { className, ...props }: ProjectsCatalogTableBlockOrganismProps,
-  ref: ProjectsCatalogTableBlockOrganismProps['ref']
-) => {
+const ProjectsCatalogTableBlockOrganism = ({
+  className,
+  ...props
+}: ProjectsCatalogTableBlockOrganismProps) => {
   return (
     <CatalogList.Root
       className={cn('group/list', className)}
-      ref={ref}
       {...props}
     >
       <CatalogList.Items<Project>>
@@ -42,5 +39,5 @@ const ProjectsCatalogTableBlockOrganism = (
   );
 };
 
-export default forwardRef(ProjectsCatalogTableBlockOrganism);
+export default ProjectsCatalogTableBlockOrganism;
 export type { ProjectsCatalogTableBlockOrganismProps };

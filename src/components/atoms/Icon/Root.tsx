@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import Icon, { Props } from 'react-inlinesvg';
 
 import { PolymorphicRef } from '@/types';
@@ -10,10 +9,7 @@ type IconAtomOwnProps = {
 
 type IconAtomProps = IconAtomOwnProps & Omit<Props, keyof IconAtomOwnProps>;
 
-const IconAtom = (
-  { className, ...props }: IconAtomProps,
-  ref: IconAtomProps['ref']
-) => {
+const IconAtom = ({ className, ref, ...props }: IconAtomProps) => {
   return (
     <Icon
       className={cn(`size-full *:fill-current`, className)}
@@ -23,5 +19,5 @@ const IconAtom = (
   );
 };
 
-export default forwardRef(IconAtom);
+export default IconAtom;
 export type { IconAtomProps };

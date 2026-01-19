@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type CoffeeIconAtomOwnProps = {};
 
 type CoffeeIconAtomProps = CoffeeIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof CoffeeIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof CoffeeIconAtomOwnProps>;
 
-const CoffeeIconAtom = (
-  { className, ...props }: CoffeeIconAtomProps,
-  ref: CoffeeIconAtomProps['ref']
-) => {
+const CoffeeIconAtom = ({ className, ...props }: CoffeeIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Coffee'
-      ref={ref}
       viewBox='0 0 1024 1024'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const CoffeeIconAtom = (
   );
 };
 
-export default forwardRef(CoffeeIconAtom);
+export default CoffeeIconAtom;
 export type { CoffeeIconAtomProps };

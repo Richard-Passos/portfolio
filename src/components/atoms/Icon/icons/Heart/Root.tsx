@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type HeartIconAtomOwnProps = {};
 
 type HeartIconAtomProps = HeartIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof HeartIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof HeartIconAtomOwnProps>;
 
-const HeartIconAtom = (
-  { className, ...props }: HeartIconAtomProps,
-  ref: HeartIconAtomProps['ref']
-) => {
+const HeartIconAtom = ({ className, ...props }: HeartIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Heart'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const HeartIconAtom = (
   );
 };
 
-export default forwardRef(HeartIconAtom);
+export default HeartIconAtom;
 export type { HeartIconAtomProps };

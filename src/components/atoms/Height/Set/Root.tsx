@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useEventListener } from '@/hooks';
@@ -16,10 +16,13 @@ type HeightSetAtomOwnProps = {
 type HeightSetAtomProps = HeightSetAtomOwnProps &
   Omit<SlotProps, keyof HeightSetAtomOwnProps>;
 
-const HeightSetAtom = (
-  { name, isDocument, children, ...props }: HeightSetAtomProps,
-  ref: HeightSetAtomProps['ref']
-) => {
+const HeightSetAtom = ({
+  name,
+  isDocument,
+  children,
+  ref,
+  ...props
+}: HeightSetAtomProps) => {
   const innerRef = useRef<HTMLElement>(null),
     { setHeight } = useHeightContext();
 
@@ -58,5 +61,5 @@ const HeightSetAtom = (
   );
 };
 
-export default forwardRef(HeightSetAtom);
+export default HeightSetAtom;
 export type { HeightSetAtomProps };

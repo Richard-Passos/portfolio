@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type RotateIconAtomOwnProps = {};
 
 type RotateIconAtomProps = RotateIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof RotateIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof RotateIconAtomOwnProps>;
 
-const RotateIconAtom = (
-  { className, ...props }: RotateIconAtomProps,
-  ref: RotateIconAtomProps['ref']
-) => {
+const RotateIconAtom = ({ className, ...props }: RotateIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Rotate'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const RotateIconAtom = (
   );
 };
 
-export default forwardRef(RotateIconAtom);
+export default RotateIconAtom;
 export type { RotateIconAtomProps };

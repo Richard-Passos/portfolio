@@ -1,28 +1,21 @@
 'use client';
 
 import { ReactLenis } from '@studio-freight/react-lenis';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 type SmoothScrollAtomOwnProps = {};
 
 type SmoothScrollAtomProps = SmoothScrollAtomOwnProps &
-  Omit<
-    ComponentPropsWithRef<typeof ReactLenis>,
-    keyof SmoothScrollAtomOwnProps
-  >;
+  Omit<ComponentProps<typeof ReactLenis>, keyof SmoothScrollAtomOwnProps>;
 
-const SmoothScrollAtom = (
-  props: SmoothScrollAtomProps,
-  ref: SmoothScrollAtomProps['ref']
-) => {
+const SmoothScrollAtom = (props: SmoothScrollAtomProps) => {
   return (
     <ReactLenis
-      ref={ref}
       root
       {...props}
     />
   );
 };
 
-export default forwardRef(SmoothScrollAtom);
+export default SmoothScrollAtom;
 export type { SmoothScrollAtomProps };

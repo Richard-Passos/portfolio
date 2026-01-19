@@ -4,14 +4,14 @@ import { useRef } from 'react';
 import Marquee, { MarqueeProps } from 'react-fast-marquee';
 
 import { useChildrenCount } from '@/hooks';
-import { times } from '@/utils';
+import { setRefs, times } from '@/utils';
 
 type MarqueeAtomOwnProps = {};
 
 type MarqueeAtomProps = MarqueeAtomOwnProps &
   Omit<MarqueeProps, keyof MarqueeAtomOwnProps>;
 
-const MarqueeAtom = ({ children, ...props }: MarqueeAtomProps) => {
+const MarqueeAtom = ({ children, ref, ...props }: MarqueeAtomProps) => {
   const parentRef = useRef<HTMLDivElement>(null),
     childrenRef = useRef<HTMLUListElement>(null);
 
@@ -20,7 +20,7 @@ const MarqueeAtom = ({ children, ...props }: MarqueeAtomProps) => {
   return (
     <Marquee
       direction='right'
-      ref={parentRef}
+      ref={setRefs(ref, parentRef)}
       {...props}
     >
       <ul

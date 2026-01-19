@@ -3,7 +3,6 @@ import {
   TextareaProps,
   createPolymorphicComponent
 } from '@mantine/core';
-import { forwardRef } from 'react';
 
 import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
@@ -34,17 +33,14 @@ type TextareaAtomOwnProps = {
 type TextareaAtomProps = TextareaAtomOwnProps &
   Omit<TextareaProps, keyof TextareaAtomOwnProps>;
 
-const TextareaAtom = (
-  {
-    className,
-    size = 'sm',
-    variant = 'default',
-    disabled,
-    labelProps,
-    ...props
-  }: TextareaAtomProps,
-  ref: TextareaAtomProps['ref']
-) => {
+const TextareaAtom = ({
+  className,
+  size = 'sm',
+  variant = 'default',
+  disabled,
+  labelProps,
+  ...props
+}: TextareaAtomProps) => {
   return (
     <Textarea
       aria-disabled={disabled}
@@ -59,7 +55,6 @@ const TextareaAtom = (
         ...labelProps,
         className: cn('text-sm', labelProps?.className)
       }}
-      ref={ref}
       size={size}
       variant={variant}
       {...props}
@@ -68,6 +63,6 @@ const TextareaAtom = (
 };
 
 export default createPolymorphicComponent<'textarea', TextareaAtomProps>(
-  forwardRef(TextareaAtom)
+  TextareaAtom
 );
 export type { TextareaAtomProps };

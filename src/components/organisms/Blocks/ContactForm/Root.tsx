@@ -1,7 +1,5 @@
 'use client';
 
-import { forwardRef } from 'react';
-
 import { yFullScrollAnim } from '@/animations/scroll';
 import { Lines, ScrollAnimate, Title } from '@/components/atoms';
 import ContactForm, {
@@ -24,32 +22,32 @@ type ContactFormBlockOrganismOwnProps = {
 type ContactFormBlockOrganismProps = ContactFormBlockOrganismOwnProps &
   Omit<CleanLayoutBlockProps, keyof ContactFormBlockOrganismOwnProps>;
 
-const ContactFormBlockOrganism = (
-  { data, className, ...props }: ContactFormBlockOrganismProps,
-  ref: ContactFormBlockOrganismProps['ref']
-) => {
+const ContactFormBlockOrganism = ({
+  data,
+  className,
+  ...props
+}: ContactFormBlockOrganismProps) => {
   return (
     <CleanLayoutBlock
       className={cn(
-        `w-9/10 max-w-screen-xl gap-md sm:flex-row sm:items-stretch md:gap-xl`,
+        `gap-md md:gap-xl w-9by10 max-w-screen-xl sm:flex-row sm:items-stretch`,
         className
       )}
-      ref={ref}
       {...props}
     >
       <div
-        className={`relative flex grow basis-48 items-center justify-center overflow-hidden bg-white dark:bg-dark-8 max-sm:hidden`}
+        className={`dark:bg-dark-8 relative flex grow basis-48 items-center justify-center overflow-hidden bg-white max-sm:hidden`}
       >
         <ScrollAnimate config={yFullScrollAnim}>
           <Lines
-            className={`top-auto h-screen !text-border opacity-60 translate-y-0 [background-size:83.333px_66.666px]`}
+            className={`!text-border top-auto h-screen translate-y-0 [background-size:83.333px_66.666px] opacity-60`}
           />
         </ScrollAnimate>
 
-        <span className='absolute inset-0 rounded-inherit border opacity-60' />
+        <span className='rounded-inherit absolute inset-0 border opacity-60' />
       </div>
 
-      <div className={`w-full max-w-screen-md grow sm:py-xl`}>
+      <div className={`sm:py-xl w-full max-w-screen-md grow`}>
         <Title
           className='max-w-md'
           order={3}
@@ -69,5 +67,5 @@ const ContactFormBlockOrganism = (
   );
 };
 
-export default forwardRef(ContactFormBlockOrganism);
+export default ContactFormBlockOrganism;
 export type { ContactFormBlockOrganismProps };

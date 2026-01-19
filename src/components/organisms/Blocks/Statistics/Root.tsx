@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { ScrollAnimate, Title } from '@/components/atoms';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
 import { StatisticCard } from '@/components/organisms/Cards';
@@ -37,24 +35,23 @@ type StatisticsBlockOrganismOwnProps = {
 type StatisticsBlockOrganismProps = StatisticsBlockOrganismOwnProps &
   Omit<PrimaryLayoutBlockProps, keyof StatisticsBlockOrganismOwnProps>;
 
-const StatisticsBlockOrganism = (
-  { data, ...props }: StatisticsBlockOrganismProps,
-  ref: StatisticsBlockOrganismProps['ref']
-) => {
+const StatisticsBlockOrganism = ({
+  data,
+  ...props
+}: StatisticsBlockOrganismProps) => {
   return (
     <PrimaryLayoutBlock
       data={{
         title: data.title,
         description: data.description
       }}
-      ref={ref}
       {...props}
     >
       <div className='flex w-full flex-col items-center overflow-x-clip'>
-        <section className='flex w-9/10 max-w-screen-lg flex-col items-center'>
+        <section className='w-9by10 flex max-w-screen-lg flex-col items-center'>
           {renderComp(
             <Title
-              className={`mb-md mr-auto uppercase text-dimmed *:text-text`}
+              className={`mb-md text-dimmed *:text-text mr-auto uppercase`}
               component='h3'
               order={6}
             >
@@ -63,7 +60,7 @@ const StatisticsBlockOrganism = (
             [data.subtitle]
           )}
 
-          <ul className={`m-0 grid w-full list-none gap-sm p-0 sm:grid-cols-2`}>
+          <ul className={`gap-sm m-0 grid w-full list-none p-0 sm:grid-cols-2`}>
             {data.items.map((data) => (
               <ScrollAnimate
                 config={ANIMATION_CONFIG.opacity}
@@ -71,7 +68,7 @@ const StatisticsBlockOrganism = (
               >
                 <ScrollAnimate config={ANIMATION_CONFIG.x}>
                   <li
-                    className={`h-fit translate-x-[--x] even:-translate-x-[--x] md:even:mt-2xl md:[&:not(:last-child)]:even:-mb-2xl`}
+                    className={`md:even:mt-2xl md:[&:not(:last-child)]:even:-mb-2xl h-fit translate-x-(--x) even:-translate-x-(--x)`}
                   >
                     <StatisticCard data={data} />
                   </li>
@@ -85,5 +82,5 @@ const StatisticsBlockOrganism = (
   );
 };
 
-export default forwardRef(StatisticsBlockOrganism);
+export default StatisticsBlockOrganism;
 export type { StatisticsBlockOrganismProps };

@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { lineLeftScrollAnim } from '@/animations/scroll';
 import { ScrollAnimate, Title } from '@/components/atoms';
@@ -13,27 +13,23 @@ type TextBlockOrganismOwnProps = {
     title: Node[];
     description: Node[];
   };
-  wrapperProps?: Partial<ComponentPropsWithRef<'div'>>;
+  wrapperProps?: Partial<ComponentProps<'div'>>;
   titleProps?: Partial<TitleProps>;
 };
 
 type TextBlockOrganismProps = TextBlockOrganismOwnProps &
   Omit<CleanLayoutBlockProps, keyof TextBlockOrganismOwnProps | 'data'>;
 
-const TextBlockOrganism = (
-  {
-    className,
-    data,
-    wrapperProps,
-    titleProps,
-    ...props
-  }: TextBlockOrganismProps,
-  ref: TextBlockOrganismProps['ref']
-) => {
+const TextBlockOrganism = ({
+  className,
+  data,
+  wrapperProps,
+  titleProps,
+  ...props
+}: TextBlockOrganismProps) => {
   return (
     <CleanLayoutBlock
-      className={cn('w-9/10 max-w-screen-lg pt-0', className)}
-      ref={ref}
+      className={cn('w-9by10 max-w-screen-lg pt-0', className)}
       {...props}
     >
       <Title
@@ -46,18 +42,18 @@ const TextBlockOrganism = (
 
       <div
         {...wrapperProps}
-        className={cn('mr-auto mt-lg flex gap-md', wrapperProps?.className)}
+        className={cn('mt-lg gap-md mr-auto flex', wrapperProps?.className)}
       >
         <span className='relative mt-2.5 h-2 w-12 shrink-0'>
           <ScrollAnimate
             config={lineLeftScrollAnim}
             layout
           >
-            <span className='absolute inset-0 border bg-body' />
+            <span className='bg-body absolute inset-0 border' />
           </ScrollAnimate>
         </span>
 
-        <section className='flex max-w-md flex-col gap-md'>
+        <section className='gap-md flex max-w-md flex-col'>
           {serialize(data.description, {
             paragraph: {
               className: 'leading-relaxed text-dimmed *:text-text'
@@ -69,5 +65,5 @@ const TextBlockOrganism = (
   );
 };
 
-export default forwardRef(TextBlockOrganism);
+export default TextBlockOrganism;
 export type { TextBlockOrganismProps };

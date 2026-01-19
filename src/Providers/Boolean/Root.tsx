@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentPropsWithoutRef, useMemo } from 'react';
+import { ComponentProps, useMemo } from 'react';
 
 import BooleanContext, { BooleanContextInitialState } from '@/contexts/Boolean';
 import { useBoolean, useId } from '@/hooks';
@@ -11,7 +11,7 @@ type BooleanProviderOwnProps = {
 
 type BooleanProviderProps = BooleanProviderOwnProps &
   Omit<
-    ComponentPropsWithoutRef<typeof BooleanContext.Provider>,
+    ComponentProps<typeof BooleanContext.Provider>,
     keyof BooleanProviderOwnProps | 'value'
   >;
 

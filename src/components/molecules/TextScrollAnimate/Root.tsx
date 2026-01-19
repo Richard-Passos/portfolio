@@ -1,7 +1,7 @@
 'use client';
 
-import { useScroll } from 'framer-motion';
-import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
+import { useScroll } from 'motion/react';
+import { ComponentProps, useRef } from 'react';
 
 import { cn, setRefs } from '@/utils';
 
@@ -12,12 +12,14 @@ type TextScrollAnimateMoleculeOwnProps = {
 };
 
 type TextScrollAnimateMoleculeProps = TextScrollAnimateMoleculeOwnProps &
-  Omit<ComponentPropsWithRef<'span'>, keyof TextScrollAnimateMoleculeOwnProps>;
+  Omit<ComponentProps<'span'>, keyof TextScrollAnimateMoleculeOwnProps>;
 
-const TextScrollAnimateMolecule = (
-  { text, className, ...props }: TextScrollAnimateMoleculeProps,
-  ref: TextScrollAnimateMoleculeProps['ref']
-) => {
+const TextScrollAnimateMolecule = ({
+  text,
+  className,
+  ref,
+  ...props
+}: TextScrollAnimateMoleculeProps) => {
   const innerRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -53,5 +55,5 @@ const TextScrollAnimateMolecule = (
   );
 };
 
-export default forwardRef(TextScrollAnimateMolecule);
+export default TextScrollAnimateMolecule;
 export type { TextScrollAnimateMoleculeProps };

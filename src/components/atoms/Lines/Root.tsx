@@ -1,8 +1,7 @@
 'use client';
 
 import {
-  ComponentPropsWithRef,
-  forwardRef,
+  ComponentProps,
   useCallback,
   useLayoutEffect,
   useRef,
@@ -17,12 +16,9 @@ type LinesAtomOwnProps = {
 };
 
 type LinesAtomProps = LinesAtomOwnProps &
-  Omit<ComponentPropsWithRef<'div'>, keyof LinesAtomOwnProps>;
+  Omit<ComponentProps<'div'>, keyof LinesAtomOwnProps>;
 
-const LinesAtom = (
-  { className, style, ...props }: LinesAtomProps,
-  ref: LinesAtomProps['ref']
-) => {
+const LinesAtom = ({ className, style, ref, ...props }: LinesAtomProps) => {
   const innerRef = useRef<HTMLDivElement>(null),
     [top, setTop] = useState(0);
 
@@ -50,7 +46,7 @@ const LinesAtom = (
   return (
     <div
       className={cn(
-        `pointer-events-none absolute inset-x-0 top-0 h-[--document-height] bg-[linear-gradient(currentColor_.8px,transparent_.8px),linear-gradient(to_right,currentColor_.8px,transparent_.8px)] bg-center text-gray-1 translate-y-[--document-top] [background-size:250px_200px] dark:text-dark-5`,
+        `text-gray-1 dark:text-dark-5 pointer-events-none absolute inset-x-0 top-0 h-(--document-height) translate-y-(--document-top) bg-[linear-gradient(currentColor_.8px,transparent_.8px),linear-gradient(to_right,currentColor_.8px,transparent_.8px)] bg-size-[250px_200px] bg-center`,
         className
       )}
       ref={setRefs(ref, innerRef)}
@@ -65,5 +61,5 @@ const LinesAtom = (
   );
 };
 
-export default forwardRef(LinesAtom);
+export default LinesAtom;
 export type { LinesAtomProps };

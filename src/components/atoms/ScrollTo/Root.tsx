@@ -1,7 +1,6 @@
 'use client';
 
 import { useLenis } from '@studio-freight/react-lenis';
-import { forwardRef } from 'react';
 
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 
@@ -12,15 +11,11 @@ type ScrollToAtomOwnProps = {
 type ScrollToAtomProps = ScrollToAtomOwnProps &
   Omit<SlotProps, keyof ScrollToAtomOwnProps>;
 
-const ScrollToAtom = (
-  { target, ...props }: ScrollToAtomProps,
-  ref: ScrollToAtomProps['ref']
-) => {
+const ScrollToAtom = ({ target, ...props }: ScrollToAtomProps) => {
   const lenis = useLenis();
 
   return (
     <Slot
-      ref={ref}
       {...props}
       onClick={(ev) => {
         lenis?.scrollTo(target, {
@@ -35,6 +30,6 @@ const ScrollToAtom = (
   );
 };
 
-export default forwardRef(ScrollToAtom);
+export default ScrollToAtom;
 
 export type { ScrollToAtomProps };

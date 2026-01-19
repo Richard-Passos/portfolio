@@ -1,7 +1,7 @@
 'use client';
 
 import { Slot } from '@radix-ui/react-slot';
-import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
+import { ComponentPropsWithRef, useRef } from 'react';
 
 import { MagneticProvider } from '@/Providers';
 import { setRefs } from '@/utils';
@@ -11,10 +11,10 @@ type MagneticContainerAtomOwnProps = {};
 type MagneticContainerAtomProps = MagneticContainerAtomOwnProps &
   Omit<ComponentPropsWithRef<typeof Slot>, keyof MagneticContainerAtomOwnProps>;
 
-const MagneticContainerAtom = (
-  props: MagneticContainerAtomProps,
-  ref: MagneticContainerAtomProps['ref']
-) => {
+const MagneticContainerAtom = ({
+  ref,
+  ...props
+}: MagneticContainerAtomProps) => {
   const innerRef = useRef<HTMLElement>(null);
 
   return (
@@ -27,5 +27,5 @@ const MagneticContainerAtom = (
   );
 };
 
-export default forwardRef(MagneticContainerAtom);
+export default MagneticContainerAtom;
 export type { MagneticContainerAtomProps };

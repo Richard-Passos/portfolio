@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
@@ -13,34 +13,30 @@ type PrimaryLayoutBlockHeaderOrganismOwnProps = {
 type PrimaryLayoutBlockHeaderOrganismProps =
   PrimaryLayoutBlockHeaderOrganismOwnProps &
     Omit<
-      ComponentPropsWithRef<'header'>,
+      ComponentProps<'header'>,
       keyof PrimaryLayoutBlockHeaderOrganismOwnProps
     >;
 
-const PrimaryLayoutBlockHeaderOrganism = (
-  {
-    className,
-    title,
-    description = [],
-    titleProps,
-    ...props
-  }: PrimaryLayoutBlockHeaderOrganismProps,
-  ref: PrimaryLayoutBlockHeaderOrganismProps['ref']
-) => {
+const PrimaryLayoutBlockHeaderOrganism = ({
+  className,
+  title,
+  description = [],
+  titleProps,
+  ...props
+}: PrimaryLayoutBlockHeaderOrganismProps) => {
   return (
     <header
       className={cn(
-        `flex w-9/10 gap-[--section-spacing-md] max-md:flex-col md:items-end`,
+        `w-9by10 flex gap-(--section-spacing-md) max-md:flex-col md:items-end`,
         className
       )}
-      ref={ref}
       {...props}
     >
       <Title
         order={2}
         {...titleProps}
         className={cn(
-          `shrink-0 break-words pl-[min(10vw,theme(spacing.20))] uppercase data-[align=left]:*:-ml-[min(10vw,theme(spacing.20))]`,
+          `shrink-0 pl-[min(10vw,--spacing(20))] wrap-break-word uppercase data-[align=left]:*:-ml-[min(10vw,--spacing(20))]`,
           titleProps?.className
         )}
       >
@@ -61,5 +57,5 @@ const PrimaryLayoutBlockHeaderOrganism = (
   );
 };
 
-export default forwardRef(PrimaryLayoutBlockHeaderOrganism);
+export default PrimaryLayoutBlockHeaderOrganism;
 export type { PrimaryLayoutBlockHeaderOrganismProps };

@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentPropsWithoutRef, useMemo } from 'react';
+import { ComponentProps, useMemo } from 'react';
 
 import MagneticContext, {
   MagneticContextInitialState
@@ -11,7 +11,7 @@ type MagneticProviderOwnProps = Pick<MagneticContextInitialState, 'container'>;
 
 type MagneticProviderProps = MagneticProviderOwnProps &
   Omit<
-    ComponentPropsWithoutRef<typeof MagneticContext.Provider>,
+    ComponentProps<typeof MagneticContext.Provider>,
     keyof MagneticProviderOwnProps | 'value'
   >;
 

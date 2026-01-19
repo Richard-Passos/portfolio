@@ -4,7 +4,7 @@ const cn = extendTailwindMerge({
   extend: {
     theme: {
       spacing: ['9/10', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'],
-      borderRadius: ['inherit']
+      radius: ['inherit']
     }
   }
 });

@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 import CookieConsent from 'react-cookie-consent';
 
 import { Button } from '@/components/atoms';
@@ -12,13 +12,12 @@ type CookiesConsentClientOrganismOwnProps = {
 
 type CookiesConsentClientOrganismProps = CookiesConsentClientOrganismOwnProps &
   Omit<
-    ComponentPropsWithRef<typeof CookieConsent>,
+    ComponentProps<typeof CookieConsent>,
     keyof CookiesConsentClientOrganismOwnProps
   >;
 
 const CookiesConsentClientOrganism = (
-  props: CookiesConsentClientOrganismProps,
-  ref: CookiesConsentClientOrganismProps['ref']
+  props: CookiesConsentClientOrganismProps
 ) => {
   return (
     <CookieConsent
@@ -29,11 +28,10 @@ const CookiesConsentClientOrganism = (
         />
       )}
       disableStyles
-      ref={ref}
       {...props}
     />
   );
 };
 
-export default forwardRef(CookiesConsentClientOrganism);
+export default CookiesConsentClientOrganism;
 export type { CookiesConsentClientOrganismProps };

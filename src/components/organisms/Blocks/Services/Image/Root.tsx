@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { Image, ScrollAnimate } from '@/components/atoms';
 import { ImageProps } from '@/components/atoms/Image';
@@ -8,36 +8,32 @@ type ServicesBlockImageOrganismOwnProps = {
   data: {
     image: Pick<ImageProps, 'src' | 'alt'>;
   };
-  wrapperProps?: Partial<ComponentPropsWithRef<'div'>>;
+  wrapperProps?: Partial<ComponentProps<'div'>>;
   imageProps?: Partial<ImageProps>;
 };
 
 type ServicesBlockImageOrganismProps = ServicesBlockImageOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'div'>, keyof ServicesBlockImageOrganismOwnProps>;
+  Omit<ComponentProps<'div'>, keyof ServicesBlockImageOrganismOwnProps>;
 
-const ServicesBlockImageOrganism = (
-  {
-    className,
-    data,
-    wrapperProps,
-    imageProps,
-    ...props
-  }: ServicesBlockImageOrganismProps,
-  ref: ServicesBlockImageOrganismProps['ref']
-) => {
+const ServicesBlockImageOrganism = ({
+  className,
+  data,
+  wrapperProps,
+  imageProps,
+  ...props
+}: ServicesBlockImageOrganismProps) => {
   return (
     <div
       className={cn(
-        `aspect-[1/1.15] rounded-[--radius] border p-[--p] [--p:theme(spacing.xs)] [--radius:theme(borderRadius.xl)]`,
+        `[--p:theme(spacing.xs)] aspect-[1/1.15] rounded-(--radius) border p-(--p) [--radius:theme(borderRadius.xl)]`,
         className
       )}
-      ref={ref}
       {...props}
     >
       <div
         {...wrapperProps}
         className={cn(
-          `relative size-full overflow-hidden rounded-[calc(var(--radius)-var(--p))] bg-gray-1 dark:bg-dark-6`,
+          `bg-gray-1 dark:bg-dark-6 relative size-full overflow-hidden rounded-[calc(var(--radius)-var(--p))]`,
           wrapperProps?.className
         )}
       >
@@ -59,5 +55,5 @@ const ServicesBlockImageOrganism = (
   );
 };
 
-export default forwardRef(ServicesBlockImageOrganism);
+export default ServicesBlockImageOrganism;
 export type { ServicesBlockImageOrganismProps };

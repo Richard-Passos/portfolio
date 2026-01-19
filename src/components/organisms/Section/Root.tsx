@@ -1,7 +1,7 @@
 'use client';
 
 import { createPolymorphicComponent } from '@mantine/core';
-import { forwardRef, useRef } from 'react';
+import { RefObject, useRef } from 'react';
 
 import { Bg, Box, Lines } from '@/components/atoms';
 import { BgProps } from '@/components/atoms/Bg';
@@ -22,28 +22,26 @@ type SectionOrganismOwnProps = {
 type SectionOrganismProps = SectionOrganismOwnProps &
   Omit<BoxProps, keyof SectionOrganismOwnProps>;
 
-const SectionOrganism = (
-  {
-    hasTransition = true,
-    className,
-    theme,
-    children,
-    forceTheme,
-    bgProps,
-    transitionProps,
-    ...props
-  }: SectionOrganismProps,
-  ref: SectionOrganismProps['ref']
-) => {
-  const innerRef = useRef<HTMLDivElement>(null);
+const SectionOrganism = ({
+  hasTransition = true,
+  className,
+  theme,
+  children,
+  forceTheme,
+  bgProps,
+  transitionProps,
+  ref,
+  ...props
+}: SectionOrganismProps) => {
+  const innerRef = useRef<HTMLDivElement>(null) as RefObject<HTMLDivElement>;
 
   useSetTheme(innerRef, theme, forceTheme);
 
   return (
     <Box
       className={cn(
-        `relative flex min-h-screen w-full flex-col items-center py-[--section-spacing-md] [--section-spacing-lg:calc(theme(spacing.2xl)*2)] [--section-spacing-md:calc(theme(spacing.xl)+theme(spacing.sm))] [--section-spacing-sm:calc(theme(spacing.lg)+theme(spacing.sm))] 2xl:min-h-bounds`,
-        hasTransition && 'pt-[--section-spacing-lg]',
+        `2xl:min-h-bounds relative flex min-h-screen w-full flex-col items-center py-(--section-spacing-md) [--section-spacing-lg:calc(var(--spacing-2xl)*2)] [--section-spacing-md:calc(var(--spacing-xl)+(var(--spacing-sm)))] [--section-spacing-sm:calc(var(--spacing-lg)+(var(--spacing-sm)))]`,
+        hasTransition && 'pt-(--section-spacing-lg)',
         className
       )}
       component='section'
@@ -64,6 +62,6 @@ const SectionOrganism = (
 };
 
 export default createPolymorphicComponent<'section', SectionOrganismProps>(
-  forwardRef(SectionOrganism)
+  SectionOrganism
 );
 export type { SectionOrganismProps };

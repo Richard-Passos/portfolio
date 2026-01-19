@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
+import { ComponentProps, useRef } from 'react';
 
 import { ScrollAnimate } from '@/components/atoms';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
@@ -14,12 +14,16 @@ type ScrollTextMoleculeOwnProps = {
 };
 
 type ScrollTextMoleculeProps = ScrollTextMoleculeOwnProps &
-  Omit<ComponentPropsWithRef<'span'>, keyof ScrollTextMoleculeOwnProps>;
+  Omit<ComponentProps<'span'>, keyof ScrollTextMoleculeOwnProps>;
 
-const ScrollTextMolecule = (
-  { dir = 'rtl', config, className, text, ...props }: ScrollTextMoleculeProps,
-  ref: ScrollTextMoleculeProps['ref']
-) => {
+const ScrollTextMolecule = ({
+  dir = 'rtl',
+  config,
+  className,
+  text,
+  ref,
+  ...props
+}: ScrollTextMoleculeProps) => {
   const parentRef = useRef(null),
     childrenRef = useRef(null);
 
@@ -74,5 +78,5 @@ const ScrollTextMolecule = (
   );
 };
 
-export default forwardRef(ScrollTextMolecule);
+export default ScrollTextMolecule;
 export type { ScrollTextMoleculeProps };

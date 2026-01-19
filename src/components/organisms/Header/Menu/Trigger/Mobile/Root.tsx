@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Button } from '@/components/atoms';
 import { ButtonProps } from '@/components/atoms/Button';
 import { DrawerTrigger } from '@/components/molecules/Drawer';
@@ -11,13 +9,11 @@ type HeaderMenuTriggerMobileOrganismProps =
     Omit<ButtonProps, keyof HeaderMenuTriggerMobileOrganismOwnProps>;
 
 const HeaderMenuTriggerMobileOrganism = (
-  props: HeaderMenuTriggerMobileOrganismProps,
-  ref: HeaderMenuTriggerMobileOrganismProps['ref']
+  props: HeaderMenuTriggerMobileOrganismProps
 ) => {
   return (
     <DrawerTrigger>
       <Button
-        ref={ref}
         variant='default'
         {...props}
       />
@@ -25,5 +21,5 @@ const HeaderMenuTriggerMobileOrganism = (
   );
 };
 
-export default forwardRef(HeaderMenuTriggerMobileOrganism);
+export default HeaderMenuTriggerMobileOrganism;
 export type { HeaderMenuTriggerMobileOrganismProps };

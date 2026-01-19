@@ -1,23 +1,23 @@
 'use client';
 
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import Slot, { AsChildProps } from '@/components/atoms/Slot';
 import { useCatalogContext } from '@/hooks/contexts';
-import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
 type CatalogListMoleculeOwnProps = {};
 
 type CatalogListMoleculeProps = AsChildProps<
   CatalogListMoleculeOwnProps &
-    Omit<ComponentPropsWithRef<'ul'>, keyof CatalogListMoleculeOwnProps>
+    Omit<ComponentProps<'ul'>, keyof CatalogListMoleculeOwnProps>
 >;
 
-const CatalogListMolecule = (
-  { asChild, className, ...props }: CatalogListMoleculeProps,
-  ref: CatalogListMoleculeProps['ref']
-) => {
+const CatalogListMolecule = ({
+  asChild,
+  className,
+  ...props
+}: CatalogListMoleculeProps) => {
   const { items } = useCatalogContext();
 
   if (!items.length) return null;
@@ -26,7 +26,6 @@ const CatalogListMolecule = (
     return (
       <Slot
         className={className}
-        ref={ref}
         {...props}
       />
     );
@@ -34,11 +33,10 @@ const CatalogListMolecule = (
   return (
     <ul
       className={cn('m-0 list-none p-0', className)}
-      ref={ref as PolymorphicRef<'ul'>}
-      {...(props as ComponentPropsWithRef<'ul'>)}
+      {...(props as ComponentProps<'ul'>)}
     />
   );
 };
 
-export default forwardRef(CatalogListMolecule);
+export default CatalogListMolecule;
 export type { CatalogListMoleculeProps };

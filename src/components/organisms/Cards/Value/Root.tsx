@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Icon, Text, Title } from '@/components/atoms';
 import { IconProps } from '@/components/atoms/Icon';
 import { TextProps } from '@/components/atoms/Text';
@@ -18,25 +16,21 @@ type ValueCardOrganismOwnProps = {
 type ValueCardOrganismProps = ValueCardOrganismOwnProps &
   Omit<CardRootProps, keyof ValueCardOrganismOwnProps>;
 
-const ValueCardOrganism = (
-  {
-    className,
-    data,
-    iconProps,
-    titleProps,
-    descriptionProps,
-    ...props
-  }: ValueCardOrganismProps,
-  ref: ValueCardOrganismProps['ref']
-) => {
+const ValueCardOrganism = ({
+  className,
+  data,
+  iconProps,
+  titleProps,
+  descriptionProps,
+  ...props
+}: ValueCardOrganismProps) => {
   return (
     <Card.Root
       className={cn('min-h-52', className)}
-      ref={ref}
       {...props}
     >
       <div
-        className={`flex size-12 items-center justify-center rounded-sm bg-gray-0 dark:bg-dark-6`}
+        className={`bg-gray-0 dark:bg-dark-6 flex size-12 items-center justify-center rounded-sm`}
       >
         <Icon
           src={data.icon}
@@ -57,7 +51,7 @@ const ValueCardOrganism = (
       <Text
         {...descriptionProps}
         className={cn(
-          'mt-[calc(theme(spacing.xs)/2)] leading-relaxed text-dimmed',
+          'mt-[calc(theme(spacing.xs)/2)] text-dimmed leading-relaxed',
           descriptionProps?.className
         )}
       >
@@ -67,5 +61,5 @@ const ValueCardOrganism = (
   );
 };
 
-export default forwardRef(ValueCardOrganism);
+export default ValueCardOrganism;
 export type { ValueCardOrganismProps };

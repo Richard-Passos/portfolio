@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { ScrollAnimate } from '@/components/atoms';
 import {
   ScrollAnimateConfigOptions,
@@ -43,15 +41,15 @@ type PrimaryHeroScrollAnimateOrganismProps =
   PrimaryHeroScrollAnimateOrganismOwnProps &
     Omit<ScrollAnimateProps, keyof PrimaryHeroScrollAnimateOrganismOwnProps>;
 
-const PrimaryHeroScrollAnimateOrganism = (
-  { className, children, ...props }: PrimaryHeroScrollAnimateOrganismProps,
-  ref: PrimaryHeroScrollAnimateOrganismProps['ref']
-) => {
+const PrimaryHeroScrollAnimateOrganism = ({
+  className,
+  children,
+  ...props
+}: PrimaryHeroScrollAnimateOrganismProps) => {
   return (
     <ScrollAnimate
-      className={cn('sm:translate-y-[--y]', className)}
+      className={cn('sm:translate-y-(--y)', className)}
       config={ANIMATION_CONFIG.y}
-      ref={ref}
       {...props}
     >
       <ScrollAnimate config={ANIMATION_CONFIG.scale}>
@@ -63,5 +61,5 @@ const PrimaryHeroScrollAnimateOrganism = (
   );
 };
 
-export default forwardRef(PrimaryHeroScrollAnimateOrganism);
+export default PrimaryHeroScrollAnimateOrganism;
 export type { PrimaryHeroScrollAnimateOrganismProps };

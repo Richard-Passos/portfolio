@@ -1,5 +1,4 @@
 import { createPolymorphicComponent } from '@mantine/core';
-import { forwardRef } from 'react';
 
 import { Box } from '@/components/atoms';
 import { BoxProps } from '@/components/atoms/Box';
@@ -13,14 +12,14 @@ type BentoGridItemMoleculeOwnProps = {
 type BentoGridItemMoleculeProps = BentoGridItemMoleculeOwnProps &
   Omit<BoxProps, keyof BentoGridItemMoleculeOwnProps>;
 
-const BentoGridItemMolecule = (
-  { index, style, ...props }: BentoGridItemMoleculeProps,
-  ref: BentoGridItemMoleculeProps['ref']
-) => {
+const BentoGridItemMolecule = ({
+  index,
+  style,
+  ...props
+}: BentoGridItemMoleculeProps) => {
   return (
     <Box
       component='li'
-      ref={ref}
       style={{
         gridArea: `item-${index}`,
         ...style
@@ -31,6 +30,6 @@ const BentoGridItemMolecule = (
 };
 
 export default createPolymorphicComponent<'li', BentoGridItemMoleculeProps>(
-  forwardRef(BentoGridItemMolecule)
+  BentoGridItemMolecule
 );
 export type { BentoGridItemMoleculeProps };

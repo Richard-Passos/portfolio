@@ -1,6 +1,6 @@
 'use client';
 
-import { useSpring } from 'framer-motion';
+import { useSpring } from 'motion/react';
 
 type UseSmoothParams = Parameters<typeof useSpring>;
 

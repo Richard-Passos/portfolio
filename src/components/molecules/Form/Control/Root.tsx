@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, forwardRef } from 'react';
+import { FormEvent } from 'react';
 
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useFormContext } from '@/hooks/contexts';
@@ -15,10 +15,11 @@ type FormControlMoleculeOwnProps = {
 type FormControlMoleculeProps = FormControlMoleculeOwnProps &
   Omit<SlotProps, keyof FormControlMoleculeOwnProps>;
 
-const FormControlMolecule = (
-  { name, ...props }: FormControlMoleculeProps,
-  ref: FormControlMoleculeProps['ref']
-) => {
+const FormControlMolecule = ({
+  name,
+  ref,
+  ...props
+}: FormControlMoleculeProps) => {
   const { register, getFieldState, formState } = useFormContext();
 
   const { error } = getFieldState(name, formState);
@@ -54,5 +55,5 @@ const FormControlMolecule = (
   );
 };
 
-export default forwardRef(FormControlMolecule);
+export default FormControlMolecule;
 export type { FormControlMoleculeProps };

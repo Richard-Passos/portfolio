@@ -1,4 +1,4 @@
-import { ReactNode, forwardRef } from 'react';
+import { ReactNode } from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '@/components/atoms/Icon/icons';
 import { Action } from '@/components/molecules';
@@ -25,18 +25,18 @@ type SingleProjectAdjacentsTemplateProps =
   SingleProjectAdjacentsTemplateOwnProps &
     Omit<SectionProps, keyof SingleProjectAdjacentsTemplateOwnProps>;
 
-const SingleProjectAdjacentsTemplate = (
-  { data, className, ...props }: SingleProjectAdjacentsTemplateProps,
-  ref: SingleProjectAdjacentsTemplateProps['ref']
-) => {
+const SingleProjectAdjacentsTemplate = ({
+  data,
+  className,
+  ...props
+}: SingleProjectAdjacentsTemplateProps) => {
   return (
     <Section
       className={cn(`min-h-fit 2xl:min-h-fit`, className)}
-      ref={ref}
       {...props}
     >
       <div
-        className={`flex w-9/10 max-w-screen-xl flex-wrap justify-between gap-xs border border-x-0 border-b-0 p-md`}
+        className={`gap-xs p-md w-9by10 flex max-w-screen-xl flex-wrap justify-between border border-x-0 border-b-0`}
       >
         <Action
           as='link'
@@ -51,12 +51,12 @@ const SingleProjectAdjacentsTemplate = (
           }}
           variant='default'
         >
-          <div className='flex justify-start gap-2 py-sm'>
+          <div className='py-sm flex justify-start gap-2'>
             <ArrowLeftIcon className='mb-auto size-[1.25em]' />
 
             <div className='flex flex-col items-start gap-0.5'>
               <span
-                className={`max-w-24 overflow-hidden text-ellipsis text-xs font-normal tracking-wide opacity-50`}
+                className={`max-w-24 overflow-hidden text-xs font-normal tracking-wide text-ellipsis opacity-50`}
               >
                 {data.prev.name}
               </span>
@@ -79,10 +79,10 @@ const SingleProjectAdjacentsTemplate = (
           }}
           variant='default'
         >
-          <div className='flex justify-end gap-2 py-sm'>
+          <div className='py-sm flex justify-end gap-2'>
             <div className='flex flex-col items-end gap-0.5'>
               <span
-                className={`max-w-24 overflow-hidden text-ellipsis text-xs font-normal tracking-wide opacity-50`}
+                className={`max-w-24 overflow-hidden text-xs font-normal tracking-wide text-ellipsis opacity-50`}
               >
                 {data.next.name}
               </span>
@@ -98,5 +98,5 @@ const SingleProjectAdjacentsTemplate = (
   );
 };
 
-export default forwardRef(SingleProjectAdjacentsTemplate);
+export default SingleProjectAdjacentsTemplate;
 export type { SingleProjectAdjacentsTemplateProps };

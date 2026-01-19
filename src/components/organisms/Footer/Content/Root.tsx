@@ -1,3 +1,5 @@
+import { Fragment } from 'react/jsx-runtime';
+
 import { yFullScrollAnim } from '@/animations/scroll';
 import {
   Icon,
@@ -33,8 +35,8 @@ const FooterContentOrganism = async () => {
 
   return (
     <>
-      <div className='relative z-10 flex w-9/10 grow flex-col'>
-        <section className='mb-xl pt-[--section-spacing-md]'>
+      <div className='w-9by10 relative z-10 flex grow flex-col'>
+        <section className='mb-xl pt-(--section-spacing-md)'>
           <Title
             className='max-w-xs font-semibold'
             component='h3'
@@ -44,14 +46,14 @@ const FooterContentOrganism = async () => {
           </Title>
 
           <Title
-            className={`max-w-xs break-words uppercase leading-none sm:max-w-sm`}
+            className={`max-w-xs leading-none wrap-break-word uppercase sm:max-w-sm`}
             component='h2'
             order={3}
           >
             {serialize(footer.cta.title)}
           </Title>
 
-          <div className='mt-md flex flex-wrap items-center gap-xs'>
+          <div className='mt-md gap-xs flex flex-wrap items-center'>
             <Action>{footer.cta.action.label}</Action>
 
             {socials?.map((data) => (
@@ -73,7 +75,7 @@ const FooterContentOrganism = async () => {
         </section>
 
         <div
-          className={`mt-auto flex gap-lg max-lg:gap-x-sm max-md:flex-col-reverse`}
+          className={`gap-lg max-lg:gap-x-sm mt-auto flex max-md:flex-col-reverse`}
         >
           <Logo
             className={`mt-auto h-auto w-full [&_svg]:size-full`}
@@ -100,32 +102,31 @@ const FooterContentOrganism = async () => {
               <LocalTime />
             </Title>
 
-            <section className='mt-sm flex max-w-sm flex-col gap-xs'>
+            <section className='mt-sm gap-xs flex max-w-sm flex-col'>
               {serialize(footer.description)}
             </section>
 
             <Text
-              className='mt-md block max-w-sm text-xs text-dimmed'
+              className='mt-md text-dimmed block max-w-sm text-xs'
               component='small'
             >
               {legalPages.map((d) => (
-                <>
+                <Fragment key={d.slug}>
                   <Link
                     className='text-[1em] text-inherit'
                     href={`/${d.slug}`}
-                    key={d.slug}
                   >
                     {d.label}
                   </Link>
                   .{' '}
-                </>
+                </Fragment>
               ))}
             </Text>
           </section>
         </div>
 
         <section
-          className={`flex justify-center py-sm max-sm:flex-col sm:justify-between`}
+          className={`py-sm flex justify-center max-sm:flex-col sm:justify-between`}
         >
           <Text
             className={`max-w-xs text-xs max-sm:text-center`}
@@ -148,11 +149,11 @@ const FooterContentOrganism = async () => {
       >
         <ScrollAnimate config={yFullScrollAnim}>
           <Lines
-            className={`top-auto h-screen !text-border opacity-60 translate-y-0 [background-size:83.333px_66.666px]`}
+            className={`!text-border top-auto h-screen translate-y-0 [background-size:83.333px_66.666px] opacity-60`}
           />
         </ScrollAnimate>
 
-        <span className='absolute inset-0 rounded-inherit border opacity-60' />
+        <span className='rounded-inherit absolute inset-0 border opacity-60' />
       </div>
     </>
   );

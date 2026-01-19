@@ -1,13 +1,12 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { forwardRef } from 'react';
 
 import { Select } from '@/components/atoms';
 import { GlobeIcon } from '@/components/atoms/Icon/icons';
 import { GlobeIconProps } from '@/components/atoms/Icon/icons/Globe';
 import { SelectProps } from '@/components/atoms/Select';
-import { usePathname, useRouter } from '@/i18n/routing';
+import { usePathname, useRouter } from '@/i18n/navigation';
 import { cn, isLocale } from '@/utils';
 
 type LocaleSelectMoleculeOwnProps = {
@@ -17,10 +16,11 @@ type LocaleSelectMoleculeOwnProps = {
 type LocaleSelectMoleculeProps = LocaleSelectMoleculeOwnProps &
   Omit<SelectProps, keyof LocaleSelectMoleculeOwnProps>;
 
-const LocaleSelectMolecule = (
-  { className, leftSectionProps, ...props }: LocaleSelectMoleculeProps,
-  ref: LocaleSelectMoleculeProps['ref']
-) => {
+const LocaleSelectMolecule = ({
+  className,
+  leftSectionProps,
+  ...props
+}: LocaleSelectMoleculeProps) => {
   const locale = useLocale(),
     router = useRouter(),
     pathname = usePathname();
@@ -37,7 +37,6 @@ const LocaleSelectMolecule = (
         />
       }
       leftSectionPointerEvents='none'
-      ref={ref}
       {...props}
       onChange={(locale, options) => {
         if (!isLocale(locale)) return;
@@ -50,5 +49,5 @@ const LocaleSelectMolecule = (
   );
 };
 
-export default forwardRef(LocaleSelectMolecule);
+export default LocaleSelectMolecule;
 export type { LocaleSelectMoleculeProps };

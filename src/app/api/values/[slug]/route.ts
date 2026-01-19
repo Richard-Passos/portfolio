@@ -4,9 +4,9 @@ import { defaultLocale } from '@/constants/locales';
 import { Locale, Value } from '@/types';
 import { getTranslations, isType, normId } from '@/utils';
 
-type Params = {
+type Params = Promise<{
   slug: string;
-};
+}>;
 
 type SearchParams = {
   locale: Locale['value'];
@@ -30,16 +30,17 @@ type ValuesResponse =
 
 const GET = async (
   request: NextRequest,
-  { params: { slug } }: { params: Params }
+  { params: p }: { params: Params }
 ): Promise<ReturnType<typeof NextResponse.json<ValuesResponse>>> => {
   try {
     const { searchParams } = request.nextUrl;
 
+    let { slug } = await p;
+    slug = normId(slug);
+
     const params: Record<keyof SearchParams, string | null> = {
       locale: searchParams.get('locale')
     };
-
-    slug = normId(slug);
 
     const locale = isType<SearchParams['locale']>(
       !!params.locale,

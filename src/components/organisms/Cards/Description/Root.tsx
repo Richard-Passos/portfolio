@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Badge } from '@/components/atoms';
 import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
@@ -15,14 +13,14 @@ type DescriptionCardOrganismOwnProps = {
 type DescriptionCardOrganismProps = DescriptionCardOrganismOwnProps &
   Omit<CardRootProps, keyof DescriptionCardOrganismOwnProps>;
 
-const DescriptionCardOrganism = (
-  { className, data, ...props }: DescriptionCardOrganismProps,
-  ref: DescriptionCardOrganismProps['ref']
-) => {
+const DescriptionCardOrganism = ({
+  className,
+  data,
+  ...props
+}: DescriptionCardOrganismProps) => {
   return (
     <Card.Root
       className={cn('min-h-52 justify-between', className)}
-      ref={ref}
       {...props}
     >
       <Badge
@@ -34,7 +32,7 @@ const DescriptionCardOrganism = (
         {data.title}
       </Badge>
 
-      <section className='mt-lg flex flex-col gap-sm'>
+      <section className='mt-lg gap-sm flex flex-col'>
         {serialize(data.description, {
           paragraph: {
             className: 'text-dimmed *:text-text'
@@ -45,5 +43,5 @@ const DescriptionCardOrganism = (
   );
 };
 
-export default forwardRef(DescriptionCardOrganism);
+export default DescriptionCardOrganism;
 export type { DescriptionCardOrganismProps };

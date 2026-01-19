@@ -1,5 +1,5 @@
 import { Slot } from '@radix-ui/react-slot';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import CatalogProvider, { CatalogProviderProps } from '@/Providers/Catalog';
 import { AsChildProps } from '@/components/atoms/Slot';
@@ -8,51 +8,32 @@ type CatalogMoleculeOwnProps = {};
 
 type CatalogMoleculeProps = AsChildProps<
   CatalogMoleculeOwnProps &
-    Omit<ComponentPropsWithRef<'section'>, keyof CatalogMoleculeOwnProps>
+    Omit<ComponentProps<'section'>, keyof CatalogMoleculeOwnProps>
 >;
 
-const CatalogMolecule = forwardRef(
-  (
-    { asChild, ...props }: CatalogMoleculeProps,
-    ref: CatalogMoleculeProps['ref']
-  ) => {
-    if (asChild)
-      return (
-        <Slot
-          ref={ref}
-          {...props}
-        />
-      );
+const CatalogMolecule = ({ asChild, ...props }: CatalogMoleculeProps) => {
+  if (asChild) return <Slot {...props} />;
 
-    return (
-      <section
-        ref={ref}
-        {...(props as ComponentPropsWithRef<'section'>)}
-      />
-    );
-  }
-);
-CatalogMolecule.displayName = 'CatalogMolecule';
+  return <section {...(props as ComponentProps<'section'>)} />;
+};
 
 type CatalogMoleculeWithProviderProps<T> = CatalogProviderProps<T> &
   CatalogMoleculeProps;
 
-const CatalogMoleculeWithProvider = <T,>(
-  { items, url, ...props }: CatalogMoleculeWithProviderProps<T>,
-  ref: CatalogMoleculeWithProviderProps<T>['ref']
-) => {
+const CatalogMoleculeWithProvider = <T,>({
+  items,
+  url,
+  ...props
+}: CatalogMoleculeWithProviderProps<T>) => {
   return (
     <CatalogProvider
       items={items}
       url={url}
     >
-      <CatalogMolecule
-        ref={ref}
-        {...props}
-      />
+      <CatalogMolecule {...props} />
     </CatalogProvider>
   );
 };
 
-export default forwardRef(CatalogMoleculeWithProvider);
+export default CatalogMoleculeWithProvider;
 export type { CatalogMoleculeProps, CatalogMoleculeWithProvider };

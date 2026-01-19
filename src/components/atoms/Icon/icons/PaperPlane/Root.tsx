@@ -1,21 +1,20 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type PaperPlaneIconAtomOwnProps = {};
 
 type PaperPlaneIconAtomProps = PaperPlaneIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof PaperPlaneIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof PaperPlaneIconAtomOwnProps>;
 
-const PaperPlaneIconAtom = (
-  { className, ...props }: PaperPlaneIconAtomProps,
-  ref: PaperPlaneIconAtomProps['ref']
-) => {
+const PaperPlaneIconAtom = ({
+  className,
+  ...props
+}: PaperPlaneIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Paper plane'
-      ref={ref}
       viewBox='0 0 256 256'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +24,5 @@ const PaperPlaneIconAtom = (
   );
 };
 
-export default forwardRef(PaperPlaneIconAtom);
+export default PaperPlaneIconAtom;
 export type { PaperPlaneIconAtomProps };

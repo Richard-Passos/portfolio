@@ -1,5 +1,5 @@
 import { Box, BoxProps, DefaultMantineColor, StyleProp } from '@mantine/core';
-import { PropsWithChildren, forwardRef } from 'react';
+import { PropsWithChildren } from 'react';
 
 import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
@@ -11,23 +11,19 @@ type BgAtomOwnProps = PropsWithChildren<{
 
 type BgAtomProps = BgAtomOwnProps & Omit<BoxProps, keyof BgAtomOwnProps>;
 
-const BgAtom = (
-  { className, color, ...props }: BgAtomProps,
-  ref: BgAtomProps['ref']
-) => {
+const BgAtom = ({ className, color, ...props }: BgAtomProps) => {
   return (
     <Box
       bg={color}
       className={cn(
-        `pointer-events-none absolute inset-y-0 -z-50 w-screen overflow-hidden bg-white dark:bg-dark-8`,
+        `dark:bg-dark-8 pointer-events-none absolute inset-y-0 -z-50 w-screen overflow-hidden bg-white`,
         className
       )}
-      ref={ref}
       {...props}
     />
   );
 };
 
-export default forwardRef(BgAtom);
+export default BgAtom;
 
 export type { BgAtomProps };

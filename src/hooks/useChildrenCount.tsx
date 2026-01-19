@@ -5,10 +5,12 @@ import { RefObject, useCallback, useLayoutEffect, useState } from 'react';
 import useEventListener from './useEventListener';
 
 const useChildrenCount = (
-  parentRef: RefObject<HTMLElement>,
-  childrenRef: RefObject<HTMLElement>,
+  parentRef: RefObject<HTMLElement | null>,
+  childrenRef: RefObject<HTMLElement | null>,
   times = 2
 ) => {
+  if (!parentRef || !childrenRef) return 0;
+
   const [count, setCount] = useState(1);
 
   const handleSetCount = useCallback(() => {

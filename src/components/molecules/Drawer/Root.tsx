@@ -1,14 +1,14 @@
 'use client';
 
 import { DrawerRoot, DrawerRootProps } from '@mantine/core';
-import { ReactNode, forwardRef } from 'react';
+import { ReactNode } from 'react';
 
 import BooleanProvider, { BooleanProviderProps } from '@/Providers/Boolean';
 import { Portal } from '@/components/atoms';
 import { PortalProps } from '@/components/atoms/Portal';
 import { useUpdateEffect } from '@/hooks';
 import { useBooleanContext } from '@/hooks/contexts';
-import { usePathname } from '@/i18n/routing';
+import { usePathname } from '@/i18n/navigation';
 import { PolymorphicRef } from '@/types';
 
 type DrawerMoleculeOwnProps = Partial<
@@ -21,40 +21,36 @@ type DrawerMoleculeOwnProps = Partial<
 type DrawerMoleculeProps = DrawerMoleculeOwnProps &
   Omit<DrawerRootProps, keyof DrawerMoleculeOwnProps>;
 
-const DrawerMolecule = forwardRef(
-  (
-    { portalProps, withinPortal = true, ...props }: DrawerMoleculeProps,
-    ref: DrawerMoleculeProps['ref']
-  ) => {
-    const { value, setFalse } = useBooleanContext(),
-      pathname = usePathname();
+const DrawerMolecule = ({
+  portalProps,
+  withinPortal = true,
+  ...props
+}: DrawerMoleculeProps) => {
+  const { value, setFalse } = useBooleanContext(),
+    pathname = usePathname();
 
-    const dataState = value ? 'open' : 'closed';
+  const dataState = value ? 'open' : 'closed';
 
-    useUpdateEffect(setFalse, [setFalse, pathname]);
+  useUpdateEffect(setFalse, [setFalse, pathname]);
 
-    return (
-      <Portal
-        withinPortal={withinPortal}
-        {...portalProps}
-      >
-        <DrawerRoot
-          data-state={dataState}
-          onClose={setFalse}
-          opened={value}
-          ref={ref}
-          withinPortal={false}
-          {...props}
-        />
-      </Portal>
-    );
-  }
-);
-DrawerMolecule.displayName = 'DrawerMolecule';
+  return (
+    <Portal
+      withinPortal={withinPortal}
+      {...portalProps}
+    >
+      <DrawerRoot
+        data-state={dataState}
+        onClose={setFalse}
+        opened={value}
+        withinPortal={false}
+        {...props}
+      />
+    </Portal>
+  );
+};
 
 type DrawerWithProviderMoleculeOwnProps = {
   trigger: ReactNode;
-  ref?: DrawerMoleculeProps['ref'];
 };
 
 type DrawerWithProviderMoleculeProps = DrawerWithProviderMoleculeOwnProps &
@@ -63,21 +59,19 @@ type DrawerWithProviderMoleculeProps = DrawerWithProviderMoleculeOwnProps &
     keyof DrawerMoleculeOwnProps
   >;
 
-const DrawerWithProviderMolecule = (
-  { defaultValue, trigger, ...props }: DrawerWithProviderMoleculeProps,
-  ref: DrawerWithProviderMoleculeProps['ref']
-) => {
+const DrawerWithProviderMolecule = ({
+  defaultValue,
+  trigger,
+  ...props
+}: DrawerWithProviderMoleculeProps) => {
   return (
     <BooleanProvider defaultValue={defaultValue}>
       {trigger}
 
-      <DrawerMolecule
-        ref={ref}
-        {...props}
-      />
+      <DrawerMolecule {...props} />
     </BooleanProvider>
   );
 };
 
-export default forwardRef(DrawerWithProviderMolecule);
+export default DrawerWithProviderMolecule;
 export type { DrawerMoleculeProps, DrawerWithProviderMoleculeProps };

@@ -4,12 +4,11 @@ import { RefObject, createContext } from 'react';
 
 type MagneticContextInitialState = {
   id: string;
-  container: RefObject<HTMLElement>;
+  container?: RefObject<HTMLElement | null>;
 };
 
 const magneticContextDefaultValue: MagneticContextInitialState = {
-  id: '',
-  container: { current: null }
+  id: ''
 };
 
 const MagneticContext = createContext(magneticContextDefaultValue);

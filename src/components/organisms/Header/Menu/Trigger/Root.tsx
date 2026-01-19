@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Portal, ScrollAnimate } from '@/components/atoms';
 import { MenuIcon, TimesIcon } from '@/components/atoms/Icon/icons';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
@@ -25,10 +23,12 @@ type HeaderMenuTriggerOrganismOwnProps = {
 type HeaderMenuTriggerOrganismProps = HeaderMenuTriggerOrganismOwnProps &
   ActionProps;
 
-const HeaderMenuTriggerOrganism = (
-  { label, className, magneticProps, ...props }: HeaderMenuTriggerOrganismProps,
-  ref: HeaderMenuTriggerOrganismProps['ref']
-) => {
+const HeaderMenuTriggerOrganism = ({
+  label,
+  className,
+  magneticProps,
+  ...props
+}: HeaderMenuTriggerOrganismProps) => {
   return (
     <Portal>
       <ScrollAnimate
@@ -36,7 +36,7 @@ const HeaderMenuTriggerOrganism = (
         smoothConfig={smoothConfig}
       >
         <div
-          className={`fixed right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] top-[--side] z-max scale-[--scale] [--side:theme(spacing.md)] has-[[data-state="open"]]:scale-100 sm:[--side:theme(spacing.xl)]`}
+          className={`z-max fixed top-(--side) right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] scale-(--scale) [--side:var(--spacing-md)] has-data-[state="open"]:scale-100 sm:[--side:var(--spacing-xl)]`}
         >
           <DrawerTrigger>
             <Action
@@ -46,21 +46,22 @@ const HeaderMenuTriggerOrganism = (
                 ...magneticProps,
                 limit: { x: 0.5, y: 0.5, ...magneticProps?.limit }
               }}
-              ref={ref}
               variant='default'
               {...props}
             >
               <MenuIcon
-                className={`size-[40%] group-data-open/action:hidden`}
+                className={`size-[40%] group-data-[state=open]/action:hidden`}
               />
 
               <TimesIcon
-                className={`absolute size-[40%] group-data-closed/action:hidden`}
+                className={`absolute size-[40%] group-data-[state=closed]/action:hidden`}
               />
 
-              <span className={`sr-only data-open:hidden`}>{label.open}</span>
+              <span className={`sr-only data-[state=open]:hidden`}>
+                {label.open}
+              </span>
 
-              <span className={`sr-only data-closed:hidden`}>
+              <span className={`sr-only data-[state=closed]:hidden`}>
                 {label.close}
               </span>
             </Action>
@@ -71,5 +72,5 @@ const HeaderMenuTriggerOrganism = (
   );
 };
 
-export default forwardRef(HeaderMenuTriggerOrganism);
+export default HeaderMenuTriggerOrganism;
 export type { HeaderMenuTriggerOrganismProps };

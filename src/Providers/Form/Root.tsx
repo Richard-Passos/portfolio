@@ -3,11 +3,10 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ReactNode, useEffect } from 'react';
 import { FormProvider as HookFormProvider, useForm } from 'react-hook-form';
-import { Schema } from 'zod';
 
 type FormProviderOwnProps = {
   defaultValues: any;
-  schema: Schema;
+  schema: any;
   shouldReset?: boolean;
   children: ReactNode;
 };

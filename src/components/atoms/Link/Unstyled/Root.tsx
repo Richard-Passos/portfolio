@@ -1,6 +1,6 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
-import { Link } from '@/i18n/routing';
+import { Link } from '@/i18n/navigation';
 import { isExternalUrl } from '@/utils';
 
 type UnstyledLinkAtomOwnProps = {
@@ -9,15 +9,13 @@ type UnstyledLinkAtomOwnProps = {
 };
 
 type UnstyledLinkAtomProps = UnstyledLinkAtomOwnProps &
-  Omit<
-    ComponentPropsWithRef<typeof Link>,
-    'as' | keyof UnstyledLinkAtomOwnProps
-  >;
+  Omit<ComponentProps<typeof Link>, 'as' | keyof UnstyledLinkAtomOwnProps>;
 
-const UnstyledLinkAtom = (
-  { href, disabled, ...props }: UnstyledLinkAtomProps,
-  ref: UnstyledLinkAtomProps['ref']
-) => {
+const UnstyledLinkAtom = ({
+  href,
+  disabled,
+  ...props
+}: UnstyledLinkAtomProps) => {
   const isExternal = isExternalUrl(href);
 
   const externalLinkProps = { rel: 'noreferrer', target: '_blank' };
@@ -26,7 +24,6 @@ const UnstyledLinkAtom = (
     <Link
       aria-disabled={disabled}
       href={disabled ? '' : href}
-      ref={ref}
       tabIndex={disabled ? -1 : 0}
       {...(isExternal && externalLinkProps)}
       {...props}
@@ -34,5 +31,5 @@ const UnstyledLinkAtom = (
   );
 };
 
-export default forwardRef(UnstyledLinkAtom);
+export default UnstyledLinkAtom;
 export type { UnstyledLinkAtomProps };

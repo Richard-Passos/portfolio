@@ -1,5 +1,5 @@
 import { createPolymorphicComponent } from '@mantine/core';
-import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
+import { ComponentProps, ReactNode } from 'react';
 
 import { lineLeftScrollAnim } from '@/animations/scroll';
 import { ScrollAnimate, Title } from '@/components/atoms';
@@ -12,46 +12,40 @@ type SecondaryLayoutBlockOrganismOwnProps = {
     title: Node[];
   };
   subChildren?: ReactNode;
-  headerProps?: Partial<ComponentPropsWithRef<'header'>>;
+  headerProps?: Partial<ComponentProps<'header'>>;
 };
 
 type SecondaryLayoutBlockOrganismProps = SecondaryLayoutBlockOrganismOwnProps &
   Omit<SectionProps, keyof SecondaryLayoutBlockOrganismOwnProps>;
 
-const SecondaryLayoutBlockOrganism = (
-  {
-    data,
-    subChildren,
-    children,
-    headerProps,
-    ...props
-  }: SecondaryLayoutBlockOrganismProps,
-  ref: SecondaryLayoutBlockOrganismProps['ref']
-) => {
+const SecondaryLayoutBlockOrganism = ({
+  data,
+  subChildren,
+  children,
+  headerProps,
+  ...props
+}: SecondaryLayoutBlockOrganismProps) => {
   return (
-    <Section
-      ref={ref}
-      {...props}
-    >
+    <Section {...props}>
       <header
         {...headerProps}
         className={cn(
-          `mb-[--section-spacing-sm] flex w-9/10 max-w-screen-xl justify-between gap-md max-sm:flex-col sm:items-end`,
+          `gap-md w-9by10 mb-(--section-spacing-sm) flex max-w-screen-xl justify-between max-sm:flex-col sm:items-end`,
           headerProps?.className
         )}
       >
-        <div className='flex items-center gap-xs'>
+        <div className='gap-xs flex items-center'>
           <span className={`relative h-2 w-6 sm:w-12`}>
             <ScrollAnimate
               config={lineLeftScrollAnim}
               layout
             >
-              <span className='absolute inset-0 border bg-body' />
+              <span className='bg-body absolute inset-0 border' />
             </ScrollAnimate>
           </span>
 
           <Title
-            className='break-words'
+            className='wrap-break-word'
             component='h2'
             order={4}
           >
@@ -70,5 +64,5 @@ const SecondaryLayoutBlockOrganism = (
 export default createPolymorphicComponent<
   'section',
   SecondaryLayoutBlockOrganismProps
->(forwardRef(SecondaryLayoutBlockOrganism));
+>(SecondaryLayoutBlockOrganism);
 export type { SecondaryLayoutBlockOrganismProps };

@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { ArrowDownIcon } from '@/components/atoms/Icon/icons';
 import ScrollTo, { ScrollToProps } from '@/components/atoms/ScrollTo';
 import Action, { ActionProps } from '@/components/molecules/Action';
@@ -9,19 +7,18 @@ type ScrollIndicatorOrganismOwnProps = Partial<Pick<ScrollToProps, 'target'>>;
 type ScrollIndicatorOrganismProps = ScrollIndicatorOrganismOwnProps &
   ActionProps;
 
-const ScrollIndicatorOrganism = (
-  { target = '#scroll-to', ...props }: ScrollIndicatorOrganismProps,
-  ref: ScrollIndicatorOrganismProps['ref']
-) => {
+const ScrollIndicatorOrganism = ({
+  target = '#scroll-to',
+  ...props
+}: ScrollIndicatorOrganismProps) => {
   return (
     <ScrollTo target={target}>
       <Action
         isIconOnly
-        ref={ref}
         {...props}
       >
         <span
-          className={`flex size-full animate-scroll-indicator items-center justify-center`}
+          className={`animate-scroll-indicator flex size-full items-center justify-center`}
         >
           <ArrowDownIcon className='size-[40%]' />
 
@@ -34,5 +31,5 @@ const ScrollIndicatorOrganism = (
   );
 };
 
-export default forwardRef(ScrollIndicatorOrganism);
+export default ScrollIndicatorOrganism;
 export type { ScrollIndicatorOrganismProps };

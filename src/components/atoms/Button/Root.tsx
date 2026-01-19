@@ -1,5 +1,5 @@
 import { Button, ButtonProps, createPolymorphicComponent } from '@mantine/core';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
@@ -12,23 +12,20 @@ type ButtonAtomOwnProps = {
 
 type ButtonAtomProps = ButtonAtomOwnProps &
   Omit<
-    ButtonProps & Omit<ComponentPropsWithRef<'button'>, keyof ButtonProps>,
+    ButtonProps & Omit<ComponentProps<'button'>, keyof ButtonProps>,
     'loading' | keyof ButtonAtomOwnProps
   >;
 
-const ButtonAtom = (
-  {
-    isIconOnly,
-    isLoading,
-    variant = 'filled',
-    color = 'primary',
-    disabled,
-    className,
-    style,
-    ...props
-  }: ButtonAtomProps,
-  ref: ButtonAtomProps['ref']
-) => {
+const ButtonAtom = ({
+  isIconOnly,
+  isLoading,
+  variant = 'filled',
+  color = 'primary',
+  disabled,
+  className,
+  style,
+  ...props
+}: ButtonAtomProps) => {
   const isPrimary = color === 'primary' && PRIMARY_VARIANTS.includes(variant);
 
   return (
@@ -42,7 +39,6 @@ const ButtonAtom = (
       color={color}
       disabled={disabled}
       loading={isLoading}
-      ref={ref}
       style={{
         ...(isPrimary && {
           '--button-color': 'var(--mantine-primary-color-contrast)'
@@ -56,7 +52,7 @@ const ButtonAtom = (
 };
 
 export default createPolymorphicComponent<'button', ButtonAtomProps>(
-  forwardRef(ButtonAtom)
+  ButtonAtom
 );
 
 export type { ButtonAtomProps };

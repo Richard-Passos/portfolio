@@ -9,8 +9,8 @@ import {
   useScroll,
   useSpring,
   useTransform
-} from 'framer-motion';
-import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
+} from 'motion/react';
+import { ComponentProps, useRef } from 'react';
 
 import { setRefs, transformTemplate } from '@/utils';
 
@@ -40,15 +40,15 @@ type ScrollAnimateAtomOwnProps = {
 };
 
 type ScrollAnimateAtomProps = ScrollAnimateAtomOwnProps &
-  Omit<
-    ComponentPropsWithRef<typeof MotionChild>,
-    keyof ScrollAnimateAtomOwnProps
-  >;
+  Omit<ComponentProps<typeof MotionChild>, keyof ScrollAnimateAtomOwnProps>;
 
-const ScrollAnimateAtom = (
-  { config, smoothConfig, style, ...props }: ScrollAnimateAtomProps,
-  ref: ScrollAnimateAtomProps['ref']
-) => {
+const ScrollAnimateAtom = ({
+  config,
+  smoothConfig,
+  style,
+  ref,
+  ...props
+}: ScrollAnimateAtomProps) => {
   const innerRef = useRef<HTMLElement>(null);
 
   const options: Pick<
@@ -91,7 +91,7 @@ const ScrollAnimateAtom = (
   );
 };
 
-const MotionChild = motion(Slot);
+const MotionChild = motion.create(Slot);
 
-export default forwardRef(ScrollAnimateAtom);
+export default ScrollAnimateAtom;
 export type { ScrollAnimateAtomProps, ScrollAnimateConfigOptions };

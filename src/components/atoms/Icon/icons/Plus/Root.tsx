@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type PlusIconAtomOwnProps = {};
 
 type PlusIconAtomProps = PlusIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof PlusIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof PlusIconAtomOwnProps>;
 
-const PlusIconAtom = (
-  { className, ...props }: PlusIconAtomProps,
-  ref: PlusIconAtomProps['ref']
-) => {
+const PlusIconAtom = ({ className, ...props }: PlusIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Plus'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const PlusIconAtom = (
   );
 };
 
-export default forwardRef(PlusIconAtom);
+export default PlusIconAtom;
 export type { PlusIconAtomProps };

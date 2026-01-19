@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type RocketIconAtomOwnProps = {};
 
 type RocketIconAtomProps = RocketIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof RocketIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof RocketIconAtomOwnProps>;
 
-const RocketIconAtom = (
-  { className, ...props }: RocketIconAtomProps,
-  ref: RocketIconAtomProps['ref']
-) => {
+const RocketIconAtom = ({ className, ...props }: RocketIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Rocket'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const RocketIconAtom = (
   );
 };
 
-export default forwardRef(RocketIconAtom);
+export default RocketIconAtom;
 export type { RocketIconAtomProps };

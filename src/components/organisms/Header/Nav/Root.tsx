@@ -1,7 +1,7 @@
 'use client';
 
 import { useSelectedLayoutSegment } from 'next/navigation';
-import { ComponentPropsWithRef, forwardRef, useState } from 'react';
+import { ComponentProps, useState } from 'react';
 
 import { useUpdateEffect } from '@/hooks';
 import { cn, normId } from '@/utils';
@@ -14,12 +14,14 @@ type HeaderNavOrganismOwnProps = {
 };
 
 type HeaderNavOrganismProps = HeaderNavOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'nav'>, keyof HeaderNavOrganismOwnProps>;
+  Omit<ComponentProps<'nav'>, keyof HeaderNavOrganismOwnProps>;
 
-const HeaderNavOrganism = (
-  { items, className, linkProps, ...props }: HeaderNavOrganismProps,
-  ref: HeaderNavOrganismProps['ref']
-) => {
+const HeaderNavOrganism = ({
+  items,
+  className,
+  linkProps,
+  ...props
+}: HeaderNavOrganismProps) => {
   const selectedLayoutSegment = useSelectedLayoutSegment();
 
   const segment = selectedLayoutSegment
@@ -38,7 +40,6 @@ const HeaderNavOrganism = (
         'group/nav flex w-full max-w-max items-center justify-center',
         className
       )}
-      ref={ref}
       {...props}
     >
       {items.map((data) => (
@@ -65,5 +66,5 @@ const HeaderNavOrganism = (
   );
 };
 
-export default forwardRef(HeaderNavOrganism);
+export default HeaderNavOrganism;
 export type { HeaderNavOrganismProps };

@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { imageYScrollAnim } from '@/animations/scroll';
 import { Image, ScrollAnimate } from '@/components/atoms';
 import { ImageProps } from '@/components/atoms/Image';
@@ -17,16 +15,13 @@ type SingleProjectImagesTemplateOwnProps = {
 type SingleProjectImagesTemplateProps = SingleProjectImagesTemplateOwnProps &
   Omit<SectionProps, keyof SingleProjectImagesTemplateOwnProps>;
 
-const SingleProjectImagesTemplate = (
-  { data, ...props }: SingleProjectImagesTemplateProps,
-  ref: SingleProjectImagesTemplateProps['ref']
-) => {
+const SingleProjectImagesTemplate = ({
+  data,
+  ...props
+}: SingleProjectImagesTemplateProps) => {
   return (
-    <Section
-      ref={ref}
-      {...props}
-    >
-      <div className='flex w-9/10 max-w-screen-xl gap-md max-md:flex-col md:justify-end'>
+    <Section {...props}>
+      <div className='gap-md w-9by10 flex max-w-screen-xl max-md:flex-col md:justify-end'>
         <section className='w-full max-w-48 md:max-w-36'>
           {serialize(data.description ?? [], {
             paragraph: {
@@ -35,11 +30,11 @@ const SingleProjectImagesTemplate = (
           })}
         </section>
 
-        <div className='flex max-w-screen-md grow flex-col items-center gap-xs'>
+        <div className='gap-xs flex max-w-screen-md grow flex-col items-center'>
           {data.items.map((data) => (
             <div
               className={
-                'relative aspect-square w-full overflow-hidden rounded-xl border bg-gray-1 dark:bg-dark-6'
+                'bg-gray-1 dark:bg-dark-6 relative aspect-square w-full overflow-hidden rounded-xl border'
               }
               key={data.id}
             >
@@ -62,5 +57,5 @@ const SingleProjectImagesTemplate = (
   );
 };
 
-export default forwardRef(SingleProjectImagesTemplate);
+export default SingleProjectImagesTemplate;
 export type { SingleProjectImagesTemplateProps };

@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
 import Card, { CardRootProps } from '@/components/molecules/Card';
@@ -15,30 +13,26 @@ type StatisticCardOrganismOwnProps = {
 type StatisticCardOrganismProps = StatisticCardOrganismOwnProps &
   Omit<CardRootProps, keyof StatisticCardOrganismOwnProps>;
 
-const StatisticCardOrganism = (
-  {
-    className,
-    data,
-    valueProps,
-    titleProps,
-    ...props
-  }: StatisticCardOrganismProps,
-  ref: StatisticCardOrganismProps['ref']
-) => {
+const StatisticCardOrganism = ({
+  className,
+  data,
+  valueProps,
+  titleProps,
+  ...props
+}: StatisticCardOrganismProps) => {
   return (
     <Card.Root
       className={cn(
-        'min-h-52 justify-between gap-sm px-[7.5%] py-xl',
+        'gap-sm py-xl min-h-52 justify-between px-[7.5%]',
         className
       )}
-      ref={ref}
       {...props}
     >
       <Title
         component='p'
         order={1}
         {...valueProps}
-        className={cn('font-semibold leading-none', valueProps?.className)}
+        className={cn('leading-none font-semibold', valueProps?.className)}
       >
         {data.value}
       </Title>
@@ -48,7 +42,7 @@ const StatisticCardOrganism = (
         order={5}
         {...titleProps}
         className={cn(
-          `ml-auto whitespace-pre-line text-end font-semibold leading-none text-dimmed`,
+          `text-dimmed ml-auto text-end leading-none font-semibold whitespace-pre-line`,
           titleProps?.className
         )}
       >
@@ -58,5 +52,5 @@ const StatisticCardOrganism = (
   );
 };
 
-export default forwardRef(StatisticCardOrganism);
+export default StatisticCardOrganism;
 export type { StatisticCardOrganismProps };

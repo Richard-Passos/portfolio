@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { Portal } from '@/components/atoms';
 import { cn, serialize } from '@/utils';
@@ -11,12 +11,13 @@ type CookiesConsentOrganismOwnProps = {
 };
 
 type CookiesConsentOrganismProps = CookiesConsentOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'div'>, keyof CookiesConsentOrganismOwnProps>;
+  Omit<ComponentProps<'div'>, keyof CookiesConsentOrganismOwnProps>;
 
-const CookiesConsentOrganism = async (
-  { className, bannerProps, ...props }: CookiesConsentOrganismProps,
-  ref: CookiesConsentOrganismProps['ref']
-) => {
+const CookiesConsentOrganism = async ({
+  className,
+  bannerProps,
+  ...props
+}: CookiesConsentOrganismProps) => {
   const locale = await getLocale();
 
   const res = await cookiesConsentApi.get({ locale });
@@ -29,10 +30,9 @@ const CookiesConsentOrganism = async (
     <Portal>
       <div
         className={cn(
-          `pointer-events-none fixed bottom-0 right-0 z-max flex w-full justify-end p-sm`,
+          `z-max p-sm pointer-events-none fixed right-0 bottom-0 flex w-full justify-end`,
           className
         )}
-        ref={ref}
         {...props}
       >
         <CookiesConsentClient
@@ -77,5 +77,5 @@ const CookiesConsentOrganism = async (
   );
 };
 
-export default forwardRef(CookiesConsentOrganism);
+export default CookiesConsentOrganism;
 export type { CookiesConsentOrganismProps };

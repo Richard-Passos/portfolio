@@ -2,27 +2,23 @@
 
 import { OptionalPortal, OptionalPortalProps } from '@mantine/core';
 import { Slot } from '@radix-ui/react-slot';
-import { forwardRef } from 'react';
 
 import { useThemeContext } from '@/hooks/contexts';
-import { PolymorphicRef } from '@/types';
 
-type PortalAtomOwnProps = {
-  ref?: PolymorphicRef<'div'>;
-};
+type PortalAtomOwnProps = {};
 
 type PortalAtomProps = PortalAtomOwnProps &
   Omit<OptionalPortalProps, keyof PortalAtomOwnProps>;
 
-const PortalAtom = (
-  { withinPortal = true, children, ...props }: PortalAtomProps,
-  ref: PortalAtomProps['ref']
-) => {
+const PortalAtom = ({
+  withinPortal = true,
+  children,
+  ...props
+}: PortalAtomProps) => {
   const { theme } = useThemeContext();
 
   return (
     <OptionalPortal
-      ref={ref}
       withinPortal={withinPortal}
       {...props}
     >
@@ -31,5 +27,5 @@ const PortalAtom = (
   );
 };
 
-export default forwardRef(PortalAtom);
+export default PortalAtom;
 export type { PortalAtomProps };

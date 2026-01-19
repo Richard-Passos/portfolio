@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 
 import FormProvider, { FormProviderProps } from '@/Providers/Form';
@@ -12,45 +12,38 @@ type FormMoleculeOwnProps = {
 };
 
 type FormMoleculeProps = FormMoleculeOwnProps &
-  Omit<ComponentPropsWithRef<'form'>, keyof FormMoleculeOwnProps>;
+  Omit<ComponentProps<'form'>, keyof FormMoleculeOwnProps>;
 
-const FormMolecule = forwardRef(
-  (
-    { action, onSubmit, ...props }: FormMoleculeProps,
-    ref: FormMoleculeProps['ref']
-  ) => {
-    const {
-      handleSubmit,
-      formState: { isSubmitting }
-    } = useFormContext();
+const FormMolecule = ({ action, onSubmit, ...props }: FormMoleculeProps) => {
+  const {
+    handleSubmit,
+    formState: { isSubmitting }
+  } = useFormContext();
 
-    const onSend = () => {
-      if (action) {
-        const onAction = handleSubmit(action);
+  const onSend = () => {
+    if (action) {
+      const onAction = handleSubmit(action);
 
-        return {
-          action: () => onAction()
-        };
-      }
+      return {
+        action: () => onAction()
+      };
+    }
 
-      if (onSubmit)
-        return {
-          onSubmit: handleSubmit(onSubmit)
-        };
-    };
+    if (onSubmit)
+      return {
+        onSubmit: handleSubmit(onSubmit)
+      };
+  };
 
-    return (
-      <form
-        data-loading={isSubmitting}
-        noValidate
-        ref={ref}
-        {...onSend()}
-        {...props}
-      />
-    );
-  }
-);
-FormMolecule.displayName = 'FormMolecule';
+  return (
+    <form
+      data-loading={isSubmitting}
+      noValidate
+      {...onSend()}
+      {...props}
+    />
+  );
+};
 
 type FormMoleculeWithProviderOwnProps = {};
 
@@ -60,28 +53,22 @@ type FormMoleculeWithProviderProps = FormMoleculeWithProviderOwnProps &
     keyof FormMoleculeWithProviderOwnProps
   >;
 
-const FormMoleculeWithProvider = (
-  {
-    defaultValues,
-    schema,
-    shouldReset,
-    ...props
-  }: FormMoleculeWithProviderProps,
-  ref: FormMoleculeWithProviderProps['ref']
-) => {
+const FormMoleculeWithProvider = ({
+  defaultValues,
+  schema,
+  shouldReset,
+  ...props
+}: FormMoleculeWithProviderProps) => {
   return (
     <FormProvider
       defaultValues={defaultValues}
       schema={schema}
       shouldReset={shouldReset}
     >
-      <FormMolecule
-        ref={ref}
-        {...props}
-      />
+      <FormMolecule {...props} />
     </FormProvider>
   );
 };
 
-export default forwardRef(FormMoleculeWithProvider);
+export default FormMoleculeWithProvider;
 export type { FormMoleculeWithProviderProps };

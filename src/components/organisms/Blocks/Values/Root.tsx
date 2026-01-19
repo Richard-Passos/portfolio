@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { BentoGrid } from '@/components/molecules';
 import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
@@ -19,7 +19,7 @@ type ValuesBlockOrganismOwnProps = {
       right: IconsProps['right'];
     };
   };
-  wrapperProps?: Partial<ComponentPropsWithRef<'div'>>;
+  wrapperProps?: Partial<ComponentProps<'div'>>;
   gridProps?: Partial<BentoGridRootProps>;
   iconsProps?: Partial<IconsProps>;
 };
@@ -27,22 +27,18 @@ type ValuesBlockOrganismOwnProps = {
 type ValuesBlockOrganismProps = ValuesBlockOrganismOwnProps &
   Omit<SecondaryLayoutBlockProps, keyof ValuesBlockOrganismOwnProps>;
 
-const ValuesBlockOrganism = (
-  {
-    data,
-    wrapperProps,
-    gridProps,
-    iconsProps,
-    ...props
-  }: ValuesBlockOrganismProps,
-  ref: ValuesBlockOrganismProps['ref']
-) => {
+const ValuesBlockOrganism = ({
+  data,
+  wrapperProps,
+  gridProps,
+  iconsProps,
+  ...props
+}: ValuesBlockOrganismProps) => {
   return (
     <SecondaryLayoutBlock
       data={{
         title: data.title
       }}
-      ref={ref}
       {...props}
     >
       <div
@@ -56,7 +52,7 @@ const ValuesBlockOrganism = (
           templates={data.templates}
           {...gridProps}
           className={cn(
-            'relative z-10 w-9/10 max-w-screen-xl gap-xs',
+            'gap-xs w-9by10 relative z-10 max-w-screen-xl',
             gridProps?.className
           )}
         >
@@ -81,5 +77,5 @@ const ValuesBlockOrganism = (
   );
 };
 
-export default forwardRef(ValuesBlockOrganism);
+export default ValuesBlockOrganism;
 export type { ValuesBlockOrganismProps };

@@ -1,7 +1,5 @@
 'use client';
 
-import { forwardRef } from 'react';
-
 import { Link, Magnetic } from '@/components/atoms';
 import { LinkProps } from '@/components/atoms/Link';
 import { MagneticAtomProps } from '@/components/atoms/Magnetic/Root';
@@ -32,18 +30,15 @@ type HeaderNavLinkOrganismOwnProps = {
 type HeaderNavLinkOrganismProps = HeaderNavLinkOrganismOwnProps &
   Omit<LinkProps, keyof HeaderNavLinkOrganismOwnProps>;
 
-const HeaderNavLinkOrganism = (
-  {
-    className,
-    isActive,
-    orientation = 'horizontal',
-    children,
-    magneticProps,
-    indicatorProps,
-    ...props
-  }: HeaderNavLinkOrganismProps,
-  ref: HeaderNavLinkOrganismProps['ref']
-) => {
+const HeaderNavLinkOrganism = ({
+  className,
+  isActive,
+  orientation = 'horizontal',
+  children,
+  magneticProps,
+  indicatorProps,
+  ...props
+}: HeaderNavLinkOrganismProps) => {
   const orientationProps: {
     horizontal: HeaderNavLinkOrganismOrientationProps;
     vertical: HeaderNavLinkOrganismOrientationProps;
@@ -73,11 +68,10 @@ const HeaderNavLinkOrganism = (
     >
       <Link
         className={cn(
-          `group/link relative flex items-center justify-center break-words rounded font-medium text-current no-underline hover:z-10`,
+          `group/link relative flex items-center justify-center rounded font-medium wrap-break-word text-current no-underline hover:z-10`,
           orientationProps[orientation].classNames?.link,
           className
         )}
-        ref={ref}
         {...props}
       >
         {children}
@@ -96,7 +90,7 @@ const HeaderNavLinkOrganism = (
   );
 };
 
-export default forwardRef(HeaderNavLinkOrganism);
+export default HeaderNavLinkOrganism;
 export type {
   HeaderNavLinkOrganismProps,
   HeaderNavLinkOrganismOrientationProps

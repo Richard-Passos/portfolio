@@ -1,7 +1,5 @@
 'use client';
 
-import { forwardRef } from 'react';
-
 import Button, { ButtonProps } from '@/components/atoms/Button';
 import UnstyledLink, {
   UnstyledLinkProps
@@ -12,18 +10,14 @@ type ActionLinkMoleculeOwnProps = ButtonProps;
 type ActionLinkMoleculeProps = ActionLinkMoleculeOwnProps &
   Omit<UnstyledLinkProps, keyof Omit<ActionLinkMoleculeOwnProps, 'ref'>>;
 
-const ActionLinkMolecule = (
-  props: ActionLinkMoleculeProps,
-  ref: ActionLinkMoleculeProps['ref']
-) => {
+const ActionLinkMolecule = (props: ActionLinkMoleculeProps) => {
   return (
     <Button
       component={UnstyledLink}
-      ref={ref}
       {...props}
     />
   );
 };
 
-export default forwardRef(ActionLinkMolecule);
+export default ActionLinkMolecule;
 export type { ActionLinkMoleculeProps };

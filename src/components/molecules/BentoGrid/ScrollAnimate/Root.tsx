@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { ScrollAnimate } from '@/components/atoms';
 import {
   ScrollAnimateConfigOptions,
@@ -35,13 +33,13 @@ type BentoGridScrollAnimateMoleculeProps =
   BentoGridScrollAnimateMoleculeOwnProps &
     Omit<ScrollAnimateProps, keyof BentoGridScrollAnimateMoleculeOwnProps>;
 
-const BentoGridScrollAnimateMolecule = (
-  { config, children, ...props }: BentoGridScrollAnimateMoleculeProps,
-  ref: BentoGridScrollAnimateMoleculeProps['ref']
-) => {
+const BentoGridScrollAnimateMolecule = ({
+  config,
+  children,
+  ...props
+}: BentoGridScrollAnimateMoleculeProps) => {
   return (
     <ScrollAnimate
-      ref={ref}
       {...props}
       config={{ ...ANIMATION_CONFIG.y, ...config?.y }}
     >
@@ -54,5 +52,5 @@ const BentoGridScrollAnimateMolecule = (
   );
 };
 
-export default forwardRef(BentoGridScrollAnimateMolecule);
+export default BentoGridScrollAnimateMolecule;
 export type { BentoGridScrollAnimateMoleculeProps };

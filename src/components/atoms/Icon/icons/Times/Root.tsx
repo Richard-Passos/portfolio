@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type TimesIconAtomOwnProps = {};
 
 type TimesIconAtomProps = TimesIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof TimesIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof TimesIconAtomOwnProps>;
 
-const TimesIconAtom = (
-  { className, ...props }: TimesIconAtomProps,
-  ref: TimesIconAtomProps['ref']
-) => {
+const TimesIconAtom = ({ className, ...props }: TimesIconAtomProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
       data-icon='Times'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const TimesIconAtom = (
   );
 };
 
-export default forwardRef(TimesIconAtom);
+export default TimesIconAtom;
 export type { TimesIconAtomProps };

@@ -1,7 +1,5 @@
 'use client';
 
-import { forwardRef } from 'react';
-
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useBooleanContext } from '@/hooks/contexts';
 
@@ -10,10 +8,7 @@ type DrawerTriggerMoleculeOwnProps = {};
 type DrawerTriggerMoleculeProps = DrawerTriggerMoleculeOwnProps &
   Omit<SlotProps, keyof DrawerTriggerMoleculeOwnProps>;
 
-const DrawerTriggerMolecule = (
-  props: DrawerTriggerMoleculeProps,
-  ref: DrawerTriggerMoleculeProps['ref']
-) => {
+const DrawerTriggerMolecule = (props: DrawerTriggerMoleculeProps) => {
   const { value, toggle } = useBooleanContext();
 
   const dataState = value ? 'open' : 'closed';
@@ -21,7 +16,6 @@ const DrawerTriggerMolecule = (
   return (
     <Slot
       data-state={dataState}
-      ref={ref}
       {...props}
       onClick={(ev) => {
         toggle();
@@ -32,5 +26,5 @@ const DrawerTriggerMolecule = (
   );
 };
 
-export default forwardRef(DrawerTriggerMolecule);
+export default DrawerTriggerMolecule;
 export type { DrawerTriggerMoleculeProps };

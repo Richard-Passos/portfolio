@@ -1,7 +1,5 @@
 'use client';
 
-import { forwardRef } from 'react';
-
 import CatalogList, {
   CatalogListRootProps
 } from '@/components/molecules/Catalog/List';
@@ -15,23 +13,22 @@ type ProjectsCatalogGridBlockOrganismProps =
   ProjectsCatalogGridBlockOrganismOwnProps &
     Omit<CatalogListRootProps, keyof ProjectsCatalogGridBlockOrganismOwnProps>;
 
-const ProjectsCatalogGridBlockOrganism = (
-  { className, ...props }: ProjectsCatalogGridBlockOrganismProps,
-  ref: ProjectsCatalogGridBlockOrganismProps['ref']
-) => {
+const ProjectsCatalogGridBlockOrganism = ({
+  className,
+  ...props
+}: ProjectsCatalogGridBlockOrganismProps) => {
   return (
     <CatalogList.Root
       className={cn(
-        `grid w-full max-w-sm gap-xs sm:max-w-3xl sm:grid-cols-2`,
+        `gap-xs grid w-full max-w-sm sm:max-w-3xl sm:grid-cols-2`,
         className
       )}
-      ref={ref}
       {...props}
     >
       <CatalogList.Items<Project>>
         {(data) => (
           <li
-            className={`h-fit sm:even:mt-2xl sm:[&:not(:last-child)]:even:-mb-2xl`}
+            className={`sm:even:mt-2xl sm:not-last:even:-mb-2xl h-fit`}
             key={data.slug}
           >
             <GridProjectCard
@@ -45,5 +42,5 @@ const ProjectsCatalogGridBlockOrganism = (
   );
 };
 
-export default forwardRef(ProjectsCatalogGridBlockOrganism);
+export default ProjectsCatalogGridBlockOrganism;
 export type { ProjectsCatalogGridBlockOrganismProps };

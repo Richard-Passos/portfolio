@@ -8,8 +8,8 @@ import {
   useTransform,
   useVelocity,
   wrap
-} from 'framer-motion';
-import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
+} from 'motion/react';
+import { ComponentProps, useRef } from 'react';
 
 import { useChildrenCount } from '@/hooks';
 import { cn, setRefs, times } from '@/utils';
@@ -19,17 +19,15 @@ type HorizontalScrollAtomOwnProps = {
 };
 
 type HorizontalScrollAtomProps = HorizontalScrollAtomOwnProps &
-  Omit<ComponentPropsWithRef<'div'>, keyof HorizontalScrollAtomOwnProps>;
+  Omit<ComponentProps<'div'>, keyof HorizontalScrollAtomOwnProps>;
 
-const HorizontalScrollAtom = (
-  {
-    className,
-    children,
-    baseVelocity = 1,
-    ...props
-  }: HorizontalScrollAtomProps,
-  ref: HorizontalScrollAtomProps['ref']
-) => {
+const HorizontalScrollAtom = ({
+  className,
+  children,
+  baseVelocity = 1,
+  ref,
+  ...props
+}: HorizontalScrollAtomProps) => {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -37,8 +35,8 @@ const HorizontalScrollAtom = (
     clamp: false
   });
 
-  const parentRef = useRef(null),
-    childrenRef = useRef(null);
+  const parentRef = useRef<HTMLDivElement>(null),
+    childrenRef = useRef<HTMLDivElement>(null);
 
   const childrenCount = useChildrenCount(parentRef, childrenRef);
 
@@ -66,13 +64,11 @@ const HorizontalScrollAtom = (
       {...props}
     >
       <motion.div
-        className={`flex w-fit gap-[--gap] whitespace-nowrap translate-x-[calc(var(--x)*1%)]`}
-        style={
-          { '--x': x } as ComponentPropsWithRef<typeof motion.div>['style']
-        }
+        className={`flex w-fit translate-x-[calc(var(--x)*1%)] gap-(--gap) whitespace-nowrap`}
+        style={{ '--x': x } as ComponentProps<typeof motion.div>['style']}
       >
         <div
-          className={`flex items-center gap-[--gap] first:ml-[--gap]`}
+          className={`flex items-center gap-(--gap) first:ml-(--gap)`}
           ref={childrenRef}
         >
           {children}
@@ -80,7 +76,7 @@ const HorizontalScrollAtom = (
 
         {times(childrenCount, String).map((id) => (
           <div
-            className='flex items-center gap-[--gap]'
+            className='flex items-center gap-(--gap)'
             key={id}
           >
             {children}
@@ -91,5 +87,5 @@ const HorizontalScrollAtom = (
   );
 };
 
-export default forwardRef(HorizontalScrollAtom);
+export default HorizontalScrollAtom;
 export type { HorizontalScrollAtomProps };

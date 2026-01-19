@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type ArrowDownIconAtomOwnProps = {};
 
 type ArrowDownIconAtomProps = ArrowDownIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof ArrowDownIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof ArrowDownIconAtomOwnProps>;
 
-const ArrowDownIconAtom = (
-  { className, ...props }: ArrowDownIconAtomProps,
-  ref: ArrowDownIconAtomProps['ref']
-) => {
+const ArrowDownIconAtom = ({ className, ...props }: ArrowDownIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Arrow down'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const ArrowDownIconAtom = (
   );
 };
 
-export default forwardRef(ArrowDownIconAtom);
+export default ArrowDownIconAtom;
 export type { ArrowDownIconAtomProps };

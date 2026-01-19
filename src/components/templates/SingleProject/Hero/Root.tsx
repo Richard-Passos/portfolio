@@ -1,4 +1,4 @@
-import { ReactNode, forwardRef } from 'react';
+import { ReactNode } from 'react';
 
 import { Image, ScrollAnimate, Text, Title } from '@/components/atoms';
 import { ArrowUpRightIcon } from '@/components/atoms/Icon/icons';
@@ -29,20 +29,20 @@ type SingleProjectHeroTemplateOwnProps = {
 type SingleProjectHeroTemplateProps = SingleProjectHeroTemplateOwnProps &
   Omit<SectionProps, keyof SingleProjectHeroTemplateOwnProps>;
 
-const SingleProjectHeroTemplate = (
-  { className, data, ...props }: SingleProjectHeroTemplateProps,
-  ref: SingleProjectHeroTemplateProps['ref']
-) => {
+const SingleProjectHeroTemplate = ({
+  className,
+  data,
+  ...props
+}: SingleProjectHeroTemplateProps) => {
   return (
     <Section
       className={cn(`min-h-fit pt-0 2xl:min-h-fit`, className)}
       forceTheme
       hasTransition={false}
-      ref={ref}
       {...props}
     >
       <header
-        className={`flex min-h-[calc(var(--h)*.75)] w-9/10 flex-col items-center justify-center pb-[--section-spacing-md] pt-[calc(var(--header-height)+var(--section-spacing-md))] [--h:100svh] 2xl:[--h:--max-h]`}
+        className={`w-9by10 flex min-h-[calc(var(--h)*.75)] flex-col items-center justify-center pt-[calc(var(--header-height)+var(--section-spacing-md))] pb-(--section-spacing-md) [--h:100svh] 2xl:[--h:--max-h]`}
       >
         {renderComp(
           <Title
@@ -63,7 +63,7 @@ const SingleProjectHeroTemplate = (
         </Title>
 
         {renderComp(
-          <Text className='mt-lg max-w-lg text-center text-sm text-dimmed'>
+          <Text className='mt-lg text-dimmed max-w-lg text-center text-sm'>
             {data.description}
           </Text>,
           [data.description]
@@ -71,12 +71,12 @@ const SingleProjectHeroTemplate = (
       </header>
 
       <div
-        className={`relative mt-2xl flex w-full max-w-screen-xl items-center justify-center`}
+        className={`mt-2xl relative flex w-full max-w-screen-xl items-center justify-center`}
       >
         {renderComp(
           <ScrollAnimate config={{ prop: 'y', propPoints: ['0%', '-100%'] }}>
             <div
-              className={`absolute left-0 top-0 z-10 -translate-y-1/2 translate-x-1/2`}
+              className={`absolute top-0 left-0 z-10 translate-x-1/2 -translate-y-1/2`}
             >
               <Action
                 as='link'
@@ -93,7 +93,7 @@ const SingleProjectHeroTemplate = (
         )}
 
         <div
-          className={`relative aspect-video w-full overflow-hidden rounded-xl bg-gray-1 dark:bg-dark-6`}
+          className={`bg-gray-1 dark:bg-dark-6 relative aspect-video w-full overflow-hidden rounded-xl`}
         >
           <Image
             alt={data.image.alt}
@@ -110,5 +110,5 @@ const SingleProjectHeroTemplate = (
   );
 };
 
-export default forwardRef(SingleProjectHeroTemplate);
+export default SingleProjectHeroTemplate;
 export type { SingleProjectHeroTemplateProps };

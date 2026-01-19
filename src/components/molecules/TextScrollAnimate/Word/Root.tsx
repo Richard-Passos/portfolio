@@ -1,7 +1,7 @@
 'use client';
 
-import { MotionValue, motion, useTransform } from 'framer-motion';
-import { ComponentPropsWithRef, PropsWithChildren, forwardRef } from 'react';
+import { MotionValue, motion, useTransform } from 'motion/react';
+import { ComponentProps, PropsWithChildren } from 'react';
 
 import { cn } from '@/utils';
 
@@ -13,28 +13,24 @@ type TextScrollAnimateWordMoleculeOwnProps = PropsWithChildren<{
 type TextScrollAnimateWordMoleculeProps =
   TextScrollAnimateWordMoleculeOwnProps &
     Omit<
-      ComponentPropsWithRef<typeof motion.span>,
+      ComponentProps<typeof motion.span>,
       keyof TextScrollAnimateWordMoleculeOwnProps
     >;
 
-const TextScrollAnimateWordMolecule = (
-  {
-    progress,
-    range,
-    className,
-    style,
-    children,
-    ...props
-  }: TextScrollAnimateWordMoleculeProps,
-  ref: TextScrollAnimateWordMoleculeProps['ref']
-) => {
+const TextScrollAnimateWordMolecule = ({
+  progress,
+  range,
+  className,
+  style,
+  children,
+  ...props
+}: TextScrollAnimateWordMoleculeProps) => {
   const x = useTransform(progress, range, ['100%', '0%']);
 
   return (
     <motion.span
       aria-hidden
       className={cn('relative inline-block', className)}
-      ref={ref}
       style={
         {
           '--x': x,
@@ -48,7 +44,7 @@ const TextScrollAnimateWordMolecule = (
       </span>
 
       <span
-        className={`pointer-events-none select-none opacity-10 dark:opacity-[.05]`}
+        className={`pointer-events-none opacity-10 select-none dark:opacity-[.05]`}
       >
         {children}
       </span>
@@ -56,5 +52,5 @@ const TextScrollAnimateWordMolecule = (
   );
 };
 
-export default forwardRef(TextScrollAnimateWordMolecule);
+export default TextScrollAnimateWordMolecule;
 export type { TextScrollAnimateWordMoleculeProps };

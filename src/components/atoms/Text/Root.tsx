@@ -1,10 +1,10 @@
 import { Text, TextProps } from '@mantine/core';
-import { ComponentPropsWithRef } from 'react';
+import { ComponentProps } from 'react';
 
 type TextAtomOwnProps = TextProps;
 
 type TextAtomProps = TextAtomOwnProps &
-  Omit<ComponentPropsWithRef<'p'>, keyof TextAtomOwnProps>;
+  Omit<ComponentProps<'p'>, keyof TextAtomOwnProps>;
 
 const TextAtom = Text;
 

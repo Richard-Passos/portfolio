@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type GithubIconAtomOwnProps = {};
 
 type GithubIconAtomProps = GithubIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof GithubIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof GithubIconAtomOwnProps>;
 
-const GithubIconAtom = (
-  { className, ...props }: GithubIconAtomProps,
-  ref: GithubIconAtomProps['ref']
-) => {
+const GithubIconAtom = ({ className, ...props }: GithubIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Github'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const GithubIconAtom = (
   );
 };
 
-export default forwardRef(GithubIconAtom);
+export default GithubIconAtom;
 export type { GithubIconAtomProps };

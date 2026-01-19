@@ -1,7 +1,5 @@
 'use client';
 
-import { forwardRef } from 'react';
-
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useFormContext } from '@/hooks/contexts';
 
@@ -12,10 +10,10 @@ type FormResetMoleculeOwnProps = {
 type FormResetMoleculeProps = FormResetMoleculeOwnProps &
   Omit<SlotProps, keyof FormResetMoleculeOwnProps>;
 
-const FormResetMolecule = (
-  { shouldHandleLoading = true, ...props }: FormResetMoleculeProps,
-  ref: FormResetMoleculeProps['ref']
-) => {
+const FormResetMolecule = ({
+  shouldHandleLoading = true,
+  ...props
+}: FormResetMoleculeProps) => {
   const {
     reset,
     formState: { isSubmitting }
@@ -29,7 +27,6 @@ const FormResetMolecule = (
 
   return (
     <Slot
-      ref={ref}
       {...props}
       onClick={(event) => {
         event.preventDefault();
@@ -42,5 +39,5 @@ const FormResetMolecule = (
   );
 };
 
-export default forwardRef(FormResetMolecule);
+export default FormResetMolecule;
 export type { FormResetMoleculeProps };

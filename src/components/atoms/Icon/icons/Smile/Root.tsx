@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type SmileIconAtomOwnProps = {};
 
 type SmileIconAtomProps = SmileIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof SmileIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof SmileIconAtomOwnProps>;
 
-const SmileIconAtom = (
-  { className, ...props }: SmileIconAtomProps,
-  ref: SmileIconAtomProps['ref']
-) => {
+const SmileIconAtom = ({ className, ...props }: SmileIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Smile'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const SmileIconAtom = (
   );
 };
 
-export default forwardRef(SmileIconAtom);
+export default SmileIconAtom;
 export type { SmileIconAtomProps };

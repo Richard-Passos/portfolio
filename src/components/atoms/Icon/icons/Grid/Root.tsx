@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type GridIconAtomOwnProps = {};
 
 type GridIconAtomProps = GridIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof GridIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof GridIconAtomOwnProps>;
 
-const GridIconAtom = (
-  { className, ...props }: GridIconAtomProps,
-  ref: GridIconAtomProps['ref']
-) => {
+const GridIconAtom = ({ className, ...props }: GridIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Grid'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const GridIconAtom = (
   );
 };
 
-export default forwardRef(GridIconAtom);
+export default GridIconAtom;
 export type { GridIconAtomProps };

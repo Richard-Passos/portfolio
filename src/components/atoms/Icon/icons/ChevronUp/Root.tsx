@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type ChevronUpIconAtomOwnProps = {};
 
 type ChevronUpIconAtomProps = ChevronUpIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof ChevronUpIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof ChevronUpIconAtomOwnProps>;
 
-const ChevronUpIconAtom = (
-  { className, ...props }: ChevronUpIconAtomProps,
-  ref: ChevronUpIconAtomProps['ref']
-) => {
+const ChevronUpIconAtom = ({ className, ...props }: ChevronUpIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Chevron up'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const ChevronUpIconAtom = (
   );
 };
 
-export default forwardRef(ChevronUpIconAtom);
+export default ChevronUpIconAtom;
 export type { ChevronUpIconAtomProps };

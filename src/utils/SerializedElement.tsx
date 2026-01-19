@@ -3,7 +3,7 @@
 import escapeHTML from 'escape-html';
 import {
   CSSProperties,
-  ComponentPropsWithoutRef,
+  ComponentProps,
   ReactNode,
   memo,
   useCallback
@@ -52,7 +52,7 @@ type ElementProps = {
   heading?: Partial<TitleProps>;
   paragraph?: Partial<TextProps>;
   small?: Partial<TextProps>;
-  alignText?: Partial<ComponentPropsWithoutRef<'span'>>;
+  alignText?: Partial<ComponentProps<'span'>>;
   quote?: Partial<BlockquoteProps>;
   list?: Partial<ListRootProps>;
   li?: Partial<ListItemProps>;
@@ -60,7 +60,7 @@ type ElementProps = {
   image?: Partial<ImageProps>;
   icon?: Partial<
     IconProps & {
-      wrapperProps?: ComponentPropsWithoutRef<'div'>;
+      wrapperProps?: ComponentProps<'div'>;
     }
   >;
 };
@@ -94,7 +94,7 @@ const SerializedElement = memo(
               component='small'
               {...props?.small}
               className={cn(
-                `text-xs text-dimmed *:text-text`,
+                `text-dimmed *:text-text text-xs`,
                 props?.small?.className
               )}
             >

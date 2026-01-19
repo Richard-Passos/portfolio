@@ -1,4 +1,4 @@
-import { ReactNode, forwardRef } from 'react';
+import { ReactNode } from 'react';
 import toast from 'react-hot-toast';
 import { z } from 'zod';
 
@@ -42,17 +42,14 @@ type ContactFormOrganismProps = ContactFormOrganismOwnProps &
     keyof ContactFormOrganismOwnProps | 'schema' | 'defaultValues'
   >;
 
-const ContactFormOrganism = (
-  {
-    optionalLabel,
-    messages,
-    to,
-    fields,
-    className,
-    ...props
-  }: ContactFormOrganismProps,
-  ref: ContactFormOrganismProps['ref']
-) => {
+const ContactFormOrganism = ({
+  optionalLabel,
+  messages,
+  to,
+  fields,
+  className,
+  ...props
+}: ContactFormOrganismProps) => {
   const defaultValues = {
       name: fields.name.defaultValue,
       email: fields.email.defaultValue,
@@ -83,12 +80,11 @@ const ContactFormOrganism = (
       }}
       className={cn(`grid sm:grid-cols-12`, className)}
       defaultValues={defaultValues}
-      ref={ref}
       schema={schema}
       {...props}
     >
       <div
-        className={`relative right-px top-px -mr-px -mt-px flex h-fit items-center border bg-white p-xs dark:bg-dark-8 sm:col-span-full`}
+        className={`p-xs dark:bg-dark-8 relative top-px right-px -mt-px -mr-px flex h-fit items-center border bg-white sm:col-span-full`}
       >
         <Title
           component='h3'
@@ -106,7 +102,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='name'>
         <TextInput
-          className={`relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6`}
+          className={`p-xs dark:bg-dark-8 relative top-px right-px -mt-px -mr-px border bg-white sm:col-span-6`}
           label={fields.name.label}
           placeholder={fields.name.placeholder}
           size='md'
@@ -116,7 +112,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='email'>
         <TextInput
-          className={`relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6`}
+          className={`p-xs dark:bg-dark-8 relative top-px right-px -mt-px -mr-px border bg-white sm:col-span-6`}
           label={fields.email.label}
           placeholder={fields.email.placeholder}
           size='md'
@@ -127,7 +123,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='subject'>
         <TextInput
-          className={`relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6`}
+          className={`p-xs dark:bg-dark-8 relative top-px right-px -mt-px -mr-px border bg-white sm:col-span-6`}
           label={
             <>
               {fields.subject.label}&nbsp;
@@ -142,7 +138,7 @@ const ContactFormOrganism = (
 
       <Form.Watch name='service'>
         <Select
-          className={`relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6`}
+          className={`p-xs dark:bg-dark-8 relative top-px right-px -mt-px -mr-px border bg-white sm:col-span-6`}
           clearable
           data={fields.service.data}
           label={
@@ -160,7 +156,7 @@ const ContactFormOrganism = (
       <Form.Control name='message'>
         <Textarea
           autosize
-          className={`relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-full md:col-span-9`}
+          className={`p-xs dark:bg-dark-8 relative top-px right-px -mt-px -mr-px border bg-white sm:col-span-full md:col-span-9`}
           label={fields.message.label}
           minRows={3}
           placeholder={fields.message.placeholder}
@@ -169,10 +165,10 @@ const ContactFormOrganism = (
         />
       </Form.Control>
 
-      <div className={`size-full pb-sm pr-sm sm:col-span-4 md:col-span-3`}>
+      <div className={`pb-sm pr-sm size-full sm:col-span-4 md:col-span-3`}>
         <div className='sticky top-0 w-full'>
           <div
-            className={`relative right-px top-px -mr-px -mt-px w-fit border bg-white p-xs dark:bg-dark-8 md:aspect-[1.3/1] md:w-full`}
+            className={`p-xs dark:bg-dark-8 relative top-px right-px -mt-px -mr-px w-fit border bg-white md:aspect-[1.3/1] md:w-full`}
           >
             <Form.Submit>
               <Action
@@ -197,5 +193,5 @@ const ContactFormOrganism = (
   );
 };
 
-export default forwardRef(ContactFormOrganism);
+export default ContactFormOrganism;
 export type { ContactFormOrganismProps };

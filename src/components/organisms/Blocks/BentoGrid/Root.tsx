@@ -1,4 +1,4 @@
-import { ComponentType, forwardRef } from 'react';
+import { ComponentType } from 'react';
 
 import { BentoGrid } from '@/components/molecules';
 import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
@@ -18,21 +18,21 @@ type BentoGridBlockOrganismOwnProps = {
 type BentoGridBlockOrganismProps = BentoGridBlockOrganismOwnProps &
   Omit<PrimaryLayoutBlockProps, keyof BentoGridBlockOrganismOwnProps | 'data'>;
 
-const BentoGridBlockOrganism = (
-  { data, hasAnimation, ...props }: BentoGridBlockOrganismProps,
-  ref: BentoGridBlockOrganismProps['ref']
-) => {
+const BentoGridBlockOrganism = ({
+  data,
+  hasAnimation,
+  ...props
+}: BentoGridBlockOrganismProps) => {
   return (
     <PrimaryLayoutBlock
       data={{
         title: data.title,
         description: data.description
       }}
-      ref={ref}
       {...props}
     >
       <BentoGrid.Root
-        className='w-9/10 max-w-screen-lg'
+        className='w-9by10 max-w-screen-lg'
         templates={data.templates}
       >
         {data.items.map(({ type, id, ...props }, i) => {
@@ -59,5 +59,5 @@ const BentoGridBlockOrganism = (
   );
 };
 
-export default forwardRef(BentoGridBlockOrganism);
+export default BentoGridBlockOrganism;
 export type { BentoGridBlockOrganismProps };

@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type HandHornsIconAtomOwnProps = {};
 
 type HandHornsIconAtomProps = HandHornsIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof HandHornsIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof HandHornsIconAtomOwnProps>;
 
-const HandHornsIconAtom = (
-  { className, ...props }: HandHornsIconAtomProps,
-  ref: HandHornsIconAtomProps['ref']
-) => {
+const HandHornsIconAtom = ({ className, ...props }: HandHornsIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Hand horns'
-      ref={ref}
       viewBox='0 0 384 512'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const HandHornsIconAtom = (
   );
 };
 
-export default forwardRef(HandHornsIconAtom);
+export default HandHornsIconAtom;
 export type { HandHornsIconAtomProps };

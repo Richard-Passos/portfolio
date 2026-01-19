@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type LinkedinIconAtomOwnProps = {};
 
 type LinkedinIconAtomProps = LinkedinIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof LinkedinIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof LinkedinIconAtomOwnProps>;
 
-const LinkedinIconAtom = (
-  { className, ...props }: LinkedinIconAtomProps,
-  ref: LinkedinIconAtomProps['ref']
-) => {
+const LinkedinIconAtom = ({ className, ...props }: LinkedinIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Linkedin'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const LinkedinIconAtom = (
   );
 };
 
-export default forwardRef(LinkedinIconAtom);
+export default LinkedinIconAtom;
 export type { LinkedinIconAtomProps };

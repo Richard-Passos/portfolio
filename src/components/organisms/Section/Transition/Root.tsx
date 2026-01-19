@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { Bg, Lines, ScrollAnimate } from '@/components/atoms';
 import { BgProps } from '@/components/atoms/Bg';
@@ -31,35 +31,31 @@ const ANIMATION_CONFIG: Record<'y' | 'radius', ScrollAnimateConfigOptions> = {
 
 type SectionTransitionOrganismOwnProps = {
   reverse?: boolean;
-  wrapperProps?: Partial<ComponentPropsWithRef<'div'>>;
+  wrapperProps?: Partial<ComponentProps<'div'>>;
   bgProps?: Partial<BgProps>;
   linesProps?: Partial<LinesProps>;
 };
 
 type SectionTransitionOrganismProps = SectionTransitionOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'div'>, keyof SectionTransitionOrganismOwnProps>;
+  Omit<ComponentProps<'div'>, keyof SectionTransitionOrganismOwnProps>;
 
-const SectionTransitionOrganism = (
-  {
-    reverse,
-    className,
-    style,
-    wrapperProps,
-    bgProps,
-    linesProps,
-    ...props
-  }: SectionTransitionOrganismProps,
-  ref: SectionTransitionOrganismProps['ref']
-) => {
+const SectionTransitionOrganism = ({
+  reverse,
+  className,
+  style,
+  wrapperProps,
+  bgProps,
+  linesProps,
+  ...props
+}: SectionTransitionOrganismProps) => {
   return (
     <ScrollAnimate config={ANIMATION_CONFIG.y}>
       <ScrollAnimate config={ANIMATION_CONFIG.radius}>
         <div
           className={cn(
-            'pointer-events-none absolute top-0 z-10 h-[--height] w-screen',
+            'pointer-events-none absolute top-0 z-10 h-(--height) w-screen',
             className
           )}
-          ref={ref}
           style={
             {
               '--height': `${HEIGHT}rem`,
@@ -82,7 +78,7 @@ const SectionTransitionOrganism = (
               {...bgProps}
               className={cn(
                 `pointer-events-auto -inset-x-[25%] z-0 aspect-[1/.25] size-auto`,
-                reverse ? 'bottom-0 top-auto' : 'bottom-auto top-0',
+                reverse ? 'top-auto bottom-0' : 'top-0 bottom-auto',
                 bgProps?.className
               )}
               style={{
@@ -101,5 +97,5 @@ const SectionTransitionOrganism = (
   );
 };
 
-export default forwardRef(SectionTransitionOrganism);
+export default SectionTransitionOrganism;
 export type { SectionTransitionOrganismProps };

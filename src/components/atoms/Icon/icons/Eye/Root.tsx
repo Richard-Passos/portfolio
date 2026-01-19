@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type EyeIconAtomOwnProps = {};
 
 type EyeIconAtomProps = EyeIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof EyeIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof EyeIconAtomOwnProps>;
 
-const EyeIconAtom = (
-  { className, ...props }: EyeIconAtomProps,
-  ref: EyeIconAtomProps['ref']
-) => {
+const EyeIconAtom = ({ className, ...props }: EyeIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Eye'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const EyeIconAtom = (
   );
 };
 
-export default forwardRef(EyeIconAtom);
+export default EyeIconAtom;
 export type { EyeIconAtomProps };

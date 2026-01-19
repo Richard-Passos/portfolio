@@ -12,7 +12,7 @@ import {
   DrawerTitle,
   DrawerTitleProps
 } from '@mantine/core';
-import { PropsWithChildren, ReactNode, forwardRef } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
 
 import { PolymorphicRef } from '@/types';
 import { cn, renderComp } from '@/utils';
@@ -31,21 +31,18 @@ type DrawerContentMoleculeOwnProps = PropsWithChildren<{
 type DrawerContentMoleculeProps = DrawerContentMoleculeOwnProps &
   Omit<DrawerContentProps, keyof DrawerContentMoleculeOwnProps>;
 
-const DrawerContentMolecule = (
-  {
-    className,
-    title,
-    hasCloseButton,
-    children,
-    overlayProps,
-    headerProps,
-    titleProps,
-    closeProps,
-    bodyProps,
-    ...props
-  }: DrawerContentMoleculeProps,
-  ref: DrawerContentMoleculeProps['ref']
-) => {
+const DrawerContentMolecule = ({
+  className,
+  title,
+  hasCloseButton,
+  children,
+  overlayProps,
+  headerProps,
+  titleProps,
+  closeProps,
+  bodyProps,
+  ...props
+}: DrawerContentMoleculeProps) => {
   return (
     <>
       <DrawerOverlay
@@ -56,7 +53,6 @@ const DrawerContentMolecule = (
 
       <DrawerContent
         data-lenis-prevent
-        ref={ref}
         {...props}
         classNames={{
           ...props.classNames,
@@ -83,5 +79,5 @@ const DrawerContentMolecule = (
   );
 };
 
-export default forwardRef(DrawerContentMolecule);
+export default DrawerContentMolecule;
 export type { DrawerContentMoleculeProps };

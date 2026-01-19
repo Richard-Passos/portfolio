@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Lines } from '@/components/atoms';
 import { ScrollToProps } from '@/components/atoms/ScrollTo';
 import Section, { SectionProps } from '@/components/organisms/Section';
@@ -24,16 +22,13 @@ type PrimaryHeroOrganismOwnProps = {
 type PrimaryHeroOrganismProps = PrimaryHeroOrganismOwnProps &
   Omit<SectionProps, keyof PrimaryHeroOrganismOwnProps>;
 
-const PrimaryHeroOrganism = (
-  {
-    data,
-    className,
-    bgProps,
-    scrollTarget,
-    ...props
-  }: PrimaryHeroOrganismProps,
-  ref: PrimaryHeroOrganismProps['ref']
-) => {
+const PrimaryHeroOrganism = ({
+  data,
+  className,
+  bgProps,
+  scrollTarget,
+  ...props
+}: PrimaryHeroOrganismProps) => {
   return (
     <Section
       bgProps={{
@@ -41,12 +36,11 @@ const PrimaryHeroOrganism = (
         className: cn('*:hidden', bgProps?.className)
       }}
       className={cn(
-        `min-h-svh p-[--inset] pt-[--header-height] [--inset:calc(var(--w)*.025)] [--w:100vw] 2xl:[--w:--max-w]`,
+        `min-h-svh p-(--inset) pt-(--header-height) [--inset:calc(var(--w)*.025)] [--w:100vw] 2xl:[--w:--max-w]`,
         className
       )}
       forceTheme
       hasTransition={false}
-      ref={ref}
       {...props}
     >
       <div className='relative flex w-full grow overflow-hidden rounded-lg'>
@@ -55,11 +49,11 @@ const PrimaryHeroOrganism = (
             className={`relative flex w-full flex-col items-center justify-center`}
           >
             <div
-              className={`flex w-full max-w-screen-xl grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:opacity-[--opacity] sm:scale-[--scale]`}
+              className={`flex w-full max-w-screen-xl grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:scale-(--scale) sm:opacity-(--opacity)`}
             >
               <PrimaryHeroTitle>{data.title}</PrimaryHeroTitle>
 
-              <div className='mt-sm grid w-full grid-cols-3 gap-sm'>
+              <div className='mt-sm gap-sm grid w-full grid-cols-3'>
                 <div>
                   <PrimaryHeroExtra>{data.left}</PrimaryHeroExtra>
                 </div>
@@ -83,23 +77,23 @@ const PrimaryHeroOrganism = (
             </div>
 
             <Lines
-              className={`top-auto -z-10 !text-border opacity-60 [background-size:83.333px_66.666px]`}
+              className={`text-border! top-auto -z-10 bg-size-[83.333px_66.666px] opacity-60`}
             />
           </div>
         </PrimaryHeroScrollAnimate>
 
         <span
-          className={`pointer-events-none absolute inset-0 rounded-inherit border opacity-60`}
+          className={`rounded-inherit pointer-events-none absolute inset-0 border opacity-60`}
         />
       </div>
 
       <ScrollIndicator
-        className='absolute bottom-[calc(var(--inset)*1.5)] right-[calc(var(--inset)*1.5)] max-sm:hidden'
+        className='absolute right-[calc(var(--inset)*1.5)] bottom-[calc(var(--inset)*1.5)] max-sm:hidden'
         target={scrollTarget}
       />
     </Section>
   );
 };
 
-export default forwardRef(PrimaryHeroOrganism);
+export default PrimaryHeroOrganism;
 export type { PrimaryHeroOrganismProps };

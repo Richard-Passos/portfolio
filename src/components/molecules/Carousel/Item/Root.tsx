@@ -2,15 +2,12 @@
 
 // @ts-ignore
 import { SplideSlide } from '@splidejs/react-splide';
-import { ComponentPropsWithRef } from 'react';
+import { ComponentProps } from 'react';
 
 type CarouselItemMoleculeOwnProps = {};
 
 type CarouselItemMoleculeProps = CarouselItemMoleculeOwnProps &
-  Omit<
-    ComponentPropsWithRef<typeof SplideSlide>,
-    keyof CarouselItemMoleculeOwnProps
-  >;
+  Omit<ComponentProps<typeof SplideSlide>, keyof CarouselItemMoleculeOwnProps>;
 
 const CarouselItemMolecule = SplideSlide;
 

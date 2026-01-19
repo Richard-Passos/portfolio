@@ -12,10 +12,10 @@ const LegalTemplate = ({ blocks }: LegalTemplateProps) => {
       hasTransition={false}
       theme={blocks.theme}
     >
-      <div className='flex w-9/10 max-w-screen-lg flex-col items-end'>
+      <div className='w-9by10 flex max-w-screen-lg flex-col items-end'>
         <header className='mt-2xl w-full'>
           <Title
-            className={`w-fit break-words pl-[min(10vw,theme(spacing.20))] data-[align=left]:*:-ml-[min(10vw,theme(spacing.20))]`}
+            className={`w-fit pl-[min(10vw,theme(spacing.20))] wrap-break-word data-[align=left]:*:-ml-[min(10vw,theme(spacing.20))]`}
             order={1}
           >
             {serialize(blocks.header.title)}

@@ -1,7 +1,5 @@
 'use client';
 
-import { forwardRef } from 'react';
-
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useHeightContext } from '@/hooks/contexts';
 import { Heights } from '@/store/slices/height';
@@ -14,10 +12,7 @@ type HeightGetAtomOwnProps = {
 type HeightGetAtomProps = HeightGetAtomOwnProps &
   Omit<SlotProps, keyof HeightGetAtomOwnProps>;
 
-const HeightGetAtom = (
-  { name, style, ...props }: HeightGetAtomProps,
-  ref: HeightGetAtomProps['ref']
-) => {
+const HeightGetAtom = ({ name, style, ref, ...props }: HeightGetAtomProps) => {
   const { getHeight } = useHeightContext();
 
   const heights = getHeight(name);
@@ -29,7 +24,6 @@ const HeightGetAtom = (
 
   return (
     <Slot
-      ref={ref}
       style={{
         ...heightsCssVars,
         ...style
@@ -39,5 +33,5 @@ const HeightGetAtom = (
   );
 };
 
-export default forwardRef(HeightGetAtom);
+export default HeightGetAtom;
 export type { HeightGetAtomProps };

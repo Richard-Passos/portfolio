@@ -1,21 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/utils';
 
 type InstagramIconAtomOwnProps = {};
 
 type InstagramIconAtomProps = InstagramIconAtomOwnProps &
-  Omit<ComponentPropsWithRef<'svg'>, keyof InstagramIconAtomOwnProps>;
+  Omit<ComponentProps<'svg'>, keyof InstagramIconAtomOwnProps>;
 
-const InstagramIconAtom = (
-  { className, ...props }: InstagramIconAtomProps,
-  ref: InstagramIconAtomProps['ref']
-) => {
+const InstagramIconAtom = ({ className, ...props }: InstagramIconAtomProps) => {
   return (
     <svg
       className={cn('h-8 w-8 fill-current', className)}
       data-icon='Instagram'
-      ref={ref}
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -25,5 +21,5 @@ const InstagramIconAtom = (
   );
 };
 
-export default forwardRef(InstagramIconAtom);
+export default InstagramIconAtom;
 export type { InstagramIconAtomProps };

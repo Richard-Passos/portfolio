@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 import { SingleProjectTemplate } from '@/components/templates';
-import { entries, normId } from '@/utils';
+import { entries, isLocale, normId } from '@/utils';
 import { pagesApi, projectsApi } from '@/utils/actions';
 
 import { LayoutParams } from '../../layout';
@@ -11,20 +11,20 @@ import { LayoutParams } from '../../layout';
 type SingleProjectPageOwnProps = {};
 
 type SingleProjectPageParams = {
-  params: { slug: string } & LayoutParams['params'];
+  params: Promise<{ slug: string }> & LayoutParams['params'];
 };
 
 type SingleProjectPageProps = SingleProjectPageOwnProps &
   SingleProjectPageParams;
 
-const SingleProjectPage = async ({
-  params: { slug, locale }
-}: SingleProjectPageProps) => {
-  unstable_setRequestLocale(locale);
+const SingleProjectPage = async ({ params }: SingleProjectPageProps) => {
+  const { locale, slug } = await params;
 
-  slug = normId(slug);
+  setRequestLocale(locale);
 
-  const res = await pagesApi.getSingleProject({ slug, locale });
+  if (!isLocale(locale)) notFound();
+
+  const res = await pagesApi.getSingleProject({ slug: normId(slug), locale });
 
   if (!res.ok) return notFound();
 
@@ -45,9 +45,13 @@ const SingleProjectPage = async ({
 };
 
 const generateMetadata = async ({
-  params: { slug, locale }
+  params
 }: SingleProjectPageParams): Promise<Metadata> => {
-  const res = await pagesApi.getSingleProject({ slug, locale });
+  const { locale, slug } = await params;
+
+  if (!isLocale(locale)) notFound();
+
+  const res = await pagesApi.getSingleProject({ slug: normId(slug), locale });
 
   if (!res.ok) return notFound();
 
@@ -56,7 +60,13 @@ const generateMetadata = async ({
   return metadata;
 };
 
-const generateStaticParams = async ({ params: { locale } }: LayoutParams) => {
+const generateStaticParams = async ({
+  params: { locale }
+}: {
+  params: { locale: string }; // Has to be string to avoid next error with locale enums
+}) => {
+  if (!isLocale(locale)) return [];
+
   const res = await projectsApi.get({ locale, isSelected: true });
 
   const projects = res.ok ? res.data : [];

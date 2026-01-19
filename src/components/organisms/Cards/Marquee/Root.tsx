@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Badge, Icon, Marquee, Title } from '@/components/atoms';
 import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
@@ -16,14 +14,14 @@ type MarqueeCardOrganismOwnProps = {
 type MarqueeCardOrganismProps = MarqueeCardOrganismOwnProps &
   Omit<CardRootProps, keyof MarqueeCardOrganismOwnProps>;
 
-const MarqueeCardOrganism = (
-  { className, data, ...props }: MarqueeCardOrganismProps,
-  ref: MarqueeCardOrganismProps['ref']
-) => {
+const MarqueeCardOrganism = ({
+  className,
+  data,
+  ...props
+}: MarqueeCardOrganismProps) => {
   return (
     <Card.Root
       className={cn('min-h-52', className)}
-      ref={ref}
       {...props}
     >
       <div className='size-8'>
@@ -31,7 +29,7 @@ const MarqueeCardOrganism = (
       </div>
 
       <Card.Section
-        className={`my-auto flex flex-col items-center justify-center gap-sm`}
+        className={`gap-sm my-auto flex flex-col items-center justify-center`}
       >
         <Title
           className='text-center'
@@ -63,5 +61,5 @@ const MarqueeCardOrganism = (
   );
 };
 
-export default forwardRef(MarqueeCardOrganism);
+export default MarqueeCardOrganism;
 export type { MarqueeCardOrganismProps };
