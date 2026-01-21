@@ -56,7 +56,7 @@ const ServicesBlockOrganism = ({
           />
 
           <ul
-            className={`gap-xs sm:py-xl m-0 flex max-w-lg grow basis-[theme(maxWidth.sm)] list-none flex-col p-0`}
+            className={`gap-xs sm:py-xl m-0 flex max-w-lg grow basis-(--container-sm) list-none flex-col p-0`}
           >
             {data.items.map((data) => (
               <li key={data.slug}>

@@ -10,7 +10,7 @@ type CoffeeIconAtomProps = CoffeeIconAtomOwnProps &
 const CoffeeIconAtom = ({ className, ...props }: CoffeeIconAtomProps) => {
   return (
     <svg
-      className={cn('h-8 w-8 fill-current', className)}
+      className={cn('size-8 fill-current', className)}
       data-icon='Coffee'
       viewBox='0 0 1024 1024'
       xmlns='http://www.w3.org/2000/svg'

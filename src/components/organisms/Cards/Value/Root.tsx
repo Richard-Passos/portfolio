@@ -51,7 +51,7 @@ const ValueCardOrganism = ({
       <Text
         {...descriptionProps}
         className={cn(
-          'mt-[calc(theme(spacing.xs)/2)] text-dimmed leading-relaxed',
+          'text-dimmed mt-[calc(var(--spacing-xs)/2)] leading-relaxed',
           descriptionProps?.className
         )}
       >

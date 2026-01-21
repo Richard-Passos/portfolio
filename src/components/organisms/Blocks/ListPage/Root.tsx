@@ -42,7 +42,7 @@ const ListPageBlockOrganism = ({
             key={item.id}
             {...listItemProps}
             className={cn(
-              `[--gap:theme(spacing.sm)] text-2xl uppercase sm:text-3xl`,
+              `text-2xl uppercase [--gap:var(--spacing-sm)] sm:text-3xl`,
               listItemProps?.className
             )}
           >

@@ -10,7 +10,7 @@ type ChevronUpIconAtomProps = ChevronUpIconAtomOwnProps &
 const ChevronUpIconAtom = ({ className, ...props }: ChevronUpIconAtomProps) => {
   return (
     <svg
-      className={cn('h-8 w-8 fill-current', className)}
+      className={cn('size-8 fill-current', className)}
       data-icon='Chevron up'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

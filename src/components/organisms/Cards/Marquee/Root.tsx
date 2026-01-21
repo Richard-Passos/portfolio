@@ -40,7 +40,7 @@ const MarqueeCardOrganism = ({
         </Title>
 
         <Marquee
-          className='[--gap:theme(spacing.xs)]'
+          className='[--gap:var(--spacing-xs)]'
           pauseOnHover
         >
           {data.items.map((item, i) => (

@@ -37,7 +37,7 @@ const IconsOrganism = ({
         <div
           {...leftProps}
           className={cn(
-            'absolute left-0 size-[min(50vmin,theme(maxWidth.md))]',
+            'absolute left-0 size-[min(50vmin,var(--container-md))]',
             leftProps?.className
           )}
           style={{ [left.y]: '0px', ...leftProps?.style }}
@@ -53,7 +53,7 @@ const IconsOrganism = ({
         <div
           {...rightProps}
           className={cn(
-            'absolute right-0 size-[min(50vmin,theme(maxWidth.md))]',
+            'absolute right-0 size-[min(50vmin,var(--container-md))]',
             rightProps?.className
           )}
           style={{ [right.y]: '0px', ...rightProps?.style }}

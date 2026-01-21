@@ -10,7 +10,7 @@ type WidthIconAtomProps = WidthIconAtomOwnProps &
 const WidthIconAtom = ({ className, ...props }: WidthIconAtomProps) => {
   return (
     <svg
-      className={cn('h-8 w-8 stroke-current', className)}
+      className={cn('size-8 stroke-current', className)}
       data-icon='Width'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

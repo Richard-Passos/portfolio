@@ -9,9 +9,7 @@ type CarouselContextInitialState = {
     progress: number;
   };
   setState: ({
-    // eslint-disable-next-line no-unused-vars
     activeIdx,
-    // eslint-disable-next-line no-unused-vars
     progress
   }: {
     activeIdx: number;

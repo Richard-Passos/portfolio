@@ -47,7 +47,7 @@ const ImagesBlockOrganism = ({
       <ScrollAnimate config={ANIMATION_CONFIG.rotate}>
         <CleanLayoutBlock
           className={cn(
-            `[--gap:theme(spacing.xs)] w-9by10 max-w-screen-lg gap-(--gap) pt-0 sm:flex-row sm:items-start md:[--x:calc(var(--smooth-x)*(var(--gap)+35%))]`,
+            `w-9by10 max-w-5xl gap-(--gap) pt-0 [--gap:var(--spacing-xs)] sm:flex-row sm:items-start md:[--x:calc(var(--smooth-x)*(var(--gap)+35%))]`,
             className
           )}
           {...props}

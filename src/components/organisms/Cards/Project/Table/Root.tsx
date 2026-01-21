@@ -30,9 +30,9 @@ const TableProjectCardOrganism = ({
           className={cn(
             `gap-xs py-xl ease-backOut flex-row items-start px-[7.5%] transition-[scale,opacity] duration-300 group-focus-visible/item:outline`,
 
-            `group-hover/list:[>:has(+:hover)_&]:scale-x-95 group-hover/list:[>:hover+*_&]:scale-x-95 group-hover/list:[>:hover_&]:scale-100 group-hover/list:scale-x-90`,
+            `group-hover/list:group-[:hover+*]/item:scale-x-95 group-hover/list:group-[:not(:hover)]/item:scale-x-90`,
 
-            'group-hover/list:[>:not(:hover)_&]:opacity-50'
+            'group-hover/list:group-[:not(:hover)]/item:opacity-50'
           )}
         >
           <Text

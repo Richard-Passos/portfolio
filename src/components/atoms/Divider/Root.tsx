@@ -14,7 +14,7 @@ const DividerAtom = ({ className, ...props }: DividerAtomProps) => {
   return (
     <Divider
       className={cn(
-        `[--divider-color:theme(colors.border)] dark:[--divider-color:theme(colors.border)]`,
+        `[--divider-color:var(--color-border)] dark:[--divider-color:var(--color-border)]`,
         className
       )}
       {...props}

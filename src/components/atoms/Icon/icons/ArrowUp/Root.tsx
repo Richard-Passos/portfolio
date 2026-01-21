@@ -10,7 +10,7 @@ type ArrowUpIconAtomProps = ArrowUpIconAtomOwnProps &
 const ArrowUpIconAtom = ({ className, ...props }: ArrowUpIconAtomProps) => {
   return (
     <svg
-      className={cn('h-8 w-8 fill-current', className)}
+      className={cn('size-8 fill-current', className)}
       data-icon='Arrow up'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

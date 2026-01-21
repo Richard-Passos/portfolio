@@ -11,15 +11,15 @@ const CLASS_NAMES = {
   size: {
     xs: '',
     sm: '',
-    md: '[&_textarea]:[--input-size:theme(height.24)] [&_textarea]:[--input-padding-y:--input-padding]',
+    md: '[&_textarea]:[--input-padding-y:var(--input-padding)] [&_textarea]:[--input-size:6rem]',
     lg: '',
     xl: ''
   },
   variant: {
     default:
-      '[&_textarea]:[--input-bd:theme(colors.border)] [&_textarea:focus]:[--input-bd:--input-bd-focus] [&_textarea]:[--input-bg:theme(colors.white)] dark:[&_textarea]:[--input-bg:theme(colors.dark.6)]',
+      '[&_textarea]:[--input-bd:var(--color-border)] [&_textarea]:[--input-bg:var(--color-white)] dark:[&_textarea]:[--input-bg:var(--color-dark-6)] [&_textarea:focus]:[--input-bd:var(--input-bd-focus)]',
     filled:
-      '[&_textarea]:[--input-bg:theme(colors.gray.0)] dark:[&_textarea]:[--input-bg:theme(colors.dark.5)]',
+      '[&_textarea]:[--input-bg:var(--color-gray-0)] dark:[&_textarea]:[--input-bg:var(--color-dark-5)]',
     unstyled: ''
   }
 };

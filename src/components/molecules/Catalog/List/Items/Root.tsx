@@ -5,7 +5,6 @@ import { ReactNode } from 'react';
 import { useCatalogContext } from '@/hooks/contexts';
 
 type CatalogListItemsMoleculeProps<T> = {
-  // eslint-disable-next-line no-unused-vars
   children?: (value: T, index: number, array: T[]) => ReactNode;
 };
 

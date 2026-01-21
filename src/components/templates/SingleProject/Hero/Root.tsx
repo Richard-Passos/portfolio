@@ -42,7 +42,7 @@ const SingleProjectHeroTemplate = ({
       {...props}
     >
       <header
-        className={`w-9by10 flex min-h-[calc(var(--h)*.75)] flex-col items-center justify-center pt-[calc(var(--header-height)+var(--section-spacing-md))] pb-(--section-spacing-md) [--h:100svh] 2xl:[--h:--max-h]`}
+        className={`w-9by10 flex min-h-[calc(var(--h)*.75)] flex-col items-center justify-center pt-[calc(var(--header-height)+var(--section-spacing-md))] pb-(--section-spacing-md) [--h:100svh] 2xl:[--h:var(--max-h)]`}
       >
         {renderComp(
           <Title
@@ -80,7 +80,7 @@ const SingleProjectHeroTemplate = ({
             >
               <Action
                 as='link'
-                className={`aspect-square rounded-full shadow ![--button-height:calc(var(--size)*var(--mantine-scale))] [--size:8rem] sm:text-xl sm:[--size:12rem]`}
+                className={`aspect-square rounded-full shadow [--button-height:calc(var(--size)*var(--mantine-scale))]! [--size:8rem] sm:text-xl sm:[--size:12rem]`}
                 disabled={!data.action?.href}
                 href={data.action.href}
               >
@@ -99,7 +99,6 @@ const SingleProjectHeroTemplate = ({
             alt={data.image.alt}
             className='object-cover'
             fill
-            priority
             quality={100}
             sizes='100vw'
             src={data.image.src}

@@ -8,7 +8,6 @@ import { setRefs } from '@/utils';
 
 type FormControlMoleculeOwnProps = {
   name: string;
-  // eslint-disable-next-line no-unused-vars
   onChange?: (event: { target: any }) => Promise<void | boolean> | void;
 };
 

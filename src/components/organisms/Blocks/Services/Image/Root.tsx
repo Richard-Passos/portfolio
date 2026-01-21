@@ -25,7 +25,7 @@ const ServicesBlockImageOrganism = ({
   return (
     <div
       className={cn(
-        `[--p:theme(spacing.xs)] aspect-[1/1.15] rounded-(--radius) border p-(--p) [--radius:theme(borderRadius.xl)]`,
+        `aspect-[1/1.15] rounded-(--radius) border p-(--p) [--p:var(--spacing-xs)] [--radius:var(--radius-xl)]`,
         className
       )}
       {...props}

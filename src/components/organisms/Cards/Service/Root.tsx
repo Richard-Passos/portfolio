@@ -59,7 +59,7 @@ const ServiceCardOrganism = ({
       <Text
         {...descriptionProps}
         className={cn(
-          'mt-[calc(theme(spacing.xs)/2)] text-dimmed text-sm leading-relaxed',
+          'text-dimmed mt-[calc(var(--spacing-xs)/2)] text-sm leading-relaxed',
           descriptionProps?.className
         )}
       >

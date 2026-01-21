@@ -10,7 +10,7 @@ type HandHornsIconAtomProps = HandHornsIconAtomOwnProps &
 const HandHornsIconAtom = ({ className, ...props }: HandHornsIconAtomProps) => {
   return (
     <svg
-      className={cn('h-8 w-8 fill-current', className)}
+      className={cn('size-8 fill-current', className)}
       data-icon='Hand horns'
       viewBox='0 0 384 512'
       xmlns='http://www.w3.org/2000/svg'

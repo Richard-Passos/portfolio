@@ -61,7 +61,7 @@ const ButBlockOrganism = ({
   return (
     <CleanLayoutBlock
       className={cn(
-        `grid !min-h-[calc(var(--h)*1.5)] grid-rows-3 items-stretch justify-stretch justify-items-center [--h:100vh] 2xl:[--h:--max-h]`,
+        `grid min-h-[calc(var(--h)*1.5)]! grid-rows-3 items-stretch justify-stretch justify-items-center [--h:100vh] 2xl:[--h:var(--max-h)]`,
         className
       )}
       {...props}
@@ -83,7 +83,7 @@ const ButBlockOrganism = ({
 
                 <span
                   aria-hidden
-                  className={`pointer-events-none absolute left-0 select-none [clip-path:--clip-path]`}
+                  className={`pointer-events-none absolute left-0 select-none [clip-path:var(--clip-path)]`}
                 >
                   {data.title}
                 </span>

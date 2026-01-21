@@ -7,15 +7,15 @@ const CLASS_NAMES = {
   size: {
     xs: '',
     sm: '',
-    md: '[&_input]:[--input-size:theme(height.12)]',
+    md: '[&_input]:[--input-size:3rem]',
     lg: '',
-    xl: ''
+    xl: '[&_input]:[--input-bd:var(--color-border)] [&_input:focus]:[--input-bd:var(--input-bd-focus)] [&_input]:[--input-bg:var(--color-white)] dark:[&_input]:[--input-bg:var(--color-dark-6)]'
   },
   variant: {
     default:
-      '[&_input]:[--input-bd:theme(colors.border)] [&_input:focus]:[--input-bd:--input-bd-focus] [&_input]:[--input-bg:theme(colors.white)] dark:[&_input]:[--input-bg:theme(colors.dark.6)]',
+      '[&_input]:[--input-bd:var(--color-border)] [&_input:focus]:[--input-bd:var(--input-bd-focus)] [&_input]:[--input-bg:var(--color-white)] dark:[&_input]:[--input-bg:var(--color-dark-6)]',
     filled:
-      '[&_input]:[--input-bg:theme(colors.gray.0)] dark:[&_input]:[--input-bg:theme(colors.dark.5)]',
+      '[&_input]:[--input-bg:var(--color-gray-0)] dark:[&_input]:[--input-bg:var(--color-dark-5)]',
     unstyled: ''
   }
 };
@@ -56,7 +56,7 @@ const SelectAtom = ({
             `
               bg-white
 
-              [--popover-border-color:theme(colors.border)]
+              [--popover-border-color:var(--color-border)]
 
               dark:bg-dark-6
             `,
