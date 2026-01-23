@@ -27,7 +27,7 @@ const SkillCardOrganism = ({
         className={cn('group/card perspective-1000 aspect-square', className)}
         {...props}
       >
-        <div className='ease-backOut transform-style-3d relative size-full transition-transform duration-500 group-data-[active=true]/card:rotate-y-180'>
+        <div className='ease-backOut relative size-full transition-transform duration-500 transform-3d group-data-[active=true]/card:rotate-y-180'>
           <Card.Root className='absolute items-center justify-center backface-hidden'>
             <div className='bg-gray-0 dark:bg-dark-6 flex size-1/2 items-center justify-center rounded'>
               <Icon

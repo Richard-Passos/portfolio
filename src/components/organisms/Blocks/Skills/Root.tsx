@@ -27,9 +27,9 @@ const SkillsBlockOrganism = ({
       }}
       {...props}
     >
-      <div className='w-9by10 max-w-screen-xl'>
+      <div className='w-9by10 max-w-7xl'>
         <ul
-          className={`gap-xs m-0 flex max-w-screen-md list-none flex-wrap justify-end p-0 sm:ml-auto`}
+          className={`gap-xs m-0 flex max-w-3xl list-none flex-wrap justify-end p-0 sm:ml-auto`}
         >
           {data.items.map((data) => (
             <li

@@ -45,14 +45,15 @@ const MarqueeCardOrganism = ({
         >
           {data.items.map((item, i) => (
             <Badge
+              component='li'
+              size='lg'
+              key={item}
               {...(i % 2 !== 0 && {
                 variant: 'light',
                 color: 'gray'
               })}
-              key={item}
-              size='lg'
             >
-              <li>{item}</li>
+              {item}
             </Badge>
           ))}
         </Marquee>

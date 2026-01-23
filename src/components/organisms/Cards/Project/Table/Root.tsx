@@ -20,7 +20,13 @@ const TableProjectCardOrganism = ({
     <Magnetic.Container>
       <Link
         className={cn(
-          `group/item relative flex items-center justify-center font-normal text-current focus-visible:outline-0`,
+          'group/item relative flex items-center justify-center font-normal text-current focus-visible:outline-0',
+
+          // Adjacents
+          'group-hover/list:[li:has(+:hover)>&>*]:scale-x-95 group-hover/list:[li:hover+*>&>*]:scale-x-95',
+
+          // Element
+          'group-hover/list:not-hover:*:scale-x-90 group-hover/list:not-hover:*:opacity-50',
           className
         )}
         underline='never'
@@ -28,11 +34,7 @@ const TableProjectCardOrganism = ({
       >
         <CardRoot
           className={cn(
-            `gap-xs py-xl ease-backOut flex-row items-start px-[7.5%] transition-[scale,opacity] duration-300 group-focus-visible/item:outline`,
-
-            `group-hover/list:group-[:hover+*]/item:scale-x-95 group-hover/list:group-[:not(:hover)]/item:scale-x-90`,
-
-            'group-hover/list:group-[:not(:hover)]/item:opacity-50'
+            'gap-xs py-xl ease-backOut flex-row items-start px-[7.5%] transition-[scale,opacity] duration-300 group-focus-visible/item:outline'
           )}
         >
           <Text

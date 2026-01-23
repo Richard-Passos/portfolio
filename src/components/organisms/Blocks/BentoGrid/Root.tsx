@@ -32,7 +32,7 @@ const BentoGridBlockOrganism = ({
       {...props}
     >
       <BentoGrid.Root
-        className='w-9by10 max-w-screen-lg'
+        className='w-9by10 max-w-5xl'
         templates={data.templates}
       >
         {data.items.map(({ type, id, ...props }, i) => {

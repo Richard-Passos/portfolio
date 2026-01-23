@@ -499,7 +499,6 @@
     /* 
       Mantine Colors
     */
-
     --mantine-color-scheme: light;
     --mantine-color-bright: var(--mantine-color-black);
     --mantine-color-text: var(--mantine-color-black);
@@ -672,7 +671,6 @@
     /* 
       Mantine Colors
     */
-
     --mantine-color-scheme: dark;
     --mantine-primary-color-contrast: var(--mantine-color-black);
     --mantine-color-bright: var(--mantine-color-white);
@@ -916,5 +914,16 @@
     --mantine-primary-color-light-color: var(--mantine-primary-color-2);
     --mantine-primary-color-outline: var(--mantine-primary-color-3);
     --mantine-primary-color-outline-hover: rgba(0, 0, 0, 0.05);
+
+    --color-bright: var(--mantine-color-bright);
+    --color-text: var(--mantine-color-text);
+    --color-body: var(--mantine-color-body);
+    --color-error: var(--mantine-color-error);
+    --color-placeholder: var(--mantine-color-placeholder);
+    --color-anchor: var(--mantine-color-anchor);
+    --color-dimmed: var(--mantine-color-dimmed);
+    --color-border: var(--mantine-color-default-border);
+    --color-black: var(--mantine-color-black);
+    --color-white: var(--mantine-color-white);
   }
 }
