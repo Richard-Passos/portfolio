@@ -36,7 +36,7 @@ const PrimaryHeroOrganism = ({
         className: cn('*:hidden', bgProps?.className)
       }}
       className={cn(
-        `min-h-svh p-(--inset) pt-(--header-height) [--inset:calc(var(--w)*.025)] [--w:100vw] 2xl:[--w:var(--max-w)]`,
+        '3xl:[--w:var(--max-width-bounds)] p-(--inset) pt-(--header-height) [--inset:calc(var(--w)*.025)] [--w:100vw]',
         className
       )}
       forceTheme

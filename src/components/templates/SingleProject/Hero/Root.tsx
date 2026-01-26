@@ -42,7 +42,7 @@ const SingleProjectHeroTemplate = ({
       {...props}
     >
       <header
-        className={`w-9by10 flex min-h-[calc(var(--h)*.75)] flex-col items-center justify-center pt-[calc(var(--header-height)+var(--section-spacing-md))] pb-(--section-spacing-md) [--h:100svh] 2xl:[--h:var(--max-h)]`}
+        className={`w-9by10 flex min-h-[calc(var(--h)*.75)] flex-col items-center justify-center pt-[calc(var(--header-height)+var(--section-spacing-md))] pb-(--section-spacing-md) [--h:100svh] 2xl:[--h:var(--max-height-bounds)]`}
       >
         {renderComp(
           <Title
@@ -56,7 +56,7 @@ const SingleProjectHeroTemplate = ({
         )}
 
         <Title
-          className='max-w-screen-lg text-center'
+          className='max-w-5xl text-center'
           order={1}
         >
           {data.title}
@@ -71,7 +71,7 @@ const SingleProjectHeroTemplate = ({
       </header>
 
       <div
-        className={`mt-2xl relative flex w-full max-w-screen-xl items-center justify-center`}
+        className={`mt-2xl relative flex w-full max-w-7xl items-center justify-center`}
       >
         {renderComp(
           <ScrollAnimate config={{ prop: 'y', propPoints: ['0%', '-100%'] }}>
