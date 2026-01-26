@@ -40,7 +40,7 @@ const SectionOrganism = ({
   return (
     <Box
       className={cn(
-        `2xl:min-h-bounds relative flex min-h-screen w-full flex-col items-center py-(--section-spacing-md) [--section-spacing-lg:calc(var(--spacing-2xl)*2)] [--section-spacing-md:calc(var(--spacing-xl)+(var(--spacing-sm)))] [--section-spacing-sm:calc(var(--spacing-lg)+(var(--spacing-sm)))]`,
+        `3xl:min-h-bounds relative flex min-h-svh w-full flex-col items-center py-(--section-spacing-md) [--section-spacing-lg:calc(var(--spacing-2xl)*2)] [--section-spacing-md:calc(var(--spacing-xl)+(var(--spacing-sm)))] [--section-spacing-sm:calc(var(--spacing-lg)+(var(--spacing-sm)))]`,
         hasTransition && 'pt-(--section-spacing-lg)',
         className
       )}

@@ -49,7 +49,7 @@ const PrimaryHeroOrganism = ({
             className={`relative flex w-full flex-col items-center justify-center`}
           >
             <div
-              className={`flex w-full max-w-screen-xl grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:scale-(--scale) sm:opacity-(--opacity)`}
+              className={`flex w-full max-w-7xl grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:scale-(--scale) sm:opacity-(--opacity)`}
             >
               <PrimaryHeroTitle>{data.title}</PrimaryHeroTitle>
 
@@ -82,9 +82,7 @@ const PrimaryHeroOrganism = ({
           </div>
         </PrimaryHeroScrollAnimate>
 
-        <span
-          className={`rounded-inherit pointer-events-none absolute inset-0 border opacity-60`}
-        />
+        <span className='rounded-inherit pointer-events-none absolute inset-0 border opacity-60' />
       </div>
 
       <ScrollIndicator

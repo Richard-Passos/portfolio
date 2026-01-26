@@ -56,7 +56,7 @@ const Layout = async ({ params, children }: LayoutProps) => {
 
             <Height.Get name={['header', 'document']}>
               <main
-                className={`max-w-bounds 2xl:min-h-bounds relative flex w-full flex-col items-center max-2xl:grow`}
+                className={`max-w-bounds 3xl:min-h-bounds max-3xl:grow relative flex w-full flex-col items-center`}
               >
                 {children}
               </main>

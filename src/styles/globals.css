@@ -366,6 +366,13 @@
   --max-width-6xl: var(--container-6xl);
   --max-width-7xl: var(--container-7xl);
 
+  --min-width-bounds: 120rem;
+  --max-width-bounds: 120rem;
+  --min-height-bounds: 60rem;
+  --max-height-bounds: 60rem;
+
+  --breakpoint-3xl: 120rem; /* 1920px */
+
   --text-xs: var(--mantine-font-size-xs);
   --text-sm: var(--mantine-font-size-sm);
   --text-md: var(--mantine-font-size-md);
@@ -406,11 +413,6 @@
   --z-index-overlay: var(--mantine-z-index-overlay);
   --z-index-max: var(--mantine-z-index-max);
 
-  --min-height-bounds: var(--max-h);
-  --min-width-bounds: var(--max-w);
-  --max-height-bounds: var(--max-h);
-  --max-width-bounds: var(--max-w);
-
   --font-title: var(--mantine-font-family-headings);
   --font-display: var(--mantine-font-family);
   --font-monospace: var(--mantine-font-family-monospace);
@@ -422,10 +424,6 @@
 }
 
 @layer base {
-  :root {
-    @apply [--max-h:calc(var(--max-w)/1.778)] [--max-w:var(--breakpoint-2xl)];
-  }
-
   html.lenis,
   html.lenis body {
     height: auto;
