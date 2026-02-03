@@ -33,18 +33,15 @@ const SecondaryHeroOrganism = ({
   return (
     <Section
       className={cn(
-        `min-h-fit pt-[calc(var(--header-height)+var(--section-spacing-md))] 2xl:min-h-fit`,
+        `min-h-fit pt-[calc(var(--header-height)+--spacing(16))] 2xl:min-h-fit`,
         className
       )}
       forceTheme
-      hasTransition={false}
       {...props}
     >
-      <div
-        className={`pt-2xl w-9by10 relative max-w-screen-lg pb-[calc(var(--spacing-2xl)*1.5)]`}
-      >
+      <div className='w-9by10 relative max-w-5xl pt-16 pb-24'>
         <Title
-          className={`relative z-10 max-w-md wrap-break-word uppercase md:max-w-lg lg:max-w-xl xl:max-w-[75%]`}
+          className='relative z-10 max-w-md wrap-break-word uppercase md:max-w-lg lg:max-w-xl xl:max-w-[75%]'
           order={1}
         >
           {serialize(data.title)}
@@ -58,7 +55,7 @@ const SecondaryHeroOrganism = ({
         )}
 
         {renderComp(
-          <section className='mt-xl gap-xs flex items-center'>
+          <section className='mt-8 flex items-center gap-2.5'>
             {renderComp(
               <Action
                 as={data.actions?.secondary?.href ? 'link' : 'button'}
@@ -85,13 +82,9 @@ const SecondaryHeroOrganism = ({
           [data.actions?.primary ?? data.actions?.secondary]
         )}
 
-        <div
-          className={`dark:bg-dark-8 absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg bg-white`}
-        >
+        <div className='dark:bg-dark-8 absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg bg-white'>
           <ScrollAnimate config={yFullScrollAnim}>
-            <Lines
-              className={`text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60`}
-            />
+            <Lines className='text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60' />
           </ScrollAnimate>
 
           <span className='rounded-inherit absolute inset-0 border opacity-60' />

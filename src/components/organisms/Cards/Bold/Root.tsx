@@ -28,7 +28,7 @@ const BoldCardOrganism = ({
       </div>
 
       <Title
-        className='mt-xs leading-none font-medium'
+        className='mt-2.5 leading-none font-medium'
         component='p'
         order={4}
       >

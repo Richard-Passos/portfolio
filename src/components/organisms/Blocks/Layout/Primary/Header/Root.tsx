@@ -27,7 +27,7 @@ const PrimaryLayoutBlockHeaderOrganism = ({
   return (
     <header
       className={cn(
-        `w-9by10 flex gap-(--section-spacing-md) max-md:flex-col md:items-end`,
+        `w-9by10 flex gap-8 max-md:flex-col md:items-end`,
         className
       )}
       {...props}

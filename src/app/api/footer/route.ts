@@ -16,8 +16,8 @@ type FooterResponse =
   | { ok: false; status: 500; message: string }
   | {
       ok: true;
-      status: 200;
       data: Footer;
+      status: 200;
     };
 
 const GET = async (

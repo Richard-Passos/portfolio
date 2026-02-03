@@ -29,7 +29,7 @@ const ProjectsCatalogBlockOrganism = ({
       {...props}
     >
       <Catalog.Root
-        className='gap-md w-9by10 flex max-w-screen-xl max-md:flex-col md:justify-end'
+        className='w-9by10 flex max-w-7xl gap-4 max-md:flex-col md:justify-end'
         items={data.items}
       >
         <section className='w-full max-w-48 md:max-w-36'>
@@ -43,7 +43,7 @@ const ProjectsCatalogBlockOrganism = ({
           )}
         </section>
 
-        <div className='flex max-w-screen-md grow flex-col items-center'>
+        <div className='flex max-w-3xl grow flex-col items-center'>
           <Catalog.Empty className='flex w-full'>
             <Card.Root className='min-h-52 items-center justify-center text-center'>
               {serialize(data.empty)}

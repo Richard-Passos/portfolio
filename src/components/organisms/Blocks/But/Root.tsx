@@ -69,9 +69,7 @@ const ButBlockOrganism = ({
       <ScrollAnimate config={ANIMATION_CONFIG.x}>
         <ScrollAnimate config={ANIMATION_CONFIG.clipPath}>
           <ScrollAnimate config={ANIMATION_CONFIG.y}>
-            <div
-              className={`py-md row-span-2 flex translate-y-(--y) items-center justify-center [clip-path:inset(0_-100%_0_0)]`}
-            >
+            <div className='row-span-2 flex translate-y-(--y) items-center justify-center py-4 [clip-path:inset(0_-100%_0_0)]'>
               <Text
                 {...titleProps}
                 className={cn(
@@ -83,7 +81,7 @@ const ButBlockOrganism = ({
 
                 <span
                   aria-hidden
-                  className={`pointer-events-none absolute left-0 select-none [clip-path:var(--clip-path)]`}
+                  className='pointer-events-none absolute left-0 select-none [clip-path:var(--clip-path)]'
                 >
                   {data.title}
                 </span>

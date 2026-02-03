@@ -46,7 +46,7 @@ const BentoGridMolecule = ({
   return (
     <Box
       className={cn(
-        `gap-xs m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(0px,1fr))] p-0 [--template:var(--base-template)] [grid-template-areas:var(--template)] sm:[--template:var(--sm-template)] md:[--template:var(--md-template)] lg:[--template:var(--lg-template)] xl:[--template:var(--xl-template)] 2xl:[--template:var(--2xl-template)]`,
+        `m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(0px,1fr))] gap-2.5 p-0 [--template:var(--base-template)] [grid-template-areas:var(--template)] sm:[--template:var(--sm-template)] md:[--template:var(--md-template)] lg:[--template:var(--lg-template)] xl:[--template:var(--xl-template)] 2xl:[--template:var(--2xl-template)]`,
         className
       )}
       component='ul'

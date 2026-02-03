@@ -1,5 +1,4 @@
 import useBoolean from './useBoolean';
-import useChildrenCount from './useChildrenCount';
 import useColorScheme from './useColorScheme';
 import useComputedColorScheme from './useComputedColorScheme';
 import useDebounceCallback from './useDebounceCallback';
@@ -14,7 +13,6 @@ import useWindowSize from './useWindowSize';
 
 const hooks = {
   useBoolean,
-  useChildrenCount,
   useColorScheme,
   useComputedColorScheme,
   useDebounceCallback,
@@ -31,7 +29,6 @@ const hooks = {
 export default hooks;
 export {
   useBoolean,
-  useChildrenCount,
   useColorScheme,
   useComputedColorScheme,
   useDebounceCallback,

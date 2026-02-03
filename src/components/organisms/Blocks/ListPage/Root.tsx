@@ -38,11 +38,12 @@ const ListPageBlockOrganism = ({
       <ListHorizontalScroll.Root {...listProps}>
         {data.items.map((item, i) => (
           <ListHorizontalScroll.Item
-            baseVelocity={(1.5 + 0.5 * i) * (i % 2 === 0 ? 1 : -1)}
+            speed={75 + 50 * i}
+            direction={i % 2 === 0 ? 'right' : 'left'}
             key={item.id}
             {...listItemProps}
             className={cn(
-              `text-2xl uppercase [--gap:var(--spacing-sm)] sm:text-3xl`,
+              `text-2xl uppercase [--gap:--spacing(3)] sm:text-3xl`,
               listItemProps?.className
             )}
           >
@@ -50,13 +51,13 @@ const ListPageBlockOrganism = ({
 
             <span>{item.separator}</span>
 
-            <span className={`opacity-30 dark:opacity-10`}>{item.text}</span>
+            <span className='opacity-30 dark:opacity-10'>{item.text}</span>
 
-            <span className={`opacity-30 max-sm:hidden dark:opacity-10`}>
+            <span className='opacity-30 max-sm:hidden dark:opacity-10'>
               {item.separator}
             </span>
 
-            <span className={`opacity-30 max-sm:hidden dark:opacity-10`}>
+            <span className='opacity-30 max-sm:hidden dark:opacity-10'>
               {item.text}
             </span>
 
@@ -71,7 +72,7 @@ const ListPageBlockOrganism = ({
         size='md'
         variant='default'
         {...actionProps}
-        className={cn('mt-xl', actionProps?.className)}
+        className={cn('mt-8', actionProps?.className)}
       >
         {data.action.label}
       </Action>

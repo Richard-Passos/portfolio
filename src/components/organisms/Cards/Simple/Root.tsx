@@ -27,7 +27,7 @@ const SimpleCardOrganism = ({
         <Icon src={data.icon} />
       </div>
 
-      <section className='mt-xs'>
+      <section className='mt-2.5'>
         {serialize(data.description, {
           paragraph: {
             className: 'font-medium leading-tight'

@@ -29,9 +29,7 @@ const CtaTextBlockOrganism = ({
       className={cn(`3xl:min-h-bounds min-h-svh`, className)}
       {...props}
     >
-      <Text
-        className={`w-9by10 relative z-10 max-w-5xl text-center text-2xl leading-tight! font-semibold sm:text-4xl lg:text-[3.25rem]`}
-      >
+      <Text className='w-9by10 relative z-10 max-w-5xl text-center text-2xl leading-tight! font-semibold sm:text-4xl lg:text-[3.25rem]'>
         <TextScrollAnimate text={data.description} />
       </Text>
 

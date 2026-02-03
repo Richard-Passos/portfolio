@@ -19,21 +19,21 @@ const LogoOrganism = ({
 }: LogoOrganismProps) => {
   return (
     <ActionLink
-      className={cn('aspect-auto', className)}
+      className={cn('aspect-auto p-0', className)}
       href='/'
       isIconOnly
       size='md'
       style={{
         '--button-bg': 'transparent',
         '--button-bd': 'transparent',
-        '--button-padding-x': 'var(--mantine-spacing-xs)',
+        '--button-hover': 'transparent',
         ...style
       }}
       variant='default'
       {...props}
     >
       <Icon
-        className='h-2/3'
+        className='size-full'
         src={`/icons/logo-${variant}.svg`}
       />
     </ActionLink>

@@ -35,9 +35,7 @@ const SingleProjectAdjacentsTemplate = ({
       className={cn(`min-h-fit 2xl:min-h-fit`, className)}
       {...props}
     >
-      <div
-        className={`gap-xs p-md w-9by10 flex max-w-screen-xl flex-wrap justify-between border border-x-0 border-b-0`}
-      >
+      <div className='w-9by10 flex max-w-7xl flex-wrap justify-between gap-2.5 border border-x-0 border-b-0 p-4'>
         <Action
           as='link'
           className='h-fit'
@@ -51,13 +49,11 @@ const SingleProjectAdjacentsTemplate = ({
           }}
           variant='default'
         >
-          <div className='py-sm flex justify-start gap-2'>
+          <div className='flex justify-start gap-2 py-3'>
             <ArrowLeftIcon className='mb-auto size-[1.25em]' />
 
             <div className='flex flex-col items-start gap-0.5'>
-              <span
-                className={`max-w-24 overflow-hidden text-xs font-normal tracking-wide text-ellipsis opacity-50`}
-              >
+              <span className='max-w-24 overflow-hidden text-xs font-normal tracking-wide text-ellipsis opacity-50'>
                 {data.prev.name}
               </span>
 
@@ -79,11 +75,9 @@ const SingleProjectAdjacentsTemplate = ({
           }}
           variant='default'
         >
-          <div className='py-sm flex justify-end gap-2'>
+          <div className='flex justify-end gap-2 py-3'>
             <div className='flex flex-col items-end gap-0.5'>
-              <span
-                className={`max-w-24 overflow-hidden text-xs font-normal tracking-wide text-ellipsis opacity-50`}
-              >
+              <span className='max-w-24 overflow-hidden text-xs font-normal tracking-wide text-ellipsis opacity-50'>
                 {data.next.name}
               </span>
 

@@ -30,7 +30,7 @@ const CookiesConsentOrganism = async ({
     <Portal>
       <div
         className={cn(
-          `z-max p-sm pointer-events-none fixed right-0 bottom-0 flex w-full justify-end`,
+          `z-max pointer-events-none fixed right-0 bottom-0 flex w-full justify-end p-3`,
           className
         )}
         {...props}
@@ -44,7 +44,7 @@ const CookiesConsentOrganism = async ({
           {...bannerProps}
           buttonWrapperClasses={cn(
             `
-              flex gap-xs
+              flex gap-2.5
 
               max-sm:flex-col
 
@@ -54,7 +54,7 @@ const CookiesConsentOrganism = async ({
           )}
           containerClasses={cn(
             `
-              pointer-events-auto flex gap-sm rounded border bg-body px-md py-xs
+              pointer-events-auto flex gap-3 rounded border bg-body px-4 py-2.5
               shadow
 
               max-sm:flex-col

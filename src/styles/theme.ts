@@ -6,8 +6,8 @@ const themeOverride = createTheme({
   scale: 1,
   fontSmoothing: true,
   focusRing: 'auto',
-  white: 'hsl(0 0% 98%)',
-  black: 'hsl(0 0% 7.5%)',
+  white: 'hsl(0 0% 95%)',
+  black: 'hsl(0 0% 12%)',
   colors: {
     primary: ['', '', '', '', '', '', '', '', '', ''],
     dark: [
@@ -16,14 +16,14 @@ const themeOverride = createTheme({
       'hsl(0 0% 40%)',
       'hsl(0 0% 30%)',
       'hsl(0 0% 12.5%)',
+      'hsl(0 0% 7.5%)',
+      'hsl(0 0% 7%)',
       'hsl(0 0% 6.5%)',
       'hsl(0 0% 6%)',
-      'hsl(0 0% 5%)',
-      'hsl(0 0% 4.5%)',
       'hsl(0 0% 1.5%)'
     ],
     gray: [
-      '#f4f5f6',
+      '#eee',
       '#e7e7e7',
       '#cccccc',
       '#b1b1b1',
@@ -200,7 +200,7 @@ const themeOverride = createTheme({
   focusClassName: 'focus-visible:outline',
   headings: {
     fontFamily: fonts.title.style.fontFamily,
-    fontWeight: '700',
+    fontWeight: '600',
     textWrap: 'wrap',
     sizes: {
       h1: {
@@ -211,7 +211,7 @@ const themeOverride = createTheme({
       },
       h2: {
         fontSize:
-          'calc(clamp(3.5rem, 1rem + 6.25vw, 7rem) * var(--mantine-scale))',
+          'calc(clamp(3rem, 1rem + 6.25vw, 4rem) * var(--mantine-scale))',
         lineHeight: '1'
       },
       h3: {

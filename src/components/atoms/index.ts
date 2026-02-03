@@ -5,7 +5,6 @@ import Box from './Box';
 import Button from './Button';
 import Divider from './Divider';
 import Height from './Height';
-import HorizontalScroll from './HorizontalScroll';
 import Icon from './Icon';
 import Image from './Image';
 import Indicator from './Indicator';
@@ -35,7 +34,6 @@ const Atoms = {
   Button,
   Divider,
   Height,
-  HorizontalScroll,
   Icon,
   Image,
   Indicator,
@@ -67,7 +65,6 @@ export {
   Button,
   Divider,
   Height,
-  HorizontalScroll,
   Icon,
   Image,
   Indicator,

@@ -12,41 +12,25 @@ import {
 import locale from './locale';
 
 const pages = async (): Promise<Pages[]> => {
-  const [
-    projectsRes,
-    personalRes,
-    workValuesRes,
-    personalValuesRes,
-    servicesRes,
-    statisticsRes,
-    hardSkillsRes,
-    softSkillsRes
-  ] = await Promise.all([
-    projectsApi.get({ locale, isSelected: true }),
-    personalApi.get({ locale }),
-    valuesApi.get({ id: 'work', locale }),
-    valuesApi.get({ id: 'personal', locale }),
-    servicesApi.get({ locale }),
-    statisticsApi.get({ locale }),
-    skillsApi.get({ slug: 'hard', locale }),
-    skillsApi.get({ slug: 'soft', locale })
-  ]);
+  const [projectsRes, personalRes, personalValuesRes, servicesRes] =
+    await Promise.all([
+      projectsApi.get({ locale, isSelected: true }),
+      personalApi.get({ locale }),
+      valuesApi.get({ id: 'work', locale }),
+      valuesApi.get({ id: 'personal', locale }),
+      servicesApi.get({ locale }),
+      statisticsApi.get({ locale }),
+      skillsApi.get({ slug: 'hard', locale }),
+      skillsApi.get({ slug: 'soft', locale })
+    ]);
 
   const projects = projectsRes.ok ? projectsRes.data : [];
 
   const personal = personalRes.ok ? personalRes.data : undefined;
 
-  const workValues = workValuesRes.ok ? workValuesRes.data : [];
-
   const personalValues = personalValuesRes.ok ? personalValuesRes.data : [];
 
   const services = servicesRes.ok ? servicesRes.data : [];
-
-  const statistics = statisticsRes.ok ? statisticsRes.data : [];
-
-  const hardSkills = hardSkillsRes.ok ? hardSkillsRes.data : [];
-
-  const softSkills = softSkillsRes.ok ? softSkillsRes.data : [];
 
   return [
     {
@@ -57,22 +41,22 @@ const pages = async (): Promise<Pages[]> => {
         id: 'hero',
         type: 'Primary',
         theme: 'light',
-        scrollTarget: '#selectedProjects',
+        scrollTarget: '#selected-projects',
         data: {
           title: [
             {
               type: 'alignText',
               align: 'left',
-              children: [{ text: 'Turning heads' }]
+              children: [{ text: 'Beyond code' }]
             },
             {
               type: 'alignText',
               align: 'right',
               children: [
-                { text: ' &', emphasize: true },
                 {
-                  text: ' captivating'
-                }
+                  text: ' boundaries'
+                },
+                { text: ' &', emphasize: true }
               ]
             },
             {
@@ -80,7 +64,7 @@ const pages = async (): Promise<Pages[]> => {
               align: 'center',
               children: [
                 {
-                  text: ' hearts'
+                  text: ' results'
                 },
                 {
                   text: ' '
@@ -89,7 +73,7 @@ const pages = async (): Promise<Pages[]> => {
                   type: 'paragraph',
                   children: [
                     {
-                      text: 'Hey there! I’m Richard, a Computer Science student at UFRGS — also a developer who cares building solid and scalable products.'
+                      text: 'Hey there! I’m Richard, a Computer Science student at UFRGS. Also a developer who cares building solid and scalable products.'
                     }
                   ]
                 }
@@ -127,7 +111,68 @@ const pages = async (): Promise<Pages[]> => {
       },
       blocks: [
         {
-          id: 'selectedProjects',
+          id: 'list-work-mission',
+          type: 'ListMission',
+          theme: 'dark',
+          data: {
+            description: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    text: 'That’s my mission — Each line of code improve my skills. Every project is an opportunity to inspire clients, coworkers, and the community. Consistent repetition breeds excellence.'
+                  }
+                ]
+              }
+            ],
+            items: [
+              {
+                id: 'improve',
+                text: [
+                  {
+                    text: 'Improve'
+                  }
+                ],
+                separator: [
+                  {
+                    type: 'icon',
+                    src: '/icons/rocket.svg'
+                  }
+                ]
+              },
+              {
+                id: 'inspire',
+                text: [
+                  {
+                    text: 'Inspire'
+                  }
+                ],
+                separator: [
+                  {
+                    type: 'icon',
+                    src: '/icons/globe.svg'
+                  }
+                ]
+              },
+              {
+                id: 'repeat',
+                text: [
+                  {
+                    text: 'Repeat'
+                  }
+                ],
+                separator: [
+                  {
+                    type: 'icon',
+                    src: '/icons/smile.svg'
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          id: 'selected-works',
           type: 'ProjectsCatalog',
           theme: 'dark',
           data: {
@@ -187,13 +232,36 @@ const pages = async (): Promise<Pages[]> => {
           }
         },
         {
-          id: 'toExpect',
-          type: 'Text',
+          id: 'selected-projects',
+          type: 'ProjectsCatalog',
           theme: 'dark',
           data: {
             title: [
               {
-                text: 'Here’s what you can expect from me'
+                type: 'alignText',
+                align: 'left',
+                children: [
+                  {
+                    text: 'Wor'
+                  },
+                  {
+                    text: 'k',
+                    emphasize: true
+                  }
+                ]
+              },
+              {
+                type: 'alignText',
+                align: 'right',
+                children: [
+                  {
+                    text: 'I',
+                    emphasize: true
+                  },
+                  {
+                    text: 'nsight'
+                  }
+                ]
               }
             ],
             description: [
@@ -201,51 +269,26 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'paragraph',
                 children: [
                   {
-                    text: 'I’m a dedicated professional —',
-                    bold: true
+                    text: 'Here are some examples of'
                   },
                   {
-                    text: ' always striving to understand every detail and maintain a clear vision of the bigger picture, which helps me connect complex ideas and turn them into practical and efficient solutions.'
-                  },
+                    text: ' my best works',
+                    bold: true
+                  }
                 ]
-              },
+              }
+            ],
+            empty: [
               {
                 type: 'paragraph',
                 children: [
                   {
-                    text: 'I believe in the value of teamwork and make it a point to integrate into the group’s culture. I aim to contribute to a dynamic and collaborative environment, where different perspectives turn into solid solutions.'
-                  },
+                    text: 'Sorry, selected projects not found.'
+                  }
                 ]
               }
-            ]
-          }
-        },
-        {
-          id: 'listWorkPage',
-          type: 'ListPage',
-          theme: 'dark',
-          data: {
-            items: [
-              {
-                id: 'list-work-mission',
-                text: 'Mission',
-                separator: '·'
-              },
-              {
-                id: 'list-work-skills',
-                text: 'Hard & Soft Skills',
-                separator: '·'
-              },
-              {
-                id: 'list-work-services',
-                text: 'Services',
-                separator: '·'
-              }
             ],
-            action: {
-              href: '/work',
-              label: 'Explore'
-            }
+            items: projects.map(({ year: _, ...d }) => d)
           }
         },
         {
@@ -491,351 +534,6 @@ const pages = async (): Promise<Pages[]> => {
       metadata: {}
     },
     {
-      slug: 'work',
-      isSelected: true,
-      label: 'Work',
-      hero: {
-        id: 'hero',
-        type: 'Primary',
-        theme: 'light',
-        scrollTarget: '#selectedProjects',
-        data: {
-          title: [
-            {
-              type: 'alignText',
-              align: 'left',
-              children: [{ text: 'Beyond code' }]
-            },
-            {
-              type: 'alignText',
-              align: 'right',
-              children: [
-                {
-                  text: ' boundaries'
-                },
-                { text: ' &', emphasize: true }
-              ]
-            },
-            {
-              type: 'alignText',
-              align: 'center',
-              children: [
-                {
-                  text: ' results'
-                },
-                {
-                  text: ' '
-                },
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      text: 'Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and  crafting high-impact, user-centered solutions.'
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          description: [
-            {
-              type: 'paragraph',
-              children: [
-                {
-                  text: 'Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and  crafting high-impact, user-centered solutions.'
-                }
-              ]
-            }
-          ],
-          left: [
-            {
-              type: 'paragraph',
-              children: [
-                {
-                  text: `${personal?.availability}`
-                }
-              ]
-            }
-          ],
-          right: [
-            {
-              type: 'icon',
-              src: '/icons/smile.svg',
-              animation: 'rotateLeft'
-            }
-          ]
-        }
-      },
-      blocks: [
-        {
-          id: 'list-work-mission',
-          type: 'ListMission',
-          theme: 'dark',
-          data: {
-            description: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    text: 'That’s my mission — Each line of code improve my skills, crafting high-impact solutions. Every project is an opportunity to inspire clients, coworkers, and the community. Consistent repetition breeds excellence, driving digital prominence.'
-                  }
-                ]
-              }
-            ],
-            items: [
-              {
-                id: 'improve',
-                text: [
-                  {
-                    text: 'Improve'
-                  }
-                ],
-                separator: [
-                  {
-                    type: 'icon',
-                    src: '/icons/rocket.svg'
-                  }
-                ]
-              },
-              {
-                id: 'inspire',
-                text: [
-                  {
-                    text: 'Inspire'
-                  }
-                ],
-                separator: [
-                  {
-                    type: 'icon',
-                    src: '/icons/globe.svg'
-                  }
-                ]
-              },
-              {
-                id: 'repeat',
-                text: [
-                  {
-                    text: 'Repeat'
-                  }
-                ],
-                separator: [
-                  {
-                    type: 'icon',
-                    src: '/icons/smile.svg'
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        {
-          id: 'services',
-          type: 'Services',
-          theme: 'dark',
-          data: {
-            title: [
-              { text: 'Ser' },
-              { text: 'vi', emphasize: true },
-              { text: 'ces' }
-            ],
-            subtitle: [{ text: 'I could help you with...' }],
-            image: {
-              src: '/images/services.webp',
-              alt: 'Richard Passos, a full-stack developer with short hair, wearing a black leather jacket and white shirt, stands against a plain background, crossing his arms.'
-            },
-            items: services.map((d, i) => ({
-              ...d,
-              slug: `· ${(i + 1).toString().padStart(2, '0')}`
-            })),
-            action: {
-              label: [
-                {
-                  text: 'Contact me'
-                }
-              ]
-            }
-          }
-        },
-        {
-          id: 'selectedProjects',
-          type: 'ProjectsCatalog',
-          theme: 'light',
-          data: {
-            title: [
-              {
-                type: 'alignText',
-                align: 'left',
-                children: [
-                  {
-                    text: 'Selecte'
-                  },
-                  {
-                    text: 'd',
-                    emphasize: true
-                  }
-                ]
-              },
-              {
-                type: 'alignText',
-                align: 'right',
-                children: [
-                  {
-                    text: 'W',
-                    emphasize: true
-                  },
-                  {
-                    text: 'orks'
-                  }
-                ]
-              }
-            ],
-            empty: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    text: 'Sorry, selected projects not found.'
-                  }
-                ]
-              }
-            ],
-            items: projects
-          }
-        },
-        {
-          id: 'why-me',
-          type: 'Statistics',
-          theme: 'dark',
-          data: {
-            title: [
-              {
-                type: 'alignText',
-                align: 'left',
-                children: [
-                  {
-                    text: 'Why am '
-                  },
-                  {
-                    text: 'I',
-                    emphasize: true
-                  }
-                ]
-              },
-              {
-                type: 'alignText',
-                align: 'right',
-                children: [
-                  {
-                    text: 'T',
-                    emphasize: true
-                  },
-                  {
-                    text: 'he fit'
-                  },
-                  {
-                    text: '?',
-                    emphasize: true
-                  }
-                ]
-              }
-            ],
-            description: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    text: 'After head turning projects and a captivating personality just'
-                  },
-                  {
-                    text: ' '
-                  },
-                  {
-                    type: 'link',
-                    url: '/about',
-                    children: [
-                      {
-                        text: 'one click away'
-                      }
-                    ]
-                  },
-                  {
-                    text: '.'
-                  }
-                ]
-              }
-            ],
-            subtitle: [
-              {
-                text: 'Some statistics...'
-              }
-            ],
-            items: statistics
-          }
-        },
-        {
-          id: 'hard-skills',
-          type: 'Skills',
-          theme: 'dark',
-          data: {
-            title: [
-              {
-                text: 'Hard skills'
-              }
-            ],
-            items: hardSkills
-          }
-        },
-        {
-          id: 'soft-skills',
-          type: 'Skills',
-          theme: 'dark',
-          data: {
-            title: [
-              {
-                text: 'Soft skills'
-              }
-            ],
-            items: softSkills
-          }
-        },
-        {
-          id: 'work-values',
-          type: 'Values',
-          theme: 'dark',
-          data: {
-            title: [
-              {
-                text: 'My values'
-              }
-            ],
-            templates: {
-              base: ['item-0', 'item-1', 'item-2', 'item-3'],
-              sm: ['item-0 item-1', 'item-2 item-3'],
-              lg: ['item-0 item-1 .', '. item-2 item-3']
-            },
-            items: workValues,
-            icons: {
-              left: {
-                src: '/icons/globe.svg',
-                animation: 'rotateRight',
-                y: 'bottom'
-              },
-              right: {
-                src: '/icons/smile.svg',
-                animation: 'rotateLeft',
-                y: 'top'
-              }
-            }
-          }
-        }
-      ],
-      metadata: {
-        title: 'Work',
-        description:
-          'Explore Richard’s mission, services, selected works, skills, and values as a full stack developer dedicated to delivering exceptional solutions.'
-      }
-    },
-    {
       slug: 'about',
       isSelected: true,
       label: 'About',
@@ -1042,10 +740,6 @@ const pages = async (): Promise<Pages[]> => {
           id: 'contact-form',
           type: 'ContactForm',
           theme: 'dark',
-          transitionProps: {
-            'data-theme': 'light',
-            reverse: true
-          } as ContactFormBlockProps['transitionProps'],
           data: {
             title: [
               {

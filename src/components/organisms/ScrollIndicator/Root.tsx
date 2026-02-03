@@ -17,14 +17,10 @@ const ScrollIndicatorOrganism = ({
         isIconOnly
         {...props}
       >
-        <span
-          className={`animate-scroll-indicator flex size-full items-center justify-center`}
-        >
+        <span className='animate-scroll-indicator flex size-full items-center justify-center'>
           <ArrowDownIcon className='size-[40%]' />
 
-          <ArrowDownIcon
-            className={`absolute bottom-[150%] size-[40%] translate-y-1/2`}
-          />
+          <ArrowDownIcon className='absolute bottom-[150%] size-[40%] translate-y-1/2' />
         </span>
       </Action>
     </ScrollTo>

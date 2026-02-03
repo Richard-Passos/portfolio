@@ -25,7 +25,7 @@ const ProjectsCatalogTableBlockOrganism = ({
       <CatalogList.Items<Project>>
         {(data, i) => (
           <li
-            className={`py-[calc(var(--spacing-xs)/2)] first:pt-0 last:pb-0`}
+            className='mt-3 first:mt-0'
             key={data.slug}
           >
             <TableProjectCard

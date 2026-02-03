@@ -52,7 +52,7 @@ const ValuesBlockOrganism = ({
           templates={data.templates}
           {...gridProps}
           className={cn(
-            'gap-xs w-9by10 relative z-10 max-w-screen-xl',
+            'w-9by10 relative z-10 max-w-7xl gap-2.5',
             gridProps?.className
           )}
         >

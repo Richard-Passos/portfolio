@@ -29,9 +29,7 @@ const ValueCardOrganism = ({
       className={cn('min-h-52', className)}
       {...props}
     >
-      <div
-        className={`bg-gray-0 dark:bg-dark-6 flex size-12 items-center justify-center rounded-sm`}
-      >
+      <div className='bg-gray-0 dark:bg-dark-6 flex size-12 items-center justify-center rounded-sm'>
         <Icon
           src={data.icon}
           {...iconProps}
@@ -43,7 +41,7 @@ const ValueCardOrganism = ({
         component='h4'
         order={5}
         {...titleProps}
-        className={cn('mt-xl', titleProps?.className)}
+        className={cn('mt-8', titleProps?.className)}
       >
         {data.title}
       </Title>
@@ -51,7 +49,7 @@ const ValueCardOrganism = ({
       <Text
         {...descriptionProps}
         className={cn(
-          'text-dimmed mt-[calc(var(--spacing-xs)/2)] leading-relaxed',
+          'text-dimmed mt-[calc(--spacing(2.5)/2)] leading-relaxed',
           descriptionProps?.className
         )}
       >

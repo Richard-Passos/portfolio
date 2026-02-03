@@ -26,9 +26,7 @@ const ImagesBlockImageOrganism = ({
       radius='xl'
       {...props}
     >
-      <div
-        className={`bg-gray-1 dark:bg-dark-6 relative size-full overflow-hidden rounded-[calc(var(--paper-radius)-var(--card-padding))] shadow-2xl`}
-      >
+      <div className='bg-gray-1 dark:bg-dark-6 relative size-full overflow-hidden rounded-[calc(var(--paper-radius)-var(--card-padding))] shadow-2xl'>
         <ScrollAnimate config={imageYScrollAnim}>
           <div className='absolute h-[115%] w-full'>
             <Image

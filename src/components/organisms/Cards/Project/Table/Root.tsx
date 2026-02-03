@@ -23,10 +23,10 @@ const TableProjectCardOrganism = ({
           'group/item relative flex items-center justify-center font-normal text-current focus-visible:outline-0',
 
           // Adjacents
-          'group-hover/list:[li:has(+:hover)>&>*]:scale-x-95 group-hover/list:[li:hover+*>&>*]:scale-x-95',
+          'group-hover/list:[li:has(+:hover)>&>*]:scale-x-95! group-hover/list:[li:hover+*>&>*]:scale-x-95!',
 
           // Element
-          'group-hover/list:not-hover:*:scale-x-90 group-hover/list:not-hover:*:opacity-50',
+          'group-hover/list:[li:not(:hover)>&>*]:scale-x-90 group-hover/list:[li:not(:hover)>&>*]:opacity-50',
           className
         )}
         underline='never'
@@ -34,12 +34,10 @@ const TableProjectCardOrganism = ({
       >
         <CardRoot
           className={cn(
-            'gap-xs py-xl ease-backOut flex-row items-start px-[7.5%] transition-[scale,opacity] duration-300 group-focus-visible/item:outline'
+            'ease-backOut flex-row items-start gap-2.5 px-[7.5%] py-8 transition-[scale,opacity] duration-300 group-focus-visible/item:outline'
           )}
         >
-          <Text
-            className={`text-dimmed relative shrink-0 translate-y-0.5 text-sm font-semibold`}
-          >
+          <Text className='text-dimmed relative shrink-0 translate-y-0.5 text-sm font-semibold'>
             <span
               aria-hidden
               className='opacity-0'
@@ -52,26 +50,22 @@ const TableProjectCardOrganism = ({
             </span>
           </Text>
 
-          <div className='gap-x-sm gap-y-xs flex grow items-center'>
+          <div className='flex grow items-center gap-x-3 gap-y-2.5'>
             <Title
-              className={`mb-auto shrink-0 basis-full overflow-hidden text-nowrap text-ellipsis sm:basis-1/2`}
+              className='mb-auto shrink-0 basis-full overflow-hidden text-nowrap text-ellipsis sm:basis-1/2'
               order={4}
             >
               {data.title}
             </Title>
 
-            <Text
-              className={`line-clamp-2 grow text-sm font-medium wrap-break-word lowercase sm:text-end`}
-            >
+            <Text className='line-clamp-2 grow text-sm font-medium wrap-break-word lowercase sm:text-end'>
               {values(data.roles)
                 .toSorted((a, b) => a.localeCompare(b))
                 .join(' & ')}
             </Text>
 
             {renderComp(
-              <Text
-                className={`shrink-0 basis-1/3 text-end text-sm font-medium sm:basis-1/12`}
-              >
+              <Text className='shrink-0 basis-1/3 text-end text-sm font-medium sm:basis-1/12'>
                 {data.year}
               </Text>,
               [data.year]
@@ -87,9 +81,7 @@ const TableProjectCardOrganism = ({
           }}
         >
           <div className='pointer-events-none absolute z-10'>
-            <div
-              className={`bg-gray-1 dark:bg-dark-6 relative aspect-square w-72 overflow-hidden rounded-lg opacity-0 transition-opacity group-hover/item:opacity-100`}
-            >
+            <div className='bg-gray-1 dark:bg-dark-6 relative aspect-square w-72 overflow-hidden rounded-lg opacity-0 transition-opacity group-hover/item:opacity-100'>
               <Image
                 alt={data.thumbnail.alt}
                 className='object-cover'

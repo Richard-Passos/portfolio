@@ -19,7 +19,7 @@ const useSetTheme = (
   });
 
   useMotionValueEvent(scrollYProgress, 'change', (value) => {
-    if ((value > 0 && value < 0.1) || (value < 1 && value > 0.9)) {
+    if ((value > 0 && value < 0.4) || (value < 1 && value > 0.6)) {
       setTheme(theme);
     }
   });

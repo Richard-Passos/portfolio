@@ -2,24 +2,8 @@ import { Footer } from '@/types';
 
 const footer = async (): Promise<Footer> => {
   return {
-    cta: {
-      title: [
-        {
-          text: 'No worries'
-        },
-        {
-          text: '!',
-          emphasize: true
-        }
-      ],
-      subtitle: [
-        {
-          text: 'Thinking of something?'
-        }
-      ],
-      action: {
-        label: 'Get in touch'
-      }
+    action: {
+      label: 'Get in touch'
     },
     locationSeparator: '—',
     description: [

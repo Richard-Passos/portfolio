@@ -37,7 +37,7 @@ const Layout = async ({ params, children }: LayoutProps) => {
 
   return (
     <html
-      className={`overflow-x-clip has-[body[data-scroll-locked]]:overflow-y-hidden`}
+      className='overflow-x-clip has-[body[data-scroll-locked]]:overflow-y-hidden'
       lang={locale}
       {...mantineHtmlProps}
     >
@@ -45,9 +45,7 @@ const Layout = async ({ params, children }: LayoutProps) => {
         <ColorSchemeScript defaultColorScheme={defaultColorScheme} />
       </head>
 
-      <body
-        className={`relative flex min-h-svh flex-col items-center overflow-x-clip`}
-      >
+      <body className='relative flex min-h-svh flex-col items-center overflow-x-clip'>
         <Providers>
           <SmoothScroll>
             <Height.Set name='header'>
@@ -55,9 +53,7 @@ const Layout = async ({ params, children }: LayoutProps) => {
             </Height.Set>
 
             <Height.Get name={['header', 'document']}>
-              <main
-                className={`max-w-bounds 3xl:min-h-bounds max-3xl:grow relative flex w-full flex-col items-center`}
-              >
+              <main className='max-w-bounds 3xl:min-h-bounds max-3xl:grow relative flex w-full flex-col items-center'>
                 {children}
               </main>
             </Height.Get>

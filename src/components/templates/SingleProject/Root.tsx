@@ -25,14 +25,18 @@ const SingleProjectTemplate = ({
         const Block = Blocks[type] as ComponentType<any>;
 
         const isSameTheme = lastTheme === theme;
+        let radius = '';
+        if (!isSameTheme)
+          radius =
+            theme === 'dark' ? 'rounded-t-4xl' : '[*:has(+&)]:rounded-b-4xl';
 
         const Component = (
           <Block
             className={cn(
-              `last:pb-(--section-spacing-lg) has-[+[data-has-transition="true"]]:pb-(--section-spacing-lg)`,
+              `overflow-y-clip last:rounded-b-4xl`,
+              radius,
               className
             )}
-            hasTransition={!isSameTheme}
             id={id}
             key={id}
             theme={theme}

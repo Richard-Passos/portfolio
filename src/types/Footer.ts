@@ -1,12 +1,8 @@
 import { Node } from '@/utils/serialize';
 
 type Personal = {
-  cta: {
-    title: Node[];
-    subtitle: Node[];
-    action: {
-      label: string;
-    };
+  action: {
+    label: string;
   };
   locationSeparator: string;
   description: Node[];

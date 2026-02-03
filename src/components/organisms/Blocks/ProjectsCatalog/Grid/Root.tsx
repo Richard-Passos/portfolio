@@ -20,7 +20,7 @@ const ProjectsCatalogGridBlockOrganism = ({
   return (
     <CatalogList.Root
       className={cn(
-        `gap-xs grid w-full max-w-sm sm:max-w-3xl sm:grid-cols-2`,
+        `grid w-full max-w-sm gap-2.5 sm:max-w-3xl sm:grid-cols-2`,
         className
       )}
       {...props}
@@ -28,7 +28,7 @@ const ProjectsCatalogGridBlockOrganism = ({
       <CatalogList.Items<Project>>
         {(data) => (
           <li
-            className={`sm:even:mt-2xl sm:not-last:even:-mb-2xl h-fit`}
+            className='h-fit sm:even:mt-16 sm:not-last:even:-mb-16'
             key={data.slug}
           >
             <GridProjectCard

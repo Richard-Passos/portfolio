@@ -9,19 +9,18 @@ const LegalTemplate = ({ blocks }: LegalTemplateProps) => {
   return (
     <Section
       forceTheme
-      hasTransition={false}
       theme={blocks.theme}
     >
       <div className='w-9by10 flex max-w-5xl flex-col items-end'>
-        <header className='mt-2xl w-full'>
+        <header className='mt-16 w-full'>
           <Title
-            className={`w-fit pl-[min(10vw,--spacing(20))] wrap-break-word data-[align=left]:*:-ml-[min(10vw,--spacing(20))]`}
+            className='w-fit pl-[min(10vw,--spacing(20))] wrap-break-word data-[align=left]:*:-ml-[min(10vw,--spacing(20))]'
             order={1}
           >
             {serialize(blocks.header.title)}
           </Title>
 
-          <section className='mt-xs'>
+          <section className='mt-2.5'>
             {serialize(blocks.header.effectiveDate, {
               paragraph: {
                 className: 'text-dimmed *:text-text'
@@ -30,16 +29,16 @@ const LegalTemplate = ({ blocks }: LegalTemplateProps) => {
           </section>
         </header>
 
-        <section className={`mt-xl w-full max-w-screen-sm first:*:mt-0`}>
+        <section className='mt-8 w-full max-w-screen-sm first:*:mt-0'>
           {serialize(blocks.data, {
             heading: {
-              className: 'mt-xl mb-sm data-[order="2"]:!text-2xl'
+              className: 'mt-8 mb-3 data-[order="2"]:!text-2xl'
             },
             paragraph: {
               className: 'mt-2'
             },
             small: {
-              className: 'mt-xl'
+              className: 'mt-8'
             },
             li: {
               className: '[p+&]:mt-4'
@@ -48,7 +47,7 @@ const LegalTemplate = ({ blocks }: LegalTemplateProps) => {
         </section>
 
         {renderComp(
-          <footer className='mt-xl w-full max-w-screen-sm'>
+          <footer className='mt-8 w-full max-w-screen-sm'>
             {serialize(blocks.footer)}
           </footer>,
           [!!blocks.footer]

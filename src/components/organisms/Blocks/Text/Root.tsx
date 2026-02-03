@@ -29,7 +29,7 @@ const TextBlockOrganism = ({
 }: TextBlockOrganismProps) => {
   return (
     <CleanLayoutBlock
-      className={cn('w-9by10 max-w-screen-lg pt-0', className)}
+      className={cn('w-9by10 max-w-5xl pt-0', className)}
       {...props}
     >
       <Title
@@ -42,7 +42,7 @@ const TextBlockOrganism = ({
 
       <div
         {...wrapperProps}
-        className={cn('mt-lg gap-md mr-auto flex', wrapperProps?.className)}
+        className={cn('mt-5 mr-auto flex gap-4', wrapperProps?.className)}
       >
         <span className='relative mt-2.5 h-2 w-12 shrink-0'>
           <ScrollAnimate
@@ -53,7 +53,7 @@ const TextBlockOrganism = ({
           </ScrollAnimate>
         </span>
 
-        <section className='gap-md flex max-w-md flex-col'>
+        <section className='flex max-w-md flex-col gap-4'>
           {serialize(data.description, {
             paragraph: {
               className: 'leading-relaxed text-dimmed *:text-text'

@@ -1,3 +1,4 @@
+import { Bg } from '@/components/atoms';
 import { ListHorizontalScroll } from '@/components/molecules';
 import serialize, { Node } from '@/utils/serialize';
 
@@ -26,8 +27,9 @@ const ListMissionBlockOrganism = ({
 
           return (
             <ListHorizontalScroll.Item
-              baseVelocity={(1.5 + 0.25 * i) * (i % 2 === 0 ? 1 : -1)}
-              className={`py-xl font-semibold uppercase [--gap:var(--spacing-sm)] *:*:[--rotate:calc(var(--x)*(360deg/12.5))] odd:-rotate-1 even:rotate-1`}
+              speed={75 + 10 * i}
+              direction={i % 2 === 0 ? 'right' : 'left'}
+              className='py-8 font-semibold uppercase [--gap:--spacing(3)] *:*:[--rotate:calc(var(--x)*(360deg/12.5))] odd:-rotate-1 even:rotate-1'
               key={item.id}
               order={1}
             >
@@ -35,15 +37,13 @@ const ListMissionBlockOrganism = ({
 
               <div className='size-[1em] rotate-(--rotate)'>{separator}</div>
 
-              <span className={`opacity-30 dark:opacity-10`}>{text}</span>
+              <span className='opacity-30 dark:opacity-10'>{text}</span>
 
-              <div
-                className={`size-[1em] rotate-(--rotate) opacity-30 max-sm:hidden dark:opacity-10`}
-              >
+              <div className='size-[1em] rotate-(--rotate) opacity-30 max-sm:hidden dark:opacity-10'>
                 {separator}
               </div>
 
-              <span className={`opacity-30 max-sm:hidden dark:opacity-10`}>
+              <span className='opacity-30 max-sm:hidden dark:opacity-10'>
                 {text}
               </span>
 
@@ -53,7 +53,7 @@ const ListMissionBlockOrganism = ({
         })}
       </ListHorizontalScroll.Root>
 
-      <section className='mt-xl w-9by10 max-w-xl text-center'>
+      <section className='w-9by10 mt-8 max-w-xl text-center'>
         {serialize(data.description, {
           paragraph: {
             className: 'leading-relaxed text-dimmed max-sm:text-sm *:text-text'

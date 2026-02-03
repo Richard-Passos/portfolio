@@ -43,7 +43,7 @@ const IconsOrganism = ({
           style={{ [left.y]: '0px', ...leftProps?.style }}
         >
           <Icon
-            className={`text-gray-0 dark:text-dark-6`}
+            className='text-gray-0 dark:text-dark-6'
             src={left.src}
           />
         </div>
@@ -59,7 +59,7 @@ const IconsOrganism = ({
           style={{ [right.y]: '0px', ...rightProps?.style }}
         >
           <Icon
-            className={`text-gray-0 dark:text-dark-6`}
+            className='text-gray-0 dark:text-dark-6'
             src={right.src}
           />
         </div>

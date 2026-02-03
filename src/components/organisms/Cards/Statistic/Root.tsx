@@ -22,10 +22,7 @@ const StatisticCardOrganism = ({
 }: StatisticCardOrganismProps) => {
   return (
     <Card.Root
-      className={cn(
-        'gap-sm py-xl min-h-52 justify-between px-[7.5%]',
-        className
-      )}
+      className={cn('min-h-52 justify-between gap-3 px-[7.5%] py-8', className)}
       {...props}
     >
       <Title

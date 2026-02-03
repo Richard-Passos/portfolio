@@ -30,7 +30,7 @@ const CarouselMolecule = ({
     focus: 'center',
     trimSpace: false,
     pagination: false,
-    gap: 'var(--mantine-spacing-xs)',
+    gap: 'calc(var(--spacing) * 2.5)',
     ...options
   };
 

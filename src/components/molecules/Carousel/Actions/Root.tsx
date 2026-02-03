@@ -14,7 +14,7 @@ const CarouselActionsMolecule = ({
 }: CarouselActionsMoleculeProps) => {
   return (
     <Box
-      className={cn('splide__arrows gap-xs flex items-center', className)}
+      className={cn('splide__arrows flex items-center gap-2.5', className)}
       component='section'
       {...props}
     />

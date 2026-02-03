@@ -51,7 +51,7 @@ const HeaderNavLinkOrganism = ({
     },
     vertical: {
       classNames: {
-        link: 'text-5xl sm:text-6xl py-sm px-8',
+        link: 'text-5xl sm:text-6xl py-3 px-8',
         indicator: 'left-0 w-1 h-1/3'
       },
       limit: {

@@ -15,7 +15,7 @@ const HeaderOrganism = ({ className, ...props }: HeaderOrganismProps) => {
     <HeaderTheme>
       <header
         className={cn(
-          `max-w-bounds py-lg sm:py-xl absolute z-10 flex w-full flex-wrap items-center justify-between px-[6%] sm:px-[4%]`,
+          `max-w-bounds absolute z-10 flex w-full flex-wrap items-center justify-between px-[6%] py-5 sm:px-[4%]`,
           className
         )}
         {...props}

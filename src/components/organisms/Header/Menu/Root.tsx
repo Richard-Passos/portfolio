@@ -64,10 +64,10 @@ const HeaderMenuOrganism = async (props: HeaderMenuOrganismProps) => {
     >
       <Drawer.Content
         bodyProps={{
-          className: 'flex grow flex-col p-0 pt-xl'
+          className: 'flex grow flex-col p-0 pt-8'
         }}
         className={cn(
-          `flex flex-col p-(--p) pt-[calc(var(--p)*1.5)] [--drawer-size:560px] [--p:var(--spacing-xl)] sm:[--p:var(--spacing-2xl)]`
+          `flex flex-col p-(--p) pt-[calc(var(--p)*1.5)] [--drawer-size:560px] [--p:--spacing(8)] sm:[--p:--spacing(16)]`
         )}
         hasCloseButton={false}
         headerProps={{
@@ -76,7 +76,7 @@ const HeaderMenuOrganism = async (props: HeaderMenuOrganismProps) => {
         title={header.menu.title}
       >
         <HeaderNav
-          className='mb-xl flex-col items-start'
+          className='mb-8 flex-col items-start'
           data-autofocus
           items={navItems}
           linkProps={{
@@ -87,7 +87,7 @@ const HeaderMenuOrganism = async (props: HeaderMenuOrganismProps) => {
           }}
         />
 
-        <div className='gap-md px-md mt-auto flex flex-wrap'>
+        <div className='mt-auto flex flex-wrap gap-4 px-4'>
           <LocaleSelect
             aria-label={header.locale.label}
             className='mt-1'
@@ -95,7 +95,7 @@ const HeaderMenuOrganism = async (props: HeaderMenuOrganismProps) => {
           />
 
           {renderComp(
-            <div className='gap-xs flex flex-wrap items-center'>
+            <div className='flex flex-wrap items-center gap-2.5'>
               {socials?.map((data) => (
                 <Action
                   aria-label={data.label}
@@ -118,7 +118,7 @@ const HeaderMenuOrganism = async (props: HeaderMenuOrganismProps) => {
 
         {renderComp(
           <Text
-            className='mt-md px-md text-dimmed block text-xs'
+            className='text-dimmed mt-4 block px-4 text-xs'
             component='small'
           >
             {legalPages.map((d, i, arr) => (

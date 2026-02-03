@@ -21,7 +21,7 @@ const SingleProjectImagesTemplate = ({
 }: SingleProjectImagesTemplateProps) => {
   return (
     <Section {...props}>
-      <div className='gap-md w-9by10 flex max-w-7xl max-md:flex-col md:justify-end'>
+      <div className='w-9by10 flex max-w-7xl gap-4 max-md:flex-col md:justify-end'>
         <section className='w-full max-w-48 md:max-w-36'>
           {serialize(data.description ?? [], {
             paragraph: {
@@ -30,7 +30,7 @@ const SingleProjectImagesTemplate = ({
           })}
         </section>
 
-        <div className='gap-xs flex max-w-3xl grow flex-col items-center'>
+        <div className='flex max-w-3xl grow flex-col items-center gap-2.5'>
           {data.items.map((data) => (
             <div
               className={

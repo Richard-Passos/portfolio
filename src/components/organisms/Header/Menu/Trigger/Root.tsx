@@ -35,12 +35,10 @@ const HeaderMenuTriggerOrganism = ({
         config={ANIMATION_CONFIG}
         smoothConfig={smoothConfig}
       >
-        <div
-          className={`z-max fixed top-(--side) right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] scale-(--scale) [--side:var(--spacing-md)] has-data-[state="open"]:scale-100 sm:[--side:var(--spacing-xl)]`}
-        >
+        <div className='z-max fixed top-(--side) right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] scale-(--scale) [--side:--spacing(4)] has-data-[state="open"]:scale-100 sm:[--side:--spacing(8)]'>
           <DrawerTrigger>
             <Action
-              className={cn(`h-16 rounded-full sm:h-20`, className)}
+              className={cn('h-16 rounded-full sm:h-20', className)}
               isIconOnly
               magneticProps={{
                 ...magneticProps,
@@ -49,19 +47,15 @@ const HeaderMenuTriggerOrganism = ({
               variant='default'
               {...props}
             >
-              <MenuIcon
-                className={`size-[40%] group-data-[state=open]/action:hidden`}
-              />
+              <MenuIcon className='size-[40%] group-data-[state=open]/action:hidden' />
 
-              <TimesIcon
-                className={`absolute size-[40%] group-data-[state=closed]/action:hidden`}
-              />
+              <TimesIcon className='absolute size-[40%] group-data-[state=closed]/action:hidden' />
 
-              <span className={`sr-only data-[state=open]:hidden`}>
+              <span className='sr-only data-[state=open]:hidden'>
                 {label.open}
               </span>
 
-              <span className={`sr-only data-[state=closed]:hidden`}>
+              <span className='sr-only data-[state=closed]:hidden'>
                 {label.close}
               </span>
             </Action>

@@ -9,7 +9,6 @@ import Form from './Form';
 import List from './List';
 import ListHorizontalScroll from './ListHorizontalScroll';
 import LocaleSelect from './LocaleSelect';
-import ScrollText from './ScrollText';
 import TextScrollAnimate from './TextScrollAnimate';
 
 const Molecules = {
@@ -23,7 +22,6 @@ const Molecules = {
   List,
   ListHorizontalScroll,
   LocaleSelect,
-  ScrollText,
   ScrollTo,
   TextScrollAnimate
 };
@@ -40,7 +38,6 @@ export {
   List,
   ListHorizontalScroll,
   LocaleSelect,
-  ScrollText,
   ScrollTo,
   TextScrollAnimate
 };

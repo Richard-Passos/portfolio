@@ -315,15 +315,8 @@
   --color-orange-9: var(--mantine-color-orange-9);
 
   --spacing-px: 0.8px;
-  --spacing-9by10: 90%;
-  --spacing-2xs: var(--mantine-spacing-2xs);
-  --spacing-xs: var(--mantine-spacing-xs);
-  --spacing-sm: var(--mantine-spacing-sm);
-  --spacing-md: var(--mantine-spacing-md);
-  --spacing-lg: var(--mantine-spacing-lg);
-  --spacing-xl: var(--mantine-spacing-xl);
-  --spacing-2xl: var(--mantine-spacing-2xl);
 
+  --width-9by10: 90%;
   --width-3xs: var(--container-3xs);
   --width-2xs: var(--container-2xs);
   --width-xs: var(--container-xs);
@@ -623,8 +616,6 @@
     --mantine-color-orange-outline: var(--mantine-color-orange-6);
     --mantine-color-orange-outline-hover: rgba(253, 126, 20, 0.05);
 
-    --mantine-color-text: hsl(0 0% 7.5%);
-    --mantine-color-body: hsl(0 0% 98%);
     --mantine-color-anchor: var(--mantine-primary-color-6);
     --mantine-color-dark-light: rgba(0, 0, 0, 0.1);
     --mantine-color-dark-light-hover: rgba(0, 0, 0, 0.12);

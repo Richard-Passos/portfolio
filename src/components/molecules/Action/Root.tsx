@@ -48,16 +48,12 @@ const ActionMolecule = ({
         }
         smoothConfig={magneticProps.smoothConfig}
       >
-        <span
-          className={`rounded-inherit relative z-10 flex size-full items-center justify-center gap-[inherit] px-(--button-padding-x)`}
-        >
+        <span className='rounded-inherit relative z-10 flex size-full items-center justify-center gap-[inherit] px-(--button-padding-x)'>
           {children}
         </span>
       </MagneticRoot>
 
-      <span
-        className={`absolute inset-0 bg-(--button-hover) transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-hover/action:[clip-path:inset(0_round_0)] group-aria-disabled/action:hidden`}
-      />
+      <span className='absolute inset-0 bg-(--button-hover) transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-hover/action:[clip-path:inset(0_round_0)] group-aria-disabled/action:hidden' />
     </>
   );
 

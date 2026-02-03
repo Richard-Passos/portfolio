@@ -23,16 +23,17 @@ const LinkCardOrganism = ({
 }: LinkCardOrganismProps) => {
   return (
     <CardRoot
-      className={cn('min-h-52 overflow-visible border-transparent', className)}
+      className={cn(
+        'min-h-52 overflow-visible border-transparent p-0',
+        className
+      )}
       {...props}
     >
       <UnstyledLink
-        className={`rounded-inherit hover:bg-gray-0 dark:hover:bg-dark-6 -m-[(var(--card-padding)_+_1px)] flex min-h-52 flex-col items-center justify-center border p-(--card-padding) font-normal text-current no-underline`}
+        className='rounded-inherit hover:bg-gray-0 dark:hover:bg-dark-6 -m-[(var(--card-padding)+1px)] flex min-h-52 flex-col items-center justify-center border p-(--card-padding) font-normal text-current no-underline'
         href={data.href}
       >
-        <div
-          className={`flex size-10 items-center justify-center rounded-sm border`}
-        >
+        <div className='flex size-10 items-center justify-center rounded-sm border'>
           <Icon
             className='size-2/3'
             src={data.icon}
@@ -40,7 +41,7 @@ const LinkCardOrganism = ({
         </div>
 
         <Title
-          className='mt-sm text-center text-sm'
+          className='mt-3 text-center text-sm'
           order={4}
         >
           {serialize(data.title)}

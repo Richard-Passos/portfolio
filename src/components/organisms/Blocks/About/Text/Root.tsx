@@ -39,7 +39,7 @@ const AboutBlockTextOrganism = ({
       <div
         {...wrapperProps}
         className={cn(
-          `mt-md gap-md flex items-start sm:ml-[5%]`,
+          `mt-4 flex items-start gap-4 sm:ml-[5%]`,
           wrapperProps?.className
         )}
       >
@@ -52,7 +52,7 @@ const AboutBlockTextOrganism = ({
           </ScrollAnimate>
         </span>
 
-        <section className='gap-md flex max-w-md flex-col'>
+        <section className='flex max-w-md flex-col gap-4'>
           {serialize(data.description, {
             paragraph: {
               className: 'text-sm leading-relaxed text-dimmed *:text-text'

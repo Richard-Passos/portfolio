@@ -33,23 +33,19 @@ const AboutBlockOrganism = ({
       <section
         {...wrapperProps}
         className={cn(
-          `gap-md md:gap-2xl w-9by10 flex max-w-screen-lg`,
+          `w-9by10 flex max-w-5xl gap-4 md:gap-16`,
           wrapperProps?.className
         )}
       >
-        <div
-          className={`dark:bg-dark-8 relative grow basis-48 overflow-hidden bg-white max-sm:hidden`}
-        >
+        <div className='dark:bg-dark-8 relative grow basis-48 overflow-hidden bg-white max-sm:hidden'>
           <ScrollAnimate config={yFullScrollAnim}>
-            <Lines
-              className={`text-border! h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60`}
-            />
+            <Lines className='text-border! h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60' />
           </ScrollAnimate>
 
           <span className='rounded-inherit absolute inset-0 border opacity-60' />
         </div>
 
-        <section className='gap-xl flex max-w-xl grow flex-col'>
+        <section className='flex max-w-xl grow flex-col gap-8'>
           {data.texts.map(({ id, ...data }) => (
             <AboutBlockText
               data={data}

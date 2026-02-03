@@ -32,9 +32,7 @@ const TimeCardOrganism = ({
         {serialize(data.title)}
       </Title>
 
-      <Text
-        className={`text-center text-[14vw] leading-none font-bold sm:text-[min(8vw,6rem)]`}
-      >
+      <Text className='text-center text-[14vw] leading-none font-bold sm:text-[min(8vw,6rem)]'>
         {data.time ? data.time : <LocalTime />}
       </Text>
     </Card.Root>

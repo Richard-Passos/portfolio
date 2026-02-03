@@ -38,15 +38,12 @@ const SingleProjectHeroTemplate = ({
     <Section
       className={cn(`min-h-fit pt-0 2xl:min-h-fit`, className)}
       forceTheme
-      hasTransition={false}
       {...props}
     >
-      <header
-        className={`w-9by10 flex min-h-[calc(var(--h)*.75)] flex-col items-center justify-center pt-[calc(var(--header-height)+var(--section-spacing-md))] pb-(--section-spacing-md) [--h:100svh] 2xl:[--h:var(--max-height-bounds)]`}
-      >
+      <header className='w-9by10 flex min-h-[calc(var(--h)*.75)] flex-col items-center justify-center pt-[calc(var(--header-height)+--spacing(8))] pb-8 [--h:100svh] 2xl:[--h:var(--max-height-bounds)]'>
         {renderComp(
           <Title
-            className='mb-xs max-w-md text-center font-medium tracking-wide'
+            className='mb-2.5 max-w-md text-center font-medium tracking-wide'
             component='h2'
             order={6}
           >
@@ -63,24 +60,20 @@ const SingleProjectHeroTemplate = ({
         </Title>
 
         {renderComp(
-          <Text className='mt-lg text-dimmed max-w-lg text-center text-sm'>
+          <Text className='text-dimmed mt-5 max-w-lg text-center text-sm'>
             {data.description}
           </Text>,
           [data.description]
         )}
       </header>
 
-      <div
-        className={`mt-2xl relative flex w-full max-w-7xl items-center justify-center`}
-      >
+      <div className='relative mt-16 flex w-full max-w-7xl items-center justify-center'>
         {renderComp(
           <ScrollAnimate config={{ prop: 'y', propPoints: ['0%', '-100%'] }}>
-            <div
-              className={`absolute top-0 left-0 z-10 translate-x-1/2 -translate-y-1/2`}
-            >
+            <div className='absolute top-0 left-0 z-10 translate-x-1/2 -translate-y-1/2'>
               <Action
                 as='link'
-                className={`aspect-square rounded-full shadow [--button-height:calc(var(--size)*var(--mantine-scale))]! [--size:8rem] sm:text-xl sm:[--size:12rem]`}
+                className='aspect-square rounded-full shadow [--button-height:calc(var(--size)*var(--mantine-scale))]! [--size:8rem] sm:text-xl sm:[--size:12rem]'
                 disabled={!data.action?.href}
                 href={data.action.href}
               >
@@ -92,9 +85,7 @@ const SingleProjectHeroTemplate = ({
           [data.action.label]
         )}
 
-        <div
-          className={`bg-gray-1 dark:bg-dark-6 relative aspect-video w-full overflow-hidden rounded-xl`}
-        >
+        <div className='bg-gray-1 dark:bg-dark-6 relative aspect-video w-full overflow-hidden rounded-xl'>
           <Image
             alt={data.image.alt}
             className='object-cover'

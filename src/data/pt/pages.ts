@@ -210,15 +210,15 @@ const pages = async (): Promise<Pages[]> => {
                   },
                   {
                     text: ' sempre em busca de entender cada detalhe e ter uma visão clara do todo, o que me ajuda a conectar ideias complexas e transformá-las em soluções práticas e eficientes.'
-                  },
+                  }
                 ]
-              },  
+              },
               {
                 type: 'paragraph',
                 children: [
                   {
                     text: 'Acredito no valor do trabalho em equipe e faço questão de me integrar à cultura do grupo. Procuro contribuir para um ambiente dinâmico e colaborativo, onde diferentes perspectivas viram soluções solidas'
-                  },
+                  }
                 ]
               }
             ]
@@ -343,7 +343,7 @@ const pages = async (): Promise<Pages[]> => {
                         }
                       ]
                     },
-                    { 
+                    {
                       type: 'paragraph',
                       children: [
                         {
@@ -1049,10 +1049,6 @@ const pages = async (): Promise<Pages[]> => {
           id: 'contact-form',
           type: 'ContactForm',
           theme: 'dark',
-          transitionProps: {
-            'data-theme': 'light',
-            reverse: true
-          } as ContactFormBlockProps['transitionProps'],
           data: {
             title: [
               {

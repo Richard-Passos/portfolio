@@ -16,7 +16,7 @@ const BgAtom = ({ className, color, ...props }: BgAtomProps) => {
     <Box
       bg={color}
       className={cn(
-        `dark:bg-dark-8 pointer-events-none absolute inset-y-0 -z-50 w-screen overflow-hidden bg-white`,
+        'dark:bg-dark-8 pointer-events-none absolute inset-y-0 -z-50 w-screen overflow-hidden bg-white',
         className
       )}
       {...props}

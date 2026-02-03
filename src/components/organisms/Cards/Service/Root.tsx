@@ -28,7 +28,7 @@ const ServiceCardOrganism = ({
 }: ServiceCardOrganismProps) => {
   return (
     <Card.Root
-      className={cn('border-transparent !bg-transparent', className)}
+      className={cn('border-transparent bg-transparent!', className)}
       {...props}
     >
       <Text
@@ -44,14 +44,14 @@ const ServiceCardOrganism = ({
 
       <Divider
         {...dividerProps}
-        className={cn('mt-xs', dividerProps?.className)}
+        className={cn('mt-2.5', dividerProps?.className)}
       />
 
       <Title
         component='h4'
         order={5}
         {...titleProps}
-        className={cn('mt-lg', titleProps?.className)}
+        className={cn('mt-5', titleProps?.className)}
       >
         {data.title}
       </Title>
@@ -59,7 +59,7 @@ const ServiceCardOrganism = ({
       <Text
         {...descriptionProps}
         className={cn(
-          'text-dimmed mt-[calc(var(--spacing-xs)/2)] text-sm leading-relaxed',
+          'text-dimmed mt-[calc(--spacing(2.5)/2)] text-sm leading-relaxed',
           descriptionProps?.className
         )}
       >
