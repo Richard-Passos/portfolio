@@ -19,7 +19,7 @@ const ImagesBlockImageOrganism = ({
   return (
     <CardRoot
       className={cn(
-        'aspect-[1/1.35] h-auto overflow-visible !bg-transparent',
+        'aspect-square h-auto overflow-visible bg-transparent!',
         className
       )}
       padding='xs'

@@ -68,7 +68,7 @@ const HeaderNavLinkOrganism = ({
     >
       <Link
         className={cn(
-          `group/link relative flex items-center justify-center rounded font-medium wrap-break-word text-current no-underline hover:z-10`,
+          `group/link relative flex items-center justify-center rounded wrap-break-word text-current no-underline hover:z-10`,
           orientationProps[orientation].classNames?.link,
           className
         )}

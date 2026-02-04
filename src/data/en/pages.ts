@@ -1,11 +1,8 @@
-import { ContactFormBlockProps } from '@/components/organisms/Blocks/ContactForm';
 import { Pages } from '@/types';
 import {
   personalApi,
   projectsApi,
   servicesApi,
-  skillsApi,
-  statisticsApi,
   valuesApi
 } from '@/utils/actions';
 
@@ -16,12 +13,8 @@ const pages = async (): Promise<Pages[]> => {
     await Promise.all([
       projectsApi.get({ locale, isSelected: true }),
       personalApi.get({ locale }),
-      valuesApi.get({ id: 'work', locale }),
       valuesApi.get({ id: 'personal', locale }),
-      servicesApi.get({ locale }),
-      statisticsApi.get({ locale }),
-      skillsApi.get({ slug: 'hard', locale }),
-      skillsApi.get({ slug: 'soft', locale })
+      servicesApi.get({ locale })
     ]);
 
   const projects = projectsRes.ok ? projectsRes.data : [];
@@ -572,15 +565,15 @@ const pages = async (): Promise<Pages[]> => {
           data: {
             items: [
               {
-                src: '/images/about-00.webp',
+                src: '/images/bg.webp',
                 alt: 'Richard Passos, a full-stack developer with short hair, stands against a wooden wall, wearing a light-colored T-shirt. Richard Passos has his arms crossed, showcasing a watch and a necklace.'
               },
               {
-                src: '/images/about-01.webp',
+                src: '/images/services.svg',
                 alt: 'Richard Passos, a full-stack developer stands against a plain background wearing a black leather jacket over a white shirt, with their left hand in the jacket pocket.'
               },
               {
-                src: '/images/about-02.webp',
+                src: '/images/bg.webp',
                 alt: 'Richard Passos, a full-stack developer wearing a light gray hoodie with "Brooklyn" and other text printed on it stands against a wooden wall, looking to the left.'
               }
             ]
@@ -822,7 +815,7 @@ const pages = async (): Promise<Pages[]> => {
             subtitle: [{ text: 'I could help you with...' }],
             image: {
               src: '/images/services.webp',
-              alt: 'Richard Passos, a full-stack developer with short hair, wearing a black leather jacket and white shirt, stands against a plain background, crossing his arms.'
+              alt: 'Richard Passos, a full-stack developer with short dark hair wearing a red shirt, black jacket, and silver necklace stands in front of a colorful abstract mural.'
             },
             items: services.map((d, i) => ({
               ...d,
