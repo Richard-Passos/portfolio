@@ -7,16 +7,15 @@ import CatalogList, {
 import { Project } from '@/types';
 import { cn } from '@/utils';
 
-type ProjectsCatalogTableBlockOrganismOwnProps = {};
+type ProjectsCatalogTableBlockOwnProps = {};
 
-type ProjectsCatalogTableBlockOrganismProps =
-  ProjectsCatalogTableBlockOrganismOwnProps &
-    Omit<CatalogListRootProps, keyof ProjectsCatalogTableBlockOrganismOwnProps>;
+type ProjectsCatalogTableBlockProps = ProjectsCatalogTableBlockOwnProps &
+  Omit<CatalogListRootProps, keyof ProjectsCatalogTableBlockOwnProps>;
 
-const ProjectsCatalogTableBlockOrganism = ({
+const ProjectsCatalogTableBlock = ({
   className,
   ...props
-}: ProjectsCatalogTableBlockOrganismProps) => {
+}: ProjectsCatalogTableBlockProps) => {
   return (
     <CatalogList.Root
       className={cn('group/list', className)}
@@ -39,5 +38,5 @@ const ProjectsCatalogTableBlockOrganism = ({
   );
 };
 
-export default ProjectsCatalogTableBlockOrganism;
-export type { ProjectsCatalogTableBlockOrganismProps };
+export default ProjectsCatalogTableBlock;
+export type { ProjectsCatalogTableBlockProps };

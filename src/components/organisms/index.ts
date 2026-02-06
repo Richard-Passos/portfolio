@@ -1,3 +1,4 @@
+import Layouts from '../Layouts';
 import CookiesConsent from './CookiesConsent';
 import Footer from './Footer';
 import Forms from './Forms';

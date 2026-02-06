@@ -1,6 +1,4 @@
-import ValuesBlock, {
-  ValuesBlockOrganismProps as ValuesBlockProps
-} from './Root';
+import ValuesBlock, { ValuesBlockProps } from './Root';
 
 export default ValuesBlock;
 export type { ValuesBlockProps };

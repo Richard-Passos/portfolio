@@ -1,11 +1,12 @@
 import { StatisticCard } from '@/components/Cards';
 import { StatisticCardProps } from '@/components/Cards/Statistic';
+import PrimaryLayouts, {
+  PrimaryLayoutsProps
+} from '@/components/Layouts/Primary';
 import { ScrollAnimate, Title } from '@/components/atoms';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
 import { renderComp } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
-
-import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
 
 const SCROLL_OFFSET = ['0 1', '0 .55'],
   ANIMATION_CONFIG = {
@@ -25,22 +26,19 @@ const SCROLL_OFFSET = ['0 1', '0 .55'],
     } as ScrollAnimateConfigOptions
   };
 
-type StatisticsBlockOrganismOwnProps = {
-  data: PrimaryLayoutBlockProps['data'] & {
+type StatisticsBlockOwnProps = {
+  data: PrimaryLayoutsProps['data'] & {
     subtitle?: Node[];
     items: StatisticCardProps['data'][];
   };
 };
 
-type StatisticsBlockOrganismProps = StatisticsBlockOrganismOwnProps &
-  Omit<PrimaryLayoutBlockProps, keyof StatisticsBlockOrganismOwnProps>;
+type StatisticsBlockProps = StatisticsBlockOwnProps &
+  Omit<PrimaryLayoutsProps, keyof StatisticsBlockOwnProps>;
 
-const StatisticsBlockOrganism = ({
-  data,
-  ...props
-}: StatisticsBlockOrganismProps) => {
+const StatisticsBlock = ({ data, ...props }: StatisticsBlockProps) => {
   return (
-    <PrimaryLayoutBlock
+    <PrimaryLayouts
       data={{
         title: data.title,
         description: data.description
@@ -76,9 +74,9 @@ const StatisticsBlockOrganism = ({
           </ul>
         </section>
       </div>
-    </PrimaryLayoutBlock>
+    </PrimaryLayouts>
   );
 };
 
-export default StatisticsBlockOrganism;
-export type { StatisticsBlockOrganismProps };
+export default StatisticsBlock;
+export type { StatisticsBlockProps };

@@ -1,28 +1,30 @@
+import PrimaryLayouts, {
+  PrimaryLayoutsProps
+} from '@/components/Layouts/Primary';
 import { Card, Catalog } from '@/components/molecules';
 import { Project } from '@/types';
 import { renderComp, serialize } from '@/utils';
 import { Node } from '@/utils/serialize';
 
-import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
 import ProjectsCatalogGridBlock from './Grid';
 import ProjectsCatalogTableBlock from './Table';
 
-type ProjectsCatalogBlockOrganismOwnProps = {
-  data: PrimaryLayoutBlockProps['data'] & {
+type ProjectsCatalogBlockOwnProps = {
+  data: PrimaryLayoutsProps['data'] & {
     empty: Node[];
     items: Project[];
   };
 };
 
-type ProjectsCatalogBlockOrganismProps = ProjectsCatalogBlockOrganismOwnProps &
-  Omit<PrimaryLayoutBlockProps, keyof ProjectsCatalogBlockOrganismOwnProps>;
+type ProjectsCatalogBlockProps = ProjectsCatalogBlockOwnProps &
+  Omit<PrimaryLayoutsProps, keyof ProjectsCatalogBlockOwnProps>;
 
-const ProjectsCatalogBlockOrganism = ({
+const ProjectsCatalogBlock = ({
   data,
   ...props
-}: ProjectsCatalogBlockOrganismProps) => {
+}: ProjectsCatalogBlockProps) => {
   return (
-    <PrimaryLayoutBlock
+    <PrimaryLayouts
       data={{
         title: data.title
       }}
@@ -55,9 +57,9 @@ const ProjectsCatalogBlockOrganism = ({
           <ProjectsCatalogGridBlock className='ml-auto w-full sm:hidden' />
         </div>
       </Catalog.Root>
-    </PrimaryLayoutBlock>
+    </PrimaryLayouts>
   );
 };
 
-export default ProjectsCatalogBlockOrganism;
-export type { ProjectsCatalogBlockOrganismProps };
+export default ProjectsCatalogBlock;
+export type { ProjectsCatalogBlockProps };

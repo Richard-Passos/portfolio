@@ -1,12 +1,11 @@
+import CleanLayouts, { CleanLayoutsProps } from '@/components/Layouts/Clean';
 import { Text } from '@/components/atoms';
 import { TextScrollAnimate } from '@/components/molecules';
 import { TextScrollAnimateProps } from '@/components/molecules/TextScrollAnimate';
 import Icons, { IconsProps } from '@/components/organisms/Icons';
 import { cn } from '@/utils';
 
-import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
-
-type CtaTextBlockOrganismOwnProps = {
+type CtaTextBlockOwnProps = {
   data: {
     description: TextScrollAnimateProps['text'];
     icons: {
@@ -16,16 +15,12 @@ type CtaTextBlockOrganismOwnProps = {
   };
 };
 
-type CtaTextBlockOrganismProps = CtaTextBlockOrganismOwnProps &
-  Omit<CleanLayoutBlockProps, keyof CtaTextBlockOrganismOwnProps>;
+type CtaTextBlockProps = CtaTextBlockOwnProps &
+  Omit<CleanLayoutsProps, keyof CtaTextBlockOwnProps>;
 
-const CtaTextBlockOrganism = ({
-  data,
-  className,
-  ...props
-}: CtaTextBlockOrganismProps) => {
+const CtaTextBlock = ({ data, className, ...props }: CtaTextBlockProps) => {
   return (
-    <CleanLayoutBlock
+    <CleanLayouts
       className={cn(`3xl:min-h-bounds min-h-svh`, className)}
       {...props}
     >
@@ -37,9 +32,9 @@ const CtaTextBlockOrganism = ({
         left={data.icons.left}
         right={data.icons.right}
       />
-    </CleanLayoutBlock>
+    </CleanLayouts>
   );
 };
 
-export default CtaTextBlockOrganism;
-export type { CtaTextBlockOrganismProps };
+export default CtaTextBlock;
+export type { CtaTextBlockProps };

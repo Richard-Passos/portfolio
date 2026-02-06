@@ -1,6 +1,7 @@
 'use client';
 
 import { yFullScrollAnim } from '@/animations/scroll';
+import CleanLayouts, { CleanLayoutsProps } from '@/components/Layouts/Clean';
 import { Lines, ScrollAnimate, Title } from '@/components/atoms';
 import ContactForm, {
   ContactFormProps
@@ -8,9 +9,7 @@ import ContactForm, {
 import { cn } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
-import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
-
-type ContactFormBlockOrganismOwnProps = {
+type ContactFormBlockOwnProps = {
   data: Pick<
     ContactFormProps,
     'fields' | 'to' | 'optionalLabel' | 'messages'
@@ -19,16 +18,16 @@ type ContactFormBlockOrganismOwnProps = {
   };
 };
 
-type ContactFormBlockOrganismProps = ContactFormBlockOrganismOwnProps &
-  Omit<CleanLayoutBlockProps, keyof ContactFormBlockOrganismOwnProps>;
+type ContactFormBlockProps = ContactFormBlockOwnProps &
+  Omit<CleanLayoutsProps, keyof ContactFormBlockOwnProps>;
 
-const ContactFormBlockOrganism = ({
+const ContactFormBlock = ({
   data,
   className,
   ...props
-}: ContactFormBlockOrganismProps) => {
+}: ContactFormBlockProps) => {
   return (
-    <CleanLayoutBlock
+    <CleanLayouts
       className={cn(
         `w-9by10 max-w-7xl gap-4 sm:flex-row sm:items-stretch md:gap-8`,
         className
@@ -59,9 +58,9 @@ const ContactFormBlockOrganism = ({
           to={data.to}
         />
       </div>
-    </CleanLayoutBlock>
+    </CleanLayouts>
   );
 };
 
-export default ContactFormBlockOrganism;
-export type { ContactFormBlockOrganismProps };
+export default ContactFormBlock;
+export type { ContactFormBlockProps };

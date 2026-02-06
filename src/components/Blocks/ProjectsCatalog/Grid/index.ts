@@ -1,5 +1,5 @@
 import ProjectsCatalogGridBlock, {
-  ProjectsCatalogGridBlockOrganismProps as ProjectsCatalogGridBlockProps
+  ProjectsCatalogGridBlockProps
 } from './Root';
 
 export default ProjectsCatalogGridBlock;

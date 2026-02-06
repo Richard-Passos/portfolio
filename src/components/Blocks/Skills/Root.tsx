@@ -1,27 +1,22 @@
 import SkillCard, { SkillCardProps } from '@/components/Cards/Skill';
+import SecondaryLayouts, {
+  SecondaryLayoutsProps
+} from '@/components/Layouts/Secondary';
 import { cn } from '@/utils';
 
-import SecondaryLayoutBlock, {
-  SecondaryLayoutBlockProps
-} from '../Layout/Secondary';
-
-type SkillsBlockOrganismOwnProps = {
-  data: SecondaryLayoutBlockProps['data'] & {
+type SkillsBlockOwnProps = {
+  data: SecondaryLayoutsProps['data'] & {
     items: SkillCardProps['data'][];
   };
 };
 
-type SkillsBlockOrganismProps = SkillsBlockOrganismOwnProps &
-  Omit<SecondaryLayoutBlockProps, keyof SkillsBlockOrganismOwnProps>;
+type SkillsBlockProps = SkillsBlockOwnProps &
+  Omit<SecondaryLayoutsProps, keyof SkillsBlockOwnProps>;
 
-const SkillsBlockOrganism = ({
-  className,
-  data,
-  ...props
-}: SkillsBlockOrganismProps) => {
+const SkillsBlock = ({ className, data, ...props }: SkillsBlockProps) => {
   return (
-    <SecondaryLayoutBlock
-      className={cn(`min-h-fit 2xl:min-h-fit`, className)}
+    <SecondaryLayouts
+      className={cn(`3xl:min-h-fit min-h-fit`, className)}
       data={{
         title: data.title
       }}
@@ -42,9 +37,9 @@ const SkillsBlockOrganism = ({
           ))}
         </ul>
       </div>
-    </SecondaryLayoutBlock>
+    </SecondaryLayouts>
   );
 };
 
-export default SkillsBlockOrganism;
-export type { SkillsBlockOrganismProps };
+export default SkillsBlock;
+export type { SkillsBlockProps };

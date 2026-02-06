@@ -1,4 +1,4 @@
-import ButBlock, { ButBlockOrganismProps as ButBlockProps } from './Root';
+import ButBlock, { ButBlockProps } from './Root';
 
 export default ButBlock;
 export type { ButBlockProps };

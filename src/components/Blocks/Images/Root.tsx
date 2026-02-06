@@ -1,9 +1,9 @@
+import CleanLayouts, { CleanLayoutsProps } from '@/components/Layouts/Clean';
 import ScrollAnimate, {
   ScrollAnimateConfigOptions
 } from '@/components/atoms/ScrollAnimate';
 import { cn } from '@/utils';
 
-import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 import ImagesBlockImage, { ImagesBlockImageProps } from './Image';
 
 const SCROLL_OFFSET = ['.5 1', '.5 .6'],
@@ -24,7 +24,7 @@ const SCROLL_OFFSET = ['.5 1', '.5 .6'],
     } as ScrollAnimateConfigOptions
   };
 
-type ImagesBlockOrganismOwnProps = {
+type ImagesBlockOwnProps = {
   data: {
     items: [
       ImagesBlockImageProps['data'],
@@ -34,18 +34,14 @@ type ImagesBlockOrganismOwnProps = {
   };
 };
 
-type ImagesBlockOrganismProps = ImagesBlockOrganismOwnProps &
-  Omit<CleanLayoutBlockProps, keyof ImagesBlockOrganismOwnProps>;
+type ImagesBlockProps = ImagesBlockOwnProps &
+  Omit<CleanLayoutsProps, keyof ImagesBlockOwnProps>;
 
-const ImagesBlockOrganism = ({
-  className,
-  data,
-  ...props
-}: ImagesBlockOrganismProps) => {
+const ImagesBlock = ({ className, data, ...props }: ImagesBlockProps) => {
   return (
     <ScrollAnimate config={ANIMATION_CONFIG.x}>
       <ScrollAnimate config={ANIMATION_CONFIG.rotate}>
-        <CleanLayoutBlock
+        <CleanLayouts
           className={cn(
             `w-9by10 max-w-5xl gap-(--gap) pt-0 [--gap:--spacing(2.5)] sm:flex-row sm:items-start md:[--x:calc(var(--smooth-x)*(var(--gap)+35%))]`,
             className
@@ -66,11 +62,11 @@ const ImagesBlockOrganism = ({
             className='mt-[7.5%] max-md:hidden md:-translate-x-(--x) md:rotate-(--rotate)'
             data={data.items[2]}
           />
-        </CleanLayoutBlock>
+        </CleanLayouts>
       </ScrollAnimate>
     </ScrollAnimate>
   );
 };
 
-export default ImagesBlockOrganism;
-export type { ImagesBlockOrganismProps };
+export default ImagesBlock;
+export type { ImagesBlockProps };

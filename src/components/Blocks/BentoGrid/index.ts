@@ -1,6 +1,4 @@
-import BentoGridBlock, {
-  BentoGridBlockOrganismProps as BentoGridBlockProps
-} from './Root';
+import BentoGridBlock, { BentoGridBlockProps } from './Root';
 
 export default BentoGridBlock;
 export type { BentoGridBlockProps };

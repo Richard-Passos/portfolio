@@ -1,3 +1,4 @@
+import CleanLayouts, { CleanLayoutsProps } from '@/components/Layouts/Clean';
 import { ScrollAnimate, Text, Title } from '@/components/atoms';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
 import { TextProps } from '@/components/atoms/Text';
@@ -5,8 +6,6 @@ import { TitleProps } from '@/components/atoms/Title';
 import { TextScrollAnimate } from '@/components/molecules';
 import { TextScrollAnimateProps } from '@/components/molecules/TextScrollAnimate';
 import { cn } from '@/utils';
-
-import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 
 const ANIMATION_CONFIG = {
   x: {
@@ -39,7 +38,7 @@ const ANIMATION_CONFIG = {
   } as ScrollAnimateConfigOptions
 };
 
-type ButBlockOrganismOwnProps = {
+type ButBlockOwnProps = {
   data: {
     title: string;
     description: TextScrollAnimateProps['text'];
@@ -48,20 +47,20 @@ type ButBlockOrganismOwnProps = {
   descriptionProps?: Partial<TitleProps>;
 };
 
-type ButBlockOrganismProps = ButBlockOrganismOwnProps &
-  Omit<CleanLayoutBlockProps, keyof ButBlockOrganismOwnProps>;
+type ButBlockProps = ButBlockOwnProps &
+  Omit<CleanLayoutsProps, keyof ButBlockOwnProps>;
 
-const ButBlockOrganism = ({
+const ButBlock = ({
   data,
   className,
   titleProps,
   descriptionProps,
   ...props
-}: ButBlockOrganismProps) => {
+}: ButBlockProps) => {
   return (
-    <CleanLayoutBlock
+    <CleanLayouts
       className={cn(
-        `grid min-h-[calc(var(--h)*1.5)]! grid-rows-3 items-stretch justify-stretch justify-items-center [--h:100vh] 2xl:[--h:var(--max-height-bounds)]`,
+        `3xl:min-h-[calc(var(--max-height-bounds)*1.5)] grid min-h-[150svh] grid-rows-3 items-stretch justify-stretch justify-items-center`,
         className
       )}
       {...props}
@@ -109,9 +108,9 @@ const ButBlockOrganism = ({
           </Title>
         </div>
       </ScrollAnimate>
-    </CleanLayoutBlock>
+    </CleanLayouts>
   );
 };
 
-export default ButBlockOrganism;
-export type { ButBlockOrganismProps };
+export default ButBlock;
+export type { ButBlockProps };

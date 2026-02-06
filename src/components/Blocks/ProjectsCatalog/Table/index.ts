@@ -1,5 +1,5 @@
 import ProjectsCatalogTableBlock, {
-  ProjectsCatalogTableBlockOrganismProps as ProjectsCatalogTableBlockProps
+  ProjectsCatalogTableBlockProps
 } from './Root';
 
 export default ProjectsCatalogTableBlock;

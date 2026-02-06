@@ -1,17 +1,17 @@
 import { ComponentProps } from 'react';
 
 import ValueCard, { ValueCardProps } from '@/components/Cards/Value';
+import SecondaryLayouts, {
+  SecondaryLayoutsProps
+} from '@/components/Layouts/Secondary';
 import { BentoGrid } from '@/components/molecules';
 import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
 import { cn } from '@/utils';
 
 import Icons, { IconsProps } from '../../organisms/Icons';
-import SecondaryLayoutBlock, {
-  SecondaryLayoutBlockProps
-} from '../Layout/Secondary';
 
-type ValuesBlockOrganismOwnProps = {
-  data: SecondaryLayoutBlockProps['data'] & {
+type ValuesBlockOwnProps = {
+  data: SecondaryLayoutsProps['data'] & {
     templates: BentoGridRootProps['templates'];
     items: ValueCardProps['data'][];
     icons: {
@@ -24,18 +24,18 @@ type ValuesBlockOrganismOwnProps = {
   iconsProps?: Partial<IconsProps>;
 };
 
-type ValuesBlockOrganismProps = ValuesBlockOrganismOwnProps &
-  Omit<SecondaryLayoutBlockProps, keyof ValuesBlockOrganismOwnProps>;
+type ValuesBlockProps = ValuesBlockOwnProps &
+  Omit<SecondaryLayoutsProps, keyof ValuesBlockOwnProps>;
 
-const ValuesBlockOrganism = ({
+const ValuesBlock = ({
   data,
   wrapperProps,
   gridProps,
   iconsProps,
   ...props
-}: ValuesBlockOrganismProps) => {
+}: ValuesBlockProps) => {
   return (
-    <SecondaryLayoutBlock
+    <SecondaryLayouts
       data={{
         title: data.title
       }}
@@ -73,9 +73,9 @@ const ValuesBlockOrganism = ({
           className={cn('max-lg:hidden', iconsProps?.className)}
         />
       </div>
-    </SecondaryLayoutBlock>
+    </SecondaryLayouts>
   );
 };
 
-export default ValuesBlockOrganism;
-export type { ValuesBlockOrganismProps };
+export default ValuesBlock;
+export type { ValuesBlockProps };

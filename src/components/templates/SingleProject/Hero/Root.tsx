@@ -36,11 +36,11 @@ const SingleProjectHeroTemplate = ({
 }: SingleProjectHeroTemplateProps) => {
   return (
     <Section
-      className={cn(`min-h-fit pt-0 2xl:min-h-fit`, className)}
+      className={cn('3xl:min-h-fit min-h-fit pt-0', className)}
       forceTheme
       {...props}
     >
-      <header className='w-9by10 flex min-h-[75svh] flex-col items-center justify-center py-8 2xl:[--h:calc(var(--max-height-bounds)*.75)]'>
+      <header className='w-9by10 3xl:min-h-[calc(var(--max-height-bounds)*.75)] flex min-h-[75svh] flex-col items-center justify-center py-8'>
         {renderComp(
           <Title
             className='mb-2.5 max-w-md text-center font-medium tracking-wide'

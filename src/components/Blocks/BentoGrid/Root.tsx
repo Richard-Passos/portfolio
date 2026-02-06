@@ -1,30 +1,31 @@
 import { ComponentType } from 'react';
 
 import Cards from '@/components/Cards';
+import PrimaryLayouts, {
+  PrimaryLayoutsProps
+} from '@/components/Layouts/Primary';
 import { BentoGrid } from '@/components/molecules';
 import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
 import { TypeVariants } from '@/types';
 
-import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
-
-type BentoGridBlockOrganismOwnProps = {
-  data: PrimaryLayoutBlockProps['data'] & {
+type BentoGridBlockOwnProps = {
+  data: PrimaryLayoutsProps['data'] & {
     templates: BentoGridRootProps['templates'];
     items: TypeVariants<Omit<typeof Cards, 'Project'>>[];
   };
   hasAnimation?: boolean;
 };
 
-type BentoGridBlockOrganismProps = BentoGridBlockOrganismOwnProps &
-  Omit<PrimaryLayoutBlockProps, keyof BentoGridBlockOrganismOwnProps | 'data'>;
+type BentoGridBlockProps = BentoGridBlockOwnProps &
+  Omit<PrimaryLayoutsProps, keyof BentoGridBlockOwnProps | 'data'>;
 
-const BentoGridBlockOrganism = ({
+const BentoGridBlock = ({
   data,
   hasAnimation,
   ...props
-}: BentoGridBlockOrganismProps) => {
+}: BentoGridBlockProps) => {
   return (
-    <PrimaryLayoutBlock
+    <PrimaryLayouts
       data={{
         title: data.title,
         description: data.description
@@ -55,9 +56,9 @@ const BentoGridBlockOrganism = ({
           return Item;
         })}
       </BentoGrid.Root>
-    </PrimaryLayoutBlock>
+    </PrimaryLayouts>
   );
 };
 
-export default BentoGridBlockOrganism;
-export type { BentoGridBlockOrganismProps };
+export default BentoGridBlock;
+export type { BentoGridBlockProps };

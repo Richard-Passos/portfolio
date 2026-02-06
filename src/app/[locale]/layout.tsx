@@ -45,7 +45,7 @@ const Layout = async ({ params, children }: LayoutProps) => {
         <ColorSchemeScript defaultColorScheme={defaultColorScheme} />
       </head>
 
-      <body className='relative flex min-h-svh flex-col items-center overflow-x-clip'>
+      <body className='relative flex min-h-svh flex-col items-center overflow-x-clip bg-white'>
         <Providers.Root>
           <SmoothScroll>
             <Header />

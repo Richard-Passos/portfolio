@@ -1,16 +1,18 @@
 import { ServiceCard } from '@/components/Cards';
 import { ServiceCardProps } from '@/components/Cards/Service';
+import PrimaryLayouts, {
+  PrimaryLayoutsProps
+} from '@/components/Layouts/Primary';
 import { Title } from '@/components/atoms';
 import { Action } from '@/components/molecules';
 import { renderComp } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
-import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
 import ServicesBlockImage from './Image';
 import { ServicesBlockImageOrganismProps } from './Image/Root';
 
-type ServicesBlockOrganismOwnProps = {
-  data: PrimaryLayoutBlockProps['data'] &
+type ServicesBlockOwnProps = {
+  data: PrimaryLayoutsProps['data'] &
     ServicesBlockImageOrganismProps['data'] & {
       subtitle?: Node[];
       items: ServiceCardProps['data'][];
@@ -20,15 +22,12 @@ type ServicesBlockOrganismOwnProps = {
     };
 };
 
-type ServicesBlockOrganismProps = ServicesBlockOrganismOwnProps &
-  Omit<PrimaryLayoutBlockProps, keyof ServicesBlockOrganismOwnProps>;
+type ServicesBlockProps = ServicesBlockOwnProps &
+  Omit<PrimaryLayoutsProps, keyof ServicesBlockOwnProps>;
 
-const ServicesBlockOrganism = ({
-  data,
-  ...props
-}: ServicesBlockOrganismProps) => {
+const ServicesBlock = ({ data, ...props }: ServicesBlockProps) => {
   return (
-    <PrimaryLayoutBlock
+    <PrimaryLayouts
       data={{
         title: data.title,
         description: data.description
@@ -77,9 +76,9 @@ const ServicesBlockOrganism = ({
           [data.action]
         )}
       </section>
-    </PrimaryLayoutBlock>
+    </PrimaryLayouts>
   );
 };
 
-export default ServicesBlockOrganism;
-export type { ServicesBlockOrganismProps };
+export default ServicesBlock;
+export type { ServicesBlockProps };

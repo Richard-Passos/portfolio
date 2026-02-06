@@ -1,14 +1,13 @@
 import { ComponentProps } from 'react';
 
 import { lineLeftScrollAnim } from '@/animations/scroll';
+import CleanLayouts, { CleanLayoutsProps } from '@/components/Layouts/Clean';
 import { ScrollAnimate, Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
 import { cn } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
-import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
-
-type TextBlockOrganismOwnProps = {
+type TextBlockOwnProps = {
   data: {
     title: Node[];
     description: Node[];
@@ -17,18 +16,18 @@ type TextBlockOrganismOwnProps = {
   titleProps?: Partial<TitleProps>;
 };
 
-type TextBlockOrganismProps = TextBlockOrganismOwnProps &
-  Omit<CleanLayoutBlockProps, keyof TextBlockOrganismOwnProps | 'data'>;
+type TextBlockProps = TextBlockOwnProps &
+  Omit<CleanLayoutsProps, keyof TextBlockOwnProps | 'data'>;
 
-const TextBlockOrganism = ({
+const TextBlock = ({
   className,
   data,
   wrapperProps,
   titleProps,
   ...props
-}: TextBlockOrganismProps) => {
+}: TextBlockProps) => {
   return (
-    <CleanLayoutBlock
+    <CleanLayouts
       className={cn('w-9by10 max-w-5xl pt-0', className)}
       {...props}
     >
@@ -61,9 +60,9 @@ const TextBlockOrganism = ({
           })}
         </section>
       </div>
-    </CleanLayoutBlock>
+    </CleanLayouts>
   );
 };
 
-export default TextBlockOrganism;
-export type { TextBlockOrganismProps };
+export default TextBlock;
+export type { TextBlockProps };

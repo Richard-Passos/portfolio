@@ -1,6 +1,4 @@
-import StatisticsBlock, {
-  StatisticsBlockOrganismProps as StatisticsBlockProps
-} from './Root';
+import StatisticsBlock, { StatisticsBlockProps } from './Root';
 
 export default StatisticsBlock;
 export type { StatisticsBlockProps };

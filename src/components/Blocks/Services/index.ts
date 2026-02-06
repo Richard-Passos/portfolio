@@ -1,6 +1,4 @@
-import ServicesBlock, {
-  ServicesBlockOrganismProps as ServicesBlockProps
-} from './Root';
+import ServicesBlock, { ServicesBlockProps } from './Root';
 
 export default ServicesBlock;
 export type { ServicesBlockProps };

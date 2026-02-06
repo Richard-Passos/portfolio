@@ -1,25 +1,21 @@
+import CleanLayouts, { CleanLayoutsProps } from '@/components/Layouts/Clean';
 import { Bg } from '@/components/atoms';
 import { ListHorizontalScroll } from '@/components/molecules';
 import serialize, { Node } from '@/utils/serialize';
 
-import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
-
-type ListMissionBlockOrganismOwnProps = {
+type ListMissionBlockOwnProps = {
   data: {
     items: { id: string; text: Node[]; separator: Node[] }[];
     description: Node[];
   };
 };
 
-type ListMissionBlockOrganismProps = ListMissionBlockOrganismOwnProps &
-  Omit<CleanLayoutBlockProps, keyof ListMissionBlockOrganismOwnProps>;
+type ListMissionBlockProps = ListMissionBlockOwnProps &
+  Omit<CleanLayoutsProps, keyof ListMissionBlockOwnProps>;
 
-const ListMissionBlockOrganism = ({
-  data,
-  ...props
-}: ListMissionBlockOrganismProps) => {
+const ListMissionBlock = ({ data, ...props }: ListMissionBlockProps) => {
   return (
-    <CleanLayoutBlock {...props}>
+    <CleanLayouts {...props}>
       <ListHorizontalScroll.Root>
         {data.items.map((item, i) => {
           const text = serialize(item.text),
@@ -60,9 +56,9 @@ const ListMissionBlockOrganism = ({
           }
         })}
       </section>
-    </CleanLayoutBlock>
+    </CleanLayouts>
   );
 };
 
-export default ListMissionBlockOrganism;
-export type { ListMissionBlockOrganismProps };
+export default ListMissionBlock;
+export type { ListMissionBlockProps };

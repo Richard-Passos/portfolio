@@ -32,7 +32,7 @@ const SingleProjectAdjacentsTemplate = ({
 }: SingleProjectAdjacentsTemplateProps) => {
   return (
     <Section
-      className={cn(`min-h-fit 2xl:min-h-fit`, className)}
+      className={cn(`3xl:min-h-fit min-h-fit`, className)}
       {...props}
     >
       <div className='w-9by10 flex max-w-7xl flex-wrap justify-between gap-2.5 border border-x-0 border-b-0 p-4'>

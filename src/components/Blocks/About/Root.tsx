@@ -1,29 +1,27 @@
 import { ComponentProps } from 'react';
 
 import { yFullScrollAnim } from '@/animations/scroll';
+import PrimaryLayouts, {
+  PrimaryLayoutsProps
+} from '@/components/Layouts/Primary';
 import { Lines, ScrollAnimate } from '@/components/atoms';
 import { cn } from '@/utils';
 
-import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
 import AboutBlockText, { AboutBlockTextProps } from './Text';
 
-type AboutBlockOrganismOwnProps = {
-  data: PrimaryLayoutBlockProps['data'] & {
+type AboutBlockOwnProps = {
+  data: PrimaryLayoutsProps['data'] & {
     texts: ({ id: string } & AboutBlockTextProps['data'])[];
   };
   wrapperProps?: Partial<ComponentProps<'section'>>;
 };
 
-type AboutBlockOrganismProps = AboutBlockOrganismOwnProps &
-  Omit<PrimaryLayoutBlockProps, keyof AboutBlockOrganismOwnProps>;
+type AboutBlockProps = AboutBlockOwnProps &
+  Omit<PrimaryLayoutsProps, keyof AboutBlockOwnProps>;
 
-const AboutBlockOrganism = ({
-  data,
-  wrapperProps,
-  ...props
-}: AboutBlockOrganismProps) => {
+const AboutBlock = ({ data, wrapperProps, ...props }: AboutBlockProps) => {
   return (
-    <PrimaryLayoutBlock
+    <PrimaryLayouts
       data={{
         title: data.title,
         description: data.description
@@ -54,9 +52,9 @@ const AboutBlockOrganism = ({
           ))}
         </section>
       </section>
-    </PrimaryLayoutBlock>
+    </PrimaryLayouts>
   );
 };
 
-export default AboutBlockOrganism;
-export type { AboutBlockOrganismProps };
+export default AboutBlock;
+export type { AboutBlockProps };

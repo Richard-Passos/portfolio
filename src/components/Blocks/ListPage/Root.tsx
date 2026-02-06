@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import CleanLayouts, { CleanLayoutsProps } from '@/components/Layouts/Clean';
 import { Action, ListHorizontalScroll } from '@/components/molecules';
 import { ActionProps } from '@/components/molecules/Action';
 import {
@@ -8,9 +9,7 @@ import {
 } from '@/components/molecules/ListHorizontalScroll';
 import { cn } from '@/utils';
 
-import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
-
-type ListPageBlockOrganismOwnProps = {
+type ListPageBlockOwnProps = {
   data: {
     items: { id: string; text: ReactNode; separator: ReactNode }[];
     action: {
@@ -23,18 +22,18 @@ type ListPageBlockOrganismOwnProps = {
   actionProps?: Partial<ActionProps>;
 };
 
-type ListPageBlockOrganismProps = ListPageBlockOrganismOwnProps &
-  Omit<CleanLayoutBlockProps, keyof ListPageBlockOrganismOwnProps>;
+type ListPageBlockProps = ListPageBlockOwnProps &
+  Omit<CleanLayoutsProps, keyof ListPageBlockOwnProps>;
 
-const ListPageBlockOrganism = ({
+const ListPageBlock = ({
   data,
   listProps,
   listItemProps,
   actionProps,
   ...props
-}: ListPageBlockOrganismProps) => {
+}: ListPageBlockProps) => {
   return (
-    <CleanLayoutBlock {...props}>
+    <CleanLayouts {...props}>
       <ListHorizontalScroll.Root {...listProps}>
         {data.items.map((item, i) => (
           <ListHorizontalScroll.Item
@@ -76,9 +75,9 @@ const ListPageBlockOrganism = ({
       >
         {data.action.label}
       </Action>
-    </CleanLayoutBlock>
+    </CleanLayouts>
   );
 };
 
-export default ListPageBlockOrganism;
-export type { ListPageBlockOrganismProps };
+export default ListPageBlock;
+export type { ListPageBlockProps };
