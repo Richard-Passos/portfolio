@@ -8,7 +8,7 @@ import { getLocale, headerApi, pagesApi } from '@/utils/actions';
 
 import HeaderMenu from './Menu';
 import HeaderNav, { HeaderNavProps } from './Nav';
-import HeaderdTheme from './Nav copy';
+import HeaderdTheme from './Theme';
 
 type HeaderOrganismOwnProps = {};
 
