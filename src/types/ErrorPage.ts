@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
-import Blocks from '@/components/Blocks';
-import { SecondaryHeroProps } from '@/components/organisms/Heros/Secondary';
+import { SecondaryHeroProps } from '@/components/Heros/Secondary';
+import Blocks from '@/components/tem@/components/templates/Heros/Secondary
 
 import TypeVariants from './TypeVariants';
 

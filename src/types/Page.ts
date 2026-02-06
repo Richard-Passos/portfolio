@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
-import Blocks from '@/components/Blocks';
-import Heros from '@/components/organisms/Heros';
+import Heros from '@/components/Heros';
+import Blocks from @/components/templates/Heroslates/Blocks';
 
 import TypeVariants from './TypeVariants';
 

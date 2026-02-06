@@ -3,7 +3,6 @@ import { createPolymorphicComponent } from '@mantine/core';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 
-import { PrimaryLayoutsProps } from '.';
 import PrimaryLayoutsHeader, { PrimaryLayoutsHeaderProps } from './Header';
 
 type PrimaryLayoutsOwnProps = {

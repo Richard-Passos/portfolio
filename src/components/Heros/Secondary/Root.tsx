@@ -11,7 +11,7 @@ type Action = {
   onClick?: ActionProps['onClick'];
 };
 
-type SecondaryHeroOrganismOwnProps = {
+type SecondaryHeroOwnProps = {
   data: {
     title: Node[];
     description?: Node[];
@@ -22,14 +22,10 @@ type SecondaryHeroOrganismOwnProps = {
   };
 };
 
-type SecondaryHeroOrganismProps = SecondaryHeroOrganismOwnProps &
-  Omit<SectionProps, keyof SecondaryHeroOrganismOwnProps>;
+type SecondaryHeroProps = SecondaryHeroOwnProps &
+  Omit<SectionProps, keyof SecondaryHeroOwnProps>;
 
-const SecondaryHeroOrganism = ({
-  data,
-  className,
-  ...props
-}: SecondaryHeroOrganismProps) => {
+const SecondaryHero = ({ data, className, ...props }: SecondaryHeroProps) => {
   return (
     <Section
       className={cn(
@@ -94,5 +90,5 @@ const SecondaryHeroOrganism = ({
   );
 };
 
-export default SecondaryHeroOrganism;
-export type { SecondaryHeroOrganismProps };
+export default SecondaryHero;
+export type { SecondaryHeroProps };

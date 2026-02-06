@@ -1,8 +1,8 @@
 import { ComponentType } from 'react';
 
 import Blocks from '@/components/Blocks';
-import { SecondaryHero } from '@/components/organisms/Heros';
-import { SecondaryHeroProps } from '@/components/organisms/Heros/Secondary';
+import { SecondaryHero } from '@/components/Heros';
+import { SecondaryHeroProps } from '@/components/Heros/Secondary';
 import { Theme, TypeVariants } from '@/types';
 import { cn } from '@/utils';
 

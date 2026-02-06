@@ -8,7 +8,7 @@ import PrimaryHeroExtra, { PrimaryHeroExtraProps } from './Extra';
 import PrimaryHeroScrollAnimate from './ScrollAnimate';
 import PrimaryHeroTitle, { PrimaryHeroTitleProps } from './Title';
 
-type PrimaryHeroOrganismOwnProps = {
+type PrimaryHeroOwnProps = {
   data: {
     title: PrimaryHeroTitleProps['children'];
     description: Node[];
@@ -18,16 +18,16 @@ type PrimaryHeroOrganismOwnProps = {
   scrollTarget?: ScrollToProps['target'];
 };
 
-type PrimaryHeroOrganismProps = PrimaryHeroOrganismOwnProps &
-  Omit<SectionProps, keyof PrimaryHeroOrganismOwnProps>;
+type PrimaryHeroProps = PrimaryHeroOwnProps &
+  Omit<SectionProps, keyof PrimaryHeroOwnProps>;
 
-const PrimaryHeroOrganism = ({
+const PrimaryHero = ({
   data,
   className,
   bgProps,
   scrollTarget,
   ...props
-}: PrimaryHeroOrganismProps) => {
+}: PrimaryHeroProps) => {
   return (
     <Section
       bgProps={{
@@ -76,5 +76,5 @@ const PrimaryHeroOrganism = ({
   );
 };
 
-export default PrimaryHeroOrganism;
-export type { PrimaryHeroOrganismProps };
+export default PrimaryHero;
+export type { PrimaryHeroProps };
