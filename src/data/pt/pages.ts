@@ -1,4 +1,4 @@
-import { ContactFormBlockProps } from '@/components/organisms/Blocks/ContactForm';
+import { ContactFormBlockProps } from '@/components/Blocks/ContactForm';
 import { Pages } from '@/types';
 import {
   personalApi,

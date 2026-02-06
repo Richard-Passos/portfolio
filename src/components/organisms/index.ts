@@ -1,4 +1,3 @@
-import Blocks from './Blocks';
 import CookiesConsent from './CookiesConsent';
 import Footer from './Footer';
 import Forms from './Forms';
@@ -12,7 +11,6 @@ import StateApplier from './StateApplier';
 import Toaster from './Toaster';
 
 const Organisms = {
-  Blocks,
   CookiesConsent,
   Footer,
   Forms,
@@ -28,7 +26,6 @@ const Organisms = {
 
 export default Organisms;
 export {
-  Blocks,
   CookiesConsent,
   Footer,
   Forms,

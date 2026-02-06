@@ -5,7 +5,7 @@ import { BentoGrid } from '@/components/molecules';
 import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
 import { cn } from '@/utils';
 
-import Icons, { IconsProps } from '../../Icons';
+import Icons, { IconsProps } from '../../organisms/Icons';
 import SecondaryLayoutBlock, {
   SecondaryLayoutBlockProps
 } from '../Layout/Secondary';

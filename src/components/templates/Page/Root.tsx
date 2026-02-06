@@ -1,6 +1,6 @@
 import { ComponentType } from 'react';
 
-import Blocks from '@/components/organisms/Blocks';
+import Blocks from '@/components/Blocks';
 import Heros from '@/components/organisms/Heros';
 import { Theme, TypeVariants } from '@/types';
 import { cn } from '@/utils';
