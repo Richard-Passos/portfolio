@@ -35,12 +35,10 @@ const AboutBlock = ({ data, wrapperProps, ...props }: AboutBlockProps) => {
           wrapperProps?.className
         )}
       >
-        <div className='bg-body relative grow basis-48 overflow-hidden max-sm:hidden'>
+        <div className='bg-body relative grow basis-48 overflow-hidden border max-sm:hidden'>
           <ScrollAnimate config={yFullScrollAnim}>
-            <Lines className='text-border! h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60' />
+            <Lines className='text-border! h-screen translate-y-0 bg-size-[83.333px_66.666px]' />
           </ScrollAnimate>
-
-          <span className='rounded-inherit absolute inset-0 border opacity-60' />
         </div>
 
         <section className='flex max-w-xl grow flex-col gap-8'>

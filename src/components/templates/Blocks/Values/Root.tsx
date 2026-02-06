@@ -8,7 +8,7 @@ import { BentoGrid } from '@/components/molecules';
 import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
 import { cn } from '@/utils';
 
-import Icons, { IconsProps } from '../../organisms/Icons';
+import Icons, { IconsProps } from '../../../organisms/Icons';
 
 type ValuesBlockOwnProps = {
   data: SecondaryLayoutsProps['data'] & {

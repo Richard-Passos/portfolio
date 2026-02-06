@@ -66,11 +66,11 @@ const PrimaryHero = ({
               </div>
             </div>
 
-            <Lines className='text-border! top-auto -z-10 bg-size-[83.333px_66.666px] opacity-60' />
+            <Lines className='text-gray-3 dark:text-dark-4 top-auto -z-10 bg-size-[83.333px_66.666px]' />
           </div>
         </PrimaryHeroScrollAnimate>
 
-        <span className='rounded-inherit pointer-events-none absolute inset-0 border opacity-60' />
+        <span className='rounded-inherit border-gray-3 dark:border-dark-4 pointer-events-none absolute inset-0 border' />
       </div>
     </Section>
   );

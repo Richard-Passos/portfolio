@@ -52,7 +52,7 @@ const FooterOrganism = async ({ className, ...props }: FooterOrganismProps) => {
     >
       <div className='w-9by10 relative z-10 flex grow flex-col'>
         <section className='my-8 flex flex-wrap items-center gap-2.5'>
-          <Action>{footer.action.label}</Action>
+          <Action color='red'>{footer.action.label}</Action>
 
           {socials?.map((data) => (
             <Action
@@ -135,10 +135,10 @@ const FooterOrganism = async ({ className, ...props }: FooterOrganismProps) => {
 
       <div className='absolute inset-[15%] flex items-center justify-center overflow-hidden rounded-lg'>
         <ScrollAnimate config={yFullScrollAnim}>
-          <Lines className='text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60' />
+          <Lines className='text-gray-3 dark:text-dark-4 top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px]' />
         </ScrollAnimate>
 
-        <span className='rounded-inherit absolute inset-0 border opacity-60' />
+        <span className='rounded-inherit border-gray-3 dark:border-dark-4 absolute inset-0 border' />
       </div>
     </Section>
   );

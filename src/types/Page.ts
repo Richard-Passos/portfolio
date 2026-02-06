@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import Heros from '@/components/Heros';
+import Heros from '@/components/templates/Heros';
 import Blocks from @/components/templates/Heroslates/Blocks';
 
 import TypeVariants from './TypeVariants';

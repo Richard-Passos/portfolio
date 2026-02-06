@@ -34,12 +34,10 @@ const ContactFormBlock = ({
       )}
       {...props}
     >
-      <div className='bg-body relative flex grow basis-48 items-center justify-center overflow-hidden max-sm:hidden'>
+      <div className='bg-body relative flex grow basis-48 items-center justify-center overflow-hidden border max-sm:hidden'>
         <ScrollAnimate config={yFullScrollAnim}>
-          <Lines className='text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60' />
+          <Lines className='text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px]' />
         </ScrollAnimate>
-
-        <span className='rounded-inherit absolute inset-0 border opacity-60' />
       </div>
 
       <div className='sm:py-xl w-full max-w-3xl grow'>

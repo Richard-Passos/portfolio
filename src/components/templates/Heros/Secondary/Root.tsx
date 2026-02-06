@@ -28,10 +28,7 @@ type SecondaryHeroProps = SecondaryHeroOwnProps &
 const SecondaryHero = ({ data, className, ...props }: SecondaryHeroProps) => {
   return (
     <Section
-      className={cn(
-        `border-gray-1 dark:border-dark-5 3xl:min-h-fit min-h-fit border-t pt-16`,
-        className
-      )}
+      className={cn('3xl:min-h-fit min-h-fit pt-16', className)}
       forceTheme
       {...props}
     >
@@ -78,14 +75,14 @@ const SecondaryHero = ({ data, className, ...props }: SecondaryHeroProps) => {
           [data.actions?.primary ?? data.actions?.secondary]
         )}
 
-        <div className='bg-body absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg'>
+        <div className='bg-body absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg border'>
           <ScrollAnimate config={yFullScrollAnim}>
             <Lines className='text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px]' />
           </ScrollAnimate>
-
-          <span className='rounded-inherit absolute inset-0 border' />
         </div>
       </div>
+
+      <span className='bg-gray-1 dark:bg-dark-5 absolute top-0 h-px w-screen' />
     </Section>
   );
 };

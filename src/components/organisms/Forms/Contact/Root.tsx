@@ -168,6 +168,7 @@ const ContactFormOrganism = ({
           <div className='bg-body relative top-px right-px -mt-px -mr-px w-fit border p-2.5 md:aspect-[1.3/1] md:w-full'>
             <Form.Submit>
               <Action
+                color='light'
                 className='md:size-full'
                 magneticProps={{
                   limit: { x: 0.2, y: 0.2 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useCallback, useEffect } from 'react';
+import { ReactNode, useCallback, useLayoutEffect } from 'react';
 
 import { useEventListener } from '@/hooks';
 import { useThemeContext } from '@/hooks/contexts';
@@ -17,7 +17,7 @@ const StateApplierOrganism = ({ children }: StateApplierOrganismProps) => {
       document.documentElement.style = `--document-height: 0px`;
     }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.documentElement.setAttribute('data-mantine-color-scheme', theme);
 
     return () => {
@@ -28,7 +28,7 @@ const StateApplierOrganism = ({ children }: StateApplierOrganismProps) => {
     };
   }, [theme]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleSetHeight();
 
     return () => {

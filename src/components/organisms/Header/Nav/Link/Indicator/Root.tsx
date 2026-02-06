@@ -27,7 +27,7 @@ const HeaderNavLinkIndicatorOrganism = ({
   return (
     <motion.span
       className={cn(
-        'bg-primary-filled absolute',
+        'absolute bg-black dark:bg-white',
         shouldHide &&
           `opacity-0! transition-opacity delay-150 group-hover/link:opacity-100! group-hover/nav:delay-0`,
         className

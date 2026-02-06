@@ -1,5 +1,6 @@
 import { ComponentProps } from 'react';
 
+import { Bg } from '@/components/atoms';
 import { LocaleSelect } from '@/components/molecules';
 import Logo from '@/components/organisms/Logo';
 import { defaultPages, locales } from '@/constants';
@@ -38,12 +39,12 @@ const HeaderOrganism = async ({ className, ...props }: HeaderOrganismProps) => {
     <HeaderdTheme>
       <header
         className={cn(
-          `bg-body max-w-bounds z-10 flex w-full flex-wrap items-center justify-between px-[6%] py-5 sm:px-[4%]`,
+          `bg-body max-w-bounds relative z-20 flex w-full flex-wrap items-center justify-center px-[6%] py-5 sm:px-[4%]`,
           className
         )}
         {...props}
       >
-        <Logo />
+        <Logo className='mr-auto' />
 
         <div className='flex items-center gap-2.5 max-md:hidden'>
           <HeaderNav items={navItem} />
@@ -55,6 +56,8 @@ const HeaderOrganism = async ({ className, ...props }: HeaderOrganismProps) => {
         </div>
 
         <HeaderMenu />
+
+        <Bg />
       </header>
     </HeaderdTheme>
   );

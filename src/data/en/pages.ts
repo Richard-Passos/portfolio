@@ -569,7 +569,7 @@ const pages = async (): Promise<Pages[]> => {
                 alt: 'Richard Passos, a full-stack developer with short hair, stands against a wooden wall, wearing a light-colored T-shirt. Richard Passos has his arms crossed, showcasing a watch and a necklace.'
               },
               {
-                src: '/images/services.svg',
+                src: '/images/services.webp',
                 alt: 'Richard Passos, a full-stack developer stands against a plain background wearing a black leather jacket over a white shirt, with their left hand in the jacket pocket.'
               },
               {
