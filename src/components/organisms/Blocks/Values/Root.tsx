@@ -1,8 +1,8 @@
 import { ComponentProps } from 'react';
 
+import ValueCard, { ValueCardProps } from '@/components/Cards/Value';
 import { BentoGrid } from '@/components/molecules';
 import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
-import ValueCard, { ValueCardProps } from '@/components/organisms/Cards/Value';
 import { cn } from '@/utils';
 
 import Icons, { IconsProps } from '../../Icons';

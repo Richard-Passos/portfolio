@@ -28,7 +28,7 @@ const MarqueeCardOrganism = ({
         <Icon src={data.icon} />
       </div>
 
-      <Card.Section className='gap- my-auto flex flex-col items-center justify-center'>
+      <Card.Section className='my-auto flex flex-col items-center justify-center'>
         <Title
           className='text-center'
           component='h4'
@@ -38,7 +38,7 @@ const MarqueeCardOrganism = ({
         </Title>
 
         <Marquee
-          className='[--gap:--spacing(2.5)]'
+          className='mt-2 [--gap:--spacing(2.5)]'
           pauseOnHover
         >
           {data.items.map((item, i) => (

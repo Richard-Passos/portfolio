@@ -1,7 +1,7 @@
+import { StatisticCard } from '@/components/Cards';
+import { StatisticCardProps } from '@/components/Cards/Statistic';
 import { ScrollAnimate, Title } from '@/components/atoms';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
-import { StatisticCard } from '@/components/organisms/Cards';
-import { StatisticCardProps } from '@/components/organisms/Cards/Statistic';
 import { renderComp } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 

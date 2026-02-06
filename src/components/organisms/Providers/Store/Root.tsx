@@ -5,18 +5,18 @@ import { PersistGate, PersistGateProps } from 'redux-persist/integration/react';
 
 import store, { persistor } from '@/store';
 
-type StoreProviderOrganismOwnProps = {
+type ProvidersStoreOrganismOwnProps = {
   persistGateProps?: Partial<PersistGateProps>;
 };
 
-type StoreProviderOrganismProps = StoreProviderOrganismOwnProps &
-  Omit<Partial<ProviderProps>, keyof StoreProviderOrganismOwnProps>;
+type ProvidersStoreOrganismProps = ProvidersStoreOrganismOwnProps &
+  Omit<Partial<ProviderProps>, keyof ProvidersStoreOrganismOwnProps>;
 
-const StoreProviderOrganism = ({
+const ProvidersStoreOrganism = ({
   children,
   persistGateProps,
   ...props
-}: StoreProviderOrganismProps) => {
+}: ProvidersStoreOrganismProps) => {
   return (
     <Provider
       store={store}
@@ -33,5 +33,5 @@ const StoreProviderOrganism = ({
   );
 };
 
-export default StoreProviderOrganism;
-export type { StoreProviderOrganismProps };
+export default ProvidersStoreOrganism;
+export type { ProvidersStoreOrganismProps };

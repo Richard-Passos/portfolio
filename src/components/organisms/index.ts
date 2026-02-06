@@ -1,5 +1,4 @@
 import Blocks from './Blocks';
-import Cards from './Cards';
 import CookiesConsent from './CookiesConsent';
 import Footer from './Footer';
 import Forms from './Forms';
@@ -8,13 +7,12 @@ import Heros from './Heros';
 import Icons from './Icons';
 import Logo from './Logo';
 import Providers from './Providers';
-import ScrollIndicator from './ScrollIndicator';
 import Section from './Section';
+import StateApplier from './StateApplier';
 import Toaster from './Toaster';
 
 const Organisms = {
   Blocks,
-  Cards,
   CookiesConsent,
   Footer,
   Forms,
@@ -23,15 +21,14 @@ const Organisms = {
   Icons,
   Logo,
   Providers,
-  ScrollIndicator,
   Section,
+  StateApplier,
   Toaster
 };
 
 export default Organisms;
 export {
   Blocks,
-  Cards,
   CookiesConsent,
   Footer,
   Forms,
@@ -40,7 +37,7 @@ export {
   Icons,
   Logo,
   Providers,
-  ScrollIndicator,
   Section,
+  StateApplier,
   Toaster
 };

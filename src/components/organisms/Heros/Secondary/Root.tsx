@@ -33,7 +33,7 @@ const SecondaryHeroOrganism = ({
   return (
     <Section
       className={cn(
-        `min-h-fit pt-[calc(var(--header-height)+--spacing(16))] 2xl:min-h-fit`,
+        `border-gray-1 dark:border-dark-5 3xl:min-h-fit min-h-fit border-t pt-16`,
         className
       )}
       forceTheme
@@ -82,12 +82,12 @@ const SecondaryHeroOrganism = ({
           [data.actions?.primary ?? data.actions?.secondary]
         )}
 
-        <div className='dark:bg-dark-8 absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg bg-white'>
+        <div className='bg-body absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg'>
           <ScrollAnimate config={yFullScrollAnim}>
-            <Lines className='text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60' />
+            <Lines className='text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px]' />
           </ScrollAnimate>
 
-          <span className='rounded-inherit absolute inset-0 border opacity-60' />
+          <span className='rounded-inherit absolute inset-0 border' />
         </div>
       </div>
     </Section>

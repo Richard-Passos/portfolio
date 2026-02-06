@@ -4,7 +4,6 @@ import Blockquote from './Blockquote';
 import Box from './Box';
 import Button from './Button';
 import Divider from './Divider';
-import Height from './Height';
 import Icon from './Icon';
 import Image from './Image';
 import Indicator from './Indicator';
@@ -33,7 +32,6 @@ const Atoms = {
   Box,
   Button,
   Divider,
-  Height,
   Icon,
   Image,
   Indicator,
@@ -64,7 +62,6 @@ export {
   Box,
   Button,
   Divider,
-  Height,
   Icon,
   Image,
   Indicator,

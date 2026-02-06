@@ -1,13 +1,13 @@
 import { PropsWithChildren } from 'react';
 
-import IntlProvider, { IntlProviderOrganismProps } from './Intl';
-import StoreProvider, { StoreProviderOrganismProps } from './Store';
-import UiProvider, { UiProviderOrganismProps } from './Ui';
+import ProvidersIntl, { ProvidersIntlProps } from './Intl';
+import ProvidersStore, { ProvidersStoreProps } from './Store';
+import ProvidersUi, { ProvidersUiProps } from './Ui';
 
 type ProvidersOrganismProps = PropsWithChildren<{
-  storeProps?: Partial<StoreProviderOrganismProps>;
-  intlProps?: Partial<IntlProviderOrganismProps>;
-  uiProps?: Partial<UiProviderOrganismProps>;
+  storeProps?: Partial<ProvidersStoreProps>;
+  intlProps?: Partial<ProvidersIntlProps>;
+  uiProps?: Partial<ProvidersUiProps>;
 }>;
 
 const ProvidersOrganism = ({
@@ -17,11 +17,11 @@ const ProvidersOrganism = ({
   uiProps
 }: ProvidersOrganismProps) => {
   return (
-    <StoreProvider {...storeProps}>
-      <IntlProvider {...intlProps}>
-        <UiProvider {...uiProps}>{children}</UiProvider>
-      </IntlProvider>
-    </StoreProvider>
+    <ProvidersStore {...storeProps}>
+      <ProvidersIntl {...intlProps}>
+        <ProvidersUi {...uiProps}>{children}</ProvidersUi>
+      </ProvidersIntl>
+    </ProvidersStore>
   );
 };
 

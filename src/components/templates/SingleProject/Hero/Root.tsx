@@ -40,7 +40,7 @@ const SingleProjectHeroTemplate = ({
       forceTheme
       {...props}
     >
-      <header className='w-9by10 flex min-h-[calc(var(--h)*.75)] flex-col items-center justify-center pt-[calc(var(--header-height)+--spacing(8))] pb-8 [--h:100svh] 2xl:[--h:var(--max-height-bounds)]'>
+      <header className='w-9by10 flex min-h-[75svh] flex-col items-center justify-center py-8 2xl:[--h:calc(var(--max-height-bounds)*.75)]'>
         {renderComp(
           <Title
             className='mb-2.5 max-w-md text-center font-medium tracking-wide'

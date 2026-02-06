@@ -1,7 +1,7 @@
+import { ServiceCard } from '@/components/Cards';
+import { ServiceCardProps } from '@/components/Cards/Service';
 import { Title } from '@/components/atoms';
 import { Action } from '@/components/molecules';
-import { ServiceCard } from '@/components/organisms/Cards';
-import { ServiceCardProps } from '@/components/organisms/Cards/Service';
 import { renderComp } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 

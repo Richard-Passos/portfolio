@@ -6,7 +6,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { PropsWithChildren } from 'react';
 
-import { Height, SmoothScroll } from '@/components/atoms';
+import { SmoothScroll } from '@/components/atoms';
 import {
   CookiesConsent,
   Footer,
@@ -46,30 +46,23 @@ const Layout = async ({ params, children }: LayoutProps) => {
       </head>
 
       <body className='relative flex min-h-svh flex-col items-center overflow-x-clip'>
-        <Providers>
+        <Providers.Root>
           <SmoothScroll>
-            <Height.Set name='header'>
-              <Header />
-            </Height.Set>
+            <Header />
 
-            <Height.Get name={['header', 'document']}>
-              <main className='max-w-bounds 3xl:min-h-bounds max-3xl:grow relative flex w-full flex-col items-center'>
-                {children}
-              </main>
-            </Height.Get>
+            <main className='max-w-bounds 3xl:min-h-bounds max-3xl:grow flex w-full flex-col items-center'>
+              {children}
+            </main>
 
-            <Height.Get name='document'>
-              <Footer />
-            </Height.Get>
+            <Footer />
 
             <CookiesConsent />
 
             <Toaster />
-
             <Analytics />
             <SpeedInsights />
           </SmoothScroll>
-        </Providers>
+        </Providers.Root>
       </body>
     </html>
   );

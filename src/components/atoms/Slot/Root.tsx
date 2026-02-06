@@ -1,13 +1,11 @@
 'use client';
 
 import { Slot } from '@radix-ui/react-slot';
-import React, { ComponentProps } from 'react';
+import { ComponentProps, ReactNode } from 'react';
 
 type SlotAtomAsChildProps<DefaultElementProps> =
   | ({ asChild?: false } & DefaultElementProps)
-  | (({ asChild: true; children: React.ReactNode } & ComponentProps<
-      typeof Slot
-    >) &
+  | (({ asChild: true; children: ReactNode } & ComponentProps<typeof Slot>) &
       DefaultElementProps);
 
 type SlotAtomOwnProps = {

@@ -53,25 +53,12 @@ const SelectAtom = ({
         classNames: {
           ...comboboxProps?.classNames,
           dropdown: cn(
-            `
-              bg-white
-
-              [--popover-border-color:var(--color-border)]
-
-              dark:bg-dark-6
-            `,
+            `bg-body [--popover-border-color:var(--color-border)] dark:bg-dark-6`,
             //@ts-ignore
             comboboxProps?.classNames?.dropdown
           ),
           option: cn(
-            `
-              dark:hover:bg-dark-7
-
-              data-[combobox-selected]:!bg-primary-filled
-              data-[combobox-selected]:text-primary-contrast
-
-              hover:bg-gray-0
-            `,
+            `dark:hover:bg-dark-7 data-[combobox-selected]:!bg-primary-filled data-[combobox-selected]:text-primary-contrast hover:bg-gray-0`,
             //@ts-ignore
             comboboxProps?.classNames?.option
           )

@@ -37,7 +37,7 @@ const AboutBlockOrganism = ({
           wrapperProps?.className
         )}
       >
-        <div className='dark:bg-dark-8 relative grow basis-48 overflow-hidden bg-white max-sm:hidden'>
+        <div className='bg-body relative grow basis-48 overflow-hidden max-sm:hidden'>
           <ScrollAnimate config={yFullScrollAnim}>
             <Lines className='text-border! h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60' />
           </ScrollAnimate>

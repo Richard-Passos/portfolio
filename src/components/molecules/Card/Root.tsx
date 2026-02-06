@@ -13,7 +13,7 @@ type CardMoleculeProps = CardMoleculeOwnProps &
 const CardMolecule = ({ className, ...props }: CardMoleculeProps) => {
   return (
     <Card
-      className={cn('bg-body size-full border', className)}
+      className={cn('bg-body size-full border text-current', className)}
       padding='lg'
       radius='md'
       {...props}

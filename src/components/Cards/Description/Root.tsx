@@ -32,10 +32,10 @@ const DescriptionCardOrganism = ({
         {data.title}
       </Badge>
 
-      <section className='gap- mt-5 flex flex-col'>
+      <section className='mt-5 flex flex-col'>
         {serialize(data.description, {
           paragraph: {
-            className: 'text-dimmed *:text-text'
+            className: 'text-md/relaxed text-dimmed *:text-text'
           }
         })}
       </section>

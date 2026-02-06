@@ -1,12 +1,11 @@
 'use client';
 
-import Slot, { SlotProps } from '@/components/atoms/Slot';
+import { SlotProps } from '@radix-ui/react-slot';
+
+import { Slot } from '@/components/atoms';
 import { useThemeContext } from '@/hooks/contexts';
 
-type HeaderThemeOrganismOwnProps = {};
-
-type HeaderThemeOrganismProps = HeaderThemeOrganismOwnProps &
-  Omit<SlotProps, keyof HeaderThemeOrganismOwnProps>;
+type HeaderThemeOrganismProps = SlotProps;
 
 const HeaderThemeOrganism = (props: HeaderThemeOrganismProps) => {
   const { theme } = useThemeContext();

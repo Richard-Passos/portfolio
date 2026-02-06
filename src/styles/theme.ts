@@ -1,4 +1,9 @@
-import { DEFAULT_THEME, createTheme, mergeMantineTheme } from '@mantine/core';
+import {
+  DEFAULT_THEME,
+  colorsTuple,
+  createTheme,
+  mergeMantineTheme
+} from '@mantine/core';
 
 import { fonts } from '@/constants';
 
@@ -9,17 +14,17 @@ const themeOverride = createTheme({
   white: 'hsl(0 0% 95%)',
   black: 'hsl(0 0% 12%)',
   colors: {
-    primary: ['', '', '', '', '', '', '', '', '', ''],
+    primary: colorsTuple(''),
     dark: [
       'hsl(0 0% 80%)',
       'hsl(0 0% 60%)',
       'hsl(0 0% 40%)',
       'hsl(0 0% 30%)',
       'hsl(0 0% 12.5%)',
-      'hsl(0 0% 7.5%)',
+      'hsl(0 0% 8%)',
       'hsl(0 0% 7%)',
-      'hsl(0 0% 6.5%)',
       'hsl(0 0% 6%)',
+      'hsl(0 0% 5%)',
       'hsl(0 0% 1.5%)'
     ],
     gray: [
@@ -184,7 +189,7 @@ const themeOverride = createTheme({
     dark: 7
   },
   primaryColor: 'primary',
-  autoContrast: false,
+  autoContrast: true,
   luminanceThreshold: 0.3,
   fontFamily: fonts.display.style.fontFamily,
   fontFamilyMonospace: fonts.monospace.style.fontFamily,

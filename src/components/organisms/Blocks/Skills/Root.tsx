@@ -1,4 +1,4 @@
-import SkillCard, { SkillCardProps } from '@/components/organisms/Cards/Skill';
+import SkillCard, { SkillCardProps } from '@/components/Cards/Skill';
 import { cn } from '@/utils';
 
 import SecondaryLayoutBlock, {

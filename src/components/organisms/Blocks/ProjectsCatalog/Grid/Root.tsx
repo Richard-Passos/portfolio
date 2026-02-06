@@ -1,9 +1,9 @@
 'use client';
 
+import { GridProjectCard } from '@/components/Cards/Project';
 import CatalogList, {
   CatalogListRootProps
 } from '@/components/molecules/Catalog/List';
-import { GridProjectCard } from '@/components/organisms/Cards/Project';
 import { Project } from '@/types';
 import { cn } from '@/utils';
 

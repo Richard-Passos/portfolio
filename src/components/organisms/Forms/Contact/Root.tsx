@@ -83,7 +83,7 @@ const ContactFormOrganism = ({
       schema={schema}
       {...props}
     >
-      <div className='dark:bg-dark-8 relative top-px right-px -mt-px -mr-px flex h-fit items-center border bg-white p-2.5 sm:col-span-full'>
+      <div className='bg-body relative top-px right-px -mt-px -mr-px flex h-fit items-center border p-2.5 sm:col-span-full'>
         <Title
           component='h3'
           order={6}
@@ -100,7 +100,7 @@ const ContactFormOrganism = ({
 
       <Form.Control name='name'>
         <TextInput
-          className='dark:bg-dark-8 relative top-px right-px -mt-px -mr-px border bg-white p-2.5 sm:col-span-6'
+          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-6'
           label={fields.name.label}
           placeholder={fields.name.placeholder}
           size='md'
@@ -110,7 +110,7 @@ const ContactFormOrganism = ({
 
       <Form.Control name='email'>
         <TextInput
-          className='dark:bg-dark-8 relative top-px right-px -mt-px -mr-px border bg-white p-2.5 sm:col-span-6'
+          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-6'
           label={fields.email.label}
           placeholder={fields.email.placeholder}
           size='md'
@@ -121,7 +121,7 @@ const ContactFormOrganism = ({
 
       <Form.Control name='subject'>
         <TextInput
-          className='dark:bg-dark-8 relative top-px right-px -mt-px -mr-px border bg-white p-2.5 sm:col-span-6'
+          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-6'
           label={
             <>
               {fields.subject.label}&nbsp;
@@ -136,7 +136,7 @@ const ContactFormOrganism = ({
 
       <Form.Watch name='service'>
         <Select
-          className='dark:bg-dark-8 relative top-px right-px -mt-px -mr-px border bg-white p-2.5 sm:col-span-6'
+          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-6'
           clearable
           data={fields.service.data}
           label={
@@ -154,7 +154,7 @@ const ContactFormOrganism = ({
       <Form.Control name='message'>
         <Textarea
           autosize
-          className='dark:bg-dark-8 relative top-px right-px -mt-px -mr-px border bg-white p-2.5 sm:col-span-full md:col-span-9'
+          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-full md:col-span-9'
           label={fields.message.label}
           minRows={3}
           placeholder={fields.message.placeholder}
@@ -165,7 +165,7 @@ const ContactFormOrganism = ({
 
       <div className='size-full pr-3 pb-3 sm:col-span-4 md:col-span-3'>
         <div className='sticky top-0 w-full'>
-          <div className='dark:bg-dark-8 relative top-px right-px -mt-px -mr-px w-fit border bg-white p-2.5 md:aspect-[1.3/1] md:w-full'>
+          <div className='bg-body relative top-px right-px -mt-px -mr-px w-fit border p-2.5 md:aspect-[1.3/1] md:w-full'>
             <Form.Submit>
               <Action
                 className='md:size-full'

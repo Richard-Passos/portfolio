@@ -35,7 +35,7 @@ const ContactFormBlockOrganism = ({
       )}
       {...props}
     >
-      <div className='dark:bg-dark-8 relative flex grow basis-48 items-center justify-center overflow-hidden bg-white max-sm:hidden'>
+      <div className='bg-body relative flex grow basis-48 items-center justify-center overflow-hidden max-sm:hidden'>
         <ScrollAnimate config={yFullScrollAnim}>
           <Lines className='text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px] opacity-60' />
         </ScrollAnimate>

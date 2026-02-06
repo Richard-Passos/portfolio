@@ -34,13 +34,13 @@ const SectionOrganism = ({
 
   return (
     <Box
+      component='section'
+      data-theme={theme}
+      ref={setRefs(ref, innerRef)}
       className={cn(
         '3xl:min-h-bounds relative flex min-h-svh w-full flex-col items-center py-32',
         className
       )}
-      component='section'
-      data-theme={theme}
-      ref={setRefs(ref, innerRef)}
       {...props}
     >
       {children}

@@ -1,8 +1,8 @@
 import { ComponentType } from 'react';
 
+import Cards from '@/components/Cards';
 import { BentoGrid } from '@/components/molecules';
 import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
-import Cards from '@/components/organisms/Cards';
 import { TypeVariants } from '@/types';
 
 import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';

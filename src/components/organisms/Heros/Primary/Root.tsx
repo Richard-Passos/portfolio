@@ -4,7 +4,6 @@ import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
-import ScrollIndicator from '../../ScrollIndicator';
 import PrimaryHeroExtra, { PrimaryHeroExtraProps } from './Extra';
 import PrimaryHeroScrollAnimate from './ScrollAnimate';
 import PrimaryHeroTitle, { PrimaryHeroTitleProps } from './Title';
@@ -36,7 +35,7 @@ const PrimaryHeroOrganism = ({
         className: cn('*:hidden', bgProps?.className)
       }}
       className={cn(
-        '3xl:[--w:var(--max-width-bounds)] p-(--inset) pt-(--header-height) [--inset:calc(var(--w)*.025)] [--w:100vw]',
+        '3xl:[--inset:calc(var(--max-width-bounds)*.025)] p-(--inset) pt-0 [--inset:2.5vw]',
         className
       )}
       forceTheme
@@ -73,11 +72,6 @@ const PrimaryHeroOrganism = ({
 
         <span className='rounded-inherit pointer-events-none absolute inset-0 border opacity-60' />
       </div>
-
-      <ScrollIndicator
-        className='absolute right-[calc(var(--inset)*1.5)] bottom-[calc(var(--inset)*1.5)] max-sm:hidden'
-        target={scrollTarget}
-      />
     </Section>
   );
 };
