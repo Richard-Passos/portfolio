@@ -31,7 +31,7 @@ const CareerCatalogBlockTemplate = ({
       }}
       className={cn('3xl:min-h-fit min-h-fit lg:flex-row', className)}
       headerProps={{
-        className: 'lg:w-fit lg:mb-auto'
+        className: 'lg:w-fit lg:mr-8 lg:mb-auto'
       }}
       {...props}
     >

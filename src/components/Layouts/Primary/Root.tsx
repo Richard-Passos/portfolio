@@ -28,7 +28,6 @@ const PrimaryLayouts = ({
         description={data.description}
         title={data.title}
         {...headerProps}
-        className={cn('mb-8', headerProps?.className)}
       />
 
       {children}

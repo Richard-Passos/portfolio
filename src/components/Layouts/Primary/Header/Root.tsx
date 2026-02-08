@@ -23,7 +23,7 @@ const PrimaryLayoutsHeaderOrganism = ({
   return (
     <header
       className={cn(
-        'w-9by10 flex max-w-7xl gap-8 max-md:flex-col md:items-end',
+        'w-9by10 mb-8 flex max-w-7xl gap-8 max-md:flex-col md:items-end',
         className
       )}
       {...props}
@@ -32,7 +32,7 @@ const PrimaryLayoutsHeaderOrganism = ({
         order={2}
         {...titleProps}
         className={cn(
-          'shrink-0 wrap-break-word uppercase',
+          'w-fit shrink-0 wrap-break-word uppercase',
           titleProps?.className
         )}
       >
@@ -44,16 +44,16 @@ const PrimaryLayoutsHeaderOrganism = ({
         })}
       </Title>
 
-      <section className='max-w-md -translate-y-3.5'>
-        {renderComp(
-          serialize(description, {
+      {renderComp(
+        <section className='max-w-md -translate-y-3.5'>
+          {serialize(description, {
             paragraph: {
               className: 'text-sm text-dimmed *:text-text'
             }
-          }),
-          [!!description.length]
-        )}
-      </section>
+          })}
+        </section>,
+        [!!description.length]
+      )}
     </header>
   );
 };
