@@ -1,4 +1,5 @@
 import BoldCard from './Bold';
+import CareerCard from './Career';
 import DescriptionCard from './Description';
 import LinkCard from './Link';
 import MarqueeCard from './Marquee';
@@ -13,6 +14,7 @@ import ValueCard from './Value';
 
 const Cards = {
   Bold: BoldCard,
+  Career: CareerCard,
   Description: DescriptionCard,
   Link: LinkCard,
   Marquee: MarqueeCard,
@@ -29,6 +31,7 @@ const Cards = {
 export default Cards;
 export {
   BoldCard,
+  CareerCard,
   DescriptionCard,
   LinkCard,
   MarqueeCard,

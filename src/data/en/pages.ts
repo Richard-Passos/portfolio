@@ -1,5 +1,6 @@
 import { Pages } from '@/types';
 import {
+  careerApi,
   personalApi,
   projectsApi,
   servicesApi,
@@ -9,21 +10,20 @@ import {
 import locale from './locale';
 
 const pages = async (): Promise<Pages[]> => {
-  const [projectsRes, personalRes, personalValuesRes, servicesRes] =
+  const [careerRes, projectsRes, personalRes, personalValuesRes, servicesRes] =
     await Promise.all([
+      careerApi.get({ locale, isSelected: true }),
       projectsApi.get({ locale, isSelected: true }),
       personalApi.get({ locale }),
       valuesApi.get({ id: 'personal', locale }),
       servicesApi.get({ locale })
     ]);
 
-  const projects = projectsRes.ok ? projectsRes.data : [];
-
-  const personal = personalRes.ok ? personalRes.data : undefined;
-
-  const personalValues = personalValuesRes.ok ? personalValuesRes.data : [];
-
-  const services = servicesRes.ok ? servicesRes.data : [];
+  const career = careerRes.ok ? careerRes.data : [],
+    projects = projectsRes.ok ? projectsRes.data : [],
+    personal = personalRes.ok ? personalRes.data : undefined,
+    personalValues = personalValuesRes.ok ? personalValuesRes.data : [],
+    services = servicesRes.ok ? servicesRes.data : [];
 
   return [
     {
@@ -165,8 +165,8 @@ const pages = async (): Promise<Pages[]> => {
           }
         },
         {
-          id: 'selected-works',
-          type: 'ProjectsCatalog',
+          id: 'career',
+          type: 'CareerCatalog',
           theme: 'dark',
           data: {
             title: [
@@ -175,10 +175,10 @@ const pages = async (): Promise<Pages[]> => {
                 align: 'left',
                 children: [
                   {
-                    text: 'Wor'
+                    text: 'Caree'
                   },
                   {
-                    text: 'k',
+                    text: 'r',
                     emphasize: true
                   }
                 ]
@@ -197,31 +197,18 @@ const pages = async (): Promise<Pages[]> => {
                 ]
               }
             ],
-            description: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    text: 'Here are some examples of'
-                  },
-                  {
-                    text: ' my best works',
-                    bold: true
-                  }
-                ]
-              }
-            ],
+            description: [],
             empty: [
               {
                 type: 'paragraph',
                 children: [
                   {
-                    text: 'Sorry, selected projects not found.'
+                    text: 'Sorry, career experiences not found.'
                   }
                 ]
               }
             ],
-            items: projects.map(({ year: _, ...d }) => d)
+            items: career
           }
         },
         {
@@ -281,7 +268,7 @@ const pages = async (): Promise<Pages[]> => {
                 ]
               }
             ],
-            items: projects.map(({ year: _, ...d }) => d)
+            items: projects
           }
         },
         {
@@ -483,17 +470,17 @@ const pages = async (): Promise<Pages[]> => {
               {
                 id: 'list-about-background',
                 text: 'Background',
-                separator: '·'
+                separator: '●'
               },
               {
                 id: 'list-about-hobbies',
                 text: 'Hobbies',
-                separator: '·'
+                separator: '●'
               },
               {
                 id: 'list-about-personality',
                 text: 'Personality',
-                separator: '·'
+                separator: '●'
               }
             ],
             action: {
@@ -819,7 +806,7 @@ const pages = async (): Promise<Pages[]> => {
             },
             items: services.map((d, i) => ({
               ...d,
-              slug: `· ${(i + 1).toString().padStart(2, '0')}`
+              slug: `● ${(i + 1).toString().padStart(2, '0')}`
             }))
           }
         }

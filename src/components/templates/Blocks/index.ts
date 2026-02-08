@@ -1,49 +1,52 @@
-import AboutBlock from './About';
-import BentoGridBlock from './BentoGrid';
-import ButBlock from './But';
-import ContactFormBlock from './ContactForm';
-import CtaTextBlock from './CtaText';
-import ImagesBlock from './Images';
-import ListMissionBlock from './ListMission';
-import ListPageBlock from './ListPage';
-import ProjectsCatalogBlock from './ProjectsCatalog';
-import ServicesBlock from './Services';
-import SkillsBlock from './Skills';
-import StatisticsBlock from './Statistics';
-import TextBlock from './Text';
-import ValuesBlock from './Values';
+import AboutBlockTemplate from './About';
+import BentoGridBlockTemplate from './BentoGrid';
+import ButBlockTemplate from './But';
+import CareerCatalogBlockTemplate from './CareerCatalog';
+import ContactFormBlockTemplate from './ContactForm';
+import CtaTextBlockTemplate from './CtaText';
+import ImagesBlockTemplate from './Images';
+import ListMissionBlockTemplate from './ListMission';
+import ListPageBlockTemplate from './ListPage';
+import ProjectsCatalogBlockTemplate from './ProjectsCatalog';
+import ServicesBlockTemplate from './Services';
+import SkillsBlockTemplate from './Skills';
+import StatisticsBlockTemplate from './Statistics';
+import TextBlockTemplate from './Text';
+import ValuesBlockTemplate from './Values';
 
-const Blocks = {
-  About: AboutBlock,
-  BentoGrid: BentoGridBlock,
-  But: ButBlock,
-  ContactForm: ContactFormBlock,
-  CtaText: CtaTextBlock,
-  Images: ImagesBlock,
-  ListMission: ListMissionBlock,
-  ListPage: ListPageBlock,
-  ProjectsCatalog: ProjectsCatalogBlock,
-  Services: ServicesBlock,
-  Skills: SkillsBlock,
-  Statistics: StatisticsBlock,
-  Text: TextBlock,
-  Values: ValuesBlock
+const BlockTemplates = {
+  About: AboutBlockTemplate,
+  BentoGrid: BentoGridBlockTemplate,
+  But: ButBlockTemplate,
+  CareerCatalog: CareerCatalogBlockTemplate,
+  ContactForm: ContactFormBlockTemplate,
+  CtaText: CtaTextBlockTemplate,
+  Images: ImagesBlockTemplate,
+  ListMission: ListMissionBlockTemplate,
+  ListPage: ListPageBlockTemplate,
+  ProjectsCatalog: ProjectsCatalogBlockTemplate,
+  Services: ServicesBlockTemplate,
+  Skills: SkillsBlockTemplate,
+  Statistics: StatisticsBlockTemplate,
+  Text: TextBlockTemplate,
+  Values: ValuesBlockTemplate
 };
 
-export default Blocks;
+export default BlockTemplates;
 export {
-  AboutBlock,
-  BentoGridBlock,
-  ButBlock,
-  ContactFormBlock,
-  CtaTextBlock,
-  ImagesBlock,
-  ListMissionBlock,
-  ListPageBlock,
-  ProjectsCatalogBlock,
-  ServicesBlock,
-  SkillsBlock,
-  StatisticsBlock,
-  TextBlock,
-  ValuesBlock
+  AboutBlockTemplate,
+  BentoGridBlockTemplate,
+  ButBlockTemplate,
+  CareerCatalogBlockTemplate,
+  ContactFormBlockTemplate,
+  CtaTextBlockTemplate,
+  ImagesBlockTemplate,
+  ListMissionBlockTemplate,
+  ListPageBlockTemplate,
+  ProjectsCatalogBlockTemplate,
+  ServicesBlockTemplate,
+  SkillsBlockTemplate,
+  StatisticsBlockTemplate,
+  TextBlockTemplate,
+  ValuesBlockTemplate
 };

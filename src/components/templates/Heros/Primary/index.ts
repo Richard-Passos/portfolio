@@ -1,4 +1,4 @@
-import PrimaryHero, { PrimaryHeroProps } from './Root';
+import PrimaryHeroTemplate, { PrimaryHeroTemplateProps } from './Root';
 
-export default PrimaryHero;
-export type { PrimaryHeroProps };
+export default PrimaryHeroTemplate;
+export type { PrimaryHeroTemplateProps };

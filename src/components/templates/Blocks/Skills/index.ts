@@ -1,4 +1,4 @@
-import SkillsBlock, { SkillsBlockProps } from './Root';
+import SkillsBlockTemplate, { SkillsBlockTemplateProps } from './Root';
 
-export default SkillsBlock;
-export type { SkillsBlockProps };
+export default SkillsBlockTemplate;
+export type { SkillsBlockTemplateProps };

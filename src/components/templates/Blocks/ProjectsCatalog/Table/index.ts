@@ -1,6 +1,6 @@
-import ProjectsCatalogTableBlock, {
-  ProjectsCatalogTableBlockProps
+import ProjectsCatalogTableBlockTemplate, {
+  ProjectsCatalogTableBlockTemplateProps
 } from './Root';
 
-export default ProjectsCatalogTableBlock;
-export type { ProjectsCatalogTableBlockProps };
+export default ProjectsCatalogTableBlockTemplate;
+export type { ProjectsCatalogTableBlockTemplateProps };

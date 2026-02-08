@@ -4,16 +4,20 @@ import SecondaryLayouts, {
 } from '@/components/Layouts/Secondary';
 import { cn } from '@/utils';
 
-type SkillsBlockOwnProps = {
+type SkillsBlockTemplateOwnProps = {
   data: SecondaryLayoutsProps['data'] & {
     items: SkillCardProps['data'][];
   };
 };
 
-type SkillsBlockProps = SkillsBlockOwnProps &
-  Omit<SecondaryLayoutsProps, keyof SkillsBlockOwnProps>;
+type SkillsBlockTemplateProps = SkillsBlockTemplateOwnProps &
+  Omit<SecondaryLayoutsProps, keyof SkillsBlockTemplateOwnProps>;
 
-const SkillsBlock = ({ className, data, ...props }: SkillsBlockProps) => {
+const SkillsBlockTemplate = ({
+  className,
+  data,
+  ...props
+}: SkillsBlockTemplateProps) => {
   return (
     <SecondaryLayouts
       className={cn(`3xl:min-h-fit min-h-fit`, className)}
@@ -41,5 +45,5 @@ const SkillsBlock = ({ className, data, ...props }: SkillsBlockProps) => {
   );
 };
 
-export default SkillsBlock;
-export type { SkillsBlockProps };
+export default SkillsBlockTemplate;
+export type { SkillsBlockTemplateProps };

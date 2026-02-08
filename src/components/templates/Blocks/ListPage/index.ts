@@ -1,4 +1,4 @@
-import ListPageBlock, { ListPageBlockProps } from './Root';
+import ListPageBlockTemplate, { ListPageBlockTemplateProps } from './Root';
 
-export default ListPageBlock;
-export type { ListPageBlockProps };
+export default ListPageBlockTemplate;
+export type { ListPageBlockTemplateProps };

@@ -23,7 +23,7 @@ const PrimaryLayoutsHeaderOrganism = ({
   return (
     <header
       className={cn(
-        `w-9by10 flex gap-8 max-md:flex-col md:items-end`,
+        'w-9by10 flex max-w-7xl gap-8 max-md:flex-col md:items-end',
         className
       )}
       {...props}
@@ -32,11 +32,16 @@ const PrimaryLayoutsHeaderOrganism = ({
         order={2}
         {...titleProps}
         className={cn(
-          `shrink-0 pl-[min(10vw,--spacing(20))] wrap-break-word uppercase data-[align=left]:*:-ml-[min(10vw,--spacing(20))]`,
+          'shrink-0 wrap-break-word uppercase',
           titleProps?.className
         )}
       >
-        {serialize(title)}
+        {serialize(title, {
+          alignText: {
+            className:
+              'data-[align=right]:ml-[min(5vw,--spacing(10))] data-[align=right]:py-2 data-[align=right]:px-3 data-[align=right]:border data-[align=right]:border-red-4/20 data-[align=right]:rounded data-[align=right]:bg-red-4/10 data-[align=right]:-rotate-3'
+          }
+        })}
       </Title>
 
       <section className='max-w-md -translate-y-3.5'>

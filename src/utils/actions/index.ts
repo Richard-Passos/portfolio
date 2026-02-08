@@ -1,3 +1,4 @@
+import careerApi from './career';
 import cookiesConsentApi from './cookiesConsent';
 import footerApi from './footer';
 import getLocale from './getLocale';
@@ -12,6 +13,7 @@ import statisticsApi from './statistics';
 import valuesApi from './values';
 
 const actions = {
+  careerApi,
   cookiesConsentApi,
   footerApi,
   headerApi,
@@ -28,6 +30,7 @@ const actions = {
 
 export default actions;
 export {
+  careerApi,
   cookiesConsentApi,
   footerApi,
   headerApi,

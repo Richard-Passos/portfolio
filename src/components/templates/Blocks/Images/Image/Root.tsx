@@ -4,18 +4,19 @@ import ScrollAnimate from '@/components/atoms/ScrollAnimate';
 import { CardRoot, CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
 
-type ImagesBlockImageOrganismOwnProps = {
+type ImagesBlockTemplateImageOrganismOwnProps = {
   data: Pick<ImageProps, 'src' | 'alt'>;
 };
 
-type ImagesBlockImageOrganismProps = ImagesBlockImageOrganismOwnProps &
-  Omit<CardRootProps, keyof ImagesBlockImageOrganismOwnProps>;
+type ImagesBlockTemplateImageOrganismProps =
+  ImagesBlockTemplateImageOrganismOwnProps &
+    Omit<CardRootProps, keyof ImagesBlockTemplateImageOrganismOwnProps>;
 
-const ImagesBlockImageOrganism = ({
+const ImagesBlockTemplateImageOrganism = ({
   className,
   data,
   ...props
-}: ImagesBlockImageOrganismProps) => {
+}: ImagesBlockTemplateImageOrganismProps) => {
   return (
     <CardRoot
       className={cn(
@@ -44,5 +45,5 @@ const ImagesBlockImageOrganism = ({
   );
 };
 
-export default ImagesBlockImageOrganism;
-export type { ImagesBlockImageOrganismProps };
+export default ImagesBlockTemplateImageOrganism;
+export type { ImagesBlockTemplateImageOrganismProps };

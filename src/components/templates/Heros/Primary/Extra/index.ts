@@ -1,6 +1,6 @@
-import PrimaryHeroExtra, {
-  PrimaryHeroExtraOrganismProps as PrimaryHeroExtraProps
+import PrimaryHeroTemplateExtra, {
+  PrimaryHeroTemplateExtraOrganismProps as PrimaryHeroTemplateExtraProps
 } from './Root';
 
-export default PrimaryHeroExtra;
-export type { PrimaryHeroExtraProps };
+export default PrimaryHeroTemplateExtra;
+export type { PrimaryHeroTemplateExtraProps };

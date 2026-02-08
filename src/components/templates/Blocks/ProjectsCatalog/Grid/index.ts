@@ -1,6 +1,6 @@
-import ProjectsCatalogGridBlock, {
-  ProjectsCatalogGridBlockProps
+import ProjectsCatalogGridBlockTemplate, {
+  ProjectsCatalogGridBlockTemplateProps
 } from './Root';
 
-export default ProjectsCatalogGridBlock;
-export type { ProjectsCatalogGridBlockProps };
+export default ProjectsCatalogGridBlockTemplate;
+export type { ProjectsCatalogGridBlockTemplateProps };

@@ -1,45 +1,33 @@
-'use client';
-
-import { GridProjectCard } from '@/components/Cards/Project';
-import CatalogList, {
+import {
+  CatalogListRoot,
   CatalogListRootProps
 } from '@/components/molecules/Catalog/List';
-import { Project } from '@/types';
 import { cn } from '@/utils';
 
-type ProjectsCatalogGridBlockOwnProps = {};
+import Items from './Items';
 
-type ProjectsCatalogGridBlockProps = ProjectsCatalogGridBlockOwnProps &
-  Omit<CatalogListRootProps, keyof ProjectsCatalogGridBlockOwnProps>;
+type ProjectsCatalogGridBlockTemplateOwnProps = {};
 
-const ProjectsCatalogGridBlock = ({
+type ProjectsCatalogGridBlockTemplateProps =
+  ProjectsCatalogGridBlockTemplateOwnProps &
+    Omit<CatalogListRootProps, keyof ProjectsCatalogGridBlockTemplateOwnProps>;
+
+const ProjectsCatalogGridBlockTemplate = ({
   className,
   ...props
-}: ProjectsCatalogGridBlockProps) => {
+}: ProjectsCatalogGridBlockTemplateProps) => {
   return (
-    <CatalogList.Root
+    <CatalogListRoot
       className={cn(
         `grid w-full max-w-sm gap-2.5 sm:max-w-3xl sm:grid-cols-2`,
         className
       )}
       {...props}
     >
-      <CatalogList.Items<Project>>
-        {(data) => (
-          <li
-            className='h-fit sm:even:mt-16 sm:not-last:even:-mb-16'
-            key={data.slug}
-          >
-            <GridProjectCard
-              data={data}
-              href={`projects/${data.slug}`}
-            />
-          </li>
-        )}
-      </CatalogList.Items>
-    </CatalogList.Root>
+      <Items />
+    </CatalogListRoot>
   );
 };
 
-export default ProjectsCatalogGridBlock;
-export type { ProjectsCatalogGridBlockProps };
+export default ProjectsCatalogGridBlockTemplate;
+export type { ProjectsCatalogGridBlockTemplateProps };

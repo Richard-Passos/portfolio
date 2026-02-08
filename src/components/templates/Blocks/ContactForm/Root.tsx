@@ -9,7 +9,7 @@ import ContactForm, {
 import { cn } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
-type ContactFormBlockOwnProps = {
+type ContactFormBlockTemplateOwnProps = {
   data: Pick<
     ContactFormProps,
     'fields' | 'to' | 'optionalLabel' | 'messages'
@@ -18,14 +18,14 @@ type ContactFormBlockOwnProps = {
   };
 };
 
-type ContactFormBlockProps = ContactFormBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof ContactFormBlockOwnProps>;
+type ContactFormBlockTemplateProps = ContactFormBlockTemplateOwnProps &
+  Omit<CleanLayoutsProps, keyof ContactFormBlockTemplateOwnProps>;
 
-const ContactFormBlock = ({
+const ContactFormBlockTemplate = ({
   data,
   className,
   ...props
-}: ContactFormBlockProps) => {
+}: ContactFormBlockTemplateProps) => {
   return (
     <CleanLayouts
       className={cn(
@@ -60,5 +60,5 @@ const ContactFormBlock = ({
   );
 };
 
-export default ContactFormBlock;
-export type { ContactFormBlockProps };
+export default ContactFormBlockTemplate;
+export type { ContactFormBlockTemplateProps };

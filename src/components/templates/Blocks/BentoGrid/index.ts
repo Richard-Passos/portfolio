@@ -1,4 +1,4 @@
-import BentoGridBlock, { BentoGridBlockProps } from './Root';
+import BentoGridBlockTemplate, { BentoGridBlockTemplateProps } from './Root';
 
-export default BentoGridBlock;
-export type { BentoGridBlockProps };
+export default BentoGridBlockTemplate;
+export type { BentoGridBlockTemplateProps };

@@ -1,4 +1,4 @@
-import ValuesBlock, { ValuesBlockProps } from './Root';
+import ValuesBlockTemplate, { ValuesBlockTemplateProps } from './Root';
 
-export default ValuesBlock;
-export type { ValuesBlockProps };
+export default ValuesBlockTemplate;
+export type { ValuesBlockTemplateProps };

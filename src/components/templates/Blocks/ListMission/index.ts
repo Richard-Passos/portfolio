@@ -1,4 +1,6 @@
-import ListMissionBlock, { ListMissionBlockProps } from './Root';
+import ListMissionBlockTemplate, {
+  ListMissionBlockTemplateProps
+} from './Root';
 
-export default ListMissionBlock;
-export type { ListMissionBlockProps };
+export default ListMissionBlockTemplate;
+export type { ListMissionBlockTemplateProps };

@@ -1,10 +1,10 @@
-import PrimaryHero from './Primary';
-import SecondaryHero from './Secondary';
+import PrimaryHeroTemplate from './Primary';
+import SecondaryHeroTemplate from './Secondary';
 
-const Heros = {
-  Primary: PrimaryHero,
-  Secondary: SecondaryHero
+const HeroTemplates = {
+  Primary: PrimaryHeroTemplate,
+  Secondary: SecondaryHeroTemplate
 };
 
-export default Heros;
-export { PrimaryHero, SecondaryHero };
+export default HeroTemplates;
+export { PrimaryHeroTemplate, SecondaryHeroTemplate };

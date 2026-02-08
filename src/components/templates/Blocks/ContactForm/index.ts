@@ -1,4 +1,6 @@
-import ContactFormBlock, { ContactFormBlockProps } from './Root';
+import ContactFormBlockTemplate, {
+  ContactFormBlockTemplateProps
+} from './Root';
 
-export default ContactFormBlock;
-export type { ContactFormBlockProps };
+export default ContactFormBlockTemplate;
+export type { ContactFormBlockTemplateProps };

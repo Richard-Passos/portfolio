@@ -2,18 +2,19 @@ import { Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
 import { cn, serialize } from '@/utils';
 
-type PrimaryHeroTitleOrganismOwnProps = {
+type PrimaryHeroTemplateTitleOrganismOwnProps = {
   children: Parameters<typeof serialize>['0'];
 };
 
-type PrimaryHeroTitleOrganismProps = PrimaryHeroTitleOrganismOwnProps &
-  Omit<TitleProps, keyof PrimaryHeroTitleOrganismOwnProps>;
+type PrimaryHeroTemplateTitleOrganismProps =
+  PrimaryHeroTemplateTitleOrganismOwnProps &
+    Omit<TitleProps, keyof PrimaryHeroTemplateTitleOrganismOwnProps>;
 
-const PrimaryHeroTitleOrganism = ({
+const PrimaryHeroTemplateTitleOrganism = ({
   className,
   children,
   ...props
-}: PrimaryHeroTitleOrganismProps) => {
+}: PrimaryHeroTemplateTitleOrganismProps) => {
   return (
     <Title
       className={cn(
@@ -42,5 +43,5 @@ const PrimaryHeroTitleOrganism = ({
   );
 };
 
-export default PrimaryHeroTitleOrganism;
-export type { PrimaryHeroTitleOrganismProps };
+export default PrimaryHeroTemplateTitleOrganism;
+export type { PrimaryHeroTemplateTitleOrganismProps };

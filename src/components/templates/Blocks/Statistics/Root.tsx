@@ -26,17 +26,20 @@ const SCROLL_OFFSET = ['0 1', '0 .55'],
     } as ScrollAnimateConfigOptions
   };
 
-type StatisticsBlockOwnProps = {
+type StatisticsBlockTemplateOwnProps = {
   data: PrimaryLayoutsProps['data'] & {
     subtitle?: Node[];
     items: StatisticCardProps['data'][];
   };
 };
 
-type StatisticsBlockProps = StatisticsBlockOwnProps &
-  Omit<PrimaryLayoutsProps, keyof StatisticsBlockOwnProps>;
+type StatisticsBlockTemplateProps = StatisticsBlockTemplateOwnProps &
+  Omit<PrimaryLayoutsProps, keyof StatisticsBlockTemplateOwnProps>;
 
-const StatisticsBlock = ({ data, ...props }: StatisticsBlockProps) => {
+const StatisticsBlockTemplate = ({
+  data,
+  ...props
+}: StatisticsBlockTemplateProps) => {
   return (
     <PrimaryLayouts
       data={{
@@ -78,5 +81,5 @@ const StatisticsBlock = ({ data, ...props }: StatisticsBlockProps) => {
   );
 };
 
-export default StatisticsBlock;
-export type { StatisticsBlockProps };
+export default StatisticsBlockTemplate;
+export type { StatisticsBlockTemplateProps };

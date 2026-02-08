@@ -26,13 +26,13 @@ const TimeCardOrganism = ({
       {...props}
     >
       <Title
-        className='text-dimmed relative z-10 text-center text-sm uppercase'
+        className='text-dimmed relative z-10 text-center text-sm'
         order={4}
       >
         {serialize(data.title)}
       </Title>
 
-      <Text className='text-center text-[14vw] leading-none font-bold sm:text-[min(8vw,6rem)]'>
+      <Text className='mt-1 text-center text-[14vw] leading-none font-bold sm:text-[min(8vw,6rem)]'>
         {data.time ? data.time : <LocalTime />}
       </Text>
     </Card.Root>

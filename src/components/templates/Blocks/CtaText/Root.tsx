@@ -5,7 +5,7 @@ import { TextScrollAnimateProps } from '@/components/molecules/TextScrollAnimate
 import Icons, { IconsProps } from '@/components/organisms/Icons';
 import { cn } from '@/utils';
 
-type CtaTextBlockOwnProps = {
+type CtaTextBlockTemplateOwnProps = {
   data: {
     description: TextScrollAnimateProps['text'];
     icons: {
@@ -15,10 +15,14 @@ type CtaTextBlockOwnProps = {
   };
 };
 
-type CtaTextBlockProps = CtaTextBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof CtaTextBlockOwnProps>;
+type CtaTextBlockTemplateProps = CtaTextBlockTemplateOwnProps &
+  Omit<CleanLayoutsProps, keyof CtaTextBlockTemplateOwnProps>;
 
-const CtaTextBlock = ({ data, className, ...props }: CtaTextBlockProps) => {
+const CtaTextBlockTemplate = ({
+  data,
+  className,
+  ...props
+}: CtaTextBlockTemplateProps) => {
   return (
     <CleanLayouts
       className={cn(`3xl:min-h-bounds min-h-svh`, className)}
@@ -36,5 +40,5 @@ const CtaTextBlock = ({ data, className, ...props }: CtaTextBlockProps) => {
   );
 };
 
-export default CtaTextBlock;
-export type { CtaTextBlockProps };
+export default CtaTextBlockTemplate;
+export type { CtaTextBlockTemplateProps };

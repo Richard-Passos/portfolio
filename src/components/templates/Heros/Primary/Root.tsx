@@ -4,30 +4,34 @@ import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
-import PrimaryHeroExtra, { PrimaryHeroExtraProps } from './Extra';
-import PrimaryHeroScrollAnimate from './ScrollAnimate';
-import PrimaryHeroTitle, { PrimaryHeroTitleProps } from './Title';
+import PrimaryHeroTemplateExtra, {
+  PrimaryHeroTemplateExtraProps
+} from './Extra';
+import PrimaryHeroTemplateScrollAnimate from './ScrollAnimate';
+import PrimaryHeroTemplateTitle, {
+  PrimaryHeroTemplateTitleProps
+} from './Title';
 
-type PrimaryHeroOwnProps = {
+type PrimaryHeroTemplateOwnProps = {
   data: {
-    title: PrimaryHeroTitleProps['children'];
+    title: PrimaryHeroTemplateTitleProps['children'];
     description: Node[];
-    left: PrimaryHeroExtraProps['children'];
-    right: PrimaryHeroExtraProps['children'];
+    left: PrimaryHeroTemplateExtraProps['children'];
+    right: PrimaryHeroTemplateExtraProps['children'];
   };
   scrollTarget?: ScrollToProps['target'];
 };
 
-type PrimaryHeroProps = PrimaryHeroOwnProps &
-  Omit<SectionProps, keyof PrimaryHeroOwnProps>;
+type PrimaryHeroTemplateProps = PrimaryHeroTemplateOwnProps &
+  Omit<SectionProps, keyof PrimaryHeroTemplateOwnProps>;
 
-const PrimaryHero = ({
+const PrimaryHeroTemplate = ({
   data,
   className,
   bgProps,
   scrollTarget,
   ...props
-}: PrimaryHeroProps) => {
+}: PrimaryHeroTemplateProps) => {
   return (
     <Section
       bgProps={{
@@ -42,18 +46,22 @@ const PrimaryHero = ({
       {...props}
     >
       <div className='relative flex w-full grow overflow-hidden rounded-lg'>
-        <PrimaryHeroScrollAnimate>
+        <PrimaryHeroTemplateScrollAnimate>
           <div className='relative flex w-full flex-col items-center justify-center'>
             <div className='flex w-full max-w-7xl grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:scale-(--scale) sm:opacity-(--opacity)'>
-              <PrimaryHeroTitle>{data.title}</PrimaryHeroTitle>
+              <PrimaryHeroTemplateTitle>{data.title}</PrimaryHeroTemplateTitle>
 
               <div className='mt-3 grid w-full grid-cols-3 gap-3'>
                 <div>
-                  <PrimaryHeroExtra>{data.left}</PrimaryHeroExtra>
+                  <PrimaryHeroTemplateExtra>
+                    {data.left}
+                  </PrimaryHeroTemplateExtra>
                 </div>
 
                 <div className='col-end-4 justify-self-end text-end lg:order-last'>
-                  <PrimaryHeroExtra>{data.right}</PrimaryHeroExtra>
+                  <PrimaryHeroTemplateExtra>
+                    {data.right}
+                  </PrimaryHeroTemplateExtra>
                 </div>
 
                 <section className='col-span-full max-w-md justify-self-center text-center lg:sr-only'>
@@ -68,7 +76,7 @@ const PrimaryHero = ({
 
             <Lines className='text-gray-3 dark:text-dark-4 top-auto -z-10 bg-size-[83.333px_66.666px]' />
           </div>
-        </PrimaryHeroScrollAnimate>
+        </PrimaryHeroTemplateScrollAnimate>
 
         <span className='rounded-inherit border-gray-3 dark:border-dark-4 pointer-events-none absolute inset-0 border' />
       </div>
@@ -76,5 +84,5 @@ const PrimaryHero = ({
   );
 };
 
-export default PrimaryHero;
-export type { PrimaryHeroProps };
+export default PrimaryHeroTemplate;
+export type { PrimaryHeroTemplateProps };

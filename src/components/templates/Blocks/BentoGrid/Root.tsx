@@ -8,7 +8,7 @@ import { BentoGrid } from '@/components/molecules';
 import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
 import { TypeVariants } from '@/types';
 
-type BentoGridBlockOwnProps = {
+type BentoGridBlockTemplateOwnProps = {
   data: PrimaryLayoutsProps['data'] & {
     templates: BentoGridRootProps['templates'];
     items: TypeVariants<Omit<typeof Cards, 'Project'>>[];
@@ -16,14 +16,14 @@ type BentoGridBlockOwnProps = {
   hasAnimation?: boolean;
 };
 
-type BentoGridBlockProps = BentoGridBlockOwnProps &
-  Omit<PrimaryLayoutsProps, keyof BentoGridBlockOwnProps | 'data'>;
+type BentoGridBlockTemplateProps = BentoGridBlockTemplateOwnProps &
+  Omit<PrimaryLayoutsProps, keyof BentoGridBlockTemplateOwnProps | 'data'>;
 
-const BentoGridBlock = ({
+const BentoGridBlockTemplate = ({
   data,
   hasAnimation,
   ...props
-}: BentoGridBlockProps) => {
+}: BentoGridBlockTemplateProps) => {
   return (
     <PrimaryLayouts
       data={{
@@ -60,5 +60,5 @@ const BentoGridBlock = ({
   );
 };
 
-export default BentoGridBlock;
-export type { BentoGridBlockProps };
+export default BentoGridBlockTemplate;
+export type { BentoGridBlockTemplateProps };

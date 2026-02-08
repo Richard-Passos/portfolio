@@ -4,7 +4,7 @@ import { Image, ScrollAnimate } from '@/components/atoms';
 import { ImageProps } from '@/components/atoms/Image';
 import { cn } from '@/utils';
 
-type ServicesBlockImageOrganismOwnProps = {
+type ServicesBlockTemplateImageOrganismOwnProps = {
   data: {
     image: Pick<ImageProps, 'src' | 'alt'>;
   };
@@ -12,16 +12,20 @@ type ServicesBlockImageOrganismOwnProps = {
   imageProps?: Partial<ImageProps>;
 };
 
-type ServicesBlockImageOrganismProps = ServicesBlockImageOrganismOwnProps &
-  Omit<ComponentProps<'div'>, keyof ServicesBlockImageOrganismOwnProps>;
+type ServicesBlockTemplateImageOrganismProps =
+  ServicesBlockTemplateImageOrganismOwnProps &
+    Omit<
+      ComponentProps<'div'>,
+      keyof ServicesBlockTemplateImageOrganismOwnProps
+    >;
 
-const ServicesBlockImageOrganism = ({
+const ServicesBlockTemplateImageOrganism = ({
   className,
   data,
   wrapperProps,
   imageProps,
   ...props
-}: ServicesBlockImageOrganismProps) => {
+}: ServicesBlockTemplateImageOrganismProps) => {
   return (
     <div
       className={cn(
@@ -55,5 +59,5 @@ const ServicesBlockImageOrganism = ({
   );
 };
 
-export default ServicesBlockImageOrganism;
-export type { ServicesBlockImageOrganismProps };
+export default ServicesBlockTemplateImageOrganism;
+export type { ServicesBlockTemplateImageOrganismProps };

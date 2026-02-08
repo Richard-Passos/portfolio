@@ -10,7 +10,7 @@ import { cn } from '@/utils';
 
 import Icons, { IconsProps } from '../../../organisms/Icons';
 
-type ValuesBlockOwnProps = {
+type ValuesBlockTemplateOwnProps = {
   data: SecondaryLayoutsProps['data'] & {
     templates: BentoGridRootProps['templates'];
     items: ValueCardProps['data'][];
@@ -24,16 +24,16 @@ type ValuesBlockOwnProps = {
   iconsProps?: Partial<IconsProps>;
 };
 
-type ValuesBlockProps = ValuesBlockOwnProps &
-  Omit<SecondaryLayoutsProps, keyof ValuesBlockOwnProps>;
+type ValuesBlockTemplateProps = ValuesBlockTemplateOwnProps &
+  Omit<SecondaryLayoutsProps, keyof ValuesBlockTemplateOwnProps>;
 
-const ValuesBlock = ({
+const ValuesBlockTemplate = ({
   data,
   wrapperProps,
   gridProps,
   iconsProps,
   ...props
-}: ValuesBlockProps) => {
+}: ValuesBlockTemplateProps) => {
   return (
     <SecondaryLayouts
       data={{
@@ -77,5 +77,5 @@ const ValuesBlock = ({
   );
 };
 
-export default ValuesBlock;
-export type { ValuesBlockProps };
+export default ValuesBlockTemplate;
+export type { ValuesBlockTemplateProps };

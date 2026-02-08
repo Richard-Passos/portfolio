@@ -1,4 +1,4 @@
-import ButBlock, { ButBlockProps } from './Root';
+import ButBlockTemplate, { ButBlockTemplateProps } from './Root';
 
-export default ButBlock;
-export type { ButBlockProps };
+export default ButBlockTemplate;
+export type { ButBlockTemplateProps };

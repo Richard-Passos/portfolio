@@ -4,7 +4,9 @@ import ScrollAnimate, {
 } from '@/components/atoms/ScrollAnimate';
 import { cn } from '@/utils';
 
-import ImagesBlockImage, { ImagesBlockImageProps } from './Image';
+import ImagesBlockTemplateImage, {
+  ImagesBlockTemplateImageProps
+} from './Image';
 
 const SCROLL_OFFSET = ['.5 1', '.5 .6'],
   ANIMATION_CONFIG = {
@@ -24,20 +26,24 @@ const SCROLL_OFFSET = ['.5 1', '.5 .6'],
     } as ScrollAnimateConfigOptions
   };
 
-type ImagesBlockOwnProps = {
+type ImagesBlockTemplateOwnProps = {
   data: {
     items: [
-      ImagesBlockImageProps['data'],
-      ImagesBlockImageProps['data'],
-      ImagesBlockImageProps['data']
+      ImagesBlockTemplateImageProps['data'],
+      ImagesBlockTemplateImageProps['data'],
+      ImagesBlockTemplateImageProps['data']
     ];
   };
 };
 
-type ImagesBlockProps = ImagesBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof ImagesBlockOwnProps>;
+type ImagesBlockTemplateProps = ImagesBlockTemplateOwnProps &
+  Omit<CleanLayoutsProps, keyof ImagesBlockTemplateOwnProps>;
 
-const ImagesBlock = ({ className, data, ...props }: ImagesBlockProps) => {
+const ImagesBlockTemplate = ({
+  className,
+  data,
+  ...props
+}: ImagesBlockTemplateProps) => {
   return (
     <ScrollAnimate config={ANIMATION_CONFIG.x}>
       <ScrollAnimate config={ANIMATION_CONFIG.rotate}>
@@ -48,17 +54,17 @@ const ImagesBlock = ({ className, data, ...props }: ImagesBlockProps) => {
           )}
           {...props}
         >
-          <ImagesBlockImage
+          <ImagesBlockTemplateImage
             className='mt-[7.5%] max-sm:hidden md:translate-x-(--x) md:-rotate-(--rotate)'
             data={data.items[0]}
           />
 
-          <ImagesBlockImage
+          <ImagesBlockTemplateImage
             className='z-10'
             data={data.items[1]}
           />
 
-          <ImagesBlockImage
+          <ImagesBlockTemplateImage
             className='mt-[7.5%] max-md:hidden md:-translate-x-(--x) md:rotate-(--rotate)'
             data={data.items[2]}
           />
@@ -68,5 +74,5 @@ const ImagesBlock = ({ className, data, ...props }: ImagesBlockProps) => {
   );
 };
 
-export default ImagesBlock;
-export type { ImagesBlockProps };
+export default ImagesBlockTemplate;
+export type { ImagesBlockTemplateProps };

@@ -11,7 +11,7 @@ type Action = {
   onClick?: ActionProps['onClick'];
 };
 
-type SecondaryHeroOwnProps = {
+type SecondaryHeroTemplateOwnProps = {
   data: {
     title: Node[];
     description?: Node[];
@@ -22,10 +22,14 @@ type SecondaryHeroOwnProps = {
   };
 };
 
-type SecondaryHeroProps = SecondaryHeroOwnProps &
-  Omit<SectionProps, keyof SecondaryHeroOwnProps>;
+type SecondaryHeroTemplateProps = SecondaryHeroTemplateOwnProps &
+  Omit<SectionProps, keyof SecondaryHeroTemplateOwnProps>;
 
-const SecondaryHero = ({ data, className, ...props }: SecondaryHeroProps) => {
+const SecondaryHeroTemplate = ({
+  data,
+  className,
+  ...props
+}: SecondaryHeroTemplateProps) => {
   return (
     <Section
       className={cn('3xl:min-h-fit min-h-fit pt-16', className)}
@@ -87,5 +91,5 @@ const SecondaryHero = ({ data, className, ...props }: SecondaryHeroProps) => {
   );
 };
 
-export default SecondaryHero;
-export type { SecondaryHeroProps };
+export default SecondaryHeroTemplate;
+export type { SecondaryHeroTemplateProps };

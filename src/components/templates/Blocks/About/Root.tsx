@@ -7,19 +7,23 @@ import PrimaryLayouts, {
 import { Lines, ScrollAnimate } from '@/components/atoms';
 import { cn } from '@/utils';
 
-import AboutBlockText, { AboutBlockTextProps } from './Text';
+import AboutBlockTemplateText, { AboutBlockTemplateTextProps } from './Text';
 
-type AboutBlockOwnProps = {
+type AboutBlockTemplateOwnProps = {
   data: PrimaryLayoutsProps['data'] & {
-    texts: ({ id: string } & AboutBlockTextProps['data'])[];
+    texts: ({ id: string } & AboutBlockTemplateTextProps['data'])[];
   };
   wrapperProps?: Partial<ComponentProps<'section'>>;
 };
 
-type AboutBlockProps = AboutBlockOwnProps &
-  Omit<PrimaryLayoutsProps, keyof AboutBlockOwnProps>;
+type AboutBlockTemplateProps = AboutBlockTemplateOwnProps &
+  Omit<PrimaryLayoutsProps, keyof AboutBlockTemplateOwnProps>;
 
-const AboutBlock = ({ data, wrapperProps, ...props }: AboutBlockProps) => {
+const AboutBlockTemplate = ({
+  data,
+  wrapperProps,
+  ...props
+}: AboutBlockTemplateProps) => {
   return (
     <PrimaryLayouts
       data={{
@@ -43,7 +47,7 @@ const AboutBlock = ({ data, wrapperProps, ...props }: AboutBlockProps) => {
 
         <section className='flex max-w-xl grow flex-col gap-8'>
           {data.texts.map(({ id, ...data }) => (
-            <AboutBlockText
+            <AboutBlockTemplateText
               data={data}
               key={id}
             />
@@ -54,5 +58,5 @@ const AboutBlock = ({ data, wrapperProps, ...props }: AboutBlockProps) => {
   );
 };
 
-export default AboutBlock;
-export type { AboutBlockProps };
+export default AboutBlockTemplate;
+export type { AboutBlockTemplateProps };

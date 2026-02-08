@@ -30,7 +30,7 @@ const LinkCardOrganism = ({
       {...props}
     >
       <UnstyledLink
-        className='rounded-inherit hover:bg-gray-0 dark:hover:bg-dark-6 -m-[(var(--card-padding)+1px)] flex min-h-52 flex-col items-center justify-center border p-(--card-padding) font-normal text-current no-underline'
+        className='rounded-inherit hover:bg-gray-1 dark:hover:bg-dark-5 -m-[(var(--card-padding)+1px)] flex min-h-52 flex-col items-center justify-center border p-(--card-padding) font-normal text-current no-underline'
         href={data.href}
       >
         <div className='flex size-10 items-center justify-center rounded-sm border'>
@@ -47,7 +47,7 @@ const LinkCardOrganism = ({
           {serialize(data.title)}
         </Title>
 
-        <Text className='text-dimmed text-center text-sm'>
+        <Text className='text-dimmed text-center text-xs'>
           {data.href.replace(urlRegex, '$3$4')}
         </Text>
       </UnstyledLink>

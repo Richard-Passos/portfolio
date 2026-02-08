@@ -1,3 +1,4 @@
+import career from './career';
 import cookiesConsent from './cookiesConsent';
 import footer from './footer';
 import header from './header';
@@ -10,6 +11,7 @@ import statistics from './statistics';
 import values from './values';
 
 const pt = {
+  career,
   cookiesConsent,
   footer,
   header,
@@ -24,6 +26,7 @@ const pt = {
 
 export default pt;
 export {
+  career,
   cookiesConsent,
   footer,
   header,

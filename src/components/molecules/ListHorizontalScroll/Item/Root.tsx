@@ -30,15 +30,13 @@ type ListHorizontalScrollItemMoleculeProps =
 
 const ListHorizontalScrollItemMolecule = ({
   className,
-  speed = 75,
-  direction = 'right',
+  speed,
+  direction = 'ltr',
   children,
   ...props
 }: ListHorizontalScrollItemMoleculeProps) => {
   return (
-    <ScrollAnimate
-      config={ANIMATION_CONFIG(direction === 'right' ? 'ltr' : 'rtl')}
-    >
+    <ScrollAnimate config={ANIMATION_CONFIG(direction)}>
       <Title
         className={cn(
           'bg-body border-x-0 border-y py-4 odd:-rotate-[.5deg] even:rotate-[.5deg]',
@@ -48,7 +46,6 @@ const ListHorizontalScrollItemMolecule = ({
         {...props}
       >
         <Marquee
-          autoFill
           direction={direction}
           speed={speed}
         >

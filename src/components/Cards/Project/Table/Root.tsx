@@ -1,8 +1,8 @@
-import { Image, Link, Magnetic, Text, Title } from '@/components/atoms';
+import { Badge, Image, Link, Text, Title } from '@/components/atoms';
 import { LinkProps } from '@/components/atoms/Link';
-import { CardRoot } from '@/components/molecules/Card';
+import { MagneticRoot } from '@/components/atoms/Magnetic';
 import { Project } from '@/types';
-import { cn, renderComp, values } from '@/utils';
+import { cn, values } from '@/utils';
 
 type TableProjectCardOrganismOwnProps = {
   data: Project & { index: number };
@@ -15,87 +15,69 @@ const TableProjectCardOrganism = ({
   className,
   data,
   ...props
-}: TableProjectCardOrganismProps) => {
-  return (
-    <Magnetic.Container>
-      <Link
-        className={cn(
-          'group/item relative flex items-center justify-center font-normal text-current focus-visible:outline-0',
+}: TableProjectCardOrganismProps) => (
+  <>
+    <Link
+      className={cn(
+        'bg-body hover:bg-gray-1 dark:hover:bg-dark-5 ease-backOut flex items-center justify-center gap-2.5 rounded border px-[7.5%] py-8 font-medium text-current transition-[scale,opacity] duration-200 group-focus-visible/item:outline',
 
-          // Adjacents
-          'group-hover/list:[li:has(+:hover)>&>*]:scale-x-95! group-hover/list:[li:hover+*>&>*]:scale-x-95!',
+        // Adjacents
+        'group-hover/list:[li:has(+:hover)>&]:scale-x-95! group-hover/list:[li:hover+*>&]:scale-x-95!',
 
-          // Element
-          'group-hover/list:[li:not(:hover)>&>*]:scale-x-90 group-hover/list:[li:not(:hover)>&>*]:opacity-50',
-          className
-        )}
-        underline='never'
-        {...props}
+        // Element
+        'group-hover/list:[li:not(:hover)>&]:scale-x-90',
+        className
+      )}
+      underline='never'
+      {...props}
+    >
+      <Badge
+        color='red'
+        variant='default'
+        className='mb-auto shrink-0 translate-y-0.5'
       >
-        <CardRoot
-          className={cn(
-            'ease-backOut flex-row items-start gap-2.5 px-[7.5%] py-8 transition-[scale,opacity] duration-300 group-focus-visible/item:outline'
-          )}
+        {`${data.index + 1}`.padStart(2, '0')}/
+      </Badge>
+
+      <div className='mr-4 grow'>
+        <Title
+          className='mb-auto shrink-0 basis-full overflow-hidden'
+          order={5}
         >
-          <Text className='text-dimmed relative shrink-0 translate-y-0.5 text-sm font-semibold'>
-            <span
-              aria-hidden
-              className='opacity-0'
-            >
-              00/
-            </span>
+          {data.title}
+        </Title>
 
-            <span className='absolute right-0'>
-              {`${data.index + 1}`.padStart(2, '0')}/
-            </span>
-          </Text>
+        <Text className='text-dimmed mt-2 line-clamp-2 text-sm tracking-wider wrap-break-word lowercase'>
+          {values(data.roles)
+            .toSorted((a, b) => a.localeCompare(b))
+            .join(' & ')}
+        </Text>
+      </div>
 
-          <div className='flex grow items-center gap-x-3 gap-y-2.5'>
-            <Title
-              className='mb-auto shrink-0 basis-full overflow-hidden text-nowrap text-ellipsis sm:basis-1/2'
-              order={4}
-            >
-              {data.title}
-            </Title>
+      <Text className='text-dimmed shrink-0 text-end text-xs tracking-wider lowercase'>
+        {data.year}
+      </Text>
+    </Link>
 
-            <Text className='line-clamp-2 grow text-sm font-medium wrap-break-word lowercase sm:text-end'>
-              {values(data.roles)
-                .toSorted((a, b) => a.localeCompare(b))
-                .join(' & ')}
-            </Text>
-
-            {renderComp(
-              <Text className='shrink-0 basis-1/3 text-end text-sm font-medium sm:basis-1/12'>
-                {data.year}
-              </Text>,
-              [data.year]
-            )}
-          </div>
-        </CardRoot>
-
-        <Magnetic.Root
-          limit={{ x: 0.2, y: 0.2 }}
-          smoothConfig={{
-            damping: 15,
-            stiffness: 150
-          }}
-        >
-          <div className='pointer-events-none absolute z-10'>
-            <div className='bg-gray-1 dark:bg-dark-6 relative aspect-square w-72 overflow-hidden rounded-lg opacity-0 transition-opacity group-hover/item:opacity-100'>
-              <Image
-                alt={data.thumbnail.alt}
-                className='object-cover'
-                fill
-                sizes='100vw, (min-width: 640px) 50vw, (min-width: 768px) 33vw'
-                src={data.thumbnail.src}
-              />
-            </div>
-          </div>
-        </Magnetic.Root>
-      </Link>
-    </Magnetic.Container>
-  );
-};
+    <MagneticRoot
+      limit={{ x: 0.25, y: 0.25 }}
+      smoothConfig={{
+        damping: 15,
+        stiffness: 150
+      }}
+    >
+      <div className='bg-gray-1 dark:bg-dark-6 pointer-events-none absolute top-1/2 left-1/2 z-10 aspect-5/4 w-72 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-lg opacity-0 transition-opacity group-hover/item:opacity-100'>
+        <Image
+          fill
+          alt={data.thumbnail.alt}
+          src={data.thumbnail.src}
+          sizes='100vw, (min-width: 640px) 50vw, (min-width: 768px) 33vw'
+          className='object-cover'
+        />
+      </div>
+    </MagneticRoot>
+  </>
+);
 
 export default TableProjectCardOrganism;
 export type { TableProjectCardOrganismProps };

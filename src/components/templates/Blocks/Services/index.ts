@@ -1,4 +1,4 @@
-import ServicesBlock, { ServicesBlockProps } from './Root';
+import ServicesBlockTemplate, { ServicesBlockTemplateProps } from './Root';
 
-export default ServicesBlock;
-export type { ServicesBlockProps };
+export default ServicesBlockTemplate;
+export type { ServicesBlockTemplateProps };

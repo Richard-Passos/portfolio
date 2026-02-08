@@ -38,7 +38,7 @@ const ANIMATION_CONFIG = {
   } as ScrollAnimateConfigOptions
 };
 
-type ButBlockOwnProps = {
+type ButBlockTemplateOwnProps = {
   data: {
     title: string;
     description: TextScrollAnimateProps['text'];
@@ -47,16 +47,16 @@ type ButBlockOwnProps = {
   descriptionProps?: Partial<TitleProps>;
 };
 
-type ButBlockProps = ButBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof ButBlockOwnProps>;
+type ButBlockTemplateProps = ButBlockTemplateOwnProps &
+  Omit<CleanLayoutsProps, keyof ButBlockTemplateOwnProps>;
 
-const ButBlock = ({
+const ButBlockTemplate = ({
   data,
   className,
   titleProps,
   descriptionProps,
   ...props
-}: ButBlockProps) => {
+}: ButBlockTemplateProps) => {
   return (
     <CleanLayouts
       className={cn(
@@ -112,5 +112,5 @@ const ButBlock = ({
   );
 };
 
-export default ButBlock;
-export type { ButBlockProps };
+export default ButBlockTemplate;
+export type { ButBlockTemplateProps };

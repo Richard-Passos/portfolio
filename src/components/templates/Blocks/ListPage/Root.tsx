@@ -9,7 +9,7 @@ import {
 } from '@/components/molecules/ListHorizontalScroll';
 import { cn } from '@/utils';
 
-type ListPageBlockOwnProps = {
+type ListPageBlockTemplateOwnProps = {
   data: {
     items: { id: string; text: ReactNode; separator: ReactNode }[];
     action: {
@@ -22,45 +22,47 @@ type ListPageBlockOwnProps = {
   actionProps?: Partial<ActionProps>;
 };
 
-type ListPageBlockProps = ListPageBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof ListPageBlockOwnProps>;
+type ListPageBlockTemplateProps = ListPageBlockTemplateOwnProps &
+  Omit<CleanLayoutsProps, keyof ListPageBlockTemplateOwnProps>;
 
-const ListPageBlock = ({
+const ListPageBlockTemplate = ({
   data,
   listProps,
   listItemProps,
   actionProps,
   ...props
-}: ListPageBlockProps) => {
+}: ListPageBlockTemplateProps) => {
   return (
     <CleanLayouts {...props}>
       <ListHorizontalScroll.Root {...listProps}>
         {data.items.map((item, i) => (
           <ListHorizontalScroll.Item
-            speed={75 + 50 * i}
-            direction={i % 2 === 0 ? 'right' : 'left'}
+            speed={100 + i * 10}
+            direction={i % 2 === 0 ? 'ltr' : 'rtl'}
             key={item.id}
             {...listItemProps}
             className={cn(
-              `text-2xl uppercase [--gap:--spacing(3)] sm:text-3xl`,
+              `text-2xl uppercase sm:text-3xl`,
               listItemProps?.className
             )}
           >
-            <span>{item.text}</span>
+            <span className='mx-1.5'>{item.text}</span>
 
-            <span>{item.separator}</span>
+            <span className='mx-1.5'>{item.separator}</span>
 
-            <span className='opacity-30 dark:opacity-10'>{item.text}</span>
-
-            <span className='opacity-30 max-sm:hidden dark:opacity-10'>
-              {item.separator}
-            </span>
-
-            <span className='opacity-30 max-sm:hidden dark:opacity-10'>
+            <span className='mx-1.5 opacity-30 dark:opacity-10'>
               {item.text}
             </span>
 
-            <span>{item.separator}</span>
+            <span className='mx-1.5 opacity-30 max-sm:hidden dark:opacity-10'>
+              {item.separator}
+            </span>
+
+            <span className='mx-1.5 opacity-30 max-sm:hidden dark:opacity-10'>
+              {item.text}
+            </span>
+
+            <span className='mx-1.5'>{item.separator}</span>
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll.Root>
@@ -79,5 +81,5 @@ const ListPageBlock = ({
   );
 };
 
-export default ListPageBlock;
-export type { ListPageBlockProps };
+export default ListPageBlockTemplate;
+export type { ListPageBlockTemplateProps };

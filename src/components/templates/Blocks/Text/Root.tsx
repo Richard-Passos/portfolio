@@ -7,7 +7,7 @@ import { TitleProps } from '@/components/atoms/Title';
 import { cn } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
-type TextBlockOwnProps = {
+type TextBlockTemplateOwnProps = {
   data: {
     title: Node[];
     description: Node[];
@@ -16,16 +16,16 @@ type TextBlockOwnProps = {
   titleProps?: Partial<TitleProps>;
 };
 
-type TextBlockProps = TextBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof TextBlockOwnProps | 'data'>;
+type TextBlockTemplateProps = TextBlockTemplateOwnProps &
+  Omit<CleanLayoutsProps, keyof TextBlockTemplateOwnProps | 'data'>;
 
-const TextBlock = ({
+const TextBlockTemplate = ({
   className,
   data,
   wrapperProps,
   titleProps,
   ...props
-}: TextBlockProps) => {
+}: TextBlockTemplateProps) => {
   return (
     <CleanLayouts
       className={cn('w-9by10 max-w-5xl pt-0', className)}
@@ -64,5 +64,5 @@ const TextBlock = ({
   );
 };
 
-export default TextBlock;
-export type { TextBlockProps };
+export default TextBlockTemplate;
+export type { TextBlockTemplateProps };

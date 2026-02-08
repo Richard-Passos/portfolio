@@ -33,19 +33,22 @@ const ANIMATION_CONFIG: {
   }
 };
 
-type PrimaryHeroScrollAnimateOrganismOwnProps = Partial<
+type PrimaryHeroTemplateScrollAnimateOrganismOwnProps = Partial<
   Pick<ScrollAnimateProps, 'config'>
 >;
 
-type PrimaryHeroScrollAnimateOrganismProps =
-  PrimaryHeroScrollAnimateOrganismOwnProps &
-    Omit<ScrollAnimateProps, keyof PrimaryHeroScrollAnimateOrganismOwnProps>;
+type PrimaryHeroTemplateScrollAnimateOrganismProps =
+  PrimaryHeroTemplateScrollAnimateOrganismOwnProps &
+    Omit<
+      ScrollAnimateProps,
+      keyof PrimaryHeroTemplateScrollAnimateOrganismOwnProps
+    >;
 
-const PrimaryHeroScrollAnimateOrganism = ({
+const PrimaryHeroTemplateScrollAnimateOrganism = ({
   className,
   children,
   ...props
-}: PrimaryHeroScrollAnimateOrganismProps) => {
+}: PrimaryHeroTemplateScrollAnimateOrganismProps) => {
   return (
     <ScrollAnimate
       className={cn('sm:translate-y-(--y)', className)}
@@ -61,5 +64,5 @@ const PrimaryHeroScrollAnimateOrganism = ({
   );
 };
 
-export default PrimaryHeroScrollAnimateOrganism;
-export type { PrimaryHeroScrollAnimateOrganismProps };
+export default PrimaryHeroTemplateScrollAnimateOrganism;
+export type { PrimaryHeroTemplateScrollAnimateOrganismProps };

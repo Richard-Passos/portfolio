@@ -1,6 +1,6 @@
-import PrimaryHeroScrollAnimate, {
-  PrimaryHeroScrollAnimateOrganismProps as PrimaryHeroScrollAnimateProps
+import PrimaryHeroTemplateScrollAnimate, {
+  PrimaryHeroTemplateScrollAnimateOrganismProps as PrimaryHeroTemplateScrollAnimateProps
 } from './Root';
 
-export default PrimaryHeroScrollAnimate;
-export type { PrimaryHeroScrollAnimateProps };
+export default PrimaryHeroTemplateScrollAnimate;
+export type { PrimaryHeroTemplateScrollAnimateProps };

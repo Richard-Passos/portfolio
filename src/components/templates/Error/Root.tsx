@@ -1,13 +1,14 @@
 import { ComponentType } from 'react';
 
 import Blocks from '@/components/templates/Blocks';
-import { SecondaryHero } from '@/components/templates/Heros';
-import { SecondaryHeroProps } from '@/components/templates/Heros/Secondary';
+import SecondaryHero, {
+  SecondaryHeroTemplateProps
+} from '@/components/templates/Heros/Secondary';
 import { Theme, TypeVariants } from '@/types';
 import { cn } from '@/utils';
 
 type ErrorTemplateProps = {
-  hero: SecondaryHeroProps;
+  hero: SecondaryHeroTemplateProps;
   blocks?: TypeVariants<typeof Blocks>[];
 };
 
@@ -29,11 +30,7 @@ const ErrorTemplate = ({ hero, blocks }: ErrorTemplateProps) => {
 
         const Component = (
           <Block
-            className={cn(
-              `overflow-y-clip last:rounded-b-4xl`,
-              radius,
-              className
-            )}
+            className={cn(`overflow-y-clip`, radius, className)}
             key={id}
             theme={theme}
             {...props}

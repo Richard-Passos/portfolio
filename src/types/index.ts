@@ -1,3 +1,4 @@
+import Career from './Career';
 import CookiesConsent from './CookiesConsent';
 import DeepPartial from './DeepPartial';
 import ErrorPage from './ErrorPage';
@@ -20,6 +21,7 @@ import TypeVariants from './TypeVariants';
 import Value from './Value';
 
 export type {
+  Career,
   CookiesConsent,
   DeepPartial,
   ErrorPage,

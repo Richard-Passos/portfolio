@@ -21,9 +21,9 @@ const themeOverride = createTheme({
       'hsl(0 0% 40%)',
       'hsl(0 0% 30%)',
       'hsl(0 0% 12.5%)',
+      'hsl(0 0% 9%)',
       'hsl(0 0% 8%)',
       'hsl(0 0% 7%)',
-      'hsl(0 0% 6%)',
       'hsl(0 0% 5%)',
       'hsl(0 0% 1.5%)'
     ],

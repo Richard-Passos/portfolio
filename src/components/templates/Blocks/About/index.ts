@@ -1,4 +1,4 @@
-import AboutBlock, { AboutBlockProps } from './Root';
+import AboutBlockTemplate, { AboutBlockTemplateProps } from './Root';
 
-export default AboutBlock;
-export type { AboutBlockProps };
+export default AboutBlockTemplate;
+export type { AboutBlockTemplateProps };

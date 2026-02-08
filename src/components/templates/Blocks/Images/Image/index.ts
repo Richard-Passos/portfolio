@@ -1,6 +1,6 @@
-import ImagesBlockImage, {
-  ImagesBlockImageOrganismProps as ImagesBlockImageProps
+import ImagesBlockTemplateImage, {
+  ImagesBlockTemplateImageOrganismProps as ImagesBlockTemplateImageProps
 } from './Root';
 
-export default ImagesBlockImage;
-export type { ImagesBlockImageProps };
+export default ImagesBlockTemplateImage;
+export type { ImagesBlockTemplateImageProps };

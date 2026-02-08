@@ -7,7 +7,7 @@ import { TitleProps } from '@/components/atoms/Title';
 import { cn } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
-type AboutBlockTextOrganismOwnProps = {
+type AboutBlockTemplateTextOrganismOwnProps = {
   data: {
     title: Node[];
     description: Node[];
@@ -16,15 +16,19 @@ type AboutBlockTextOrganismOwnProps = {
   wrapperProps?: Partial<ComponentProps<'div'>>;
 };
 
-type AboutBlockTextOrganismProps = AboutBlockTextOrganismOwnProps &
-  Omit<ComponentProps<'section'>, keyof AboutBlockTextOrganismOwnProps>;
+type AboutBlockTemplateTextOrganismProps =
+  AboutBlockTemplateTextOrganismOwnProps &
+    Omit<
+      ComponentProps<'section'>,
+      keyof AboutBlockTemplateTextOrganismOwnProps
+    >;
 
-const AboutBlockTextOrganism = ({
+const AboutBlockTemplateTextOrganism = ({
   data,
   titleProps,
   wrapperProps,
   ...props
-}: AboutBlockTextOrganismProps) => {
+}: AboutBlockTemplateTextOrganismProps) => {
   return (
     <section {...props}>
       <Title
@@ -64,5 +68,5 @@ const AboutBlockTextOrganism = ({
   );
 };
 
-export default AboutBlockTextOrganism;
-export type { AboutBlockTextOrganismProps };
+export default AboutBlockTemplateTextOrganism;
+export type { AboutBlockTemplateTextOrganismProps };

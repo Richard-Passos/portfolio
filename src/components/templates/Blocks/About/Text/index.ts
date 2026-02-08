@@ -1,6 +1,6 @@
-import AboutBlockText, {
-  AboutBlockTextOrganismProps as AboutBlockTextProps
+import AboutBlockTemplateText, {
+  AboutBlockTemplateTextOrganismProps as AboutBlockTemplateTextProps
 } from './Root';
 
-export default AboutBlockText;
-export type { AboutBlockTextProps };
+export default AboutBlockTemplateText;
+export type { AboutBlockTemplateTextProps };

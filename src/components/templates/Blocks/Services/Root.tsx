@@ -8,12 +8,12 @@ import { Action } from '@/components/molecules';
 import { renderComp } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
-import ServicesBlockImage from './Image';
-import { ServicesBlockImageOrganismProps } from './Image/Root';
+import ServicesBlockTemplateImage from './Image';
+import { ServicesBlockTemplateImageOrganismProps } from './Image/Root';
 
-type ServicesBlockOwnProps = {
+type ServicesBlockTemplateOwnProps = {
   data: PrimaryLayoutsProps['data'] &
-    ServicesBlockImageOrganismProps['data'] & {
+    ServicesBlockTemplateImageOrganismProps['data'] & {
       subtitle?: Node[];
       items: ServiceCardProps['data'][];
       action?: {
@@ -22,10 +22,13 @@ type ServicesBlockOwnProps = {
     };
 };
 
-type ServicesBlockProps = ServicesBlockOwnProps &
-  Omit<PrimaryLayoutsProps, keyof ServicesBlockOwnProps>;
+type ServicesBlockTemplateProps = ServicesBlockTemplateOwnProps &
+  Omit<PrimaryLayoutsProps, keyof ServicesBlockTemplateOwnProps>;
 
-const ServicesBlock = ({ data, ...props }: ServicesBlockProps) => {
+const ServicesBlockTemplate = ({
+  data,
+  ...props
+}: ServicesBlockTemplateProps) => {
   return (
     <PrimaryLayouts
       data={{
@@ -47,7 +50,7 @@ const ServicesBlock = ({ data, ...props }: ServicesBlockProps) => {
         )}
 
         <div className='flex w-full items-start justify-end gap-4 md:gap-8'>
-          <ServicesBlockImage
+          <ServicesBlockTemplateImage
             className='grow basis-72 max-md:hidden'
             data={{
               image: data.image
@@ -80,5 +83,5 @@ const ServicesBlock = ({ data, ...props }: ServicesBlockProps) => {
   );
 };
 
-export default ServicesBlock;
-export type { ServicesBlockProps };
+export default ServicesBlockTemplate;
+export type { ServicesBlockTemplateProps };

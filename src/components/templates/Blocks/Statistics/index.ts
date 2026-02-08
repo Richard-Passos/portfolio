@@ -1,4 +1,4 @@
-import StatisticsBlock, { StatisticsBlockProps } from './Root';
+import StatisticsBlockTemplate, { StatisticsBlockTemplateProps } from './Root';
 
-export default StatisticsBlock;
-export type { StatisticsBlockProps };
+export default StatisticsBlockTemplate;
+export type { StatisticsBlockTemplateProps };

@@ -1,42 +1,29 @@
-'use client';
-
-import { TableProjectCard } from '@/components/Cards/Project';
 import CatalogList, {
   CatalogListRootProps
 } from '@/components/molecules/Catalog/List';
-import { Project } from '@/types';
 import { cn } from '@/utils';
 
-type ProjectsCatalogTableBlockOwnProps = {};
+import Items from './Items';
 
-type ProjectsCatalogTableBlockProps = ProjectsCatalogTableBlockOwnProps &
-  Omit<CatalogListRootProps, keyof ProjectsCatalogTableBlockOwnProps>;
+type ProjectsCatalogTableBlockTemplateOwnProps = {};
 
-const ProjectsCatalogTableBlock = ({
+type ProjectsCatalogTableBlockTemplateProps =
+  ProjectsCatalogTableBlockTemplateOwnProps &
+    Omit<CatalogListRootProps, keyof ProjectsCatalogTableBlockTemplateOwnProps>;
+
+const ProjectsCatalogTableBlockTemplate = ({
   className,
   ...props
-}: ProjectsCatalogTableBlockProps) => {
+}: ProjectsCatalogTableBlockTemplateProps) => {
   return (
     <CatalogList.Root
       className={cn('group/list', className)}
       {...props}
     >
-      <CatalogList.Items<Project>>
-        {(data, i) => (
-          <li
-            className='mt-3 first:mt-0'
-            key={data.slug}
-          >
-            <TableProjectCard
-              data={{ index: i, ...data }}
-              href={`projects/${data.slug}`}
-            />
-          </li>
-        )}
-      </CatalogList.Items>
+      <Items />
     </CatalogList.Root>
   );
 };
 
-export default ProjectsCatalogTableBlock;
-export type { ProjectsCatalogTableBlockProps };
+export default ProjectsCatalogTableBlockTemplate;
+export type { ProjectsCatalogTableBlockTemplateProps };

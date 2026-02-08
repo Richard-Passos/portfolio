@@ -1,19 +1,21 @@
 import CleanLayouts, { CleanLayoutsProps } from '@/components/Layouts/Clean';
-import { Bg } from '@/components/atoms';
 import { ListHorizontalScroll } from '@/components/molecules';
 import serialize, { Node } from '@/utils/serialize';
 
-type ListMissionBlockOwnProps = {
+type ListMissionBlockTemplateOwnProps = {
   data: {
     items: { id: string; text: Node[]; separator: Node[] }[];
     description: Node[];
   };
 };
 
-type ListMissionBlockProps = ListMissionBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof ListMissionBlockOwnProps>;
+type ListMissionBlockTemplateProps = ListMissionBlockTemplateOwnProps &
+  Omit<CleanLayoutsProps, keyof ListMissionBlockTemplateOwnProps>;
 
-const ListMissionBlock = ({ data, ...props }: ListMissionBlockProps) => {
+const ListMissionBlockTemplate = ({
+  data,
+  ...props
+}: ListMissionBlockTemplateProps) => {
   return (
     <CleanLayouts {...props}>
       <ListHorizontalScroll.Root>
@@ -23,9 +25,9 @@ const ListMissionBlock = ({ data, ...props }: ListMissionBlockProps) => {
 
           return (
             <ListHorizontalScroll.Item
-              speed={75 + 10 * i}
-              direction={i % 2 === 0 ? 'right' : 'left'}
-              className='py-8 font-semibold uppercase [--gap:--spacing(3)] *:*:[--rotate:calc(var(--x)*(360deg/12.5))] odd:-rotate-1 even:rotate-1'
+              speed={100 + i * 10}
+              direction={i % 2 === 0 ? 'ltr' : 'rtl'}
+              className='py-8 font-semibold uppercase odd:-rotate-1 even:rotate-1'
               key={item.id}
               order={1}
             >
@@ -60,5 +62,5 @@ const ListMissionBlock = ({ data, ...props }: ListMissionBlockProps) => {
   );
 };
 
-export default ListMissionBlock;
-export type { ListMissionBlockProps };
+export default ListMissionBlockTemplate;
+export type { ListMissionBlockTemplateProps };

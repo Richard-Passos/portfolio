@@ -1,4 +1,4 @@
-import TextBlock, { TextBlockProps } from './Root';
+import TextBlockTemplate, { TextBlockTemplateProps } from './Root';
 
-export default TextBlock;
-export type { TextBlockProps };
+export default TextBlockTemplate;
+export type { TextBlockTemplateProps };

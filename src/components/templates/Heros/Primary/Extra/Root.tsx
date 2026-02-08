@@ -2,18 +2,19 @@ import { cn } from '@/utils';
 import { ElementProps } from '@/utils/SerializedElement';
 import serialize, { Node } from '@/utils/serialize';
 
-type PrimaryHeroExtraOrganismOwnProps = {
+type PrimaryHeroTemplateExtraOrganismOwnProps = {
   children: Node[];
   props?: ElementProps;
 };
 
-type PrimaryHeroExtraOrganismProps = PrimaryHeroExtraOrganismOwnProps &
-  Omit<ElementProps, keyof PrimaryHeroExtraOrganismOwnProps>;
+type PrimaryHeroTemplateExtraOrganismProps =
+  PrimaryHeroTemplateExtraOrganismOwnProps &
+    Omit<ElementProps, keyof PrimaryHeroTemplateExtraOrganismOwnProps>;
 
-const PrimaryHeroExtraOrganism = ({
+const PrimaryHeroTemplateExtraOrganism = ({
   children,
   props
-}: PrimaryHeroExtraOrganismProps) => {
+}: PrimaryHeroTemplateExtraOrganismProps) => {
   return serialize(children, {
     ...props,
     paragraph: {
@@ -26,5 +27,5 @@ const PrimaryHeroExtraOrganism = ({
   });
 };
 
-export default PrimaryHeroExtraOrganism;
-export type { PrimaryHeroExtraOrganismProps };
+export default PrimaryHeroTemplateExtraOrganism;
+export type { PrimaryHeroTemplateExtraOrganismProps };

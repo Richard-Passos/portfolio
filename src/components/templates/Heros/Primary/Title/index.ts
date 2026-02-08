@@ -1,6 +1,6 @@
-import PrimaryHeroTitle, {
-  PrimaryHeroTitleOrganismProps as PrimaryHeroTitleProps
+import PrimaryHeroTemplateTitle, {
+  PrimaryHeroTemplateTitleOrganismProps as PrimaryHeroTemplateTitleProps
 } from './Root';
 
-export default PrimaryHeroTitle;
-export type { PrimaryHeroTitleProps };
+export default PrimaryHeroTemplateTitle;
+export type { PrimaryHeroTemplateTitleProps };

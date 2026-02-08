@@ -1,6 +1,6 @@
-import ServicesBlockImage, {
-  ServicesBlockImageOrganismProps as ServicesBlockImageProps
+import ServicesBlockTemplateImage, {
+  ServicesBlockTemplateImageOrganismProps as ServicesBlockTemplateImageProps
 } from './Root';
 
-export default ServicesBlockImage;
-export type { ServicesBlockImageProps };
+export default ServicesBlockTemplateImage;
+export type { ServicesBlockTemplateImageProps };

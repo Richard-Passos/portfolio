@@ -1,4 +1,4 @@
-import CtaTextBlock, { CtaTextBlockProps } from './Root';
+import CtaTextBlockTemplate, { CtaTextBlockTemplateProps } from './Root';
 
-export default CtaTextBlock;
-export type { CtaTextBlockProps };
+export default CtaTextBlockTemplate;
+export type { CtaTextBlockTemplateProps };
