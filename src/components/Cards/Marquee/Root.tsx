@@ -38,12 +38,13 @@ const MarqueeCardOrganism = ({
         </Title>
 
         <Marquee
-          className='mt-2 gap-2.5'
+          className='mt-2'
           pauseOnHover
         >
           {data.items.map((item, i) => (
             <Badge
               size='lg'
+              className='mx-1'
               key={item}
               {...(i % 2 !== 0 && {
                 variant: 'light',

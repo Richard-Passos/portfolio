@@ -95,7 +95,7 @@ const pages = async (): Promise<Pages[]> => {
               type: 'paragraph',
               children: [
                 {
-                  text: '(2025)'
+                  text: '(2026)'
                 }
               ]
             }
@@ -197,7 +197,6 @@ const pages = async (): Promise<Pages[]> => {
                 ]
               }
             ],
-            description: [],
             empty: [
               {
                 type: 'paragraph',
