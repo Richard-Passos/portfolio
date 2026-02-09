@@ -1,5 +1,5 @@
 import en from './en';
-import pt from './en/pt';
+import pt from './pt';
 
 const data = {
   en,
