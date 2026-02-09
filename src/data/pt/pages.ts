@@ -1,51 +1,29 @@
 import { Pages } from '@/types';
 import {
+  careerApi,
   personalApi,
   projectsApi,
-  servicesApi,
   skillsApi,
-  statisticsApi,
   valuesApi
 } from '@/utils/actions';
 
 import locale from './locale';
 
 const pages = async (): Promise<Pages[]> => {
-  const [
-    projectsRes,
-    personalRes,
-    workValuesRes,
-    personalValuesRes,
-    servicesRes,
-    statisticsRes,
-    hardSkillsRes,
-    softSkillsRes
-  ] = await Promise.all([
-    projectsApi.get({ locale, isSelected: true }),
-    personalApi.get({ locale }),
-    valuesApi.get({ id: 'work', locale }),
-    valuesApi.get({ id: 'personal', locale }),
-    servicesApi.get({ locale }),
-    statisticsApi.get({ locale }),
-    skillsApi.get({ slug: 'hard', locale }),
-    skillsApi.get({ slug: 'soft', locale })
-  ]);
+  const [careerRes, projectsRes, personalRes, personalValuesRes, skillsRes] =
+    await Promise.all([
+      careerApi.get({ locale }),
+      projectsApi.get({ locale, isSelected: true }),
+      personalApi.get({ locale }),
+      valuesApi.get({ id: 'personal', locale }),
+      skillsApi.get({ locale })
+    ]);
 
-  const projects = projectsRes.ok ? projectsRes.data : [];
-
-  const personal = personalRes.ok ? personalRes.data : undefined;
-
-  const workValues = workValuesRes.ok ? workValuesRes.data : [];
-
-  const personalValues = personalValuesRes.ok ? personalValuesRes.data : [];
-
-  const services = servicesRes.ok ? servicesRes.data : [];
-
-  const statistics = statisticsRes.ok ? statisticsRes.data : [];
-
-  const hardSkills = hardSkillsRes.ok ? hardSkillsRes.data : [];
-
-  const softSkills = softSkillsRes.ok ? softSkillsRes.data : [];
+  const career = careerRes.ok ? careerRes.data : [],
+    projects = projectsRes.ok ? projectsRes.data : [],
+    personal = personalRes.ok ? personalRes.data : undefined,
+    personalValues = personalValuesRes.ok ? personalValuesRes.data : [],
+    skills = skillsRes.ok ? skillsRes.data : [];
 
   return [
     {
@@ -62,16 +40,16 @@ const pages = async (): Promise<Pages[]> => {
             {
               type: 'alignText',
               align: 'left',
-              children: [{ text: 'Gerando impacto' }]
+              children: [{ text: 'Além de tech' }]
             },
             {
               type: 'alignText',
               align: 'right',
               children: [
-                { text: ' &', emphasize: true },
                 {
-                  text: ' cativando'
-                }
+                  text: ' algoritmos'
+                },
+                { text: ' &', emphasize: true }
               ]
             },
             {
@@ -79,7 +57,7 @@ const pages = async (): Promise<Pages[]> => {
               align: 'center',
               children: [
                 {
-                  text: ' corações'
+                  text: ' resultados'
                 },
                 {
                   text: ' '
@@ -107,27 +85,88 @@ const pages = async (): Promise<Pages[]> => {
           ],
           left: [
             {
-              type: 'icon',
-              src: '/icons/smile.svg',
-              animation: 'rotateRight'
+              type: 'paragraph',
+              children: [
+                {
+                  text: `${personal?.availability}`
+                }
+              ]
             }
           ],
           right: [
             {
-              type: 'paragraph',
-              children: [
-                {
-                  text: '(2025)'
-                }
-              ]
+              type: 'icon',
+              src: '/icons/smile.svg',
+              animation: 'rotateLeft'
             }
           ]
         }
       },
       blocks: [
         {
-          id: 'selectedProjects',
-          type: 'ProjectsCatalog',
+          id: 'list-work-mission',
+          type: 'ListMission',
+          theme: 'dark',
+          data: {
+            description: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    text: 'Essa é minha missão — Cada linha de código melhora minhas habilidades, criando soluções de alto impacto. Cada projeto é uma oportunidade para inspirar clientes, colegas e a comunidade. A repetição gera excelência, impulsionando o destaque digital.'
+                  }
+                ]
+              }
+            ],
+            items: [
+              {
+                id: 'improve',
+                text: [
+                  {
+                    text: 'Melhorar'
+                  }
+                ],
+                separator: [
+                  {
+                    type: 'icon',
+                    src: '/icons/rocket.svg'
+                  }
+                ]
+              },
+              {
+                id: 'inspire',
+                text: [
+                  {
+                    text: 'Inspirar'
+                  }
+                ],
+                separator: [
+                  {
+                    type: 'icon',
+                    src: '/icons/globe.svg'
+                  }
+                ]
+              },
+              {
+                id: 'repeat',
+                text: [
+                  {
+                    text: 'Repetir'
+                  }
+                ],
+                separator: [
+                  {
+                    type: 'icon',
+                    src: '/icons/smile.svg'
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          id: 'career',
+          type: 'CareerCatalog',
           theme: 'dark',
           data: {
             title: [
@@ -139,11 +178,7 @@ const pages = async (): Promise<Pages[]> => {
                     text: 'Visã'
                   },
                   {
-                    text: 'o',
-                    emphasize: true
-                  },
-                  {
-                    text: ' da',
+                    text: 'o da',
                     emphasize: true
                   }
                 ]
@@ -162,15 +197,61 @@ const pages = async (): Promise<Pages[]> => {
                 ]
               }
             ],
+            empty: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    text: 'Desculpe, experiências da carreira não encontradas.'
+                  }
+                ]
+              }
+            ],
+            items: career
+          }
+        },
+        {
+          id: 'selectedProjects',
+          type: 'ProjectsCatalog',
+          theme: 'dark',
+          data: {
+            title: [
+              {
+                type: 'alignText',
+                align: 'left',
+                children: [
+                  {
+                    text: 'Visã'
+                  },
+                  {
+                    text: 'o dos',
+                    emphasize: true
+                  }
+                ]
+              },
+              {
+                type: 'alignText',
+                align: 'right',
+                children: [
+                  {
+                    text: 'P',
+                    emphasize: true
+                  },
+                  {
+                    text: 'rojetos'
+                  }
+                ]
+              }
+            ],
             description: [
               {
                 type: 'paragraph',
                 children: [
                   {
-                    text: 'Alguns dos'
+                    text: 'Alguns dos '
                   },
                   {
-                    text: ' meus projetos',
+                    text: 'meus projetos',
                     bold: true
                   }
                 ]
@@ -186,69 +267,7 @@ const pages = async (): Promise<Pages[]> => {
                 ]
               }
             ],
-            items: projects.map(({ year: _, ...d }) => d)
-          }
-        },
-        {
-          id: 'toExpect',
-          type: 'Text',
-          theme: 'dark',
-          data: {
-            title: [
-              {
-                text: 'O que você pode esperar de mim'
-              }
-            ],
-            description: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    text: 'Sou um profissional dedicado —',
-                    bold: true
-                  },
-                  {
-                    text: ' sempre em busca de entender cada detalhe e ter uma visão clara do todo, o que me ajuda a conectar ideias complexas e transformá-las em soluções práticas e eficientes.'
-                  }
-                ]
-              },
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    text: 'Acredito no valor do trabalho em equipe e faço questão de me integrar à cultura do grupo. Procuro contribuir para um ambiente dinâmico e colaborativo, onde diferentes perspectivas viram soluções solidas'
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        {
-          id: 'listWorkPage',
-          type: 'ListPage',
-          theme: 'dark',
-          data: {
-            items: [
-              {
-                id: 'list-work-mission',
-                text: 'Missão',
-                separator: '·'
-              },
-              {
-                id: 'list-work-skills',
-                text: 'Hard & soft skills',
-                separator: '·'
-              },
-              {
-                id: 'list-work-services',
-                text: 'Serviços',
-                separator: '·'
-              }
-            ],
-            action: {
-              href: '/work',
-              label: 'Explorar'
-            }
+            items: projects
           }
         },
         {
@@ -275,11 +294,7 @@ const pages = async (): Promise<Pages[]> => {
                     text: 'Visã'
                   },
                   {
-                    text: 'o',
-                    emphasize: true
-                  },
-                  {
-                    text: ' da',
+                    text: 'o da',
                     emphasize: true
                   }
                 ]
@@ -498,351 +513,6 @@ const pages = async (): Promise<Pages[]> => {
       metadata: {}
     },
     {
-      slug: 'work',
-      isSelected: true,
-      label: 'Trabalho',
-      hero: {
-        id: 'hero',
-        type: 'Primary',
-        theme: 'light',
-        scrollTarget: '#selectedProjects',
-        data: {
-          title: [
-            {
-              type: 'alignText',
-              align: 'left',
-              children: [{ text: 'Além de tech' }]
-            },
-            {
-              type: 'alignText',
-              align: 'right',
-              children: [
-                {
-                  text: ' algoritmos'
-                },
-                { text: ' &', emphasize: true }
-              ]
-            },
-            {
-              type: 'alignText',
-              align: 'center',
-              children: [
-                {
-                  text: ' resultados'
-                },
-                {
-                  text: ' '
-                },
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      text: 'Ajudando marcas a alcançar o destaque digital. Trago uma paixão por tecnologia de ponta e criação de soluções impactantes centradas no usuário.'
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          description: [
-            {
-              type: 'paragraph',
-              children: [
-                {
-                  text: 'Ajudando marcas a alcançar o destaque digital. Trago uma paixão por tecnologia de ponta e criação de soluções impactantes centradas no usuário.'
-                }
-              ]
-            }
-          ],
-          left: [
-            {
-              type: 'paragraph',
-              children: [
-                {
-                  text: `${personal?.availability}`
-                }
-              ]
-            }
-          ],
-          right: [
-            {
-              type: 'icon',
-              src: '/icons/smile.svg',
-              animation: 'rotateLeft'
-            }
-          ]
-        }
-      },
-      blocks: [
-        {
-          id: 'list-work-mission',
-          type: 'ListMission',
-          theme: 'dark',
-          data: {
-            description: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    text: 'Essa é minha missão — Cada linha de código melhora minhas habilidades, criando soluções de alto impacto. Cada projeto é uma oportunidade para inspirar clientes, colegas e a comunidade. A repetição gera excelência, impulsionando o destaque digital.'
-                  }
-                ]
-              }
-            ],
-            items: [
-              {
-                id: 'improve',
-                text: [
-                  {
-                    text: 'Melhorar'
-                  }
-                ],
-                separator: [
-                  {
-                    type: 'icon',
-                    src: '/icons/rocket.svg'
-                  }
-                ]
-              },
-              {
-                id: 'inspire',
-                text: [
-                  {
-                    text: 'Inspirar'
-                  }
-                ],
-                separator: [
-                  {
-                    type: 'icon',
-                    src: '/icons/globe.svg'
-                  }
-                ]
-              },
-              {
-                id: 'repeat',
-                text: [
-                  {
-                    text: 'Repetir'
-                  }
-                ],
-                separator: [
-                  {
-                    type: 'icon',
-                    src: '/icons/smile.svg'
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        {
-          id: 'services',
-          type: 'Services',
-          theme: 'dark',
-          data: {
-            title: [
-              { text: 'Ser' },
-              { text: 'vi', emphasize: true },
-              { text: 'ços' }
-            ],
-            subtitle: [{ text: 'Eu poderia te ajudar com...' }],
-            image: {
-              src: '/images/services.webp',
-              alt: 'Richard Passos, um desenvolvedor full stack com cabelo curto, vestindo uma jaqueta de couro preta e camisa branca, está contra um fundo neutro, com os braços cruzados.'
-            },
-            items: services.map((d, i) => ({
-              ...d,
-              slug: `· ${(i + 1).toString().padStart(2, '0')}`
-            })),
-            action: {
-              label: [
-                {
-                  text: 'Entre em contato'
-                }
-              ]
-            }
-          }
-        },
-        {
-          id: 'selectedProjects',
-          type: 'ProjectsCatalog',
-          theme: 'light',
-          data: {
-            title: [
-              {
-                type: 'alignText',
-                align: 'left',
-                children: [
-                  {
-                    text: 'Projeto'
-                  },
-                  {
-                    text: 's',
-                    emphasize: true
-                  }
-                ]
-              },
-              {
-                type: 'alignText',
-                align: 'right',
-                children: [
-                  {
-                    text: 'D',
-                    emphasize: true
-                  },
-                  {
-                    text: 'estaque'
-                  }
-                ]
-              }
-            ],
-            empty: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    text: 'Desculpe, projetos selecionados não encontrados.'
-                  }
-                ]
-              }
-            ],
-            items: projects
-          }
-        },
-        {
-          id: 'why-me',
-          type: 'Statistics',
-          theme: 'dark',
-          data: {
-            title: [
-              {
-                type: 'alignText',
-                align: 'left',
-                children: [
-                  {
-                    text: 'O que m'
-                  },
-                  {
-                    text: 'e',
-                    emphasize: true
-                  }
-                ]
-              },
-              {
-                type: 'alignText',
-                align: 'right',
-                children: [
-                  {
-                    text: 'D',
-                    emphasize: true
-                  },
-                  {
-                    text: 'estaca'
-                  },
-                  {
-                    text: '?',
-                    emphasize: true
-                  }
-                ]
-              }
-            ],
-            description: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    text: 'Após projetos solidos e uma personalidade cativante a apenas'
-                  },
-                  {
-                    text: ' '
-                  },
-                  {
-                    type: 'link',
-                    url: '/about',
-                    children: [
-                      {
-                        text: 'um simples clique'
-                      }
-                    ]
-                  },
-                  {
-                    text: '.'
-                  }
-                ]
-              }
-            ],
-            subtitle: [
-              {
-                text: 'Algumas estatísticas...'
-              }
-            ],
-            items: statistics
-          }
-        },
-        {
-          id: 'hard-skills',
-          type: 'Skills',
-          theme: 'dark',
-          data: {
-            title: [
-              {
-                text: 'Hard skills'
-              }
-            ],
-            items: hardSkills
-          }
-        },
-        {
-          id: 'soft-skills',
-          type: 'Skills',
-          theme: 'dark',
-          data: {
-            title: [
-              {
-                text: 'Soft skills'
-              }
-            ],
-            items: softSkills
-          }
-        },
-        {
-          id: 'work-values',
-          type: 'Values',
-          theme: 'dark',
-          data: {
-            title: [
-              {
-                text: 'Meus valores'
-              }
-            ],
-            templates: {
-              base: ['item-0', 'item-1', 'item-2', 'item-3'],
-              sm: ['item-0 item-1', 'item-2 item-3'],
-              lg: ['item-0 item-1 .', '. item-2 item-3']
-            },
-            items: workValues,
-            icons: {
-              left: {
-                src: '/icons/globe.svg',
-                animation: 'rotateRight',
-                y: 'bottom'
-              },
-              right: {
-                src: '/icons/smile.svg',
-                animation: 'rotateLeft',
-                y: 'top'
-              }
-            }
-          }
-        }
-      ],
-      metadata: {
-        title: 'Trabalho',
-        description:
-          'Explore a missão, os serviços, os trabalhos selecionados, as habilidades e os valores de Richard como desenvolvedor full stack dedicado a oferecer soluções excepcionais.'
-      }
-    },
-    {
       slug: 'about',
       isSelected: true,
       label: 'Sobre',
@@ -853,18 +523,14 @@ const pages = async (): Promise<Pages[]> => {
         data: {
           title: [
             {
-              text: 'Saiba mai'
+              text: 'Mais sobr'
             },
             {
-              text: 's',
+              text: 'e',
               emphasize: true
             },
             {
-              text: ' S',
-              emphasize: true
-            },
-            {
-              text: 'obre mim'
+              text: ' mim'
             },
             {
               text: '!',
@@ -881,15 +547,15 @@ const pages = async (): Promise<Pages[]> => {
           data: {
             items: [
               {
-                src: '/images/about-00.webp',
+                src: '/images/bg.webp',
                 alt: 'Richard Passos, um desenvolvedor full stack com cabelo curto, está contra uma parede de madeira, vestindo uma camiseta clara. Richard Passos está com os braços cruzados, mostrando um relógio e um colar.'
               },
               {
-                src: '/images/about-01.webp',
-                alt: 'Richard Passos, um desenvolvedor full stack, está contra um fundo neutro, vestindo uma jaqueta de couro preta sobre uma camisa branca, com a mão esquerda no bolso da jaqueta.'
+                src: '/images/selfie.webp',
+                alt: 'Richard Passos, desenvolvedor full-stack de cabelo curto e escuro, vestindo uma camisa vermelha, jaqueta preta e colar prateado, está em frente a um mural abstrato colorido.'
               },
               {
-                src: '/images/about-02.webp',
+                src: '/images/bg.webp',
                 alt: 'Richard Passos, um desenvolvedor full stack vestindo um moletom cinza claro com "Brooklyn" e outros textos impressos, está contra uma parede de madeira, olhando para a esquerda.'
               }
             ]
@@ -901,9 +567,9 @@ const pages = async (): Promise<Pages[]> => {
           theme: 'dark',
           data: {
             title: [
-              { text: 'Quem' },
+              { text: 'g' },
               {
-                text: ' sou',
+                text: 'sou',
                 emphasize: true
               }
             ],
@@ -1023,18 +689,14 @@ const pages = async (): Promise<Pages[]> => {
         data: {
           title: [
             {
-              text: 'Algum'
+              text: 'Quer m'
             },
             {
-              text: 'a',
+              text: 'e c',
               emphasize: true
             },
             {
-              text: ' i',
-              emphasize: true
-            },
-            {
-              text: 'deia'
+              text: 'hamar'
             },
             {
               text: '?',
@@ -1051,7 +713,7 @@ const pages = async (): Promise<Pages[]> => {
           data: {
             title: [
               {
-                text: 'Sem estresse — Eu cuido disso'
+                text: 'Sem estresse — eu cuido disso'
               }
             ],
             optionalLabel: 'opcional',
@@ -1091,12 +753,6 @@ const pages = async (): Promise<Pages[]> => {
                 placeholder: 'Quero te contratar!',
                 defaultValue: ''
               },
-              service: {
-                label: 'Serviço',
-                placeholder: 'Selecione um serviço...',
-                defaultValue: '',
-                data: services.map((d) => ({ value: d.slug, label: d.title }))
-              },
               message: {
                 label: 'Mensagem',
                 placeholder:
@@ -1118,24 +774,20 @@ const pages = async (): Promise<Pages[]> => {
           }
         },
         {
-          id: 'services',
-          type: 'Services',
+          id: 'skills',
+          type: 'Skills',
           theme: 'dark',
           data: {
             title: [
-              { text: 'Ser' },
-              { text: 'vi', emphasize: true },
-              { text: 'ços' }
+              { text: 'Ski' },
+              { text: 'll', emphasize: true },
+              { text: 's' }
             ],
-            subtitle: [{ text: 'Eu poderia te ajudar com...' }],
             image: {
-              src: '/images/services.webp',
-              alt: 'Richard Passos, um desenvolvedor full stack com cabelo curto, vestindo uma jaqueta de couro preta e camisa branca, está contra um fundo neutro, com os braços cruzados.'
+              src: '/images/selfie.webp',
+              alt: 'Richard Passos, desenvolvedor full-stack de cabelo curto e escuro, vestindo uma camisa vermelha, jaqueta preta e colar prateado, está em frente a um mural abstrato colorido.'
             },
-            items: services.map((d, i) => ({
-              ...d,
-              slug: `· ${(i + 1).toString().padStart(2, '0')}`
-            }))
+            items: skills
           }
         }
       ],
@@ -1929,7 +1581,7 @@ const pages = async (): Promise<Pages[]> => {
               {
                 text: 'Se você deseja saber quais Dados Pessoais mantemos sobre você e se deseja que eles sejam removidos de nossos sistemas, por favor, envie um e-mail para '
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               { text: '.' }
             ]
           },
@@ -2068,7 +1720,7 @@ const pages = async (): Promise<Pages[]> => {
                   {
                     text: 'os usuários podem alterar suas informações pessoais enviando um e-mail para '
                   },
-                  { text: 'hi.richardp@gmail.com', bold: true },
+                  { text: 'richard.ac.passos12@gmail.com', bold: true },
                   { text: '.' }
                 ]
               }
@@ -2229,7 +1881,7 @@ const pages = async (): Promise<Pages[]> => {
                 text: 'Para exercer seus direitos de proteção de dados na Califórnia descritos acima, por favor, envie suas solicitações por e-mail: ',
                 bold: true
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               { text: '.' }
             ]
           },
@@ -2415,7 +2067,7 @@ const pages = async (): Promise<Pages[]> => {
               {
                 text: 'Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco por e-mail: '
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               { text: '.' }
             ]
           }
@@ -2525,7 +2177,7 @@ const pages = async (): Promise<Pages[]> => {
               {
                 text: 'Se você não concorda com (ou não pode cumprir) os Acordos, então você não pode usar o Serviço, mas por favor, avise-nos enviando um e-mail para '
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               {
                 text: ' para que possamos tentar encontrar uma solução. Estes Termos se aplicam a todos os visitantes, usuários e outros que desejam acessar ou usar o Serviço.'
               }
@@ -2542,7 +2194,7 @@ const pages = async (): Promise<Pages[]> => {
               {
                 text: 'Ao usar nosso Serviço, você concorda em assinar newsletters, materiais de marketing ou promocionais e outras informações que possamos enviar. No entanto, você pode optar por não receber nenhuma ou todas essas comunicações de nossa parte, seguindo o link de cancelamento de inscrição ou enviando um e-mail para '
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               { text: '.' }
             ]
           },
@@ -2774,7 +2426,7 @@ const pages = async (): Promise<Pages[]> => {
                 text: 'Se você é o proprietário dos direitos autorais, ou está autorizado em nome de um, e acredita que o trabalho protegido por direitos autorais foi copiado de uma forma que constitui infração de direitos autorais, envie sua reclamação por e-mail para ',
                 bold: true
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               {
                 text: ', com o assunto: “Infração de Direitos Autorais” e inclua em sua reclamação uma descrição detalhada da alegada Infração conforme detalhado abaixo, sob “Aviso DMCA e Procedimento para Reclamações de Infração de Direitos Autorais”'
               }
@@ -2859,7 +2511,7 @@ const pages = async (): Promise<Pages[]> => {
                 text: 'Você pode entrar em contato com nosso Agente de Direitos Autorais por e-mail para ',
                 bold: true
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               { text: '.' }
             ]
           },
@@ -2872,7 +2524,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               { text: 'Você pode nos fornecer diretamente em ', bold: true },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               {
                 text: ' ou através de sites e ferramentas de terceiros com informações e feedback sobre erros, sugestões para melhorias, ideias, problemas, reclamações e outros assuntos relacionados ao nosso Serviço (“Feedback”). Você reconhece e concorda que: (i) você não deve reter, adquirir ou reivindicar qualquer direito de propriedade intelectual ou outro direito, título ou interesse no Feedback; (ii) a Empresa pode ter ideias de desenvolvimento semelhantes ao Feedback; (iii) o Feedback não contém informações confidenciais ou proprietárias suas ou de terceiros; e (iv) a Empresa não está sob nenhuma obrigação de confidencialidade em relação ao Feedback. Caso a transferência da propriedade do Feedback não seja possível devido às leis obrigatórias aplicáveis, você concede à Empresa e suas afiliadas um direito exclusivo, transferível, irrevogável, gratuito, sublicenciável, ilimitado e perpétuo de usar (incluindo copiar, modificar, criar obras derivadas, publicar, distribuir e comercializar) o Feedback de qualquer forma e para qualquer finalidade.'
               }
@@ -3130,7 +2782,7 @@ const pages = async (): Promise<Pages[]> => {
               {
                 text: 'Por favor, envie seu feedback, comentários, solicitações de suporte técnico por e-mail: '
               },
-              { text: 'hi.richardp@gmail.com', bold: true }
+              { text: 'richard.ac.passos12@gmail.com', bold: true }
             ]
           }
         ],
@@ -3392,7 +3044,7 @@ const pages = async (): Promise<Pages[]> => {
                 text: 'Se você tiver qualquer feedback, comentários, solicitações de suporte técnico ou outras consultas, entre em contato conosco por e-mail: ',
                 bold: false
               },
-              { text: 'hi.richardp@gmail.com', bold: true }
+              { text: 'richard.ac.passos12@gmail.com', bold: true }
             ]
           }
         ],
@@ -3646,7 +3298,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'Você pode solicitar que excluamos todos os dados sobre você, conforme coletados e processados com a ajuda dos cookies, entrando em contato pelo e-mail hi.richardp@gmail.com.'
+                text: 'Você pode solicitar que excluamos todos os dados sobre você, conforme coletados e processados com a ajuda dos cookies, entrando em contato pelo e-mail richard.ac.passos12@gmail.com.'
               }
             ]
           },

@@ -5,78 +5,6 @@ const skills = async (): Promise<{
   soft: Skill[];
 }> => {
   return {
-    hard: [
-      {
-        slug: 'javaScript',
-        title: 'JavaScript',
-        icon: '/icons/javascript.svg'
-      },
-      {
-        slug: 'html',
-        title: 'HTML',
-        icon: '/icons/html.svg'
-      },
-      {
-        slug: 'css',
-        title: 'CSS',
-        icon: '/icons/css.svg'
-      },
-      {
-        slug: 'bootstrap',
-        title: 'Bootstrap',
-        icon: '/icons/bootstrap.svg'
-      },
-      {
-        slug: 'typeScript',
-        title: 'TypeScript',
-        icon: '/icons/typescript.svg'
-      },
-      {
-        slug: 'reactjs',
-        title: 'React.js',
-        icon: '/icons/react.svg'
-      },
-      {
-        slug: 'nodejs',
-        title: 'Node.js',
-        icon: '/icons/nodejs.svg'
-      },
-      {
-        slug: 'reactNative',
-        title: 'React Native',
-        icon: '/icons/react.svg'
-      },
-      {
-        slug: 'nextjs',
-        title: 'Next.js',
-        icon: '/icons/nextjs.svg'
-      },
-      {
-        slug: 'jest',
-        title: 'Jest',
-        icon: '/icons/jest.svg'
-      },
-      {
-        slug: 'mongoDB',
-        title: 'MongoDB',
-        icon: '/icons/mongodb.svg'
-      },
-      {
-        slug: 'mysql',
-        title: 'MySQL',
-        icon: '/icons/mysql.svg'
-      },
-      {
-        slug: 'git',
-        title: 'Git',
-        icon: '/icons/git.svg'
-      },
-      {
-        slug: 'tailwindCSS',
-        title: 'TailwindCSS',
-        icon: '/icons/tailwindcss.svg'
-      }
-    ],
     soft: [
       {
         slug: 'problemSolving',
@@ -112,6 +40,48 @@ const skills = async (): Promise<{
         slug: 'syntheticThinking',
         title: 'Synthetic thinking',
         icon: '/icons/share.svg'
+      }
+    ],
+    hard: [
+      {
+        slug: 'typeScript',
+        title: 'TypeScript',
+        icon: '/icons/typescript.svg'
+      },
+      {
+        slug: 'nodejs',
+        title: 'Node.js',
+        icon: '/icons/nodejs.svg'
+      },
+      {
+        slug: 'reactNative',
+        title: 'React Native',
+        icon: '/icons/react.svg'
+      },
+      {
+        slug: 'nextjs',
+        title: 'Next.js',
+        icon: '/icons/nextjs.svg'
+      },
+      {
+        slug: 'mongoDB',
+        title: 'MongoDB',
+        icon: '/icons/mongodb.svg'
+      },
+      {
+        slug: 'mysql',
+        title: 'MySQL',
+        icon: '/icons/mysql.svg'
+      },
+      {
+        slug: 'git',
+        title: 'Git',
+        icon: '/icons/git.svg'
+      },
+      {
+        slug: 'more',
+        title: 'Many more',
+        icon: '/icons/ellipsis.svg'
       }
     ]
   };

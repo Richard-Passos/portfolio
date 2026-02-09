@@ -29,7 +29,7 @@ const ContactFormBlockTemplate = ({
   return (
     <CleanLayouts
       className={cn(
-        `w-9by10 max-w-7xl gap-4 sm:flex-row sm:items-stretch md:gap-8`,
+        `w-9by10 max-w-7xl gap-4 sm:flex-row sm:items-stretch md:gap-10`,
         className
       )}
       {...props}
@@ -40,7 +40,7 @@ const ContactFormBlockTemplate = ({
         </ScrollAnimate>
       </div>
 
-      <div className='sm:py-xl w-full max-w-3xl grow'>
+      <div className='w-full max-w-3xl grow sm:py-10'>
         <Title
           className='max-w-md'
           order={3}

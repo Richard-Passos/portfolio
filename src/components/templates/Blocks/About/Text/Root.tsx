@@ -33,7 +33,7 @@ const AboutBlockTemplateTextOrganism = ({
     <section {...props}>
       <Title
         component='h3'
-        order={4}
+        order={5}
         {...titleProps}
         className={cn('max-w-lg', titleProps?.className)}
       >

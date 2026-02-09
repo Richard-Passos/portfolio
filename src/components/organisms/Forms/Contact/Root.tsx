@@ -2,9 +2,8 @@ import { ReactNode } from 'react';
 import toast from 'react-hot-toast';
 import { z } from 'zod';
 
-import { Link, Select, TextInput, Textarea, Title } from '@/components/atoms';
+import { Link, TextInput, Textarea, Title } from '@/components/atoms';
 import { PaperPlaneIcon } from '@/components/atoms/Icon/icons';
-import { SelectProps } from '@/components/atoms/Select';
 import { Action, Form } from '@/components/molecules';
 import { FormRootProps } from '@/components/molecules/Form';
 import { Field } from '@/types';
@@ -18,7 +17,6 @@ type ContactFormOrganismOwnProps = {
     name: Field<['min']>;
     email: Field<['email']>;
     subject: Field;
-    service: Field & Pick<SelectProps, 'data'>;
     message: Field<['min', 'max']>;
     submit: {
       label: Node[];
@@ -54,14 +52,12 @@ const ContactFormOrganism = ({
       name: fields.name.defaultValue,
       email: fields.email.defaultValue,
       subject: fields.subject.defaultValue,
-      service: fields.service.defaultValue,
       message: fields.message.defaultValue
     },
     schema = z.object({
       name: z.string().trim().min(2, fields.name.errors.min),
-      email: z.string().trim().email(fields.email.errors.email),
+      email: z.email(fields.email.errors.email).trim(),
       subject: z.string().trim().optional(),
-      service: z.any().optional(),
       message: z
         .string()
         .trim()
@@ -121,7 +117,7 @@ const ContactFormOrganism = ({
 
       <Form.Control name='subject'>
         <TextInput
-          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-6'
+          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-12'
           label={
             <>
               {fields.subject.label}&nbsp;
@@ -133,23 +129,6 @@ const ContactFormOrganism = ({
           variant='filled'
         />
       </Form.Control>
-
-      <Form.Watch name='service'>
-        <Select
-          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-6'
-          clearable
-          data={fields.service.data}
-          label={
-            <>
-              {fields.service.label}&nbsp;
-              <span className='text-dimmed'>({optionalLabel})</span>
-            </>
-          }
-          placeholder={fields.service.placeholder}
-          size='md'
-          variant='filled'
-        />
-      </Form.Watch>
 
       <Form.Control name='message'>
         <Textarea

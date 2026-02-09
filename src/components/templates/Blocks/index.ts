@@ -8,7 +8,6 @@ import ImagesBlockTemplate from './Images';
 import ListMissionBlockTemplate from './ListMission';
 import ListPageBlockTemplate from './ListPage';
 import ProjectsCatalogBlockTemplate from './ProjectsCatalog';
-import ServicesBlockTemplate from './Services';
 import SkillsBlockTemplate from './Skills';
 import StatisticsBlockTemplate from './Statistics';
 import TextBlockTemplate from './Text';
@@ -25,7 +24,6 @@ const BlockTemplates = {
   ListMission: ListMissionBlockTemplate,
   ListPage: ListPageBlockTemplate,
   ProjectsCatalog: ProjectsCatalogBlockTemplate,
-  Services: ServicesBlockTemplate,
   Skills: SkillsBlockTemplate,
   Statistics: StatisticsBlockTemplate,
   Text: TextBlockTemplate,
@@ -44,7 +42,6 @@ export {
   ListMissionBlockTemplate,
   ListPageBlockTemplate,
   ProjectsCatalogBlockTemplate,
-  ServicesBlockTemplate,
   SkillsBlockTemplate,
   StatisticsBlockTemplate,
   TextBlockTemplate,

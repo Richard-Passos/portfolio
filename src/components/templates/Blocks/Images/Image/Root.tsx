@@ -20,14 +20,14 @@ const ImagesBlockTemplateImageOrganism = ({
   return (
     <CardRoot
       className={cn(
-        'aspect-square h-auto overflow-visible bg-transparent!',
+        'aspect-4/5 h-auto overflow-visible bg-transparent',
         className
       )}
       padding='xs'
       radius='xl'
       {...props}
     >
-      <div className='bg-gray-1 dark:bg-dark-6 relative size-full overflow-hidden rounded-[calc(var(--paper-radius)-var(--card-padding))] shadow-2xl'>
+      <div className='bg-gray-1 dark:bg-dark-6 relative size-full overflow-hidden rounded-[calc(var(--paper-radius)-var(--card-padding))] shadow-lg'>
         <ScrollAnimate config={imageYScrollAnim}>
           <div className='absolute h-[115%] w-full'>
             <Image

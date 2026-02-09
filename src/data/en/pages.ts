@@ -1,29 +1,29 @@
-import { Pages } from '@/types';
+import { Pages, Skill } from '@/types';
 import {
   careerApi,
   personalApi,
   projectsApi,
-  servicesApi,
+  skillsApi,
   valuesApi
 } from '@/utils/actions';
 
 import locale from './locale';
 
 const pages = async (): Promise<Pages[]> => {
-  const [careerRes, projectsRes, personalRes, personalValuesRes, servicesRes] =
+  const [careerRes, projectsRes, personalRes, personalValuesRes, skillsRes] =
     await Promise.all([
       careerApi.get({ locale, isSelected: true }),
       projectsApi.get({ locale, isSelected: true }),
       personalApi.get({ locale }),
       valuesApi.get({ id: 'personal', locale }),
-      servicesApi.get({ locale })
+      skillsApi.get({ locale })
     ]);
 
   const career = careerRes.ok ? careerRes.data : [],
     projects = projectsRes.ok ? projectsRes.data : [],
-    personal = personalRes.ok ? personalRes.data : undefined,
+    personal = personalRes.ok ? personalRes.data : null,
     personalValues = personalValuesRes.ok ? personalValuesRes.data : [],
-    services = servicesRes.ok ? servicesRes.data : [];
+    skills = skillsRes.ok ? skillsRes.data : null;
 
   return [
     {
@@ -555,8 +555,8 @@ const pages = async (): Promise<Pages[]> => {
                 alt: 'Richard Passos, a full-stack developer with short hair, stands against a wooden wall, wearing a light-colored T-shirt. Richard Passos has his arms crossed, showcasing a watch and a necklace.'
               },
               {
-                src: '/images/services.webp',
-                alt: 'Richard Passos, a full-stack developer stands against a plain background wearing a black leather jacket over a white shirt, with their left hand in the jacket pocket.'
+                src: '/images/selfie.webp',
+                alt: 'Richard Passos, a full-stack developer with short dark hair wearing a red shirt, black jacket, and silver necklace stands in front of a colorful abstract mural.'
               },
               {
                 src: '/images/bg.webp',
@@ -762,12 +762,6 @@ const pages = async (): Promise<Pages[]> => {
                 placeholder: 'I wanna hire you!',
                 defaultValue: ''
               },
-              service: {
-                label: 'Service',
-                placeholder: 'Select a service...',
-                defaultValue: '',
-                data: services.map((d) => ({ value: d.slug, label: d.title }))
-              },
               message: {
                 label: 'Message',
                 placeholder:
@@ -789,24 +783,20 @@ const pages = async (): Promise<Pages[]> => {
           }
         },
         {
-          id: 'services',
-          type: 'Services',
+          id: 'skills',
+          type: 'Skills',
           theme: 'dark',
           data: {
             title: [
-              { text: 'Ser' },
-              { text: 'vi', emphasize: true },
-              { text: 'ces' }
+              { text: 'Ski' },
+              { text: 'll', emphasize: true },
+              { text: 's' }
             ],
-            subtitle: [{ text: 'I could help you with...' }],
             image: {
-              src: '/images/services.webp',
+              src: '/images/selfie.webp',
               alt: 'Richard Passos, a full-stack developer with short dark hair wearing a red shirt, black jacket, and silver necklace stands in front of a colorful abstract mural.'
             },
-            items: services.map((d, i) => ({
-              ...d,
-              slug: `● ${(i + 1).toString().padStart(2, '0')}`
-            }))
+            items: skills
           }
         }
       ],
@@ -1588,7 +1578,7 @@ const pages = async (): Promise<Pages[]> => {
               {
                 text: 'If you wish to be informed what Personal Data we hold about you and if you want it to be removed from our systems, please email us at '
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               { text: '.' }
             ]
           },
@@ -1723,7 +1713,7 @@ const pages = async (): Promise<Pages[]> => {
                   {
                     text: 'users are able to change their personal information by emailing us at '
                   },
-                  { text: 'hi.richardp@gmail.com', bold: true },
+                  { text: 'richard.ac.passos12@gmail.com', bold: true },
                   { text: '.' }
                 ]
               }
@@ -1880,7 +1870,7 @@ const pages = async (): Promise<Pages[]> => {
                 text: 'To exercise your California data protection rights described above, please send your request(s) by email: ',
                 bold: true
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               { text: '.' }
             ]
           },
@@ -2061,7 +2051,7 @@ const pages = async (): Promise<Pages[]> => {
               {
                 text: 'If you have any questions about this Privacy Policy, please contact us by email: '
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               { text: '.' }
             ]
           }
@@ -2173,7 +2163,7 @@ const pages = async (): Promise<Pages[]> => {
               {
                 text: 'If you do not agree with (or cannot comply with) Agreements, then you may not use the Service, but please let us know by emailing at '
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               {
                 text: ' so we can try to find a solution. These Terms apply to all visitors, users, and others who wish to access or use Service.'
               }
@@ -2190,7 +2180,7 @@ const pages = async (): Promise<Pages[]> => {
               {
                 text: 'By using our Service, you agree to subscribe to newsletters, marketing or promotional materials and other information we may send. However, you may opt-out of receiving any, or all, of these communications from us by following the unsubscribe link or by emailing at '
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               { text: '.' }
             ]
           },
@@ -2422,7 +2412,7 @@ const pages = async (): Promise<Pages[]> => {
                 text: 'If you are a copyright owner, or authorized on behalf of one, and you believe that the copyrighted work has been copied in a way that constitutes copyright infringement, please submit your claim via email to ',
                 bold: true
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               {
                 text: ', with the subject line: “Copyright Infringement” and include in your claim a detailed description of the alleged Infringement as detailed below, under “DMCA Notice and Procedure for Copyright Infringement Claims”'
               }
@@ -2505,7 +2495,7 @@ const pages = async (): Promise<Pages[]> => {
                 text: 'You can contact our Copyright Agent via email at ',
                 bold: true
               },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               { text: '.' }
             ]
           },
@@ -2518,7 +2508,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               { text: 'You may provide us either directly at ', bold: true },
-              { text: 'hi.richardp@gmail.com', bold: true },
+              { text: 'richard.ac.passos12@gmail.com', bold: true },
               {
                 text: ' or via third party sites and tools with information and feedback concerning errors, suggestions for improvements, ideas, problems, complaints, and other matters related to our Service (“Feedback”). You acknowledge and agree that: (i) you shall not retain, acquire or assert any intellectual property right or other right, title or interest in or to the Feedback; (ii) Company may have development ideas similar to the Feedback; (iii) Feedback does not contain confidential information or proprietary information from you or any third party; and (iv) Company is not under any obligation of confidentiality with respect to the Feedback. In the event the transfer of the ownership to the Feedback is not possible due to applicable mandatory laws, you grant Company and its affiliates an exclusive, transferable, irrevocable, free-of-charge, sub-licensable, unlimited and perpetual right to use (including copy, modify, create derivative works, publish, distribute and commercialize) Feedback in any manner and for any purpose.'
               }
@@ -2776,7 +2766,7 @@ const pages = async (): Promise<Pages[]> => {
               {
                 text: 'Please send your feedback, comments, requests for technical support by email: '
               },
-              { text: 'hi.richardp@gmail.com', bold: true }
+              { text: 'richard.ac.passos12@gmail.com', bold: true }
             ]
           }
         ],
@@ -3017,7 +3007,7 @@ const pages = async (): Promise<Pages[]> => {
                 text: 'Should you have any feedback, comments, requests for technical support or other inquiries, please contact us by email: ',
                 bold: false
               },
-              { text: 'hi.richardp@gmail.com', bold: true }
+              { text: 'richard.ac.passos12@gmail.com', bold: true }
             ]
           }
         ],
@@ -3269,7 +3259,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'You may require that we delete all the data about you, as collected and processed with the help of the cookies, by contacting to the email address hi.richardp@gmail.com.'
+                text: 'You may require that we delete all the data about you, as collected and processed with the help of the cookies, by contacting to the email address richard.ac.passos12@gmail.com.'
               }
             ]
           },

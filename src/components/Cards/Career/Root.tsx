@@ -24,7 +24,7 @@ const CareerCardOrganism = ({
       variant='default'
       className='mb-auto shrink-0 translate-y-0.5'
     >
-      {`${data.index + 1}`.padStart(2, '0')}/
+      {`${data.index + 1}`.padStart(2, 'Ø')}/
     </Badge>
 
     <section className='mr-4 grow'>
@@ -43,7 +43,7 @@ const CareerCardOrganism = ({
           .join(' & ')}
       </Text>
 
-      <Text className='border-border mt-6 border-t pt-3 text-sm leading-relaxed tracking-wide'>
+      <Text className='border-border mt-6 border-t pt-3 text-sm leading-relaxed tracking-wide whitespace-pre-line'>
         {data.description}
       </Text>
     </section>

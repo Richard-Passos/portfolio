@@ -4,7 +4,7 @@ import { Image, ScrollAnimate } from '@/components/atoms';
 import { ImageProps } from '@/components/atoms/Image';
 import { cn } from '@/utils';
 
-type ServicesBlockTemplateImageOrganismOwnProps = {
+type SkillsBlockTemplateImageOrganismOwnProps = {
   data: {
     image: Pick<ImageProps, 'src' | 'alt'>;
   };
@@ -12,24 +12,21 @@ type ServicesBlockTemplateImageOrganismOwnProps = {
   imageProps?: Partial<ImageProps>;
 };
 
-type ServicesBlockTemplateImageOrganismProps =
-  ServicesBlockTemplateImageOrganismOwnProps &
-    Omit<
-      ComponentProps<'div'>,
-      keyof ServicesBlockTemplateImageOrganismOwnProps
-    >;
+type SkillsBlockTemplateImageOrganismProps =
+  SkillsBlockTemplateImageOrganismOwnProps &
+    Omit<ComponentProps<'div'>, keyof SkillsBlockTemplateImageOrganismOwnProps>;
 
-const ServicesBlockTemplateImageOrganism = ({
+const SkillsBlockTemplateImageOrganism = ({
   className,
   data,
   wrapperProps,
   imageProps,
   ...props
-}: ServicesBlockTemplateImageOrganismProps) => {
+}: SkillsBlockTemplateImageOrganismProps) => {
   return (
     <div
       className={cn(
-        `aspect-square rounded-(--radius) border p-(--p) [--p:--spacing(2.5)] [--radius:var(--radius-xl)]`,
+        `aspect-4/5 rounded-(--radius) border p-(--p) [--p:--spacing(2.5)] [--radius:var(--radius-xl)]`,
         className
       )}
       {...props}
@@ -59,5 +56,5 @@ const ServicesBlockTemplateImageOrganism = ({
   );
 };
 
-export default ServicesBlockTemplateImageOrganism;
-export type { ServicesBlockTemplateImageOrganismProps };
+export default SkillsBlockTemplateImageOrganism;
+export type { SkillsBlockTemplateImageOrganismProps };

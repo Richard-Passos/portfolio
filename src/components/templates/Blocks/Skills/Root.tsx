@@ -1,47 +1,93 @@
-import SkillCard, { SkillCardProps } from '@/components/Cards/Skill';
-import SecondaryLayouts, {
-  SecondaryLayoutsProps
-} from '@/components/Layouts/Secondary';
-import { cn } from '@/utils';
+import { lineLeftScrollAnim } from '@/animations/scroll';
+import { SkillCard } from '@/components/Cards';
+import { SkillCardProps } from '@/components/Cards/Skill';
+import PrimaryLayouts, {
+  PrimaryLayoutsProps
+} from '@/components/Layouts/Primary';
+import { ScrollAnimate, Title } from '@/components/atoms';
+import { Action } from '@/components/molecules';
+import { renderComp } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
+
+import SkillsBlockTemplateImage from './Image';
+import { SkillsBlockTemplateImageOrganismProps } from './Image/Root';
 
 type SkillsBlockTemplateOwnProps = {
-  data: SecondaryLayoutsProps['data'] & {
-    items: SkillCardProps['data'][];
-  };
+  data: PrimaryLayoutsProps['data'] &
+    SkillsBlockTemplateImageOrganismProps['data'] & {
+      items: Record<string, SkillCardProps['data'][]>;
+      action?: {
+        label: Node[];
+      };
+    };
 };
 
 type SkillsBlockTemplateProps = SkillsBlockTemplateOwnProps &
-  Omit<SecondaryLayoutsProps, keyof SkillsBlockTemplateOwnProps>;
+  Omit<PrimaryLayoutsProps, keyof SkillsBlockTemplateOwnProps>;
 
-const SkillsBlockTemplate = ({
-  className,
-  data,
-  ...props
-}: SkillsBlockTemplateProps) => {
+const SkillsBlockTemplate = ({ data, ...props }: SkillsBlockTemplateProps) => {
   return (
-    <SecondaryLayouts
-      className={cn(`3xl:min-h-fit min-h-fit`, className)}
+    <PrimaryLayouts
       data={{
-        title: data.title
+        title: data.title,
+        description: data.description
       }}
       {...props}
     >
-      <div className='w-9by10 max-w-7xl'>
-        <ul className='m-0 flex max-w-3xl list-none flex-wrap justify-end gap-2.5 p-0 sm:ml-auto'>
-          {data.items.map((data) => (
-            <li
-              className='w-full max-w-40'
-              key={data.slug}
-            >
-              <SkillCard
-                className='w-full'
-                data={data}
-              />
-            </li>
+      <section className='w-9by10 flex max-w-6xl items-start justify-end gap-4 md:gap-10'>
+        <SkillsBlockTemplateImage
+          className='grow basis-72 max-md:hidden'
+          data={{
+            image: data.image
+          }}
+        />
+
+        <section className='flex max-w-2xl flex-col gap-10 py-10'>
+          {Object.entries(data.items).map(([key, data]) => (
+            <section key={key}>
+              <div className='mb-5 flex items-center gap-2'>
+                <span className='relative h-1 w-6 shrink-0'>
+                  <ScrollAnimate
+                    config={lineLeftScrollAnim}
+                    layout
+                  >
+                    <span className='bg-body absolute inset-0 border' />
+                  </ScrollAnimate>
+                </span>
+
+                <Title
+                  order={6}
+                  className='capitalize'
+                >
+                  {key}
+                </Title>
+              </div>
+
+              <ul className='m-0 flex list-none flex-wrap gap-2.5 p-0'>
+                {data.map((d) => (
+                  <li key={d.slug}>
+                    <SkillCard data={d} />
+                  </li>
+                ))}
+              </ul>
+            </section>
           ))}
-        </ul>
-      </div>
-    </SecondaryLayouts>
+        </section>
+
+        {renderComp(
+          <Action
+            as='link'
+            className='mt-8'
+            href='/contact'
+            size='md'
+            variant='default'
+          >
+            {serialize(data.action?.label)}
+          </Action>,
+          [data.action]
+        )}
+      </section>
+    </PrimaryLayouts>
   );
 };
 

@@ -24,7 +24,10 @@ const SkillCardOrganism = ({
   return (
     <SkillCardHover delay={DELAY}>
       <div
-        className={cn('group/card perspective-1000 aspect-square', className)}
+        className={cn(
+          'group/card perspective-1000 aspect-square w-40',
+          className
+        )}
         {...props}
       >
         <div className='ease-backOut relative size-full transition-transform duration-500 transform-3d group-data-[active=true]/card:rotate-y-180'>

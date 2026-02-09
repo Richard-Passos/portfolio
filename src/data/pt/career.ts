@@ -4,19 +4,19 @@ const career = async (): Promise<Career[]> => {
   return [
     {
       slug: 'napead',
-      title: 'NAPEAD UFRGS Intern — Multimedia Production for Education',
-      roles: ['Web dev'],
-      year: '2025 - present',
+      title: 'Bolsista em NAPEAD UFRGS — Produção Multimídia para a Educação',
+      roles: ['WEB Dev'],
+      year: '2025 - atual',
       description:
-        'Portal-EAD is a web portal developed for a web developer selection process at SEAD/UFRGS. The project demonstrates proficiency in HTML, CSS, JavaScript, and Bootstrap, with additional functionality implemented using TypeScript for strong typing and safe DOM manipulation.'
+        'Fui contratado para redesenhar e modernizar a plataforma de aprendizagem Lumina, que anteriormente funcionava principalmente como uma listagem estática de links para recursos externos, como PDFs e vídeos. Liderei a transformação dessa experiência ao repensar tanto o layout visual quanto a arquitetura.\n\nDesenvolvi um sistema de plugins para o Moodle que permite aos cursos definir seus próprios temas globais, além de gerar templates dinamicamente com suporte a múltiplos idiomas e estruturas de conteúdo flexíveis baseadas em schemas. Essa abordagem melhorou significativamente a usabilidade, a acessibilidade e o engajamento dos cursos, permitindo que educadores adaptem o conteúdo às suas necessidades pedagógicas sem barreiras técnicas.'
     },
     {
       slug: 'ufrgs',
-      title: 'UFRGS Student — Computer Science',
-      roles: ['development'],
-      year: '2025 - present',
+      title: 'UFRGS — Ciência da Computação',
+      roles: ['Estudante'],
+      year: '2025 - atual',
       description:
-        'A missing portfolio limits opportunities; I designed and built a personal portfolio to showcase skills, career, and experience, offering a professional platform to attract potential clients and employers.'
+        'Atualmente cursando Ciência da Computação, com foco em desenvolvimento de software, algoritmos e resolução de problemas. Minha formação acadêmica complementa minha experiência profissional em desenvolvimento, permitindo aplicar conceitos teóricos em plataformas reais e ambientes digitais escaláveis.'
     }
   ];
 };

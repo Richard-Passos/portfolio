@@ -8,7 +8,7 @@ const career = async (): Promise<Career[]> => {
       roles: ['Web dev'],
       year: '2025 - present',
       description:
-        'Portal-EAD is a web portal developed for a web developer selection process at SEAD/UFRGS. The project demonstrates proficiency in HTML, CSS, JavaScript, and Bootstrap, with additional functionality implemented using TypeScript for strong typing and safe DOM manipulation.'
+        'I was hired to redesign and modernize the Lumina learning platform, which previously functioned mainly as a static collection of links to external resources such as PDFs and videos. I led the transformation of this experience by rethinking both the visual layout and the underlying architecture.\n\nI developed a Moodle plugin system that allows courses to define their own global template themes, as well as dynamically generate templates with multilingual support and flexible, schema-driven content structures. This approach significantly improved usability, accessibility, and course engagement, enabling educators to adapt content to their pedagogical needs without technical barriers.'
     },
     {
       slug: 'ufrgs',
@@ -16,7 +16,7 @@ const career = async (): Promise<Career[]> => {
       roles: ['development'],
       year: '2025 - present',
       description:
-        'A missing portfolio limits opportunities; I designed and built a personal portfolio to showcase skills, career, and experience, offering a professional platform to attract potential clients and employers.'
+        'Currently pursuing a degree in Computer Science with a focus on software development, algorithms, problem-solving. My academic work complements my professional experience in development, allowing me to apply theoretical concepts to real-world platforms and scalable digital environments.'
     }
   ];
 };

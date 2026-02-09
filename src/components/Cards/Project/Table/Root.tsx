@@ -36,7 +36,7 @@ const TableProjectCardOrganism = ({
         variant='default'
         className='mb-auto shrink-0 translate-y-0.5'
       >
-        {`${data.index + 1}`.padStart(2, '0')}/
+        {`${data.index + 1}`.padStart(2, 'Ø')}/
       </Badge>
 
       <div className='mr-4 grow'>

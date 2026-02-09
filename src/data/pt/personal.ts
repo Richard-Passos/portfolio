@@ -6,7 +6,7 @@ const personal = async (): Promise<Personal> => {
       first: 'Richard',
       last: 'Passos'
     },
-    email: 'hi.richardp@gmail.com',
+    email: 'richard.ac.passos12@gmail.com',
     title: 'Richard Passos um ótimo Desenvolvedor Full Stack',
     description:
       'Ajudando marcas a alcançar o destaque digital. Localizado no Brasil. Trago uma paixão por tecnologia de ponta e criação de soluções impactantes centradas no usuário.',

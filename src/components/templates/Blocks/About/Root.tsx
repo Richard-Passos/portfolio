@@ -35,7 +35,7 @@ const AboutBlockTemplate = ({
       <section
         {...wrapperProps}
         className={cn(
-          `w-9by10 flex max-w-5xl gap-4 md:gap-16`,
+          `w-9by10 flex max-w-5xl gap-4 md:gap-10`,
           wrapperProps?.className
         )}
       >
@@ -45,7 +45,7 @@ const AboutBlockTemplate = ({
           </ScrollAnimate>
         </div>
 
-        <section className='flex max-w-xl grow flex-col gap-8'>
+        <section className='flex max-w-xl grow flex-col gap-8 sm:py-10'>
           {data.texts.map(({ id, ...data }) => (
             <AboutBlockTemplateText
               data={data}
