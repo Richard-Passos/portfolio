@@ -85,19 +85,14 @@ const pages = async (): Promise<Pages[]> => {
           ],
           left: [
             {
-              type: 'paragraph',
-              children: [
-                {
-                  text: `${personal?.availability}`
-                }
-              ]
+              type: 'icon',
+              src: '/icons/smile.svg',
+              animation: 'rotateLeft'
             }
           ],
           right: [
             {
-              type: 'icon',
-              src: '/icons/smile.svg',
-              animation: 'rotateLeft'
+              text: '(2026)'
             }
           ]
         }

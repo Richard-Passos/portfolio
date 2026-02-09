@@ -10,7 +10,7 @@ const personal = async (): Promise<Personal> => {
     title: 'Richard Passos um ótimo Desenvolvedor Full Stack',
     description:
       'Ajudando marcas a alcançar o destaque digital. Localizado no Brasil. Trago uma paixão por tecnologia de ponta e criação de soluções impactantes centradas no usuário.',
-    availability: 'Disponível para trabalhar',
+    availability: 'Indisponível para trabalhar',
     authors: [
       {
         name: 'Richard Passos',

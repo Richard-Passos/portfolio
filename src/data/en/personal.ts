@@ -10,7 +10,7 @@ const personal = async (): Promise<Personal> => {
     title: 'Richard Passos an awesome Full Stack Developer',
     description:
       'Helping brands achieve digital prominence. Based in Brazil. I bring a passion for cutting-edge technology and crafting high-impact, user-centered solutions.',
-    availability: 'Available to work',
+    availability: 'Unavailable to work',
     keywords:
       'Richard Passos, Portfolio, Full Stack Developer, React.js, Node.js, React Native, Next.js, TypeScript, JavaScript, Jest, MongoDB, Git, TailwindCSS, Styled-components, Problem-solving, Detail-oriented, Communication, Adaptability, Time management, Critical thinking, Synthetic thinking',
     authors: [
