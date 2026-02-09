@@ -60,7 +60,7 @@ const SingleProjectHeroTemplate = ({
         </Title>
 
         {renderComp(
-          <Text className='text-dimmed mt-5 max-w-lg text-center text-sm'>
+          <Text className='text-dimmed mt-5 max-w-xl text-center text-sm'>
             {data.description}
           </Text>,
           [data.description]
@@ -76,6 +76,7 @@ const SingleProjectHeroTemplate = ({
                 className='aspect-square rounded-full shadow [--button-height:calc(var(--size)*var(--mantine-scale))]! [--size:8rem] sm:text-xl sm:[--size:12rem]'
                 disabled={!data.action?.href}
                 href={data.action.href}
+                variant='default'
               >
                 {data.action.label}&nbsp;
                 <ArrowUpRightIcon className='size-[1.25em] shrink-0' />
