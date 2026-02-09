@@ -567,7 +567,7 @@ const pages = async (): Promise<Pages[]> => {
           theme: 'dark',
           data: {
             title: [
-              { text: 'g' },
+              { text: 'Quem ' },
               {
                 text: 'sou',
                 emphasize: true
