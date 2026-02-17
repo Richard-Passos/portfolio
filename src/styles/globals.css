@@ -474,19 +474,19 @@
     --mantine-color-dimmed: var(--mantine-color-gray-6);
 
     --mantine-primary-color-contrast: var(--mantine-color-white);
-    --mantine-color-primary-0: hsl(0 0% 7.5%);
-    --mantine-color-primary-1: hsl(0 0% 7.5%);
-    --mantine-color-primary-2: hsl(0 0% 7.5%);
-    --mantine-color-primary-3: hsl(0 0% 7.5%);
-    --mantine-color-primary-4: hsl(0 0% 7.5%);
-    --mantine-color-primary-5: hsl(0 0% 7.5%);
-    --mantine-color-primary-6: hsl(0 0% 7.5%);
-    --mantine-color-primary-7: hsl(0 0% 7.5%);
-    --mantine-color-primary-8: hsl(0 0% 7.5%);
-    --mantine-color-primary-9: hsl(0 0% 7.5%);
-    --mantine-color-primary-text: var(--mantine-color-primary-filled);
+    --mantine-color-primary-0: var(--mantine-color-dark-0)
+      --mantine-color-primary-1: var(--mantine-color-dark-1)
+      --mantine-color-primary-2: var(--mantine-color-dark-2)
+      --mantine-color-primary-3: var(--mantine-color-dark-3)
+      --mantine-color-primary-4: var(--mantine-color-dark-4)
+      --mantine-color-primary-5: var(--mantine-color-dark-5)
+      --mantine-color-primary-6: var(--mantine-color-dark-6)
+      --mantine-color-primary-7: var(--mantine-color-dark-7)
+      --mantine-color-primary-8: var(--mantine-color-dark-8)
+      --mantine-color-primary-9: var(--mantine-color-dark-9)
+      --mantine-color-primary-text: var(--mantine-color-primary-filled);
     --mantine-color-primary-filled: var(--mantine-color-primary-6);
-    --mantine-color-primary-filled-hover: var(--mantine-color-primary-7);
+    --mantine-color-primary-filled-hover: var(--mantine-color-primary-5);
     --mantine-color-primary-light: rgba(0, 0, 0, 0.1);
     --mantine-color-primary-light-hover: rgba(0, 0, 0, 0.12);
     --mantine-color-primary-light-color: var(--mantine-color-primary-6);
@@ -510,19 +510,19 @@
     --mantine-color-dimmed: var(--mantine-color-dark-2);
 
     --mantine-primary-color-contrast: var(--mantine-color-black);
-    --mantine-color-primary-0: hsl(0 0% 90%);
-    --mantine-color-primary-1: hsl(0 0% 90%);
-    --mantine-color-primary-2: hsl(0 0% 90%);
-    --mantine-color-primary-3: hsl(0 0% 90%);
-    --mantine-color-primary-4: hsl(0 0% 90%);
-    --mantine-color-primary-5: hsl(0 0% 90%);
-    --mantine-color-primary-6: hsl(0 0% 90%);
-    --mantine-color-primary-7: hsl(0 0% 90%);
-    --mantine-color-primary-8: hsl(0 0% 90%);
-    --mantine-color-primary-9: hsl(0 0% 90%);
+    --mantine-color-primary-0: var(--mantine-color-gray-0);
+    --mantine-color-primary-1: var(--mantine-color-gray-1);
+    --mantine-color-primary-2: var(--mantine-color-gray-2);
+    --mantine-color-primary-3: var(--mantine-color-gray-3);
+    --mantine-color-primary-4: var(--mantine-color-gray-4);
+    --mantine-color-primary-5: var(--mantine-color-gray-5);
+    --mantine-color-primary-6: var(--mantine-color-gray-6);
+    --mantine-color-primary-7: var(--mantine-color-gray-7);
+    --mantine-color-primary-8: var(--mantine-color-gray-8);
+    --mantine-color-primary-9: var(--mantine-color-gray-9);
     --mantine-color-primary-text: var(--mantine-color-primary-4);
-    --mantine-color-primary-filled: var(--mantine-color-primary-7);
-    --mantine-color-primary-filled-hover: var(--mantine-color-primary-8);
+    --mantine-color-primary-filled: var(--mantine-color-white);
+    --mantine-color-primary-filled-hover: var(--mantine-color-gray-0);
     --mantine-color-primary-light: rgba(0, 0, 0, 0.15);
     --mantine-color-primary-light-hover: rgba(0, 0, 0, 0.2);
     --mantine-color-primary-light-color: var(--mantine-color-primary-2);
