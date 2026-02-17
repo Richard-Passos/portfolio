@@ -38,7 +38,7 @@ const PrimaryHero = ({
       forceTheme
       {...props}
     >
-      <div className='relative flex w-full grow overflow-hidden rounded-lg'>
+      <div className='border-gray-3 dark:border-dark-4 relative flex w-full grow overflow-hidden rounded-lg border'>
         <ScrollAnimate>
           <div className='relative flex w-full flex-col items-center justify-center'>
             <div className='flex w-full max-w-7xl grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:scale-(--scale) sm:opacity-(--opacity)'>
@@ -63,11 +63,9 @@ const PrimaryHero = ({
               </div>
             </div>
 
-            <Lines className='text-gray-3 dark:text-dark-4 top-auto -z-10 bg-size-[83.333px_66.666px]' />
+            <Lines className='text-gray-3 dark:text-dark-4 -z-10 h-full translate-y-0 bg-size-[83.333px_66.666px]' />
           </div>
         </ScrollAnimate>
-
-        <span className='rounded-inherit border-gray-3 dark:border-dark-4 pointer-events-none absolute inset-0 border' />
       </div>
     </Section>
   );
