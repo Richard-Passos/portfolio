@@ -1,7 +1,7 @@
 'use server';
 
 import { SinglePageResponse } from '@/app/api/pages/[slug]/route';
-import { Locale, Pages } from '@/types';
+import { Locale } from '@/types';
 import { request } from '@/utils';
 
 type Params = {
@@ -9,11 +9,11 @@ type Params = {
   locale: Locale['value'];
 };
 
-const pagesApiGetOne = async <T extends Pages = Pages>(
+const pagesApiGetOne = async (
   params: Params,
   config?: Parameters<typeof request>['1']
 ) =>
-  await request<SinglePageResponse<T>>(
+  await request<SinglePageResponse>(
     `/api/pages/${params.slug}?locale=${params.locale}`,
     config
   );

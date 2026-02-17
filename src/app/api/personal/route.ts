@@ -24,22 +24,9 @@ const GET = async (
   request: NextRequest
 ): Promise<ReturnType<typeof NextResponse.json<PersonalResponse>>> => {
   try {
-    const { searchParams } = request.nextUrl;
-
-    const params: Record<keyof SearchParams, string | null> = {
-      locale: searchParams.get('locale')
-    };
-
-    const locale = isType<SearchParams['locale']>(
-      !!params.locale,
-      params.locale
-    )
-      ? params.locale
-      : DEFAULT_PARAMS.locale;
-
-    const t = getTranslations(locale);
-
-    const data = await t.personal();
+    const { searchParams } = request.nextUrl,
+      params = resolveParams(searchParams),
+      data = resolveResults(params);
 
     return NextResponse.json({
       ok: true,
@@ -53,6 +40,24 @@ const GET = async (
       message: 'Something went wrong!'
     });
   }
+};
+
+const resolveParams = (searchParams: URLSearchParams) => {
+  const params: Record<keyof SearchParams, string | null> = {
+    locale: searchParams.get('locale')
+  };
+
+  return {
+    locale: isType<SearchParams['locale']>(!!params.locale, params.locale)
+      ? params.locale
+      : DEFAULT_PARAMS.locale
+  };
+};
+
+const resolveResults = (params: ReturnType<typeof resolveParams>) => {
+  const t = getTranslations(params.locale);
+
+  return t.personal;
 };
 
 export { GET };

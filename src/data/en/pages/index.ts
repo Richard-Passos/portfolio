@@ -1,0 +1,9 @@
+export { default as about } from './about';
+export { default as contact } from './contact';
+export { default as error } from './error';
+export { default as home } from './home';
+export { default as notFound } from './notFound';
+export { default as privacyPolicy } from './privacyPolicy';
+export { default as project } from './project';
+export { default as root } from './root';
+export { default as termsNConditions } from './termsNConditions';

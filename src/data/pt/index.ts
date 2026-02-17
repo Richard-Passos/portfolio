@@ -1,40 +1,9 @@
-import career from './career';
-import cookiesConsent from './cookiesConsent';
-import footer from './footer';
-import header from './header';
-import pages from './pages';
-import personal from './personal';
-import projects from './projects';
-import services from './services';
-import skills from './skills';
-import statistics from './statistics';
-import values from './values';
-
-const pt = {
-  career,
-  cookiesConsent,
-  footer,
-  header,
-  pages,
-  personal,
-  projects,
-  services,
-  skills,
-  statistics,
-  values
-};
-
-export default pt;
-export {
-  career,
-  cookiesConsent,
-  footer,
-  header,
-  pages,
-  personal,
-  projects,
-  services,
-  skills,
-  statistics,
-  values
-};
+export * as pages from './pages';
+export { default as career } from './career';
+export { default as cookiesConsent } from './cookiesConsent';
+export { default as footer } from './footer';
+export { default as header } from './header';
+export { default as personal } from './personal';
+export { default as projects } from './projects';
+export { default as skills } from './skills';
+export { default as values } from './values';

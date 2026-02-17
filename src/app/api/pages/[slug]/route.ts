@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { defaultLocale } from '@/constants/locales';
-import { Locale, Pages } from '@/types';
+import { Locale, Page } from '@/types';
 import { getTranslations, isType, normId } from '@/utils';
 
 type Params = Promise<{
@@ -16,69 +16,35 @@ const DEFAULT_PARAMS: SearchParams = {
   locale: defaultLocale.value
 };
 
-type SinglePageResponse<T extends Pages> =
+type SinglePageResponse =
   | { ok: false; status: 404; message: string }
   | { ok: false; status: 500; message: string }
   | {
       ok: true;
       status: 200;
-      data: T;
-      meta: {
-        adjacentIds: {
-          prev?: string;
-          next?: string;
-        };
-      };
+      data: Page;
     };
 
-const GET = async <T extends Pages>(
+const GET = async (
   request: NextRequest,
-  { params: p }: { params: Params }
-): Promise<ReturnType<typeof NextResponse.json<SinglePageResponse<T>>>> => {
+  { params: requestParams }: { params: Params }
+): Promise<ReturnType<typeof NextResponse.json>> => {
   try {
-    const { searchParams } = request.nextUrl;
+    const { searchParams } = request.nextUrl,
+      params = await resolveParams(searchParams, requestParams),
+      data = resolveResults(params);
 
-    const params: Record<keyof SearchParams, string | null> = {
-      locale: searchParams.get('locale')
-    };
-
-    let { slug } = await p;
-    slug = normId(slug);
-
-    const locale = isType<SearchParams['locale']>(
-      !!params.locale,
-      params.locale
-    )
-      ? params.locale
-      : DEFAULT_PARAMS.locale;
-
-    const t = getTranslations(locale);
-
-    const pages = await t.pages();
-
-    let dataIndex = pages.findIndex((p) => normId(p.slug ?? '') === slug);
-
-    if (dataIndex === -1)
+    if (data === undefined)
       return NextResponse.json({
         ok: false,
         status: 404,
         message: 'Page not found!'
       });
 
-    const prevId = pages.at(dataIndex > 0 ? dataIndex - 1 : -1)?.slug,
-      nextId = pages.at(dataIndex < pages.length - 1 ? dataIndex + 1 : 0)?.slug;
-
-    const data = pages[dataIndex] as T,
-      adjacentIds = {
-        prev: prevId,
-        next: nextId
-      };
-
     return NextResponse.json({
       ok: true,
       status: 200,
-      data,
-      meta: { adjacentIds }
+      data
     });
   } catch {
     return NextResponse.json({
@@ -87,6 +53,30 @@ const GET = async <T extends Pages>(
       message: 'Something went wrong!'
     });
   }
+};
+
+const resolveParams = async (
+  searchParams: URLSearchParams,
+  requestParams: Params
+) => {
+  const requestParamsRes = await requestParams;
+
+  const params: Record<keyof SearchParams, string | null> = {
+    locale: searchParams.get('locale')
+  };
+
+  return {
+    slug: normId(requestParamsRes.slug),
+    locale: isType<SearchParams['locale']>(!!params.locale, params.locale)
+      ? params.locale
+      : DEFAULT_PARAMS.locale
+  };
+};
+
+const resolveResults = (params: Awaited<ReturnType<typeof resolveParams>>) => {
+  const t = getTranslations(params.locale);
+
+  return (t.pages as unknown as Record<string, Page>)[params.slug] ?? undefined;
 };
 
 export { GET };

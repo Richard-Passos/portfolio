@@ -1,5 +1,4 @@
 type Career = {
-  slug: string;
   title: string;
   description: string;
   roles: string[];

@@ -9,12 +9,12 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
 
   if (!res.ok) return [];
 
-  const paths = res.data.map((p) => ({
-    url: `${baseUrl}/${p.slug === defaultPages.home ? '' : p.slug}`,
+  const paths = res.data.keys().map((key) => ({
+    url: `${baseUrl}/${key === defaultPages.home ? '' : key}`,
     lastModified: new Date()
   }));
 
-  return paths;
+  return [...paths];
 };
 
 export default sitemap;

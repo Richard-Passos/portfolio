@@ -1,5 +1,4 @@
 type Skill = {
-  slug: string;
   icon: string;
   title: string;
 };

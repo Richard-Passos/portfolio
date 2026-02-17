@@ -6,20 +6,15 @@ import Theme from './Theme';
 
 type LegalPage = {
   type: 'legal';
-  slug: string;
+  theme: Theme;
   label: string;
-  blocks: {
-    theme: Theme;
-    header: {
-      title: Node[];
-      effectiveDate: Node[];
-    };
-    data: Node[];
-    footer?: Node[];
+  hero?: {
+    title: Node[];
+    effectiveDate: Node[];
   };
-  metadata: Metadata;
-  isSelected?: never;
-  hero?: never;
+  blocks?: Node[];
+  footer?: Node[];
+  metadata?: Metadata;
 };
 
 export default LegalPage;

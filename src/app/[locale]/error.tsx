@@ -1,12 +1,11 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { notFound } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { use, useEffect } from 'react';
 
 import { ErrorTemplate } from '@/components/templates';
 import { defaultPages } from '@/constants';
-import { Locale, ErrorPage as TErrorPage } from '@/types';
+import { Locale, Page, ErrorPage as TErrorPage } from '@/types';
 import { pagesApi } from '@/utils/actions';
 
 type ErrorPageProps = {
@@ -14,47 +13,32 @@ type ErrorPageProps = {
   reset: () => void;
 };
 
+const isValidPage = (page: Page): page is TErrorPage => page.type !== 'error';
+
 const ErrorPage = ({ error, reset }: ErrorPageProps) => {
   const locale = useLocale() as Locale['value'],
-    [page, setPage] = useState<TErrorPage>();
+    page = use(
+      pagesApi
+        .getOne({
+          slug: defaultPages.error,
+          locale
+        })
+        .then((res) => {
+          if (!res.ok || !isValidPage(res.data)) return undefined;
+
+          const page = res.data;
+          if (page.hero?.data.actions?.primary?.onClick)
+            page.hero.data.actions.primary.onClick = reset;
+
+          return page;
+        })
+    );
 
   useEffect(() => {
     console.error(error);
   }, [error]);
 
-  useEffect(() => {
-    const getPage = async () => {
-      const res = await pagesApi.getOne<TErrorPage>({
-        slug: defaultPages.error,
-        locale
-      });
-
-      if (!res.ok) return notFound();
-
-      const page = res.data;
-
-      setPage({
-        ...page,
-        hero: {
-          ...page.hero,
-          data: {
-            ...page.hero.data,
-            actions: {
-              ...page.hero.data.actions,
-              primary: {
-                ...page.hero.data.actions?.primary,
-                onClick: reset
-              }
-            }
-          }
-        }
-      });
-    };
-
-    getPage();
-  }, [reset, locale]);
-
-  if (!page) return null;
+  if (page === undefined) return undefined;
 
   return (
     <ErrorTemplate

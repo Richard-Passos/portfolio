@@ -4,7 +4,7 @@ import { createContext } from 'react';
 
 type CatalogContextInitialState<T> = {
   id: string;
-  items: T[];
+  items: Record<string, T>;
   page: number;
   perPage: number;
   totalPages: number;
@@ -16,7 +16,7 @@ type CatalogContextInitialState<T> = {
 
 const catalogContextDefaultValue: CatalogContextInitialState<any> = {
   id: '',
-  items: [],
+  items: {},
   page: 1,
   perPage: 10,
   totalPages: 1,

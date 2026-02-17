@@ -4,7 +4,8 @@ import { Bg } from '@/components/atoms';
 import { LocaleSelect } from '@/components/molecules';
 import Logo from '@/components/organisms/Logo';
 import { defaultPages, locales } from '@/constants';
-import { cn } from '@/utils';
+import { DefaultPage } from '@/types';
+import { cn, entries } from '@/utils';
 import { getLocale, headerApi, pagesApi } from '@/utils/actions';
 
 import HeaderMenu from './Menu';
@@ -26,14 +27,15 @@ const HeaderOrganism = async ({ className, ...props }: HeaderOrganismProps) => {
 
   if (!headerRes.ok) return null;
 
-  const header = headerRes.data;
+  const header = headerRes.data,
+    pages = pagesRes.ok
+      ? (pagesRes.data as Record<string, DefaultPage>)
+      : undefined;
 
-  const navItem: HeaderNavProps['items'] = pagesRes.ok
-    ? pagesRes.data.map((p) => ({
-        href: `/${p.slug === defaultPages.home ? '' : p.slug}`,
-        label: `${p.label}`
-      }))
-    : [];
+  const navItem: HeaderNavProps['items'] = entries(pages).map(([key, p]) => ({
+    href: key === defaultPages.home ? '/' : `/${key}`,
+    label: p.label
+  }));
 
   return (
     <HeaderdTheme>

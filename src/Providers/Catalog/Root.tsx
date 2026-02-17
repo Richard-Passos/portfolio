@@ -10,7 +10,7 @@ import {
 import { useId } from '@/hooks';
 
 type CatalogProviderOwnProps<T> = {
-  items: T[];
+  items: Map<string, T>;
   url?: string;
 };
 
@@ -27,8 +27,8 @@ const CatalogProvider = <T,>({
 }: CatalogProviderProps<T>) => {
   const id = useId();
 
-  const totalResults = items.length,
-    isEmpty = !items.length;
+  const totalResults = items.size,
+    isEmpty = items.size === 0;
 
   const value: CatalogContextInitialState<T> = useMemo(
     () => ({

@@ -1,22 +1,23 @@
-import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import { ErrorTemplate } from '@/components/templates';
 import { defaultPages } from '@/constants';
-import { ErrorPage } from '@/types';
+import { ErrorPage, Page } from '@/types';
 import { getLocale, pagesApi } from '@/utils/actions';
+
+const isValidPage = (page: Page): page is ErrorPage => page.type !== 'error';
 
 const NotFoundPage = async () => {
   const locale = await getLocale();
 
   setRequestLocale(locale);
 
-  const res = await pagesApi.getOne<ErrorPage>({
+  const res = await pagesApi.getOne({
     slug: defaultPages.notFound,
     locale
   });
 
-  if (!res.ok) return null;
+  if (!res.ok || !isValidPage(res.data)) return undefined;
 
   const page = res.data;
 
@@ -28,15 +29,15 @@ const NotFoundPage = async () => {
   );
 };
 
-const generateMetadata = async (): Promise<Metadata> => {
+const generateMetadata = async () => {
   const locale = await getLocale();
 
-  const res = await pagesApi.getOne<ErrorPage>({
+  const res = await pagesApi.getOne({
     slug: defaultPages.notFound,
     locale
   });
 
-  if (!res.ok) return {};
+  if (!res.ok || res.data.type !== 'error') return {};
 
   const { metadata } = res.data;
 

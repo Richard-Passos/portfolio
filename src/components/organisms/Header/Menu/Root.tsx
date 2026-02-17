@@ -4,7 +4,7 @@ import { Icon, Link, Text } from '@/components/atoms';
 import { Action, Drawer, LocaleSelect } from '@/components/molecules';
 import { DrawerRootProps } from '@/components/molecules/Drawer';
 import { defaultPages, locales } from '@/constants';
-import { cn, renderComp } from '@/utils';
+import { cn, entries, renderComp } from '@/utils';
 import { getLocale, headerApi, pagesApi, personalApi } from '@/utils/actions';
 
 import HeaderNav, { HeaderNavProps } from '../Nav';
@@ -29,16 +29,17 @@ const HeaderMenuOrganism = async (props: HeaderMenuOrganismProps) => {
   if (!headerRes.ok) return null;
 
   const header = headerRes.data,
-    personal = personalRes.ok ? personalRes.data : undefined;
+    personal = personalRes.ok ? personalRes.data : undefined,
+    selectedPages = selectedPagesRes.ok ? selectedPagesRes.data : undefined;
 
-  const navItems: HeaderNavProps['items'] = selectedPagesRes.ok
-    ? selectedPagesRes.data.map((p) => ({
-        href: `/${p.slug === defaultPages.home ? '' : p.slug}`,
-        label: `${p.label}`
-      }))
-    : [];
+  const navItems: HeaderNavProps['items'] = entries(selectedPages).map(
+    ([key, p]) => ({
+      href: key === defaultPages.home ? '/' : `/${key}`,
+      label: p.label
+    })
+  );
 
-  const legalPages = legalPagesRes.ok ? legalPagesRes.data : [];
+  const legalPages = legalPagesRes.ok ? legalPagesRes.data : undefined;
 
   const socials = personal?.socials;
 
@@ -121,19 +122,19 @@ const HeaderMenuOrganism = async (props: HeaderMenuOrganismProps) => {
             className='text-dimmed mt-4 block px-4 text-xs'
             component='small'
           >
-            {legalPages.map((d, i, arr) => (
-              <Fragment key={d.slug}>
+            {entries(legalPages).map(([key, d]) => (
+              <Fragment key={key}>
                 <Link
                   className='text-[1em] text-inherit'
-                  href={`/${d.slug}`}
+                  href={`/${key}`}
                 >
                   {d.label}
                 </Link>
-                .{i < arr.length - 1 ? ' ' : null}
+                .{' '}
               </Fragment>
             ))}
           </Text>,
-          [!!legalPages.length]
+          [!!legalPages?.size]
         )}
       </Drawer.Content>
     </Drawer.Root>

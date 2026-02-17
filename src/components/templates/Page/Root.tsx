@@ -1,53 +1,45 @@
-import { ComponentType } from 'react';
-
-import Blocks from '@/components/templates/Blocks';
-import Heros from '@/components/templates/Heros';
-import { Theme, TypeVariants } from '@/types';
-import { cn } from '@/utils';
+import { RenderBlock, RenderHero } from '@/components/organisms/Render';
+import { DefaultPage } from '@/types';
+import { cn, entries } from '@/utils';
 
 type PageTemplateProps = {
-  hero: TypeVariants<typeof Heros>;
-  blocks?: TypeVariants<typeof Blocks>[];
+  hero: DefaultPage['hero'];
+  blocks: DefaultPage['blocks'];
 };
 
 const PageTemplate = ({ hero, blocks }: PageTemplateProps) => {
-  let lastTheme: Theme = hero.theme;
-
-  const Hero = Heros[hero.type] as ComponentType<any>;
+  const blocksEntries = entries(blocks);
 
   return (
     <>
-      <Hero {...hero} />
+      {hero && <RenderHero {...hero} />}
 
-      {blocks?.map(({ type, id, className, theme, ...props }) => {
-        const Block = Blocks[type] as ComponentType<any>;
+      {blocksEntries.map(([key, { theme, className, ...block }], i) => {
+        const prevTheme =
+            i === 0 ? hero?.theme : blocksEntries[i - 1]?.[1].theme,
+          isSameTheme = prevTheme === theme;
 
-        const isSameTheme = lastTheme === theme;
-        let radius = '';
+        let radius;
         if (!isSameTheme)
           radius =
             theme === 'dark' ? 'rounded-t-4xl' : '[*:has(+&)]:rounded-b-4xl';
 
-        const Component = (
-          <Block
+        return (
+          <RenderBlock
+            key={key}
+            theme={theme}
             className={cn(
-              `overflow-y-clip last:rounded-b-4xl`,
+              'overflow-y-clip last:rounded-b-4xl',
               radius,
               className
             )}
-            id={id}
-            key={id}
-            theme={theme}
-            {...props}
+            {...block}
           />
         );
-
-        lastTheme = theme;
-
-        return Component;
       })}
     </>
   );
 };
+
 export default PageTemplate;
 export type { PageTemplateProps };

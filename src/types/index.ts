@@ -1,45 +1,21 @@
-import Career from './Career';
-import CookiesConsent from './CookiesConsent';
-import DeepPartial from './DeepPartial';
-import ErrorPage from './ErrorPage';
-import Field from './Field';
-import Footer from './Footer';
-import Header from './Header';
-import LegalPage from './LegalPage';
-import Locale from './Locale';
-import Page from './Page';
-import Pages from './Pages';
-import Personal from './Personal';
-import PolymorphicRef from './PolymorphicRef';
-import Project from './Project';
-import Service from './Service';
-import SingleProjectPage from './SingleProjectPage';
-import Skill from './Skill';
-import Statistic from './Statistic';
-import Theme from './Theme';
-import TypeVariants from './TypeVariants';
-import Value from './Value';
-
-export type {
-  Career,
-  CookiesConsent,
-  DeepPartial,
-  ErrorPage,
-  Field,
-  Footer,
-  Header,
-  LegalPage,
-  Locale,
-  Page,
-  Pages,
-  Personal,
-  PolymorphicRef,
-  Project,
-  Service,
-  SingleProjectPage,
-  Skill,
-  Statistic,
-  Theme,
-  TypeVariants,
-  Value
-};
+export type { default as Career } from './Career';
+export type { default as CookiesConsent } from './CookiesConsent';
+export type { default as DeepPartial } from './DeepPartial';
+export type { default as DefaultPage } from './DefaultPage';
+export type { default as ErrorPage } from './ErrorPage';
+export type { default as Field } from './Field';
+export type { default as Footer } from './Footer';
+export type { default as Header } from './Header';
+export type { default as LegalPage } from './LegalPage';
+export type { default as Locale } from './Locale';
+export type { default as Page } from './Page';
+export type { default as Personal } from './Personal';
+export type { default as PolymorphicRef } from './PolymorphicRef';
+export type { default as Project } from './Project';
+export type { default as Service } from './Service';
+export type { default as ProjectPage } from './ProjectPage';
+export type { default as Skill } from './Skill';
+export type { default as Statistic } from './Statistic';
+export type { default as Theme } from './Theme';
+export type { default as TypeVariants } from './TypeVariants';
+export type { default as Value } from './Value';

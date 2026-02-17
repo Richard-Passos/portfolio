@@ -13,7 +13,8 @@ import {
 import { Action } from '@/components/molecules';
 import Logo from '@/components/organisms/Logo';
 import Section, { SectionProps } from '@/components/organisms/Section';
-import { cn } from '@/utils';
+import { LegalPage } from '@/types';
+import { cn, entries } from '@/utils';
 import { serialize } from '@/utils';
 import { footerApi, getLocale, pagesApi, personalApi } from '@/utils/actions';
 
@@ -38,7 +39,9 @@ const FooterOrganism = async ({ className, ...props }: FooterOrganismProps) => {
 
   const socials = personal?.socials;
 
-  const legalPages = legalPagesRes.ok ? legalPagesRes.data : [];
+  const legalPages = legalPagesRes.ok
+    ? (legalPagesRes.data as Record<string, LegalPage>)
+    : undefined;
 
   return (
     <Section
@@ -101,11 +104,11 @@ const FooterOrganism = async ({ className, ...props }: FooterOrganismProps) => {
               className='text-dimmed mt-4 block max-w-sm text-xs'
               component='small'
             >
-              {legalPages.map((d) => (
-                <Fragment key={d.slug}>
+              {entries(legalPages).map(([key, d]) => (
+                <Fragment key={key}>
                   <Link
                     className='text-[1em] text-inherit'
-                    href={`/${d.slug}`}
+                    href={`/${key}`}
                   >
                     {d.label}
                   </Link>

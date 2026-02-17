@@ -4,12 +4,7 @@ import { ComponentProps } from 'react';
 import CatalogProvider, { CatalogProviderProps } from '@/Providers/Catalog';
 import { AsChildProps } from '@/components/atoms/Slot';
 
-type CatalogMoleculeOwnProps = {};
-
-type CatalogMoleculeProps = AsChildProps<
-  CatalogMoleculeOwnProps &
-    Omit<ComponentProps<'section'>, keyof CatalogMoleculeOwnProps>
->;
+type CatalogMoleculeProps = AsChildProps<ComponentProps<'section'>>;
 
 const CatalogMolecule = ({ asChild, ...props }: CatalogMoleculeProps) => {
   if (asChild) return <Slot {...props} />;

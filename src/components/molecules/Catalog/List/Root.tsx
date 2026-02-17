@@ -20,7 +20,7 @@ const CatalogListMolecule = ({
 }: CatalogListMoleculeProps) => {
   const { items } = useCatalogContext();
 
-  if (!items.length) return null;
+  if (items.size === 0) return null;
 
   if (asChild)
     return (

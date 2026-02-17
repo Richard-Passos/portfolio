@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 import { defaultLocale } from '@/constants/locales';
 import { Locale, Project } from '@/types';
-import { getTranslations, isType, normId } from '@/utils';
+import { getTranslations, isType, keys, normId } from '@/utils';
 
 type Params = Promise<{
   slug: string;
@@ -33,48 +33,19 @@ type SingleProjectResponse =
 
 const GET = async (
   request: NextRequest,
-  { params: p }: { params: Params }
+  { params: requestParams }: { params: Params }
 ): Promise<ReturnType<typeof NextResponse.json<SingleProjectResponse>>> => {
   try {
-    const { searchParams } = request.nextUrl;
+    const { searchParams } = request.nextUrl,
+      params = await resolveParams(searchParams, requestParams),
+      { data, adjacentIds } = resolveResults(params);
 
-    const params: Record<keyof SearchParams, string | null> = {
-      locale: searchParams.get('locale')
-    };
-
-    let { slug } = await p;
-    slug = normId(slug);
-
-    const locale = isType<SearchParams['locale']>(
-      !!params.locale,
-      params.locale
-    )
-      ? params.locale
-      : DEFAULT_PARAMS.locale;
-
-    const t = getTranslations(locale);
-
-    const projects = await t.projects();
-
-    let dataIndex = projects.findIndex((p) => normId(p.slug) === slug);
-
-    if (dataIndex === -1)
+    if (data === undefined)
       return NextResponse.json({
         ok: false,
         status: 404,
         message: 'Project not found!'
       });
-
-    const prevId = projects.at(dataIndex > 0 ? dataIndex - 1 : -1)?.slug,
-      nextId = projects.at(
-        dataIndex < projects.length - 1 ? dataIndex + 1 : 0
-      )?.slug;
-
-    const data = projects[dataIndex]!,
-      adjacentIds = {
-        prev: prevId,
-        next: nextId
-      };
 
     return NextResponse.json({
       ok: true,
@@ -89,6 +60,42 @@ const GET = async (
       message: 'Something went wrong!'
     });
   }
+};
+
+const resolveParams = async (
+  searchParams: URLSearchParams,
+  requestParams: Params
+) => {
+  const requestParamsRes = await requestParams;
+
+  const params: Record<keyof SearchParams, string | null> = {
+    locale: searchParams.get('locale')
+  };
+
+  return {
+    locale: isType<SearchParams['locale']>(!!params.locale, params.locale)
+      ? params.locale
+      : DEFAULT_PARAMS.locale,
+    slug: normId(requestParamsRes.slug)
+  };
+};
+
+const resolveResults = (params: Awaited<ReturnType<typeof resolveParams>>) => {
+  const t = getTranslations(params.locale),
+    data = (t.projects as Record<string, Project>)[params.slug] ?? undefined;
+
+  if (data === undefined) return {};
+
+  const resultsAux = keys(t.projects),
+    index = resultsAux.indexOf(params.slug);
+
+  return {
+    data,
+    adjacentIds: {
+      prev: resultsAux.at(index > 0 ? index - 1 : -1),
+      next: resultsAux.at(index < resultsAux.length - 1 ? index + 1 : 0)
+    }
+  };
 };
 
 export { GET };

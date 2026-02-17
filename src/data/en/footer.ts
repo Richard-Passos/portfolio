@@ -1,56 +1,54 @@
 import { Footer } from '@/types';
 
-const footer = async (): Promise<Footer> => {
-  return {
-    action: {
-      label: 'Get in touch'
+const footer: Footer = {
+  action: {
+    label: 'Get in touch'
+  },
+  locationSeparator: '—',
+  description: [
+    {
+      type: 'paragraph',
+      children: [
+        {
+          text: 'The dev — who cares building solid and scalable products with a great user experience.'
+        }
+      ]
+    }
+  ],
+  madeBy: [
+    {
+      text: 'Made with ❤️ by '
     },
-    locationSeparator: '—',
-    description: [
-      {
-        type: 'paragraph',
-        children: [
-          {
-            text: 'The dev — who cares building solid and scalable products with a great user experience.'
-          }
-        ]
-      }
-    ],
-    madeBy: [
-      {
-        text: 'Made with ❤️ by '
-      },
-      {
-        type: 'link',
-        url: 'https://github.com/Richard-Passos',
-        children: [
-          {
-            text: 'Richard'
-          }
-        ]
-      },
-      {
-        text: '.'
-      }
-    ],
-    copyright: [
-      {
-        text: '© 2025 '
-      },
-      {
-        type: 'link',
-        url: 'https://github.com/Richard-Passos',
-        children: [
-          {
-            text: 'Richard Passos'
-          }
-        ]
-      },
-      {
-        text: '.'
-      }
-    ]
-  };
+    {
+      type: 'link',
+      url: 'https://github.com/Richard-Passos',
+      children: [
+        {
+          text: 'Richard'
+        }
+      ]
+    },
+    {
+      text: '.'
+    }
+  ],
+  copyright: [
+    {
+      text: '© 2025 '
+    },
+    {
+      type: 'link',
+      url: 'https://github.com/Richard-Passos',
+      children: [
+        {
+          text: 'Richard Passos'
+        }
+      ]
+    },
+    {
+      text: '.'
+    }
+  ]
 };
 
 export default footer;

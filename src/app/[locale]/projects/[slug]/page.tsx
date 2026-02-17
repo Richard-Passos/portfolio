@@ -1,9 +1,9 @@
-import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 import { SingleProjectTemplate } from '@/components/templates';
-import { entries, isLocale, normId } from '@/utils';
+import { Page, ProjectPage } from '@/types';
+import { isLocale, keys } from '@/utils';
 import { pagesApi, projectsApi } from '@/utils/actions';
 
 import { LayoutParams } from '../../layout';
@@ -17,6 +17,9 @@ type SingleProjectPageParams = {
 type SingleProjectPageProps = SingleProjectPageOwnProps &
   SingleProjectPageParams;
 
+const isValidPage = (page: Page): page is ProjectPage =>
+  page.type === 'project';
+
 const SingleProjectPage = async ({ params }: SingleProjectPageProps) => {
   const { locale, slug } = await params;
 
@@ -24,34 +27,26 @@ const SingleProjectPage = async ({ params }: SingleProjectPageProps) => {
 
   if (!isLocale(locale)) notFound();
 
-  const res = await pagesApi.getSingleProject({ slug: normId(slug), locale });
+  const res = await pagesApi.getProject({ slug, locale });
 
-  if (!res.ok) return notFound();
+  if (!res.ok || !isValidPage(res.data)) return notFound();
 
   const page = res.data;
 
   return (
     <SingleProjectTemplate
-      blocks={
-        entries(page.blocks).map(([key, value]) => ({
-          id: normId(key),
-          type: key,
-          ...value
-        })) as any
-      }
       hero={page.hero}
+      blocks={page.blocks}
     />
   );
 };
 
-const generateMetadata = async ({
-  params
-}: SingleProjectPageParams): Promise<Metadata> => {
+const generateMetadata = async ({ params }: SingleProjectPageParams) => {
   const { locale, slug } = await params;
 
   if (!isLocale(locale)) notFound();
 
-  const res = await pagesApi.getSingleProject({ slug: normId(slug), locale });
+  const res = await pagesApi.getProject({ slug, locale });
 
   if (!res.ok) return notFound();
 
@@ -69,9 +64,9 @@ const generateStaticParams = async ({
 
   const res = await projectsApi.get({ locale, isSelected: true });
 
-  const projects = res.ok ? res.data : [];
+  const projects = res.ok ? res.data : undefined;
 
-  return projects.map((d) => ({ slug: d.slug }));
+  return keys(projects).map((slug) => ({ slug }));
 };
 
 export default SingleProjectPage;

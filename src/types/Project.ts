@@ -1,5 +1,4 @@
 type Project = {
-  slug: string;
   isSelected?: boolean;
   href: string;
   title: string;
@@ -14,11 +13,13 @@ type Project = {
     src: string;
     alt: string;
   };
-  images?: {
-    id: string;
-    src: string;
-    alt: string;
-  }[];
+  images?: Record<
+    string,
+    {
+      src: string;
+      alt: string;
+    }
+  >;
 };
 
 export default Project;

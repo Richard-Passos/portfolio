@@ -1,12 +1,12 @@
 import pagesApiGet from './get';
 import pagesApiGetOne from './getOne';
-import pagesApiGetSingleProject from './getSingleProject';
+import pagesApiGetProject from './getProject';
 
 const pagesApi = {
   get: pagesApiGet,
   getOne: pagesApiGetOne,
-  getSingleProject: pagesApiGetSingleProject
+  getProject: pagesApiGetProject
 };
 
 export default pagesApi;
-export { pagesApiGet, pagesApiGetOne, pagesApiGetSingleProject };
+export { pagesApiGet, pagesApiGetOne, pagesApiGetProject };

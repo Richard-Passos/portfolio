@@ -1,18 +1,8 @@
-import { Metadata } from 'next';
+import DefaultPage from './DefaultPage';
+import ErrorPage from './ErrorPage';
+import LegalPage from './LegalPage';
+import ProjectPage from './ProjectPage';
 
-import Heros from '@/components/templates/Heros';
-import Blocks from @/components/templates/Heroslates/Blocks';
-
-import TypeVariants from './TypeVariants';
-
-type Page = {
-  type?: 'page';
-  slug: string;
-  isSelected?: boolean;
-  label: string;
-  hero: TypeVariants<typeof Heros>;
-  blocks?: TypeVariants<typeof Blocks>[];
-  metadata: Metadata;
-};
+type Page = DefaultPage | ErrorPage | ProjectPage | LegalPage;
 
 export default Page;

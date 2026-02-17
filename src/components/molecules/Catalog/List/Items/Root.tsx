@@ -3,9 +3,10 @@
 import { ReactNode } from 'react';
 
 import { useCatalogContext } from '@/hooks/contexts';
+import { entries } from '@/utils';
 
 type CatalogListItemsMoleculeProps<T> = {
-  children?: (value: T, index: number, array: T[]) => ReactNode;
+  children?: (value: [string, T], index: number) => ReactNode;
 };
 
 const CatalogListItemsMolecule = <T,>({
@@ -13,7 +14,7 @@ const CatalogListItemsMolecule = <T,>({
 }: CatalogListItemsMoleculeProps<T>) => {
   const { items } = useCatalogContext<T>();
 
-  return children && items.map(children);
+  return children && entries(items).map(children);
 };
 
 export default CatalogListItemsMolecule;
