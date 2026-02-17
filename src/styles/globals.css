@@ -434,14 +434,14 @@
     @apply bg-clip-text not-italic [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:--spacing(0.5)];
   }
 
+  :focus-visible {
+    @apply outline-primary-filled outline-2 outline-offset-2;
+  }
+
   .border,
   .border-x,
   .border-y {
     @apply border-border border-solid;
-  }
-
-  .outline {
-    @apply outline-primary-filled outline-2 outline-offset-2;
   }
 
   .lenis.lenis-smooth {

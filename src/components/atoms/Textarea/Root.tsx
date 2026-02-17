@@ -17,9 +17,9 @@ const CLASS_NAMES = {
   },
   variant: {
     default:
-      '[&_textarea]:[--input-bd:var(--color-border)] [&_textarea]:[--input-bg:var(--color-white)] dark:[&_textarea]:[--input-bg:var(--color-dark-6)] [&_textarea:focus]:[--input-bd:var(--input-bd-focus)]',
+      '[&_textarea]:[--input-bd:var(--color-border)] [&_textarea]:[--input-bg:var(--color-white)] dark:[&_textarea]:[--input-bg:var(--color-dark-6)] [&_textarea:focus]:[--input-bd:var(--color-border)]',
     filled:
-      '[&_textarea]:[--input-bg:var(--color-gray-0)] dark:[&_textarea]:[--input-bg:var(--color-dark-5)]',
+      '[&_textarea]:[--input-bg:var(--color-gray-0)] dark:[&_textarea]:[--input-bg:var(--color-dark-5)] [&_textarea:focus]:[--input-bd:transparent]',
     unstyled: ''
   }
 };

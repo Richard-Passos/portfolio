@@ -202,7 +202,6 @@ const themeOverride = createTheme({
   },
   defaultRadius: 'md',
   activeClassName: 'active:scale-[.98]',
-  focusClassName: 'focus-visible:outline',
   headings: {
     fontFamily: fonts.title.style.fontFamily,
     fontWeight: '600',
