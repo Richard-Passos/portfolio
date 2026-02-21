@@ -1,7 +1,7 @@
 import { BentoGrid } from '@/components/molecules';
 import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
-import PrimaryLayouts, {
-  PrimaryLayoutsProps
+import PrimaryLayout, {
+  PrimaryLayoutProps
 } from '@/components/organisms/Layouts/Primary';
 import { TypeVariants } from '@/types';
 import { entries } from '@/utils';
@@ -10,18 +10,18 @@ import { TCards } from '@/utils/getCard';
 import { RenderCard } from '../../Render';
 
 type BentoGridBlockOwnProps = {
-  data: PrimaryLayoutsProps['data'] & {
+  data: PrimaryLayoutProps['data'] & {
     templates: BentoGridRootProps['templates'];
     items: Record<string, TypeVariants<TCards>>;
   };
 };
 
 type BentoGridBlockProps = BentoGridBlockOwnProps &
-  Omit<PrimaryLayoutsProps, keyof BentoGridBlockOwnProps | 'data'>;
+  Omit<PrimaryLayoutProps, keyof BentoGridBlockOwnProps | 'data'>;
 
 const BentoGridBlock = ({ data, ...props }: BentoGridBlockProps) => {
   return (
-    <PrimaryLayouts
+    <PrimaryLayout
       data={{
         title: data.title,
         description: data.description
@@ -40,7 +40,7 @@ const BentoGridBlock = ({ data, ...props }: BentoGridBlockProps) => {
           </BentoGrid.ScrollAnimate>
         ))}
       </BentoGrid.Root>
-    </PrimaryLayouts>
+    </PrimaryLayout>
   );
 };
 

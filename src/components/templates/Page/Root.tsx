@@ -17,22 +17,25 @@ const PageTemplate = ({ hero, blocks }: PageTemplateProps) => {
       {blocksEntries.map(([key, { theme, className, ...block }], i) => {
         const prevTheme =
             i === 0 ? hero?.theme : blocksEntries[i - 1]?.[1].theme,
-          isSameTheme = prevTheme === theme;
+          nextTheme =
+            i === blocksEntries.length - 1
+              ? undefined
+              : blocksEntries[i + 1]?.[1].theme,
+          isLastThemeSame = prevTheme === theme,
+          isNextThemeSame = nextTheme === theme;
 
         let radius;
-        if (!isSameTheme)
-          radius =
-            theme === 'dark' ? 'rounded-t-4xl' : '[*:has(+&)]:rounded-b-4xl';
+        if (theme === 'dark') {
+          radius = 'overflow-y-clip';
+          if (!isLastThemeSame) radius += ' rounded-t-4xl';
+          if (!isNextThemeSame) radius += ' rounded-b-4xl';
+        }
 
         return (
           <RenderBlock
             key={key}
             theme={theme}
-            className={cn(
-              'overflow-y-clip last:rounded-b-4xl',
-              radius,
-              className
-            )}
+            className={cn(radius, className)}
             {...block}
           />
         );

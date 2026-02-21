@@ -77,7 +77,7 @@ const SecondaryHero = ({ data, className, ...props }: SecondaryHeroProps) => {
 
         <div className='bg-body absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg border'>
           <ScrollAnimate config={yFullScrollAnim}>
-            <Lines className='text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px]' />
+            <Lines className='text-gray-3 dark:text-dark-4 h-screen translate-y-0 bg-size-[83.333px_66.666px]' />
           </ScrollAnimate>
         </div>
       </div>

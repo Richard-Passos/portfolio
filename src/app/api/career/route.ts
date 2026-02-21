@@ -39,22 +39,28 @@ const GET = async (
       params = resolveParams(searchParams),
       { results, totalResults } = resolveResults(params);
 
-    return NextResponse.json({
-      ok: true,
-      status: 200,
-      data: results,
-      meta: {
-        page: params.page,
-        totalPages: Math.ceil(totalResults / params.perPage),
-        totalResults
-      }
-    });
+    return NextResponse.json(
+      {
+        ok: true,
+        status: 200,
+        data: results,
+        meta: {
+          page: params.page,
+          totalPages: Math.ceil(totalResults / params.perPage),
+          totalResults
+        }
+      },
+      { status: 200 }
+    );
   } catch {
-    return NextResponse.json({
-      ok: false,
-      status: 500,
-      message: 'Something went wrong!'
-    });
+    return NextResponse.json(
+      {
+        ok: false,
+        status: 500,
+        message: 'Something went wrong!'
+      },
+      { status: 500 }
+    );
   }
 };
 

@@ -8,9 +8,10 @@ import {
   catalogContextDefaultValue
 } from '@/contexts/Catalog';
 import { useId } from '@/hooks';
+import { keys } from '@/utils';
 
 type CatalogProviderOwnProps<T> = {
-  items: Map<string, T>;
+  items: Record<string, T>;
   url?: string;
 };
 
@@ -27,8 +28,8 @@ const CatalogProvider = <T,>({
 }: CatalogProviderProps<T>) => {
   const id = useId();
 
-  const totalResults = items.size,
-    isEmpty = items.size === 0;
+  const totalResults = keys(items).length,
+    isEmpty = totalResults === 0;
 
   const value: CatalogContextInitialState<T> = useMemo(
     () => ({

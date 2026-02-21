@@ -2,8 +2,8 @@ import { Text } from '@/components/atoms';
 import { TextScrollAnimate } from '@/components/molecules';
 import { TextScrollAnimateProps } from '@/components/molecules/TextScrollAnimate';
 import Icons, { IconsProps } from '@/components/organisms/Icons';
-import CleanLayouts, {
-  CleanLayoutsProps
+import CleanLayout, {
+  CleanLayoutProps
 } from '@/components/organisms/Layouts/Clean';
 import { cn } from '@/utils';
 
@@ -18,12 +18,12 @@ type CtaTextBlockOwnProps = {
 };
 
 type CtaTextBlockProps = CtaTextBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof CtaTextBlockOwnProps>;
+  Omit<CleanLayoutProps, keyof CtaTextBlockOwnProps>;
 
 const CtaTextBlock = ({ data, className, ...props }: CtaTextBlockProps) => {
   return (
-    <CleanLayouts
-      className={cn(`3xl:min-h-bounds min-h-svh`, className)}
+    <CleanLayout
+      className={cn('3xl:min-h-bounds min-h-svh', className)}
       {...props}
     >
       <Text className='w-9by10 relative z-10 max-w-5xl text-center text-2xl leading-tight! font-semibold sm:text-4xl lg:text-[3.25rem]'>
@@ -34,7 +34,7 @@ const CtaTextBlock = ({ data, className, ...props }: CtaTextBlockProps) => {
         left={data.icons.left}
         right={data.icons.right}
       />
-    </CleanLayouts>
+    </CleanLayout>
   );
 };
 

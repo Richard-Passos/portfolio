@@ -36,7 +36,9 @@ const CareerCardOrganism = ({
       </Title>
 
       <Text className='text-dimmed mt-2 line-clamp-2 text-sm tracking-wider wrap-break-word lowercase'>
-        <span className='text-xs'>{data.year}</span>
+        <span className='text-xs'>
+          {data.year.start} — {data.year.end}
+        </span>
         {' / '}
         {values(data.roles)
           .toSorted((a, b) => a.localeCompare(b))

@@ -1,18 +1,7 @@
-import baseUrl from './baseUrl';
-import defaultPages from './defaultPages';
-import fonts from './fonts';
-import locales from './locales';
-import regexs from './regexs';
-import timeZone from './timeZone';
-
-const constants = {
-  baseUrl,
-  defaultPages,
-  fonts,
-  locales,
-  regexs,
-  timeZone
-};
-
-export default constants;
-export { baseUrl, defaultPages, fonts, locales, regexs, timeZone };
+export { default as baseUrl } from './baseUrl';
+export { default as cacheTags } from './cacheTags';
+export { default as defaultPages } from './defaultPages';
+export { default as fonts } from './fonts';
+export { default as locales } from './locales';
+export { default as regexs } from './regexs';
+export { default as timeZone } from './timeZone';

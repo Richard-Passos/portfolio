@@ -1,6 +1,6 @@
-import SingleProjectAdjacents, {
-  SingleProjectAdjacentsTemplateProps as SingleProjectAdjacentsProps
+import SingleProjectAdjacentsBlock, {
+  SingleProjectAdjacentsBlockProps
 } from './Root';
 
-export default SingleProjectAdjacents;
-export type { SingleProjectAdjacentsProps };
+export default SingleProjectAdjacentsBlock;
+export type { SingleProjectAdjacentsBlockProps };

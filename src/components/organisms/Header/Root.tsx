@@ -41,7 +41,7 @@ const HeaderOrganism = async ({ className, ...props }: HeaderOrganismProps) => {
     <HeaderdTheme>
       <header
         className={cn(
-          `bg-body max-w-bounds relative z-20 flex w-full flex-wrap items-center justify-center px-[6%] py-5 sm:px-[4%]`,
+          'max-w-bounds relative flex w-full flex-wrap items-center justify-center px-[6%] py-5 sm:px-[4%]',
           className
         )}
         {...props}

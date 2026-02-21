@@ -13,7 +13,7 @@ const CLASS_NAMES = {
   },
   variant: {
     default:
-      '[&_input]:[--input-bd:var(--color-border)] [&_input:focus]:[--input-bd:var(--color-border)] [&_input]:[--input-bg:var(--color-white)] dark:[&_input]:[--input-bg:var(--color-dark-6)]',
+      '[&_input]:border-border [&_input]:[--input-bg:var(--color-white)] dark:[&_input]:[--input-bg:var(--color-dark-6)]',
     filled:
       '[&_input]:[--input-bg:var(--color-gray-0)] dark:[&_input]:[--input-bg:var(--color-dark-5)] [&_input:focus]:[--input-bd:transparent]',
     unstyled: ''
@@ -53,12 +53,12 @@ const SelectAtom = ({
         classNames: {
           ...comboboxProps?.classNames,
           dropdown: cn(
-            `bg-white [--popover-border-color:var(--color-border)] dark:bg-dark-6`,
+            'bg-white border-border dark:bg-dark-6',
             //@ts-ignore
             comboboxProps?.classNames?.dropdown
           ),
           option: cn(
-            `dark:hover:bg-dark-4 data-[combobox-selected]:!bg-primary-filled data-[combobox-selected]:text-primary-contrast hover:bg-gray-1`,
+            `dark:hover:bg-dark-4 data-[combobox-selected]:bg-primary-filled! data-[combobox-selected]:text-primary-contrast hover:bg-gray-1`,
             //@ts-ignore
             comboboxProps?.classNames?.option
           )

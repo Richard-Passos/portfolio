@@ -2,8 +2,8 @@ import { lineLeftScrollAnim } from '@/animations/scroll';
 import { ScrollAnimate, Title } from '@/components/atoms';
 import { Action } from '@/components/molecules';
 import { SkillCard } from '@/components/organisms/Cards';
-import PrimaryLayouts, {
-  PrimaryLayoutsProps
+import PrimaryLayout, {
+  PrimaryLayoutProps
 } from '@/components/organisms/Layouts/Primary';
 import { Skill } from '@/types';
 import { entries, renderComp } from '@/utils';
@@ -13,7 +13,7 @@ import SkillsBlockImage from './Image';
 import { SkillsBlockImageOrganismProps } from './Image/Root';
 
 type SkillsBlockOwnProps = {
-  data: PrimaryLayoutsProps['data'] &
+  data: PrimaryLayoutProps['data'] &
     SkillsBlockImageOrganismProps['data'] & {
       items: Record<string, Record<string, Skill>>;
       action?: {
@@ -23,26 +23,26 @@ type SkillsBlockOwnProps = {
 };
 
 type SkillsBlockProps = SkillsBlockOwnProps &
-  Omit<PrimaryLayoutsProps, keyof SkillsBlockOwnProps>;
+  Omit<PrimaryLayoutProps, keyof SkillsBlockOwnProps>;
 
 const SkillsBlock = ({ data, ...props }: SkillsBlockProps) => {
   return (
-    <PrimaryLayouts
+    <PrimaryLayout
       data={{
         title: data.title,
         description: data.description
       }}
       {...props}
     >
-      <section className='w-9by10 flex max-w-6xl items-start justify-end gap-4 md:gap-10'>
+      <section className='w-9by10 flex max-w-7xl items-start gap-4 lg:gap-10'>
         <SkillsBlockImage
-          className='grow basis-72 max-md:hidden'
+          className='w-1/3 shrink-0 max-md:hidden'
           data={{
             image: data.image
           }}
         />
 
-        <section className='flex max-w-2xl flex-col gap-10 py-10'>
+        <section className='flex max-w-2xl shrink flex-col gap-10 py-10'>
           {entries(data.items).map(([key, data]) => (
             <section key={key}>
               <div className='mb-5 flex items-center gap-2'>
@@ -87,7 +87,7 @@ const SkillsBlock = ({ data, ...props }: SkillsBlockProps) => {
           [data.action]
         )}
       </section>
-    </PrimaryLayouts>
+    </PrimaryLayout>
   );
 };
 

@@ -1,8 +1,8 @@
-'use server';
-
 import { ProjectsResponse } from '@/app/api/projects/route';
+import { cacheTags } from '@/constants';
 import { Locale } from '@/types';
-import { request } from '@/utils';
+
+import request from '../request';
 
 type Params = {
   locale: Locale['value'];
@@ -15,7 +15,13 @@ const projectsApiGet = async (
 ) =>
   await request<ProjectsResponse>(
     `/api/projects?locale=${params.locale}&is-selected=${!!params.isSelected}`,
-    config
+    {
+      ...config,
+      next: {
+        tags: [cacheTags.projects],
+        ...config?.next
+      }
+    }
   );
 
 export default projectsApiGet;

@@ -1,7 +1,7 @@
 import { Card } from '@/components/atoms';
 import { Catalog } from '@/components/molecules';
-import PrimaryLayouts, {
-  PrimaryLayoutsProps
+import PrimaryLayout, {
+  PrimaryLayoutProps
 } from '@/components/organisms/Layouts/Primary';
 import { Career } from '@/types';
 import { cn, serialize } from '@/utils';
@@ -10,14 +10,14 @@ import { Node } from '@/utils/serialize';
 import Items from './Items';
 
 type CareerCatalogBlockOwnProps = {
-  data: PrimaryLayoutsProps['data'] & {
+  data: PrimaryLayoutProps['data'] & {
     empty: Node[];
     items: Record<string, Career>;
   };
 };
 
 type CareerCatalogBlockProps = CareerCatalogBlockOwnProps &
-  Omit<PrimaryLayoutsProps, keyof CareerCatalogBlockOwnProps>;
+  Omit<PrimaryLayoutProps, keyof CareerCatalogBlockOwnProps>;
 
 const CareerCatalogBlock = ({
   data,
@@ -25,19 +25,19 @@ const CareerCatalogBlock = ({
   ...props
 }: CareerCatalogBlockProps) => {
   return (
-    <PrimaryLayouts
+    <PrimaryLayout
       data={{
         title: data.title,
         description: data.description
       }}
-      className={cn('3xl:min-h-fit min-h-fit lg:flex-row', className)}
+      className={cn('w-9by10 3xl:min-h-fit min-h-fit lg:flex-row', className)}
       headerProps={{
         className: 'flex-col lg:w-fit lg:mr-8 lg:mb-auto md:items-start'
       }}
       {...props}
     >
       <Catalog.Root
-        className='w-9by10 max-w-4xl'
+        className='max-w-4xl'
         items={data.items}
       >
         <Catalog.Empty className='flex w-full'>
@@ -50,7 +50,7 @@ const CareerCatalogBlock = ({
           <Items />
         </Catalog.List.Root>
       </Catalog.Root>
-    </PrimaryLayouts>
+    </PrimaryLayout>
   );
 };
 

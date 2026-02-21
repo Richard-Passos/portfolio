@@ -18,7 +18,6 @@ export { default as normId } from './normId';
 export { default as normKey } from './normKey';
 export { default as pick } from './pick';
 export { default as renderComp } from './renderComp';
-export { default as request } from './request';
 export { default as serialize } from './serialize';
 export { default as setOrRemove } from './setOrRemove';
 export { default as setRefs } from './setRefs';

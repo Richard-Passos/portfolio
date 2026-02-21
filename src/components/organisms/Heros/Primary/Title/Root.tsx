@@ -17,7 +17,7 @@ const PrimaryHeroTitleOrganism = ({
   return (
     <Title
       className={cn(
-        `w-full tracking-tighter wrap-break-word uppercase lg:leading-none`,
+        'w-full tracking-tighter wrap-break-word uppercase lg:leading-none',
         className
       )}
       order={1}
@@ -27,11 +27,11 @@ const PrimaryHeroTitleOrganism = ({
         paragraph: {
           'aria-hidden': true,
           className:
-            'mt-auto max-w-md text-start font-display text-[.15em]/normal font-medium normal-case tracking-normal -translate-y-3.5 max-lg:hidden'
+            'mt-auto max-w-md basis-0 grow text-start font-display text-[.15em]/normal font-medium normal-case tracking-normal -translate-y-3.5 max-lg:hidden'
         },
         alignText: {
           className: cn(
-            'flex w-full flex-wrap justify-center gap-x-[.2em] !text-center',
+            'flex w-full justify-center flex-wrap gap-x-[.2em] text-center! [word-break:break-word]',
             'lg:data-[align=left]:justify-start',
             'lg:data-[align=center]:justify-evenly',
             'lg:data-[align=right]:justify-end'

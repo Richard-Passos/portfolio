@@ -13,10 +13,7 @@ type FormWatchMoleculeProps = FormWatchMoleculeOwnProps &
 
 const FormWatchMolecule = ({ name, ...props }: FormWatchMoleculeProps) => {
   const { control } = useFormContext(),
-    value = useWatch({
-      control,
-      name
-    });
+    value = useWatch({ control, name });
 
   props = {
     value,

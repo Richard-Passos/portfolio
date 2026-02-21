@@ -19,17 +19,14 @@ const projects: Record<string, Project> = {
     },
     images: [
       {
-        id: 'image-00',
         src: '/images/portal-ead-00.png',
         alt: ''
       },
       {
-        id: 'image-01',
         src: '/images/portal-ead-01.png',
         alt: ''
       },
       {
-        id: 'image-02',
         src: '/images/portal-ead-02.png',
         alt: ''
       }
@@ -53,27 +50,22 @@ const projects: Record<string, Project> = {
     },
     images: [
       {
-        id: 'image-00',
         src: '/images/portfolio-pt-00.webp',
         alt: ''
       },
       {
-        id: 'image-01',
         src: '/images/portfolio-pt-01.webp',
         alt: ''
       },
       {
-        id: 'image-02',
         src: '/images/portfolio-pt-02.webp',
         alt: ''
       },
       {
-        id: 'image-03',
         src: '/images/portfolio-pt-03.webp',
         alt: ''
       },
       {
-        id: 'image-04',
         src: '/images/portfolio-pt-04.webp',
         alt: ''
       }
@@ -97,22 +89,18 @@ const projects: Record<string, Project> = {
     },
     images: [
       {
-        id: 'image-00',
         src: '/images/store-pt-00.webp',
         alt: ''
       },
       {
-        id: 'image-01',
         src: '/images/store-pt-01.webp',
         alt: ''
       },
       {
-        id: 'image-02',
         src: '/images/store-pt-02.webp',
         alt: ''
       },
       {
-        id: 'image-03',
         src: '/images/store-pt-03.webp',
         alt: ''
       }
@@ -136,17 +124,14 @@ const projects: Record<string, Project> = {
     },
     images: [
       {
-        id: 'image-00',
         src: '/images/nextflix-en-00.webp',
         alt: ''
       },
       {
-        id: 'image-01',
         src: '/images/nextflix-en-01.webp',
         alt: ''
       },
       {
-        id: 'image-02',
         src: '/images/nextflix-en-02.webp',
         alt: ''
       }
@@ -170,7 +155,6 @@ const projects: Record<string, Project> = {
     },
     images: [
       {
-        id: 'image-00',
         src: '/images/todo-en-00.webp',
         alt: ''
       }
@@ -194,7 +178,6 @@ const projects: Record<string, Project> = {
     },
     images: [
       {
-        id: 'image-00',
         src: '/images/in-progress.webp',
         alt: ''
       }

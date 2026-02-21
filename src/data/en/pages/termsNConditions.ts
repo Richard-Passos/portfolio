@@ -707,7 +707,7 @@ const footer: LegalPage['footer'] = [
 ];
 
 const termsNConditionsPage: LegalPage = {
-  ...(pages['terms-and-conditions'] as LegalPage),
+  ...(pages['terms-n-conditions'] as LegalPage),
   hero,
   blocks,
   footer

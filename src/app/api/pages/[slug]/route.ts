@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 import { defaultLocale } from '@/constants/locales';
 import { Locale, Page } from '@/types';
-import { getTranslations, isType, normId } from '@/utils';
+import { getTranslations, isType, normId, normKey } from '@/utils';
 
 type Params = Promise<{
   slug: string;
@@ -35,23 +35,32 @@ const GET = async (
       data = resolveResults(params);
 
     if (data === undefined)
-      return NextResponse.json({
-        ok: false,
-        status: 404,
-        message: 'Page not found!'
-      });
+      return NextResponse.json(
+        {
+          ok: false,
+          status: 404,
+          message: 'Page not found!'
+        },
+        { status: 404 }
+      );
 
-    return NextResponse.json({
-      ok: true,
-      status: 200,
-      data
-    });
+    return NextResponse.json(
+      {
+        ok: true,
+        status: 200,
+        data
+      },
+      { status: 200 }
+    );
   } catch {
-    return NextResponse.json({
-      ok: false,
-      status: 500,
-      message: 'Something went wrong!'
-    });
+    return NextResponse.json(
+      {
+        ok: false,
+        status: 500,
+        message: 'Something went wrong!'
+      },
+      { status: 500 }
+    );
   }
 };
 
@@ -66,7 +75,7 @@ const resolveParams = async (
   };
 
   return {
-    slug: normId(requestParamsRes.slug),
+    slug: normKey(requestParamsRes.slug),
     locale: isType<SearchParams['locale']>(!!params.locale, params.locale)
       ? params.locale
       : DEFAULT_PARAMS.locale

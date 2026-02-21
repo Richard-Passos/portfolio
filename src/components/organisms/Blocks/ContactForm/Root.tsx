@@ -5,23 +5,20 @@ import { Lines, ScrollAnimate, Title } from '@/components/atoms';
 import ContactForm, {
   ContactFormProps
 } from '@/components/organisms/Forms/Contact';
-import CleanLayouts, {
-  CleanLayoutsProps
+import CleanLayout, {
+  CleanLayoutProps
 } from '@/components/organisms/Layouts/Clean';
 import { cn } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
 type ContactFormBlockOwnProps = {
-  data: Pick<
-    ContactFormProps,
-    'fields' | 'to' | 'optionalLabel' | 'messages'
-  > & {
+  data: {
     title: Node[];
-  };
+  } & Pick<ContactFormProps, 'fields' | 'to' | 'optionalLabel' | 'messages'>;
 };
 
 type ContactFormBlockProps = ContactFormBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof ContactFormBlockOwnProps>;
+  Omit<CleanLayoutProps, keyof ContactFormBlockOwnProps>;
 
 const ContactFormBlock = ({
   data,
@@ -29,16 +26,16 @@ const ContactFormBlock = ({
   ...props
 }: ContactFormBlockProps) => {
   return (
-    <CleanLayouts
+    <CleanLayout
       className={cn(
-        `w-9by10 max-w-7xl gap-4 sm:flex-row sm:items-stretch md:gap-10`,
+        'w-9by10 max-w-7xl gap-4 sm:flex-row sm:items-stretch md:gap-10',
         className
       )}
       {...props}
     >
-      <div className='bg-body relative flex grow basis-48 items-center justify-center overflow-hidden border max-sm:hidden'>
+      <div className='bg-body relative flex grow basis-48 items-center justify-center overflow-hidden border max-md:hidden'>
         <ScrollAnimate config={yFullScrollAnim}>
-          <Lines className='text-border! top-auto h-screen translate-y-0 bg-size-[83.333px_66.666px]' />
+          <Lines className='text-gray-3 dark:text-dark-4 h-screen translate-y-0 bg-size-[83.333px_66.666px]' />
         </ScrollAnimate>
       </div>
 
@@ -58,7 +55,7 @@ const ContactFormBlock = ({
           to={data.to}
         />
       </div>
-    </CleanLayouts>
+    </CleanLayout>
   );
 };
 

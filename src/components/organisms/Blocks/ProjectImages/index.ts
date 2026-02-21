@@ -1,6 +1,6 @@
-import SingleProjectImages, {
-  SingleProjectImagesTemplateProps as SingleProjectImagesProps
+import SingleProjectImagesBlock, {
+  SingleProjectImagesBlockProps
 } from './Root';
 
-export default SingleProjectImages;
-export type { SingleProjectImagesProps };
+export default SingleProjectImagesBlock;
+export type { SingleProjectImagesBlockProps };

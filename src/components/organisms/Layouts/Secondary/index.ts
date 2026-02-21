@@ -1,4 +1,4 @@
-import SecondaryLayouts, { SecondaryLayoutsProps } from './Root';
+import SecondaryLayout, { SecondaryLayoutProps } from './Root';
 
-export default SecondaryLayouts;
-export type { SecondaryLayoutsProps };
+export default SecondaryLayout;
+export type { SecondaryLayoutProps };

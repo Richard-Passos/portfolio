@@ -6,7 +6,7 @@ import { ActionLinkProps } from '@/components/molecules/Action/Link';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 
-type SingleProjectAdjacentsTemplateOwnProps = {
+type SingleProjectAdjacentsBlockOwnProps = {
   data: {
     prev: {
       label: ReactNode;
@@ -21,15 +21,14 @@ type SingleProjectAdjacentsTemplateOwnProps = {
   };
 };
 
-type SingleProjectAdjacentsTemplateProps =
-  SingleProjectAdjacentsTemplateOwnProps &
-    Omit<SectionProps, keyof SingleProjectAdjacentsTemplateOwnProps>;
+type SingleProjectAdjacentsBlockProps = SingleProjectAdjacentsBlockOwnProps &
+  Omit<SectionProps, keyof SingleProjectAdjacentsBlockOwnProps>;
 
-const SingleProjectAdjacentsTemplate = ({
+const SingleProjectAdjacentsBlock = ({
   data,
   className,
   ...props
-}: SingleProjectAdjacentsTemplateProps) => {
+}: SingleProjectAdjacentsBlockProps) => {
   return (
     <Section
       className={cn(`3xl:min-h-fit min-h-fit`, className)}
@@ -92,5 +91,5 @@ const SingleProjectAdjacentsTemplate = ({
   );
 };
 
-export default SingleProjectAdjacentsTemplate;
-export type { SingleProjectAdjacentsTemplateProps };
+export default SingleProjectAdjacentsBlock;
+export type { SingleProjectAdjacentsBlockProps };

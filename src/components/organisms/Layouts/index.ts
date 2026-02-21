@@ -1,3 +1,3 @@
-export { default as CleanLayouts } from './Clean';
-export { default as PrimaryLayouts } from './Primary';
-export { default as SecondaryLayouts } from './Secondary';
+export { default as CleanLayout } from './Clean';
+export { default as PrimaryLayout } from './Primary';
+export { default as SecondaryLayout } from './Secondary';

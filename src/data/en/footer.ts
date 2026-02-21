@@ -34,7 +34,7 @@ const footer: Footer = {
   ],
   copyright: [
     {
-      text: '© 2025 '
+      text: '© 2026 '
     },
     {
       type: 'link',

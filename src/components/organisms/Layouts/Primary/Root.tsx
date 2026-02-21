@@ -1,30 +1,29 @@
 import { createPolymorphicComponent } from '@mantine/core';
 
 import Section, { SectionProps } from '@/components/organisms/Section';
-import { cn } from '@/utils';
 
-import PrimaryLayoutsHeader, { PrimaryLayoutsHeaderProps } from './Header';
+import PrimaryLayoutHeader, { PrimaryLayoutHeaderProps } from './Header';
 
-type PrimaryLayoutsOwnProps = {
+type PrimaryLayoutOwnProps = {
   data: {
-    title: PrimaryLayoutsHeaderProps['title'];
-    description?: PrimaryLayoutsHeaderProps['description'];
+    title: PrimaryLayoutHeaderProps['title'];
+    description?: PrimaryLayoutHeaderProps['description'];
   };
-  headerProps?: Partial<PrimaryLayoutsHeaderProps>;
+  headerProps?: Partial<PrimaryLayoutHeaderProps>;
 };
 
-type PrimaryLayoutsProps = PrimaryLayoutsOwnProps &
-  Omit<SectionProps, keyof PrimaryLayoutsOwnProps>;
+type PrimaryLayoutProps = PrimaryLayoutOwnProps &
+  Omit<SectionProps, keyof PrimaryLayoutOwnProps>;
 
-const PrimaryLayouts = ({
+const PrimaryLayout = ({
   children,
   data,
   headerProps,
   ...props
-}: PrimaryLayoutsProps) => {
+}: PrimaryLayoutProps) => {
   return (
     <Section {...props}>
-      <PrimaryLayoutsHeader
+      <PrimaryLayoutHeader
         description={data.description}
         title={data.title}
         {...headerProps}
@@ -35,7 +34,7 @@ const PrimaryLayouts = ({
   );
 };
 
-export default createPolymorphicComponent<'section', PrimaryLayoutsProps>(
-  PrimaryLayouts
+export default createPolymorphicComponent<'section', PrimaryLayoutProps>(
+  PrimaryLayout
 );
-export type { PrimaryLayoutsProps };
+export type { PrimaryLayoutProps };

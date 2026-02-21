@@ -40,7 +40,7 @@ const ToasterOrganism = ({
         toastOptions={{
           ...toastOptions,
           className: cn(
-            'rounded! bg-body! text-text! shadow!',
+            'rounded! bg-gray-0! dark:bg-dark-5! text-text! shadow!',
             toastOptions?.className
           )
         }}

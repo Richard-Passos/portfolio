@@ -1,6 +1,6 @@
 import { ListHorizontalScroll } from '@/components/molecules';
-import CleanLayouts, {
-  CleanLayoutsProps
+import CleanLayout, {
+  CleanLayoutProps
 } from '@/components/organisms/Layouts/Clean';
 import { entries } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
@@ -13,11 +13,11 @@ type ListMissionBlockOwnProps = {
 };
 
 type ListMissionBlockProps = ListMissionBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof ListMissionBlockOwnProps>;
+  Omit<CleanLayoutProps, keyof ListMissionBlockOwnProps>;
 
 const ListMissionBlock = ({ data, ...props }: ListMissionBlockProps) => {
   return (
-    <CleanLayouts {...props}>
+    <CleanLayout {...props}>
       <ListHorizontalScroll.Root>
         {entries(data.items).map(([key, item], i) => {
           const text = serialize(item.text),
@@ -58,7 +58,7 @@ const ListMissionBlock = ({ data, ...props }: ListMissionBlockProps) => {
           }
         })}
       </section>
-    </CleanLayouts>
+    </CleanLayout>
   );
 };
 

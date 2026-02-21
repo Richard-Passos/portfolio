@@ -1,10 +1,8 @@
 import projectsApiGet from './get';
-import projectsApiGetOne from './getOne';
 
 const projectsApi = {
-  get: projectsApiGet,
-  getOne: projectsApiGetOne
+  get: projectsApiGet
 };
 
 export default projectsApi;
-export { projectsApiGet, projectsApiGetOne };
+export { projectsApiGet };

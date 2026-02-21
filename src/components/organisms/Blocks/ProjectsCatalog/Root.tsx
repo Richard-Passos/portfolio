@@ -1,7 +1,7 @@
 import { Card } from '@/components/atoms';
 import { Catalog } from '@/components/molecules';
-import PrimaryLayouts, {
-  PrimaryLayoutsProps
+import PrimaryLayout, {
+  PrimaryLayoutProps
 } from '@/components/organisms/Layouts/Primary';
 import { Project } from '@/types';
 import { renderComp, serialize } from '@/utils';
@@ -11,21 +11,21 @@ import ProjectsCatalogGridBlock from './Grid';
 import ProjectsCatalogTableBlock from './Table';
 
 type ProjectsCatalogBlockOwnProps = {
-  data: PrimaryLayoutsProps['data'] & {
+  data: PrimaryLayoutProps['data'] & {
     empty: Node[];
     items: Record<string, Project>;
   };
 };
 
 type ProjectsCatalogBlockProps = ProjectsCatalogBlockOwnProps &
-  Omit<PrimaryLayoutsProps, keyof ProjectsCatalogBlockOwnProps>;
+  Omit<PrimaryLayoutProps, keyof ProjectsCatalogBlockOwnProps>;
 
 const ProjectsCatalogBlock = ({
   data,
   ...props
 }: ProjectsCatalogBlockProps) => {
   return (
-    <PrimaryLayouts
+    <PrimaryLayout
       data={{
         title: data.title
       }}
@@ -58,7 +58,7 @@ const ProjectsCatalogBlock = ({
           <ProjectsCatalogGridBlock className='ml-auto w-full sm:hidden' />
         </div>
       </Catalog.Root>
-    </PrimaryLayouts>
+    </PrimaryLayout>
   );
 };
 

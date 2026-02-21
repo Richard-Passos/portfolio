@@ -5,6 +5,7 @@ import PageTemplate, { PageTemplateProps } from '../Page';
 type ErrorTemplateOwnProps = {
   hero: ErrorPage['hero'];
 };
+
 type ErrorTemplateProps = ErrorTemplateOwnProps &
   Omit<PageTemplateProps, keyof ErrorTemplateOwnProps>;
 

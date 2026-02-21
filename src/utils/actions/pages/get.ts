@@ -1,12 +1,12 @@
-'use server';
-
 import { PagesResponse } from '@/app/api/pages/route';
-import { Locale } from '@/types';
-import { request } from '@/utils';
+import { cacheTags } from '@/constants';
+import { Locale, Page } from '@/types';
+
+import { request } from '../';
 
 type Params = {
   locale: Locale['value'];
-  type?: 'page' | 'error' | 'single-project' | 'legal';
+  type?: Page['type'];
   isSelected?: boolean;
 };
 
@@ -14,13 +14,22 @@ const pagesApiGet = async (
   params: Params,
   config?: Parameters<typeof request>['1']
 ) => {
-  const locale = params.locale ? `locale=${params.locale}` : '',
-    isSelected = params.isSelected ? `is-selected=${!!params.isSelected}` : '',
-    type = params.type ? `type=${params.type}` : '';
+  const searchParams = new URLSearchParams();
+  if (params.locale) searchParams.append('locale', params.locale);
+  if (params.type) searchParams.append('type', params.type);
+  if (params.isSelected)
+    searchParams.append('is-selected', String(params.isSelected));
 
-  const query = [locale, isSelected, type].join('&');
+  const query = searchParams.toString(),
+    target_url = `/api/pages${query ? `?${query}` : ''}`;
 
-  return await request<PagesResponse>(`/api/pages?${query}`, config);
+  return await request<PagesResponse>(target_url, {
+    ...config,
+    next: {
+      tags: [cacheTags.pages],
+      ...config?.next
+    }
+  });
 };
 
 export default pagesApiGet;

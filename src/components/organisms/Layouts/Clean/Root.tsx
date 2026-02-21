@@ -3,12 +3,12 @@ import { createPolymorphicComponent } from '@mantine/core';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 
-type CleanLayoutsOwnProps = {};
+type CleanLayoutOwnProps = {};
 
-type CleanLayoutsProps = CleanLayoutsOwnProps &
-  Omit<SectionProps, keyof CleanLayoutsOwnProps>;
+type CleanLayoutProps = CleanLayoutOwnProps &
+  Omit<SectionProps, keyof CleanLayoutOwnProps>;
 
-const CleanLayouts = ({ className, ...props }: CleanLayoutsProps) => {
+const CleanLayout = ({ className, ...props }: CleanLayoutProps) => {
   return (
     <Section
       className={cn(`3xl:min-h-fit min-h-fit justify-center`, className)}
@@ -17,7 +17,7 @@ const CleanLayouts = ({ className, ...props }: CleanLayoutsProps) => {
   );
 };
 
-export default createPolymorphicComponent<'section', CleanLayoutsProps>(
-  CleanLayouts
+export default createPolymorphicComponent<'section', CleanLayoutProps>(
+  CleanLayout
 );
-export type { CleanLayoutsProps };
+export type { CleanLayoutProps };

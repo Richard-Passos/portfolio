@@ -38,7 +38,7 @@ const SectionOrganism = ({
       data-theme={theme}
       ref={setRefs(ref, innerRef)}
       className={cn(
-        'bg-body 3xl:min-h-bounds relative z-10 flex min-h-svh w-full flex-col items-center justify-center py-32',
+        '3xl:min-h-bounds relative flex min-h-svh w-full flex-col items-center justify-center py-[clamp(--spacing(24),4.5vw+2rem,--spacing(32))]',
         className
       )}
       {...props}

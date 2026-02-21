@@ -23,6 +23,14 @@ const pages: Record<string, Page> = {
         'Entre em contato! Fale comigo através do formulário ou e-mail para discutir suas necessidades de projeto e explorar meus serviços de desenvolvimento full stack.'
     }
   },
+  revalidate: {
+    isSelected: false,
+    label: 'Revalidar',
+    metadata: {
+      title: 'Revalidar',
+      description: 'Revalidar o cache.'
+    }
+  },
   project: {
     type: 'project'
   },
@@ -39,7 +47,6 @@ const pages: Record<string, Page> = {
   },
   'cookies-policy': {
     type: 'legal',
-    theme: 'dark',
     label: 'Política de Cookies',
     metadata: {
       title: 'Política de Cookies',
@@ -49,7 +56,6 @@ const pages: Record<string, Page> = {
   },
   disclaimer: {
     type: 'legal',
-    theme: 'dark',
     label: 'Isenção de Garantia',
     metadata: {
       title: 'Isenção de Garantia',
@@ -59,7 +65,6 @@ const pages: Record<string, Page> = {
   },
   'privacy-policy': {
     type: 'legal',
-    theme: 'dark',
     label: 'Política de Privacidade',
     metadata: {
       title: 'Política de Privacidade',
@@ -67,9 +72,8 @@ const pages: Record<string, Page> = {
         'Explore nossa política de privacidade, que descreve como protegemos seus dados e garantimos seus direitos enquanto você utiliza nossos serviços.'
     }
   },
-  'terms-and-conditions': {
+  'terms-n-conditions': {
     type: 'legal',
-    theme: 'dark',
     label: 'Termos e Condições',
     metadata: {
       title: 'Termos e Condições',

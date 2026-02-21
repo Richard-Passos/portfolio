@@ -7,7 +7,7 @@ import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
-type SecondaryLayoutsOwnProps = {
+type SecondaryLayoutOwnProps = {
   data: {
     title: Node[];
   };
@@ -15,16 +15,16 @@ type SecondaryLayoutsOwnProps = {
   headerProps?: Partial<ComponentProps<'header'>>;
 };
 
-type SecondaryLayoutsProps = SecondaryLayoutsOwnProps &
-  Omit<SectionProps, keyof SecondaryLayoutsOwnProps>;
+type SecondaryLayoutProps = SecondaryLayoutOwnProps &
+  Omit<SectionProps, keyof SecondaryLayoutOwnProps>;
 
-const SecondaryLayouts = ({
+const SecondaryLayout = ({
   data,
   subChildren,
   children,
   headerProps,
   ...props
-}: SecondaryLayoutsProps) => {
+}: SecondaryLayoutProps) => {
   return (
     <Section {...props}>
       <header
@@ -61,7 +61,7 @@ const SecondaryLayouts = ({
   );
 };
 
-export default createPolymorphicComponent<'section', SecondaryLayoutsProps>(
-  SecondaryLayouts
+export default createPolymorphicComponent<'section', SecondaryLayoutProps>(
+  SecondaryLayout
 );
-export type { SecondaryLayoutsProps };
+export type { SecondaryLayoutProps };

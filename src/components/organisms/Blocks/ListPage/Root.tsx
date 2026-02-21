@@ -6,8 +6,8 @@ import {
   ListHorizontalScrollItemProps,
   ListHorizontalScrollRootProps
 } from '@/components/molecules/ListHorizontalScroll';
-import CleanLayouts, {
-  CleanLayoutsProps
+import CleanLayout, {
+  CleanLayoutProps
 } from '@/components/organisms/Layouts/Clean';
 import { cn, entries } from '@/utils';
 
@@ -25,7 +25,7 @@ type ListPageBlockOwnProps = {
 };
 
 type ListPageBlockProps = ListPageBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof ListPageBlockOwnProps>;
+  Omit<CleanLayoutProps, keyof ListPageBlockOwnProps>;
 
 const ListPageBlock = ({
   data,
@@ -35,7 +35,7 @@ const ListPageBlock = ({
   ...props
 }: ListPageBlockProps) => {
   return (
-    <CleanLayouts {...props}>
+    <CleanLayout {...props}>
       <ListHorizontalScroll.Root {...listProps}>
         {entries(data.items).map(([key, item], i) => (
           <ListHorizontalScroll.Item
@@ -79,7 +79,7 @@ const ListPageBlock = ({
       >
         {data.action.label}
       </Action>
-    </CleanLayouts>
+    </CleanLayout>
   );
 };
 

@@ -1,5 +1,3 @@
-'use server';
-
 import { getLocale as intlGetLocale } from 'next-intl/server';
 
 import { Locale } from '@/types';

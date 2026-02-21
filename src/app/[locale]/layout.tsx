@@ -50,7 +50,7 @@ const Layout = async ({ params, children }: LayoutProps) => {
           <SmoothScroll>
             <Header />
 
-            <main className='max-w-bounds 3xl:min-h-bounds max-3xl:grow flex w-full flex-col items-center'>
+            <main className='max-w-bounds 3xl:min-h-bounds max-3xl:grow flex w-full flex-col items-center *:last:overflow-y-clip *:last:rounded-b-4xl'>
               {children}
             </main>
 

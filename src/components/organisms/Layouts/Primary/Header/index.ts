@@ -1,6 +1,6 @@
-import PrimaryLayoutsHeader, {
-  PrimaryLayoutsHeaderOrganismProps as PrimaryLayoutsHeaderProps
+import PrimaryLayoutHeader, {
+  PrimaryLayoutHeaderOrganismProps as PrimaryLayoutHeaderProps
 } from './Root';
 
-export default PrimaryLayoutsHeader;
-export type { PrimaryLayoutsHeaderProps };
+export default PrimaryLayoutHeader;
+export type { PrimaryLayoutHeaderProps };

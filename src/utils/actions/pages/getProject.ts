@@ -1,8 +1,8 @@
-'use server';
-
 import { ProjectPageResponse } from '@/app/api/pages/projects/[slug]/route';
+import { cacheTags } from '@/constants';
 import { Locale } from '@/types';
-import { request } from '@/utils';
+
+import { request } from '../';
 
 type Params = {
   slug: string;
@@ -15,7 +15,13 @@ const pagesApiGetProject = async (
 ) =>
   await request<ProjectPageResponse>(
     `/api/pages/projects/${params.slug}?locale=${params.locale}`,
-    config
+    {
+      ...config,
+      next: {
+        tags: [cacheTags.pages],
+        ...config?.next
+      }
+    }
   );
 
 export default pagesApiGetProject;

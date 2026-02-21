@@ -13,13 +13,10 @@ type Project = {
     src: string;
     alt: string;
   };
-  images?: Record<
-    string,
-    {
-      src: string;
-      alt: string;
-    }
-  >;
+  images?: {
+    src: string;
+    alt: string;
+  }[];
 };
 
 export default Project;

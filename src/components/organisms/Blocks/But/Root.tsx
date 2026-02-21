@@ -4,8 +4,8 @@ import { TextProps } from '@/components/atoms/Text';
 import { TitleProps } from '@/components/atoms/Title';
 import { TextScrollAnimate } from '@/components/molecules';
 import { TextScrollAnimateProps } from '@/components/molecules/TextScrollAnimate';
-import CleanLayouts, {
-  CleanLayoutsProps
+import CleanLayout, {
+  CleanLayoutProps
 } from '@/components/organisms/Layouts/Clean';
 import { cn } from '@/utils';
 
@@ -50,7 +50,7 @@ type ButBlockOwnProps = {
 };
 
 type ButBlockProps = ButBlockOwnProps &
-  Omit<CleanLayoutsProps, keyof ButBlockOwnProps>;
+  Omit<CleanLayoutProps, keyof ButBlockOwnProps>;
 
 const ButBlock = ({
   data,
@@ -60,7 +60,7 @@ const ButBlock = ({
   ...props
 }: ButBlockProps) => {
   return (
-    <CleanLayouts
+    <CleanLayout
       className={cn(
         `3xl:min-h-[calc(var(--max-height-bounds)*1.5)] grid min-h-[150svh] grid-rows-3 items-stretch justify-stretch justify-items-center`,
         className
@@ -110,7 +110,7 @@ const ButBlock = ({
           </Title>
         </div>
       </ScrollAnimate>
-    </CleanLayouts>
+    </CleanLayout>
   );
 };
 

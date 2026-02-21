@@ -1,4 +1,4 @@
-import CleanLayouts, { CleanLayoutsProps } from './Root';
+import CleanLayout, { CleanLayoutProps } from './Root';
 
-export default CleanLayouts;
-export type { CleanLayoutsProps };
+export default CleanLayout;
+export type { CleanLayoutProps };

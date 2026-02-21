@@ -4,11 +4,9 @@ import { FieldValues } from 'react-hook-form';
 
 const sendEmail = async (values: FieldValues) => {
   const formData = new FormData();
-
   formData.append('name', values.name);
   formData.append('email', values.email);
   formData.append('subject', values.subject);
-  formData.append('service', values.service);
   formData.append('message', values.message);
 
   const res = await fetch('https://formspree.io/f/mrbzjkld', {

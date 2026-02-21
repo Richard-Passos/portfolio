@@ -6,20 +6,20 @@ import { SectionProps } from '@/components/organisms/Section';
 import { entries } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
-type SingleProjectImagesTemplateOwnProps = {
+type SingleProjectImagesBlockOwnProps = {
   data: {
     description?: Node[];
     items: Record<string, Pick<ImageProps, 'src' | 'alt'>>;
   };
 };
 
-type SingleProjectImagesTemplateProps = SingleProjectImagesTemplateOwnProps &
-  Omit<SectionProps, keyof SingleProjectImagesTemplateOwnProps>;
+type SingleProjectImagesBlockProps = SingleProjectImagesBlockOwnProps &
+  Omit<SectionProps, keyof SingleProjectImagesBlockOwnProps>;
 
-const SingleProjectImagesTemplate = ({
+const SingleProjectImagesBlock = ({
   data,
   ...props
-}: SingleProjectImagesTemplateProps) => {
+}: SingleProjectImagesBlockProps) => {
   return (
     <Section {...props}>
       <div className='w-9by10 flex max-w-7xl gap-4 max-md:flex-col md:justify-end'>
@@ -58,5 +58,5 @@ const SingleProjectImagesTemplate = ({
   );
 };
 
-export default SingleProjectImagesTemplate;
-export type { SingleProjectImagesTemplateProps };
+export default SingleProjectImagesBlock;
+export type { SingleProjectImagesBlockProps };

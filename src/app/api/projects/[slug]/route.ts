@@ -41,24 +41,33 @@ const GET = async (
       { data, adjacentIds } = resolveResults(params);
 
     if (data === undefined)
-      return NextResponse.json({
-        ok: false,
-        status: 404,
-        message: 'Project not found!'
-      });
+      return NextResponse.json(
+        {
+          ok: false,
+          status: 404,
+          message: 'Project not found!'
+        },
+        { status: 404 }
+      );
 
-    return NextResponse.json({
-      ok: true,
-      status: 200,
-      data,
-      meta: { adjacentIds }
-    });
+    return NextResponse.json(
+      {
+        ok: true,
+        status: 200,
+        data,
+        meta: { adjacentIds }
+      },
+      { status: 200 }
+    );
   } catch {
-    return NextResponse.json({
-      ok: false,
-      status: 500,
-      message: 'Something went wrong!'
-    });
+    return NextResponse.json(
+      {
+        ok: false,
+        status: 500,
+        message: 'Something went wrong!'
+      },
+      { status: 500 }
+    );
   }
 };
 

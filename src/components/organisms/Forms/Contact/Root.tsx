@@ -97,36 +97,39 @@ const ContactFormOrganism = ({
       <Form.Control name='name'>
         <TextInput
           className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-6'
-          label={fields.name.label}
-          placeholder={fields.name.placeholder}
           size='md'
           variant='filled'
+          label={fields.name.label}
+          description={fields.name.description}
+          placeholder={fields.name.placeholder}
         />
       </Form.Control>
 
       <Form.Control name='email'>
         <TextInput
           className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-6'
-          label={fields.email.label}
-          placeholder={fields.email.placeholder}
           size='md'
           type='email'
           variant='filled'
+          label={fields.email.label}
+          description={fields.email.description}
+          placeholder={fields.email.placeholder}
         />
       </Form.Control>
 
       <Form.Control name='subject'>
         <TextInput
           className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-12'
+          size='md'
+          variant='filled'
           label={
             <>
               {fields.subject.label}&nbsp;
               <span className='text-dimmed'>({optionalLabel})</span>
             </>
           }
+          description={fields.subject.description}
           placeholder={fields.subject.placeholder}
-          size='md'
-          variant='filled'
         />
       </Form.Control>
 
@@ -134,11 +137,12 @@ const ContactFormOrganism = ({
         <Textarea
           autosize
           className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-full md:col-span-9'
-          label={fields.message.label}
           minRows={3}
-          placeholder={fields.message.placeholder}
           size='md'
           variant='filled'
+          label={fields.message.label}
+          description={fields.message.description}
+          placeholder={fields.message.placeholder}
         />
       </Form.Control>
 

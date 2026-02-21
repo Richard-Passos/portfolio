@@ -10,6 +10,6 @@ export { default as ListMission } from './ListMission';
 export { default as ListPage } from './ListPage';
 export { default as ProjectImages } from './ProjectImages';
 export { default as ProjectsCatalog } from './ProjectsCatalog';
+export { default as RevalidateForm } from './RevalidateForm';
 export { default as Skills } from './Skills';
-export { default as Text } from './Text';
 export { default as Values } from './Values';

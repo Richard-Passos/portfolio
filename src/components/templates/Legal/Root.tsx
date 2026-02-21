@@ -4,21 +4,21 @@ import { LegalPage } from '@/types';
 import { serialize } from '@/utils';
 
 type LegalTemplateProps = {
-  theme: LegalPage['theme'];
   hero: LegalPage['hero'];
   blocks: LegalPage['blocks'];
   footer: LegalPage['footer'];
 };
 
-const LegalTemplate = ({ theme, hero, blocks, footer }: LegalTemplateProps) => {
+const LegalTemplate = ({ hero, blocks, footer }: LegalTemplateProps) => {
   return (
     <Section
       forceTheme
-      theme={theme}
+      theme='dark'
+      className='overflow-y-clip rounded-b-4xl'
     >
       <div className='w-9by10 flex max-w-5xl flex-col items-end'>
         {hero && (
-          <header className='mt-16 w-full'>
+          <header className='w-full'>
             <Title
               className='w-fit pl-[min(10vw,--spacing(20))] wrap-break-word data-[align=left]:*:-ml-[min(10vw,--spacing(20))]'
               order={1}

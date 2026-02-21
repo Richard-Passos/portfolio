@@ -1,7 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-import { SingleProjectTemplate } from '@/components/templates';
+import { ProjectTemplate } from '@/components/templates';
 import { Page, ProjectPage } from '@/types';
 import { isLocale, keys } from '@/utils';
 import { pagesApi, projectsApi } from '@/utils/actions';
@@ -34,7 +34,7 @@ const SingleProjectPage = async ({ params }: SingleProjectPageProps) => {
   const page = res.data;
 
   return (
-    <SingleProjectTemplate
+    <ProjectTemplate
       hero={page.hero}
       blocks={page.blocks}
     />

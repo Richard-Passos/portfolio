@@ -9,7 +9,7 @@ type CatalogMoleculeProps = AsChildProps<ComponentProps<'section'>>;
 const CatalogMolecule = ({ asChild, ...props }: CatalogMoleculeProps) => {
   if (asChild) return <Slot {...props} />;
 
-  return <section {...(props as ComponentProps<'section'>)} />;
+  return <section {...props} />;
 };
 
 type CatalogMoleculeWithProviderProps<T> = CatalogProviderProps<T> &

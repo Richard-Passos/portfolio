@@ -3,8 +3,8 @@ import { ComponentProps } from 'react';
 import { BentoGrid } from '@/components/molecules';
 import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
 import ValueCard from '@/components/organisms/Cards/Value';
-import SecondaryLayouts, {
-  SecondaryLayoutsProps
+import SecondaryLayout, {
+  SecondaryLayoutProps
 } from '@/components/organisms/Layouts/Secondary';
 import { Value } from '@/types';
 import { cn, entries } from '@/utils';
@@ -12,7 +12,7 @@ import { cn, entries } from '@/utils';
 import Icons, { IconsProps } from '../../Icons';
 
 type ValuesBlockOwnProps = {
-  data: SecondaryLayoutsProps['data'] & {
+  data: SecondaryLayoutProps['data'] & {
     templates: BentoGridRootProps['templates'];
     items: Record<string, Value>;
     icons: {
@@ -26,7 +26,7 @@ type ValuesBlockOwnProps = {
 };
 
 type ValuesBlockProps = ValuesBlockOwnProps &
-  Omit<SecondaryLayoutsProps, keyof ValuesBlockOwnProps>;
+  Omit<SecondaryLayoutProps, keyof ValuesBlockOwnProps>;
 
 const ValuesBlock = ({
   data,
@@ -36,7 +36,7 @@ const ValuesBlock = ({
   ...props
 }: ValuesBlockProps) => {
   return (
-    <SecondaryLayouts
+    <SecondaryLayout
       data={{
         title: data.title
       }}
@@ -74,7 +74,7 @@ const ValuesBlock = ({
           className={cn('max-lg:hidden', iconsProps?.className)}
         />
       </div>
-    </SecondaryLayouts>
+    </SecondaryLayout>
   );
 };
 

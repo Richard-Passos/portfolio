@@ -20,14 +20,14 @@ const SimpleCardOrganism = ({
 }: SimpleCardOrganismProps) => {
   return (
     <Card.Root
-      className={cn('justify-between', className)}
+      className={cn('flex-row items-center gap-2.5', className)}
       {...props}
     >
       <div className='size-6'>
         <Icon src={data.icon} />
       </div>
 
-      <section className='mt-2.5'>
+      <section>
         {serialize(data.description, {
           paragraph: {
             className: 'font-medium leading-tight'

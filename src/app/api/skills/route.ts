@@ -28,17 +28,23 @@ const GET = async (
       params = resolveParams(searchParams),
       results = resolveResults(params);
 
-    return NextResponse.json({
-      ok: true,
-      status: 200,
-      data: results
-    });
+    return NextResponse.json(
+      {
+        ok: true,
+        status: 200,
+        data: results
+      },
+      { status: 200 }
+    );
   } catch {
-    return NextResponse.json({
-      ok: false,
-      status: 500,
-      message: 'Something went wrong!'
-    });
+    return NextResponse.json(
+      {
+        ok: false,
+        status: 500,
+        message: 'Something went wrong!'
+      },
+      { status: 500 }
+    );
   }
 };
 

@@ -4,7 +4,8 @@ import { Icon, Link, Text } from '@/components/atoms';
 import { Action, Drawer, LocaleSelect } from '@/components/molecules';
 import { DrawerRootProps } from '@/components/molecules/Drawer';
 import { defaultPages, locales } from '@/constants';
-import { cn, entries, renderComp } from '@/utils';
+import { DefaultPage, LegalPage } from '@/types';
+import { cn, entries } from '@/utils';
 import { getLocale, headerApi, pagesApi, personalApi } from '@/utils/actions';
 
 import HeaderNav, { HeaderNavProps } from '../Nav';
@@ -30,7 +31,9 @@ const HeaderMenuOrganism = async (props: HeaderMenuOrganismProps) => {
 
   const header = headerRes.data,
     personal = personalRes.ok ? personalRes.data : undefined,
-    selectedPages = selectedPagesRes.ok ? selectedPagesRes.data : undefined;
+    selectedPages = selectedPagesRes.ok
+      ? (selectedPagesRes.data as Record<string, DefaultPage>)
+      : undefined;
 
   const navItems: HeaderNavProps['items'] = entries(selectedPages).map(
     ([key, p]) => ({
@@ -39,7 +42,9 @@ const HeaderMenuOrganism = async (props: HeaderMenuOrganismProps) => {
     })
   );
 
-  const legalPages = legalPagesRes.ok ? legalPagesRes.data : undefined;
+  const legalPages = legalPagesRes.ok
+    ? (legalPagesRes.data as Record<string, LegalPage>)
+    : undefined;
 
   const socials = personal?.socials;
 
@@ -94,48 +99,41 @@ const HeaderMenuOrganism = async (props: HeaderMenuOrganismProps) => {
             className='mt-1'
             data={locales}
           />
-
-          {renderComp(
-            <div className='flex flex-wrap items-center gap-2.5'>
-              {socials?.map((data) => (
-                <Action
-                  aria-label={data.label}
-                  as='link'
-                  href={data.href}
-                  isIconOnly
-                  key={data.href}
-                  variant='default'
-                >
-                  <Icon
-                    className='absolute size-2/3'
-                    src={data.icon}
-                  />
-                </Action>
-              ))}
-            </div>,
-            [socials]
-          )}
+          <div className='flex flex-wrap items-center gap-2.5'>
+            {socials?.map((data) => (
+              <Action
+                aria-label={data.label}
+                as='link'
+                href={data.href}
+                isIconOnly
+                key={data.href}
+                variant='default'
+              >
+                <Icon
+                  className='absolute size-2/3'
+                  src={data.icon}
+                />
+              </Action>
+            ))}
+          </div>
         </div>
 
-        {renderComp(
-          <Text
-            className='text-dimmed mt-4 block px-4 text-xs'
-            component='small'
-          >
-            {entries(legalPages).map(([key, d]) => (
-              <Fragment key={key}>
-                <Link
-                  className='text-[1em] text-inherit'
-                  href={`/${key}`}
-                >
-                  {d.label}
-                </Link>
-                .{' '}
-              </Fragment>
-            ))}
-          </Text>,
-          [!!legalPages?.size]
-        )}
+        <Text
+          className='text-dimmed mt-4 block px-4 text-xs'
+          component='small'
+        >
+          {entries(legalPages).map(([key, d]) => (
+            <Fragment key={key}>
+              <Link
+                className='text-[1em] text-inherit'
+                href={`/legal/${key}`}
+              >
+                {d.label}
+              </Link>
+              .{' '}
+            </Fragment>
+          ))}
+        </Text>
       </Drawer.Content>
     </Drawer.Root>
   );

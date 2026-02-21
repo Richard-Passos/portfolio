@@ -5,7 +5,7 @@ import { defaultPages } from '@/constants';
 import { ErrorPage, Page } from '@/types';
 import { getLocale, pagesApi } from '@/utils/actions';
 
-const isValidPage = (page: Page): page is ErrorPage => page.type !== 'error';
+const isValidPage = (page: Page): page is ErrorPage => page.type === 'error';
 
 const NotFoundPage = async () => {
   const locale = await getLocale();
@@ -37,7 +37,7 @@ const generateMetadata = async () => {
     locale
   });
 
-  if (!res.ok || res.data.type !== 'error') return {};
+  if (!res.ok || !isValidPage(res.data)) return {};
 
   const { metadata } = res.data;
 

@@ -2,7 +2,10 @@ type Career = {
   title: string;
   description: string;
   roles: string[];
-  year: number | string;
+  year: {
+    start: number | string;
+    end: number | string;
+  };
 };
 
 export default Career;

@@ -4,22 +4,22 @@ import { Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
 import { cn, renderComp, serialize } from '@/utils';
 
-type PrimaryLayoutsHeaderOrganismOwnProps = {
+type PrimaryLayoutHeaderOrganismOwnProps = {
   title: Parameters<typeof serialize>['0'];
   description?: Parameters<typeof serialize>['0'];
   titleProps?: Partial<TitleProps>;
 };
 
-type PrimaryLayoutsHeaderOrganismProps = PrimaryLayoutsHeaderOrganismOwnProps &
-  Omit<ComponentProps<'header'>, keyof PrimaryLayoutsHeaderOrganismOwnProps>;
+type PrimaryLayoutHeaderOrganismProps = PrimaryLayoutHeaderOrganismOwnProps &
+  Omit<ComponentProps<'header'>, keyof PrimaryLayoutHeaderOrganismOwnProps>;
 
-const PrimaryLayoutsHeaderOrganism = ({
+const PrimaryLayoutHeaderOrganism = ({
   className,
   title,
   description = [],
   titleProps,
   ...props
-}: PrimaryLayoutsHeaderOrganismProps) => {
+}: PrimaryLayoutHeaderOrganismProps) => {
   return (
     <header
       className={cn(
@@ -58,5 +58,5 @@ const PrimaryLayoutsHeaderOrganism = ({
   );
 };
 
-export default PrimaryLayoutsHeaderOrganism;
-export type { PrimaryLayoutsHeaderOrganismProps };
+export default PrimaryLayoutHeaderOrganism;
+export type { PrimaryLayoutHeaderOrganismProps };

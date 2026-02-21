@@ -1,4 +1,4 @@
-import PrimaryLayouts, { PrimaryLayoutsProps } from './Root';
+import PrimaryLayout, { PrimaryLayoutProps } from './Root';
 
-export default PrimaryLayouts;
-export type { PrimaryLayoutsProps };
+export default PrimaryLayout;
+export type { PrimaryLayoutProps };

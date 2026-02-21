@@ -334,7 +334,6 @@ const blocks: DefaultPage['blocks'] = {
             ]
           }
         },
-
         location: {
           type: 'BoldCard',
           data: {

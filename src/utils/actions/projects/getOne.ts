@@ -1,8 +1,8 @@
-'use server';
-
 import { SingleProjectResponse } from '@/app/api/projects/[slug]/route';
+import { cacheTags } from '@/constants';
 import { Locale } from '@/types';
-import { request } from '@/utils';
+
+import request from '../request';
 
 type Params = {
   slug: string;
@@ -15,7 +15,13 @@ const projectsApiGetOne = async (
 ) =>
   await request<SingleProjectResponse>(
     `/api/projects/${params.slug}?locale=${params.locale}`,
-    config
+    {
+      ...config,
+      next: {
+        tags: [cacheTags.projects],
+        ...config?.next
+      }
+    }
   );
 
 export default projectsApiGetOne;
