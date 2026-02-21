@@ -158,13 +158,13 @@ const resolveBlocks = (
       data: {
         prev: adjacents.prev
           ? {
-              href: `${baseUrl}/${defaultPages.projects}/${adjacents.prev.slug}`,
+              href: `/${defaultPages.projects}/${adjacents.prev.slug}`,
               name: adjacents.prev.title
             }
           : undefined,
         next: adjacents.next
           ? {
-              href: `${baseUrl}/${defaultPages.projects}/${adjacents.next.slug}`,
+              href: `/${defaultPages.projects}/${adjacents.next.slug}`,
               name: adjacents.next.title
             }
           : undefined

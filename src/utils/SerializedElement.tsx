@@ -126,7 +126,7 @@ const SerializedElement = memo(
             <List.Root
               type={node.listType}
               {...props?.list}
-              className={cn('p-2 pr-0', props?.list?.className)}
+              className={cn('py-2 pr-0', props?.list?.className)}
             >
               {children}
             </List.Root>

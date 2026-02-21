@@ -37,7 +37,7 @@ const CareerCatalogBlock = ({
       {...props}
     >
       <Catalog.Root
-        className='max-w-4xl'
+        className='w-9by10 max-w-4xl'
         items={data.items}
       >
         <Catalog.Empty className='flex w-full'>

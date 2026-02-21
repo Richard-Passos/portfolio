@@ -39,7 +39,7 @@ const PrimaryLayoutHeaderOrganism = ({
         {serialize(title, {
           alignText: {
             className:
-              'data-[align=right]:ml-[min(5vw,--spacing(10))] data-[align=right]:py-2 data-[align=right]:px-3 data-[align=right]:border data-[align=right]:bg-red-filled dark:data-[align=right]:bg-red-4/10 dark:data-[align=right]:border-red-4/20 data-[align=right]:rounded data-[align=right]:-rotate-3'
+              'w-fit data-[align=right]:ml-[min(5vw,--spacing(10))] data-[align=right]:py-2 data-[align=right]:px-3 data-[align=right]:border data-[align=right]:bg-red-filled dark:data-[align=right]:bg-red-4/10 dark:data-[align=right]:border-red-4/20 data-[align=right]:rounded data-[align=right]:-rotate-3'
           }
         })}
       </Title>

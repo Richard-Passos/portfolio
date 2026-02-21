@@ -12,7 +12,7 @@ const hero: LegalPage['hero'] = {
           text: 'Isençã'
         },
         {
-          text: 'o de',
+          text: 'o de ',
           emphasize: true
         }
       ]
@@ -22,7 +22,7 @@ const hero: LegalPage['hero'] = {
       align: 'right',
       children: [
         {
-          text: ' G',
+          text: 'G',
           emphasize: true
         },
         {
