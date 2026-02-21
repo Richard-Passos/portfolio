@@ -1,8 +1,11 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { headers } from 'next/headers';
 
 import { defaultLocale } from '@/constants/locales';
 import { Locale, Project } from '@/types';
 import { getTranslations, isType, keys, normId } from '@/utils';
+import { API } from '@/utils/actions';
+import { APIResponse } from '@/utils/actions/API';
+import response, { Responses } from '@/utils/actions/response';
 
 type Params = Promise<{
   slug: string;
@@ -16,12 +19,9 @@ const DEFAULT_PARAMS: SearchParams = {
   locale: defaultLocale.value
 };
 
-type SingleProjectResponse =
-  | { ok: false; status: 404; message: string }
-  | { ok: false; status: 500; message: string }
-  | {
-      ok: true;
-      status: 200;
+type SingleProjectSuccessResponse =
+  | Responses['not-found']
+  | (Responses['success'] & {
       data: Project;
       meta: {
         adjacentIds: {
@@ -29,47 +29,25 @@ type SingleProjectResponse =
           next?: string;
         };
       };
-    };
+    });
+type SingleProjectResponse = APIResponse<SingleProjectSuccessResponse>;
 
-const GET = async (
-  request: NextRequest,
-  { params: requestParams }: { params: Params }
-): Promise<ReturnType<typeof NextResponse.json<SingleProjectResponse>>> => {
-  try {
-    const { searchParams } = request.nextUrl,
-      params = await resolveParams(searchParams, requestParams),
+const GET = API<SingleProjectSuccessResponse, Params>(
+  async ({ nextUrl: { searchParams } }, _, requestParams) => {
+    const params = await resolveParams(searchParams, requestParams),
       { data, adjacentIds } = resolveResults(params);
 
-    if (data === undefined)
-      return NextResponse.json(
-        {
-          ok: false,
-          status: 404,
-          message: 'Project not found!'
-        },
-        { status: 404 }
-      );
+    if (data === undefined) return response('not-found');
 
-    return NextResponse.json(
-      {
-        ok: true,
-        status: 200,
-        data,
-        meta: { adjacentIds }
-      },
-      { status: 200 }
-    );
-  } catch {
-    return NextResponse.json(
-      {
-        ok: false,
-        status: 500,
-        message: 'Something went wrong!'
-      },
-      { status: 500 }
-    );
-  }
-};
+    return response('success', {
+      data,
+      meta: {
+        adjacentIds
+      }
+    });
+  },
+  headers
+);
 
 const resolveParams = async (
   searchParams: URLSearchParams,

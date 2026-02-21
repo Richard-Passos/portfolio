@@ -1,68 +1,38 @@
 import { revalidateTag } from 'next/cache';
 import { headers } from 'next/headers';
-import { NextRequest, NextResponse } from 'next/server';
+
+import { API } from '@/utils/actions';
+import { APIResponse } from '@/utils/actions/API';
+import response, { Responses } from '@/utils/actions/response';
 
 type RevalidateBody = {
   tags: string[];
 };
 
-type RevalidateResponse =
+type RevalidateExtraResponse =
   | { ok: false; status: 400; message: string }
-  | { ok: false; status: 401; message: string }
-  | { ok: false; status: 500; message: string }
-  | { ok: true; status: 200 };
+  | Responses['success'];
+type RevalidateResponse = APIResponse<RevalidateExtraResponse>;
 
-const POST = async (
-  request: NextRequest
-): Promise<ReturnType<typeof NextResponse.json<RevalidateResponse>>> => {
-  try {
-    const headersList = await headers(),
-      secret = headersList.get('Authorization');
-
-    if (secret !== `Bearer ${process.env.REVALIDATE_TOKEN}`)
-      return NextResponse.json(
-        {
-          ok: false,
-          status: 401,
-          message: 'Unauthorized!'
-        },
-        { status: 401 }
-      );
-
+const POST = API<RevalidateExtraResponse>(
+  async (request) => {
     const body = (await request.json()) as RevalidateBody,
       { tags } = body;
 
-    if (!Array.isArray(tags) || tags.some((t) => typeof t !== 'string')) {
-      return NextResponse.json(
-        {
-          ok: false,
-          status: 400,
-          message: 'Invalid tags format. Expected an array of strings.'
-        },
-        { status: 400 }
-      );
-    }
+    if (!Array.isArray(tags) || tags.some((t) => typeof t !== 'string'))
+      return response('custom', {
+        ok: false,
+        status: 400,
+        message: 'Invalid tags format. Expected an array of strings.'
+      });
 
     tags.forEach((t) => revalidateTag(t, { expire: 0 }));
 
-    return NextResponse.json(
-      {
-        ok: true,
-        status: 200
-      },
-      { status: 200 }
-    );
-  } catch {
-    return NextResponse.json(
-      {
-        ok: false,
-        status: 500,
-        message: 'Something went wrong!'
-      },
-      { status: 500 }
-    );
-  }
-};
+    return response('success');
+  },
+  headers,
+  process.env.REVALIDATE_TOKEN
+);
 
 export { POST };
 export type { RevalidateResponse };

@@ -1,8 +1,11 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { headers } from 'next/headers';
 
 import { defaultLocale } from '@/constants/locales';
 import { Footer, Locale } from '@/types';
 import { getTranslations, isType } from '@/utils';
+import { API } from '@/utils/actions';
+import { APIResponse } from '@/utils/actions/API';
+import response, { Responses } from '@/utils/actions/response';
 
 type SearchParams = {
   locale: Locale['value'];
@@ -12,41 +15,17 @@ const DEFAULT_PARAMS: SearchParams = {
   locale: defaultLocale.value
 };
 
-type FooterResponse =
-  | { ok: false; status: 500; message: string }
-  | {
-      ok: true;
-      data: Footer;
-      status: 200;
-    };
-
-const GET = async (
-  request: NextRequest
-): Promise<ReturnType<typeof NextResponse.json<FooterResponse>>> => {
-  try {
-    const { searchParams } = request.nextUrl,
-      params = resolveParams(searchParams),
-      data = resolveResults(params);
-
-    return NextResponse.json(
-      {
-        ok: true,
-        status: 200,
-        data
-      },
-      { status: 200 }
-    );
-  } catch {
-    return NextResponse.json(
-      {
-        ok: false,
-        status: 500,
-        message: 'Something went wrong!'
-      },
-      { status: 500 }
-    );
-  }
+type FooterSuccessResponse = Responses['success'] & {
+  data: Footer;
 };
+type FooterResponse = APIResponse<FooterSuccessResponse>;
+
+const GET = API<FooterSuccessResponse>(({ nextUrl: { searchParams } }) => {
+  const params = resolveParams(searchParams),
+    data = resolveResults(params);
+
+  return response('success', { data });
+}, headers);
 
 const resolveParams = (searchParams: URLSearchParams) => {
   const params: Record<keyof SearchParams, string | null> = {

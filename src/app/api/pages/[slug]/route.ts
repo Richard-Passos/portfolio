@@ -1,8 +1,11 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { headers } from 'next/headers';
 
 import { defaultLocale } from '@/constants/locales';
 import { Locale, Page } from '@/types';
-import { getTranslations, isType, normId, normKey } from '@/utils';
+import { getTranslations, isType, normKey } from '@/utils';
+import { API } from '@/utils/actions';
+import { APIResponse } from '@/utils/actions/API';
+import response, { Responses } from '@/utils/actions/response';
 
 type Params = Promise<{
   slug: string;
@@ -16,53 +19,28 @@ const DEFAULT_PARAMS: SearchParams = {
   locale: defaultLocale.value
 };
 
-type SinglePageResponse =
-  | { ok: false; status: 404; message: string }
-  | { ok: false; status: 500; message: string }
-  | {
-      ok: true;
-      status: 200;
+type SinglePageSuccessResponse =
+  | Responses['not-found']
+  | (Responses['success'] & {
       data: Page;
-    };
+    });
+type SinglePageResponse = APIResponse<SinglePageSuccessResponse>;
 
-const GET = async (
-  request: NextRequest,
-  { params: requestParams }: { params: Params }
-): Promise<ReturnType<typeof NextResponse.json>> => {
-  try {
-    const { searchParams } = request.nextUrl,
-      params = await resolveParams(searchParams, requestParams),
+const GET = API<SinglePageSuccessResponse, Params>(
+  async ({ nextUrl: { searchParams } }, _, requestParams) => {
+    const params = await resolveParams(searchParams, requestParams),
       data = resolveResults(params);
 
-    if (data === undefined)
-      return NextResponse.json(
-        {
-          ok: false,
-          status: 404,
-          message: 'Page not found!'
-        },
-        { status: 404 }
-      );
+    console.log('Params: ', params);
 
-    return NextResponse.json(
-      {
-        ok: true,
-        status: 200,
-        data
-      },
-      { status: 200 }
-    );
-  } catch {
-    return NextResponse.json(
-      {
-        ok: false,
-        status: 500,
-        message: 'Something went wrong!'
-      },
-      { status: 500 }
-    );
-  }
-};
+    if (data === undefined) return response('not-found');
+
+    return response('success', {
+      data
+    });
+  },
+  headers
+);
 
 const resolveParams = async (
   searchParams: URLSearchParams,

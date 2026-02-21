@@ -1,8 +1,11 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { headers } from 'next/headers';
 
 import { defaultLocale } from '@/constants/locales';
 import { CookiesConsent, Locale } from '@/types';
 import { getTranslations, isType } from '@/utils';
+import { API, response } from '@/utils/actions';
+import { APIResponse } from '@/utils/actions/API';
+import { Responses } from '@/utils/actions/response';
 
 type SearchParams = {
   locale: Locale['value'];
@@ -12,41 +15,20 @@ const DEFAULT_PARAMS: SearchParams = {
   locale: defaultLocale.value
 };
 
-type CookiesConsentResponse =
-  | { ok: false; status: 500; message: string }
-  | {
-      ok: true;
-      status: 200;
-      data: CookiesConsent;
-    };
+type CookiesConsentSuccessResponse = Responses['success'] & {
+  data: CookiesConsent;
+};
+type CookiesConsentResponse = APIResponse<CookiesConsentSuccessResponse>;
 
-const GET = async (
-  request: NextRequest
-): Promise<ReturnType<typeof NextResponse.json<CookiesConsentResponse>>> => {
-  try {
-    const { searchParams } = request.nextUrl,
-      params = resolveParams(searchParams),
+const GET = API<CookiesConsentSuccessResponse>(
+  ({ nextUrl: { searchParams } }) => {
+    const params = resolveParams(searchParams),
       data = resolveResults(params);
 
-    return NextResponse.json(
-      {
-        ok: true,
-        status: 200,
-        data
-      },
-      { status: 200 }
-    );
-  } catch {
-    return NextResponse.json(
-      {
-        ok: false,
-        status: 500,
-        message: 'Something went wrong!'
-      },
-      { status: 500 }
-    );
-  }
-};
+    return response('success', { data });
+  },
+  headers
+);
 
 const resolveParams = (searchParams: URLSearchParams) => {
   const params: Record<keyof SearchParams, string | null> = {

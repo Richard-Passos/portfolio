@@ -1,8 +1,11 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { headers } from 'next/headers';
 
 import { defaultLocale } from '@/constants/locales';
 import { Locale, Page } from '@/types';
 import { entries, getTranslations, isType } from '@/utils';
+import { API } from '@/utils/actions';
+import { APIResponse } from '@/utils/actions/API';
+import response, { Responses } from '@/utils/actions/response';
 
 type SearchParams = {
   page: number;
@@ -20,51 +23,29 @@ const DEFAULT_PARAMS: SearchParams = {
   locale: defaultLocale.value
 };
 
-type PagesResponse =
-  | { ok: false; status: 500; message: string }
-  | {
-      ok: true;
-      status: 200;
-      data: Record<string, Page>;
-      meta: {
-        page: number;
-        totalPages: number;
-        totalResults: number;
-      };
-    };
-
-const GET = async (
-  request: NextRequest
-): Promise<ReturnType<typeof NextResponse.json<PagesResponse>>> => {
-  try {
-    const { searchParams } = request.nextUrl,
-      params = resolveParams(searchParams),
-      { results, totalResults } = resolveResults(params);
-
-    return NextResponse.json(
-      {
-        ok: true,
-        status: 200,
-        data: results,
-        meta: {
-          page: params.page,
-          totalPages: Math.ceil(totalResults / params.perPage),
-          totalResults
-        }
-      },
-      { status: 200 }
-    );
-  } catch {
-    return NextResponse.json(
-      {
-        ok: false,
-        status: 500,
-        message: 'Something went wrong!'
-      },
-      { status: 500 }
-    );
-  }
+type PagesSuccessResponse = Responses['success'] & {
+  data: Record<string, Page>;
+  meta: {
+    page: number;
+    totalPages: number;
+    totalResults: number;
+  };
 };
+type PagesResponse = APIResponse<PagesSuccessResponse>;
+
+const GET = API<PagesSuccessResponse>(({ nextUrl: { searchParams } }) => {
+  const params = resolveParams(searchParams),
+    { results, totalResults } = resolveResults(params);
+
+  return response('success', {
+    data: results,
+    meta: {
+      page: params.page,
+      totalPages: Math.ceil(totalResults / params.perPage),
+      totalResults
+    }
+  });
+}, headers);
 
 const resolveParams = (searchParams: URLSearchParams) => {
   const params: Record<keyof SearchParams, string | null> = {

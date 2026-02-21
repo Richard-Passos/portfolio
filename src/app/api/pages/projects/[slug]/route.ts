@@ -1,11 +1,13 @@
 import { merge } from 'lodash';
-import { NextRequest, NextResponse } from 'next/server';
+import { headers } from 'next/headers';
 
 import { baseUrl, defaultPages } from '@/constants';
 import { defaultLocale } from '@/constants/locales';
 import { DeepPartial, Locale, Project, ProjectPage } from '@/types';
-import { getTranslations, isType, normId, values } from '@/utils';
-import { projectsApi } from '@/utils/actions';
+import { entries, getTranslations, isType, normId, values } from '@/utils';
+import { API, projectsApi } from '@/utils/actions';
+import { APIResponse } from '@/utils/actions/API';
+import response, { Responses } from '@/utils/actions/response';
 
 type Params = Promise<{
   slug: string;
@@ -19,53 +21,26 @@ const DEFAULT_PARAMS: SearchParams = {
   locale: defaultLocale.value
 };
 
-type ProjectPageResponse =
-  | { ok: false; status: 404; message: string }
-  | { ok: false; status: 500; message: string }
-  | {
-      ok: true;
-      status: 200;
+type SingleProjectPageSuccessResponse =
+  | Responses['not-found']
+  | (Responses['success'] & {
       data: ProjectPage;
-    };
+    });
+type SingleProjectPageResponse = APIResponse<SingleProjectPageSuccessResponse>;
 
-const GET = async (
-  request: NextRequest,
-  { params: requestParams }: { params: Params }
-): Promise<ReturnType<typeof NextResponse.json<ProjectPageResponse>>> => {
-  try {
-    const { searchParams } = request.nextUrl,
-      params = await resolveParams(searchParams, requestParams),
+const GET = API<SingleProjectPageSuccessResponse, Params>(
+  async ({ nextUrl: { searchParams } }, _, requestParams) => {
+    const params = await resolveParams(searchParams, requestParams),
       data = await resolveResults(params);
 
-    if (data === undefined)
-      return NextResponse.json(
-        {
-          ok: false,
-          status: 404,
-          message: 'Project not found!'
-        },
-        { status: 404 }
-      );
+    if (data === undefined) return response('not-found');
 
-    return NextResponse.json(
-      {
-        ok: true,
-        status: 200,
-        data
-      },
-      { status: 200 }
-    );
-  } catch {
-    return NextResponse.json(
-      {
-        ok: false,
-        status: 500,
-        message: 'Something went wrong!'
-      },
-      { status: 500 }
-    );
-  }
-};
+    return response('success', {
+      data
+    });
+  },
+  headers
+);
 
 const resolveParams = async (
   searchParams: URLSearchParams,
@@ -175,7 +150,7 @@ const resolveBlocks = (
     images: {
       type: 'ProjectImages',
       data: {
-        items: project.images ?? {}
+        items: Object.fromEntries(entries(project.images))
       }
     },
     adjacents: {
@@ -199,4 +174,4 @@ const resolveBlocks = (
 };
 
 export { GET };
-export type { Params, ProjectPageResponse };
+export type { Params, SingleProjectPageResponse };
