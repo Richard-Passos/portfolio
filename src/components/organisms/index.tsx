@@ -2,6 +2,7 @@ export { default as CookiesConsent } from './CookiesConsent';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as Icons } from './Icons';
+export { default as LinesY } from './LinesY';
 export { default as Logo } from './Logo';
 export { default as Providers } from './Providers';
 export { default as Section } from './Section';

@@ -1,13 +1,13 @@
 'use client';
 
-import { yFullScrollAnim } from '@/animations/scroll';
-import { Lines, ScrollAnimate, Title } from '@/components/atoms';
+import { Title } from '@/components/atoms';
 import RevalidateForm, {
   RevalidateFormProps
 } from '@/components/organisms/Forms/Revalidate';
 import CleanLayout, {
   CleanLayoutProps
 } from '@/components/organisms/Layouts/Clean';
+import LinesY from '@/components/organisms/LinesY';
 import { cn } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
@@ -48,11 +48,7 @@ const RevalidateFormBlock = ({
         />
       </div>
 
-      <div className='bg-body relative flex grow basis-48 items-center justify-center overflow-hidden border max-md:hidden'>
-        <ScrollAnimate config={yFullScrollAnim}>
-          <Lines className='text-gray-3 dark:text-dark-4 h-screen translate-y-0 bg-size-[83.333px_66.666px]' />
-        </ScrollAnimate>
-      </div>
+      <LinesY className='grow basis-48 max-md:hidden' />
     </CleanLayout>
   );
 };

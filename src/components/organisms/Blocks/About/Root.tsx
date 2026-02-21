@@ -1,10 +1,9 @@
 import { ComponentProps } from 'react';
 
-import { yFullScrollAnim } from '@/animations/scroll';
-import { Lines, ScrollAnimate } from '@/components/atoms';
 import PrimaryLayout, {
   PrimaryLayoutProps
 } from '@/components/organisms/Layouts/Primary';
+import LinesY from '@/components/organisms/LinesY';
 import { cn } from '@/utils';
 
 import AboutBlockText, { AboutBlockTextProps } from './Text';
@@ -35,11 +34,7 @@ const AboutBlock = ({ data, wrapperProps, ...props }: AboutBlockProps) => {
           wrapperProps?.className
         )}
       >
-        <div className='bg-body relative grow basis-48 overflow-hidden border max-sm:hidden'>
-          <ScrollAnimate config={yFullScrollAnim}>
-            <Lines className='text-gray-3 dark:text-dark-4 h-screen translate-y-0 bg-size-[83.333px_66.666px]' />
-          </ScrollAnimate>
-        </div>
+        <LinesY className='grow basis-48 max-sm:hidden' />
 
         <section className='flex max-w-xl grow flex-col gap-8 sm:py-10'>
           {data.texts.map(({ id, ...data }) => (
