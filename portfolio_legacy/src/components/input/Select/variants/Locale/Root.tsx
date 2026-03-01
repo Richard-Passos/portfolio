@@ -2,8 +2,8 @@
 
 import { Select } from '@/components/input/Select';
 import { SelectProps } from '@/components/input/Select';
-import { GlobeIcon } from '@/components/system/Icon/variants';
-import { GlobeIconProps } from '@/components/system/Icon/variants/Globe';
+import { GlobeIcon } from '@/components/system/Icon/icons';
+import { GlobeIconProps } from '@/components/system/Icon/icons/Globe';
 import { useLocale, usePathname, useRouter } from '@/i18n/navigation';
 import { MergeProps } from '@/types';
 import { cn, isLocale } from '@/utils';
@@ -15,11 +15,7 @@ type LocaleSelectRootProps = MergeProps<
   SelectProps
 >;
 
-const LocaleSelectRoot = ({
-  className,
-  leftSectionProps,
-  ...props
-}: LocaleSelectRootProps) => {
+const LocaleSelectRoot = ({ className, leftSectionProps, ...props }: LocaleSelectRootProps) => {
   const locale = useLocale(),
     router = useRouter(),
     pathname = usePathname();

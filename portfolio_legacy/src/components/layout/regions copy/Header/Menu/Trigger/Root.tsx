@@ -2,7 +2,7 @@ import { Portal, ScrollAnimate } from '@/components/atoms';
 import { DrawerTrigger } from '@/components/modules/Drawer';
 import Action, { ActionProps } from '@/components/molecules/Action';
 import { ScrollAnimateConfigOptions } from '@/components/motion/ScrollAnimate';
-import { MenuIcon, TimesIcon } from '@/components/system/Icon/variants';
+import { MenuIcon, TimesIcon } from '@/components/system/Icon/icons';
 import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
@@ -34,7 +34,7 @@ const HeaderMenuTrigger = ({
         config={ANIMATION_CONFIG}
         smoothConfig={smoothConfig}
       >
-        <div className='z-max fixed top-(--side) right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] scale-(--scale) [--side:--spacing(4)] has-data-[state="open"]:scale-100 sm:[--side:--spacing(8)]'>
+        <div className='fixed top-(--side) right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] z-max scale-(--scale) [--side:--spacing(4)] has-data-[state="open"]:scale-100 sm:[--side:--spacing(8)]'>
           <DrawerTrigger>
             <Action
               className={cn('h-16 rounded-full sm:h-20', className)}
@@ -50,13 +50,9 @@ const HeaderMenuTrigger = ({
 
               <TimesIcon className='absolute size-[40%] group-data-[state=closed]/action:hidden' />
 
-              <span className='sr-only data-[state=open]:hidden'>
-                {label.open}
-              </span>
+              <span className='sr-only data-[state=open]:hidden'>{label.open}</span>
 
-              <span className='sr-only data-[state=closed]:hidden'>
-                {label.close}
-              </span>
+              <span className='sr-only data-[state=closed]:hidden'>{label.close}</span>
             </Action>
           </DrawerTrigger>
         </div>

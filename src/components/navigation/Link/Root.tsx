@@ -1,39 +1,34 @@
 'use client';
 
-import { getLocalizedUrl } from 'intlayer';
-import NextLink, { type LinkProps as NextLinkProps } from 'next/link';
-import type { FC, PropsWithChildren } from 'react';
+import { getLocalizedUrl, locales } from 'intlayer';
+import { useLocale } from 'next-intlayer';
+import NextLink from 'next/link';
+import type { ComponentProps } from 'react';
 
-/**
- * Utility function to check whether a given URL is external.
- * If the URL starts with http:// or https://, it's considered external.
- */
-export const checkIsExternalLink = (href?: string): boolean =>
-  /^https?:\/\//.test(href ?? '');
+import { MergeProps } from '@/types';
+import { cn } from '@/utils';
 
-/**
- * A custom Link component that adapts the href attribute based on the current locale.
- * For internal links, it uses `getLocalizedUrl` to prefix the URL with the locale (e.g., /fr/about).
- * This ensures that navigation stays within the same locale context.
- */
-export const Link: FC<PropsWithChildren<NextLinkProps>> = ({
-  href,
-  children,
-  ...props
-}) => {
-  const { locale } = useLocale();
-  const isExternalLink = checkIsExternalLink(href.toString());
+export type LinkProps = MergeProps<{ disabled?: boolean }, ComponentProps<typeof NextLink>>;
 
-  // If the link is internal and a valid href is provided, get the localized URL.
-  const hrefI18n: NextLinkProps['href'] =
-    href && !isExternalLink ? getLocalizedUrl(href.toString(), locale) : href;
+export const Link = ({ href, disabled, className, ...props }: LinkProps) => {
+  const { locale } = useLocale(),
+    isExternal = href && !href.toString().startsWith('/'),
+    targetUrl =
+      isExternal || locales.includes(href.toString().substring(1)) // Is external or /pt -> pt in locales
+        ? href
+        : getLocalizedUrl(href.toString(), locale);
 
   return (
     <NextLink
-      href={hrefI18n}
+      aria-disabled={disabled}
+      href={disabled ? '' : targetUrl}
+      tabIndex={disabled ? -1 : 0}
+      className={cn(
+        'inline-flex aria-disabled:cursor-not-allowed aria-disabled:opacity-60',
+        className
+      )}
+      {...(isExternal && { rel: 'noreferrer', target: '_blank' })}
       {...props}
-    >
-      {children}
-    </NextLink>
+    />
   );
 };

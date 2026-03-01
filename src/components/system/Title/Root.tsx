@@ -1,5 +1,5 @@
 export {
-  Title as TitleRoot,
-  type TitleOrder as TitleRootOrder,
-  type TitleProps as TitleRootProps
+  Title as Title,
+  type TitleOrder as TitleOrder,
+  type TitleProps as TitleProps
 } from '@mantine/core';

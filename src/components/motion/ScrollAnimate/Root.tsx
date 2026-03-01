@@ -15,7 +15,7 @@ import { Slot } from '@/components/misc';
 import { MergeProps } from '@/types';
 import { setRefs, transformTemplate } from '@/utils';
 
-type ScrollAnimateRootConfigOptions = {
+type ScrollAnimateConfigOptions = {
   scrollConfig?: UseScrollOptions;
   scroll?: keyof ReturnType<typeof useScroll>;
   scrollPoints?: any[];
@@ -24,9 +24,9 @@ type ScrollAnimateRootConfigOptions = {
   transformConfig?: {};
 };
 
-type ScrollAnimateRootProps = MergeProps<
+type ScrollAnimateProps = MergeProps<
   {
-    config: ScrollAnimateRootConfigOptions;
+    config: ScrollAnimateConfigOptions;
     smoothConfig?: SpringOptions;
   },
   ComponentProps<typeof MotionChild>
@@ -45,22 +45,11 @@ const MAPED_TRANSFORM = {
 
 const MotionChild = motion.create(Slot);
 
-const ScrollAnimateRoot = ({
-  config,
-  smoothConfig,
-  style,
-  ref,
-  ...props
-}: ScrollAnimateRootProps) => {
+const ScrollAnimate = ({ config, smoothConfig, style, ref, ...props }: ScrollAnimateProps) => {
   const innerRef = useRef<HTMLElement>(null);
 
-  const options: Pick<
-    ScrollAnimateRootConfigOptions,
-    'transformConfig' | 'scrollConfig'
-  > &
-    Required<
-      Omit<ScrollAnimateRootConfigOptions, 'transformConfig' | 'scrollConfig'>
-    > = {
+  const options: Pick<ScrollAnimateConfigOptions, 'transformConfig' | 'scrollConfig'> &
+    Required<Omit<ScrollAnimateConfigOptions, 'transformConfig' | 'scrollConfig'>> = {
     scroll: 'scrollYProgress',
     scrollPoints: [0, 1],
     ...config,
@@ -84,8 +73,8 @@ const ScrollAnimateRoot = ({
     <MotionChild
       ref={setRefs(ref, innerRef)}
       style={{
-        [MAPED_TRANSFORM[options.prop as keyof typeof MAPED_TRANSFORM] ??
-        options.prop]: smoothConfig ? smoothProp : prop,
+        [MAPED_TRANSFORM[options.prop as keyof typeof MAPED_TRANSFORM] ?? options.prop]:
+          smoothConfig ? smoothProp : prop,
         ...style
       }}
       transformTemplate={transformTemplate}
@@ -94,5 +83,5 @@ const ScrollAnimateRoot = ({
   );
 };
 
-export { ScrollAnimateRoot };
-export type { ScrollAnimateRootProps, ScrollAnimateRootConfigOptions };
+export { ScrollAnimate };
+export type { ScrollAnimateProps, ScrollAnimateConfigOptions };

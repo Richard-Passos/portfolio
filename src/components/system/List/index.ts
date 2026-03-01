@@ -1,10 +1,10 @@
 import { ListItem } from './Item';
-import { ListRoot } from './Root';
+import { List } from './Root';
 
 export * from './Item';
 export * from './Root';
 
-const List = Object.assign(ListRoot, {
+const List = Object.assign(List, {
   Item: ListItem
 });
 

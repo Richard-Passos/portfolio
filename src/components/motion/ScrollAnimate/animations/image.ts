@@ -1,6 +1,6 @@
-import { ScrollAnimateRootConfigOptions } from '../Root';
+import { ScrollAnimateConfigOptions } from '../Root';
 
-const imageY: ScrollAnimateRootConfigOptions = {
+const imageY: ScrollAnimateConfigOptions = {
   prop: 'y',
   propPoints: ['-13%', '0%']
 };

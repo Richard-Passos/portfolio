@@ -1,77 +1,74 @@
-import { InputVariant, MantineSize, Select, SelectProps } from '@mantine/core';
+'use client';
 
+import { type SelectRootProps, Select as UiSelect } from '@ark-ui/react/select';
+import { ReactNode } from 'react';
+
+import { Portal } from '@/components/misc';
+import { CheckIcon, ChevronDownIcon } from '@/components/system/icons';
 import { MergeProps } from '@/types';
-import { cn } from '@/utils';
 
-const CLASS_NAMES = {
-  size: {
-    xs: '',
-    sm: '',
-    md: '[&_input]:[--input-size:3rem]',
-    lg: '',
-    xl: ''
-  } satisfies Record<MantineSize, string>,
-  variant: {
-    default:
-      '[&_input]:border-border [&_input]:[--input-bg:var(--color-white)] dark:[&_input]:[--input-bg:var(--color-dark-6)]',
-    filled:
-      '[&_input]:[--input-bg:var(--color-gray-0)] dark:[&_input]:[--input-bg:var(--color-dark-5)] [&_input:focus]:[--input-bd:transparent]',
-    unstyled: ''
-  } satisfies Record<InputVariant, string>
-};
+import { Button } from '../Button';
 
-export type SelectRootProps = MergeProps<
+export type SelectProps = MergeProps<
   {
-    size?: keyof (typeof CLASS_NAMES)['size'];
-    variant?: keyof (typeof CLASS_NAMES)['variant'];
+    label: ReactNode;
+    placeholder?: string;
+    clear?: ReactNode;
   },
-  SelectProps
+  SelectRootProps<any>
 >;
 
-export const SelectRoot = ({
-  className,
-  size = 'sm',
-  variant = 'default',
-  disabled,
-  comboboxProps,
-  labelProps,
-  ...props
-}: SelectRootProps) => {
+export const Select = ({ collection, label, placeholder, clear, ...props }: SelectProps) => {
   return (
-    <Select
-      size={size}
-      variant={variant}
-      disabled={disabled}
-      aria-disabled={disabled ? true : undefined}
-      className={cn(
-        disabled &&
-          `aria-disabled:[&_input]:bg-gray-1 aria-disabled:[&_input]:text-gray-6 dark:aria-disabled:[&_input]:bg-dark-6 dark:aria-disabled:[&_input]:text-dark-2`,
-        CLASS_NAMES.size[size],
-        CLASS_NAMES.variant[variant],
-        className
-      )}
-      comboboxProps={{
-        withinPortal: false,
-        ...comboboxProps,
-        classNames: {
-          ...comboboxProps?.classNames,
-          dropdown: cn(
-            'bg-white border-border dark:bg-dark-6',
-            //@ts-ignore
-            comboboxProps?.classNames?.dropdown
-          ),
-          option: cn(
-            `dark:hover:bg-dark-4 data-[combobox-selected]:bg-primary-filled! data-[combobox-selected]:text-primary-contrast hover:bg-gray-1`,
-            //@ts-ignore
-            comboboxProps?.classNames?.option
-          )
-        }
-      }}
-      labelProps={{
-        ...labelProps,
-        className: cn('text-sm', labelProps?.className)
-      }}
+    <UiSelect.Root
+      collection={collection}
       {...props}
-    />
+    >
+      <UiSelect.Label className='mb-2 text-sm font-medium'>{label}</UiSelect.Label>
+
+      <UiSelect.Control>
+        <UiSelect.Trigger className='flex h-10 w-full items-center gap-1.5 rounded border bg-body px-3 py-2 text-sm'>
+          <UiSelect.ValueText
+            placeholder={placeholder}
+            className='mr-auto'
+          />
+
+          {clear && (
+            <UiSelect.ClearTrigger asChild>
+              <Button size='sm'>{clear}</Button>
+            </UiSelect.ClearTrigger>
+          )}
+
+          <UiSelect.Indicator>
+            <ChevronDownIcon className='size-4 text-muted' />
+          </UiSelect.Indicator>
+        </UiSelect.Trigger>
+      </UiSelect.Control>
+
+      <Portal>
+        <UiSelect.Positioner>
+          <UiSelect.Content className='z-50 min-w-(--reference-width) rounded border bg-body shadow'>
+            <UiSelect.ItemGroup>
+              {collection.items.map((item) => (
+                <UiSelect.Item
+                  key={item}
+                  item={item}
+                  asChild
+                >
+                  <Button className='select-none data-[state=checked]:bg-primary hover:data-[state=checked]:bg-primary-hover'>
+                    <UiSelect.ItemText>{item}</UiSelect.ItemText>
+
+                    <UiSelect.ItemIndicator className='ml-auto text-success'>
+                      <CheckIcon />
+                    </UiSelect.ItemIndicator>
+                  </Button>{' '}
+                </UiSelect.Item>
+              ))}
+            </UiSelect.ItemGroup>
+          </UiSelect.Content>
+        </UiSelect.Positioner>
+      </Portal>
+      <UiSelect.HiddenSelect />
+    </UiSelect.Root>
   );
 };

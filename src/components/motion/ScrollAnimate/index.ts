@@ -1,5 +1,5 @@
 export {
-  ScrollAnimateRoot as ScrollAnimate,
-  type ScrollAnimateRootProps as ScrollAnimateProps,
-  type ScrollAnimateRootConfigOptions as ScrollAnimateConfigOptions
+  ScrollAnimate as ScrollAnimate,
+  type ScrollAnimateProps as ScrollAnimateProps,
+  type ScrollAnimateConfigOptions as ScrollAnimateConfigOptions
 } from './Root';

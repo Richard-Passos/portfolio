@@ -1,5 +1,5 @@
 export {
-  TitleRoot as Title,
-  type TitleRootProps as TitleProps,
-  type TitleRootOrder as TitleOrder
+  Title as Title,
+  type TitleProps as TitleProps,
+  type TitleOrder as TitleOrder
 } from './Root';

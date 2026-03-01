@@ -7,7 +7,7 @@ import { MagneticButton } from '@/components/input/Button/variants';
 import { Form, FormRootProps } from '@/components/modules/Form';
 import { Link } from '@/components/navigation';
 import { Title } from '@/components/system';
-import { PaperPlaneIcon } from '@/components/system/Icon/variants';
+import { PaperPlaneIcon } from '@/components/system/Icon/icons';
 import { Field, MergeProps } from '@/types';
 import { cn } from '@/utils';
 import { sendEmail } from '@/utils/actions';
@@ -79,7 +79,7 @@ const ContactFormRoot = ({
       }}
       {...props}
     >
-      <div className='bg-body relative top-px right-px -mt-px -mr-px flex h-fit items-center border p-2.5 sm:col-span-full'>
+      <div className='relative top-px right-px -mt-px -mr-px flex h-fit items-center border bg-body p-2.5 sm:col-span-full'>
         <Title
           component='h3'
           order={6}
@@ -98,7 +98,7 @@ const ContactFormRoot = ({
         <TextInput
           size='md'
           variant='filled'
-          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-6'
+          className='relative top-px right-px -mt-px -mr-px border bg-body p-2.5 sm:col-span-6'
           label={fields.name.label}
           description={fields.name.description}
           placeholder={fields.name.placeholder}
@@ -110,7 +110,7 @@ const ContactFormRoot = ({
           type='email'
           size='md'
           variant='filled'
-          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-6'
+          className='relative top-px right-px -mt-px -mr-px border bg-body p-2.5 sm:col-span-6'
           label={fields.email.label}
           description={fields.email.description}
           placeholder={fields.email.placeholder}
@@ -121,7 +121,7 @@ const ContactFormRoot = ({
         <TextInput
           size='md'
           variant='filled'
-          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-12'
+          className='relative top-px right-px -mt-px -mr-px border bg-body p-2.5 sm:col-span-12'
           label={
             <>
               {fields.subject.label}&nbsp;
@@ -139,7 +139,7 @@ const ContactFormRoot = ({
           minRows={3}
           size='md'
           variant='filled'
-          className='bg-body relative top-px right-px -mt-px -mr-px border p-2.5 sm:col-span-full md:col-span-9'
+          className='relative top-px right-px -mt-px -mr-px border bg-body p-2.5 sm:col-span-full md:col-span-9'
           label={fields.message.label}
           description={fields.message.description}
           placeholder={fields.message.placeholder}
@@ -148,7 +148,7 @@ const ContactFormRoot = ({
 
       <div className='size-full pr-3 pb-3 sm:col-span-4 md:col-span-3'>
         <div className='sticky top-0 w-full'>
-          <div className='bg-body relative top-px right-px -mt-px -mr-px w-fit border p-2.5 md:aspect-[1.3/1] md:w-full'>
+          <div className='relative top-px right-px -mt-px -mr-px w-fit border bg-body p-2.5 md:aspect-[1.3/1] md:w-full'>
             <Form.Submit asChild>
               <MagneticButton
                 className='md:size-full'
@@ -158,9 +158,7 @@ const ContactFormRoot = ({
               >
                 <PaperPlaneIcon className='absolute aspect-square h-2/3 max-md:hidden' />
 
-                <span className='md:sr-only'>
-                  {serialize(fields.submit.label)}
-                </span>
+                <span className='md:sr-only'>{serialize(fields.submit.label)}</span>
               </MagneticButton>
             </Form.Submit>
           </div>

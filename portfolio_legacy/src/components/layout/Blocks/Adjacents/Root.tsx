@@ -3,10 +3,7 @@ import { ReactNode } from 'react';
 import Section, { SectionProps } from '@/components/layout/wrappers/Section';
 import { Action } from '@/components/molecules';
 import { ActionLinkProps } from '@/components/molecules/Action/Link';
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon
-} from '@/components/system/Icon/variants';
+import { ArrowLeftIcon, ArrowRightIcon } from '@/components/system/Icon/icons';
 import { MergeProps } from '@/types';
 import { cn } from '@/utils';
 
@@ -37,10 +34,10 @@ const SingleProjectAdjacentsBlock = ({
 }: SingleProjectAdjacentsBlockProps) => {
   return (
     <Section
-      className={cn(`3xl:min-h-fit min-h-fit`, className)}
+      className={cn(`min-h-fit 3xl:min-h-fit`, className)}
       {...props}
     >
-      <div className='w-9by10 flex max-w-7xl flex-wrap justify-between gap-2.5 border border-x-0 border-b-0 p-4'>
+      <div className='flex w-9by10 max-w-7xl flex-wrap justify-between gap-2.5 border border-x-0 border-b-0 p-4'>
         <Action
           as='link'
           className='h-fit'

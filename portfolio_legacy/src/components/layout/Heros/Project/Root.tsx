@@ -5,7 +5,7 @@ import { ImageProps } from '@/components/display/Image';
 import Section, { SectionProps } from '@/components/layout/wrappers/Section';
 import { Action } from '@/components/molecules';
 import { ActionLinkProps } from '@/components/molecules/Action/Link';
-import { ArrowUpRightIcon } from '@/components/system/Icon/variants';
+import { ArrowUpRightIcon } from '@/components/system/Icon/icons';
 import { TextProps } from '@/components/system/Text';
 import { TitleProps } from '@/components/system/Title';
 import { MergeProps } from '@/types';
@@ -32,11 +32,11 @@ type ProjectHeroProps = MergeProps<ProjectHeroOwnProps, SectionProps>;
 const ProjectHero = ({ className, data, ...props }: ProjectHeroProps) => {
   return (
     <Section
-      className={cn('3xl:min-h-fit min-h-fit pt-0', className)}
+      className={cn('min-h-fit pt-0 3xl:min-h-fit', className)}
       forceTheme
       {...props}
     >
-      <header className='w-9by10 3xl:min-h-[calc(var(--max-height-bounds)*.75)] flex min-h-[75svh] flex-col items-center justify-center py-8'>
+      <header className='flex min-h-[75svh] w-9by10 flex-col items-center justify-center py-8 3xl:min-h-[calc(var(--max-height-bounds)*.75)]'>
         {renderComp(
           <Title
             className='mb-2.5 max-w-md text-center font-medium tracking-wide'
@@ -56,9 +56,7 @@ const ProjectHero = ({ className, data, ...props }: ProjectHeroProps) => {
         </Title>
 
         {renderComp(
-          <Text className='text-dimmed mt-5 max-w-xl text-center text-sm'>
-            {data.description}
-          </Text>,
+          <Text className='mt-5 max-w-xl text-center text-sm text-dimmed'>{data.description}</Text>,
           [data.description]
         )}
       </header>
@@ -82,7 +80,7 @@ const ProjectHero = ({ className, data, ...props }: ProjectHeroProps) => {
           [data.action.label]
         )}
 
-        <div className='bg-gray-1 dark:bg-dark-6 relative aspect-video w-full overflow-hidden rounded-xl'>
+        <div className='relative aspect-video w-full overflow-hidden rounded-xl bg-gray-1 dark:bg-dark-6'>
           <Image
             alt={data.image.alt}
             className='object-cover'

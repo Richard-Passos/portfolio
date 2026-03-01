@@ -1,6 +1,6 @@
-import { ScrollAnimateRootConfigOptions } from '../Root';
+import { ScrollAnimateConfigOptions } from '../Root';
 
-const rotateLeft: ScrollAnimateRootConfigOptions = {
+const rotateLeft: ScrollAnimateConfigOptions = {
   scroll: 'scrollY',
   scrollPoints: [0, 400],
   prop: 'rotate',
@@ -8,7 +8,7 @@ const rotateLeft: ScrollAnimateRootConfigOptions = {
   transformConfig: { clamp: false }
 };
 
-const rotateRight: ScrollAnimateRootConfigOptions = {
+const rotateRight: ScrollAnimateConfigOptions = {
   scroll: 'scrollY',
   scrollPoints: [0, 400],
   prop: 'rotate',

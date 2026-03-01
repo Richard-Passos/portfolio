@@ -1,7 +1,7 @@
 import { Inter, Roboto_Slab } from 'next/font/google';
 import localFont from 'next/font/local';
 
-const FONTS = {
+export const FONTS = {
   title: Inter({
     subsets: ['latin']
   }),
@@ -12,6 +12,4 @@ const FONTS = {
   monospace: Roboto_Slab({
     subsets: ['latin']
   })
-};
-
-export { FONTS };
+} as const;
