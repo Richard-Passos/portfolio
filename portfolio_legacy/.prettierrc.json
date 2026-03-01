@@ -1,0 +1,27 @@
+{
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "importOrder": ["^@/", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "jsxSingleQuote": true,
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "printWidth": 80,
+  "quoteProps": "as-needed",
+  "semi": true,
+  "singleAttributePerLine": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "tailwindAttributes": [
+    "\\w*[Aa]nimation(s)?",
+    "\\w*[Cc]lass(es)?",
+    "\\w*[Cc]lassName(s)?"
+  ],
+  "tailwindFunctions": ["cnv"],
+  "trailingComma": "none",
+  "useTabs": false
+}
