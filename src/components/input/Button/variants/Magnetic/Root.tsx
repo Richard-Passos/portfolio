@@ -53,16 +53,13 @@ export const MagneticButton = ({
     </>
   );
 
-  className = cn(
-    'group/action relative px-0 *:*:grow hover:z-10 hover:bg-(--button-bg)',
-    className
-  );
+  className = cn('relative hover:bg-(--bg)', className);
 
   return (
     <Magnetic {...magneticProps}>
       {href ? (
         <Button
-          asChild={true}
+          asChild
           {...props}
         >
           <Link

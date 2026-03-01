@@ -1,7 +1,7 @@
 'use client';
 
 import { deviceType } from 'detect-it';
-import { m } from 'motion/react';
+import { motion } from 'motion/react';
 import { type ComponentProps, type RefObject, useEffect, useRef } from 'react';
 
 import { Slot } from '@/components/misc';
@@ -20,7 +20,7 @@ export type MagneticProps = MergeProps<
 
 export const magneticSmoothConfig = { damping: 7, stiffness: 100, mass: 0.5 };
 
-const MotionChild = m.create(Slot);
+const MotionChild = motion.create(Slot);
 
 export const Magnetic = ({
   smoothConfig,

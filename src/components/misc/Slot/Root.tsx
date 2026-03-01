@@ -6,6 +6,13 @@ import { ComponentProps, ReactNode } from 'react';
 export type SlotAsChildProps<Props> = Props &
   ({ asChild?: false } | { asChild: true; children: ReactNode });
 
-export type SlotProps = ComponentProps<typeof Slot>;
+export type SlotProps = Omit<ComponentProps<typeof ark.slot>, 'asChild'>;
 
-export const Slot = ark.slot;
+export const Slot = (props: SlotProps) => {
+  return (
+    <ark.slot
+      asChild
+      {...props}
+    />
+  );
+};

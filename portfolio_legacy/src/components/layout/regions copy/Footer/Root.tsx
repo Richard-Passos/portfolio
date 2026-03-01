@@ -1,18 +1,10 @@
 import { Fragment } from 'react/jsx-runtime';
 
-import {
-  Icon,
-  Lines,
-  Link,
-  LocalTime,
-  ScrollAnimate,
-  Text,
-  Title
-} from '@/components/atoms';
+import { Icon, Lines, Link, LocalTime, ScrollAnimate, Text, Title } from '@/components/atoms';
 import Section, { SectionProps } from '@/components/layout/wrappers/Section';
 import { Action } from '@/components/molecules';
 import { yFullScrollAnim } from '@/components/motion/ScrollAnimate/animations/scroll';
-import Logo from '@/components/navigation/Logo';
+import Logo from '@/components/navigation/Menu/Logo';
 import { LegalPage } from '@/types';
 import { MergeProps } from '@/types';
 import { cn, entries } from '@/utils';
@@ -53,7 +45,7 @@ const Footer = async ({ className, ...props }: FooterProps) => {
       theme='light'
       {...props}
     >
-      <div className='w-9by10 relative z-10 flex grow flex-col'>
+      <div className='relative z-10 flex w-9by10 grow flex-col'>
         <section className='my-8 flex flex-wrap items-center gap-2.5'>
           <Action
             color='red'
@@ -107,7 +99,7 @@ const Footer = async ({ className, ...props }: FooterProps) => {
             </section>
 
             <Text
-              className='text-dimmed mt-4 block max-w-sm text-xs'
+              className='mt-4 block max-w-sm text-xs text-dimmed'
               component='small'
             >
               {entries(legalPages).map(([key, d]) => (
@@ -142,9 +134,9 @@ const Footer = async ({ className, ...props }: FooterProps) => {
         </section>
       </div>
 
-      <div className='border-gray-3 dark:border-dark-4 absolute inset-[15%] flex items-center justify-center overflow-hidden rounded-lg border'>
+      <div className='absolute inset-[15%] flex items-center justify-center overflow-hidden rounded-lg border border-gray-3 dark:border-dark-4'>
         <ScrollAnimate config={yFullScrollAnim}>
-          <Lines className='text-gray-3 dark:text-dark-4 h-full translate-y-0 bg-size-[83.333px_66.666px]' />
+          <Lines className='h-full translate-y-0 bg-size-[83.333px_66.666px] text-gray-3 dark:text-dark-4' />
         </ScrollAnimate>
       </div>
     </Section>

@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 
 import { Bg } from '@/components/atoms';
 import { LocaleSelect } from '@/components/molecules';
-import Logo from '@/components/navigation/Logo';
+import Logo from '@/components/navigation/Menu/Logo';
 import { defaultPages, locales } from '@/constants';
 import { DefaultPage } from '@/types';
 import { MergeProps } from '@/types';
@@ -28,9 +28,7 @@ const Header = async ({ className, ...props }: HeaderProps) => {
   if (!headerRes.ok) return null;
 
   const header = headerRes.data,
-    pages = pagesRes.ok
-      ? (pagesRes.data as Record<string, DefaultPage>)
-      : undefined;
+    pages = pagesRes.ok ? (pagesRes.data as Record<string, DefaultPage>) : undefined;
 
   const navItem: HeaderNavProps['items'] = entries(pages).map(([key, p]) => ({
     href: key === defaultPages.home ? '/' : `/${key}`,
@@ -41,7 +39,7 @@ const Header = async ({ className, ...props }: HeaderProps) => {
     <HeaderdTheme>
       <header
         className={cn(
-          'max-w-bounds relative flex w-full flex-wrap items-center justify-center px-[6%] py-5 sm:px-[4%]',
+          'relative flex w-full max-w-bounds flex-wrap items-center justify-center px-[6%] py-5 sm:px-[4%]',
           className
         )}
         {...props}

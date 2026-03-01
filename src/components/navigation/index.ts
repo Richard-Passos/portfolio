@@ -1,3 +1,4 @@
 export * from './Link';
 export * from './Logo';
 export * from './Menu';
+export * from './Tabs';

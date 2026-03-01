@@ -1,8 +1,10 @@
 import { ComponentProps } from 'react';
 
+import { MagneticButton } from '@/components/input/Button/variants';
 import { Theme } from '@/components/misc';
 import { Logo } from '@/components/navigation';
 import { LocaleMenu } from '@/components/navigation/Menu/variants';
+import { NavTabs } from '@/components/navigation/Tabs/variants';
 import { useI18nServer } from '@/hooks';
 import { cn } from '@/utils';
 
@@ -17,14 +19,16 @@ const Header = ({ className, ...props }: HeaderProps) => {
     <Theme>
       <header
         className={cn(
-          'relative flex w-full max-w-bounds flex-wrap items-center justify-center px-[6%] py-5 sm:px-[4%]',
+          'max-w-bounds relative flex w-full flex-wrap items-center justify-center px-[6%] py-5 sm:px-[4%]',
           className
         )}
         {...props}
       >
         <Logo className='mr-auto' />
 
-        <div className='flex items-center gap-2.5 max-md:hidden'>
+        <div className='flex items-center gap-3 max-md:hidden'>
+          <NavTabs items={navItems.map((item) => ({ url: item.url.value, label: item.label }))} />
+
           <LocaleMenu aria-label={locale.label.value} />
         </div>
       </header>
