@@ -1,15 +1,15 @@
 'use client';
 
 import { ComponentProps } from 'react';
-import { Toaster as UiToaster, ToasterProps as UiToasterProps } from 'react-hot-toast';
+import { Toaster, ToasterProps } from 'react-hot-toast';
 
-import { Theme } from '@/components/misc';
+import { useThemeContext } from '@/hooks/contexts';
 import { MergeProps } from '@/types';
 import { cn } from '@/utils';
 
-type ToasterProps = MergeProps<UiToasterProps, ComponentProps<'div'>>;
+type ToasterRootProps = MergeProps<ToasterProps, ComponentProps<'div'>>;
 
-const Toaster = ({
+const ToasterRoot = ({
   containerClassName,
   containerStyle,
   gutter,
@@ -18,27 +18,33 @@ const Toaster = ({
   toastOptions,
   children,
   ...props
-}: ToasterProps) => {
+}: ToasterRootProps) => {
+  const { theme } = useThemeContext();
+
   return (
-    <Theme>
-      <div {...props}>
-        <UiToaster
-          containerClassName={containerClassName}
-          containerStyle={containerStyle}
-          gutter={gutter}
-          position={position}
-          reverseOrder={reverseOrder}
-          toastOptions={{
-            ...toastOptions,
-            className: cn('rounded! bg-muted! text-body-emphasis! shadow!', toastOptions?.className)
-          }}
-        >
-          {children}
-        </UiToaster>
-      </div>
-    </Theme>
+    <div
+      data-theme={theme}
+      {...props}
+    >
+      <Toaster
+        containerClassName={containerClassName}
+        containerStyle={containerStyle}
+        gutter={gutter}
+        position={position}
+        reverseOrder={reverseOrder}
+        toastOptions={{
+          ...toastOptions,
+          className: cn(
+            'rounded! bg-gray-0! dark:bg-dark-5! text-text! shadow!',
+            toastOptions?.className
+          )
+        }}
+      >
+        {children}
+      </Toaster>
+    </div>
   );
 };
 
-export { Toaster };
-export type { ToasterProps };
+export { ToasterRoot };
+export type { ToasterRootProps };

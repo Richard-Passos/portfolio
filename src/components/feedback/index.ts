@@ -1,2 +1,3 @@
-export * from './Spinner';
+export * from './Loader';
+export * from './Progress';
 export * from './Toaster';

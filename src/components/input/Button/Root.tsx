@@ -1,65 +1,56 @@
-import { ark } from '@ark-ui/react/factory';
-import { type VariantProps, cva } from 'class-variance-authority';
 import { ComponentProps } from 'react';
 
-import { COLORS } from '@/common';
-import { Spinner } from '@/components/feedback';
+import { Loader, LoaderProps } from '@/components/feedback';
+import { Slot, SlotAsChildProps } from '@/components/misc';
 import { MergeProps } from '@/types';
 import { cn } from '@/utils';
 
-export type ButtonProps = MergeProps<
-  { isLoading?: boolean; color?: (typeof COLORS)[number] } & VariantProps<typeof buttonVariants>,
-  ComponentProps<typeof ark.button>
+type ButtonRootProps = SlotAsChildProps<
+  MergeProps<
+    {
+      isIconOnly?: boolean;
+      isLoading?: boolean;
+      color?: 'primary' | 'red';
+      variant?: 'filled' | 'default';
+      loaderProps?: Partial<LoaderProps>;
+    },
+    ComponentProps<'button'>
+  >
 >;
 
-export const buttonVariants = cva(
-  'inline-flex shrink-0 cursor-pointer items-center justify-center rounded border border-transparent font-medium whitespace-nowrap transition-[background-color] disabled:pointer-events-none disabled:opacity-50 [&_svg]:shrink-0',
-  {
-    variants: {
-      size: {
-        sm: 'h-8 gap-1 px-2.5 text-sm [&_svg:not([class*="size-"],[class*="h-"],[class*="w-"])]:size-4',
-        md: 'h-10 gap-1.5 px-2.5 [&_svg:not([class*="size-"],[class*="h-"],[class*="w-"])]:size-5',
-        lg: 'h-12 gap-1.5 px-2.5 [&_svg:not([class*="size-"],[class*="h-"],[class*="w-"])]:size-6'
-      },
-      variant: {
-        default: 'bg-(--bg) text-(--color) hover:bg-(--hover)',
-        subtle: 'bg-(--bg)/8 text-(--bg) hover:bg-(--bg)/16',
-        ghost: 'hover:bg-(--bg)/16'
-      }
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'md'
-    }
-  }
-);
-
-export const Button = ({
-  size = 'md',
-  color = 'body',
-  variant = 'default',
+const ButtonRoot = ({
+  asChild,
+  isIconOnly,
   isLoading,
+  variant = 'filled',
+  color = 'primary',
+  disabled,
   className,
-  style,
   children,
+  loaderProps,
   ...props
-}: ButtonProps) => {
+}: ButtonRootProps) => {
+  const Comp = asChild ? Slot : 'button',
+    isDisabled = isLoading || disabled;
+
   return (
-    <ark.button
-      aria-disabled={props.disabled ? true : undefined}
+    <Comp
+      type='button'
       data-loading={isLoading ? true : undefined}
-      className={cn(buttonVariants({ size, variant, className }))}
-      style={
-        {
-          '--bg': `hsl(var(--${color}))`,
-          '--hover': `hsl(var(--${color}-hover))`,
-          '--color': `hsl(var(--${color}-emphasis))`,
-          ...style
-        } as typeof style
-      }
+      aria-disabled={isDisabled ? true : undefined}
+      disabled={isDisabled}
+      className={cn(
+        isDisabled &&
+          'aria-disabled:bg-gray-1 aria-disabled:text-gray-5 dark:aria-disabled:bg-dark-6 dark:aria-disabled:text-dark-3',
+        isIconOnly && `aspect-square [--button-padding-x:0px] *:*:grow`,
+        className
+      )}
       {...props}
     >
-      {!props.asChild && isLoading ? <Spinner /> : children}
-    </ark.button>
+      {!asChild && isLoading ? <Loader {...loaderProps} /> : children}
+    </Comp>
   );
 };
+
+export { ButtonRoot };
+export type { ButtonRootProps };

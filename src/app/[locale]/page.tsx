@@ -1,27 +1,42 @@
-import { type NextPageIntlayer } from 'next-intlayer';
-import { IntlayerServerProvider } from 'next-intlayer/server';
+import { NextPageIntlayer } from 'next-intlayer';
 
+import { PrimaryHero } from '@/components/layout/Heros';
+import { ScrollAnimate } from '@/components/motion';
+import { rotateRight } from '@/components/motion/ScrollAnimate/animations';
 import { useI18nServer } from '@/hooks';
 
-const PageContent = () => {
-  const content = useI18nServer('home');
+import { App } from '../../../components copy/layout/regions';
+import { SmileIcon } from '../../../components copy/system/icons';
+
+const HomePage = () => {
+  const { hero } = useI18nServer('home');
 
   return (
     <>
-      <p>{content.getStarted.main}</p>
-      <code>{content.getStarted.pageLink}</code>
+      <PrimaryHero
+        theme='light'
+        data={{
+          ...hero,
+          left: (
+            <ScrollAnimate config={rotateRight}>
+              <SmileIcon className='size-8' />
+            </ScrollAnimate>
+          ),
+          right: `(${new Date().getFullYear()})`
+        }}
+      />
     </>
   );
 };
 
-const HomePage: NextPageIntlayer = async ({ params }) => {
+const HomeProvider: NextPageIntlayer = async ({ params }) => {
   const { locale } = await params;
 
   return (
-    <IntlayerServerProvider locale={locale}>
-      <PageContent />
-    </IntlayerServerProvider>
+    <App locale={locale}>
+      <HomePage />
+    </App>
   );
 };
 
-export default HomePage;
+export default HomeProvider;

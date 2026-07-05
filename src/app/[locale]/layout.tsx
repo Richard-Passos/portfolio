@@ -1,8 +1,7 @@
 import { getHTMLTextDir } from 'intlayer';
-import { IntlayerClientProvider, type NextLayoutIntlayer } from 'next-intlayer';
+import { type NextLayoutIntlayer } from 'next-intlayer';
 
-import { Header } from '@/components/layout/regions';
-import { StoreProvider } from '@/contexts';
+import { AppProvider } from '@/contexts';
 import '@/styles/globals.css';
 
 export { generateStaticParams } from 'next-intlayer';
@@ -17,13 +16,7 @@ const LocaleLayout: NextLayoutIntlayer = async ({ params, children }) => {
       dir={getHTMLTextDir(locale)}
     >
       <body className='relative flex min-h-svh flex-col items-center overflow-x-clip bg-body'>
-        <StoreProvider>
-          <IntlayerClientProvider locale={locale}>
-            <Header />
-
-            {children}
-          </IntlayerClientProvider>
-        </StoreProvider>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );

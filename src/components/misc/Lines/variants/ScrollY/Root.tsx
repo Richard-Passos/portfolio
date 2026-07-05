@@ -5,12 +5,12 @@ import { ScrollAnimate } from '@/components/motion';
 import { yFull } from '@/components/motion/ScrollAnimate/animations';
 import { cn } from '@/utils';
 
-type ScrollYLinesProps = ComponentProps<'div'>;
+type ScrollYLinesRootProps = ComponentProps<'div'>;
 
-const ScrollYLines = ({ className, ...props }: ScrollYLinesProps) => {
+const ScrollYLinesRoot = ({ className, ...props }: ScrollYLinesRootProps) => {
   return (
     <div
-      className={cn('relative overflow-hidden border bg-body', className)}
+      className={cn('bg-body relative overflow-hidden border', className)}
       {...props}
     >
       <ScrollAnimate config={yFull}>
@@ -20,5 +20,5 @@ const ScrollYLines = ({ className, ...props }: ScrollYLinesProps) => {
   );
 };
 
-export { ScrollYLines };
-export type { ScrollYLinesProps };
+export { ScrollYLinesRoot };
+export type { ScrollYLinesRootProps };

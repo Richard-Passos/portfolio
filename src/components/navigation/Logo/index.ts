@@ -1,1 +1,1 @@
-export * from './Root';
+export { LogoRoot as Logo, type LogoRootProps as LogoProps } from './Root';

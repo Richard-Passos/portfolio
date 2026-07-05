@@ -1,1 +1,4 @@
-export { Text as Text, type TextProps as TextProps } from '@mantine/core';
+export {
+  Text as TextRoot,
+  type TextProps as TextRootProps
+} from '@mantine/core';

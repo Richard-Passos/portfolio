@@ -1,12 +1,12 @@
-import { Button, type ButtonProps } from '@/components/input';
-import { Magnetic, type MagneticProps } from '@/components/motion';
-import { Link, type LinkProps } from '@/components/navigation';
-import type { MergeProps } from '@/types';
+import { Button, ButtonProps } from '@/components/input/Button';
+import { MagneticRoot, MagneticRootProps } from '@/components/motion';
+import { Link, LinkProps } from '@/components/navigation';
+import { MergeProps } from '@/types';
 import { cn } from '@/utils';
 
-export type MagneticButtonProps = MergeProps<
+type MagneticButtonRootProps = MergeProps<
   {
-    magneticProps?: Partial<MagneticProps>;
+    magneticProps?: Partial<MagneticRootProps>;
   },
   MergeProps<
     ButtonProps,
@@ -18,13 +18,13 @@ export type MagneticButtonProps = MergeProps<
   'asChild'
 >;
 
-export const MagneticButton = ({
+const MagneticButtonRoot = ({
   href,
   className,
   children,
   magneticProps,
   ...props
-}: MagneticButtonProps) => {
+}: MagneticButtonRootProps) => {
   magneticProps = {
     ...magneticProps,
     limit:
@@ -35,7 +35,7 @@ export const MagneticButton = ({
 
   const content = (
     <>
-      <Magnetic
+      <MagneticRoot
         limit={
           magneticProps.limit && {
             x: magneticProps.limit.x * 0.8,
@@ -47,19 +47,22 @@ export const MagneticButton = ({
         <span className='rounded-inherit relative z-10 flex size-full items-center justify-center gap-[inherit] px-(--button-padding-x)'>
           {children}
         </span>
-      </Magnetic>
+      </MagneticRoot>
 
       <span className='absolute inset-0 bg-(--button-hover) transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-hover/action:[clip-path:inset(0_round_0)] group-aria-disabled/action:hidden' />
     </>
   );
 
-  className = cn('relative hover:bg-(--bg)', className);
+  className = cn(
+    'group/action relative px-0 *:*:grow hover:z-10 hover:bg-(--button-bg)',
+    className
+  );
 
   return (
-    <Magnetic {...magneticProps}>
+    <MagneticRoot {...magneticProps}>
       {href ? (
         <Button
-          asChild
+          asChild={true}
           {...props}
         >
           <Link
@@ -77,6 +80,9 @@ export const MagneticButton = ({
           {content}
         </Button>
       )}
-    </Magnetic>
+    </MagneticRoot>
   );
 };
+
+export { MagneticButtonRoot };
+export type { MagneticButtonRootProps };

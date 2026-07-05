@@ -1,38 +1,65 @@
 import { ComponentProps } from 'react';
 
-import { MagneticButton } from '@/components/input/Button/variants';
-import { Theme } from '@/components/misc';
-import { Logo } from '@/components/navigation';
-import { LocaleMenu } from '@/components/navigation/Menu/variants';
-import { NavTabs } from '@/components/navigation/Tabs/variants';
-import { useI18nServer } from '@/hooks';
-import { cn } from '@/utils';
+import { Bg } from '@/components/atoms';
+import { LocaleSelect } from '@/components/molecules';
+import Logo from '@/components/navigation/Menu/Logo';
+import { defaultPages, locales } from '@/constants';
+import { DefaultPage } from '@/types';
+import { MergeProps } from '@/types';
+import { cn, entries } from '@/utils';
+import { getLocale, headerApi, pagesApi } from '@/utils/actions';
 
-type HeaderProps = ComponentProps<'header'>;
+import HeaderMenu from './Menu';
+import HeaderNav, { HeaderNavProps } from './Nav';
+import HeaderdTheme from './Theme';
 
-const Header = ({ className, ...props }: HeaderProps) => {
-  const { locale, navItems } = useI18nServer('header');
+type HeaderOwnProps = {};
 
-  console.log(navItems);
+type HeaderProps = MergeProps<HeaderOwnProps, ComponentProps<'header'>>;
+
+const Header = async ({ className, ...props }: HeaderProps) => {
+  const locale = await getLocale();
+
+  const [headerRes, pagesRes] = await Promise.all([
+    headerApi.get({ locale }),
+    pagesApi.get({ locale, isSelected: true })
+  ]);
+
+  if (!headerRes.ok) return null;
+
+  const header = headerRes.data,
+    pages = pagesRes.ok ? (pagesRes.data as Record<string, DefaultPage>) : undefined;
+
+  const navItem: HeaderNavProps['items'] = entries(pages).map(([key, p]) => ({
+    href: key === defaultPages.home ? '/' : `/${key}`,
+    label: p.label
+  }));
 
   return (
-    <Theme>
+    <HeaderdTheme>
       <header
         className={cn(
-          'max-w-bounds relative flex w-full flex-wrap items-center justify-center px-[6%] py-5 sm:px-[4%]',
+          'relative flex w-full max-w-bounds flex-wrap items-center justify-center px-[6%] py-5 sm:px-[4%]',
           className
         )}
         {...props}
       >
         <Logo className='mr-auto' />
 
-        <div className='flex items-center gap-3 max-md:hidden'>
-          <NavTabs items={navItems.map((item) => ({ url: item.url.value, label: item.label }))} />
+        <div className='flex items-center gap-2.5 max-md:hidden'>
+          <HeaderNav items={navItem} />
 
-          <LocaleMenu aria-label={locale.label.value} />
+          <LocaleSelect
+            aria-label={header.locale.label}
+            data={locales}
+          />
         </div>
+
+        <HeaderMenu />
+
+        <Bg />
       </header>
-    </Theme>
+    </HeaderdTheme>
   );
 };
 

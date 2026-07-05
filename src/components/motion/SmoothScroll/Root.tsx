@@ -3,9 +3,9 @@
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { ComponentProps } from 'react';
 
-type SmoothScrollProps = ComponentProps<typeof ReactLenis>;
+type SmoothScrollRootProps = ComponentProps<typeof ReactLenis>;
 
-const SmoothScroll = (props: SmoothScrollProps) => {
+const SmoothScrollRoot = (props: SmoothScrollRootProps) => {
   return (
     <ReactLenis
       root
@@ -14,5 +14,5 @@ const SmoothScroll = (props: SmoothScrollProps) => {
   );
 };
 
-export { SmoothScroll };
-export type { SmoothScrollProps };
+export { SmoothScrollRoot };
+export type { SmoothScrollRootProps };

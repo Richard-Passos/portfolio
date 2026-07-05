@@ -1,5 +1,8 @@
-export { List as List, type ListProps as ListProps } from '@mantine/core';
+export {
+  List as ListRoot,
+  type ListProps as ListRootProps
+} from '@mantine/core';
 
-type ListType = 'ordered' | 'unordered';
+type ListRootType = 'ordered' | 'unordered';
 
-export type { ListType };
+export type { ListRootType };

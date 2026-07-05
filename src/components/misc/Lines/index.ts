@@ -1,1 +1,1 @@
-export * from './Root';
+export { LinesRoot as Lines, type LinesRootProps as LinesProps } from './Root';

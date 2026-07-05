@@ -1,1 +1,4 @@
-export * from './Root';
+export {
+  SelectRoot as Select,
+  type SelectRootProps as SelectProps
+} from './Root';

@@ -2,14 +2,12 @@
 
 import { useRef } from 'react';
 
-import { Slot, SlotProps } from '@/components/misc';
-import { MagneticProvider } from '@/contexts';
+import { SlotProps as MagneticContainerProps, Slot } from '@/components/misc';
+import { MagneticProvider } from '@/providers';
 import { setRefs } from '@/utils';
 
-export type MagneticContainerProps = SlotProps;
-
-export const MagneticContainer = ({ ref, ...props }: MagneticContainerProps) => {
-  const innerRef = useRef<HTMLSlotElement>(null);
+const MagneticContainer = ({ ref, ...props }: MagneticContainerProps) => {
+  const innerRef = useRef<HTMLElement>(null);
 
   return (
     <MagneticProvider container={innerRef}>
@@ -20,3 +18,6 @@ export const MagneticContainer = ({ ref, ...props }: MagneticContainerProps) => 
     </MagneticProvider>
   );
 };
+
+export { MagneticContainer };
+export type { MagneticContainerProps };

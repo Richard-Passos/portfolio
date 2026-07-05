@@ -1,4 +1,4 @@
 export {
-  MagneticButton as MagneticButton,
-  type MagneticButtonProps as MagneticButtonProps
+  MagneticButtonRoot as MagneticButton,
+  type MagneticButtonRootProps as MagneticButtonProps
 } from './Root';

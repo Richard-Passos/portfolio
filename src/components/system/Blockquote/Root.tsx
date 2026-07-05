@@ -1,1 +1,4 @@
-export { Blockquote as Blockquote, type BlockquoteProps as BlockquoteProps } from '@mantine/core';
+export {
+  Blockquote as BlockquoteRoot,
+  type BlockquoteProps as BlockquoteRootProps
+} from '@mantine/core';

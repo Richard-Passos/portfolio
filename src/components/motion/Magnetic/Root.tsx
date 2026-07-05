@@ -2,40 +2,41 @@
 
 import { deviceType } from 'detect-it';
 import { motion } from 'motion/react';
-import { type ComponentProps, type RefObject, useEffect, useRef } from 'react';
+import { ComponentProps, RefObject, useEffect, useRef } from 'react';
 
 import { Slot } from '@/components/misc';
-import { useMagneticContext } from '@/contexts';
-import { type SmoothConfig, useEventListener, useSmooth } from '@/hooks';
-import type { MergeProps } from '@/types';
+import { UseSmoothParams, useEventListener, useSmooth } from '@/hooks';
+import { useMagneticContext } from '@/hooks/contexts';
+import { MergeProps } from '@/types';
 import { setRefs } from '@/utils';
 
-export type MagneticProps = MergeProps<
+type MagneticRootProps = MergeProps<
   {
-    smoothConfig?: SmoothConfig;
+    smoothConfig?: UseSmoothParams['1'];
     limit?: { x: number; y: number };
   },
   ComponentProps<typeof MotionChild>
 >;
 
-export const magneticSmoothConfig = { damping: 7, stiffness: 100, mass: 0.5 };
+const magneticSmoothConfig = { damping: 7, stiffness: 100, mass: 0.5 };
 
 const MotionChild = motion.create(Slot);
 
-export const Magnetic = ({
+const MagneticRoot = ({
   smoothConfig,
   limit = { x: 0.35, y: 0.35 },
   style,
   ref,
   ...props
-}: MagneticProps) => {
-  const innerRef = useRef<HTMLSlotElement>(null) as RefObject<HTMLSlotElement>,
-    element = useRef<HTMLElement>(null) as RefObject<HTMLElement>,
+}: MagneticRootProps) => {
+  const innerRef = useRef<HTMLElement>(null) as RefObject<HTMLElement>,
     { container } = useMagneticContext(),
     position = {
       x: useSmooth(0, { ...magneticSmoothConfig, ...smoothConfig }),
       y: useSmooth(0, { ...magneticSmoothConfig, ...smoothConfig })
     };
+
+  const element = useRef<HTMLElement>(null) as RefObject<HTMLElement>;
 
   const resetPosition = () => {
       position.x.set(0);
@@ -44,7 +45,8 @@ export const Magnetic = ({
     updatePosition = ({ clientX, clientY }: MouseEvent) => {
       if (!element.current) return;
 
-      const { left, top, width, height } = element.current.getBoundingClientRect();
+      const { left, top, width, height } =
+        element.current.getBoundingClientRect();
 
       const center = { x: left + width / 2, y: top + height / 2 };
 
@@ -78,3 +80,6 @@ export const Magnetic = ({
     />
   );
 };
+
+export { MagneticRoot, magneticSmoothConfig };
+export type { MagneticRootProps };

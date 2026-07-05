@@ -1,13 +1,19 @@
 'use client';
 
-import { ComponentProps, useCallback, useLayoutEffect, useRef, useState } from 'react';
+import {
+  ComponentProps,
+  useCallback,
+  useLayoutEffect,
+  useRef,
+  useState
+} from 'react';
 
 import { useEventListener } from '@/hooks';
 import { cn, setRefs } from '@/utils';
 
-type LinesProps = ComponentProps<'div'>;
+type LinesRootProps = ComponentProps<'div'>;
 
-const Lines = ({ className, style, ref, ...props }: LinesProps) => {
+const LinesRoot = ({ className, style, ref, ...props }: LinesRootProps) => {
   const innerRef = useRef<HTMLDivElement>(null),
     [top, setTop] = useState(0);
 
@@ -50,5 +56,5 @@ const Lines = ({ className, style, ref, ...props }: LinesProps) => {
   );
 };
 
-export { Lines };
-export type { LinesProps };
+export { LinesRoot };
+export type { LinesRootProps };

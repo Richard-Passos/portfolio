@@ -1,32 +1,29 @@
-import { Button } from '@/components/input';
-import { Link, type LinkProps } from '@/components/navigation/Link';
-import { LogoIcon, LogoIconProps } from '@/components/system/icons';
+import { Link, LinkProps } from '@/components/navigation/Link';
+import { Icon } from '@/components/system';
 import { MergeProps } from '@/types';
 
-export type LogoProps = MergeProps<
+type LogoRootProps = MergeProps<
   {
-    variant?: LogoIconProps['variant'];
+    variant?: 'primary' | 'secondary';
   },
   LinkProps,
   'href'
 >;
 
-export const Logo = ({ variant = 'primary', ...props }: LogoProps) => {
+const LogoRoot = ({ variant = 'primary', ...props }: LogoRootProps) => {
   return (
-    <Button
-      size='lg'
-      className='bg-transparent! p-0'
-      asChild
+    <Link
+      href='/'
+      size='md'
+      {...props}
     >
-      <Link
-        href='/'
-        {...props}
-      >
-        <LogoIcon
-          variant={variant}
-          className='h-full'
-        />
-      </Link>
-    </Button>
+      <Icon
+        className='size-full'
+        src={`/icons/logo-${variant}.svg`}
+      />
+    </Link>
   );
 };
+
+export { LogoRoot };
+export type { LogoRootProps };

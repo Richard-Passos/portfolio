@@ -1,6 +1,6 @@
-import { ScrollAnimateConfigOptions } from '../Root';
+import { ScrollAnimateRootConfigOptions } from '../Root';
 
-const lineLeft: ScrollAnimateConfigOptions = {
+const lineLeft: ScrollAnimateRootConfigOptions = {
   scrollConfig: {
     offset: ['0 1', '0 .5']
   },

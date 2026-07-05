@@ -15,7 +15,7 @@ import { Slot } from '@/components/misc';
 import { MergeProps } from '@/types';
 import { setRefs, transformTemplate } from '@/utils';
 
-type ScrollAnimateConfigOptions = {
+type ScrollAnimateRootConfigOptions = {
   scrollConfig?: UseScrollOptions;
   scroll?: keyof ReturnType<typeof useScroll>;
   scrollPoints?: any[];
@@ -24,9 +24,9 @@ type ScrollAnimateConfigOptions = {
   transformConfig?: {};
 };
 
-type ScrollAnimateProps = MergeProps<
+type ScrollAnimateRootProps = MergeProps<
   {
-    config: ScrollAnimateConfigOptions;
+    config: ScrollAnimateRootConfigOptions;
     smoothConfig?: SpringOptions;
   },
   ComponentProps<typeof MotionChild>
@@ -45,11 +45,22 @@ const MAPED_TRANSFORM = {
 
 const MotionChild = motion.create(Slot);
 
-const ScrollAnimate = ({ config, smoothConfig, style, ref, ...props }: ScrollAnimateProps) => {
+const ScrollAnimateRoot = ({
+  config,
+  smoothConfig,
+  style,
+  ref,
+  ...props
+}: ScrollAnimateRootProps) => {
   const innerRef = useRef<HTMLElement>(null);
 
-  const options: Pick<ScrollAnimateConfigOptions, 'transformConfig' | 'scrollConfig'> &
-    Required<Omit<ScrollAnimateConfigOptions, 'transformConfig' | 'scrollConfig'>> = {
+  const options: Pick<
+    ScrollAnimateRootConfigOptions,
+    'transformConfig' | 'scrollConfig'
+  > &
+    Required<
+      Omit<ScrollAnimateRootConfigOptions, 'transformConfig' | 'scrollConfig'>
+    > = {
     scroll: 'scrollYProgress',
     scrollPoints: [0, 1],
     ...config,
@@ -73,8 +84,8 @@ const ScrollAnimate = ({ config, smoothConfig, style, ref, ...props }: ScrollAni
     <MotionChild
       ref={setRefs(ref, innerRef)}
       style={{
-        [MAPED_TRANSFORM[options.prop as keyof typeof MAPED_TRANSFORM] ?? options.prop]:
-          smoothConfig ? smoothProp : prop,
+        [MAPED_TRANSFORM[options.prop as keyof typeof MAPED_TRANSFORM] ??
+        options.prop]: smoothConfig ? smoothProp : prop,
         ...style
       }}
       transformTemplate={transformTemplate}
@@ -83,5 +94,5 @@ const ScrollAnimate = ({ config, smoothConfig, style, ref, ...props }: ScrollAni
   );
 };
 
-export { ScrollAnimate };
-export type { ScrollAnimateProps, ScrollAnimateConfigOptions };
+export { ScrollAnimateRoot };
+export type { ScrollAnimateRootProps, ScrollAnimateRootConfigOptions };
