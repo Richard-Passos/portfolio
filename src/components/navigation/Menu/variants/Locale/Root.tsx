@@ -1,57 +1,60 @@
 'use client';
 
-import { getHTMLTextDir, getLocaleName } from 'intlayer';
-import { useLocale } from 'next-intlayer';
+import data from './Root.data'
 
-import { Button } from '@/components/input';
-import { Link, Menu, MenuProps } from '@/components/navigation';
-import { CheckIcon, GlobeIcon } from '@/components/system/icons';
-import { cn } from '@/utils';
+import { Button, ButtonProps } from '@/components/input/Button';
+import { Link } from '@/components/navigation/Link';
+import Menu, { MenuProps } from '@/components/navigation/Menu';
+import { CheckIcon } from '@/components/system/icons/Check';
+import { GlobeIcon } from '@/components/system/icons/Globe';
+import { MergeProps } from '@/types/MergeProps';
+import { cn } from '@/utils/cn';
 
-export type LocaleMenuProps = MenuProps;
+export type LocaleMenuProps = MergeProps<{
+  wrapperProps?: MenuProps,
+}, ButtonProps>;
 
-export const LocaleMenu = (props: LocaleMenuProps) => {
-  const { locale, availableLocales } = useLocale();
-
+export const LocaleMenu = ({ wrapperProps, className, ...props }: LocaleMenuProps) => {
   return (
-    <Menu {...props}>
+    <Menu {...wrapperProps}>
       <Menu.Trigger asChild>
-        <Button className='min-w-32 justify-start gap-2 border-border capitalize'>
+        <Button
+          aria-label={data.label}
+          className={cn('min-w-32 justify-start gap-2 border-border capitalize', className)}
+          {...props}
+        >
           <GlobeIcon />
 
-          {getLocaleName(locale)}
+          {data.default.label}
         </Button>
       </Menu.Trigger>
 
       <Menu.Positioner>
         <Menu.Content className='z-50 flex min-w-32 flex-col gap-0.5 rounded border bg-body p-1 shadow focus-visible:outline-hidden'>
-          {availableLocales.map((localeItem) => {
-            const isActive = localeItem === locale;
-            console.log(localeItem);
+          {data.locales.map(({ key, label }) => {
+            const isActive = key === data.default.key;
 
             return (
               <Menu.Item
-                value={localeItem}
-                key={localeItem}
                 asChild
+                value={key}
+                key={key}
               >
                 <Button
                   asChild
                   size='sm'
                   data-active={isActive ? true : undefined}
                   className={cn(
-                    'justify-start capitalize focus-visible:outline-hidden data-highlighted:bg-(--hover)'
+                    'justify-start border-transparent! capitalize focus-visible:outline-hidden data-highlighted:bg-(--hover) transition-none'
                   )}
                 >
                   <Link
-                    replace // Will ensure that the "go back" browser button will redirect to the previous page
-                    lang={localeItem}
-                    dir={getHTMLTextDir(localeItem)}
-                    href={`/${localeItem}`}
+                    href='/'
+                    lang={key}
                   >
-                    {isActive && <CheckIcon />}
+                    {label}
 
-                    {getLocaleName(localeItem)}
+                    {isActive && <CheckIcon className='ml-auto' />}
                   </Link>
                 </Button>
               </Menu.Item>

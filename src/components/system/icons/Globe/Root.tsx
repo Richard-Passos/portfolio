@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type GlobeIconProps = ComponentProps<'svg'>;
+export type GlobeIconProps = ComponentProps<'svg'>;
 
-const GlobeIcon = ({ className, ...props }: GlobeIconProps) => {
+export const GlobeIcon = ({ className, ...props }: GlobeIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const GlobeIcon = ({ className, ...props }: GlobeIconProps) => {
   );
 };
 
-export { GlobeIcon };
-export type { GlobeIconProps };

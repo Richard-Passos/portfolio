@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type FingerprintIconProps = ComponentProps<'svg'>;
+export type FingerprintIconProps = ComponentProps<'svg'>;
 
-const FingerprintIcon = ({ className, ...props }: FingerprintIconProps) => {
+export const FingerprintIcon = ({ className, ...props }: FingerprintIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const FingerprintIcon = ({ className, ...props }: FingerprintIconProps) => {
   );
 };
 
-export { FingerprintIcon };
-export type { FingerprintIconProps };

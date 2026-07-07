@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type GridIconProps = ComponentProps<'svg'>;
+export type GridIconProps = ComponentProps<'svg'>;
 
-const GridIcon = ({ className, ...props }: GridIconProps) => {
+export const GridIcon = ({ className, ...props }: GridIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const GridIcon = ({ className, ...props }: GridIconProps) => {
   );
 };
 
-export { GridIcon };
-export type { GridIconProps };

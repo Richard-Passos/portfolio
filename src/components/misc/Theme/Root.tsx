@@ -1,7 +1,8 @@
 'use client';
 
-import { Slot, SlotProps } from '@/components/misc';
-import { useThemeContext } from '@/contexts';
+import { useThemeContext } from '@/contexts/Theme';
+
+import { Slot, SlotProps } from '../Slot';
 
 export type ThemeProps = SlotProps;
 

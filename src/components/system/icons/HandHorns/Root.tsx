@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type HandHornsIconProps = ComponentProps<'svg'>;
+export type HandHornsIconProps = ComponentProps<'svg'>;
 
-const HandHornsIcon = ({ className, ...props }: HandHornsIconProps) => {
+export const HandHornsIcon = ({ className, ...props }: HandHornsIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const HandHornsIcon = ({ className, ...props }: HandHornsIconProps) => {
   );
 };
 
-export { HandHornsIcon };
-export type { HandHornsIconProps };

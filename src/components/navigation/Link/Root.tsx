@@ -1,27 +1,20 @@
 'use client';
 
-import { getLocalizedUrl, locales } from 'intlayer';
-import { useLocale } from 'next-intlayer';
 import NextLink from 'next/link';
-import type { ComponentProps } from 'react';
+import { type ComponentProps } from 'react';
 
-import { MergeProps } from '@/types';
-import { cn } from '@/utils';
+import type { MergeProps } from '@/types/MergeProps';
+import { cn } from '@/utils/cn'; 
 
 export type LinkProps = MergeProps<{ disabled?: boolean }, ComponentProps<typeof NextLink>>;
 
 export const Link = ({ href, disabled, className, ...props }: LinkProps) => {
-  const { locale } = useLocale(),
-    isExternal = href && !href.toString().startsWith('/'),
-    targetUrl =
-      isExternal || locales.includes(href.toString().substring(1)) // Is external or /pt -> pt in locales
-        ? href
-        : getLocalizedUrl(href.toString(), locale);
+  const isExternal = !href.toString().startsWith('/');
 
   return (
     <NextLink
-      aria-disabled={disabled}
-      href={disabled ? '' : targetUrl}
+      aria-disabled={disabled ? true : undefined}
+      href={disabled ? '' : href}
       tabIndex={disabled ? -1 : 0}
       className={cn(
         'inline-flex aria-disabled:cursor-not-allowed aria-disabled:opacity-60',

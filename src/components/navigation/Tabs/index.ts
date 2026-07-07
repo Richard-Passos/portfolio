@@ -1,16 +1,16 @@
-import { TabsContent, TabsIndicator, TabsList, Tabs as TabsRoot, TabsTrigger } from './Root';
+import { TabsContent } from './Content';
+import { TabsIndicator } from './Indicator';
+import { TabsList } from './List';
+import { Tabs } from './Root';
+import { TabsTrigger } from './Trigger';
 
-export { TabsContent, TabsIndicator, TabsList, TabsRoot, TabsTrigger };
+export * from './Content';
+export * from './Indicator';
+export * from './List';
+export * from './Root';
+export * from './Trigger';
 
-export type {
-  TabsContentProps,
-  TabsIndicatorProps,
-  TabsListProps,
-  TabsProps as TabsRootProps,
-  TabsTriggerProps
-} from './Root';
-
-export const Tabs = Object.assign(TabsRoot, {
+export default Object.assign(Tabs, {
   Content: TabsContent,
   Indicator: TabsIndicator,
   List: TabsList,

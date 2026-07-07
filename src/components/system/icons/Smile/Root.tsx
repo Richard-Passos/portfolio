@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type SmileIconProps = ComponentProps<'svg'>;
+export type SmileIconProps = ComponentProps<'svg'>;
 
-const SmileIcon = ({ className, ...props }: SmileIconProps) => {
+export const SmileIcon = ({ className, ...props }: SmileIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const SmileIcon = ({ className, ...props }: SmileIconProps) => {
   );
 };
 
-export { SmileIcon };
-export type { SmileIconProps };

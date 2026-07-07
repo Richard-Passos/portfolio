@@ -1,10 +1,10 @@
 'use client';
 
-import { Provider, ProviderProps } from 'react-redux';
-import { PersistGate, PersistGateProps } from 'redux-persist/integration/react';
+import { Provider, type ProviderProps } from 'react-redux';
+import { PersistGate, type PersistGateProps } from 'redux-persist/integration/react';
 
 import { persistor, store } from '@/store';
-import { MergeProps } from '@/types';
+import type { MergeProps } from '@/types/MergeProps';
 
 export type StoreProviderProps = MergeProps<
   {

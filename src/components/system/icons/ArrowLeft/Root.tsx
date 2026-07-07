@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type ArrowLeftIconProps = ComponentProps<'svg'>;
+export type ArrowLeftIconProps = ComponentProps<'svg'>;
 
-const ArrowLeftIcon = ({ className, ...props }: ArrowLeftIconProps) => {
+export const ArrowLeftIcon = ({ className, ...props }: ArrowLeftIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const ArrowLeftIcon = ({ className, ...props }: ArrowLeftIconProps) => {
   );
 };
 
-export { ArrowLeftIcon };
-export type { ArrowLeftIconProps };

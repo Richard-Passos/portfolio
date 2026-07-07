@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type ChevronUpIconProps = ComponentProps<'svg'>;
+export type ChevronUpIconProps = ComponentProps<'svg'>;
 
-const ChevronUpIcon = ({ className, ...props }: ChevronUpIconProps) => {
+export const ChevronUpIcon = ({ className, ...props }: ChevronUpIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const ChevronUpIcon = ({ className, ...props }: ChevronUpIconProps) => {
   );
 };
 
-export { ChevronUpIcon };
-export type { ChevronUpIconProps };

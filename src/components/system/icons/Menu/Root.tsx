@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type MenuIconProps = ComponentProps<'svg'>;
+export type MenuIconProps = ComponentProps<'svg'>;
 
-const MenuIcon = ({ className, ...props }: MenuIconProps) => {
+export const MenuIcon = ({ className, ...props }: MenuIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -19,5 +19,3 @@ const MenuIcon = ({ className, ...props }: MenuIconProps) => {
   );
 };
 
-export { MenuIcon };
-export type { MenuIconProps };

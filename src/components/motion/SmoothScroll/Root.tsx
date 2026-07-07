@@ -1,18 +1,35 @@
 'use client';
 
-import { ReactLenis } from '@studio-freight/react-lenis';
-import { ComponentProps } from 'react';
+import { useEffect, useRef, type RefObject } from 'react';
+import { ReactLenis, type LenisRef, type LenisProps } from 'lenis/react';
+import { gsap } from '@/hooks/useGSAP';
+import { setRefs } from '@/utils/setRefs';
+import type { MergeProps } from '@/types/MergeProps';
 
-type SmoothScrollProps = ComponentProps<typeof ReactLenis>;
+export type SmoothScrollProps = MergeProps<{ ref?: RefObject<LenisRef | null> }, LenisProps>;
 
-const SmoothScroll = (props: SmoothScrollProps) => {
+export const SmoothScroll = ({ ref, options,  ...props }: SmoothScrollProps) => {
+  const lenisRef = useRef<LenisRef>(null);
+
+  useEffect(() => {
+    function update(time: number) {
+      lenisRef.current?.lenis?.raf(time * 1000);
+    }
+
+    gsap.ticker.add(update);
+    gsap.ticker.lagSmoothing(0);
+    
+    return () => {
+      gsap.ticker.remove(update);
+    };
+  }, [lenisRef]);
+
   return (
-    <ReactLenis
-      root
+    <ReactLenis 
+      root 
+      ref={setRefs(ref, lenisRef)}
+      options={{ ...options, autoRaf: false, duration: 0.8 }}
       {...props}
     />
-  );
-};
-
-export { SmoothScroll };
-export type { SmoothScrollProps };
+  )
+}

@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type GithubIconProps = ComponentProps<'svg'>;
+export type GithubIconProps = ComponentProps<'svg'>;
 
-const GithubIcon = ({ className, ...props }: GithubIconProps) => {
+export const GithubIcon = ({ className, ...props }: GithubIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const GithubIcon = ({ className, ...props }: GithubIconProps) => {
   );
 };
 
-export { GithubIcon };
-export type { GithubIconProps };

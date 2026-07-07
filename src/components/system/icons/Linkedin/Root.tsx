@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type LinkedinIconProps = ComponentProps<'svg'>;
+export type LinkedinIconProps = ComponentProps<'svg'>;
 
-const LinkedinIcon = ({ className, ...props }: LinkedinIconProps) => {
+export const LinkedinIcon = ({ className, ...props }: LinkedinIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const LinkedinIcon = ({ className, ...props }: LinkedinIconProps) => {
   );
 };
 
-export { LinkedinIcon };
-export type { LinkedinIconProps };

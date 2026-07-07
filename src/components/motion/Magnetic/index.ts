@@ -1,9 +1,9 @@
 import { MagneticContainer } from './Container';
-import { Magnetic as MagneticRoot } from './Root';
+import { Magnetic } from './Root';
 
 export * from './Container';
 export * from './Root';
 
-export const Magnetic = Object.assign(MagneticRoot, {
+export default Object.assign(Magnetic, {
   Container: MagneticContainer
 });

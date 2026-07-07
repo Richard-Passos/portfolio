@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 
 import { useDispatch, useSelector } from '@/store';
 import { setTheme } from '@/store/slices/theme';
-import { Theme } from '@/types';
+import type { Theme } from '@/types/Theme';
 
 export const useThemeContext = () => {
   const { theme } = useSelector((data) => data.theme),

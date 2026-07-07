@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type WidthIconProps = ComponentProps<'svg'>;
+export type WidthIconProps = ComponentProps<'svg'>;
 
-const WidthIcon = ({ className, ...props }: WidthIconProps) => {
+export const WidthIcon = ({ className, ...props }: WidthIconProps) => {
   return (
     <svg
       className={cn('stroke-current', className)}
@@ -23,5 +23,3 @@ const WidthIcon = ({ className, ...props }: WidthIconProps) => {
   );
 };
 
-export { WidthIcon };
-export type { WidthIconProps };

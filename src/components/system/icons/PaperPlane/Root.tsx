@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type PaperPlaneIconProps = ComponentProps<'svg'>;
+export type PaperPlaneIconProps = ComponentProps<'svg'>;
 
-const PaperPlaneIcon = ({ className, ...props }: PaperPlaneIconProps) => {
+export const PaperPlaneIcon = ({ className, ...props }: PaperPlaneIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const PaperPlaneIcon = ({ className, ...props }: PaperPlaneIconProps) => {
   );
 };
 
-export { PaperPlaneIcon };
-export type { PaperPlaneIconProps };

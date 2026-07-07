@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type CoffeeIconProps = ComponentProps<'svg'>;
+export type CoffeeIconProps = ComponentProps<'svg'>;
 
-const CoffeeIcon = ({ className, ...props }: CoffeeIconProps) => {
+export const CoffeeIcon = ({ className, ...props }: CoffeeIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const CoffeeIcon = ({ className, ...props }: CoffeeIconProps) => {
   );
 };
 
-export { CoffeeIcon };
-export type { CoffeeIconProps };

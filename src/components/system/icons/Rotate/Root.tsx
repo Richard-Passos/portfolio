@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type RotateIconProps = ComponentProps<'svg'>;
+export type RotateIconProps = ComponentProps<'svg'>;
 
-const RotateIcon = ({ className, ...props }: RotateIconProps) => {
+export const RotateIcon = ({ className, ...props }: RotateIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const RotateIcon = ({ className, ...props }: RotateIconProps) => {
   );
 };
 
-export { RotateIcon };
-export type { RotateIconProps };

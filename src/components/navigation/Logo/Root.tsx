@@ -1,7 +1,8 @@
-import { Button } from '@/components/input';
-import { Link, type LinkProps } from '@/components/navigation/Link';
-import { LogoIcon, LogoIconProps } from '@/components/system/icons';
-import { MergeProps } from '@/types';
+import { Button } from '@/components/input/Button';
+import { LogoIcon, LogoIconProps } from '@/components/system/icons/Logo';
+import { MergeProps } from '@/types/MergeProps';
+
+import { Link, type LinkProps } from '../Link';
 
 export type LogoProps = MergeProps<
   {
@@ -14,9 +15,10 @@ export type LogoProps = MergeProps<
 export const Logo = ({ variant = 'primary', ...props }: LogoProps) => {
   return (
     <Button
-      size='lg'
-      className='bg-transparent! p-0'
       asChild
+      size='lg'
+      variant='link'
+      className='p-0'
     >
       <Link
         href='/'
@@ -24,7 +26,7 @@ export const Logo = ({ variant = 'primary', ...props }: LogoProps) => {
       >
         <LogoIcon
           variant={variant}
-          className='h-full'
+          className='h-full! w-auto!'
         />
       </Link>
     </Button>

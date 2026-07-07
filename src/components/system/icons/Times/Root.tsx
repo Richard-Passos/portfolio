@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type TimesIconProps = ComponentProps<'svg'>;
+export type TimesIconProps = ComponentProps<'svg'>;
 
-const TimesIcon = ({ className, ...props }: TimesIconProps) => {
+export const TimesIcon = ({ className, ...props }: TimesIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const TimesIcon = ({ className, ...props }: TimesIconProps) => {
   );
 };
 
-export { TimesIcon };
-export type { TimesIconProps };

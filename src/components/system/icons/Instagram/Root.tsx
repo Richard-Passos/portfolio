@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type InstagramIconProps = ComponentProps<'svg'>;
+export type InstagramIconProps = ComponentProps<'svg'>;
 
-const InstagramIcon = ({ className, ...props }: InstagramIconProps) => {
+export const InstagramIcon = ({ className, ...props }: InstagramIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const InstagramIcon = ({ className, ...props }: InstagramIconProps) => {
   );
 };
 
-export { InstagramIcon };
-export type { InstagramIconProps };

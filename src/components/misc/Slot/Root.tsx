@@ -1,18 +1,14 @@
 'use client';
 
-import { ark } from '@ark-ui/react/factory';
-import { ComponentProps, ReactNode } from 'react';
+import { Ref, type ReactNode } from 'react';
+import type { MergeProps } from '@/types/MergeProps';
 
-export type SlotAsChildProps<Props> = Props &
-  ({ asChild?: false } | { asChild: true; children: ReactNode });
+import { type SlotProps as RadixSlotProps } from '@radix-ui/react-slot';
+export { Slot } from '@radix-ui/react-slot';
 
-export type SlotProps = Omit<ComponentProps<typeof ark.slot>, 'asChild'>;
+export type SlotAsChildProps<Props> = MergeProps<
+  ({ asChild?: false } | { asChild: true; children: ReactNode }), 
+  Props
+>;
 
-export const Slot = (props: SlotProps) => {
-  return (
-    <ark.slot
-      asChild
-      {...props}
-    />
-  );
-};
+export type SlotProps = { ref?: Ref<HTMLSlotElement> } & RadixSlotProps;

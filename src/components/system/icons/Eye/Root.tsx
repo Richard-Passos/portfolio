@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type EyeIconProps = ComponentProps<'svg'>;
+export type EyeIconProps = ComponentProps<'svg'>;
 
-const EyeIcon = ({ className, ...props }: EyeIconProps) => {
+export const EyeIcon = ({ className, ...props }: EyeIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const EyeIcon = ({ className, ...props }: EyeIconProps) => {
   );
 };
 
-export { EyeIcon };
-export type { EyeIconProps };

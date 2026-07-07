@@ -3,20 +3,49 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root {
-  --border: 0 0 70;
-  --placeholder: 215 16 57;
+  --border: 0 0 80;
+  --placeholder: 0 0 47.64;
 
-  --body: 0 0 98;
-  --body-hover: 0 0 94;
-  --body-emphasis: 222 47 0;
+  --body: 0 0 95;
+  --body-hover: 0 0 93;
+  --body-emphasis: 240 9.62 6.08;
 
+  --muted: 0 0 92;
+  --muted-hover: 0 0 88;
+  --muted-emphasis: 240 9.62 6.08;
+  
   --primary: 346 89 60;
   --primary-hover: 346 89 64;
   --primary-emphasis: 346 89 100;
 
-  --muted: 222 47 12;
-  --muted-hover: 222 47 16;
-  --muted-emphasis: 222 47 100;
+  --success: 142 71 55;
+  --success-hover: 142 71 59;
+  --success-emphasis: 142 71 100;
+
+  --danger: 0 84 65;
+  --danger-hover: 0 84 69;
+  --danger-emphasis: 0 84 100;
+
+  --warning: 38 92 60;
+  --warning-hover: 38 92 64;
+  --warning-emphasis: 38 92 100;
+}
+
+[data-theme='dark'] {
+  --border: 240 3.72 15.88;
+  --placeholder: 240 3.72 47.64;
+
+  --body: 240 9.62 6.08;
+  --body-hover: 240 9.62 8.08;
+  --body-emphasis: 0 0 95;
+
+  --muted:240 9.62 7.08;
+  --muted-hover: 240 9.62 9.08;
+  --muted-emphasis: 0 0 95;
+
+  --primary: 346 89 60;
+  --primary-hover: 346 89 64;
+  --primary-emphasis: 346 89 100;
 
   --success: 142 71 55;
   --success-hover: 142 71 59;
@@ -115,6 +144,10 @@
 }
 
 @layer base {
+  a {
+    @apply text-primary
+  }
+
   mark {
     @apply bg-clip-text not-italic [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:--spacing(0.5)];
   }
@@ -135,11 +168,6 @@
   .border-x,
   .border-y {
     @apply border-solid border-border;
-  }
-
-  html.lenis,
-  html.lenis body {
-    height: auto;
   }
 
   .lenis.lenis-smooth {

@@ -1,3 +1,1 @@
-import entries from 'lodash/entries';
-
-export { entries };
+export { default as entries } from 'lodash/entries';

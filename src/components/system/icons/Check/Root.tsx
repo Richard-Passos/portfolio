@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type CheckIconProps = ComponentProps<'svg'>;
+export type CheckIconProps = ComponentProps<'svg'>;
 
-const CheckIcon = ({ className, ...props }: CheckIconProps) => {
+export const CheckIcon = ({ className, ...props }: CheckIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const CheckIcon = ({ className, ...props }: CheckIconProps) => {
   );
 };
 
-export { CheckIcon };
-export type { CheckIconProps };

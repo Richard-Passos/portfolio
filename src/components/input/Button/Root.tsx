@@ -1,54 +1,59 @@
-import { ark } from '@ark-ui/react/factory';
 import { type VariantProps, cva } from 'class-variance-authority';
 import { ComponentProps } from 'react';
 
-import { COLORS } from '@/common';
-import { Spinner } from '@/components/feedback';
-import { MergeProps } from '@/types';
-import { cn } from '@/utils';
+import { COLORS } from '@/common/COLORS';
+import { MergeProps } from '@/types/MergeProps';
+import { cn } from '@/utils/cn';
+import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
 
-export type ButtonProps = MergeProps<
-  { isLoading?: boolean; color?: (typeof COLORS)[number] } & VariantProps<typeof buttonVariants>,
-  ComponentProps<typeof ark.button>
->;
+export type ButtonProps = SlotAsChildProps<MergeProps<
+  { 
+    iconOnly?: boolean;
+    color?: (typeof COLORS)[number] 
+  } & VariantProps<typeof buttonVariants>,
+  ComponentProps<'button'>
+>>;
 
 export const buttonVariants = cva(
-  'inline-flex shrink-0 cursor-pointer items-center justify-center rounded border border-transparent font-medium whitespace-nowrap transition-[background-color] disabled:pointer-events-none disabled:opacity-50 [&_svg]:shrink-0',
+  'inline-flex shrink-0 cursor-pointer items-center justify-center rounded border border-transparent font-medium whitespace-nowrap transition-[background-color] disabled:pointer-events-none disabled:opacity-50 px-(--px) gap-(--gap)',
   {
     variants: {
       size: {
-        sm: 'h-8 gap-1 px-2.5 text-sm [&_svg:not([class*="size-"],[class*="h-"],[class*="w-"])]:size-4',
-        md: 'h-10 gap-1.5 px-2.5 [&_svg:not([class*="size-"],[class*="h-"],[class*="w-"])]:size-5',
-        lg: 'h-12 gap-1.5 px-2.5 [&_svg:not([class*="size-"],[class*="h-"],[class*="w-"])]:size-6'
+        sm: 'h-8 [--gap:--spacing(1)] [--px:--spacing(2.5)] text-sm [&_svg]:size-4',
+        md: 'h-10 [--gap:--spacing(1.5)] [--px:--spacing(2.5)] [&_svg]:size-5',
+        lg: 'h-12 [--gap:--spacing(1.5)] [--px:--spacing(2.5)] [&_svg]:size-6'
       },
       variant: {
         default: 'bg-(--bg) text-(--color) hover:bg-(--hover)',
         subtle: 'bg-(--bg)/8 text-(--bg) hover:bg-(--bg)/16',
-        ghost: 'hover:bg-(--bg)/16'
+        ghost: 'text-(--bg) hover:bg-(--bg)/16',
+        link: 'text-(--color)'
       }
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'md'
     }
   }
 );
 
 export const Button = ({
+  asChild,
   size = 'md',
   color = 'body',
   variant = 'default',
-  isLoading,
+  iconOnly,
   className,
   style,
-  children,
   ...props
 }: ButtonProps) => {
+  const Comp = asChild ? Slot : 'button';
+
   return (
-    <ark.button
+    <Comp
       aria-disabled={props.disabled ? true : undefined}
-      data-loading={isLoading ? true : undefined}
-      className={cn(buttonVariants({ size, variant, className }))}
+      className={cn(
+        buttonVariants({ size, variant }),
+        iconOnly && 'aspect-square [--px:0]',
+        variant === 'default' && color === 'body' && 'border-border',
+        className
+      )}
       style={
         {
           '--bg': `hsl(var(--${color}))`,
@@ -58,8 +63,6 @@ export const Button = ({
         } as typeof style
       }
       {...props}
-    >
-      {!props.asChild && isLoading ? <Spinner /> : children}
-    </ark.button>
+  />
   );
-};
+}; 

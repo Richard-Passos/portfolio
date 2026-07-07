@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type RocketIconProps = ComponentProps<'svg'>;
+export type RocketIconProps = ComponentProps<'svg'>;
 
-const RocketIcon = ({ className, ...props }: RocketIconProps) => {
+export const RocketIcon = ({ className, ...props }: RocketIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const RocketIcon = ({ className, ...props }: RocketIconProps) => {
   );
 };
 
-export { RocketIcon };
-export type { RocketIconProps };

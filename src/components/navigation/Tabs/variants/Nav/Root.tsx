@@ -1,26 +1,24 @@
 'use client';
 
-import { locales } from 'intlayer';
 import { useSelectedLayoutSegment } from 'next/navigation';
-import { ReactNode, useState } from 'react';
+import { useState, type ReactNode, } from 'react';
 
-import { Link, Tabs, TabsRootProps } from '@/components/navigation';
-import { MergeProps } from '@/types';
+import Tabs, { type TabsProps } from '@/components/navigation/Tabs';
+import type { MergeProps } from '@/types/MergeProps';
+import { cn } from '@/utils/cn';
+import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
 
 export type NavTabsProps = MergeProps<
-  {
-    items: { url: string; label: ReactNode }[];
-  },
-  TabsRootProps
+  { id: string, orientation?: 'horizontal' | 'vertical', items: { url: string; label: ReactNode }[] },
+  TabsProps
 >;
 
-export const NavTabs = ({ items, ...props }: NavTabsProps) => {
-  const selectedLayoutSegment = useSelectedLayoutSegment(),
-    segment =
-      !selectedLayoutSegment || locales.includes(selectedLayoutSegment)
-        ? '/'
-        : `/${selectedLayoutSegment}`,
-    [value, setValue] = useState(segment);
+export const NavTabs = ({ id, items,  orientation = 'horizontal', ...props }: NavTabsProps) => {
+  const selectedLayoutSegment = useSelectedLayoutSegment();
+  const segment = !selectedLayoutSegment
+                    ? '/'
+                    : `/${selectedLayoutSegment}`;
+  const [value, setValue] = useState(segment);
 
   return (
     <Tabs
@@ -28,29 +26,33 @@ export const NavTabs = ({ items, ...props }: NavTabsProps) => {
       activationMode='manual'
       value={value}
       onValueChange={(e) => setValue(e.value)}
+      orientation={orientation}
       {...props}
     >
       <Tabs.List
-        className='relative'
+        className={cn(
+          'relative flex',
+          orientation === 'vertical' && 'flex-col items-start' 
+        )}
         onMouseLeave={() => setValue(segment)}
       >
-        {items.map((item) => (
+        {items.map((item) => ( 
           <Tabs.Trigger
             asChild
             key={item.url}
             value={item.url}
           >
-            <Link
+            <MagneticButton
+              active={item.url === value ? true : undefined}
               href={item.url}
-              className='inline-flex h-10 items-center justify-center rounded px-2.5'
+              className='group/link relative border-transparent rounded-none hover:z-10 focus-visible:z-10'
               onMouseEnter={() => setValue(item.url)}
+              onFocus={() => setValue(item.url)}
             >
               {item.label}
-            </Link>
+            </MagneticButton>
           </Tabs.Trigger>
         ))}
-
-        <Tabs.Indicator className='absolute bottom-0 left-[calc(var(--left)+var(--width)/2-var(--w)/2)]! h-1 w-(--w) rounded-full bg-body-emphasis transition-[width,left] ease-backOut [--w:calc(var(--width)*.25)]' />
       </Tabs.List>
     </Tabs>
   );

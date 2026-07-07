@@ -1,24 +1,30 @@
-import { ComponentProps } from 'react';
+import { type ComponentProps } from 'react';
 
 import { Lines } from '@/components/misc/Lines';
-import { ScrollAnimate } from '@/components/motion';
-import { yFull } from '@/components/motion/ScrollAnimate/animations';
-import { cn } from '@/utils';
+import { AnimateOnScroll } from '@/components/motion/Animate/OnScroll';
+import { cn } from '@/utils/cn';
+import { type UseAnimateOnScrollOptions } from '@/hooks/useAnimateOnScroll';
 
-type ScrollYLinesProps = ComponentProps<'div'>;
+export type ScrollYLinesProps = ComponentProps<'div'>;
 
-const ScrollYLines = ({ className, ...props }: ScrollYLinesProps) => {
+export const ScrollYLinesAnimation = {
+  from: {
+    '--y': '-100%'
+  },
+  to: {
+    '--y': '100%'
+  },
+} satisfies UseAnimateOnScrollOptions['config'];
+
+export const ScrollYLines = ({ className, ...props }: ScrollYLinesProps) => {
   return (
-    <div
-      className={cn('relative overflow-hidden border bg-body', className)}
-      {...props}
-    >
-      <ScrollAnimate config={yFull}>
-        <Lines className='text-gray-3 dark:text-dark-4 h-full translate-y-0 bg-size-[83.333px_66.666px]' />
-      </ScrollAnimate>
-    </div>
+    <AnimateOnScroll {...ScrollYLinesAnimation}>
+      <div
+        className={cn('relative overflow-hidden border rounded-2xl bg-body', className)}
+        {...props}
+      >
+          <Lines className='h-screen translate-y-(--y) bg-size-[83.333px_66.666px]' />
+      </div>
+    </AnimateOnScroll>
   );
 };
-
-export { ScrollYLines };
-export type { ScrollYLinesProps };

@@ -1,10 +1,9 @@
 'use client';
 
 import { useContext } from 'react';
-import { RefObject, createContext } from 'react';
-import { ComponentProps } from 'react';
+import { createContext, type ComponentProps,  type RefObject } from 'react';
 
-import { MergeProps } from '@/types';
+import type { MergeProps } from '@/types/MergeProps';
 
 export type MagneticContextState = {
   container?: RefObject<HTMLElement | null>;
@@ -13,7 +12,7 @@ export type MagneticContextState = {
 export const MagneticContext = createContext<MagneticContextState>({});
 
 export type MagneticProviderProps = MergeProps<
-  Pick<MagneticContextState, 'container'>,
+  MagneticContextState,
   ComponentProps<typeof MagneticContext.Provider>,
   'value'
 >;

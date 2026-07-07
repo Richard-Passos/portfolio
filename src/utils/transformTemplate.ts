@@ -1,4 +1,4 @@
-type Transform = {
+export type Transform = {
   x?: number | string;
   y?: number | string;
   rotate?: number | string;
@@ -9,7 +9,7 @@ type Transform = {
   scaleY?: number | string;
 };
 
-const transformTemplate = (transform: Transform) => {
+export const transformTemplate = (transform: Transform) => {
   const translate = `translate(${
     transform.x ?? 'var(--anim-x, 0)'
   }, ${transform.y ?? 'var(--anim-y, 0)'})`;
@@ -27,6 +27,3 @@ const transformTemplate = (transform: Transform) => {
 
   return `${translate} ${rotate} ${scale}`;
 };
-
-export { transformTemplate };
-export type { Transform };

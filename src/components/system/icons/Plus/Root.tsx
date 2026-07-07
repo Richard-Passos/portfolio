@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type PlusIconProps = ComponentProps<'svg'>;
+export type PlusIconProps = ComponentProps<'svg'>;
 
-const PlusIcon = ({ className, ...props }: PlusIconProps) => {
+export const PlusIcon = ({ className, ...props }: PlusIconProps) => {
   return (
     <svg
       className={cn('fill-current', className)}
@@ -18,5 +18,3 @@ const PlusIcon = ({ className, ...props }: PlusIconProps) => {
   );
 };
 
-export { PlusIcon };
-export type { PlusIconProps };

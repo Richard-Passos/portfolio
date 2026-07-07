@@ -11,7 +11,7 @@ export const themeInitialState: ThemeSliceState = {
 };
 
 export const themeSlice = createSlice({
-  name: 'theme',
+  name: 'theme', 
   initialState: themeInitialState,
   reducers: {
     setTheme: (state, { payload }: PayloadAction<Theme>) => {

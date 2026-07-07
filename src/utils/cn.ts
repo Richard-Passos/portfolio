@@ -1,6 +1,6 @@
 import { extendTailwindMerge } from 'tailwind-merge';
 
-const cn = extendTailwindMerge({
+export const cn = extendTailwindMerge({
   extend: {
     theme: {
       spacing: ['9by10', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', 'bounds'],
@@ -8,5 +8,3 @@ const cn = extendTailwindMerge({
     }
   }
 });
-
-export { cn };
