@@ -148,7 +148,7 @@
     @apply text-primary
   }
 
-  mark {
+  em {
     @apply bg-clip-text not-italic [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:--spacing(0.5)];
   }
 

@@ -20,10 +20,10 @@ export const ScrollYLines = ({ className, ...props }: ScrollYLinesProps) => {
   return (
     <AnimateOnScroll {...ScrollYLinesAnimation}>
       <div
-        className={cn('relative overflow-hidden border rounded-2xl bg-body', className)}
+        className={cn('relative overflow-hidden border rounded-2xl bg-body flex justify-center items-center', className)}
         {...props}
       >
-          <Lines className='h-screen translate-y-(--y) bg-size-[83.333px_66.666px]' />
+          <Lines className='top-auto h-screen translate-y-(--y) bg-size-[83.333px_66.666px]' />
       </div>
     </AnimateOnScroll>
   );

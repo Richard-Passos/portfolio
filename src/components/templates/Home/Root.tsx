@@ -1,10 +1,12 @@
 import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
+import { PrimaryHero, PrimaryHeroProps } from '@/components/layout/Heros/Primary';
 import { Section } from '@/components/layout/Section';
 import { type ReactNode } from 'react';
 
 export type HomeTemplateProps = {
   data: {
-    title: ReactNode;
+    hero: PrimaryHeroProps['data'],
+    title: ReactNode,
     code: ReactNode,
     action: {
       label: ReactNode
@@ -14,7 +16,9 @@ export type HomeTemplateProps = {
 
 export const HomeTemplate = ({ data }: HomeTemplateProps) => {
   return <>
-    <Section theme='light' forceTheme>
+    <PrimaryHero theme='dark' data={data.hero}/>
+
+    <Section theme='light'>
       <h1>{data.title}</h1>
 
     <code>{data.code}</code>
