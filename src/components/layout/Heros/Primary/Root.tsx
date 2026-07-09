@@ -8,7 +8,7 @@ import { cn } from '@/utils/cn';
 import { ScrollYLines } from '@/components/misc/Lines/variants/ScrollY';
 import { type UseAnimateOnScrollOptions } from '@/hooks/useAnimateOnScroll';
 import { AnimateOnScroll } from '@/components/motion/Animate/OnScroll';
-import { Staggered } from '@/components/motion/Staggered';
+import { StaggeredTitleOnView } from '@/components/motion/Title/StaggeredOnView';
 
 export const PrimaryHeroAnimation = {
   from: {
@@ -49,14 +49,14 @@ export const PrimaryHero = ({ data, className, ...props }: PrimaryHeroProps) => 
         <div
               className='flex w-full max-w-7xl grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)]'
             >
-              <Staggered type='chars'>
+              <StaggeredTitleOnView type='chars'>
                 <Title
-                as='h1'
-                className='flex flex-wrap gap-x-[.3em] wrap-break-word uppercase max-sm:text-center max-w-5xl'
-              >
-                {data.title}
-              </Title>
-              </Staggered>
+                  as='h1'
+                  className='flex flex-wrap gap-x-[.3em] wrap-break-word uppercase max-sm:text-center max-w-5xl'
+                >
+                  {data.title}
+                </Title>
+              </StaggeredTitleOnView>
 
               <section className='mt-4 grid w-full grid-cols-6 gap-3'>
                 <div>
@@ -75,7 +75,9 @@ export const PrimaryHero = ({ data, className, ...props }: PrimaryHeroProps) => 
       </AnimateOnScroll>
       </div>
 
-      <ScrollYLines className='absolute top-0 bottom-(--inset) -z-10 inset-x-(--inset) bg-size-[83.333px_66.666px]' />
+      <ScrollYLines
+        className='absolute top-0 bottom-(--inset) -z-10 inset-x-(--inset) bg-size-[83.333px_66.666px]'
+      />
     </Section>
   );
 };

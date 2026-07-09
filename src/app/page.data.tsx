@@ -21,7 +21,7 @@ export default {
     left: <AnimateOnScroll {...rotateAnimation}><SmileIcon className='size-6'/></AnimateOnScroll>,
     right: `(${new Date().getFullYear()})`
   },   
-  title: 'Hi', 
+  title: 'Visão da Carreira', 
   code: 'Hello There',
   action: {
     label: 'Magnetic'

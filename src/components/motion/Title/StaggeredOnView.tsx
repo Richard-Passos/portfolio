@@ -2,13 +2,13 @@
 
 import { useRef } from 'react';
 import { Slot, type SlotProps } from '@/components/misc/Slot';
-import { MergeProps } from '@/types/MergeProps';
+import type { MergeProps } from '@/types/MergeProps';
 import { setRefs } from '@/utils/setRefs';
 import { gsap, useGSAP, SplitText } from '@/hooks/useGSAP';
 
-export type StaggeredProps = MergeProps<{ type: 'lines' | 'words' | 'chars' }, SlotProps>;
+export type StaggeredTitleOnViewProps = MergeProps<{ type: 'lines' | 'words' | 'chars' }, SlotProps>;
 
-export const Staggered = ({ type, ref, ...props }: StaggeredProps) => {
+export const StaggeredTitleOnView = ({ type, ref, ...props }: StaggeredTitleOnViewProps) => {
   const innerRef = useRef<HTMLSlotElement>(null);
 
   useGSAP(() => {
