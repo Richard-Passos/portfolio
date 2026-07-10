@@ -6,7 +6,6 @@ export const GameControllerIcon = (props: GameControllerIconProps) => {
   return (
     <svg
       aria-hidden
-      data-icon='Game controller'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}

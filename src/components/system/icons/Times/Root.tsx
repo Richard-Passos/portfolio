@@ -6,7 +6,6 @@ export const TimesIcon = (props: TimesIconProps) => {
   return (
     <svg
       aria-hidden
-      data-icon='Times'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}

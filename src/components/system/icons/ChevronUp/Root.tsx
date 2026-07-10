@@ -6,7 +6,6 @@ export const ChevronUpIcon = (props: ChevronUpIconProps) => {
   return (
     <svg
       aria-hidden
-      data-icon='Chevron up'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}

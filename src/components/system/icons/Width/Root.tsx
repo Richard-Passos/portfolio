@@ -7,7 +7,6 @@ export const WidthIcon = (props: WidthIconProps) => {
     <svg
       aria-hidden
       className={cn('stroke-current', className)}
-      data-icon='Width'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
