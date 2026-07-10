@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type InstagramIconProps = ComponentProps<'svg'>;
 
-export const InstagramIcon = ({ className, ...props }: InstagramIconProps) => {
+export const InstagramIcon = (props: InstagramIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Instagram'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

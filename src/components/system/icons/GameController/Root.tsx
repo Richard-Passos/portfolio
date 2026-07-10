@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type GameControllerIconProps = ComponentProps<'svg'>;
 
-export const GameControllerIcon = ({ className, ...props }: GameControllerIconProps) => {
+export const GameControllerIcon = (props: GameControllerIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Game controller'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

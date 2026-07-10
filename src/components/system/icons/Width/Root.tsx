@@ -1,12 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type WidthIconProps = ComponentProps<'svg'>;
 
-export const WidthIcon = ({ className, ...props }: WidthIconProps) => {
+export const WidthIcon = (props: WidthIconProps) => {
   return (
     <svg
+      aria-hidden
       className={cn('stroke-current', className)}
       data-icon='Width'
       viewBox='0 0 24 24'

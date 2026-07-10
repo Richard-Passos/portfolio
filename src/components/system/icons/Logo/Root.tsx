@@ -1,14 +1,13 @@
 import { ComponentProps } from 'react';
 
 import { MergeProps } from '@/types/MergeProps';
-import { cn } from '@/utils/cn';
 
 export type LogoIconProps = MergeProps<{ variant: 'primary' | 'secondary' }, ComponentProps<'svg'>>;
 
-export const LogoIcon = ({ variant, className, ...props }: LogoIconProps) => {
+export const LogoIcon = ({ variant, ...props }: LogoIconProps) => {
   return variant === 'primary' 
     ? <svg
-        className={cn('fill-current', className)}
+        aria-hidden
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 3080 1080'
         {...props}
@@ -68,9 +67,8 @@ export const LogoIcon = ({ variant, className, ...props }: LogoIconProps) => {
         Richard P.
       </text>
     </svg>
-    :
-    <svg
-      className={cn('fill-current', className)}
+    : <svg
+      aria-hidden
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 260 47'
       {...props}

@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type MenuIconProps = ComponentProps<'svg'>;
 
-export const MenuIcon = ({ className, ...props }: MenuIconProps) => {
+export const MenuIcon = (props: MenuIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Menu'
       transform='scale(-1 1)'
       viewBox='0 0 24 24'

@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type PaperPlaneIconProps = ComponentProps<'svg'>;
 
-export const PaperPlaneIcon = ({ className, ...props }: PaperPlaneIconProps) => {
+export const PaperPlaneIcon = (props: PaperPlaneIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Paper plane'
       viewBox='0 0 256 256'
       xmlns='http://www.w3.org/2000/svg'

@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type HandHornsIconProps = ComponentProps<'svg'>;
 
-export const HandHornsIcon = ({ className, ...props }: HandHornsIconProps) => {
+export const HandHornsIcon = (props: HandHornsIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Hand horns'
       viewBox='0 0 384 512'
       xmlns='http://www.w3.org/2000/svg'

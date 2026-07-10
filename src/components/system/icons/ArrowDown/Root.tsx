@@ -1,15 +1,13 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type ArrowDownIconProps = ComponentProps<'svg'>;
 
-export const ArrowDownIcon = ({ className, ...props }: ArrowDownIconProps) => {
+export const ArrowDownIcon = (props: ArrowDownIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Arrow down'
-      viewBox='0 0 24 24'
+      viewBox='0 0 24 24' 
       xmlns='http://www.w3.org/2000/svg'
       {...props}
     >

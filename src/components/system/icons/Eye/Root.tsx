@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type EyeIconProps = ComponentProps<'svg'>;
 
-export const EyeIcon = ({ className, ...props }: EyeIconProps) => {
+export const EyeIcon = (props: EyeIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Eye'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

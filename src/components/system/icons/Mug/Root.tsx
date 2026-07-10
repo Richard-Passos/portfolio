@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type MugIconProps = ComponentProps<'svg'>;
 
-export const MugIcon = ({ className, ...props }: MugIconProps) => {
+export const MugIcon = (props: MugIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Mug'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

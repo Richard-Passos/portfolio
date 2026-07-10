@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type GridIconProps = ComponentProps<'svg'>;
 
-export const GridIcon = ({ className, ...props }: GridIconProps) => {
+export const GridIcon = (props: GridIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Grid'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

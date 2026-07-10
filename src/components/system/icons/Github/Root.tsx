@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type GithubIconProps = ComponentProps<'svg'>;
 
-export const GithubIcon = ({ className, ...props }: GithubIconProps) => {
+export const GithubIcon = (props: GithubIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Github'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

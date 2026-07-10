@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type QuestionIconProps = ComponentProps<'svg'>;
 
-export const QuestionIcon = ({ className, ...props }: QuestionIconProps) => {
+export const QuestionIcon = (props: QuestionIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Question'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

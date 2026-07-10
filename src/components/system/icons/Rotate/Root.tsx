@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type RotateIconProps = ComponentProps<'svg'>;
 
-export const RotateIcon = ({ className, ...props }: RotateIconProps) => {
+export const RotateIcon = (props: RotateIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Rotate'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

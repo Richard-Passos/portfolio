@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type GlobeIconProps = ComponentProps<'svg'>;
 
-export const GlobeIcon = ({ className, ...props }: GlobeIconProps) => {
+export const GlobeIcon = (props: GlobeIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Globe'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

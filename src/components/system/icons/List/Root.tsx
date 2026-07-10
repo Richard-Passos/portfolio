@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type ListIconProps = ComponentProps<'svg'>;
 
-export const ListIcon = ({ className, ...props }: ListIconProps) => {
+export const ListIcon = (props: ListIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='List'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'

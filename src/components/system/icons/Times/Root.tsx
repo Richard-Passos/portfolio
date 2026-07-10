@@ -1,13 +1,11 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils/cn';
-
 export type TimesIconProps = ComponentProps<'svg'>;
 
-export const TimesIcon = ({ className, ...props }: TimesIconProps) => {
+export const TimesIcon = (props: TimesIconProps) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      aria-hidden
       data-icon='Times'
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
