@@ -1,9 +1,9 @@
 'use client';
 
 import { useContext } from 'react';
-import { createContext, type ComponentProps,  type RefObject } from 'react';
+import { createContext, ComponentProps,  type RefObject } from 'react';
 
-import type { MergeProps } from '@/types/MergeProps';
+import { MergeProps } from '@/types/MergeProps';
 
 export type MagneticContextState = {
   container?: RefObject<HTMLElement | null>;

@@ -1,4 +1,4 @@
-import { type VariantProps, cva } from 'class-variance-authority';
+import { VariantProps, cva } from 'class-variance-authority';
 import { ComponentProps } from 'react';
 
 import { COLORS } from '@/common/COLORS';

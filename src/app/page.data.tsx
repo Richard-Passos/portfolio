@@ -1,18 +1,32 @@
-import { AnimateOnScroll } from '@/components/motion/Animate/OnScroll';
+import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate/OnScroll';
+import { GlobeIcon } from '@/components/system/icons/Globe';
+import { RocketIcon } from '@/components/system/icons/Rocket';
 import { SmileIcon } from '@/components/system/icons/Smile';
 import { HomeTemplateProps } from '@/components/templates/Home';
-import { UseAnimateOnScrollOptions } from '@/hooks/useAnimateOnScroll';
 
 const rotateAnimation = {
   from: {
-    rotate: 0
+    rotate: 0,
   },
   to: {
-    rotate: 360 * 2
+    rotate: -360 * 2,
   },
   start: 0,
   end: 'bottom top'
-} satisfies UseAnimateOnScrollOptions['config']
+} satisfies AnimateOnScrollConfig;
+
+const rotateBothAnimation = {
+  from: {
+    rotate: 0,
+    rotateX: 0
+  },
+  to: {
+    rotate: 360 * 2,
+    rotateX: 360
+  },
+  start: 0,
+  end: 'bottom top'
+} satisfies AnimateOnScrollConfig;
 
 export default {
   hero: {
@@ -21,9 +35,19 @@ export default {
     left: <AnimateOnScroll {...rotateAnimation}><SmileIcon className='size-6'/></AnimateOnScroll>,
     right: `(${new Date().getFullYear()})`
   },   
-  title: 'Visão da Carreira', 
+  mission: {
+    description: 'Essa é minha missão — Cada linha de código melhora minhas habilidades, criando soluções de alto impacto. Cada projeto é uma oportunidade para inspirar clientes, colegas e a comunidade. A repetição gera excelência, impulsionando o destaque digital.',
+    items: [
+      <>Melhorar <AnimateOnScroll {...rotateBothAnimation}><RocketIcon /></AnimateOnScroll></>,
+      <>Inspirar <AnimateOnScroll {...rotateAnimation}><GlobeIcon /></AnimateOnScroll></>,
+      <>Repetir <AnimateOnScroll {...rotateBothAnimation}><SmileIcon /></AnimateOnScroll></>,
+    ]
+  },
+  career: {
+    title: <>Visão <em>da</em> Carreira</>, 
   code: 'Hello There',
   action: {
     label: 'Magnetic'
   }
-} satisfies HomeTemplateProps['data']; 
+  }
+} satisfies HomeTemplateProps['data'];

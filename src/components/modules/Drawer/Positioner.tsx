@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/utils/cn';
-import { DrawerPositioner as UiDrawerPositioner, type DrawerPositionerProps as UiDrawerPositionerProps } from '@ark-ui/react'
+import { DrawerPositioner as UiDrawerPositioner, DrawerPositionerProps as UiDrawerPositionerProps } from '@ark-ui/react'
 
 export type DrawerPositionerProps = UiDrawerPositionerProps;
 

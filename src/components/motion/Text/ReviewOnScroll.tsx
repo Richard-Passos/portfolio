@@ -1,8 +1,8 @@
 'use client';
 
 import { useRef } from 'react';
-import { Slot, type SlotProps } from '@/components/misc/Slot';
-import type { MergeProps } from '@/types/MergeProps';
+import { Slot, SlotProps } from '@/components/misc/Slot';
+import { MergeProps } from '@/types/MergeProps';
 import { setRefs } from '@/utils/setRefs';
 import { gsap, useGSAP, SplitText } from '@/hooks/useGSAP';
 

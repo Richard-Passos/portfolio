@@ -1,8 +1,8 @@
-import { Button, type ButtonProps } from '@/components/input/Button';
+import { Button, ButtonProps } from '@/components/input/Button';
 import { Magnetic } from '@/components/motion/Magnetic';
-import { Link, type LinkProps } from '@/components/navigation/Link';
-import { type UseMagneticOptions } from '@/hooks/useMagnetic';
-import type { MergeProps } from '@/types/MergeProps';
+import { Link, LinkProps } from '@/components/navigation/Link';
+import { UseMagneticOptions } from '@/hooks/useMagnetic';
+import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 
 export type MagneticButtonProps = MergeProps<

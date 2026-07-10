@@ -1,7 +1,7 @@
 'use client';
 
 import data from './Root.data';
-import { type ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 
 export type LocalTimeProps = ComponentProps<'span'>
 

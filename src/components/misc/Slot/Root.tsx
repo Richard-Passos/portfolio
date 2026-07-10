@@ -1,9 +1,9 @@
 'use client';
 
-import { Ref, type ReactNode } from 'react';
-import type { MergeProps } from '@/types/MergeProps';
+import { Ref, ReactNode } from 'react';
+import { MergeProps } from '@/types/MergeProps';
 
-import { type SlotProps as RadixSlotProps } from '@radix-ui/react-slot';
+import { SlotProps as RadixSlotProps } from '@radix-ui/react-slot';
 export { Slot } from '@radix-ui/react-slot';
 
 export type SlotAsChildProps<Props> = MergeProps<

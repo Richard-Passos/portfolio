@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/utils/cn';
-import { DrawerContent as UiDrawerContent, type DrawerContentProps as UiDrawerContentProps } from '@ark-ui/react'
+import { DrawerContent as UiDrawerContent, DrawerContentProps as UiDrawerContentProps } from '@ark-ui/react'
 
 export type DrawerContentProps = UiDrawerContentProps;
 

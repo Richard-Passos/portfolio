@@ -1,10 +1,10 @@
 'use client';
 
 import { useSelectedLayoutSegment } from 'next/navigation';
-import { useState, type ReactNode, } from 'react';
+import { useState, ReactNode, } from 'react';
 
 import Tabs, { type TabsProps } from '@/components/navigation/Tabs';
-import type { MergeProps } from '@/types/MergeProps';
+import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
 

@@ -2,7 +2,7 @@ import { StoreProvider } from '@/contexts/Store';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import '@/styles/globals.css';
-import { type PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import { SmoothScroll } from '@/components/motion/SmoothScroll';
 
 export type RootLayoutProps = PropsWithChildren;

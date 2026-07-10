@@ -1,9 +1,9 @@
 'use client';
 
 import NextLink from 'next/link';
-import { type ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 
-import type { MergeProps } from '@/types/MergeProps';
+import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn'; 
 
 export type LinkProps = MergeProps<{ disabled?: boolean }, ComponentProps<typeof NextLink>>;

@@ -1,17 +1,59 @@
 'use client';
 
 import { useRef } from 'react';
-import { Slot, type SlotProps } from '@/components/misc/Slot';
-import { useAnimateOnScroll, type UseAnimateOnScrollOptions } from '@/hooks/useAnimateOnScroll';
+import { Slot, SlotProps } from '@/components/misc/Slot';
 import { MergeProps } from '@/types/MergeProps';
 import { setRefs } from '@/utils/setRefs';
+import { gsap, useGSAP } from '@/hooks/useGSAP';
 
-export type AnimateOnScrollProps = MergeProps<UseAnimateOnScrollOptions['config'], SlotProps>;
+export type AnimateOnScrollConfig = {
+  target?: gsap.TweenTarget,
+  trigger?: gsap.DOMTarget,
+  from?: gsap.TweenVars,
+  to?: gsap.TweenVars,
+  start?: string | number | ScrollTrigger.StartEndFunc,
+  end?: string | number | ScrollTrigger.StartEndFunc
+};
 
-export const AnimateOnScroll = ({ ref, from, to, start, end, ...props }: AnimateOnScrollProps) => {
+export type AnimateOnScrollProps = MergeProps<AnimateOnScrollConfig, SlotProps>;
+
+export const AnimateOnScroll = ({
+  ref,
+  target,
+  trigger,
+  from,
+  to,
+  start = 'top bottom',
+  end = 'bottom top',
+  ...props
+}: AnimateOnScrollProps) => {
   const innerRef = useRef<HTMLSlotElement>(null);
 
-  useAnimateOnScroll(innerRef, { from, to, start, end });
+   useGSAP(() => {
+      const el = innerRef.current;
+      if (!el) return;
+
+      const tween = gsap.fromTo(target ?? el, from, {
+        ease: 'none',
+        ...to,
+        scrollTrigger: {
+          trigger: trigger ?? el,
+          scrub: true,
+          start,
+          end,
+          ...to?.scrollTrigger ?? {}
+        },
+      });
+
+      return () => {
+        tween.kill();
+      };
+    },
+    {
+      scope: innerRef,
+      dependencies: [target, trigger, from, to, start, end],
+    },
+  );
 
   return <Slot ref={setRefs(ref, innerRef)} {...props}/>;
 };

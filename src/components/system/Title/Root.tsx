@@ -1,8 +1,8 @@
 import { ark } from '@ark-ui/react/factory';
 import { cva } from 'class-variance-authority';
-import { type ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 
-import type { MergeProps } from '@/types/MergeProps';
+import { MergeProps } from '@/types/MergeProps';
 
 export type TitleProps = MergeProps<
   { as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' },

@@ -2,9 +2,9 @@
 
 import { useRef } from 'react';
 
-import { Slot, type SlotProps } from '@/components/misc/Slot';
+import { Slot, SlotProps } from '@/components/misc/Slot';
 import { useMagneticContext } from '@/contexts/Magnetic';
-import { useMagnetic, type UseMagneticOptions } from '@/hooks/useMagnetic';
+import { useMagnetic, UseMagneticOptions } from '@/hooks/useMagnetic';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { setRefs } from '@/utils/setRefs';

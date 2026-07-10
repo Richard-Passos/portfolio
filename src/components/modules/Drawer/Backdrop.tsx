@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/utils/cn';
-import { DrawerBackdrop as UiDrawerBackdrop, type DrawerBackdropProps as UiDrawerBackdropProps } from '@ark-ui/react'
+import { DrawerBackdrop as UiDrawerBackdrop, DrawerBackdropProps as UiDrawerBackdropProps } from '@ark-ui/react'
 
 export type DrawerBackdropProps = UiDrawerBackdropProps;
 

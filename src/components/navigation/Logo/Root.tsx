@@ -2,7 +2,7 @@ import { Button } from '@/components/input/Button';
 import { LogoIcon, LogoIconProps } from '@/components/system/icons/Logo';
 import { MergeProps } from '@/types/MergeProps';
 
-import { Link, type LinkProps } from '../Link';
+import { Link, LinkProps } from '../Link';
 
 export type LogoProps = MergeProps<
   {

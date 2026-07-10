@@ -1,7 +1,7 @@
 import { ark } from '@ark-ui/react/factory';
-import { type ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 
-import type { MergeProps } from '@/types/MergeProps';
+import { MergeProps } from '@/types/MergeProps';
 
 export type TextProps = MergeProps<{ small?: boolean }, ComponentProps<typeof ark.p>>;
 

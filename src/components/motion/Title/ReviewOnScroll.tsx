@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { Slot, type SlotProps } from '@/components/misc/Slot';
+import { Slot, SlotProps } from '@/components/misc/Slot';
 import { setRefs } from '@/utils/setRefs';
 import { gsap, useGSAP, SplitText } from '@/hooks/useGSAP';
 import { cn } from '@/utils/cn';
@@ -19,25 +19,25 @@ export const ReviewTitleOnScroll = ({ className, ref, ...props }: ReviewTitleOnS
     const split = SplitText.create(el, { type: 'chars' });
     const height = window.innerHeight
 
-    const review_tween = gsap.to(split.chars, {
+    const review_tween = gsap.fromTo(split.chars, { scale: '.85' }, {
       color: gsap.getProperty(parent, 'color'),
+      scale: '1',
       stagger: 0.126,
       scrollTrigger: {
         trigger: el,
         start: 'center 75%',
         end: `+=${height}`,
-        scrub: true, 
+        scrub: true
       }
     });
 
     const scroll_tween = gsap.to(el, {
-      x: parent.offsetWidth - el.offsetWidth, 
+      x: parent.offsetWidth - el.offsetWidth,
       scrollTrigger: {
         trigger: el,
         start: 'center center', 
         end: `+=${height * .75}`,
-        scrub: true, 
-        invalidateOnRefresh: true
+        scrub: true
       } 
     });
 

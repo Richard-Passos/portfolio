@@ -1,11 +1,11 @@
 import { DrawerTrigger } from '@/components/modules/Drawer';
-import { MagneticButton, type MagneticButtonProps } from '@/components/input/Button/variants/Magnetic';
+import { MagneticButton, MagneticButtonProps } from '@/components/input/Button/variants/Magnetic';
 import { MenuIcon } from '@/components/system/icons/Menu';
 import { TimesIcon } from '@/components/system/icons/Times';
 import { cn } from '@/utils/cn';
 import { AnimateOnView } from '@/components/motion/Animate';
 import { MergeProps } from '@/types/MergeProps';
-import { type UseAnimateOnViewOptions } from '@/hooks/useAnimateOnView';
+import { UseAnimateOnViewOptions } from '@/hooks/useAnimateOnView';
 
 export type MenuDrawerTriggerProps = MergeProps<{ data: { open: string, close: string }}, MagneticButtonProps>;
 

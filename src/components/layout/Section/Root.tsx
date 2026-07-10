@@ -1,12 +1,12 @@
 'use client';
 
-import type { MergeProps } from '@/types/MergeProps';
+import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { setRefs } from '@/utils/setRefs';
 import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
 
 import { useSetTheme } from './useSetTheme';
-import { RefObject, useRef, type ComponentProps } from 'react';
+import { RefObject, useRef, ComponentProps } from 'react';
 
 type SectionProps = SlotAsChildProps<MergeProps<
     {

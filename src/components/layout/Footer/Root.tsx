@@ -2,14 +2,14 @@ import data from './Root.data'
 
 import { Fragment } from 'react';
 import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
-import { Section, type SectionProps } from '@/components/layout/Section';
+import { Section, SectionProps } from '@/components/layout/Section';
 import { Link } from '@/components/navigation/Link';
 import { Logo } from '@/components/navigation/Logo';
 import { LocalTime } from '@/components/system/LocalTime';
 import { Text } from '@/components/system/Text';
 import { Title } from '@/components/system/Title';
-import type { MergeProps } from '@/types/MergeProps';
-import type { Theme } from '@/types/Theme';
+import { MergeProps } from '@/types/MergeProps';
+import { Theme } from '@/types/Theme';
 import { cn } from '@/utils/cn';
 import { ScrollYLines } from '@/components/misc/Lines/variants/ScrollY';
 

@@ -1,6 +1,6 @@
 import data from './Root.data';
 
-import { type ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 
 import { Theme } from '@/components/misc/Theme';
 import { Logo } from '@/components/navigation/Logo';
@@ -21,7 +21,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
         )}
         {...props}
       >
-        <Logo />
+        <Logo className='mr-auto' />
 
         <div className='ml-auto flex items-center gap-3 max-md:hidden'>
           <NavTabs id='header' items={data.nav} />
