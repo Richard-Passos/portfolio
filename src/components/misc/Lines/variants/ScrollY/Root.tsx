@@ -7,12 +7,12 @@ import { cn } from '@/utils/cn';
 export type ScrollYLinesProps = ComponentProps<'div'>;
 
 export const ScrollYLinesAnimation = {
-  target: '.lines',
+  target: 'div',
   from: {
-    y: '-100%'
+    y: '-50dvh'
   },
   to: {
-    y: '100%'
+    y: '50dvh'
   }
 } satisfies AnimateOnScrollConfig;
 
@@ -21,12 +21,12 @@ export const ScrollYLines = ({ className, ...props }: ScrollYLinesProps) => {
     <AnimateOnScroll {...ScrollYLinesAnimation}>
       <div
         className={cn(
-          'relative flex items-center justify-center overflow-hidden rounded-2xl border bg-body',
+          'pointer-events-none absolute flex items-center justify-center overflow-hidden rounded-2xl border bg-body',
           className
         )}
         {...props}
       >
-        <Lines className='lines top-auto h-screen bg-size-[83.333px_66.666px]' />
+        <Lines className='top-auto h-[150dvh] bg-size-[83.333px_66.666px]' />
       </div>
     </AnimateOnScroll>
   );

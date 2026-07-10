@@ -8,18 +8,21 @@ import { Title } from '@/components/system/Title';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 
+import { PrimaryHeroCards, PrimaryHeroCardsProps } from './Cards';
+
 export const PrimaryHeroAnimation = {
+  target: 'h1',
   from: {
     y: '0%',
     scale: 1,
     opacity: 1
   },
   to: {
-    y: '75%',
-    scale: 0.85,
+    y: '150%',
+    scale: 0.75,
     opacity: 0
   },
-  start: 'bottom bottom',
+  start: 0,
   end: 'bottom top'
 } satisfies AnimateOnScrollConfig;
 
@@ -27,50 +30,37 @@ export type PrimaryHeroProps = MergeProps<
   {
     data: {
       title: ReactNode;
-      description: ReactNode;
-      left: ReactNode;
-      right: ReactNode;
-    };
+    } & PrimaryHeroCardsProps['data'];
   },
   SectionProps
 >;
 
-export const PrimaryHero = ({ data, className, ...props }: PrimaryHeroProps) => {
+export const PrimaryHero = ({ data, ...props }: PrimaryHeroProps) => {
   return (
-    <Section
-      forceTheme
-      className={cn(
-        '3xl:[--inset:calc(var(--max-width-bounds)*.025)] isolate p-(--inset) pt-0 [--inset:2.5vw] [clip-path:inset(0_0_var(--inset)_0)]',
-        className
-      )}
-      {...props}
-    >
-      <AnimateOnScroll {...PrimaryHeroAnimation}>
-        <div className='flex size-full max-w-7xl grow flex-col items-center justify-center'>
-          <StaggeredTitleOnView>
-            <Title
-              as='h1'
-              className='flex max-w-5xl flex-wrap gap-x-[.3em] wrap-break-word uppercase max-sm:text-center'
-            >
-              {data.title}
-            </Title>
-          </StaggeredTitleOnView>
+    <AnimateOnScroll {...PrimaryHeroAnimation}>
+      <Section
+        forceTheme
+        {...props}
+      >
+        <StaggeredTitleOnView>
+          <Title
+            as='h1'
+            className='flex w-9/10 max-w-5xl flex-wrap gap-x-[.3em] wrap-break-word uppercase max-sm:text-center'
+          >
+            {data.title}
+          </Title>
+        </StaggeredTitleOnView>
 
-          <section className='mt-4 grid w-full grid-cols-6 gap-3'>
-            <div>{data.left}</div>
+        <PrimaryHeroCards
+          data={{ left: data.left, center: data.center, right: data.right }}
+          className='relative z-10'
+        />
 
-            <section className='col-span-full max-w-md justify-self-center text-center lg:col-span-4'>
-              {data.description}
-            </section>
+        <ScrollYLines className='inset-x-[-2.5vw] top-0 bottom-[calc(var(--py)+(--spacing(32)))] -z-10 bg-size-[83.333px_66.666px]' />
 
-            <div className='justify-self-end text-end max-lg:col-end-7 max-lg:row-start-1'>
-              {data.right}
-            </div>
-          </section>
-        </div>
-      </AnimateOnScroll>
-
-      <ScrollYLines className='absolute inset-x-(--inset) top-0 bottom-(--inset) -z-10 bg-size-[83.333px_66.666px]' />
-    </Section>
+        {/* Used to hide title when it bypass the lines. */}
+        <div className='absolute inset-x-0 bottom-(--py) h-32 bg-body' />
+      </Section>
+    </AnimateOnScroll>
   );
 };

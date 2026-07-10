@@ -95,40 +95,14 @@
 
   --spacing-px: 1px;
 
-  --width-9by10: 90%;
-  --width-3xs: var(--container-3xs);
-  --width-2xs: var(--container-2xs);
-  --width-xs: var(--container-xs);
-  --width-sm: var(--container-sm);
-  --width-md: var(--container-md);
-  --width-lg: var(--container-lg);
-  --width-xl: var(--container-xl);
-  --width-2xl: var(--container-2xl);
-  --width-3xl: var(--container-3xl);
-  --width-4xl: var(--container-4xl);
-  --width-5xl: var(--container-5xl);
-  --width-6xl: var(--container-6xl);
-  --width-7xl: var(--container-7xl);
+  --width-9\/10: 90%;
 
   --min-width-bounds: 120rem;
   --min-height-bounds: 60rem;
-  --min-width-3xs:
-    var(--container-3xs), --min-width-2xs: var(--container-2xs),
-    --min-width-xs: var(--container-xs), --min-width-sm: var(--container-sm),
-    --min-width-md: var(--container-md), --min-width-lg: var(--container-lg),
-    --min-width-xl: var(--container-xl), --min-width-2xl: var(--container-2xl),
-    --min-width-3xl: var(--container-3xl), --min-width-4xl: var(--container-4xl),
-    --min-width-5xl: var(--container-5xl), --min-width-6xl: var(--container-6xl),
-    --min-width-7xl: var(--container-7xl), --max-width-bounds: 120rem;
+
+  --max-width-bounds: 120rem;
   --max-height-bounds: 60rem;
-  --mex-width-3xs:
-    var(--container-3xs), --mex-width-2xs: var(--container-2xs),
-    --mex-width-xs: var(--container-xs), --mex-width-sm: var(--container-sm),
-    --mex-width-md: var(--container-md), --mex-width-lg: var(--container-lg),
-    --mex-width-xl: var(--container-xl), --mex-width-2xl: var(--container-2xl),
-    --mex-width-3xl: var(--container-3xl), --mex-width-4xl: var(--container-4xl),
-    --mex-width-5xl: var(--container-5xl), --mex-width-6xl: var(--container-6xl),
-    --mex-width-7xl: var(--container-7xl), --breakpoint-3xl: 120rem; /* 1920px */
+  --breakpoint-3xl: 120rem; /* 1920px */
 
   --radius: var(--radius-lg);
 

@@ -1,8 +1,8 @@
 import { ComponentProps } from 'react';
 
-export type ArrowDownIconProps = ComponentProps<'svg'>;
+export type FlashIconProps = ComponentProps<'svg'>;
 
-export const ArrowDownIcon = (props: ArrowDownIconProps) => {
+export const FlashIcon = (props: FlashIconProps) => {
   return (
     <svg
       aria-hidden

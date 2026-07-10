@@ -19,7 +19,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
           <SmoothScroll>
             <Header />
 
-            <main className='flex min-h-dvh w-full flex-col items-center justify-stretch'>
+            <main className='max-w-bounds flex w-full grow flex-col items-center justify-stretch'>
               {children}
             </main>
 
