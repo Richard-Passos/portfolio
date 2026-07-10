@@ -21,4 +21,3 @@ export const WidthIcon = (props: WidthIconProps) => {
     </svg>
   );
 };
-

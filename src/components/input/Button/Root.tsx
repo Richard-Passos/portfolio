@@ -2,24 +2,26 @@ import { VariantProps, cva } from 'class-variance-authority';
 import { ComponentProps } from 'react';
 
 import { COLORS } from '@/common/COLORS';
+import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
-import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
 
-export type ButtonProps = SlotAsChildProps<MergeProps<
-  { 
-    iconOnly?: boolean;
-    color?: (typeof COLORS)[number] 
-  } & VariantProps<typeof buttonVariants>,
-  ComponentProps<'button'>
->>;
+export type ButtonProps = SlotAsChildProps<
+  MergeProps<
+    {
+      iconOnly?: boolean;
+      color?: (typeof COLORS)[number];
+    } & VariantProps<typeof buttonVariants>,
+    ComponentProps<'button'>
+  >
+>;
 
 export const buttonVariants = cva(
-  'inline-flex shrink-0 cursor-pointer items-center justify-center rounded border border-transparent font-medium whitespace-nowrap transition-[background-color] disabled:pointer-events-none disabled:opacity-50 px-(--px) gap-(--gap)',
+  'inline-flex shrink-0 cursor-pointer items-center justify-center gap-(--gap) rounded border border-transparent px-(--px) font-medium whitespace-nowrap transition-[background-color] disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       size: {
-        sm: 'h-8 [--gap:--spacing(1)] [--px:--spacing(2.5)] text-sm [&_svg]:size-4',
+        sm: 'h-8 text-sm [--gap:--spacing(1)] [--px:--spacing(2.5)] [&_svg]:size-4',
         md: 'h-10 [--gap:--spacing(1.5)] [--px:--spacing(2.5)] [&_svg]:size-5',
         lg: 'h-12 [--gap:--spacing(1.5)] [--px:--spacing(2.5)] [&_svg]:size-6'
       },
@@ -63,6 +65,6 @@ export const Button = ({
         } as typeof style
       }
       {...props}
-  />
+    />
   );
-}; 
+};

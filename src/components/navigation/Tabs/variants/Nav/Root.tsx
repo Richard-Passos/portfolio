@@ -1,23 +1,25 @@
 'use client';
 
 import { useSelectedLayoutSegment } from 'next/navigation';
-import { useState, ReactNode, } from 'react';
+import { ReactNode, useState } from 'react';
 
+import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
 import Tabs, { type TabsProps } from '@/components/navigation/Tabs';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
-import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
 
 export type NavTabsProps = MergeProps<
-  { id: string, orientation?: 'horizontal' | 'vertical', items: { url: string; label: ReactNode }[] },
+  {
+    id: string;
+    orientation?: 'horizontal' | 'vertical';
+    items: { url: string; label: ReactNode }[];
+  },
   TabsProps
 >;
 
-export const NavTabs = ({ id, items,  orientation = 'horizontal', ...props }: NavTabsProps) => {
+export const NavTabs = ({ id, items, orientation = 'horizontal', ...props }: NavTabsProps) => {
   const selectedLayoutSegment = useSelectedLayoutSegment();
-  const segment = !selectedLayoutSegment
-                    ? '/'
-                    : `/${selectedLayoutSegment}`;
+  const segment = !selectedLayoutSegment ? '/' : `/${selectedLayoutSegment}`;
   const [value, setValue] = useState(segment);
 
   return (
@@ -30,13 +32,10 @@ export const NavTabs = ({ id, items,  orientation = 'horizontal', ...props }: Na
       {...props}
     >
       <Tabs.List
-        className={cn(
-          'relative flex',
-          orientation === 'vertical' && 'flex-col items-start' 
-        )}
+        className={cn('relative flex', orientation === 'vertical' && 'flex-col items-start')}
         onMouseLeave={() => setValue(segment)}
       >
-        {items.map((item) => ( 
+        {items.map((item) => (
           <Tabs.Trigger
             asChild
             key={item.url}
@@ -45,7 +44,7 @@ export const NavTabs = ({ id, items,  orientation = 'horizontal', ...props }: Na
             <MagneticButton
               active={item.url === value ? true : undefined}
               href={item.url}
-              className='group/link relative border-transparent rounded-none hover:z-10 focus-visible:z-10'
+              className='group/link relative rounded-none border-transparent hover:z-10 focus-visible:z-10'
               onMouseEnter={() => setValue(item.url)}
               onFocus={() => setValue(item.url)}
             >

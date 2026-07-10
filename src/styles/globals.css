@@ -13,7 +13,7 @@
   --muted: 0 0 92;
   --muted-hover: 0 0 88;
   --muted-emphasis: 240 9.62 6.08;
-  
+
   --primary: 346 89 60;
   --primary-hover: 346 89 64;
   --primary-emphasis: 346 89 100;
@@ -39,7 +39,7 @@
   --body-hover: 240 9.62 8.08;
   --body-emphasis: 0 0 95;
 
-  --muted:240 9.62 7.08;
+  --muted: 240 9.62 7.08;
   --muted-hover: 240 9.62 9.08;
   --muted-emphasis: 0 0 95;
 
@@ -145,11 +145,11 @@
 
 @layer base {
   svg {
-    @apply fill-current size-[1em] inline-block
+    @apply inline-block size-[1em] fill-current;
   }
 
   a {
-    @apply text-primary
+    @apply text-primary;
   }
 
   em {

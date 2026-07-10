@@ -15,4 +15,3 @@ export const QuestionIcon = (props: QuestionIconProps) => {
     </svg>
   );
 };
-

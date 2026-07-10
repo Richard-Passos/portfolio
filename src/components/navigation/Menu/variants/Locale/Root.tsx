@@ -1,7 +1,5 @@
 'use client';
 
-import data from './Root.data'
-
 import { Button, ButtonProps } from '@/components/input/Button';
 import { Link } from '@/components/navigation/Link';
 import Menu, { MenuProps } from '@/components/navigation/Menu';
@@ -10,9 +8,14 @@ import { GlobeIcon } from '@/components/system/icons/Globe';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 
-export type LocaleMenuProps = MergeProps<{
-  wrapperProps?: MenuProps,
-}, ButtonProps>;
+import data from './Root.data';
+
+export type LocaleMenuProps = MergeProps<
+  {
+    wrapperProps?: MenuProps;
+  },
+  ButtonProps
+>;
 
 export const LocaleMenu = ({ wrapperProps, className, ...props }: LocaleMenuProps) => {
   return (
@@ -45,7 +48,7 @@ export const LocaleMenu = ({ wrapperProps, className, ...props }: LocaleMenuProp
                   size='sm'
                   data-active={isActive ? true : undefined}
                   className={cn(
-                    'justify-start border-transparent! capitalize focus-visible:outline-hidden data-highlighted:bg-(--hover) transition-none'
+                    'justify-start border-transparent! capitalize transition-none focus-visible:outline-hidden data-highlighted:bg-(--hover)'
                   )}
                 >
                   <Link

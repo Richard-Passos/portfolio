@@ -15,4 +15,3 @@ export const HeartIcon = (props: HeartIconProps) => {
     </svg>
   );
 };
-

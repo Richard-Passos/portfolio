@@ -15,4 +15,3 @@ export const ArrowRightIcon = (props: ArrowRightIconProps) => {
     </svg>
   );
 };
-

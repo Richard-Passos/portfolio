@@ -1,3 +1,3 @@
-'use client'
+'use client';
 
-export { DrawerTitle, type DrawerTitleProps } from '@ark-ui/react'
+export { DrawerTitle, type DrawerTitleProps } from '@ark-ui/react';

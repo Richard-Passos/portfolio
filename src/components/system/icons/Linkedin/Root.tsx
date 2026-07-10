@@ -15,4 +15,3 @@ export const LinkedinIcon = (props: LinkedinIconProps) => {
     </svg>
   );
 };
-

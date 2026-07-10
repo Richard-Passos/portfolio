@@ -15,4 +15,3 @@ export const TimesIcon = (props: TimesIconProps) => {
     </svg>
   );
 };
-

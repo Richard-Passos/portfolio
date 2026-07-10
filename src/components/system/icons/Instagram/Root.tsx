@@ -15,4 +15,3 @@ export const InstagramIcon = (props: InstagramIconProps) => {
     </svg>
   );
 };
-

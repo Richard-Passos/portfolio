@@ -16,4 +16,3 @@ export default Object.assign(Menu, {
   Positioner: MenuPositioner,
   Trigger: MenuTrigger
 });
- 

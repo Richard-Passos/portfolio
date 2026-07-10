@@ -19,7 +19,7 @@ export const titleVariants = cva('', {
       h5: 'text-[clamp(1.25rem,1.0714rem+0.4464vw,1.5rem)] leading-[1.4]',
       h6: 'text-[clamp(0.75rem,0.6607rem+0.2232vw,0.875rem)] leading-normal'
     } satisfies Record<TitleProps['as'], string>
-  },
+  }
 });
 
 export const Title = ({ as, className, ...props }: TitleProps) => {

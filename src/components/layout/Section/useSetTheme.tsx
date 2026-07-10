@@ -2,18 +2,19 @@
 
 import { RefObject, useCallback, useEffect } from 'react';
 
-import { useGSAP, ScrollTrigger } from '@/hooks/useGSAP';
-import { Theme } from '@/types/Theme';
 import { useThemeContext } from '@/contexts/Theme';
+import { ScrollTrigger, useGSAP } from '@/hooks/useGSAP';
+import { Theme } from '@/types/Theme';
 
 export const useSetTheme = (ref: RefObject<HTMLElement>, theme: Theme, force?: boolean) => {
   const { setTheme } = useThemeContext();
 
   const applyTheme = useCallback(() => {
     setTheme(theme);
-  }, [theme])
+  }, [theme]);
 
-  useGSAP(() => {
+  useGSAP(
+    () => {
       const el = ref.current;
       if (!el) return;
 
@@ -22,24 +23,22 @@ export const useSetTheme = (ref: RefObject<HTMLElement>, theme: Theme, force?: b
         start: 'top 10%',
         end: 'bottom 10%',
         onEnter: applyTheme,
-        onEnterBack: applyTheme,
+        onEnterBack: applyTheme
       });
 
       return () => {
         trigger.kill();
       };
-    }, 
+    },
     {
       scope: ref,
-      dependencies: [theme],
-    },
+      dependencies: [theme]
+    }
   );
 
   useEffect(() => {
-      if(force) {
-        applyTheme();
-      }
-    }, 
-    [force]
-  );
+    if (force) {
+      applyTheme();
+    }
+  }, [force]);
 };

@@ -19,21 +19,21 @@ export const CONTACT = {
     {
       url: 'https://github.com/Richard-Passos',
       label: 'Github',
-      Icon: GithubIcon,
+      Icon: GithubIcon
     },
     {
       url: 'https://www.instagram.com/richardp.dev/',
       label: 'Instagram',
-      Icon: InstagramIcon,
+      Icon: InstagramIcon
     },
     {
       url: 'https://www.linkedin.com/in/richardp-dev',
       label: 'Linkedin',
-      Icon: LinkedinIcon,
+      Icon: LinkedinIcon
     }
   ],
   buyCoffee: {
     url: 'https://www.buymeacoffee.com/richardp.dev',
-    Icon: MugIcon,
+    Icon: MugIcon
   }
-} as const
+} as const;

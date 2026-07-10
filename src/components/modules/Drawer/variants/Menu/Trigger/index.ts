@@ -1,2 +1,2 @@
-export * from './Root'
-export * from './Mobile'
+export * from './Root';
+export * from './Mobile';

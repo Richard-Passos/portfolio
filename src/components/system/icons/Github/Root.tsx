@@ -15,4 +15,3 @@ export const GithubIcon = (props: GithubIconProps) => {
     </svg>
   );
 };
-

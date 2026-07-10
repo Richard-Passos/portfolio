@@ -15,4 +15,3 @@ export const HandHornsIcon = (props: HandHornsIconProps) => {
     </svg>
   );
 };
-

@@ -1,3 +1,3 @@
-'use client'
+'use client';
 
-export { DrawerTrigger, type DrawerTriggerProps } from '@ark-ui/react'
+export { DrawerTrigger, type DrawerTriggerProps } from '@ark-ui/react';

@@ -5,8 +5,8 @@ export default {
   menu: {
     label: 'Menu',
     open: 'Abrir menu',
-    close: 'Fechar menu',
+    close: 'Fechar menu'
   },
   socials: CONTACT.socials,
-  legalPages: PAGES.legal,
-}
+  legalPages: PAGES.legal
+};

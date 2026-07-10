@@ -1,13 +1,13 @@
-import data from './Root.data';
-
 import { ComponentProps } from 'react';
 
 import { Theme } from '@/components/misc/Theme';
+import { MenuDrawer } from '@/components/modules/Drawer/variants/Menu';
 import { Logo } from '@/components/navigation/Logo';
 import { LocaleMenu } from '@/components/navigation/Menu/variants/Locale';
 import { NavTabs } from '@/components/navigation/Tabs/variants/Nav';
 import { cn } from '@/utils/cn';
-import { MenuDrawer } from '@/components/modules/Drawer/variants/Menu';
+
+import data from './Root.data';
 
 export type HeaderProps = ComponentProps<'header'>;
 
@@ -16,7 +16,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
     <Theme>
       <header
         className={cn(
-          'bg-body text-body-emphasis relative max-w-bounds flex w-full flex-wrap items-center px-[6%] py-5 sm:px-[4%] gap-4 z-20',
+          'max-w-bounds relative z-20 flex w-full flex-wrap items-center gap-4 bg-body px-[6%] py-5 text-body-emphasis sm:px-[4%]',
           className
         )}
         {...props}
@@ -24,13 +24,16 @@ export const Header = ({ className, ...props }: HeaderProps) => {
         <Logo className='mr-auto' />
 
         <div className='ml-auto flex items-center gap-3 max-md:hidden'>
-          <NavTabs id='header' items={data.nav} />
+          <NavTabs
+            id='header'
+            items={data.nav}
+          />
 
           <LocaleMenu />
         </div>
 
         <MenuDrawer nav={data.nav} />
-      </header> 
+      </header>
     </Theme>
   );
 };

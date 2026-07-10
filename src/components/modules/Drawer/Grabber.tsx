@@ -1,20 +1,38 @@
-'use client'
+'use client';
 
-import { MergeProps } from '@/types/MergeProps'
-import { cn } from '@/utils/cn';
 import {
-  DrawerGrabber as UiDrawerGrabber,
-  type DrawerGrabberProps as UiDrawerGrabberProps,
   DrawerGrabberIndicator,
-  type DrawerGrabberIndicatorProps
-} from '@ark-ui/react'
+  type DrawerGrabberIndicatorProps,
+  DrawerGrabber as UiDrawerGrabber,
+  type DrawerGrabberProps as UiDrawerGrabberProps
+} from '@ark-ui/react';
 
-export type DrawerGrabberProps = MergeProps<{indicatorProps?: DrawerGrabberIndicatorProps}, UiDrawerGrabberProps>;
+import { MergeProps } from '@/types/MergeProps';
+import { cn } from '@/utils/cn';
+
+export type DrawerGrabberProps = MergeProps<
+  { indicatorProps?: DrawerGrabberIndicatorProps },
+  UiDrawerGrabberProps
+>;
 
 export const DrawerGrabber = ({ className, indicatorProps, ...props }: DrawerGrabberProps) => {
-  const { className: indicatorClassName, ...indicator } = indicatorProps ?? {}
+  const { className: indicatorClassName, ...indicator } = indicatorProps ?? {};
 
-  return <UiDrawerGrabber className={cn('group/grabber flex items-center justify-center shrink-0 w-full py-5 cursor-grab select-none touch-none active:cursor-grabbing', className)} {...props}>
-        <DrawerGrabberIndicator className={cn('w-10 h-1 bg-muted group-hover/grabber:bg-muted-hover rounded-full', indicatorClassName)} {...indicator}/>
-      </UiDrawerGrabber>
-}
+  return (
+    <UiDrawerGrabber
+      className={cn(
+        'group/grabber flex w-full shrink-0 cursor-grab touch-none items-center justify-center py-5 select-none active:cursor-grabbing',
+        className
+      )}
+      {...props}
+    >
+      <DrawerGrabberIndicator
+        className={cn(
+          'h-1 w-10 rounded-full bg-muted group-hover/grabber:bg-muted-hover',
+          indicatorClassName
+        )}
+        {...indicator}
+      />
+    </UiDrawerGrabber>
+  );
+};

@@ -1,2 +1,2 @@
-export * from './OnScroll'
-export * from './OnView'
+export * from './OnScroll';
+export * from './OnView';

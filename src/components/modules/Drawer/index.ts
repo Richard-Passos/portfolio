@@ -26,5 +26,5 @@ export default Object.assign(Drawer, {
   Grabber: DrawerGrabber,
   Positioner: DrawerPositioner,
   Title: DrawerTitle,
-  Trigger: DrawerTrigger,
+  Trigger: DrawerTrigger
 });

@@ -15,4 +15,3 @@ export const ChevronDownIcon = (props: ChevronDownIconProps) => {
     </svg>
   );
 };
-

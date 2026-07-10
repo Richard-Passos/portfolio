@@ -15,4 +15,3 @@ export const GlobeIcon = (props: GlobeIconProps) => {
     </svg>
   );
 };
-

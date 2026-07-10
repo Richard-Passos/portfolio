@@ -1,18 +1,19 @@
 'use client';
 
 import { useRef } from 'react';
+
 import { Slot, SlotProps } from '@/components/misc/Slot';
+import { gsap, useGSAP } from '@/hooks/useGSAP';
 import { MergeProps } from '@/types/MergeProps';
 import { setRefs } from '@/utils/setRefs';
-import { gsap, useGSAP } from '@/hooks/useGSAP';
 
 export type AnimateOnScrollConfig = {
-  target?: gsap.TweenTarget,
-  trigger?: gsap.DOMTarget,
-  from?: gsap.TweenVars,
-  to?: gsap.TweenVars,
-  start?: string | number | ScrollTrigger.StartEndFunc,
-  end?: string | number | ScrollTrigger.StartEndFunc
+  target?: gsap.TweenTarget;
+  trigger?: gsap.DOMTarget;
+  from?: gsap.TweenVars;
+  to?: gsap.TweenVars;
+  start?: string | number | ScrollTrigger.StartEndFunc;
+  end?: string | number | ScrollTrigger.StartEndFunc;
 };
 
 export type AnimateOnScrollProps = MergeProps<AnimateOnScrollConfig, SlotProps>;
@@ -29,7 +30,8 @@ export const AnimateOnScroll = ({
 }: AnimateOnScrollProps) => {
   const innerRef = useRef<HTMLSlotElement>(null);
 
-   useGSAP(() => {
+  useGSAP(
+    () => {
       const el = innerRef.current;
       if (!el) return;
 
@@ -41,8 +43,8 @@ export const AnimateOnScroll = ({
           scrub: true,
           start,
           end,
-          ...to?.scrollTrigger ?? {}
-        },
+          ...(to?.scrollTrigger ?? {})
+        }
       });
 
       return () => {
@@ -51,9 +53,14 @@ export const AnimateOnScroll = ({
     },
     {
       scope: innerRef,
-      dependencies: [target, trigger, from, to, start, end],
-    },
+      dependencies: [target, trigger, from, to, start, end]
+    }
   );
 
-  return <Slot ref={setRefs(ref, innerRef)} {...props}/>;
+  return (
+    <Slot
+      ref={setRefs(ref, innerRef)}
+      {...props}
+    />
+  );
 };

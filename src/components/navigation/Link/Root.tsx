@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { ComponentProps } from 'react';
 
 import { MergeProps } from '@/types/MergeProps';
-import { cn } from '@/utils/cn'; 
+import { cn } from '@/utils/cn';
 
 export type LinkProps = MergeProps<{ disabled?: boolean }, ComponentProps<typeof NextLink>>;
 

@@ -15,4 +15,3 @@ export const SmileIcon = (props: SmileIconProps) => {
     </svg>
   );
 };
-

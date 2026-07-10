@@ -15,4 +15,3 @@ export const RotateIcon = (props: RotateIconProps) => {
     </svg>
   );
 };
-

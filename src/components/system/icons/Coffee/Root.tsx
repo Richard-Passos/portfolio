@@ -15,4 +15,3 @@ export const CoffeeIcon = (props: CoffeeIconProps) => {
     </svg>
   );
 };
-

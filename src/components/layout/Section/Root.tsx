@@ -1,27 +1,30 @@
 'use client';
 
+import { ComponentProps, RefObject, useRef } from 'react';
+
+import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { setRefs } from '@/utils/setRefs';
-import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
 
 import { useSetTheme } from './useSetTheme';
-import { RefObject, useRef, ComponentProps } from 'react';
 
-type SectionProps = SlotAsChildProps<MergeProps<
+type SectionProps = SlotAsChildProps<
+  MergeProps<
     {
       theme: Parameters<typeof useSetTheme>['1'];
-      forceTheme?: Parameters<typeof useSetTheme>['2']; 
+      forceTheme?: Parameters<typeof useSetTheme>['2'];
     },
     ComponentProps<'section'>
-  >>;
+  >
+>;
 
 const Section = ({
   asChild,
   theme,
   forceTheme,
   className,
-  children, 
+  children,
   ref,
   ...props
 }: SectionProps) => {
@@ -33,17 +36,17 @@ const Section = ({
 
   return (
     <Comp
-      data-theme={theme} 
+      data-theme={theme}
       ref={setRefs(ref, innerRef)}
       className={cn(
-        'bg-body text-body-emphasis 3xl:min-h-bounds relative flex min-h-svh w-full flex-col items-center justify-center py-[clamp(--spacing(24),4.5vw+2rem,--spacing(32))]',
-        className 
-      )} 
+        '3xl:min-h-bounds relative flex min-h-svh w-full flex-col items-center justify-center bg-body py-[clamp(--spacing(24),4.5vw+2rem,--spacing(32))] text-body-emphasis',
+        className
+      )}
       {...props}
     >
       {children}
     </Comp>
-  ); 
+  );
 };
 
 export { Section };

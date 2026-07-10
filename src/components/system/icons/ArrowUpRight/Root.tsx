@@ -18,4 +18,3 @@ export const ArrowUpRightIcon = (props: ArrowUpRightIconProps) => {
     </svg>
   );
 };
-

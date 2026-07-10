@@ -1,3 +1,3 @@
-'use client'
+'use client';
 
-export { DrawerDescription, type DrawerDescriptionProps } from '@ark-ui/react'
+export { DrawerDescription, type DrawerDescriptionProps } from '@ark-ui/react';
