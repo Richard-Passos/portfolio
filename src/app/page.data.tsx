@@ -58,7 +58,7 @@ export default {
     }
   },
   mission: {
-    text: 'Essa é minha missão — Cada linha de código melhora minhas habilidades, criando soluções de alto impacto. Cada projeto é uma oportunidade para inspirar clientes, colegas e a comunidade. A repetição gera excelência, impulsionando o destaque digital.',
+    text: 'Essa é minha missão — Cada desafio, experiência, e linha de código é uma chance de fazer melhor. Cada projeto pode inspirar colegas, e a comunidade. Cada repetição faz a diferença, já que a excelência é apenas o limite para o qual convergimos.',
     items: [
       <>
         Melhorar{' '}
@@ -85,10 +85,6 @@ export default {
       <>
         Visão <em>da</em> Carreira
       </>
-    ),
-    code: 'Hello There',
-    action: {
-      label: 'Magnetic'
-    }
+    )
   }
 } satisfies HomeTemplateProps['data'];

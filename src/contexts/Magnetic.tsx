@@ -1,7 +1,6 @@
 'use client';
 
-import { useContext } from 'react';
-import { ComponentProps, type RefObject, createContext } from 'react';
+import { useContext, ComponentProps, type RefObject, createContext } from 'react';
 
 import { MergeProps } from '@/types/MergeProps';
 

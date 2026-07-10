@@ -1,5 +1,3 @@
-'use client';
-
 import { RefObject } from 'react';
 
 import { gsap, useGSAP } from '@/hooks/useGSAP';

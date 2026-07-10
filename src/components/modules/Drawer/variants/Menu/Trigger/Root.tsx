@@ -33,9 +33,9 @@ export const MenuDrawerTrigger = ({ data, className, ...props }: MenuDrawerTrigg
             className={cn('h-16 rounded-full border-border text-4xl sm:h-20', className)}
             {...props}
           >
-            <MenuIcon className='group-data-[state=open]/action:hidden' />
+            <MenuIcon className='group-data-[state=open]/button:hidden' />
 
-            <TimesIcon className='absolute group-data-[state=closed]/action:hidden' />
+            <TimesIcon className='absolute group-data-[state=closed]/button:hidden' />
 
             <span className='sr-only data-[state=open]:hidden'>{data.open}</span>
 

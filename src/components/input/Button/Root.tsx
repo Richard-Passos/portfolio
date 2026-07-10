@@ -1,16 +1,16 @@
 import { VariantProps, cva } from 'class-variance-authority';
 import { ComponentProps } from 'react';
 
-import { COLORS } from '@/common/COLORS';
 import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
+import { Colors } from '@/types/Colors';
 
 export type ButtonProps = SlotAsChildProps<
   MergeProps<
     {
       iconOnly?: boolean;
-      color?: (typeof COLORS)[number];
+      color?: Colors;
     } & VariantProps<typeof buttonVariants>,
     ComponentProps<'button'>
   >
@@ -48,7 +48,7 @@ export const Button = ({
     <Comp
       aria-disabled={props.disabled ? true : undefined}
       className={cn(
-        'inline-flex h-(--h) shrink-0 cursor-pointer items-center justify-center gap-(--gap) rounded border border-transparent px-(--px) font-medium whitespace-nowrap transition-[background-color] disabled:pointer-events-none disabled:opacity-50 engaged:z-10',
+        'group/button inline-flex h-(--h) shrink-0 cursor-pointer items-center justify-center gap-(--gap) rounded border border-transparent px-(--px) font-medium whitespace-nowrap transition-[background-color] disabled:pointer-events-none disabled:opacity-50 engaged:z-10',
         buttonVariants({ size, variant }),
         iconOnly && 'aspect-square text-2xl [--px:0]',
         className

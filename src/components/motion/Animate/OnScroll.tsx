@@ -35,7 +35,7 @@ export const AnimateOnScroll = ({
       const el = innerRef.current;
       if (!el) return;
 
-      const tween = gsap.fromTo(target ?? el, from, {
+      const tween = gsap.fromTo(target ?? el, from ?? {}, {
         ease: 'none',
         ...to,
         scrollTrigger: {

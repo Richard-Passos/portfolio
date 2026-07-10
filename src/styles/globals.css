@@ -155,6 +155,33 @@
     @apply border-solid border-border;
   }
 
+  @keyframes expand {
+    from {
+      height: var(--collapsed-height, 0);
+    }
+    to {
+      height: var(--height);
+    }
+  }
+
+  @keyframes collapse {
+    from {
+      height: var(--height);
+    }
+    to {
+      height: var(--collapsed-height, 0);
+    }
+  }
+
+  [data-scope='collapsible'][data-part='content'] {
+    &[data-state='open'] {
+      animation: expand 250ms ease-in-out;
+    }
+    &[data-state='closed'] {
+      animation: collapse 250ms ease-in-out;
+    }
+  }
+
   .lenis.lenis-smooth {
     scroll-behavior: auto !important;
   }

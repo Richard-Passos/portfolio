@@ -28,6 +28,7 @@ export const StaggeredTitleOnView = ({ ref, ...props }: StaggeredTitleOnViewProp
 
       return () => {
         tween.kill();
+        split.revert();
       };
     },
     { scope: innerRef }
