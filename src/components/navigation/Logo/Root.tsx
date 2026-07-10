@@ -1,5 +1,5 @@
 import { Button } from '@/components/input/Button';
-import { LogoIcon, LogoIconProps } from '@/components/system/icons/Logo';
+import { LogoIcon, LogoIconProps } from '@/components/system/Icons/Logo';
 import { MergeProps } from '@/types/MergeProps';
 
 import { Link, LinkProps } from '../Link';
@@ -17,7 +17,7 @@ export const Logo = ({ variant = 'primary', ...props }: LogoProps) => {
     <Button
       asChild
       size='lg'
-      variant='link'
+      variant='plain'
       className='p-0'
     >
       <Link

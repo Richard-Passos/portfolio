@@ -1,9 +1,8 @@
 import { MagneticButton, MagneticButtonProps } from '@/components/input/Button/variants/Magnetic';
 import { DrawerTrigger } from '@/components/modules/Drawer';
-import { AnimateOnView } from '@/components/motion/Animate';
-import { MenuIcon } from '@/components/system/icons/Menu';
-import { TimesIcon } from '@/components/system/icons/Times';
-import { UseAnimateOnViewOptions } from '@/hooks/useAnimateOnView';
+import { AnimateOnView, AnimateOnViewConfig } from '@/components/motion/Animate';
+import { MenuIcon } from '@/components/system/Icons/Menu';
+import { TimesIcon } from '@/components/system/Icons/Times';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 
@@ -22,22 +21,21 @@ export const MenuDrawerTriggerAnimation = {
     ease: 'elastic.inOut'
   },
   start: '400'
-} satisfies UseAnimateOnViewOptions['config'];
+} satisfies AnimateOnViewConfig;
 
 export const MenuDrawerTrigger = ({ data, className, ...props }: MenuDrawerTriggerProps) => {
   return (
     <AnimateOnView {...MenuDrawerTriggerAnimation}>
-      <div className='fixed top-(--side) right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] z-50 [--side:--spacing(4)] has-data-[state=open]:scale-100! sm:[--side:--spacing(8)]'>
+      <div className='fixed top-(--side) right-[calc(var(--side)+var(--scroll-bar-size,0px))] z-50 [--side:--spacing(4)] has-data-[state=open]:transform-[scale(1)]! sm:[--side:--spacing(8)]'>
         <DrawerTrigger asChild>
           <MagneticButton
             iconOnly
-            variant='default'
-            className={cn('group/trigger h-16 rounded-full sm:h-20', className)}
+            className={cn('h-16 rounded-full border-border text-4xl sm:h-20', className)}
             {...props}
           >
-            <MenuIcon className='size-[40%]! group-data-[state=open]/trigger:hidden' />
+            <MenuIcon className='group-data-[state=open]/action:hidden' />
 
-            <TimesIcon className='absolute size-[40%]! group-data-[state=closed]/trigger:hidden' />
+            <TimesIcon className='absolute group-data-[state=closed]/action:hidden' />
 
             <span className='sr-only data-[state=open]:hidden'>{data.open}</span>
 

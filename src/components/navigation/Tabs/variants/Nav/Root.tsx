@@ -24,16 +24,17 @@ export const NavTabs = ({ id, items, orientation = 'horizontal', ...props }: Nav
 
   return (
     <Tabs
+      value={value}
       navigate={null}
       activationMode='manual'
-      value={value}
-      onValueChange={(e) => setValue(e.value)}
       orientation={orientation}
+      onValueChange={(e) => setValue(e.value)}
       {...props}
     >
       <Tabs.List
         className={cn('relative flex', orientation === 'vertical' && 'flex-col items-start')}
         onMouseLeave={() => setValue(segment)}
+        onBlurCapture={() => setValue(segment)}
       >
         {items.map((item) => (
           <Tabs.Trigger
@@ -42,9 +43,8 @@ export const NavTabs = ({ id, items, orientation = 'horizontal', ...props }: Nav
             value={item.url}
           >
             <MagneticButton
-              active={item.url === value ? true : undefined}
               href={item.url}
-              className='group/link relative rounded-none border-transparent hover:z-10 focus-visible:z-10'
+              className='rounded-none'
               onMouseEnter={() => setValue(item.url)}
               onFocus={() => setValue(item.url)}
             >

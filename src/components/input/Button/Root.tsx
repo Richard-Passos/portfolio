@@ -16,24 +16,21 @@ export type ButtonProps = SlotAsChildProps<
   >
 >;
 
-export const buttonVariants = cva(
-  'inline-flex shrink-0 cursor-pointer items-center justify-center gap-(--gap) rounded border border-transparent px-(--px) font-medium whitespace-nowrap transition-[background-color] disabled:pointer-events-none disabled:opacity-50',
-  {
-    variants: {
-      size: {
-        sm: 'h-8 text-sm [--gap:--spacing(1)] [--px:--spacing(2.5)] [&_svg]:size-4',
-        md: 'h-10 [--gap:--spacing(1.5)] [--px:--spacing(2.5)] [&_svg]:size-5',
-        lg: 'h-12 [--gap:--spacing(1.5)] [--px:--spacing(2.5)] [&_svg]:size-6'
-      },
-      variant: {
-        default: 'bg-(--bg) text-(--color) hover:bg-(--hover)',
-        subtle: 'bg-(--bg)/8 text-(--bg) hover:bg-(--bg)/16',
-        ghost: 'text-(--bg) hover:bg-(--bg)/16',
-        link: 'text-(--color)'
-      }
+export const buttonVariants = cva('', {
+  variants: {
+    size: {
+      sm: 'text-sm [--gap:--spacing(1)] [--h:--spacing(8)] [--px:--spacing(2.5)]',
+      md: '[--gap:--spacing(1.5)] [--h:--spacing(10)] [--px:--spacing(4)]',
+      lg: '[--gap:--spacing(1.5)] [--h:--spacing(12)] [--px:--spacing(5.5)]'
+    },
+    variant: {
+      default: 'bg-(--bg) text-(--color) engaged:bg-(--hover)',
+      subtle: 'bg-(--bg)/8 text-(--bg) engaged:bg-(--bg)/16',
+      ghost: 'text-(--bg) engaged:bg-(--bg)/16',
+      plain: 'text-(--color)'
     }
   }
-);
+});
 
 export const Button = ({
   asChild,
@@ -51,9 +48,9 @@ export const Button = ({
     <Comp
       aria-disabled={props.disabled ? true : undefined}
       className={cn(
+        'inline-flex h-(--h) shrink-0 cursor-pointer items-center justify-center gap-(--gap) rounded border border-transparent px-(--px) font-medium whitespace-nowrap transition-[background-color] disabled:pointer-events-none disabled:opacity-50 engaged:z-10',
         buttonVariants({ size, variant }),
-        iconOnly && 'aspect-square [--px:0]',
-        variant === 'default' && color === 'body' && 'border-border',
+        iconOnly && 'aspect-square text-2xl [--px:0]',
         className
       )}
       style={

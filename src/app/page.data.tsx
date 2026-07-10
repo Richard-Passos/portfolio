@@ -1,9 +1,9 @@
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate/OnScroll';
-import { GlobeIcon } from '@/components/system/icons/Globe';
-import { RocketIcon } from '@/components/system/icons/Rocket';
-import { FlashIcon } from '@/components/system/icons/Flash';
-import { CapIcon } from '@/components/system/icons/Cap';
-import { SmileIcon } from '@/components/system/icons/Smile';
+import { GlobeIcon } from '@/components/system/Icons/Globe';
+import { RocketIcon } from '@/components/system/Icons/Rocket';
+import { FlashIcon } from '@/components/system/Icons/Flash';
+import { CapIcon } from '@/components/system/Icons/Cap';
+import { SmileIcon } from '@/components/system/Icons/Smile';
 import { HomeTemplateProps } from '@/components/templates/Home';
 
 const rotateAnimation = {
@@ -44,25 +44,21 @@ export default {
     left: {
       icon: <FlashIcon />,
       title: 'Disponível para Trabalho',
-      description:
-        'Aberto a oportunidades de estágio, freelance e desenvolvimento de produtos digitais.'
+      text: 'Aberto a oportunidades de estágio, freelance e desenvolvimento de produtos digitais.'
     },
     center: {
       icon: <SmileIcon />,
       title: 'Quem? Por quê? Mais?',
-      description:
-        'Sou Richard Passos, desenvolvedor web, estudante e apaixonado por tecnologia. Gosto de resolver problemas e fazer a diferença linha por linha. O resto da história está logo abaixo.'
+      text: 'Sou Richard Passos, desenvolvedor web, estudante e apaixonado por tecnologia. Gosto de resolver problemas e fazer a diferença linha por linha. O resto da história está logo abaixo.'
     },
     right: {
       icon: <CapIcon />,
       title: 'Ciência da Computação @ UFRGS',
-      description:
-        'Graduando na UFRGS, unindo base acadêmica sólida com experiência em projetos reais.'
+      text: 'Graduando na UFRGS, unindo base acadêmica sólida com experiência em projetos reais.'
     }
   },
   mission: {
-    description:
-      'Essa é minha missão — Cada linha de código melhora minhas habilidades, criando soluções de alto impacto. Cada projeto é uma oportunidade para inspirar clientes, colegas e a comunidade. A repetição gera excelência, impulsionando o destaque digital.',
+    text: 'Essa é minha missão — Cada linha de código melhora minhas habilidades, criando soluções de alto impacto. Cada projeto é uma oportunidade para inspirar clientes, colegas e a comunidade. A repetição gera excelência, impulsionando o destaque digital.',
     items: [
       <>
         Melhorar{' '}

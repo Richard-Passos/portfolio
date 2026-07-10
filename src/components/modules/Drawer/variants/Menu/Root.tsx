@@ -43,19 +43,18 @@ export const MenuDrawer = async ({ nav, ...props }: MenuDrawerProps) => {
           <div className='mt-auto flex flex-wrap px-4'>
             <LocaleMenu className='mr-2.5' />
 
-            {data.socials.map(({ url, label, Icon }) => (
+            {data.socials.map(({ url, label, icon }) => (
               <MagneticButton
                 key={url}
                 href={url}
                 iconOnly
                 aria-label={label}
-                className='border-transparent'
               >
-                <Icon className='absolute size-2/3' />
+                {icon}
               </MagneticButton>
             ))}
           </div>
-
+ 
           <Text
             small
             className='mt-4 block px-4'

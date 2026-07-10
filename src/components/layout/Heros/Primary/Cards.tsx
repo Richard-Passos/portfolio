@@ -1,13 +1,14 @@
 import { ComponentProps, ReactNode } from 'react';
 
 import { MergeProps } from '@/types/MergeProps';
-import { Text } from '@/components/system/Text';
 import { cn } from '@/utils/cn';
+import { AnimateOnView, AnimateOnViewConfig } from '@/components/motion/Animate';
+import GradientCard from '@/components/display/Cards/Gradient';
 
 export type PrimaryHeroCardProps = {
   icon: ReactNode;
   title: ReactNode;
-  description: ReactNode;
+  text: ReactNode;
 };
 
 export type PrimaryHeroCardsProps = MergeProps<
@@ -21,102 +22,94 @@ export type PrimaryHeroCardsProps = MergeProps<
   ComponentProps<'section'>
 >;
 
+export const PrimaryHeroCardsAnimation = {
+  target: '.group',
+  from: {
+    y: 100,
+    filter: 'blur(20px)'
+  },
+  to: {
+    y: 0,
+    filter: 'blur(0px)',
+    duration: 0.7,
+    stagger: {
+      each: 0.08,
+      from: 'center'
+    },
+    ease: 'power2.out'
+  }
+} satisfies AnimateOnViewConfig;
+
 export const PrimaryHeroCards = ({ data, className, ...props }: PrimaryHeroCardsProps) => {
   return (
-    <section
-      className={cn(
-        'mt-28 grid items-end gap-4 md:grid-cols-12 [&_svg]:transition-transform [&_svg]:duration-700 [&_svg]:ease-backOut',
-        className
-      )}
-      {...props}
-    >
-      <section className='group relative isolate flex min-h-80 rounded-3xl border bg-muted/75 p-3 md:col-span-6 lg:col-span-3'>
-        <div className='flex grow flex-col rounded-2xl bg-body p-6'>
-          <div className='mb-4 flex aspect-square w-fit rounded border bg-muted p-2 text-2xl group-hover:*:rotate-y-360'>
+    <AnimateOnView {...PrimaryHeroCardsAnimation}>
+      <section
+        className={cn(
+          'mt-28 grid w-full items-end gap-4 md:grid-cols-12 [&_svg]:transition-transform [&_svg]:duration-700 [&_svg]:ease-backOut',
+          className
+        )}
+        {...props}
+      >
+        <GradientCard
+          className='group md:col-span-6 lg:col-span-3'
+          gradient='radial-gradient(
+            140% 140% at 0% 100%,
+            #ff5a36 0%,
+            #ff3b3b 10%,
+            #ff38d1 20%,
+            #7c3aed 30%,
+            transparent 60%
+          )'
+        >
+          <GradientCard.Icon className='group-hover:*:rotate-y-360'>
             {data.left.icon}
-          </div>
+          </GradientCard.Icon>
 
-          <h3 className='mt-auto'>{data.left.title}</h3>
+          <GradientCard.Title>{data.left.title}</GradientCard.Title>
 
-          <Text
-            small
-            className='mt-2 text-placeholder'
-          >
-            {data.left.description}
-          </Text>
-        </div>
+          <GradientCard.Text>{data.left.text}</GradientCard.Text>
+        </GradientCard>
 
-        <div
-          className='absolute inset-0 -z-10 rounded-[inherit] bg-primary'
-          style={{
-            background: `radial-gradient(
-                            140% 140% at 0% 100%,
-                            #ff5a36 0%,
-                            #ff3b3b 10%,
-                            #ff38d1 20%,
-                            #7c3aed 30%,
-                            transparent 60%
-                          )`
-          }}
-        />
-      </section>
-
-      <section className='group relative isolate flex h-fit min-h-64 rounded-3xl border bg-muted/75 p-4 md:col-span-full lg:col-span-6'>
-        <div className='flex grow flex-col rounded-2xl bg-body p-6'>
-          <div className='mb-4 flex aspect-square w-fit rounded border bg-muted p-2 text-2xl group-hover:*:rotate-x-360'>
+        <GradientCard
+          className='group min-h-64 md:col-span-full lg:col-span-6'
+          gradient='radial-gradient(
+            140% 140% at 50% 0%,
+            #ff5a36 0%,
+            #ff3b3b 25%,
+            transparent 37.5%,
+            #ff38d1 50%,
+            #7c3aed 75%
+          )'
+        >
+          <GradientCard.Icon className='group-hover:*:rotate-x-360'>
             {data.center.icon}
-          </div>
+          </GradientCard.Icon>
 
-          <h3 className='mt-auto'>{data.center.title}</h3>
+          <GradientCard.Title>{data.center.title}</GradientCard.Title>
 
-          <Text className='mt-2 text-placeholder'>{data.center.description}</Text>
-        </div>
+          <GradientCard.Text small={false}>{data.center.text}</GradientCard.Text>
+        </GradientCard>
 
-        <div
-          className='absolute inset-0 -z-10 rounded-[inherit] bg-primary'
-          style={{
-            background: `radial-gradient(
-                            140% 140% at 50% 0%,
-                            #ff5a36 0%,
-                            #ff3b3b 25%,
-                            transparent 37.5%,
-                            #ff38d1 50%,
-                            #7c3aed 75%
-                          )`
-          }}
-        />
-      </section>
-
-      <section className='group relative isolate flex min-h-80 rounded-3xl border bg-muted/75 p-3 md:col-span-6 md:max-lg:row-start-1 lg:col-span-3'>
-        <div className='flex grow flex-col rounded-2xl bg-body p-6'>
-          <div className='mb-4 flex aspect-square w-fit rounded border bg-muted p-2 text-2xl group-hover:*:-rotate-y-360'>
+        <GradientCard
+          className='group md:col-span-6 md:max-lg:row-start-1 lg:col-span-3'
+          gradient='radial-gradient(
+            140% 140% at 100% 0%,
+            #ff5a36 0%,
+            #ff3b3b 10%,
+            #ff38d1 20%,
+            #7c3aed 30%,
+            transparent 60%
+          )'
+        >
+          <GradientCard.Icon className='group-hover:*:-rotate-y-360'>
             {data.right.icon}
-          </div>
+          </GradientCard.Icon>
 
-          <h3 className='mt-auto'>{data.right.title}</h3>
+          <GradientCard.Title>{data.right.title}</GradientCard.Title>
 
-          <Text
-            small
-            className='mt-2 text-placeholder'
-          >
-            {data.right.description}
-          </Text>
-        </div>
-
-        <div
-          className='absolute inset-0 -z-10 rounded-[inherit] bg-primary'
-          style={{
-            background: `radial-gradient(
-                            140% 140% at 100% 0%,
-                            #ff5a36 0%,
-                            #ff3b3b 10%,
-                            #ff38d1 20%,
-                            #7c3aed 30%,
-                            transparent 60%
-                          )`
-          }}
-        />
+          <GradientCard.Text>{data.right.text}</GradientCard.Text>
+        </GradientCard>
       </section>
-    </section>
+    </AnimateOnView>
   );
 };

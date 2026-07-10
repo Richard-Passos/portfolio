@@ -3,8 +3,8 @@
 import { Button, ButtonProps } from '@/components/input/Button';
 import { Link } from '@/components/navigation/Link';
 import Menu, { MenuProps } from '@/components/navigation/Menu';
-import { CheckIcon } from '@/components/system/icons/Check';
-import { GlobeIcon } from '@/components/system/icons/Globe';
+import { CheckIcon } from '@/components/system/Icons/Check';
+import { GlobeIcon } from '@/components/system/Icons/Globe';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 
@@ -23,10 +23,10 @@ export const LocaleMenu = ({ wrapperProps, className, ...props }: LocaleMenuProp
       <Menu.Trigger asChild>
         <Button
           aria-label={data.label}
-          className={cn('min-w-32 justify-start gap-2 border-border capitalize', className)}
+          className={cn('min-w-32 justify-start border-border px-2.5 capitalize', className)}
           {...props}
         >
-          <GlobeIcon />
+          <GlobeIcon className='size-6' />
 
           {data.default.label}
         </Button>
@@ -34,35 +34,28 @@ export const LocaleMenu = ({ wrapperProps, className, ...props }: LocaleMenuProp
 
       <Menu.Positioner>
         <Menu.Content className='z-50 flex min-w-32 flex-col gap-0.5 rounded border bg-body p-1 shadow focus-visible:outline-hidden'>
-          {data.locales.map(({ key, label }) => {
-            const isActive = key === data.default.key;
-
-            return (
-              <Menu.Item
+          {data.locales.map(({ key, label }) => (
+            <Menu.Item
+              asChild
+              key={key}
+              value={key}
+            >
+              <Button
                 asChild
-                value={key}
-                key={key}
+                size='sm'
+                className='justify-start capitalize transition-none'
               >
-                <Button
-                  asChild
-                  size='sm'
-                  data-active={isActive ? true : undefined}
-                  className={cn(
-                    'justify-start border-transparent! capitalize transition-none focus-visible:outline-hidden data-highlighted:bg-(--hover)'
-                  )}
+                <Link
+                  href='/'
+                  lang={key}
                 >
-                  <Link
-                    href='/'
-                    lang={key}
-                  >
-                    {label}
+                  {label}
 
-                    {isActive && <CheckIcon className='ml-auto' />}
-                  </Link>
-                </Button>
-              </Menu.Item>
-            );
-          })}
+                  {key === data.default.key && <CheckIcon className='ml-auto' />}
+                </Link>
+              </Button>
+            </Menu.Item>
+          ))}
         </Menu.Content>
       </Menu.Positioner>
     </Menu>

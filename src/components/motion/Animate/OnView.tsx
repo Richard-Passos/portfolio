@@ -23,7 +23,7 @@ export const AnimateOnView = ({
   ref,
   target,
   trigger,
-  from,
+  from = {},
   to,
   scrollTrigger,
   start,

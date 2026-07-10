@@ -1,13 +1,13 @@
-import { GithubIcon } from '@/components/system/icons/Github';
-import { InstagramIcon } from '@/components/system/icons/Instagram';
-import { LinkedinIcon } from '@/components/system/icons/Linkedin';
-import { MugIcon } from '@/components/system/icons/Mug';
+import { GithubIcon } from '@/components/system/Icons/Github';
+import { InstagramIcon } from '@/components/system/Icons/Instagram';
+import { LinkedinIcon } from '@/components/system/Icons/Linkedin';
+import { MugIcon } from '@/components/system/Icons/Mug';
 
 export const CONTACT = {
   email: 'richard.ac.passos12@gmail.com',
   creator: {
     url: 'https://github.com/Richard-Passos',
-    name: 'Richard P'
+    name: 'Richard P.'
   },
   authors: [
     {
@@ -19,21 +19,21 @@ export const CONTACT = {
     {
       url: 'https://github.com/Richard-Passos',
       label: 'Github',
-      Icon: GithubIcon
+      icon: <GithubIcon />
     },
     {
       url: 'https://www.instagram.com/richardp.dev/',
       label: 'Instagram',
-      Icon: InstagramIcon
+      icon: <InstagramIcon />
     },
     {
       url: 'https://www.linkedin.com/in/richardp-dev',
       label: 'Linkedin',
-      Icon: LinkedinIcon
+      icon: <LinkedinIcon />
     }
   ],
   buyCoffee: {
     url: 'https://www.buymeacoffee.com/richardp.dev',
-    Icon: MugIcon
+    icon: <MugIcon />
   }
 } as const;
