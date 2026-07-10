@@ -39,7 +39,8 @@ const Section = ({
       data-theme={theme}
       ref={setRefs(ref, innerRef)}
       className={cn(
-        '3xl:min-h-bounds relative flex min-h-svh w-full flex-col items-center justify-center bg-body py-[clamp(--spacing(24),4.5vw+2rem,--spacing(32))] text-body-emphasis',
+        'relative isolate flex min-h-[min(var(--max-height-bounds),100dvh)] w-9/10 flex-col items-center justify-center py-(--py) text-body-emphasis [--py:clamp(--spacing(24),4.5vw+2rem,--spacing(32))]',
+        'before:absolute before:inset-y-0 before:-z-50 before:w-screen before:bg-body',
         className
       )}
       {...props}
