@@ -144,6 +144,10 @@
 }
 
 @layer base {
+  svg {
+    @apply fill-current size-[1em] inline-block
+  }
+
   a {
     @apply text-primary
   }
