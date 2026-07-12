@@ -1,18 +1,16 @@
 'use client';
 
 import { MergeProps } from '@/types/MergeProps';
-import { CollapsibleRoot, CollapsibleRootProps } from '@ark-ui/react';
+import { AccordionRoot, AccordionRootProps } from '@ark-ui/react';
 import { ScrollTrigger } from '@/hooks/useGSAP';
 import { RefObject } from 'react';
 
-export type CollapsibleProps = MergeProps<
-  { ref?: RefObject<HTMLDivElement> },
-  CollapsibleRootProps
->;
+export type AccordionProps = MergeProps<{ ref?: RefObject<HTMLDivElement> }, AccordionRootProps>;
 
-export const Collapsible = (props: CollapsibleProps) => {
+export const Accordion = (props: AccordionProps) => {
   return (
-    <CollapsibleRoot
+    <AccordionRoot
+      collapsible
       {...props}
       onTransitionEnd={(...args) => {
         ScrollTrigger.refresh();
