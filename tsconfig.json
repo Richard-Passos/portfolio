@@ -19,6 +19,7 @@
         "name": "next"
       }
     ],
+    "rootDir": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
@@ -29,9 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "src/components/display/Cards/Career/.data.tsx",
-    "src/components/modules/Catalog/variants/Career/.data.tsx"
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

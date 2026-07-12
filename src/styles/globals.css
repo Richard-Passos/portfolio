@@ -20,9 +20,9 @@
   --muted-hover: 0 0 88;
   --muted-emphasis: 240 9.62 6.08;
 
-  --primary: 346 89 60;
-  --primary-hover: 346 89 64;
-  --primary-emphasis: 346 89 100;
+  --primary: 344 100 47;
+  --primary-hover: 344 100 51;
+  --primary-emphasis: 344 100 100;
 
   --success: 142 71 55;
   --success-hover: 142 71 59;
@@ -49,9 +49,9 @@
   --muted-hover: 240 9.62 9.08;
   --muted-emphasis: 0 0 95;
 
-  --primary: 346 89 60;
-  --primary-hover: 346 89 64;
-  --primary-emphasis: 346 89 100;
+  --primary: 344 100 47;
+  --primary-hover: 344 100 51;
+  --primary-emphasis: 344 100 100;
 
   --success: 142 71 55;
   --success-hover: 142 71 59;
@@ -125,6 +125,11 @@
 }
 
 @layer base {
+  .disable-transitions,
+  .disable-transitions * {
+    transition: none !important;
+  }
+
   svg {
     @apply inline-block size-[1em] fill-current;
   }
@@ -157,7 +162,7 @@
 
   @keyframes expand {
     from {
-      height: var(--collapsed-height, 0);
+      height: 0;
     }
     to {
       height: var(--height);
@@ -169,16 +174,16 @@
       height: var(--height);
     }
     to {
-      height: var(--collapsed-height, 0);
+      height: 0;
     }
   }
 
-  [data-scope='collapsible'][data-part='content'] {
+  [data-scope='accordion'][data-part='item-content'] {
     &[data-state='open'] {
-      animation: expand 250ms ease-in-out;
+      animation: expand 150ms ease-in-out;
     }
     &[data-state='closed'] {
-      animation: collapse 250ms ease-in-out;
+      animation: collapse 150ms ease-in-out;
     }
   }
 

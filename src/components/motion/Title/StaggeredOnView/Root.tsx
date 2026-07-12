@@ -1,43 +1,12 @@
-'use client';
+import { StaggeredTitleClientOnView } from './Client';
+import { Title, TitleProps } from '@/components/system/Title';
 
-import { useRef } from 'react';
+export type StaggeredTitleOnViewProps = TitleProps;
 
-import { Slot, SlotProps } from '@/components/misc/Slot';
-import { SplitText, gsap, useGSAP } from '@/hooks/useGSAP';
-import { setRefs } from '@/utils/setRefs';
-
-export type StaggeredTitleOnViewProps = SlotProps;
-
-export const StaggeredTitleOnView = ({ ref, ...props }: StaggeredTitleOnViewProps) => {
-  const innerRef = useRef<HTMLSlotElement>(null);
-
-  useGSAP(
-    () => {
-      const el = innerRef.current;
-      if (!el) return;
-
-      const split = SplitText.create(el, { type: 'chars' });
-
-      const tween = gsap.from(split.chars, {
-        y: 50,
-        opacity: 0,
-        stagger: 0.03,
-        duration: 0.6,
-        ease: 'back.out(1.7)'
-      });
-
-      return () => {
-        tween.kill();
-        split.revert();
-      };
-    },
-    { scope: innerRef }
-  );
-
+export const StaggeredTitleOnView = (props: StaggeredTitleOnViewProps) => {
   return (
-    <Slot
-      ref={setRefs(ref, innerRef)}
-      {...props}
-    />
+    <StaggeredTitleClientOnView>
+      <Title {...props} />
+    </StaggeredTitleClientOnView>
   );
 };

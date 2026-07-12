@@ -1,17 +1,14 @@
-import { ReactNode } from 'react';
-
-import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
 import { Mission, MissionProps } from '@/components/layout/Blocks/Mission';
 import { PrimaryHero, PrimaryHeroProps } from '@/components/layout/Heros/Primary';
-import { Section } from '@/components/layout/Section';
-import { ReviewTitleOnScroll } from '@/components/motion/Title/ReviewOnScroll';
 import { Career, CareerProps } from '@/components/layout/Blocks/Career';
+import { Projects, ProjectsProps } from '@/components/layout/Blocks/Projects';
 
 export type HomeTemplateProps = {
   data: {
     hero: PrimaryHeroProps['data'];
     mission: MissionProps['data'];
     career: CareerProps['data'];
+    projects: ProjectsProps['data'];
   };
 };
 
@@ -33,6 +30,11 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
         data={data.career}
       />
 
+      <Projects
+        theme='dark'
+        data={data.projects}
+      />
+
       <Mission
         theme='light'
         data={data.mission}
@@ -41,6 +43,11 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
       <Career
         theme='light'
         data={data.career}
+      />
+
+      <Projects
+        theme='light'
+        data={data.projects}
       />
     </>
   );

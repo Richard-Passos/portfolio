@@ -8,7 +8,7 @@ import { cn } from '@/utils/cn';
 
 export type CatalogListProps = SlotAsChildProps<ComponentProps<'ul'>>;
 
-export const CatalogList = <T,>({ asChild, className, ...props }: CatalogListProps) => {
+export const CatalogList = <T,>({ asChild, className, children, ...props }: CatalogListProps) => {
   const { isEmpty } = useCatalogContext<T>();
 
   const Comp = asChild ? Slot : 'ul';
@@ -17,6 +17,8 @@ export const CatalogList = <T,>({ asChild, className, ...props }: CatalogListPro
     <Comp
       className={cn('m-0 list-none p-0', className)}
       {...props}
-    />
+    >
+      {children}
+    </Comp>
   );
 };

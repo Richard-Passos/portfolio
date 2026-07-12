@@ -17,7 +17,7 @@ export type CareerProps = MergeProps<
 export const Career = ({ data, className, ...props }: CareerProps) => {
   return (
     <Section
-      className={cn('w-full', className)}
+      className={cn('w-full pb-[calc(var(--py)*2)]', className)}
       {...props}
     >
       <ReviewTitleOnScroll>{data.title}</ReviewTitleOnScroll>

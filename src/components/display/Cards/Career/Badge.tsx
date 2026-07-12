@@ -9,7 +9,7 @@ export const CareerCardBadge = ({ index, className, ...props }: CareerCardBadgeP
     <Badge
       color='primary'
       variant='subtle'
-      className={cn('-translate-y-3', className)}
+      className={cn('mr-4 -translate-y-2', className)}
       {...props}
     >
       {`${index + 1}`.padStart(2, 'Ø')}/

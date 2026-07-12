@@ -10,35 +10,40 @@ export type CareerCatalogProps = Omit<CatalogProps<Career>, 'items'>;
 export const CareerCatalog = ({ className, ...props }: CareerCatalogProps) => {
   return (
     <Catalog
-      className={cn('w-full max-w-4xl', className)}
+      className={cn('w-full max-w-5xl', className)}
       items={data.items}
       {...props}
     >
       <Catalog.Empty className='flex w-full'>{data.empty}</Catalog.Empty>
 
-      <Catalog.List className='group/list'>
-        {data.items.map((el, i) => (
-          <CareerCard key={el.id}>
-            <CareerCard.Header>
-              <CareerCard.Badge index={i} />
+      <Catalog.List asChild>
+        <CareerCard.Accordion defaultValue={['napead']}>
+          {data.items.map((el, i) => (
+            <CareerCard
+              key={el.id}
+              value={el.id}
+              className='not-first:-mt-px'
+            >
+              <CareerCard.Header>
+                <CareerCard.Badge index={i} />
 
-              <div>
-                <CareerCard.Title>{el.title}</CareerCard.Title>
+                <div>
+                  <CareerCard.Title>{el.title}</CareerCard.Title>
 
-                <CareerCard.Extra
-                  start={el.start}
-                  end={el.end}
-                  roles={el.roles}
-                  present={data.present}
-                />
-              </div>
+                  <CareerCard.Extra
+                    start={el.start}
+                    end={el.end}
+                    roles={el.roles}
+                  />
+                </div>
 
-              <CareerCard.Trigger />
-            </CareerCard.Header>
+                <CareerCard.Trigger />
+              </CareerCard.Header>
 
-            <CareerCard.Text>{el.text}</CareerCard.Text>
-          </CareerCard>
-        ))}
+              <CareerCard.Text>{el.text}</CareerCard.Text>
+            </CareerCard>
+          ))}
+        </CareerCard.Accordion>
       </Catalog.List>
     </Catalog>
   );

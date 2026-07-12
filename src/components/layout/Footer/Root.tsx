@@ -21,7 +21,10 @@ export const Footer = ({ className, ...props }: FooterProps) => {
     <Section
       asChild
       theme='light'
-      className={cn('max-w-bounds items-stretch py-0', className)}
+      className={cn(
+        'min-h-[min(100dvh,var(--max-height-bounds))] max-w-bounds items-stretch py-0',
+        className
+      )}
       {...props}
     >
       <footer>

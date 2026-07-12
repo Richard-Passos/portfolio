@@ -1,9 +1,9 @@
 import { Title, TitleProps } from '@/components/system/Title';
 import { cn } from '@/utils/cn';
 
-export type CareerCardTitleProps = TitleProps;
+export type ProjectCardTitleProps = TitleProps;
 
-export const CareerCardTitle = ({ className, ...props }: CareerCardTitleProps) => {
+export const ProjectCardTitle = ({ className, ...props }: ProjectCardTitleProps) => {
   return (
     <Title
       as='h5'

@@ -1,7 +1,7 @@
 import data from './.data';
 
 import { cn } from '@/utils/cn';
-import { CollapsibleIndicator, CollapsibleTrigger } from '@/components/display/Collapsible';
+import { AccordionIndicator, AccordionTrigger } from '@/components/display/Accordion';
 import { PlusIcon } from '@/components/system/Icons/Plus';
 import { Button, ButtonProps } from '@/components/input/Button';
 
@@ -9,23 +9,23 @@ export type CareerCardTriggerProps = Omit<ButtonProps, 'children'>;
 
 export const CareerCardTrigger = ({ className, ...props }: CareerCardTriggerProps) => {
   return (
-    <CollapsibleTrigger asChild>
+    <AccordionTrigger asChild>
       <Button
         iconOnly
         className={cn(
-          'ml-auto h-fit rounded-none border-l-border px-12 text-placeholder hover:text-primary',
+          'ml-auto h-auto rounded-none border-l-border px-12 text-placeholder transition-none engaged:text-primary',
           className
         )}
         {...props}
       >
-        <CollapsibleIndicator>
+        <AccordionIndicator>
           <PlusIcon className='transition-[rotate] duration-700 ease-backOut group-data-[state=open]/button:rotate-405' />
 
           <span className='sr-only data-[state=open]:hidden'>{data.open}</span>
 
           <span className='sr-only data-[state=closed]:hidden'>{data.close}</span>
-        </CollapsibleIndicator>
+        </AccordionIndicator>
       </Button>
-    </CollapsibleTrigger>
+    </AccordionTrigger>
   );
 };

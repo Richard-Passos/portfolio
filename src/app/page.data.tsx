@@ -86,5 +86,13 @@ export default {
         Visão <em>da</em> Carreira
       </>
     )
+  },
+  projects: {
+    title: (
+      <>
+        Alguns dos <b>meus projetos</b>
+      </>
+    ),
+    text: ''
   }
 } satisfies HomeTemplateProps['data'];

@@ -1,20 +1,15 @@
-'use client';
-
 import { cn } from '@/utils/cn';
-import { ComponentProps } from 'react';
-import { Collapsible } from '@/components/display/Collapsible';
+import { AccordionItem, AccordionItemProps } from '@/components/display/Accordion';
+import { MergeProps } from '@/types/MergeProps';
 
-export type CareerCardProps = ComponentProps<'section'>;
+export type CareerCardProps = MergeProps<Pick<AccordionItemProps, 'value'>, AccordionItemProps>;
 
-export const CareerCard = ({ className, children, ...props }: CareerCardProps) => {
+export const CareerCard = ({ asChild, value, className, ...props }: CareerCardProps) => {
   return (
-    <Collapsible asChild>
-      <section
-        className={cn('border bg-body', className)}
-        {...props}
-      >
-        {children}
-      </section>
-    </Collapsible>
+    <AccordionItem
+      value={value}
+      className={cn('border bg-body', className)}
+      {...props}
+    />
   );
 };

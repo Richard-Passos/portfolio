@@ -42,13 +42,11 @@ export const PrimaryHero = ({ data, ...props }: PrimaryHeroProps) => {
         forceTheme
         {...props}
       >
-        <StaggeredTitleOnView>
-          <Title
-            as='h1'
-            className='flex w-9/10 max-w-5xl flex-wrap gap-x-[.3em] wrap-break-word uppercase max-sm:text-center'
-          >
-            {data.title}
-          </Title>
+        <StaggeredTitleOnView
+          as='h1'
+          className='flex w-9/10 max-w-5xl flex-wrap gap-x-[.3em] wrap-break-word uppercase max-sm:text-center'
+        >
+          {data.title}
         </StaggeredTitleOnView>
 
         <PrimaryHeroCards

@@ -1,3 +1,4 @@
+import { SlotElement } from '@/components/misc/Slot/Element';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { ComponentProps } from 'react';
@@ -11,7 +12,8 @@ export type GradientCardProps = MergeProps<
 
 export const GradientCard = ({ gradient, className, style, ...props }: GradientCardProps) => {
   return (
-    <section
+    <SlotElement
+      tag='section'
       className={cn(
         'relative isolate flex min-h-80 flex-col rounded-3xl border bg-muted/75 p-9',
         'before:absolute before:inset-0 before:-z-10 before:rounded-inherit before:[background:var(--bg)]',

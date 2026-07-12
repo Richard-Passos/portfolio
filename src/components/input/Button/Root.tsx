@@ -1,19 +1,16 @@
 import { VariantProps, cva } from 'class-variance-authority';
-import { ComponentProps } from 'react';
 
-import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { Colors } from '@/types/Colors';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 
-export type ButtonProps = SlotAsChildProps<
-  MergeProps<
-    {
-      iconOnly?: boolean;
-      color?: Colors;
-    } & VariantProps<typeof buttonVariants>,
-    ComponentProps<'button'>
-  >
+export type ButtonProps = MergeProps<
+  {
+    iconOnly?: boolean;
+    color?: Colors;
+  } & VariantProps<typeof buttonVariants>,
+  SlotElementProps<'button'>
 >;
 
 export const buttonVariants = cva('', {
@@ -33,7 +30,6 @@ export const buttonVariants = cva('', {
 });
 
 export const Button = ({
-  asChild,
   size = 'md',
   color = 'body',
   variant = 'default',
@@ -42,10 +38,9 @@ export const Button = ({
   style,
   ...props
 }: ButtonProps) => {
-  const Comp = asChild ? Slot : 'button';
-
   return (
-    <Comp
+    <SlotElement
+      tag='button'
       aria-disabled={props.disabled ? true : undefined}
       className={cn(
         'group/button inline-flex h-(--h) shrink-0 cursor-pointer items-center justify-center gap-(--gap) rounded border border-transparent px-(--px) font-medium whitespace-nowrap transition-[background-color] disabled:pointer-events-none disabled:opacity-50 engaged:z-10',

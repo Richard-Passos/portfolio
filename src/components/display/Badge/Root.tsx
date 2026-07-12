@@ -1,18 +1,16 @@
 import { VariantProps, cva } from 'class-variance-authority';
-import { ComponentProps } from 'react';
 
-import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { Colors } from '@/types/Colors';
+import { SlotElement } from '@/components/misc/Slot/Element';
+import { ComponentProps } from 'react';
 
-export type BadgeProps = SlotAsChildProps<
-  MergeProps<
-    {
-      color?: Colors;
-    } & VariantProps<typeof BadgeVariants>,
-    ComponentProps<'div'>
-  >
+export type BadgeProps = MergeProps<
+  {
+    color?: Colors;
+  } & VariantProps<typeof BadgeVariants>,
+  ComponentProps<'div'>
 >;
 
 export const BadgeVariants = cva('', {
@@ -31,7 +29,6 @@ export const BadgeVariants = cva('', {
 });
 
 export const Badge = ({
-  asChild,
   size = 'md',
   color = 'body',
   variant = 'default',
@@ -39,10 +36,9 @@ export const Badge = ({
   style,
   ...props
 }: BadgeProps) => {
-  const Comp = asChild ? Slot : 'div';
-
   return (
-    <Comp
+    <SlotElement
+      tag='div'
       className={cn(
         'group/badge inline-flex h-(--h) w-fit shrink-0 items-center justify-center gap-(--gap) rounded-full border border-transparent px-(--px) font-medium whitespace-nowrap',
         BadgeVariants({ size, variant }),
