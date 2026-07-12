@@ -1,11 +1,16 @@
-import { StaggeredTitleClientOnView } from './Client';
+import { MergeProps } from '@/types/MergeProps';
+import { StaggeredTitleClientOnView, StaggeredTitleClientOnViewConfig } from './Client';
 import { Title, TitleProps } from '@/components/system/Title';
 
-export type StaggeredTitleOnViewProps = TitleProps;
+export type StaggeredTitleOnViewProps = MergeProps<StaggeredTitleClientOnViewConfig, TitleProps>;
 
-export const StaggeredTitleOnView = (props: StaggeredTitleOnViewProps) => {
+export const StaggeredTitleOnView = ({ from, start, end, ...props }: StaggeredTitleOnViewProps) => {
   return (
-    <StaggeredTitleClientOnView>
+    <StaggeredTitleClientOnView
+      from={from}
+      start={start}
+      end={end}
+    >
       <Title {...props} />
     </StaggeredTitleClientOnView>
   );

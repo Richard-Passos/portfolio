@@ -17,7 +17,7 @@ export const ReviewTitleOnScroll = ({
     <ReviewTitleOnScrollClient target={as}>
       <div
         className={cn(
-          'relative -z-10 min-h-[min(175dvh,calc(var(--max-height-bounds)*1.75))] w-full overflow-x-clip will-change-transform *:will-change-[color]',
+          'relative -z-10 min-h-[calc(var(--h)*1.75)] w-full overflow-x-clip will-change-transform [--h:min(100dvh,var(--max-height-bounds))] *:will-change-[color]',
           className
         )}
         {...props}

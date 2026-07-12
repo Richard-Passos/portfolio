@@ -26,17 +26,19 @@ export const PrimaryHeroCardsAnimation = {
   target: '.group',
   from: {
     y: 100,
+    scale: 0.85,
     filter: 'blur(20px)'
   },
   to: {
     y: 0,
+    scale: 1,
     filter: 'blur(0px)',
     duration: 0.7,
+    ease: 'power2.out',
     stagger: {
       each: 0.08,
       from: 'center'
-    },
-    ease: 'power2.out'
+    }
   }
 } satisfies AnimateOnViewConfig;
 
@@ -54,10 +56,9 @@ export const PrimaryHeroCards = ({ data, className, ...props }: PrimaryHeroCards
           className='group md:col-span-6 lg:col-span-3'
           gradient='radial-gradient(
             140% 140% at 0% 100%,
-            #ff5a36 0%,
-            #ff3b3b 10%,
-            #ff38d1 20%,
-            #7c3aed 30%,
+            #411073 0%,
+            #0c1149 10%,
+            #f00040 20%,
             transparent 60%
           )'
         >
@@ -74,11 +75,11 @@ export const PrimaryHeroCards = ({ data, className, ...props }: PrimaryHeroCards
           className='group min-h-64 md:col-span-full lg:col-span-6'
           gradient='radial-gradient(
             140% 140% at 50% 0%,
-            #ff5a36 0%,
-            #ff3b3b 25%,
+            #f00040 0%,
+            #f00040 25%,
             transparent 37.5%,
-            #ff38d1 50%,
-            #7c3aed 75%
+            #411073 50%,
+            #0c1149 75%
           )'
         >
           <GradientCard.Icon className='group-hover:*:rotate-x-360'>
@@ -94,10 +95,9 @@ export const PrimaryHeroCards = ({ data, className, ...props }: PrimaryHeroCards
           className='group md:col-span-6 md:max-lg:row-start-1 lg:col-span-3'
           gradient='radial-gradient(
             140% 140% at 100% 0%,
-            #ff5a36 0%,
-            #ff3b3b 10%,
-            #ff38d1 20%,
-            #7c3aed 30%,
+            #411073 0%,
+            #0c1149 10%,
+            #f00040 20%,
             transparent 60%
           )'
         >

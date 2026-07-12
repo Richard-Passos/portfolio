@@ -2,6 +2,7 @@ import { Mission, MissionProps } from '@/components/layout/Blocks/Mission';
 import { PrimaryHero, PrimaryHeroProps } from '@/components/layout/Heros/Primary';
 import { Career, CareerProps } from '@/components/layout/Blocks/Career';
 import { Projects, ProjectsProps } from '@/components/layout/Blocks/Projects';
+import { But } from '@/components/layout/Blocks/But';
 
 export type HomeTemplateProps = {
   data: {
@@ -33,6 +34,14 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
       <Projects
         theme='dark'
         data={data.projects}
+        className='rounded-b-4xl'
+      />
+
+      <But theme='light' />
+
+      <But
+        theme='dark'
+        className='rounded-t-4xl'
       />
 
       <Mission

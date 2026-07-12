@@ -5,10 +5,27 @@ import { useRef } from 'react';
 import { Slot, SlotProps } from '@/components/misc/Slot';
 import { SplitText, gsap, useGSAP } from '@/hooks/useGSAP';
 import { setRefs } from '@/utils/setRefs';
+import { MergeProps } from '@/types/MergeProps';
 
-export type StaggeredTitleClientOnViewProps = SlotProps;
+export type StaggeredTitleClientOnViewConfig = {
+  from?: gsap.TweenVars;
+  start?: string | number | ScrollTrigger.StartEndFunc;
+  end?: string | number | ScrollTrigger.StartEndFunc;
+};
 
-export const StaggeredTitleClientOnView = ({ ref, ...props }: StaggeredTitleClientOnViewProps) => {
+export type StaggeredTitleClientOnViewProps = MergeProps<
+  { type?: 'chars' | 'words' | 'lines' } & StaggeredTitleClientOnViewConfig,
+  SlotProps
+>;
+
+export const StaggeredTitleClientOnView = ({
+  type = 'chars',
+  from,
+  start = 'top 75%',
+  end,
+  ref,
+  ...props
+}: StaggeredTitleClientOnViewProps) => {
   const innerRef = useRef<HTMLSlotElement>(null);
 
   useGSAP(
@@ -16,18 +33,21 @@ export const StaggeredTitleClientOnView = ({ ref, ...props }: StaggeredTitleClie
       const el = innerRef.current;
       if (!el) return;
 
-      const split = SplitText.create(el, { type: 'chars' });
+      const split = SplitText.create(el, { type });
 
-      const tween = gsap.from(split.chars, {
+      const tween = gsap.from(split[type], {
         y: 50,
         opacity: 0,
         stagger: 0.016,
         duration: 0.6,
         ease: 'back.out(1.7)',
+        ...from,
         scrollTrigger: {
           trigger: el,
-          start: 'top 75%',
-          toggleActions: 'play reverse play reverse'
+          start,
+          end,
+          toggleActions: 'play reverse play reverse',
+          ...(from?.scrollTrigger ?? {})
         }
       });
 
@@ -36,7 +56,7 @@ export const StaggeredTitleClientOnView = ({ ref, ...props }: StaggeredTitleClie
         split.revert();
       };
     },
-    { scope: innerRef }
+    { scope: innerRef, dependencies: [from, start, end] }
   );
 
   return (

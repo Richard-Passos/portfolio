@@ -20,7 +20,10 @@ export type ProjectsProps = MergeProps<
 export const Projects = ({ data, className, ...props }: ProjectsProps) => {
   return (
     <Section
-      className={cn('grid place-items-center items-start gap-16 lg:grid-cols-12', className)}
+      className={cn(
+        'grid place-items-center items-start gap-16 pb-[calc(var(--py)*2)] lg:grid-cols-12',
+        className
+      )}
       {...props}
     >
       <header className='sticky top-8 mb-20 flex w-full lg:col-span-4'>

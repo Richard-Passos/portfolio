@@ -22,7 +22,7 @@ export const Section = ({ theme, forceTheme, className, ref, ...props }: Section
         data-theme={theme}
         className={cn(
           'relative isolate flex w-9/10 flex-col items-center justify-center py-(--py) text-body-emphasis [--py:clamp(--spacing(24),4.5vw+2rem,--spacing(32))]',
-          'before:absolute before:inset-y-0 before:-z-50 before:w-screen before:bg-body',
+          'before:absolute before:inset-y-0 before:-z-50 before:w-screen before:rounded-inherit before:bg-body',
           className
         )}
         {...props}

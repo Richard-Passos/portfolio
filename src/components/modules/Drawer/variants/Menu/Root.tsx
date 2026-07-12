@@ -1,3 +1,4 @@
+import data from './.data';
 import { Fragment } from 'react';
 
 import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
@@ -8,7 +9,6 @@ import { NavTabs, NavTabsProps } from '@/components/navigation/Tabs/variants/Nav
 import { Text } from '@/components/system/Text';
 import { MergeProps } from '@/types/MergeProps';
 
-import data from './Root.data';
 import { MenuDrawerTrigger, MenuDrawerTriggerMobile } from './Trigger';
 
 export type MenuDrawerProps = MergeProps<{ nav: NavTabsProps['items'] }, DrawerProps>;
@@ -54,7 +54,7 @@ export const MenuDrawer = async ({ nav, ...props }: MenuDrawerProps) => {
               </MagneticButton>
             ))}
           </div>
- 
+
           <Text
             small
             className='mt-4 block px-4'
