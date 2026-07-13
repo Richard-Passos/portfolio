@@ -2,11 +2,15 @@ import { cn } from '@/utils/cn';
 import { Section, SectionProps } from '@/components/layout/Section';
 import { Title } from '@/components/system/Title';
 
-import { FingerprintIcon } from '@/components/system/Icons/Fingerprint';
 import { StaggeredTitleOnView } from '@/components/motion/Title/StaggeredOnView';
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate';
+import { MergeProps } from '@/types/MergeProps';
+import { ReactNode } from 'react';
 
-export type ButProps = SectionProps;
+export type ButProps = MergeProps<
+  { data: { title: ReactNode; text: ReactNode; icon: ReactNode } },
+  SectionProps
+>;
 
 export const ButAnimation = {
   target: '[data-animate]',
@@ -23,7 +27,7 @@ export const ButAnimation = {
   end: 'top top'
 } satisfies AnimateOnScrollConfig;
 
-export const But = ({ className, ...props }: ButProps) => {
+export const But = ({ data, className, ...props }: ButProps) => {
   return (
     <Section
       className={cn(
@@ -38,7 +42,7 @@ export const But = ({ className, ...props }: ButProps) => {
             data-animate
             className='text-center text-[clamp(8rem,44vw,32rem)]/none font-bold tracking-tighter text-primary uppercase'
           >
-            MAS
+            {data.title}
           </Title>
         </div>
       </AnimateOnScroll>
@@ -47,23 +51,24 @@ export const But = ({ className, ...props }: ButProps) => {
         <div className='absolute bottom-(--py) flex h-(--h) items-center justify-center'>
           <div className='relative'>
             <Title className='invisible text-center text-[clamp(8rem,44vw,32rem)]/none font-bold tracking-tighter text-primary uppercase'>
-              MAS
+              {data.title}
             </Title>
 
             <StaggeredTitleOnView
               as='h6'
               aria-label='Nem tudo é tecnologia'
-              className='absolute bottom-0 flex w-full flex-col text-center text-9xl'
+              className='absolute bottom-0 flex w-full flex-col text-9xl'
               from={{ start: 'bottom bottom' }}
             >
-              <span className='mr-auto'>Nem tudo</span>{' '}
-              <span className='ml-auto'>é tecnologia</span>
+              {data.text}
             </StaggeredTitleOnView>
 
-            <FingerprintIcon
+            <div
               data-animate
               className='absolute top-0 right-0 -z-10 text-[clamp(4rem,22vw,16rem)]/none'
-            />
+            >
+              {data.icon}
+            </div>
           </div>
         </div>
       </AnimateOnScroll>

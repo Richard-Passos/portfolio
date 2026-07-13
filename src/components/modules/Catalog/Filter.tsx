@@ -1,22 +1,20 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { ComponentProps, useCallback } from 'react';
+import { useCallback } from 'react';
 
-import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 import { useSetSearchParams } from '@/hooks/useSetSearchParams';
 import { MergeProps } from '@/types/MergeProps';
 
-export type CatalogFilterProps = SlotAsChildProps<
-  MergeProps<
-    {
-      query: { name: string; value: string };
-    },
-    ComponentProps<'button'>
-  >
+export type CatalogFilterProps = MergeProps<
+  {
+    query: { name: string; value: string };
+  },
+  SlotElementProps<'button'>
 >;
 
-export const CatalogFilter = ({ asChild, query, onChange, ...props }: CatalogFilterProps) => {
+export const CatalogFilter = ({ query, onChange, ...props }: CatalogFilterProps) => {
   const searchParams = useSearchParams();
   const setSearchParams = useSetSearchParams();
 
@@ -31,10 +29,9 @@ export const CatalogFilter = ({ asChild, query, onChange, ...props }: CatalogFil
     [setSearchParams, query, isActive, onChange]
   );
 
-  const Comp = asChild ? Slot : 'button';
-
   return (
-    <Comp
+    <SlotElement
+      tag='button'
       data-active={isActive ? true : undefined}
       onChange={handleChange}
       {...props}

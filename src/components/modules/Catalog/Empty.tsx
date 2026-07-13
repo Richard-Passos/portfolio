@@ -1,16 +1,17 @@
 'use client';
 
-import { ComponentProps } from 'react';
-
-import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
 import { useCatalogContext } from '@/contexts/Catalog';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 
-export type CatalogEmptyProps = SlotAsChildProps<ComponentProps<'section'>>;
+export type CatalogEmptyProps = SlotElementProps<'section'>;
 
-export const CatalogEmpty = <T,>({ asChild, ...props }: CatalogEmptyProps) => {
+export const CatalogEmpty = <T,>(props: CatalogEmptyProps) => {
   const { isEmpty } = useCatalogContext<T>();
 
-  const Comp = asChild ? Slot : 'section';
-
-  return isEmpty ? <Comp {...props} /> : null;
+  return isEmpty ? (
+    <SlotElement
+      tag='section'
+      {...props}
+    />
+  ) : null;
 };

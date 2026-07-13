@@ -1,12 +1,10 @@
 'use client';
 
-import { ComponentProps } from 'react';
-
 import { cn } from '@/utils/cn';
-import { SlotElement } from '@/components/misc/Slot/Element';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate';
 
-export type ProjectCardGalleryProps = ComponentProps<'ul'>;
+export type ProjectCardGalleryProps = SlotElementProps<'ul'>;
 
 export const ProjectCardGalleryAnimation = {
   target: 'li',

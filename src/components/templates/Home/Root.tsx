@@ -2,7 +2,8 @@ import { Mission, MissionProps } from '@/components/layout/Blocks/Mission';
 import { PrimaryHero, PrimaryHeroProps } from '@/components/layout/Heros/Primary';
 import { Career, CareerProps } from '@/components/layout/Blocks/Career';
 import { Projects, ProjectsProps } from '@/components/layout/Blocks/Projects';
-import { But } from '@/components/layout/Blocks/But';
+import { But, ButProps } from '@/components/layout/Blocks/But';
+import { About, AboutProps } from '@/components/layout/Blocks/About';
 
 export type HomeTemplateProps = {
   data: {
@@ -10,6 +11,8 @@ export type HomeTemplateProps = {
     mission: MissionProps['data'];
     career: CareerProps['data'];
     projects: ProjectsProps['data'];
+    but: ButProps['data'];
+    about: AboutProps['data'];
   };
 };
 
@@ -37,11 +40,25 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
         className='rounded-b-4xl'
       />
 
-      <But theme='light' />
+      <But
+        theme='light'
+        data={data.but}
+      />
 
       <But
         theme='dark'
+        data={data.but}
         className='rounded-t-4xl'
+      />
+
+      <About
+        theme='dark'
+        data={data.about}
+      />
+
+      <About
+        theme='light'
+        data={data.about}
       />
 
       <Mission

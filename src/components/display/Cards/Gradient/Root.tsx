@@ -1,13 +1,12 @@
-import { SlotElement } from '@/components/misc/Slot/Element';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
-import { ComponentProps } from 'react';
 
 export type GradientCardProps = MergeProps<
   {
     gradient: string;
   },
-  ComponentProps<'section'>
+  SlotElementProps<'section'>
 >;
 
 export const GradientCard = ({ gradient, className, style, ...props }: GradientCardProps) => {

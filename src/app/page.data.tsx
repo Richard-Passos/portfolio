@@ -5,6 +5,7 @@ import { FlashIcon } from '@/components/system/Icons/Flash';
 import { CapIcon } from '@/components/system/Icons/Cap';
 import { SmileIcon } from '@/components/system/Icons/Smile';
 import { HomeTemplateProps } from '@/components/templates/Home';
+import { FingerprintIcon } from '@/components/system/Icons/Fingerprint';
 
 const rotateAnimation = {
   from: {
@@ -93,6 +94,22 @@ export default {
         Alguns dos <b>meus projetos</b>
       </>
     ),
-    text: ''
+    text: null
+  },
+  but: {
+    title: 'MAS',
+    text: (
+      <>
+        <span>Nem tudo</span> <span className='ml-auto'>é tecnologia</span>
+      </>
+    ),
+    icon: <FingerprintIcon />
+  },
+  about: {
+    title: (
+      <>
+        Visão <em>da</em> Pessoa
+      </>
+    )
   }
 } satisfies HomeTemplateProps['data'];

@@ -1,8 +1,7 @@
 import { cn } from '@/utils/cn';
-import { ComponentProps } from 'react';
-import { SlotElement } from '@/components/misc/Slot/Element';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 
-export type ProjectCardProps = ComponentProps<'li'>;
+export type ProjectCardProps = SlotElementProps<'li'>;
 
 export const ProjectCard = ({ className, ...props }: ProjectCardProps) => {
   return (

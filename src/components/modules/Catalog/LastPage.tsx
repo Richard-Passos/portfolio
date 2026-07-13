@@ -1,16 +1,17 @@
 'use client';
 
-import { ComponentProps } from 'react';
-
-import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 import { useCatalogContext } from '@/contexts/Catalog';
 
-export type CatalogLastPageProps = SlotAsChildProps<ComponentProps<'section'>>;
+export type CatalogLastPageProps = SlotElementProps<'section'>;
 
-export const CatalogLastPage = <T,>({ asChild, ...props }: CatalogLastPageProps) => {
+export const CatalogLastPage = <T,>(props: CatalogLastPageProps) => {
   const { isLastPage } = useCatalogContext<T>();
 
-  const Comp = asChild ? Slot : 'section';
-
-  return isLastPage ? <Comp {...props} /> : null;
+  return isLastPage ? (
+    <SlotElement
+      tag='section'
+      {...props}
+    />
+  ) : null;
 };

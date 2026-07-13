@@ -1,14 +1,13 @@
 'use client';
 
-import { SlotElement } from '@/components/misc/Slot/Element';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { AccordionItemContent, type AccordionItemContentProps } from '@ark-ui/react';
-import { ComponentProps } from 'react';
 
 export type AccordionContentProps = MergeProps<
   { wrapperProps?: AccordionItemContentProps },
-  ComponentProps<'div'>
+  SlotElementProps<'div'>
 >;
 
 export const AccordionContent = ({ className, wrapperProps, ...props }: AccordionContentProps) => {

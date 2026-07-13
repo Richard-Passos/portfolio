@@ -1,14 +1,14 @@
 'use client';
 
-import { ComponentProps, useCallback } from 'react';
+import { useCallback } from 'react';
 
-import { Slot, SlotAsChildProps } from '@/components/misc/Slot';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 import { useSetSearchParams } from '@/hooks/useSetSearchParams';
 import { useCatalogContext } from '@/contexts/Catalog';
 
-export type CatalogLoadMoreProps = SlotAsChildProps<ComponentProps<'button'>>;
+export type CatalogLoadMoreProps = SlotElementProps<'button'>;
 
-export const CatalogLoadMore = <T,>({ asChild, onClick, ...props }: CatalogLoadMoreProps) => {
+export const CatalogLoadMore = <T,>({ onClick, ...props }: CatalogLoadMoreProps) => {
   const { page, isLastPage } = useCatalogContext<T>(),
     setSearchParams = useSetSearchParams();
 
@@ -21,10 +21,9 @@ export const CatalogLoadMore = <T,>({ asChild, onClick, ...props }: CatalogLoadM
     [setSearchParams, page, onClick]
   );
 
-  const Comp = asChild ? Slot : 'button';
-
   return isLastPage ? null : (
-    <Comp
+    <SlotElement
+      tag='button'
       onClick={handleClick}
       {...props}
     />

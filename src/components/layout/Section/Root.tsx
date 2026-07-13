@@ -1,14 +1,12 @@
-import { ComponentProps } from 'react';
-
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 
-import { SlotElement } from '@/components/misc/Slot/Element';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 import { SectionClient, SectionClientProps } from './Client';
 
 export type SectionProps = MergeProps<
   Pick<SectionClientProps, 'theme' | 'forceTheme'>,
-  ComponentProps<'section'>
+  SlotElementProps<'section'>
 >;
 
 export const Section = ({ theme, forceTheme, className, ref, ...props }: SectionProps) => {

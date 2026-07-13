@@ -3,14 +3,13 @@ import { VariantProps, cva } from 'class-variance-authority';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { Colors } from '@/types/Colors';
-import { SlotElement } from '@/components/misc/Slot/Element';
-import { ComponentProps } from 'react';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 
 export type BadgeProps = MergeProps<
   {
     color?: Colors;
   } & VariantProps<typeof BadgeVariants>,
-  ComponentProps<'div'>
+  SlotElementProps<'div'>
 >;
 
 export const BadgeVariants = cva('', {

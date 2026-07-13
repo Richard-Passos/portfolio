@@ -1,8 +1,7 @@
-import { SlotElement } from '@/components/misc/Slot/Element';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 import { cn } from '@/utils/cn';
-import { ComponentProps } from 'react';
 
-export type ProjectCardHeaderProps = ComponentProps<'header'>;
+export type ProjectCardHeaderProps = SlotElementProps<'header'>;
 
 export const ProjectCardHeader = ({ className, ...props }: ProjectCardHeaderProps) => {
   return (
