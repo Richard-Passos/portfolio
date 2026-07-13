@@ -1,11 +1,12 @@
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 import { cn } from '@/utils/cn';
-import { ComponentProps } from 'react';
 
-export type GradientCardIconProps = ComponentProps<'div'>;
+export type GradientCardIconProps = SlotElementProps<'div'>;
 
 export const GradientCardIcon = ({ className, ...props }: GradientCardIconProps) => {
   return (
-    <div
+    <SlotElement
+      tag='div'
       className={cn(
         'mb-6 flex aspect-square w-fit rounded border bg-muted p-2 text-2xl',
         className

@@ -1,6 +1,6 @@
 import { Button } from '@/components/input/Button';
 import { Link, LinkProps } from '@/components/navigation/Link';
-import { PlusIcon } from '@/components/system/Icons/Plus';
+import { PlusIcon } from '@/components/system/Icon/Plus';
 import { cn } from '@/utils/cn';
 
 export type ProjectCardTriggerProps = LinkProps;

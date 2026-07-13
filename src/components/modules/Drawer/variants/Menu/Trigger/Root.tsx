@@ -1,8 +1,8 @@
 import { MagneticButton, MagneticButtonProps } from '@/components/input/Button/variants/Magnetic';
 import { DrawerTrigger } from '@/components/modules/Drawer';
 import { AnimateOnView, AnimateOnViewConfig } from '@/components/motion/Animate';
-import { MenuIcon } from '@/components/system/Icons/Menu';
-import { TimesIcon } from '@/components/system/Icons/Times';
+import { MenuIcon } from '@/components/system/Icon/Menu';
+import { TimesIcon } from '@/components/system/Icon/Times';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 

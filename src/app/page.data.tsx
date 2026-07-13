@@ -1,11 +1,15 @@
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate/OnScroll';
-import { GlobeIcon } from '@/components/system/Icons/Globe';
-import { RocketIcon } from '@/components/system/Icons/Rocket';
-import { FlashIcon } from '@/components/system/Icons/Flash';
-import { CapIcon } from '@/components/system/Icons/Cap';
-import { SmileIcon } from '@/components/system/Icons/Smile';
+import { GlobeIcon } from '@/components/system/Icon/Globe';
+import { RocketIcon } from '@/components/system/Icon/Rocket';
+import { FlashIcon } from '@/components/system/Icon/Flash';
+import { CapIcon } from '@/components/system/Icon/Cap';
+import { SmileIcon } from '@/components/system/Icon/Smile';
 import { HomeTemplateProps } from '@/components/templates/Home';
-import { FingerprintIcon } from '@/components/system/Icons/Fingerprint';
+import { FingerprintIcon } from '@/components/system/Icon/Fingerprint';
+import { CONTACT } from '@/common/CONTACT';
+import { LOCATION } from '@/common/LOCATION';
+import { values } from '@/common/VALUES';
+import { GameControllerIcon } from '@/components/system/Icon/GameController';
 
 const rotateAnimation = {
   from: {
@@ -110,6 +114,74 @@ export default {
       <>
         Visão <em>da</em> Pessoa
       </>
-    )
+    ),
+    items: [
+      {
+        id: 'about',
+        data: {
+          title: '#sobre',
+          description: (
+            <>
+              <p>
+                <b>🤟 Oi —</b> sou alguém que gosta de passar meu tempo com amigos e família, mas
+                grande parte do meu lazer está nos jogos — rogue-like, souls-like, metroidvania,
+                precision platformer, ... — que me desafiam e me divertem. Mesmo sendo mais
+                reservado, valorizo a integridade e a simpatia na forma de me conectar com os
+                outros.
+              </p>
+
+              <p>
+                Acredito em aproveitar também os pequenos momentos — seja sentindo o sol no rosto,
+                jogando uma partida intensa ou uma boa conversa, são esses momentos que realmente
+                importam.
+              </p>
+            </>
+          )
+        }
+      },
+      {
+        id: 'location',
+        data: {
+          icon: <GlobeIcon />,
+          description: `Localizado no ${LOCATION.country} ${LOCATION.gmt}`
+        }
+      },
+      {
+        id: 'values',
+        data: {
+          icon: <FingerprintIcon />,
+          title: 'Meus valores',
+          items: values.map((d) => d.title)
+        }
+      },
+      {
+        id: 'better',
+        data: {
+          icon: <RocketIcon />,
+          description: 'Melhorando um pouco a cada dia.'
+        }
+      },
+      {
+        id: 'love',
+        data: {
+          icon: <GameControllerIcon />,
+          description: 'Adoro jogar video-game.'
+        }
+      },
+      {
+        id: 'time',
+        data: {
+          title: 'Meu horário local'
+        }
+      },
+      {
+        id: 'contact',
+        data: {
+          icon: CONTACT.buyCoffee.icon,
+          url: CONTACT.buyCoffee.url,
+          title: 'Me compre um café'
+        }
+      }
+    ]
   }
 } satisfies HomeTemplateProps['data'];

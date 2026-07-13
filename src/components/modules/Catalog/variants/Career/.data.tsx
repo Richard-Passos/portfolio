@@ -1,4 +1,4 @@
-import CAREER from '@/common/CAREER';
+import { CAREER } from '@/common/CAREER';
 
 export default {
   empty: 'Nenhuma carreira encontrada!',

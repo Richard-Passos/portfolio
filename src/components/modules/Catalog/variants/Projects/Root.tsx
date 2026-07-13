@@ -1,4 +1,4 @@
-import ProjectCard from '@/components/display/Cards/Project';
+import ProjectCard from '@/components/display/Card/Project';
 import data from './.data';
 
 import Catalog, { CatalogProps } from '@/components/modules/Catalog';

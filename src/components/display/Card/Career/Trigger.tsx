@@ -2,7 +2,7 @@ import data from './.data';
 
 import { cn } from '@/utils/cn';
 import { AccordionIndicator, AccordionTrigger } from '@/components/display/Accordion';
-import { PlusIcon } from '@/components/system/Icons/Plus';
+import { PlusIcon } from '@/components/system/Icon/Plus';
 import { Button, ButtonProps } from '@/components/input/Button';
 
 export type CareerCardTriggerProps = Omit<ButtonProps, 'children'>;

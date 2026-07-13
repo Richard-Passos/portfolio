@@ -3,8 +3,8 @@
 import { Button, ButtonProps } from '@/components/input/Button';
 import { Link } from '@/components/navigation/Link';
 import Menu, { MenuProps } from '@/components/navigation/Menu';
-import { CheckIcon } from '@/components/system/Icons/Check';
-import { GlobeIcon } from '@/components/system/Icons/Globe';
+import { CheckIcon } from '@/components/system/Icon/Check';
+import { GlobeIcon } from '@/components/system/Icon/Globe';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 

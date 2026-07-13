@@ -1,4 +1,4 @@
-import CareerCard from '@/components/display/Cards/Career';
+import CareerCard from '@/components/display/Card/Career';
 import data from './.data';
 
 import Catalog, { CatalogProps } from '@/components/modules/Catalog';

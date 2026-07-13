@@ -12,12 +12,9 @@ export type BentoGridTemplates = {
   '2xl'?: string;
 };
 
-export type BentoGridRootProps = MergeProps<
-  { templates: BentoGridTemplates },
-  SlotElementProps<'ul'>
->;
+export type BentoGridProps = MergeProps<{ templates: BentoGridTemplates }, SlotElementProps<'ul'>>;
 
-export const BentoGridRoot = ({ templates, className, style, ...props }: BentoGridRootProps) => {
+export const BentoGrid = ({ templates, className, style, ...props }: BentoGridProps) => {
   templates = {
     sm: 'var(--base-template)',
     md: 'var(--sm-template)',
@@ -37,7 +34,7 @@ export const BentoGridRoot = ({ templates, className, style, ...props }: BentoGr
     <SlotElement
       tag='ul'
       className={cn(
-        'grid list-none grid-cols-[repeat(auto-fit,minmax(0px,1fr))] gap-4 [grid-template-areas:var(--template)]',
+        'grid grid-cols-[repeat(auto-fit,minmax(0px,1fr))] gap-4 [grid-template-areas:var(--template)]',
         '[--template:var(--base-template)] sm:[--template:var(--sm-template)] md:[--template:var(--md-template)] lg:[--template:var(--lg-template)] xl:[--template:var(--xl-template)] 2xl:[--template:var(--2xl-template)]',
         className
       )}

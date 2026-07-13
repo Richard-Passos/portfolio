@@ -8,6 +8,9 @@ export type AboutProps = MergeProps<
   {
     data: {
       title: ReactNode;
+      items: {
+        about: '';
+      };
     };
   },
   SectionProps

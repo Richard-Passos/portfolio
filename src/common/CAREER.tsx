@@ -1,6 +1,6 @@
 import { Career } from '@/types/Career';
 
-export default [
+export const CAREER = [
   {
     id: 'napead',
     title: 'Bolsista em NAPEAD UFRGS — Produção Multimídia para a Educação',

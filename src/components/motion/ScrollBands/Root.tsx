@@ -1,13 +1,12 @@
-import { ComponentProps } from 'react';
-
-import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 
-export type ScrollBandsProps = ComponentProps<'ul'>;
+export type ScrollBandsProps = SlotElementProps<'ul'>;
 
 export const ScrollBands = ({ className, ...props }: ScrollBandsProps) => {
   return (
-    <ul
+    <SlotElement
+      tag='ul'
       className={cn('w-full overflow-x-clip', className)}
       {...props}
     />

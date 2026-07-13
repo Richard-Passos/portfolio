@@ -1,7 +1,7 @@
 import { CONTACT } from '@/common/CONTACT';
 import { LOCATION } from '@/common/LOCATION';
 import { PAGES } from '@/common/PAGES';
-import { PaperPlaneIcon } from '@/components/system/Icons/PaperPlane';
+import { PaperPlaneIcon } from '@/components/system/Icon/PaperPlane';
 
 export default {
   action: {

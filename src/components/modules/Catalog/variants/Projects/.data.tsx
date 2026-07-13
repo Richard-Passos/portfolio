@@ -1,4 +1,4 @@
-import PROJECTS from '@/common/PROJECTS';
+import { PROJECTS } from '@/common/PROJECTS';
 
 export default {
   empty: 'Nenhuma projeto encontrada!',

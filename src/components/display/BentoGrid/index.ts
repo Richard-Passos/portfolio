@@ -1,14 +1,9 @@
+import { BentoGrid } from './Root';
 import { BentoGridItem } from './Item';
-import { BentoGridRoot } from './Root';
-import { BentoGridScrollAnimate } from './ScrollAnimate';
 
-export * from './Item';
 export * from './Root';
-export * from './ScrollAnimate';
+export * from './Item';
 
-const BentoGrid = Object.assign(BentoGridRoot, {
-  Item: BentoGridItem,
-  ScrollAnimate: BentoGridScrollAnimate
+export default Object.assign(BentoGrid, {
+  Item: BentoGridItem
 });
-
-export { BentoGrid };

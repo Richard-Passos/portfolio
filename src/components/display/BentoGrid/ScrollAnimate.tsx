@@ -1,9 +1,5 @@
-import {
-  ScrollAnimate,
-  ScrollAnimateConfigOptions,
-  ScrollAnimateProps
-} from '@/components/motion';
-import { MergeProps } from '@/types';
+import { ScrollAnimate, ScrollAnimateConfigOptions, ScrollAnimateProps } from '@/components/motion';
+import { MergeProps } from '@/types/MergeProps';
 
 const SCROLL_OFFSET = ['0 1', '0 .6'],
   ANIMATION_CONFIG = {
@@ -23,7 +19,7 @@ const SCROLL_OFFSET = ['0 1', '0 .6'],
     } as ScrollAnimateConfigOptions
   };
 
-type BentoGridScrollAnimateProps = MergeProps<
+export type BentoGridScrollAnimateProps = MergeProps<
   {
     config?: {
       y?: ScrollAnimateConfigOptions;
@@ -33,19 +29,13 @@ type BentoGridScrollAnimateProps = MergeProps<
   ScrollAnimateProps
 >;
 
-const BentoGridScrollAnimate = ({
-  config,
-  children,
-  ...props
-}: BentoGridScrollAnimateProps) => {
+const BentoGridScrollAnimate = ({ config, children, ...props }: BentoGridScrollAnimateProps) => {
   return (
     <ScrollAnimate
       {...props}
       config={{ ...ANIMATION_CONFIG.y, ...config?.y }}
     >
-      <ScrollAnimate
-        config={{ ...ANIMATION_CONFIG.opacity, ...config?.opacity }}
-      >
+      <ScrollAnimate config={{ ...ANIMATION_CONFIG.opacity, ...config?.opacity }}>
         {children}
       </ScrollAnimate>
     </ScrollAnimate>

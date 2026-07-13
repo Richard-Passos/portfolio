@@ -1,5 +1,5 @@
 import { Button } from '@/components/input/Button';
-import { LogoIcon, LogoIconProps } from '@/components/system/Icons/Logo';
+import { LogoIcon, LogoIconProps } from '@/components/system/Icon/Logo';
 import { MergeProps } from '@/types/MergeProps';
 
 import { Link, LinkProps } from '../Link';

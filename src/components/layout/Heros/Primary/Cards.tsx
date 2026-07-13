@@ -3,7 +3,7 @@ import { ComponentProps, ReactNode } from 'react';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { AnimateOnView, AnimateOnViewConfig } from '@/components/motion/Animate';
-import GradientCard from '@/components/display/Cards/Gradient';
+import GradientCard from '@/components/display/Card/Gradient';
 
 export type PrimaryHeroCardProps = {
   icon: ReactNode;

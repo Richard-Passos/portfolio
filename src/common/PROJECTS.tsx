@@ -1,6 +1,6 @@
 import { Project } from '@/types/Project';
 
-export default [
+export const PROJECTS = [
   {
     id: 'portal-ead',
     url: 'https://fe-portal-ead.vercel.app',
