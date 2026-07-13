@@ -25,7 +25,7 @@ export const ReviewTitleOnScroll = ({
         <div className='sticky top-0 mx-auto flex h-dvh w-full items-center'>
           <Title
             as={as}
-            className='w-max px-[5%] text-[clamp(8rem,20vw,22rem)]/0 font-semibold text-nowrap text-muted'
+            className='w-max px-[5%] text-[clamp(8rem,20vw,22rem)]/none font-semibold text-nowrap text-muted'
           >
             {children}
           </Title>

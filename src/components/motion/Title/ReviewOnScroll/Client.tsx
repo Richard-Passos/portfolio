@@ -57,12 +57,12 @@ export const ReviewTitleOnScrollClient = ({
       });
 
       const scrollContainerTween = gsap.to(container, {
-        y: height * 0.27,
+        y: height * 0.225,
         ease: 'none',
         scrollTrigger: {
           trigger: container,
           start: 'bottom bottom',
-          end: `+=${height * 0.27}`,
+          end: `+=${height * 0.225}`,
           scrub: true
         }
       });
