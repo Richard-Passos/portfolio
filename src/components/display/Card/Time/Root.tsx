@@ -8,7 +8,7 @@ export const TimeCard = ({ className, ...props }: TimeCardProps) => {
     <SlotElement
       tag='section'
       className={cn(
-        'flex min-h-52 flex-col items-center justify-center border bg-body p-5',
+        'flex h-full min-h-52 flex-col items-center justify-center border bg-body p-5',
         className
       )}
       {...props}

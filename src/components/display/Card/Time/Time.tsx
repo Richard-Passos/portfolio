@@ -2,9 +2,9 @@ import { cn } from '@/utils/cn';
 import { Text, TextProps } from '@/components/system/Text';
 import { LocalTime } from '@/components/system/LocalTime';
 
-export type TimeCardTextProps = TextProps;
+export type TimeCardTimeProps = TextProps;
 
-export const TimeCardText = ({ className, children, ...props }: TimeCardTextProps) => {
+export const TimeCardTime = ({ className, children, ...props }: TimeCardTimeProps) => {
   return (
     <Text
       className={cn(

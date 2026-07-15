@@ -1,14 +1,15 @@
 import { LinkCard } from './Root';
 import { LinkCardIcon } from './Icon';
-import { LinkCardText } from './Text';
 import { LinkCardTitle } from './Title';
+import { LinkCardUrl } from './Url';
 
 export * from './Root';
 export * from './Icon';
 export * from './Title';
+export * from './Url';
 
 export default Object.assign(LinkCard, {
   Icon: LinkCardIcon,
-  Text: LinkCardText,
-  Title: LinkCardTitle
+  Title: LinkCardTitle,
+  Url: LinkCardUrl
 });

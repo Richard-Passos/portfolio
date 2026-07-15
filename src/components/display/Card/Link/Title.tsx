@@ -6,8 +6,8 @@ export type LinkCardTitleProps = TitleProps;
 export const LinkCardTitle = ({ className, ...props }: LinkCardTitleProps) => {
   return (
     <Title
-      as='h4'
-      className={cn('mt-4 text-center text-sm', className)}
+      as='h5'
+      className={cn('mt-2 text-center text-base', className)}
       {...props}
     />
   );

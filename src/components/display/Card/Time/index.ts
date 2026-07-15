@@ -1,12 +1,12 @@
 import { TimeCard } from './Root';
-import { TimeCardText } from './Text';
+import { TimeCardTime } from './Time';
 import { TimeCardTitle } from './Title';
 
 export * from './Root';
-export * from './Text';
+export * from './Time';
 export * from './Title';
 
 export default Object.assign(TimeCard, {
-  Text: TimeCardText,
+  Time: TimeCardTime,
   Title: TimeCardTitle
 });

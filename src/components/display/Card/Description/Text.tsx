@@ -6,7 +6,10 @@ export type DescriptionCardTextProps = TextProps;
 export const DescriptionCardText = ({ className, ...props }: DescriptionCardTextProps) => {
   return (
     <Text
-      className={cn('text-md/relaxed mt-16 text-placeholder *:text-body-emphasis', className)}
+      className={cn(
+        'mt-8 leading-relaxed tracking-wide text-placeholder [&_b]:text-body-emphasis',
+        className
+      )}
       {...props}
     />
   );

@@ -5,6 +5,7 @@ import ScrollBands from '@/components/motion/ScrollBands';
 import { MergeProps } from '@/types/MergeProps';
 import { Lines } from '@/components/misc/Lines';
 import { cn } from '@/utils/cn';
+import { Text } from '@/components/system/Text';
 
 export type MissionProps = MergeProps<
   {
@@ -33,9 +34,9 @@ export const Mission = ({ data, className, ...props }: MissionProps) => {
         ))}
       </ScrollBands>
 
-      <section className='mt-10 w-9/10 max-w-xl text-center leading-relaxed tracking-wide'>
+      <Text className='mt-10 w-9/10 max-w-xl text-center leading-relaxed tracking-wide'>
         {data.text}
-      </section>
+      </Text>
 
       <Lines className='-z-10 border-y' />
     </Section>

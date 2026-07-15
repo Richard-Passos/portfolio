@@ -1,6 +1,7 @@
 import { Section, SectionProps } from '@/components/layout/Section';
 import { Lines } from '@/components/misc/Lines';
 import { ProjectsCatalog } from '@/components/modules/Catalog/variants/Projects';
+import { AnimateOnScroll } from '@/components/motion/Animate';
 import { StaggeredTitleOnView } from '@/components/motion/Title/StaggeredOnView';
 import { Text } from '@/components/system/Text';
 import { MergeProps } from '@/types/MergeProps';
@@ -26,10 +27,33 @@ export const Projects = ({ data, className, ...props }: ProjectsProps) => {
       )}
       {...props}
     >
-      <header className='sticky top-8 mb-20 flex w-full lg:col-span-4'>
-        <StaggeredTitleOnView as='h3'>{data.title}</StaggeredTitleOnView>
+      <header className='relative grid h-full w-full grid-rows-2 lg:col-span-4'>
+        <AnimateOnScroll
+          from={{ y: 0 }}
+          to={{ y: '50%' }}
+        >
+          <StaggeredTitleOnView
+            as='h3'
+            end='+=1000'
+            className='h-full'
+          >
+            {data.title}
+          </StaggeredTitleOnView>
+        </AnimateOnScroll>
 
-        <Text>{data.text}</Text>
+        <AnimateOnScroll
+          from={{ y: 0 }}
+          to={{ y: '50%' }}
+        >
+          <StaggeredTitleOnView
+            as='h6'
+            className='sticky top-8 text-base leading-relaxed font-medium tracking-wide'
+            end='+=1000'
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus tempore sint quas
+            sapiente quos ducimus quo. Et eum doloremque tempore!
+          </StaggeredTitleOnView>
+        </AnimateOnScroll>
       </header>
 
       <ProjectsCatalog className='lg:col-span-8' />

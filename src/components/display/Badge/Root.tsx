@@ -20,7 +20,7 @@ export const BadgeVariants = cva('', {
       lg: '[--gap:--spacing(1.5)] [--h:--spacing(8)] [--px:--spacing(2.5)]'
     },
     variant: {
-      default: 'bg-(--bg) text-(--color)',
+      default: 'border-border bg-(--bg) text-(--color)',
       subtle: 'bg-(--bg)/8 text-(--bg)',
       ghost: 'text-(--bg)'
     }

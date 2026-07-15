@@ -1,8 +1,8 @@
 'use client';
 
-import { type ComponentProps, createContext, useContext, useMemo } from 'react';
+import { ComponentProps, createContext, useContext, useMemo } from 'react';
 
-import type { MergeProps } from '@/types/MergeProps';
+import { MergeProps } from '@/types/MergeProps';
 
 export type CatalogContextState<T> = {
   items: T[];

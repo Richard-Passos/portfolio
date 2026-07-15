@@ -4,7 +4,7 @@ import { ShieldIcon } from '@/components/system/Icon/Shield';
 import { SmileIcon } from '@/components/system/Icon/Smile';
 import { Value } from '@/types/Value';
 
-export const values = [
+export const VALUES = [
   {
     id: 'integrity',
     icon: <ShieldIcon />,

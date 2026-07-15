@@ -8,6 +8,7 @@ export const Marquee = ({ direction = 'ltr', ...props }: MarqueeProps) => {
   return (
     <UiMarquee
       autoFill
+      pauseOnHover
       direction={direction == 'ltr' ? 'right' : 'left'}
       {...props}
     />

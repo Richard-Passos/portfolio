@@ -7,7 +7,7 @@ export const BoldCardTitle = ({ className, ...props }: BoldCardTitleProps) => {
   return (
     <Title
       as='h4'
-      className={cn('mt-16 border bg-body leading-none font-medium', className)}
+      className={cn('mt-8 leading-none font-medium', className)}
       {...props}
     />
   );

@@ -7,7 +7,7 @@ export const MarqueeCardIcon = ({ className, ...props }: MarqueeCardIconProps) =
   return (
     <SlotElement
       tag='div'
-      className={cn('self-tart justify-self-start *:size-8', className)}
+      className={cn('mr-auto *:size-8', className)}
       {...props}
     />
   );

@@ -4,12 +4,12 @@ import { entries } from '@/utils/entries';
 import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 
 export type BentoGridTemplates = {
-  base: string;
-  sm?: string;
-  md?: string;
-  lg?: string;
-  xl?: string;
-  '2xl'?: string;
+  base: string | string[];
+  sm?: string | string[];
+  md?: string | string[];
+  lg?: string | string[];
+  xl?: string | string[];
+  '2xl'?: string | string[];
 };
 
 export type BentoGridProps = MergeProps<{ templates: BentoGridTemplates }, SlotElementProps<'ul'>>;
@@ -26,6 +26,10 @@ export const BentoGrid = ({ templates, className, style, ...props }: BentoGridPr
 
   const cssTemplates = entries(templates).reduce((obj, [key, value]) => {
     key = `--${key}-template`;
+
+    if (Array.isArray(value)) {
+      value = value.map((item) => `'${item}'`).join(' ');
+    }
 
     return { ...obj, [key]: value };
   }, {});

@@ -7,7 +7,7 @@ export const SimpleCard = ({ className, ...props }: SimpleCardProps) => {
   return (
     <SlotElement
       tag='section'
-      className={cn('flex gap-4 border bg-body p-5', className)}
+      className={cn('flex h-full items-center gap-4 border bg-body p-5', className)}
       {...props}
     />
   );

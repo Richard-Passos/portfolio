@@ -7,7 +7,7 @@ export const GradientCardText = ({ className, ...props }: GradientCardTextProps)
   return (
     <Text
       small
-      className={cn('mt-2 whitespace-pre-line text-placeholder', className)}
+      className={cn('mt-2 text-placeholder [&_b]:text-body-emphasis', className)}
       {...props}
     />
   );

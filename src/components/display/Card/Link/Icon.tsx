@@ -8,7 +8,7 @@ export const LinkCardIcon = ({ className, ...props }: LinkCardIconProps) => {
     <SlotElement
       tag='div'
       className={cn(
-        'flex size-8 items-center justify-center rounded-sm border *:size-2/3',
+        'flex size-10 items-center justify-center rounded-sm border *:size-2/3',
         className
       )}
       {...props}

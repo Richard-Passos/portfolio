@@ -9,7 +9,7 @@ export const LinkCard = ({ className, ...props }: LinkCardProps) => {
     <Button asChild>
       <Link
         className={cn(
-          'flex min-h-52 flex-col items-center justify-center border bg-body p-5 font-normal text-body-emphasis',
+          'flex h-full min-h-52 flex-col items-center justify-center gap-0 rounded-none border-border p-5 font-normal text-body-emphasis',
           className
         )}
         {...props}

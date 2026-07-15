@@ -3,17 +3,17 @@ import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 
 export type BentoGridItemProps = MergeProps<
   {
-    index: number;
+    value: string | number;
   },
   SlotElementProps<'li'>
 >;
 
-export const BentoGridItem = ({ index, style, ...props }: BentoGridItemProps) => {
+export const BentoGridItem = ({ value, style, ...props }: BentoGridItemProps) => {
   return (
     <SlotElement
       tag='li'
       style={{
-        gridArea: `item-${index}`,
+        gridArea: value,
         ...style
       }}
       {...props}

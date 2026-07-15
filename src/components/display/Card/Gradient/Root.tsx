@@ -14,9 +14,9 @@ export const GradientCard = ({ gradient, className, style, ...props }: GradientC
     <SlotElement
       tag='section'
       className={cn(
-        'relative isolate flex min-h-80 flex-col rounded-3xl border bg-muted/75 p-9',
-        'before:absolute before:inset-0 before:-z-10 before:rounded-inherit before:[background:var(--bg)]',
-        'after:absolute after:inset-3 after:-z-10 after:rounded-2xl after:bg-body',
+        'relative isolate flex min-h-80 flex-col border bg-muted/75 p-9',
+        'before:absolute before:inset-0 before:-z-10 before:[background:var(--bg)]',
+        'after:absolute after:inset-3 after:-z-10 after:bg-body',
         className
       )}
       style={

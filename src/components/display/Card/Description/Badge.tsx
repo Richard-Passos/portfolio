@@ -1,14 +1,12 @@
-import { cn } from '@/utils/cn';
 import { Badge, BadgeProps } from '@/components/display/Badge';
 
 export type DescriptionCardBadgeProps = BadgeProps;
 
-export const DescriptionCardBadge = ({ className, ...props }: DescriptionCardBadgeProps) => {
+export const DescriptionCardBadge = (props: DescriptionCardBadgeProps) => {
   return (
     <Badge
-      color='muted'
+      color='primary'
       variant='subtle'
-      className={cn('text-placeholder', className)}
       {...props}
     />
   );

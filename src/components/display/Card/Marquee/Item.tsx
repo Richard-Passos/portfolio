@@ -6,8 +6,7 @@ export type MarqueeCardItemProps = BadgeProps;
 export const MarqueeCardItem = ({ className, ...props }: MarqueeCardItemProps) => {
   return (
     <Badge
-      size='lg'
-      className={cn('mx-1', className)}
+      className={cn('mx-0.5', className)}
       {...props}
     />
   );

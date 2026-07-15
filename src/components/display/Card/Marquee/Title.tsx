@@ -6,8 +6,8 @@ export type MarqueeCardTitleProps = TitleProps;
 export const MarqueeCardTitle = ({ className, ...props }: MarqueeCardTitleProps) => {
   return (
     <Title
-      as='h4'
-      className={cn('mt-8 text-center', className)}
+      as='h5'
+      className={cn('mt-auto text-center', className)}
       {...props}
     />
   );

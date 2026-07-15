@@ -19,6 +19,16 @@ export type HomeTemplateProps = {
 export const HomeTemplate = ({ data }: HomeTemplateProps) => {
   return (
     <>
+      <About
+        theme='dark'
+        data={data.about}
+      />
+
+      <About
+        theme='light'
+        data={data.about}
+      />
+
       <PrimaryHero
         theme='light'
         data={data.hero}
