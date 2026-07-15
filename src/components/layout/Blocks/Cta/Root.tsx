@@ -1,14 +1,30 @@
-import { ComponentProps } from 'react';
-
 import { cn } from '@/utils/cn';
+import { Section, SectionProps } from '@/components/layout/Section';
+import { Title } from '@/components/system/Title';
+import { Text } from '@/components/system/Text';
+import { MergeProps } from '@/types/MergeProps';
+import { ReactNode } from 'react';
+import { ReviewTextOnScroll } from '@/components/system/Text/ReviewOnScroll';
+import { Lines } from '@/components/misc/Lines';
 
-export type CtaProps = ComponentProps<'div'>;
+export type CtaProps = MergeProps<{ data: { title: ReactNode; text: ReactNode } }, SectionProps>;
 
-export const Cta = ({ className, ...props }: CtaProps) => {
+export const Cta = ({ data, className, ...props }: CtaProps) => {
   return (
-    <div
-      className={cn('', className)}
+    <Section
+      className={cn('min-h-[min(100dvh,var(--max-height-bounds))] max-w-5xl', className)}
       {...props}
-    />
+    >
+      <Title
+        as='h6'
+        className='mr-auto leading-relaxed tracking-widest'
+      >
+        {data.title}
+      </Title>
+
+      <ReviewTextOnScroll className='mt-4 mr-auto text-7xl'>{data.text}</ReviewTextOnScroll>
+
+      <Lines className='-z-10 border-y' />
+    </Section>
   );
 };

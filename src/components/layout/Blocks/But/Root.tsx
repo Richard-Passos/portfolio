@@ -2,7 +2,7 @@ import { cn } from '@/utils/cn';
 import { Section, SectionProps } from '@/components/layout/Section';
 import { Title } from '@/components/system/Title';
 
-import { StaggeredTitleOnView } from '@/components/motion/Title/StaggeredOnView';
+import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate';
 import { MergeProps } from '@/types/MergeProps';
 import { ReactNode } from 'react';

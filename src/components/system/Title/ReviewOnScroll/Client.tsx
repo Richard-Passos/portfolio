@@ -7,9 +7,15 @@ import { SplitText, gsap, useGSAP } from '@/hooks/useGSAP';
 import { setRefs } from '@/utils/setRefs';
 import { MergeProps } from '@/types/MergeProps';
 
-export type ReviewTitleOnScrollClientProps = MergeProps<{ target: gsap.DOMTarget }, SlotProps>;
+export type ReviewTitleOnScrollClientConfig = {
+  type?: 'lines' | 'words' | 'chars';
+  target: gsap.DOMTarget;
+};
+
+export type ReviewTitleOnScrollClientProps = MergeProps<ReviewTitleOnScrollClientConfig, SlotProps>;
 
 export const ReviewTitleOnScrollClient = ({
+  type = 'chars',
   target,
   ref,
   ...props
@@ -21,21 +27,22 @@ export const ReviewTitleOnScrollClient = ({
       const container = innerRef.current;
       if (!container) return;
 
-      const split = SplitText.create(target, { type: 'chars' });
+      const split = SplitText.create(target, { type });
       const width = container.getBoundingClientRect().width;
       const height = container.getBoundingClientRect().height;
-      const tarwidth = Number(gsap.getProperty(target, 'width'));
+      const targetwidth = Number(gsap.getProperty(target, 'width'));
 
       const reviewTween = gsap.fromTo(
-        split.chars,
+        split[type],
         {
-          scale: 0.85
+          scale: 0.85,
+          opacity: 0.016
         },
         {
-          color: gsap.getProperty(container, 'color'),
-          scale: 1,
-          stagger: 0.6,
           ease: 'none',
+          scale: 1,
+          opacity: 1,
+          stagger: 0.6,
           scrollTrigger: {
             trigger: container,
             start: 'top 25%',
@@ -46,8 +53,8 @@ export const ReviewTitleOnScrollClient = ({
       );
 
       const scrollTween = gsap.to(target, {
-        x: width - tarwidth,
         ease: 'none',
+        x: width - targetwidth,
         scrollTrigger: {
           trigger: container,
           start: 'top top',
@@ -57,8 +64,8 @@ export const ReviewTitleOnScrollClient = ({
       });
 
       const scrollContainerTween = gsap.to(container, {
-        y: height * 0.225,
         ease: 'none',
+        y: height * 0.225,
         scrollTrigger: {
           trigger: container,
           start: 'bottom bottom',
@@ -76,7 +83,7 @@ export const ReviewTitleOnScrollClient = ({
     },
     {
       scope: innerRef,
-      dependencies: [target]
+      dependencies: [type, target]
     }
   );
 

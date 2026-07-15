@@ -4,6 +4,7 @@ import { Career, CareerProps } from '@/components/layout/Blocks/Career';
 import { Projects, ProjectsProps } from '@/components/layout/Blocks/Projects';
 import { But, ButProps } from '@/components/layout/Blocks/But';
 import { About, AboutProps } from '@/components/layout/Blocks/About';
+import { Cta, CtaProps } from '@/components/layout/Blocks/Cta';
 
 export type HomeTemplateProps = {
   data: {
@@ -13,22 +14,13 @@ export type HomeTemplateProps = {
     projects: ProjectsProps['data'];
     but: ButProps['data'];
     about: AboutProps['data'];
+    cta: CtaProps['data'];
   };
 };
 
 export const HomeTemplate = ({ data }: HomeTemplateProps) => {
   return (
     <>
-      <About
-        theme='dark'
-        data={data.about}
-      />
-
-      <About
-        theme='light'
-        data={data.about}
-      />
-
       <PrimaryHero
         theme='light'
         data={data.hero}
@@ -55,35 +47,14 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
         data={data.but}
       />
 
-      <But
-        theme='dark'
-        data={data.but}
-        className='rounded-t-4xl'
-      />
-
       <About
         theme='dark'
         data={data.about}
       />
 
-      <About
-        theme='light'
-        data={data.about}
-      />
-
-      <Mission
-        theme='light'
-        data={data.mission}
-      />
-
-      <Career
-        theme='light'
-        data={data.career}
-      />
-
-      <Projects
-        theme='light'
-        data={data.projects}
+      <Cta
+        theme='dark'
+        data={data.cta}
       />
     </>
   );

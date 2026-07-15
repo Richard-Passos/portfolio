@@ -6,7 +6,7 @@ import SimpleCard from '@/components/display/Card/Simple';
 import TimeCard from '@/components/display/Card/Time';
 import LinkCard from '@/components/display/Card/Link';
 import { Section, SectionProps } from '@/components/layout/Section';
-import { ReviewTitleOnScroll } from '@/components/motion/Title/ReviewOnScroll';
+import { ReviewTitleOnScroll } from '@/components/system/Title/ReviewOnScroll';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { ReactNode } from 'react';
@@ -16,7 +16,7 @@ import { Title } from '@/components/system/Title';
 import { Text } from '@/components/system/Text';
 import { Image } from '@/components/display/Image';
 import GradientCard from '@/components/display/Card/Gradient';
-import { StaggeredTitleOnView } from '@/components/motion/Title/StaggeredOnView';
+import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
 import { Badge } from '@/components/display/Badge';
 
 export type AboutProps = MergeProps<
@@ -44,6 +44,7 @@ export const About = ({ data, className, ...props }: AboutProps) => {
       {...props}
     >
       <ReviewTitleOnScroll>{data.title}</ReviewTitleOnScroll>
+
       <BentoGrid
         templates={{
           base: ['about', 'location', 'better', 'love'],

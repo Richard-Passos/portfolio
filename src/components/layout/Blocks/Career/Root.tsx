@@ -1,6 +1,6 @@
 import { Section, SectionProps } from '@/components/layout/Section';
 import { CareerCatalog } from '@/components/modules/Catalog/variants/Career';
-import { ReviewTitleOnScroll } from '@/components/motion/Title/ReviewOnScroll';
+import { ReviewTitleOnScroll } from '@/components/system/Title/ReviewOnScroll';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { ReactNode } from 'react';

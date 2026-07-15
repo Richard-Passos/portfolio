@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { Section, SectionProps } from '@/components/layout/Section';
 import { ScrollYLines } from '@/components/misc/Lines/variants/ScrollY';
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate/OnScroll';
-import { StaggeredTitleOnView } from '@/components/motion/Title/StaggeredOnView';
+import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
 import { Title } from '@/components/system/Title';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';

@@ -98,8 +98,7 @@ export default {
       <>
         Alguns dos <b>meus projetos</b>
       </>
-    ),
-    text: null
+    )
   },
   but: {
     title: 'MAS',
@@ -165,5 +164,9 @@ export default {
         title: 'Me compre um café'
       }
     }
+  },
+  cta: {
+    title: 'CTA',
+    text: 'Vamos juntos transformar ideias em soluções eficientes. Vamos fazer acontecer.'
   }
 } satisfies HomeTemplateProps['data'];
