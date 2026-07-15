@@ -33,18 +33,22 @@ export const ReviewTextOnScrollClient = ({
       const el = innerRef.current;
       if (!el) return;
 
-      const split = SplitText.create(el, { type });
+      const split = SplitText.create(el, {
+        type,
+        wordsClass: 'word'
+      });
 
       const tween = gsap.fromTo(
         split[type],
         {
-          opacity: 0.08,
+          backgroundSize: '0% 100%, 100% 100%',
           ...from
         },
         {
           ease: 'none',
-          opacity: 1,
-          stagger: 0.16,
+          backgroundSize: '100% 100%, 100% 100%',
+          duration: 1,
+          stagger: 1,
           ...to,
           scrollTrigger: {
             trigger: el,
@@ -58,14 +62,19 @@ export const ReviewTextOnScrollClient = ({
 
       return () => {
         tween.kill();
+        split.revert();
       };
     },
-    { scope: innerRef, dependencies: [type, from, to, start, end] }
+    {
+      scope: innerRef,
+      dependencies: [type, from, to, start, end]
+    }
   );
 
   return (
     <Slot
       ref={setRefs(ref, innerRef)}
+      className='[&_.word]:bg-[linear-gradient(to_right,hsl(var(--body-emphasis))),linear-gradient(to_right,hsl(var(--body-emphasis)/.08))] [&_.word]:bg-clip-text [&_.word]:bg-no-repeat [&_.word]:text-transparent'
       {...props}
     />
   );

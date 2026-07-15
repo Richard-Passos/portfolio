@@ -56,9 +56,9 @@ export const But = ({ data, className, ...props }: ButProps) => {
 
             <StaggeredTitleOnView
               as='h6'
+              start='bottom bottom'
               aria-label='Nem tudo é tecnologia'
               className='absolute bottom-0 flex w-full flex-col text-9xl'
-              from={{ start: 'bottom bottom' }}
             >
               {data.text}
             </StaggeredTitleOnView>

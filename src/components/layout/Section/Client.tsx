@@ -50,7 +50,7 @@ export const SectionClient = ({ theme, forceTheme, ref, ...props }: SectionClien
     },
     {
       scope: innerRef,
-      dependencies: [theme]
+      dependencies: [applyTheme]
     }
   );
 

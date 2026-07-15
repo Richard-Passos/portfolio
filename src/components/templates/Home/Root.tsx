@@ -50,6 +50,7 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
       <About
         theme='dark'
         data={data.about}
+        className='rounded-t-4xl'
       />
 
       <Cta

@@ -1,5 +1,7 @@
-import { MagneticButton, MagneticButtonProps } from '@/components/input/Button/variants/Magnetic';
-import { DrawerTrigger } from '@/components/modules/Drawer';
+import {
+  MenuDrawerTriggerClient,
+  MenuDrawerTriggerClientProps
+} from '@/components/modules/Drawer/variants/Menu/Trigger/Client';
 import { AnimateOnView, AnimateOnViewConfig } from '@/components/motion/Animate';
 import { MenuIcon } from '@/components/system/Icon/Menu';
 import { TimesIcon } from '@/components/system/Icon/Times';
@@ -8,7 +10,7 @@ import { cn } from '@/utils/cn';
 
 export type MenuDrawerTriggerProps = MergeProps<
   { data: { open: string; close: string } },
-  MagneticButtonProps
+  MenuDrawerTriggerClientProps
 >;
 
 export const MenuDrawerTriggerAnimation = {
@@ -27,21 +29,19 @@ export const MenuDrawerTrigger = ({ data, className, ...props }: MenuDrawerTrigg
   return (
     <AnimateOnView {...MenuDrawerTriggerAnimation}>
       <div className='fixed top-(--side) right-[calc(var(--side)+var(--scroll-bar-size,0px))] z-50 [--side:--spacing(4)] has-data-[state=open]:transform-[scale(1)]! sm:[--side:--spacing(8)]'>
-        <DrawerTrigger asChild>
-          <MagneticButton
-            iconOnly
-            className={cn('h-16 rounded-full border-border text-4xl sm:h-20', className)}
-            {...props}
-          >
-            <MenuIcon className='group-data-[state=open]/button:hidden' />
+        <MenuDrawerTriggerClient
+          iconOnly
+          className={cn('h-16 rounded-full border-border text-4xl sm:h-20', className)}
+          {...props}
+        >
+          <MenuIcon className='group-data-[state=open]/button:hidden' />
 
-            <TimesIcon className='absolute group-data-[state=closed]/button:hidden' />
+          <TimesIcon className='absolute group-data-[state=closed]/button:hidden' />
 
-            <span className='sr-only data-[state=open]:hidden'>{data.open}</span>
+          <span className='sr-only data-[state=open]:hidden'>{data.open}</span>
 
-            <span className='sr-only data-[state=closed]:hidden'>{data.close}</span>
-          </MagneticButton>
-        </DrawerTrigger>
+          <span className='sr-only data-[state=closed]:hidden'>{data.close}</span>
+        </MenuDrawerTriggerClient>
       </div>
     </AnimateOnView>
   );
