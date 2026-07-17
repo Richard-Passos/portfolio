@@ -11,6 +11,7 @@ export type HomeTemplateProps = {
     hero: PrimaryHeroProps['data'];
     mission: MissionProps['data'];
     career: CareerProps['data'];
+    experience: CtaProps['data'];
     projects: ProjectsProps['data'];
     but: ButProps['data'];
     about: AboutProps['data'];
@@ -34,6 +35,12 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
       <Career
         theme='dark'
         data={data.career}
+        className='pb-[calc(var(--py)*2)]'
+      />
+
+      <Cta
+        theme='dark'
+        data={data.experience}
       />
 
       <Projects
@@ -50,7 +57,7 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
       <About
         theme='dark'
         data={data.about}
-        className='rounded-t-4xl'
+        className='rounded-t-4xl pb-[calc(var(--py)*2)]'
       />
 
       <Cta

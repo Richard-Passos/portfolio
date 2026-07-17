@@ -74,7 +74,7 @@ export const ReviewTextOnScrollClient = ({
   return (
     <Slot
       ref={setRefs(ref, innerRef)}
-      className='[&_.word]:bg-[linear-gradient(to_right,hsl(var(--body-emphasis))),linear-gradient(to_right,hsl(var(--body-emphasis)/.08))] [&_.word]:bg-clip-text [&_.word]:bg-no-repeat [&_.word]:text-transparent'
+      className='[&_.word]:-mb-4 [&_.word]:bg-[linear-gradient(to_right,hsl(var(--body-emphasis))),linear-gradient(to_right,hsl(var(--body-emphasis)/.08))] [&_.word]:bg-clip-text [&_.word]:bg-no-repeat [&_.word]:pb-4 [&_.word]:text-transparent'
       {...props}
     />
   );

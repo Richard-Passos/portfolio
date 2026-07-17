@@ -6,7 +6,8 @@ export type CareerCardTitleProps = TitleProps;
 export const CareerCardTitle = ({ className, ...props }: CareerCardTitleProps) => {
   return (
     <Title
-      as='h5'
+      as='h4'
+      styleAs='h5'
       title={props.children?.toString()}
       className={cn('mr-8 line-clamp-1', className)}
       {...props}

@@ -6,7 +6,8 @@ export type GradientCardTitleProps = TitleProps;
 export const GradientCardTitle = ({ className, ...props }: GradientCardTitleProps) => {
   return (
     <Title
-      as='h6'
+      as='h4'
+      styleAs='h6'
       className={cn('mt-auto', className)}
       {...props}
     />

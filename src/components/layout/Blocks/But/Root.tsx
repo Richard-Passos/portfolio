@@ -6,6 +6,7 @@ import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView'
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate';
 import { MergeProps } from '@/types/MergeProps';
 import { ReactNode } from 'react';
+import { ReviewTextOnScroll } from '@/components/system/Text/ReviewOnScroll';
 
 export type ButProps = MergeProps<
   { data: { title: ReactNode; text: ReactNode; icon: ReactNode } },
@@ -40,7 +41,8 @@ export const But = ({ data, className, ...props }: ButProps) => {
         <div className='sticky top-0 flex h-(--h) items-center justify-center'>
           <Title
             data-animate
-            className='text-center text-[clamp(8rem,44vw,32rem)]/none font-bold tracking-tighter text-primary uppercase'
+            styleAs='h1'
+            className='text-center text-[clamp(8rem,44vw,32rem)]/none tracking-tighter text-primary'
           >
             {data.title}
           </Title>
@@ -50,18 +52,19 @@ export const But = ({ data, className, ...props }: ButProps) => {
       <AnimateOnScroll {...ButAnimation}>
         <div className='absolute bottom-(--py) flex h-(--h) items-center justify-center'>
           <div className='relative'>
-            <Title className='invisible text-center text-[clamp(8rem,44vw,32rem)]/none font-bold tracking-tighter text-primary uppercase'>
+            <Title
+              styleAs='h1'
+              className='invisible text-center text-[clamp(8rem,44vw,32rem)]/none tracking-tighter text-primary'
+            >
               {data.title}
             </Title>
 
-            <StaggeredTitleOnView
-              as='h6'
+            <ReviewTextOnScroll
               start='bottom bottom'
-              aria-label='Nem tudo é tecnologia'
               className='absolute bottom-0 flex w-full flex-col text-9xl'
             >
               {data.text}
-            </StaggeredTitleOnView>
+            </ReviewTextOnScroll>
 
             <div
               data-animate

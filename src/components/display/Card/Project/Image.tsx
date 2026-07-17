@@ -9,6 +9,7 @@ export type ProjectCardImageProps = MergeProps<Pick<ImageProps, 'src'>, LinkProp
 export const ProjectCardImage = ({ src, className, ...props }: ProjectCardImageProps) => {
   return (
     <Link
+      tabIndex={-1}
       className={cn('block aspect-square w-full px-1 pt-1', className)}
       {...props}
     >

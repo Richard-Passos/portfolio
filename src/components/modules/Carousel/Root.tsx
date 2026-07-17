@@ -2,22 +2,21 @@
 
 // @ts-ignore
 import { Options, Splide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css/default.css';
-import { ComponentProps, useCallback, useMemo } from 'react';
+import { ComponentProps, ReactNode, useCallback, useMemo } from 'react';
 
-import { useCarouselContext } from '@/hooks/contexts';
-import { MergeProps } from '@/types';
-import { cn } from '@/utils';
-import { CarouselProvider } from '@/contexts/Carousel';
+import { MergeProps } from '@/types/MergeProps';
+import { cn } from '@/utils/cn';
+import { useCarouselContext, CarouselProvider } from '@/contexts/Carousel';
 
-type CarouselRootProps = MergeProps<
+export type CarouselProps = MergeProps<
   {
     options?: Options;
+    children: ReactNode;
   },
   ComponentProps<typeof Splide>
 >;
 
-export const CarouselBase = ({ options, className, onMove, ...props }: CarouselRootProps) => {
+export const CarouselBase = ({ options, className, onMove, ...props }: CarouselProps) => {
   const { setState } = useCarouselContext();
 
   const mergedOptions = useMemo<Options>(
@@ -60,7 +59,7 @@ export const CarouselBase = ({ options, className, onMove, ...props }: CarouselR
   );
 };
 
-export const CarouselRoot = (props: CarouselRootProps) => {
+export const Carousel = (props: CarouselProps) => {
   return (
     <CarouselProvider>
       <CarouselBase {...props} />

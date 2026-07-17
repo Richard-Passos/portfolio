@@ -22,7 +22,7 @@ export const CareerCatalog = ({ className, ...props }: CareerCatalogProps) => {
             <CareerCard
               key={el.id}
               value={el.id}
-              className='not-first:-mt-px'
+              className='relative not-first:-mt-px'
             >
               <CareerCard.Header>
                 <CareerCard.Badge index={i} />

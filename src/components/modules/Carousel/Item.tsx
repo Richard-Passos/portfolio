@@ -1,10 +1,17 @@
 'use client';
 
+import { cn } from '@/utils/cn';
 // @ts-ignore
-import { SplideSlide as CarouselItem } from '@splidejs/react-splide';
+import { SplideSlide } from '@splidejs/react-splide';
 import { ComponentProps } from 'react';
 
-type CarouselItemProps = ComponentProps<typeof CarouselItem>;
+export type CarouselItemProps = ComponentProps<'li'>;
 
-export { CarouselItem };
-export type { CarouselItemProps };
+export const CarouselItem = ({ className, ...props }: CarouselItemProps) => {
+  return (
+    <SplideSlide
+      className={cn('shrink-0', className)}
+      {...props}
+    />
+  );
+};

@@ -1,23 +1,14 @@
 import BentoGrid from '@/components/display/BentoGrid';
 import BoldCard from '@/components/display/Card/Bold';
-import DescriptionCard from '@/components/display/Card/Description';
-import MarqueeCard from '@/components/display/Card/Marquee';
 import SimpleCard from '@/components/display/Card/Simple';
-import TimeCard from '@/components/display/Card/Time';
-import LinkCard from '@/components/display/Card/Link';
 import { Section, SectionProps } from '@/components/layout/Section';
 import { ReviewTitleOnScroll } from '@/components/system/Title/ReviewOnScroll';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { ReactNode } from 'react';
-import { Value } from '@/types/Value';
-import { GlobeIcon } from '@/components/system/Icon/Globe';
-import { Title } from '@/components/system/Title';
-import { Text } from '@/components/system/Text';
-import { Image } from '@/components/display/Image';
 import GradientCard from '@/components/display/Card/Gradient';
-import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
 import { Badge } from '@/components/display/Badge';
+import GalleryCarousel, { GalleryCarouselItemProps } from '@/components/modules/Carousel/Gallery';
 
 export type AboutProps = MergeProps<
   {
@@ -25,12 +16,11 @@ export type AboutProps = MergeProps<
       title: ReactNode;
       items: {
         about: { badge: ReactNode; text: ReactNode };
-        location: { icon: ReactNode; title: ReactNode };
-        values: { icon: ReactNode; title: ReactNode; items: Value[] };
-        better: { icon: ReactNode; text: ReactNode };
         love: { icon: ReactNode; text: ReactNode };
-        time: { title: ReactNode };
-        contact: { url: string; icon: ReactNode; title: ReactNode };
+        better: { icon: ReactNode; text: ReactNode };
+        location: { icon: ReactNode; title: ReactNode };
+        hobbies: { icon: ReactNode; title: ReactNode; text: ReactNode };
+        gallery: { images: Pick<GalleryCarouselItemProps, 'src' | 'alt'>[] };
       };
     };
   },
@@ -40,22 +30,28 @@ export type AboutProps = MergeProps<
 export const About = ({ data, className, ...props }: AboutProps) => {
   return (
     <Section
-      className={cn('w-full pb-[calc(var(--py)*2)]', className)}
+      className={cn('w-full', className)}
       {...props}
     >
       <ReviewTitleOnScroll>{data.title}</ReviewTitleOnScroll>
 
       <BentoGrid
         templates={{
-          base: ['about', 'location', 'better', 'love'],
-          sm: ['about about', 'location location', 'better love'],
+          base: ['about', 'better', 'love', 'location', 'hobbies', 'gallery'],
+          sm: [
+            'about    about',
+            'better   love',
+            'location location',
+            'hobbies  hobbies',
+            'gallery  gallery'
+          ],
           lg: [
-            '. about about',
-            '. about about',
-            'cards better selfie',
-            'cards love selfie',
-            'cards location selfie',
-            'cards location selfie'
+            '.       about    about',
+            '.       about    about',
+            'hobbies better   gallery',
+            'hobbies love     gallery',
+            'hobbies location gallery',
+            'hobbies location gallery'
           ]
         }}
         className='w-9/10'
@@ -78,18 +74,8 @@ export const About = ({ data, className, ...props }: AboutProps) => {
               {data.items.about.badge}
             </Badge>
 
-            <GradientCard.Text className='mt-auto text-base'>
-              {data.items.about.text}
-            </GradientCard.Text>
+            <GradientCard.Text className='mt-auto'>{data.items.about.text}</GradientCard.Text>
           </GradientCard>
-        </BentoGrid.Item>
-
-        <BentoGrid.Item value='location'>
-          <BoldCard>
-            <BoldCard.Icon>{data.items.location.icon}</BoldCard.Icon>
-
-            <BoldCard.Title>{data.items.location.title}</BoldCard.Title>
-          </BoldCard>
         </BentoGrid.Item>
 
         <BentoGrid.Item value='better'>
@@ -108,19 +94,15 @@ export const About = ({ data, className, ...props }: AboutProps) => {
           </SimpleCard>
         </BentoGrid.Item>
 
-        <BentoGrid.Item value='selfie'>
-          <section className='group/card overflow-hidden border bg-body'>
-            <Image
-              src='/images/selfie.webp'
-              alt=''
-              width={600}
-              height={600}
-              className='size-full object-cover blur-sm transition-[filter] duration-300 ease-in-out group-hover/card:blur-[0]'
-            />
-          </section>
+        <BentoGrid.Item value='location'>
+          <BoldCard>
+            <BoldCard.Icon>{data.items.location.icon}</BoldCard.Icon>
+
+            <BoldCard.Title>{data.items.location.title}</BoldCard.Title>
+          </BoldCard>
         </BentoGrid.Item>
 
-        <BentoGrid.Item value='cards'>
+        <BentoGrid.Item value='hobbies'>
           <GradientCard
             className='group h-full rounded-none after:rounded-none md:col-span-6 lg:col-span-3'
             gradient='radial-gradient(
@@ -131,22 +113,27 @@ export const About = ({ data, className, ...props }: AboutProps) => {
                       transparent 60%
                     )'
           >
-            <GradientCard.Icon className='group-hover:*:rotate-y-360'>
-              <GlobeIcon />
-            </GradientCard.Icon>
+            <GradientCard.Icon>{data.items.hobbies.icon}</GradientCard.Icon>
 
-            <GradientCard.Title>Fora do código</GradientCard.Title>
+            <GradientCard.Title>{data.items.hobbies.title}</GradientCard.Title>
 
-            <GradientCard.Text>
-              <p>
-                Grande parte do meu tempo livre acaba nos videogames, mas também gosto de aproveitar
-                momentos simples: conversar com amigos, passar tempo com a família, caminhar em um
-                dia de sol ou simplesmente descobrir algo novo por curiosidade.
-              </p>
-
-              <p>Acredito que as melhores experiências geralmente nascem dessas pequenas coisas.</p>
-            </GradientCard.Text>
+            <GradientCard.Text>{data.items.hobbies.text}</GradientCard.Text>
           </GradientCard>
+        </BentoGrid.Item>
+
+        <BentoGrid.Item value='gallery'>
+          <GalleryCarousel className='border bg-body'>
+            {data.items.gallery.images.map((img) => (
+              <GalleryCarousel.Item
+                key={img.src.toString()}
+                src={img.src}
+                alt={img.alt}
+                width={600}
+                height={600}
+                className='aspect-square'
+              />
+            ))}
+          </GalleryCarousel>
         </BentoGrid.Item>
       </BentoGrid>
     </Section>

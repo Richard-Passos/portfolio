@@ -1,8 +1,9 @@
+import { cn } from '@/utils/cn';
 import { ComponentProps } from 'react';
 
 export type WidthIconProps = ComponentProps<'svg'>;
 
-export const WidthIcon = (props: WidthIconProps) => {
+export const WidthIcon = ({ className, ...props }: WidthIconProps) => {
   return (
     <svg
       aria-hidden

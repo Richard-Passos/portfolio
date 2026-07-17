@@ -6,11 +6,10 @@ import { CapIcon } from '@/components/system/Icon/Cap';
 import { SmileIcon } from '@/components/system/Icon/Smile';
 import { HomeTemplateProps } from '@/components/templates/Home';
 import { FingerprintIcon } from '@/components/system/Icon/Fingerprint';
-import { CONTACT } from '@/common/CONTACT';
 import { LOCATION } from '@/common/LOCATION';
-import { VALUES } from '@/common/VALUES';
 import { GameControllerIcon } from '@/components/system/Icon/GameController';
-import { HandHornsIcon } from '@/components/system/Icon/HandHorns';
+import { SparklesIcon } from '@/components/system/Icon/Sparkles';
+import { TrophyIcon } from '@/components/system/Icon/Trophy';
 
 const rotateAnimation = {
   from: {
@@ -50,17 +49,17 @@ export default {
     left: {
       icon: <FlashIcon />,
       title: 'Disponível para Trabalho',
-      text: 'Aberto a oportunidades de estágio, freelance e desenvolvimento de produtos digitais.'
+      text: 'Aberto a oportunidades de estágio, freelance e projetos onde eu possa construir algo que faça diferença.'
     },
     center: {
       icon: <SmileIcon />,
       title: 'Quem? Por quê? Mais?',
-      text: 'Sou Richard Passos, desenvolvedor web, estudante e apaixonado por tecnologia. Gosto de resolver problemas e fazer a diferença linha por linha. O resto da história está logo abaixo.'
+      text: 'Sou Richard Passos, desenvolvedor web e estudante. Faço a diferença linha por linha e acredito que grandes projetos nascem da dedicação aos pequenos detalhes O resto da história está logo abaixo.'
     },
     right: {
       icon: <CapIcon />,
       title: 'Ciência da Computação @ UFRGS',
-      text: 'Graduando na UFRGS, unindo base acadêmica sólida com experiência em projetos reais.'
+      text: 'Graduando na UFRGS, transformando teoria em projetos e aprendizado em experiência.'
     }
   },
   mission: {
@@ -93,6 +92,10 @@ export default {
       </>
     )
   },
+  experience: {
+    title: 'Experiência',
+    text: 'Não fico no básico, busco entender pessoas, e problemas para construir soluções que fazem sentido.'
+  },
   projects: {
     title: (
       <>
@@ -122,46 +125,77 @@ export default {
           <>
             <p>
               <b>
-                <HandHornsIcon /> Oi —
+                <SparklesIcon className='text-warning' /> —
               </b>{' '}
-              sou alguém que gosta de passar meu tempo com amigos e família, mas grande parte do meu
-              lazer está nos jogos — rogue-like, souls-like, metroidvania, precision platformer, ...
-              — que me desafiam e me divertem. Mesmo sendo mais reservado, valorizo a integridade e
-              a simpatia na forma de me conectar com os outros.
+              tento não deixar a vida entrar no piloto automático. Afinal, só temos uma. Gosto de
+              prestar atenção nas pequenas coisas, de aproveitar uma boa conversa, sentir o sol na
+              pele, aprender algo novo ou simplesmente parar para perceber detalhes que normalmente
+              passariam despercebidos.
             </p>
 
             <p>
-              Acredito em aproveitar também os pequenos momentos — seja sentindo o sol no rosto,
-              jogando uma partida intensa ou uma boa conversa, são esses momentos que realmente
-              importam.
+              Gosto de estar perto de pessoas que compartilham conhecimento sem deixar a humildade
+              de lado. No fim, crescer junto sempre parece mais interessante do que crescer sozinho.
+            </p>
+
+            <p>
+              Uma frase que sempre ficou comigo diz:{' '}
+              <i>"Faça uma aposta de que o amor existe, e realize um ato de amor."</i>.
             </p>
           </>
         )
       },
-      location: {
-        icon: <GlobeIcon />,
-        title: `Localizado no ${LOCATION.country} ${LOCATION.gmt}`
-      },
-      values: {
-        icon: <FingerprintIcon />,
-        title: 'Meus valores',
-        items: VALUES
-      },
       better: {
         icon: <RocketIcon />,
-        text: 'Melhorando um pouco a cada dia.'
+        text: 'Quero ser melhor do que fui ontem.'
       },
       love: {
         icon: <GameControllerIcon />,
         text: 'Adoro jogar video-game.'
       },
-      time: {
-        title: 'Meu horário local'
+      location: {
+        icon: <GlobeIcon />,
+        title: `Localizado no ${LOCATION.country} ${LOCATION.gmt}`
       },
-      contact: {
-        url: CONTACT.buyCoffee.url,
-        icon: CONTACT.buyCoffee.icon,
-        title: 'Me compre um café'
+      hobbies: {
+        icon: <TrophyIcon />,
+        title: 'Fora do Código',
+        text: (
+          <>
+            <p>
+              Grande parte do meu tempo livre acaba nos videogames, principalmente aqueles que
+              desafiam a paciência, a persistência e a vontade de melhorar. Também gosto de
+              participar de hackathons e assistir talks, sempre em busca de novas ideias, pessoas e
+              experiências.
+            </p>
+
+            <p>
+              Mas nada substitui uma boa conversa ou passar um tempo com amigos e família. São
+              momentos simples como esses que me fazem desacelerar, recarregar as energias e lembrar
+              que a vida acontece muito além da tela.
+            </p>
+          </>
+        )
+      },
+      gallery: {
+        images: [
+          {
+            src: '/images/selfie.webp',
+            alt: ''
+          },
+          {
+            src: '/images/about-00.webp',
+            alt: ''
+          },
+          {
+            src: '/images/about-01.webp',
+            alt: ''
+          },
+          {
+            src: '/images/about-02.webp',
+            alt: ''
+          }
+        ]
       }
     }
   },

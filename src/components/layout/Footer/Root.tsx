@@ -29,13 +29,13 @@ export const Footer = ({ className, ...props }: FooterProps) => {
         asChild
         theme='light'
         className={cn(
-          '-z-10 min-h-[min(100dvh,var(--max-height-bounds))] w-full max-w-bounds items-stretch px-[5%] py-0',
+          'min-h-[min(100dvh,var(--max-height-bounds))] w-full max-w-bounds px-[5%] py-0 has-focus-within:transform-[translateY(0)]!',
           className
         )}
         {...props}
       >
         <footer>
-          <section className='flex h-24 items-center'>
+          <section className='flex h-24 w-full items-center'>
             <MagneticButton
               href='/contact'
               color='primary'
@@ -56,7 +56,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
             ))}
           </section>
 
-          <section className='mt-auto flex gap-5 max-md:flex-col-reverse'>
+          <section className='mt-auto flex w-full gap-5 max-md:flex-col-reverse'>
             <Logo
               variant='secondary'
               className='mt-auto h-full grow'
@@ -89,7 +89,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
             </section>
           </section>
 
-          <section className='flex items-center gap-1 py-4 max-sm:flex-col sm:justify-between'>
+          <section className='flex w-full items-center gap-1 py-4 max-sm:flex-col sm:justify-between'>
             <Text
               small
               className='max-w-xs text-xs max-sm:text-center'

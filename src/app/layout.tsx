@@ -5,21 +5,31 @@ import { Header } from '@/components/layout/Header';
 import { SmoothScroll } from '@/components/motion/SmoothScroll';
 import { StoreProvider } from '@/contexts/Store';
 import '@/styles/globals.css';
+import { cn } from '@/utils/cn';
+import localFont from 'next/font/local';
 
 export type RootLayoutProps = PropsWithChildren;
+
+const displayFont = localFont({
+  src: '../../public/fonts/Archivo-Variable.ttf',
+  display: 'swap'
+});
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html
-      className='overflow-x-clip has-[body[data-scroll-lock]]:overflow-y-hidden'
       lang='pt-BR'
+      className={cn(
+        'overflow-x-clip has-[body[data-scroll-lock]]:overflow-y-hidden',
+        displayFont.className
+      )}
     >
       <body className='relative flex min-h-svh flex-col items-center overflow-x-clip bg-body'>
         <StoreProvider>
           <SmoothScroll>
             <Header />
 
-            <main className='flex w-full max-w-bounds grow flex-col items-center justify-stretch'>
+            <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
               {children}
             </main>
 

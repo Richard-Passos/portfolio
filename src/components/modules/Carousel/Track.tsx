@@ -4,21 +4,18 @@
 import { SplideTrack } from '@splidejs/react-splide';
 import { ComponentProps } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 
-type CarouselTrackProps = ComponentProps<typeof SplideTrack>;
+export type CarouselTrackProps = ComponentProps<typeof SplideTrack>;
 
-const CarouselTrack = ({ className, ...props }: CarouselTrackProps) => {
+export const CarouselTrack = ({ className, ...props }: CarouselTrackProps) => {
   return (
     <SplideTrack
       className={cn(
-        `w-full cursor-grab overflow-x-clip! overflow-y-visible! active:cursor-grabbing`,
+        'size-full cursor-grab overflow-x-clip *:flex *:h-full active:cursor-grabbing',
         className
       )}
       {...props}
     />
   );
 };
-
-export { CarouselTrack };
-export type { CarouselTrackProps };

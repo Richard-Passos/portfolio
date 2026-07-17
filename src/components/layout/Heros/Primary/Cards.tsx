@@ -88,7 +88,7 @@ export const PrimaryHeroCards = ({ data, className, ...props }: PrimaryHeroCards
 
           <GradientCard.Title>{data.center.title}</GradientCard.Title>
 
-          <GradientCard.Text small={false}>{data.center.text}</GradientCard.Text>
+          <GradientCard.Text>{data.center.text}</GradientCard.Text>
         </GradientCard>
 
         <GradientCard

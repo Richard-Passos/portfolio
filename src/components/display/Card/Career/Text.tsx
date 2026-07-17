@@ -9,7 +9,7 @@ export const CareerCardText = ({ className, ...props }: CareerCardTextProps) => 
     <AccordionContent asChild>
       <Text
         className={cn(
-          'border-t border-border px-[7.5%] pt-6 pb-16 text-sm leading-relaxed tracking-wide whitespace-pre-line',
+          'border-t px-[7.5%] pt-6 pb-16 text-sm leading-relaxed tracking-wide whitespace-pre-line',
           className
         )}
         {...props}

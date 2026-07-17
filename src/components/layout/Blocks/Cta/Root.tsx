@@ -17,7 +17,7 @@ export const Cta = ({ data, className, ...props }: CtaProps) => {
     >
       <Title
         as='h6'
-        className='mr-auto leading-relaxed tracking-widest'
+        className='mr-auto leading-relaxed tracking-widest uppercase'
       >
         {data.title}
       </Title>
