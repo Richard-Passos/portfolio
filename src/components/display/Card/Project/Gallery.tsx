@@ -13,12 +13,13 @@ export const ProjectCardGalleryAnimation = {
   },
   to: {
     y: (i) => [-128, 0][i % 2] ?? 0
-  }
+  },
+  end: 'bottom top'
 } satisfies AnimateOnScrollConfig;
 
 export const ProjectCardGallery = ({ className, ...props }: ProjectCardGalleryProps) => {
   return (
-    <AnimateOnScroll {...ProjectCardGalleryAnimation}>
+    <AnimateOnScroll config={ProjectCardGalleryAnimation}>
       <SlotElement
         tag='ul'
         className={cn('grid w-full gap-4 sm:grid-cols-2 md:pt-64', className)}

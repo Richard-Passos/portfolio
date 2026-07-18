@@ -2,7 +2,6 @@ import { cn } from '@/utils/cn';
 import { Section, SectionProps } from '@/components/layout/Section';
 import { Title } from '@/components/system/Title';
 
-import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate';
 import { MergeProps } from '@/types/MergeProps';
 import { ReactNode } from 'react';
@@ -24,8 +23,7 @@ export const ButAnimation = {
     y: 0,
     scale: 1,
     filter: 'blur(0px)'
-  },
-  end: 'top top'
+  }
 } satisfies AnimateOnScrollConfig;
 
 export const But = ({ data, className, ...props }: ButProps) => {
@@ -37,7 +35,7 @@ export const But = ({ data, className, ...props }: ButProps) => {
       )}
       {...props}
     >
-      <AnimateOnScroll {...ButAnimation}>
+      <AnimateOnScroll config={ButAnimation}>
         <div className='sticky top-0 flex h-(--h) items-center justify-center'>
           <Title
             data-animate
@@ -49,7 +47,7 @@ export const But = ({ data, className, ...props }: ButProps) => {
         </div>
       </AnimateOnScroll>
 
-      <AnimateOnScroll {...ButAnimation}>
+      <AnimateOnScroll config={ButAnimation}>
         <div className='absolute bottom-(--py) flex h-(--h) items-center justify-center'>
           <div className='relative'>
             <Title

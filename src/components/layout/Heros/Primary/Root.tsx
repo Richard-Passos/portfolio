@@ -4,9 +4,7 @@ import { Section, SectionProps } from '@/components/layout/Section';
 import { ScrollYLines } from '@/components/misc/Lines/variants/ScrollY';
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate/OnScroll';
 import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
-import { Title } from '@/components/system/Title';
 import { MergeProps } from '@/types/MergeProps';
-import { cn } from '@/utils/cn';
 
 import { PrimaryHeroCards, PrimaryHeroCardsProps } from './Cards';
 
@@ -22,8 +20,7 @@ export const PrimaryHeroAnimation = {
     scale: 0.75,
     opacity: 0
   },
-  start: 0,
-  end: 'bottom top'
+  start: 0
 } satisfies AnimateOnScrollConfig;
 
 export type PrimaryHeroProps = MergeProps<
@@ -37,7 +34,7 @@ export type PrimaryHeroProps = MergeProps<
 
 export const PrimaryHero = ({ data, ...props }: PrimaryHeroProps) => {
   return (
-    <AnimateOnScroll {...PrimaryHeroAnimation}>
+    <AnimateOnScroll config={PrimaryHeroAnimation}>
       <Section
         forceTheme
         {...props}

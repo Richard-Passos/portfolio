@@ -16,12 +16,12 @@ export const CareerCardExtra = ({
 }: CareerCardExtraProps) => {
   const startYear = new Date(start).getFullYear();
   const endYear = end ? new Date(end).getFullYear() : data.noEnd;
-  const sortedRolesStr = roles.toSorted((a, b) => a.localeCompare(b)).join(' & ');
+  const rolesStr = roles.join(' & ');
 
   return (
     <Text
       small
-      title={`${startYear} — ${endYear} / ${sortedRolesStr}`}
+      title={`${startYear} — ${endYear} / ${rolesStr}`}
       className={cn('mr-8 line-clamp-1 tracking-wider text-placeholder lowercase', className)}
       {...props}
     >
@@ -29,7 +29,7 @@ export const CareerCardExtra = ({
         {startYear} — {endYear}
       </span>
       {' / '}
-      {sortedRolesStr}
+      {rolesStr}
     </Text>
   );
 };

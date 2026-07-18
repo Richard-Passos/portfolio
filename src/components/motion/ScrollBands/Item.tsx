@@ -11,7 +11,6 @@ export const ScrollBandsItemAnimation = {
   to: {
     '--x': '0%'
   },
-  start: 'top bottom',
   end: 'top 25%'
 } satisfies AnimateOnScrollConfig;
 
@@ -24,8 +23,10 @@ export const ScrollBandsItem = ({
 }: ScrollBandsItemProps) => {
   return (
     <AnimateOnScroll
-      from={index % 2 == 0 ? { '--x': '-100%' } : { '--x': '100%' }}
-      {...ScrollBandsItemAnimation}
+      config={{
+        from: index % 2 == 0 ? { '--x': '-100%' } : { '--x': '100%' },
+        ...ScrollBandsItemAnimation
+      }}
     >
       <li
         aria-label={children?.toString()}

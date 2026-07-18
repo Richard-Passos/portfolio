@@ -67,19 +67,19 @@ export default {
     items: [
       <>
         Melhorar{' '}
-        <AnimateOnScroll {...rotateBothAnimation}>
+        <AnimateOnScroll config={rotateBothAnimation}>
           <RocketIcon />
         </AnimateOnScroll>
       </>,
       <>
         Inspirar{' '}
-        <AnimateOnScroll {...rotateAnimation}>
+        <AnimateOnScroll config={rotateAnimation}>
           <GlobeIcon />
         </AnimateOnScroll>
       </>,
       <>
         Repetir{' '}
-        <AnimateOnScroll {...rotateBothAnimation}>
+        <AnimateOnScroll config={rotateBothAnimation}>
           <SmileIcon />
         </AnimateOnScroll>
       </>

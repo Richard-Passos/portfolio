@@ -27,7 +27,7 @@ export const MenuDrawerTriggerAnimation = {
 
 export const MenuDrawerTrigger = ({ data, className, ...props }: MenuDrawerTriggerProps) => {
   return (
-    <AnimateOnView {...MenuDrawerTriggerAnimation}>
+    <AnimateOnView config={MenuDrawerTriggerAnimation}>
       <div className='fixed top-(--side) right-[calc(var(--side)+var(--scroll-bar-size,0px))] z-50 [--side:--spacing(4)] has-focus-within:transform-[scale(1)]! has-data-[state=open]:transform-[scale(1)]! sm:[--side:--spacing(8)]'>
         <MenuDrawerTriggerClient
           iconOnly

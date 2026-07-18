@@ -6,28 +6,24 @@ import { Slot, SlotProps } from '@/components/misc/Slot';
 import { gsap, useGSAP } from '@/hooks/useGSAP';
 import { MergeProps } from '@/types/MergeProps';
 import { setRefs } from '@/utils/setRefs';
+import { AnimateOnScrollConfig } from '@/components/motion/Animate/OnScroll';
 
 export type AnimateOnViewConfig = {
   target?: gsap.TweenTarget;
-  trigger?: gsap.DOMTarget;
   from?: gsap.TweenVars;
   to?: gsap.TweenVars;
   start?: string | number | ScrollTrigger.StartEndFunc;
   end?: string | number | ScrollTrigger.StartEndFunc;
 };
 
-export type AnimateOnViewProps = MergeProps<AnimateOnViewConfig, SlotProps>;
+export type AnimateOnViewCallback = (el: HTMLSlotElement) => () => void;
 
-export const AnimateOnView = ({
-  ref,
-  target,
-  trigger,
-  from = {},
-  to,
-  start,
-  end,
-  ...props
-}: AnimateOnViewProps) => {
+export type AnimateOnViewProps = MergeProps<
+  { config: AnimateOnScrollConfig | AnimateOnViewCallback },
+  SlotProps
+>;
+
+export const AnimateOnView = ({ config, ref, ...props }: AnimateOnViewProps) => {
   const innerRef = useRef<HTMLSlotElement>(null);
 
   useGSAP(
@@ -35,10 +31,16 @@ export const AnimateOnView = ({
       const el = innerRef.current;
       if (!el) return;
 
+      if (typeof config === 'function') {
+        return config(el);
+      }
+
+      const { target, from = {}, to, start, end } = config ?? {};
+
       const tween = gsap.fromTo(target ?? el, from, {
         ...to,
         scrollTrigger: {
-          trigger: trigger ?? el,
+          trigger: el,
           start,
           end,
           toggleActions: 'play none none reverse',
@@ -52,7 +54,7 @@ export const AnimateOnView = ({
     },
     {
       scope: innerRef,
-      dependencies: [target, trigger, from, to, start, end]
+      dependencies: [config]
     }
   );
 

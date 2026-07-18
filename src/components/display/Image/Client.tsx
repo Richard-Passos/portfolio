@@ -16,27 +16,34 @@ export const ImageClient = ({ ref, ...props }: ImageClientProps) => {
       const el = innerRef.current;
       if (!el) return;
 
-      gsap.from('img', {
-        scale: 1.25,
+      const tweenImg = gsap.from('img', {
+        ease: 'none',
+        scale: 1.1,
         duration: 0.7,
-        ease: 'power2.out',
         scrollTrigger: {
           trigger: el,
+          scrub: true,
           start: 'top 75%',
-          toggleActions: 'play none none reverse'
+          end: 'bottom 75%'
         }
       });
 
-      gsap.from('[data-front]', {
-        y: 0,
+      const tweenFront = gsap.to('[data-front]', {
+        ease: 'none',
+        y: '100%',
         duration: 0.7,
-        ease: 'power2.out',
         scrollTrigger: {
           trigger: el,
+          scrub: true,
           start: 'top 75%',
-          toggleActions: 'play none none reverse'
+          end: 'bottom 75%'
         }
       });
+
+      return () => {
+        tweenImg.kill();
+        tweenFront.kill();
+      };
     },
     { scope: innerRef }
   );

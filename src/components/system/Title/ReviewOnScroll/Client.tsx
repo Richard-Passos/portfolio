@@ -25,51 +25,48 @@ export const ReviewTitleOnScrollClient = ({
   useGSAP(
     () => {
       const container = innerRef.current;
-      if (!container) return;
+      const containerParent = innerRef.current?.parentElement;
+      if (!container || !containerParent) return;
 
       const split = SplitText.create(target, { type });
-      const width = container.getBoundingClientRect().width;
-      const height = container.getBoundingClientRect().height;
+      const containerWidth = container.getBoundingClientRect().width;
+      const containerHeight = container.getBoundingClientRect().height;
+      const parentHeight = containerParent.getBoundingClientRect().height;
       const targetwidth = Number(gsap.getProperty(target, 'width'));
+      const remainWidth = containerWidth - targetwidth;
+      const remainHeight = parentHeight - containerHeight;
 
-      const reviewTween = gsap.fromTo(
-        split[type],
-        {
-          scale: 0.85,
-          opacity: 0.016
-        },
-        {
-          ease: 'none',
-          scale: 1,
-          opacity: 1,
-          stagger: 0.6,
-          scrollTrigger: {
-            trigger: container,
-            start: 'top 25%',
-            end: 'bottom bottom',
-            scrub: true
-          }
-        }
-      );
-
-      const scrollTween = gsap.to(target, {
+      const reviewTween = gsap.from(split[type], {
         ease: 'none',
-        x: width - targetwidth,
+        scale: 0.85,
+        opacity: 0.016,
+        stagger: 0.6,
         scrollTrigger: {
           trigger: container,
-          start: 'top top',
-          end: 'bottom bottom',
+          start: '75% bottom',
+          end: `+=${remainHeight + containerHeight * 0.25}`,
           scrub: true
         }
       });
 
-      const scrollContainerTween = gsap.to(container, {
+      const scrollTween = gsap.to(target, {
         ease: 'none',
-        y: height * 0.225,
+        x: remainWidth,
         scrollTrigger: {
           trigger: container,
           start: 'bottom bottom',
-          end: `+=${height * 0.225}`,
+          end: `+=${remainHeight}`,
+          scrub: true
+        }
+      });
+
+      const scrollParentTween = gsap.to(containerParent, {
+        ease: 'none',
+        y: '22.5%',
+        scrollTrigger: {
+          trigger: containerParent,
+          start: 'bottom bottom',
+          end: `+=${parentHeight * 0.225}`,
           scrub: true
         }
       });
@@ -78,7 +75,7 @@ export const ReviewTitleOnScrollClient = ({
         split.revert();
         reviewTween.kill();
         scrollTween.kill();
-        scrollContainerTween.kill();
+        scrollParentTween.kill();
       };
     },
     {

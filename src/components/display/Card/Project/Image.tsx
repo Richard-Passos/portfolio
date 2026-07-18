@@ -10,7 +10,7 @@ export const ProjectCardImage = ({ src, className, ...props }: ProjectCardImageP
   return (
     <Link
       tabIndex={-1}
-      className={cn('block aspect-square w-full px-1 pt-1', className)}
+      className={cn('block aspect-square w-full', className)}
       {...props}
     >
       <ImageReview className='size-full'>

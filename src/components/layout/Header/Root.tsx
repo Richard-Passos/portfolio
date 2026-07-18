@@ -1,3 +1,5 @@
+import data from './.data';
+
 import { ComponentProps } from 'react';
 
 import { Theme } from '@/components/misc/Theme';
@@ -6,8 +8,6 @@ import { Logo } from '@/components/navigation/Logo';
 import { LocaleMenu } from '@/components/navigation/Menu/variants/Locale';
 import { NavTabs } from '@/components/navigation/Tabs/variants/Nav';
 import { cn } from '@/utils/cn';
-
-import data from './Root.data';
 
 export type HeaderProps = ComponentProps<'header'>;
 

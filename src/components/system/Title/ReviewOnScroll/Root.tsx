@@ -18,26 +18,26 @@ export const ReviewTitleOnScroll = ({
   ...props
 }: ReviewTitleOnScrollProps) => {
   return (
-    <ReviewTitleOnScrollClient
-      type='chars'
-      target={as}
+    <div
+      className={cn(
+        'relative -z-10 min-h-[calc(var(--h)*1.75)] w-full overflow-x-clip will-change-transform [--h:var(--max-height-bounds)]',
+        className
+      )}
+      {...props}
     >
-      <div
-        className={cn(
-          'relative -z-10 min-h-[calc(var(--h)*1.75)] w-full overflow-x-clip will-change-transform [--h:min(100dvh,var(--max-height-bounds))] *:will-change-[color]',
-          className
-        )}
-        {...props}
+      <ReviewTitleOnScrollClient
+        type='chars'
+        target={as}
       >
-        <div className='sticky top-0 mx-auto flex h-dvh w-full items-center'>
+        <div className='sticky top-0 mx-auto flex h-(--h) w-full items-center'>
           <Title
             as={as}
-            className='w-max px-[5%] text-[clamp(8rem,20vw,22rem)]/none font-black text-nowrap'
+            className='w-max px-[5%] text-[clamp(8rem,20vw,22rem)]/none font-black text-nowrap will-change-transform *:will-change-[opacity,transform]'
           >
             {children}
           </Title>
         </div>
-      </div>
-    </ReviewTitleOnScrollClient>
+      </ReviewTitleOnScrollClient>
+    </div>
   );
 };

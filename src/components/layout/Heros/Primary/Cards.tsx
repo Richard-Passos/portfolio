@@ -44,7 +44,7 @@ export const PrimaryHeroCardsAnimation = {
 
 export const PrimaryHeroCards = ({ data, className, ...props }: PrimaryHeroCardsProps) => {
   return (
-    <AnimateOnView {...PrimaryHeroCardsAnimation}>
+    <AnimateOnView config={PrimaryHeroCardsAnimation}>
       <section
         className={cn(
           'mt-28 grid w-full items-end gap-4 md:grid-cols-12 [&_svg]:transition-transform [&_svg]:duration-700 [&_svg]:ease-backOut',

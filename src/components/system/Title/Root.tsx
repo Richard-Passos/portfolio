@@ -35,7 +35,7 @@ export const Title = ({ as = 'h2', styleAs, className, ...props }: TitleProps) =
 
   return (
     <Comp
-      className={(titleFont.className, cn(titleVariants({ as: styleAs ?? as }), className))}
+      className={cn(titleVariants({ as: styleAs ?? as }), titleFont.className, className)}
       {...props}
     />
   );

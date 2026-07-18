@@ -33,6 +33,7 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
       />
 
       <Career
+        id='work'
         theme='dark'
         data={data.career}
         className='pb-[calc(var(--py)*2)]'
@@ -55,6 +56,7 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
       />
 
       <About
+        id='about'
         theme='dark'
         data={data.about}
         className='rounded-t-4xl pb-[calc(var(--py)*2)]'

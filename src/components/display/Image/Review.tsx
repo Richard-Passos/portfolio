@@ -28,7 +28,7 @@ export const ImageReview = ({
 
         <span
           data-front
-          className='absolute inset-0 translate-y-full'
+          className='absolute inset-0 will-change-transform'
           style={{ backgroundColor: `hsl(var(--${color}))` }}
         />
       </div>

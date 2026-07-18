@@ -1,6 +1,4 @@
-import data from './Root.data';
-
-import { Fragment } from 'react';
+import data from './.data';
 
 import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
 import { Section, SectionProps } from '@/components/layout/Section';
@@ -13,19 +11,15 @@ import { Title } from '@/components/system/Title';
 import { MergeProps } from '@/types/MergeProps';
 import { Theme } from '@/types/Theme';
 import { cn } from '@/utils/cn';
-import { AnimateOnScroll } from '@/components/motion/Animate';
+import { FooterAnimation } from '@/components/layout/Footer/Animation';
 
 export type FooterProps = MergeProps<{ theme?: Theme }, SectionProps>;
 
 export const Footer = ({ className, ...props }: FooterProps) => {
   return (
-    <AnimateOnScroll
-      from={{ y: '-50%' }}
-      to={{ y: '0%' }}
-      start='center bottom'
-      end='center top'
-    >
+    <FooterAnimation>
       <Section
+        id='contact'
         asChild
         theme='light'
         className={cn(
@@ -108,6 +102,6 @@ export const Footer = ({ className, ...props }: FooterProps) => {
           <ScrollYLines className='inset-x-[2.5vw] top-24 bottom-[12%] -z-10' />
         </footer>
       </Section>
-    </AnimateOnScroll>
+    </FooterAnimation>
   );
 };

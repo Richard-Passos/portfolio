@@ -9,7 +9,7 @@ import { cn } from '@/utils/cn';
 export type LinkProps = MergeProps<{ disabled?: boolean }, ComponentProps<typeof NextLink>>;
 
 export const Link = ({ href, disabled, className, ...props }: LinkProps) => {
-  const isExternal = !href.toString().startsWith('/');
+  const isExternal = !/^(\/|#)/.test(href.toString());
 
   return (
     <NextLink
