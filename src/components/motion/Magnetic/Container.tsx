@@ -7,12 +7,15 @@ import { MagneticProvider } from '@/contexts/Magnetic';
 
 export type MagneticContainerProps = SlotProps;
 
-export const MagneticContainer = ({ ref, children }: MagneticContainerProps) => {
+export const MagneticContainer = ({ ref, ...props }: MagneticContainerProps) => {
   const innerRef = useRef<HTMLSlotElement>(null);
 
   return (
     <MagneticProvider container={innerRef}>
-      <Slot ref={ref}>{children}</Slot>
+      <Slot
+        ref={ref}
+        {...props}
+      />
     </MagneticProvider>
   );
 };

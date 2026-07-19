@@ -5,6 +5,7 @@ import { Projects, ProjectsProps } from '@/components/layout/Blocks/Projects';
 import { But, ButProps } from '@/components/layout/Blocks/But';
 import { About, AboutProps } from '@/components/layout/Blocks/About';
 import { Cta, CtaProps } from '@/components/layout/Blocks/Cta';
+import { Skills, SkillsProps } from '@/components/layout/Blocks/Skills';
 
 export type HomeTemplateProps = {
   data: {
@@ -15,6 +16,7 @@ export type HomeTemplateProps = {
     projects: ProjectsProps['data'];
     but: ButProps['data'];
     about: AboutProps['data'];
+    skills: SkillsProps['data'];
     cta: CtaProps['data'];
   };
 };
@@ -33,7 +35,6 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
       />
 
       <Career
-        id='work'
         theme='dark'
         data={data.career}
         className='pb-[calc(var(--py)*2)]'
@@ -47,7 +48,7 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
       <Projects
         theme='dark'
         data={data.projects}
-        className='rounded-b-4xl'
+        className='rounded-b-4xl py-[calc(var(--py)*2)]'
       />
 
       <But
@@ -56,10 +57,15 @@ export const HomeTemplate = ({ data }: HomeTemplateProps) => {
       />
 
       <About
-        id='about'
         theme='dark'
         data={data.about}
         className='rounded-t-4xl pb-[calc(var(--py)*2)]'
+      />
+
+      <Skills
+        theme='dark'
+        data={data.skills}
+        className='pb-[calc(var(--py)*2)]'
       />
 
       <Cta

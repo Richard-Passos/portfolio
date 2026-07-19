@@ -22,7 +22,10 @@ export const Career = ({ data, className, ...props }: CareerProps) => {
     >
       <ReviewTitleOnScroll>{data.title}</ReviewTitleOnScroll>
 
-      <CareerCatalog className='w-9/10' />
+      <CareerCatalog
+        id='work'
+        className='w-9/10'
+      />
     </Section>
   );
 };

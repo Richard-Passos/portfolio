@@ -62,11 +62,11 @@ export const ReviewTitleOnScrollClient = ({
 
       const scrollParentTween = gsap.to(containerParent, {
         ease: 'none',
-        y: '22.5%',
+        y: '24%',
         scrollTrigger: {
           trigger: containerParent,
           start: 'bottom bottom',
-          end: `+=${parentHeight * 0.225}`,
+          end: `+=${parentHeight * 0.24}`,
           scrub: true
         }
       });

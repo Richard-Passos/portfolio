@@ -15,7 +15,7 @@ export const Magnetic = ({ ref, strength, duration, ease, className, ...props }:
   const innerRef = useRef<HTMLSlotElement>(null);
   const { container } = useMagneticContext();
 
-  useMagnetic(container ?? innerRef, { strength, duration, ease });
+  useMagnetic(container?.current ? container : innerRef, { strength, duration, ease });
 
   return (
     <Slot

@@ -13,9 +13,9 @@ export const SmoothScroll = ({ ref, options, ...props }: SmoothScrollProps) => {
   const lenisRef = useRef<LenisRef>(null);
 
   useEffect(() => {
-    function update(time: number) {
+    const update = (time: number) => {
       lenisRef.current?.lenis?.raf(time * 1000);
-    }
+    };
 
     gsap.ticker.add(update);
     gsap.ticker.lagSmoothing(0);

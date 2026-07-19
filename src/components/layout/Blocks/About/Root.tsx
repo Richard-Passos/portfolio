@@ -36,6 +36,7 @@ export const About = ({ data, className, ...props }: AboutProps) => {
       <ReviewTitleOnScroll>{data.title}</ReviewTitleOnScroll>
 
       <BentoGrid
+        id='about'
         templates={{
           base: ['about', 'better', 'love', 'location', 'hobbies', 'gallery'],
           sm: [

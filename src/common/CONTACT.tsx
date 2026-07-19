@@ -1,7 +1,6 @@
 import { GithubIcon } from '@/components/system/Icon/Github';
 import { InstagramIcon } from '@/components/system/Icon/Instagram';
 import { LinkedinIcon } from '@/components/system/Icon/Linkedin';
-import { MugIcon } from '@/components/system/Icon/Mug';
 
 export const CONTACT = {
   email: 'richard.ac.passos12@gmail.com',
@@ -31,9 +30,5 @@ export const CONTACT = {
       label: 'Linkedin',
       icon: <LinkedinIcon />
     }
-  ],
-  buyCoffee: {
-    url: 'https://www.buymeacoffee.com/richardp.dev',
-    icon: <MugIcon />
-  }
+  ]
 } as const;

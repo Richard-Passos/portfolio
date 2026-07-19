@@ -4,6 +4,8 @@ import data from './.data';
 import Catalog, { CatalogProps } from '@/components/modules/Catalog';
 import { Project } from '@/types/Project';
 import { cn } from '@/utils/cn';
+import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
+import { PlusIcon } from '@/components/system/Icon/Plus';
 
 export type ProjectsCatalogProps = Omit<CatalogProps<Project>, 'items'>;
 

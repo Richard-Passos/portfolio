@@ -19,7 +19,6 @@ export const Footer = ({ className, ...props }: FooterProps) => {
   return (
     <FooterAnimation>
       <Section
-        id='contact'
         asChild
         theme='light'
         className={cn(
@@ -50,7 +49,10 @@ export const Footer = ({ className, ...props }: FooterProps) => {
             ))}
           </section>
 
-          <section className='mt-auto flex w-full gap-5 max-md:flex-col-reverse'>
+          <section
+            id='contact'
+            className='mt-auto flex w-full gap-5 max-md:flex-col-reverse'
+          >
             <Logo
               variant='secondary'
               className='mt-auto h-full grow'

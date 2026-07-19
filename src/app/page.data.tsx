@@ -1,7 +1,7 @@
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate/OnScroll';
 import { GlobeIcon } from '@/components/system/Icon/Globe';
 import { RocketIcon } from '@/components/system/Icon/Rocket';
-import { FlashIcon } from '@/components/system/Icon/Flash';
+import { BoltIcon } from '@/components/system/Icon/Bolt';
 import { CapIcon } from '@/components/system/Icon/Cap';
 import { SmileIcon } from '@/components/system/Icon/Smile';
 import { HomeTemplateProps } from '@/components/templates/Home';
@@ -10,6 +10,7 @@ import { LOCATION } from '@/common/LOCATION';
 import { GameControllerIcon } from '@/components/system/Icon/GameController';
 import { SparklesIcon } from '@/components/system/Icon/Sparkles';
 import { TrophyIcon } from '@/components/system/Icon/Trophy';
+import { SKILLS } from '@/common/SKILLS';
 
 const rotateAnimation = {
   from: {
@@ -47,7 +48,7 @@ export default {
       </>
     ),
     left: {
-      icon: <FlashIcon />,
+      icon: <BoltIcon />,
       title: 'Disponível para Trabalho',
       text: 'Aberto a oportunidades de estágio, freelance e projetos onde eu possa construir algo que faça diferença.'
     },
@@ -198,6 +199,10 @@ export default {
         ]
       }
     }
+  },
+  skills: {
+    title: 'Hard Skills',
+    items: SKILLS
   },
   cta: {
     title: 'CTA',
