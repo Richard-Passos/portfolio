@@ -8,7 +8,7 @@ export const SpinCardTitle = ({ className, ...props }: SpinCardTitleProps) => {
     <Title
       as='h4'
       styleAs='h6'
-      className={cn('w-full text-center wrap-break-word', className)}
+      className={cn('text-center text-base wrap-break-word', className)}
       {...props}
     />
   );

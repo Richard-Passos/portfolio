@@ -7,10 +7,7 @@ export const SpinCardFront = ({ className, ...props }: SpinCardFrontProps) => {
   return (
     <SlotElement
       tag='div'
-      className={cn(
-        'flex size-full items-center justify-center border bg-body backface-hidden',
-        className
-      )}
+      className={cn('flex size-full items-center justify-center backface-hidden', className)}
       {...props}
     />
   );

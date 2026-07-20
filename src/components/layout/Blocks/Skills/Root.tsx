@@ -1,4 +1,3 @@
-import { cn } from '@/utils/cn';
 import { Section, SectionProps } from '@/components/layout/Section';
 import { MergeProps } from '@/types/MergeProps';
 import { ReactNode } from 'react';
@@ -8,26 +7,20 @@ import SpinCard from '@/components/display/Card/Spin';
 
 export type SkillsProps = MergeProps<{ data: { title: ReactNode; items: Skill[] } }, SectionProps>;
 
-export const Skills = ({ data, className, ...props }: SkillsProps) => {
+export const Skills = ({ data, ...props }: SkillsProps) => {
   return (
-    <Section
-      className={cn('grid place-items-center items-start gap-16 lg:grid-cols-12', className)}
-      {...props}
-    >
+    <Section {...props}>
       <StaggeredTitleOnView
-        as='h4'
-        className='lg:col-span-4'
+        as='h2'
+        className='max-w-5xl text-center'
       >
         {data.title}
       </StaggeredTitleOnView>
 
-      <ul className='flex w-full flex-wrap justify-end gap-4 lg:col-span-8'>
+      <SpinCard.Group className='mt-24'>
         {data.items.map((el) => (
-          <SpinCard
-            asChild
-            key={el.id}
-          >
-            <li>
+          <SpinCard key={el.id}>
+            <SpinCard.Content>
               <SpinCard.Front>
                 <SpinCard.Icon>{el.icon}</SpinCard.Icon>
               </SpinCard.Front>
@@ -35,10 +28,12 @@ export const Skills = ({ data, className, ...props }: SkillsProps) => {
               <SpinCard.Back>
                 <SpinCard.Title>{el.title}</SpinCard.Title>
               </SpinCard.Back>
-            </li>
+            </SpinCard.Content>
+
+            <SpinCard.Border />
           </SpinCard>
         ))}
-      </ul>
+      </SpinCard.Group>
     </Section>
   );
 };

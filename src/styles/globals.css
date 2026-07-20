@@ -125,6 +125,26 @@
 }
 
 @layer base {
+  [data-title-animated] .char {
+    @apply relative overflow-hidden text-body-emphasis/2;
+
+    .char-copy {
+      @apply absolute inset-0;
+
+      &.char-copy-top {
+        @apply text-primary;
+        will-change: clip-path;
+        clip-path: inset(0% 0% var(--y1) 0%);
+      }
+
+      &.char-copy-bottom {
+        @apply text-body-emphasis;
+        will-change: clip-path;
+        clip-path: inset(0% 0% var(--y2) 0%);
+      }
+    }
+  }
+
   .disable-transitions,
   .disable-transitions * {
     transition: none !important;

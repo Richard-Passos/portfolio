@@ -19,7 +19,7 @@ export const ProjectsCatalog = ({ className, ...props }: ProjectsCatalogProps) =
       <Catalog.Empty className='flex w-full'>{data.empty}</Catalog.Empty>
 
       <Catalog.List asChild>
-        <ProjectCard.Gallery>
+        <ProjectCard.Group>
           {data.items.map((el, i) => (
             <ProjectCard key={el.id}>
               <ProjectCard.Badge index={i} />
@@ -43,7 +43,7 @@ export const ProjectsCatalog = ({ className, ...props }: ProjectsCatalogProps) =
               </ProjectCard.Header>
             </ProjectCard>
           ))}
-        </ProjectCard.Gallery>
+        </ProjectCard.Group>
       </Catalog.List>
     </Catalog>
   );

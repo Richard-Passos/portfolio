@@ -21,7 +21,7 @@ export const titleVariants = cva('', {
   variants: {
     as: {
       h1: 'text-[clamp(3rem,0.6786rem+5.8036vw,6rem)] leading-none font-black uppercase',
-      h2: 'text-[clamp(3rem,1rem+6.25vw,4rem)] leading-none',
+      h2: 'text-[clamp(3rem,0.6786rem+5.8036vw,6rem)] leading-none',
       h3: 'text-[clamp(2.25rem,1.7143rem+1.3393vw,3rem)] leading-[1.2]',
       h4: 'text-[clamp(2rem,1.6429rem+0.8929vw,2.5rem)] leading-[1.3]',
       h5: 'text-[clamp(1.25rem,1.0714rem+0.4464vw,1.5rem)] leading-[1.4]',

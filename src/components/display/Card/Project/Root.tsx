@@ -7,7 +7,12 @@ export const ProjectCard = ({ className, ...props }: ProjectCardProps) => {
   return (
     <SlotElement
       tag='li'
-      className={cn('relative w-full border bg-body md:even:-translate-y-64', className)}
+      className={cn(
+        'relative w-full border bg-body',
+        'sm:max-lg:translate-y-(--y1) sm:max-lg:even:translate-y-(--y2)',
+        'lg:translate-y-(--y1) lg:nth-[3n+2]:translate-y-(--y2)',
+        className
+      )}
       {...props}
     />
   );

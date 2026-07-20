@@ -6,7 +6,7 @@ export type CareerCardProps = AccordionItemProps;
 export const CareerCard = ({ className, ...props }: CareerCardProps) => {
   return (
     <AccordionItem
-      className={cn('border bg-body', className)}
+      className={cn('-mt-px border bg-body', className)}
       {...props}
     />
   );

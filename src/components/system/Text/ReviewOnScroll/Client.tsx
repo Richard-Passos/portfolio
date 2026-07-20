@@ -47,7 +47,6 @@ export const ReviewTextOnScrollClient = ({
         {
           ease: 'none',
           backgroundSize: '100% 100%, 100% 100%',
-          duration: 1,
           stagger: 1,
           ...to,
           scrollTrigger: {

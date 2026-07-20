@@ -17,12 +17,14 @@ export const CareerCatalog = ({ className, ...props }: CareerCatalogProps) => {
       <Catalog.Empty className='flex w-full'>{data.empty}</Catalog.Empty>
 
       <Catalog.List asChild>
-        <CareerCard.Accordion defaultValue={['napead']}>
+        <CareerCard.Accordion
+          defaultValue={['napead']}
+          className='w-full'
+        >
           {data.items.map((el, i) => (
             <CareerCard
               key={el.id}
               value={el.id}
-              className='relative not-first:-mt-px'
             >
               <CareerCard.Header>
                 <CareerCard.Badge index={i} />

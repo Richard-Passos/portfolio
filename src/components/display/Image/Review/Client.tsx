@@ -6,9 +6,9 @@ import { Slot, SlotProps } from '@/components/misc/Slot';
 import { setRefs } from '@/utils/setRefs';
 import { gsap, useGSAP } from '@/hooks/useGSAP';
 
-export type ImageClientProps = SlotProps;
+export type ImageReviewClientProps = SlotProps;
 
-export const ImageClient = ({ ref, ...props }: ImageClientProps) => {
+export const ImageReviewClient = ({ ref, ...props }: ImageReviewClientProps) => {
   const innerRef = useRef<HTMLSlotElement>(null);
 
   useGSAP(
@@ -24,7 +24,7 @@ export const ImageClient = ({ ref, ...props }: ImageClientProps) => {
           trigger: el,
           scrub: true,
           start: 'top 75%',
-          end: 'bottom 75%'
+          end: 'center center'
         }
       });
 
@@ -36,7 +36,7 @@ export const ImageClient = ({ ref, ...props }: ImageClientProps) => {
           trigger: el,
           scrub: true,
           start: 'top 75%',
-          end: 'bottom 75%'
+          end: 'center center'
         }
       });
 

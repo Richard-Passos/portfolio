@@ -4,25 +4,27 @@ import { cn } from '@/utils/cn';
 import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate';
 
-export type ProjectCardGalleryProps = SlotElementProps<'ul'>;
+export type ProjectCardGroupProps = SlotElementProps<'ul'>;
 
-export const ProjectCardGalleryAnimation = {
+export const ProjectCardGroupAnimation = {
   target: 'li',
   from: {
-    y: (i) => [0, -256][i % 2] ?? 0
+    '--y1': '0px',
+    '--y2': '-192px'
   },
   to: {
-    y: (i) => [-128, 0][i % 2] ?? 0
+    '--y1': '-192px',
+    '--y2': '0px'
   },
   end: 'bottom top'
 } satisfies AnimateOnScrollConfig;
 
-export const ProjectCardGallery = ({ className, ...props }: ProjectCardGalleryProps) => {
+export const ProjectCardGroup = ({ className, ...props }: ProjectCardGroupProps) => {
   return (
-    <AnimateOnScroll config={ProjectCardGalleryAnimation}>
+    <AnimateOnScroll config={ProjectCardGroupAnimation}>
       <SlotElement
         tag='ul'
-        className={cn('grid w-full gap-4 sm:grid-cols-2 md:pt-64', className)}
+        className={cn('grid w-full gap-4 sm:grid-cols-2 sm:pt-48 lg:grid-cols-3', className)}
         {...props}
       />
     </AnimateOnScroll>

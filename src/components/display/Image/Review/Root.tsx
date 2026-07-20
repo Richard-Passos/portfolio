@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 
 import { cn } from '@/utils/cn';
-import { ImageClient } from './Client';
+import { ImageReviewClient } from './Client';
 import { MergeProps } from '@/types/MergeProps';
 import { Colors } from '@/types/Colors';
 
@@ -15,7 +15,7 @@ export const ImageReview = ({
   ...props
 }: ImageReviewProps) => {
   return (
-    <ImageClient>
+    <ImageReviewClient>
       <div
         className={cn('relative overflow-hidden *:will-change-transform', className)}
         style={{
@@ -32,6 +32,6 @@ export const ImageReview = ({
           style={{ backgroundColor: `hsl(var(--${color}))` }}
         />
       </div>
-    </ImageClient>
+    </ImageReviewClient>
   );
 };

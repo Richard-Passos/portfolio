@@ -8,14 +8,12 @@ import { setRefs } from '@/utils/setRefs';
 import { MergeProps } from '@/types/MergeProps';
 
 export type ReviewTitleOnScrollClientConfig = {
-  type?: 'lines' | 'words' | 'chars';
   target: gsap.DOMTarget;
 };
 
 export type ReviewTitleOnScrollClientProps = MergeProps<ReviewTitleOnScrollClientConfig, SlotProps>;
 
 export const ReviewTitleOnScrollClient = ({
-  type = 'chars',
   target,
   ref,
   ...props
@@ -28,7 +26,17 @@ export const ReviewTitleOnScrollClient = ({
       const containerParent = innerRef.current?.parentElement;
       if (!container || !containerParent) return;
 
-      const split = SplitText.create(target, { type });
+      const split = SplitText.create(target, { type: 'chars', charsClass: 'char' });
+      split.chars.forEach((c) => {
+        const text = c.textContent;
+
+        c.innerHTML = `
+          <span>${text}</span>
+          <span class='char-copy char-copy-top'>${text}</span>
+          <span class='char-copy char-copy-bottom'>${text}</span>
+        `;
+      });
+
       const containerWidth = container.getBoundingClientRect().width;
       const containerHeight = container.getBoundingClientRect().height;
       const parentHeight = containerParent.getBoundingClientRect().height;
@@ -36,18 +44,39 @@ export const ReviewTitleOnScrollClient = ({
       const remainWidth = containerWidth - targetwidth;
       const remainHeight = parentHeight - containerHeight;
 
-      const reviewTween = gsap.from(split[type], {
-        ease: 'none',
-        scale: 0.85,
-        opacity: 0.016,
-        stagger: 0.6,
-        scrollTrigger: {
-          trigger: container,
-          start: '75% bottom',
-          end: `+=${remainHeight + containerHeight * 0.25}`,
-          scrub: true
+      const review1Tween = gsap.fromTo(
+        split.chars,
+        {
+          '--y1': '100%'
+        },
+        {
+          ease: 'none',
+          '--y1': '0%',
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: container,
+            start: '75% bottom',
+            end: `+=${containerHeight * 0.25 + remainHeight}`,
+            scrub: true
+          }
         }
-      });
+      );
+
+      const review2Tween = gsap.fromTo(
+        split.chars,
+        { '--y2': '100%' },
+        {
+          ease: 'none',
+          '--y2': '0%',
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: container,
+            start: '82% bottom',
+            end: `+=${containerHeight * 0.18 + remainHeight + parentHeight * 0.24}`,
+            scrub: true
+          }
+        }
+      );
 
       const scrollTween = gsap.to(target, {
         ease: 'none',
@@ -62,30 +91,32 @@ export const ReviewTitleOnScrollClient = ({
 
       const scrollParentTween = gsap.to(containerParent, {
         ease: 'none',
-        y: '24%',
+        y: '22%',
         scrollTrigger: {
           trigger: containerParent,
           start: 'bottom bottom',
-          end: `+=${parentHeight * 0.24}`,
+          end: `+=${parentHeight * 0.22}`,
           scrub: true
         }
       });
 
       return () => {
         split.revert();
-        reviewTween.kill();
+        review1Tween.kill();
+        review2Tween.kill();
         scrollTween.kill();
         scrollParentTween.kill();
       };
     },
     {
       scope: innerRef,
-      dependencies: [type, target]
+      dependencies: [target]
     }
   );
 
   return (
     <Slot
+      data-title-animated
       ref={setRefs(ref, innerRef)}
       {...props}
     />

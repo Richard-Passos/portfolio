@@ -1,6 +1,6 @@
 import { ProjectCardBadge } from './Badge';
 import { ProjectCardExtra } from './Extra';
-import { ProjectCardGallery } from './Gallery';
+import { ProjectCardGroup } from './Group';
 import { ProjectCardHeader } from './Header';
 import { ProjectCardImage } from './Image';
 import { ProjectCard } from './Root';
@@ -9,7 +9,7 @@ import { ProjectCardTrigger } from './Trigger';
 
 export * from './Badge';
 export * from './Extra';
-export * from './Gallery';
+export * from './Group';
 export * from './Header';
 export * from './Image';
 export * from './Root';
@@ -19,7 +19,7 @@ export * from './Trigger';
 export default Object.assign(ProjectCard, {
   Badge: ProjectCardBadge,
   Extra: ProjectCardExtra,
-  Gallery: ProjectCardGallery,
+  Group: ProjectCardGroup,
   Header: ProjectCardHeader,
   Image: ProjectCardImage,
   Title: ProjectCardTitle,
