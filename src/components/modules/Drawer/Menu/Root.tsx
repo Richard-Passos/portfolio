@@ -5,15 +5,13 @@ import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
 import Drawer, { type DrawerProps } from '@/components/modules/Drawer';
 import { Link } from '@/components/navigation/Link';
 import { LocaleMenu } from '@/components/navigation/Menu/variants/Locale';
-import { NavTabs, NavTabsProps } from '@/components/navigation/Tabs/variants/Nav';
 import { Text } from '@/components/system/Text';
-import { MergeProps } from '@/types/MergeProps';
 
 import { MenuDrawerTrigger, MenuDrawerTriggerMobile } from './Trigger';
 
-export type MenuDrawerProps = MergeProps<{ nav: NavTabsProps['items'] }, DrawerProps>;
+export type MenuDrawerProps = DrawerProps;
 
-export const MenuDrawer = async ({ nav, ...props }: MenuDrawerProps) => {
+export const MenuDrawer = async ({ ...props }: MenuDrawerProps) => {
   return (
     <Drawer
       swipeDirection='end'
@@ -32,13 +30,17 @@ export const MenuDrawer = async ({ nav, ...props }: MenuDrawerProps) => {
         <Drawer.Content className='flex max-w-xl grow flex-col border-l p-10'>
           <Drawer.Title className='border-b px-2 py-4'>{data.menu.label}</Drawer.Title>
 
-          <NavTabs
-            id='menu-drawer'
-            items={nav}
-            data-autofocus
-            orientation='vertical'
-            className='mx-4 my-8 text-4xl [&_a]:h-16!'
-          />
+          <nav className='mx-4 my-8 flex flex-col'>
+            {data.nav.map((el) => (
+              <MagneticButton
+                key={el.url}
+                href={el.url}
+                className='h-16 rounded-none text-4xl'
+              >
+                {el.label}
+              </MagneticButton>
+            ))}
+          </nav>
 
           <div className='mt-auto flex flex-wrap px-4'>
             <LocaleMenu className='mr-2.5' />

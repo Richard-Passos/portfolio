@@ -1,7 +1,4 @@
-import {
-  MenuDrawerTriggerClient,
-  MenuDrawerTriggerClientProps
-} from '@/components/modules/Drawer/variants/Menu/Trigger/Client';
+import { MenuDrawerTriggerClient, MenuDrawerTriggerClientProps } from './Client';
 import { AnimateOnView, AnimateOnViewConfig } from '@/components/motion/Animate';
 import { MenuIcon } from '@/components/system/Icon/Menu';
 import { TimesIcon } from '@/components/system/Icon/Times';

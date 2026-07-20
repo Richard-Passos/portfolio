@@ -8,5 +8,6 @@ export default {
     close: 'Fechar menu'
   },
   socials: CONTACT.socials,
+  nav: PAGES.main,
   legalPages: PAGES.legal
 };
