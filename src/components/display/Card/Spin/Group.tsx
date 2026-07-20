@@ -7,7 +7,7 @@ export const SpinCardGroup = ({ className, ...props }: SpinCardGroupProps) => {
   return (
     <SlotElement
       tag='ul'
-      className={cn('group flex w-full flex-wrap justify-center', className)}
+      className={cn('flex w-full flex-wrap justify-center', className)}
       {...props}
     />
   );
