@@ -183,7 +183,7 @@ export default {
             alt: ''
           },
           {
-            src: '/images/about-01.webp',
+            src: '/images/couple.jpeg',
             alt: ''
           },
           {
@@ -191,7 +191,7 @@ export default {
             alt: ''
           },
           {
-            src: '/images/about-02.webp',
+            src: '/images/lola.jpeg',
             alt: ''
           }
         ]

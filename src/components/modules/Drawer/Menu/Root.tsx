@@ -77,7 +77,7 @@ export const MenuDrawer = (props: MenuDrawerProps) => {
       <Drawer.Positioner>
         <Drawer.Content
           ref={contentRef}
-          className='max-w-xl border-l px-[6%] pt-24 pb-16 will-change-transform'
+          className='max-w-xl border-l px-[6%] py-8 will-change-transform sm:pt-24 sm:pb-16'
         >
           <Drawer.Title className='border-b px-2 py-4'>{data.menu.label}</Drawer.Title>
 

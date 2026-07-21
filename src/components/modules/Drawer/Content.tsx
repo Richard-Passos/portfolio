@@ -16,7 +16,7 @@ export const DrawerContent = ({ className, ref, ...props }: DrawerContentProps) 
     <UiDrawerContent
       ref={ref}
       data-lenis-prevent
-      className={cn('relative flex size-full flex-col bg-body', className)}
+      className={cn('relative flex size-full flex-col overflow-auto bg-body', className)}
       {...props}
     />
   );
