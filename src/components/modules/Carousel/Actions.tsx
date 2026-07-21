@@ -7,7 +7,7 @@ export const CarouselActions = ({ className, ...props }: CarouselActionsProps) =
   return (
     <SlotElement
       tag='section'
-      className={cn('splide__arrows flex items-center gap-2.5', className)}
+      className={cn('splide__arrows', className)}
       {...props}
     />
   );

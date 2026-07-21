@@ -25,7 +25,6 @@ export const CarouselBase = ({ options, className, onMove, ...props }: CarouselP
       autoHeight: true,
       focus: 'center',
       trimSpace: false,
-      pagination: false,
       gap: 'calc(var(--spacing) * 2.5)',
       ...options
     }),

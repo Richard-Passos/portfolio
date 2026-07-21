@@ -242,4 +242,18 @@
   .splide--rtl {
     direction: rtl;
   }
+  .splide__arrows {
+    @apply flex items-center gap-2.5;
+  }
+  .splide__pagination {
+    @apply flex h-fit gap-1 rounded-full bg-body/75 p-1.5;
+
+    li {
+      @apply flex size-2 items-center justify-center;
+
+      button {
+        @apply size-full cursor-pointer rounded-full bg-body-emphasis/16 hover:bg-body-emphasis/32 aria-selected:bg-body-emphasis;
+      }
+    }
+  }
 }
