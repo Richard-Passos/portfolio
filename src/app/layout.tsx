@@ -7,6 +7,7 @@ import { StoreProvider } from '@/contexts/Store';
 import '@/styles/globals.css';
 import { cn } from '@/utils/cn';
 import localFont from 'next/font/local';
+import { Theme } from '@/components/misc/Theme';
 
 export type RootLayoutProps = PropsWithChildren;
 
@@ -19,10 +20,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html
       lang='pt-BR'
-      className={cn(
-        'overflow-x-clip has-[body[data-scroll-lock]]:overflow-y-hidden',
-        displayFont.className
-      )}
+      className={cn('scrollbar-gutter-stable overflow-x-clip', displayFont.className)}
     >
       <body className='relative flex min-h-(--h) flex-col items-center overflow-x-clip bg-body [--h:min(100dvh,var(--max-height-bounds))]'>
         <StoreProvider>

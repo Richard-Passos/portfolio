@@ -25,15 +25,15 @@ export const MenuDrawerTriggerAnimation = {
 export const MenuDrawerTrigger = ({ data, className, ...props }: MenuDrawerTriggerProps) => {
   return (
     <AnimateOnView config={MenuDrawerTriggerAnimation}>
-      <div className='fixed top-(--side) right-[calc(var(--side)+var(--scroll-bar-size,0px))] z-50 [--side:--spacing(4)] has-focus-within:transform-[scale(1)]! has-data-[state=open]:transform-[scale(1)]! sm:[--side:--spacing(8)]'>
+      <div className='fixed top-4 right-4 z-50 has-focus-visible:transform-[scale(1)]! has-data-[state=open]:transform-[scale(1)]! sm:top-8 sm:right-8'>
         <MenuDrawerTriggerClient
           iconOnly
-          className={cn('h-16 rounded-full border-border text-4xl sm:h-20', className)}
+          className={cn('h-12 rounded-full border-border text-2xl sm:h-20 sm:text-4xl', className)}
           {...props}
         >
-          <MenuIcon className='group-data-[state=open]/button:hidden' />
+          <MenuIcon className='transition-[transform,opacity] duration-150 group-data-[state=open]/button:scale-50 group-data-[state=open]/button:opacity-0' />
 
-          <TimesIcon className='absolute group-data-[state=closed]/button:hidden' />
+          <TimesIcon className='absolute transition-[transform,opacity] duration-150 group-data-[state=closed]/button:scale-50 group-data-[state=closed]/button:opacity-0' />
 
           <span className='sr-only data-[state=open]:hidden'>{data.open}</span>
 

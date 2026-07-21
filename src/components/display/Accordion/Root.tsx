@@ -3,9 +3,9 @@
 import { MergeProps } from '@/types/MergeProps';
 import { AccordionRoot, AccordionRootProps } from '@ark-ui/react';
 import { ScrollTrigger } from '@/hooks/useGSAP';
-import { RefObject } from 'react';
+import { Ref } from 'react';
 
-export type AccordionProps = MergeProps<{ ref?: RefObject<HTMLDivElement> }, AccordionRootProps>;
+export type AccordionProps = MergeProps<{ ref?: Ref<HTMLDivElement> }, AccordionRootProps>;
 
 export const Accordion = (props: AccordionProps) => {
   return (

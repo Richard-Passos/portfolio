@@ -179,15 +179,15 @@ export default {
       gallery: {
         images: [
           {
-            src: '/images/selfie.webp',
-            alt: ''
-          },
-          {
-            src: '/images/about-00.webp',
+            src: '/images/selfie_00.jpeg',
             alt: ''
           },
           {
             src: '/images/about-01.webp',
+            alt: ''
+          },
+          {
+            src: '/images/selfie_01.jpeg',
             alt: ''
           },
           {

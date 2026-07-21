@@ -1,13 +1,13 @@
 'use client';
 
 import { LenisProps, LenisRef, ReactLenis } from 'lenis/react';
-import { RefObject, useEffect, useRef } from 'react';
+import { Ref, useEffect, useRef } from 'react';
 
 import { gsap } from '@/hooks/useGSAP';
 import { MergeProps } from '@/types/MergeProps';
 import { setRefs } from '@/utils/setRefs';
 
-export type SmoothScrollProps = MergeProps<{ ref?: RefObject<LenisRef | null> }, LenisProps>;
+export type SmoothScrollProps = MergeProps<{ ref?: Ref<LenisRef> }, LenisProps>;
 
 export const SmoothScroll = ({ ref, options, ...props }: SmoothScrollProps) => {
   const lenisRef = useRef<LenisRef>(null);

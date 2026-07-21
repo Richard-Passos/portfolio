@@ -14,7 +14,7 @@ export const DrawerPositioner = ({ className, ...props }: DrawerPositionerProps)
     <UiDrawerPositioner
       data-lenis-prevent
       className={cn(
-        'fixed inset-0 flex',
+        'fixed -inset-px flex focus-visible:outline-none',
         'data-[swipe-direction=up]:items-start data-[swipe-direction=up]:justify-center',
         'data-[swipe-direction=down]:items-end data-[swipe-direction=down]:justify-center',
         'data-[swipe-direction=left]:items-stretch data-[swipe-direction=left]:justify-start',
