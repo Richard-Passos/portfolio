@@ -35,7 +35,7 @@ export const MenuDrawer = async ({ ...props }: MenuDrawerProps) => {
               <MagneticButton
                 key={el.url}
                 href={el.url}
-                className='h-16 rounded-none text-4xl'
+                className='h-16 w-fit rounded-none text-4xl'
               >
                 {el.label}
               </MagneticButton>

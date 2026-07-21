@@ -19,6 +19,7 @@ export const GalleryCarousel = ({
   return (
     <Carousel
       options={{
+        type: 'loop',
         arrows: false,
         i18n: data,
         ...options
