@@ -7,7 +7,6 @@ import { StoreProvider } from '@/contexts/Store';
 import '@/styles/globals.css';
 import { cn } from '@/utils/cn';
 import localFont from 'next/font/local';
-import { Theme } from '@/components/misc/Theme';
 
 export type RootLayoutProps = PropsWithChildren;
 
