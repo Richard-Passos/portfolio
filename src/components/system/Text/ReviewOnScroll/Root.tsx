@@ -1,21 +1,12 @@
-import { MergeProps } from '@/types/MergeProps';
 import { Text, TextProps } from '@/components/system/Text/Root';
-import {
-  ReviewTextOnScrollClient,
-  ReviewTextOnScrollClientConfig
-} from '@/components/system/Text/ReviewOnScroll/Client';
+import { ReviewTextOnScrollAnim } from '@/components/system/Text/ReviewOnScroll/Anim';
 
-export type ReviewTextOnScrollProps = MergeProps<ReviewTextOnScrollClientConfig, TextProps>;
+export type ReviewTextOnScrollProps = TextProps;
 
-export const ReviewTextOnScroll = ({ type, to, start, end, ...props }: ReviewTextOnScrollProps) => {
+export const ReviewTextOnScroll = (props: ReviewTextOnScrollProps) => {
   return (
-    <ReviewTextOnScrollClient
-      type={type}
-      to={to}
-      start={start}
-      end={end}
-    >
+    <ReviewTextOnScrollAnim>
       <Text {...props} />
-    </ReviewTextOnScrollClient>
+    </ReviewTextOnScrollAnim>
   );
 };

@@ -2,16 +2,16 @@ import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 
 import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
-import { SectionClient, SectionClientProps } from './Client';
+import { SectionAnim, SectionAnimProps } from './Anim';
 
 export type SectionProps = MergeProps<
-  Pick<SectionClientProps, 'theme' | 'forceTheme'>,
+  Pick<SectionAnimProps, 'theme' | 'forceTheme'>,
   SlotElementProps<'section'>
 >;
 
 export const Section = ({ theme, forceTheme, className, ...props }: SectionProps) => {
   return (
-    <SectionClient
+    <SectionAnim
       theme={theme}
       forceTheme={forceTheme}
     >
@@ -25,6 +25,6 @@ export const Section = ({ theme, forceTheme, className, ...props }: SectionProps
         )}
         {...props}
       />
-    </SectionClient>
+    </SectionAnim>
   );
 };

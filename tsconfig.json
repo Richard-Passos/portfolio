@@ -31,7 +31,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "src/common/SKILLS.tss"
+    "src/common/SKILLS.tss",
+    "src/components/system/LocalTime/.data.tsx"
   ],
   "exclude": ["node_modules"]
 }

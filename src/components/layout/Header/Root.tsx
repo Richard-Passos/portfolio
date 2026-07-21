@@ -5,9 +5,9 @@ import { ComponentProps } from 'react';
 import { Theme } from '@/components/misc/Theme';
 import { MenuDrawer } from '@/components/modules/Drawer/Menu';
 import { Logo } from '@/components/navigation/Logo';
-import { LocaleMenu } from '@/components/navigation/Menu/variants/Locale';
+import { LocaleMenu } from '@/components/navigation/Menu/Locale';
 import { cn } from '@/utils/cn';
-import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
+import { MagneticButton } from '@/components/input/Button/Magnetic';
 
 export type HeaderProps = ComponentProps<'header'>;
 

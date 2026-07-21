@@ -9,9 +9,9 @@ import { Slot, SlotProps } from '@/components/misc/Slot';
 import { setRefs } from '@/utils/setRefs';
 import { MergeProps } from '@/types/MergeProps';
 
-export type SectionClientProps = MergeProps<{ theme: Theme; forceTheme?: boolean }, SlotProps>;
+export type SectionAnimProps = MergeProps<{ theme: Theme; forceTheme?: boolean }, SlotProps>;
 
-export const SectionClient = ({ theme, forceTheme, ref, ...props }: SectionClientProps) => {
+export const SectionAnim = ({ theme, forceTheme, ref, ...props }: SectionAnimProps) => {
   const { setTheme } = useThemeContext();
   const innerRef = useRef<HTMLSlotElement>(null);
 
@@ -43,10 +43,6 @@ export const SectionClient = ({ theme, forceTheme, ref, ...props }: SectionClien
         onEnter: applyTheme,
         onEnterBack: applyTheme
       });
-
-      return () => {
-        trigger.kill();
-      };
     },
     {
       scope: innerRef,

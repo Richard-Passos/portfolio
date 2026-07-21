@@ -45,10 +45,6 @@ export const ButAnim = ({ className, ...props }: ButAnimProps) => {
             },
             '>-0.2'
           );
-
-        return () => {
-          tl.kill();
-        };
       }}
       className={cn('min-h-[calc(var(--h)*3)]', className)}
       {...props}

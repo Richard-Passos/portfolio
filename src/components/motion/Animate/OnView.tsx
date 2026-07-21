@@ -32,12 +32,13 @@ export const AnimateOnView = ({ config, ref, ...props }: AnimateOnViewProps) => 
       if (!el) return;
 
       if (typeof config === 'function') {
-        return config(el);
+        config(el);
+        return;
       }
 
       const { target, from = {}, to, start, end } = config ?? {};
 
-      const tween = gsap.fromTo(target ?? el, from, {
+      gsap.fromTo(target ?? el, from, {
         ...to,
         scrollTrigger: {
           trigger: el,
@@ -47,15 +48,8 @@ export const AnimateOnView = ({ config, ref, ...props }: AnimateOnViewProps) => 
           ...(to?.scrollTrigger ?? {})
         }
       });
-
-      return () => {
-        tween.kill();
-      };
     },
-    {
-      scope: innerRef,
-      dependencies: [config]
-    }
+    { scope: innerRef }
   );
 
   return (

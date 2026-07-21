@@ -1,5 +1,5 @@
 import { Section, SectionProps } from '@/components/layout/Section';
-import { CareerCatalog } from '@/components/modules/Catalog/variants/Career';
+import { CareerCatalog } from '@/components/modules/Catalog/Career';
 import { ReviewTitleOnScroll } from '@/components/system/Title/ReviewOnScroll';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';

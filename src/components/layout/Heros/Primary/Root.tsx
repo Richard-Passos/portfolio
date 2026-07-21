@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 import { Section, SectionProps } from '@/components/layout/Section';
-import { ScrollYLines } from '@/components/misc/Lines/variants/ScrollY';
+import { ScrollYLines } from '@/components/misc/Lines/ScrollY';
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate/OnScroll';
 import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
 import { MergeProps } from '@/types/MergeProps';

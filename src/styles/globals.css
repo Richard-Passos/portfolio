@@ -147,6 +147,10 @@
     }
   }
 
+  [data-text-review] .word {
+    @apply -mb-4 bg-[linear-gradient(to_right,hsl(var(--body-emphasis))),linear-gradient(to_right,hsl(var(--body-emphasis)/.08))] bg-clip-text bg-no-repeat pb-4 text-transparent;
+  }
+
   .disable-transitions,
   .disable-transitions * {
     transition: none !important;

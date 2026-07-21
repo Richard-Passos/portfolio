@@ -1,5 +1,5 @@
 import { Section, SectionProps } from '@/components/layout/Section';
-import { ProjectsCatalog } from '@/components/modules/Catalog/variants/Projects';
+import { ProjectsCatalog } from '@/components/modules/Catalog/Projects';
 import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
 import { MergeProps } from '@/types/MergeProps';
 import { ReactNode } from 'react';

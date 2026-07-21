@@ -38,7 +38,7 @@ export const ReviewTitleOnScrollAnim = ({ className, ...props }: ReviewTitleOnSc
         const remainWidth = elWidth - titleWidth;
         const remainHeight = elHeight - stickyHeight;
 
-        const review1Tween = gsap.from(split.chars, {
+        gsap.from(split.chars, {
           ease: 'none',
           '--y1': '100%',
           stagger: 0.15,
@@ -50,7 +50,7 @@ export const ReviewTitleOnScrollAnim = ({ className, ...props }: ReviewTitleOnSc
           }
         });
 
-        const review2Tween = gsap.from(split.chars, {
+        gsap.from(split.chars, {
           ease: 'none',
           '--y2': '100%',
           stagger: 0.1,
@@ -62,7 +62,7 @@ export const ReviewTitleOnScrollAnim = ({ className, ...props }: ReviewTitleOnSc
           }
         });
 
-        const scrollTween = gsap.to(title, {
+        gsap.to(title, {
           ease: 'none',
           x: remainWidth,
           scrollTrigger: {
@@ -73,7 +73,7 @@ export const ReviewTitleOnScrollAnim = ({ className, ...props }: ReviewTitleOnSc
           }
         });
 
-        const scrollParentTween = gsap.to(el, {
+        gsap.to(el, {
           ease: 'none',
           y: '22%',
           scrollTrigger: {
@@ -83,14 +83,6 @@ export const ReviewTitleOnScrollAnim = ({ className, ...props }: ReviewTitleOnSc
             scrub: true
           }
         });
-
-        return () => {
-          split.revert();
-          review1Tween.kill();
-          review2Tween.kill();
-          scrollTween.kill();
-          scrollParentTween.kill();
-        };
       }}
       className={cn('min-h-[calc(var(--h)*2)]', className)}
       {...props}

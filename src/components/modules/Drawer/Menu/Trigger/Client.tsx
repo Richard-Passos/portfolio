@@ -1,6 +1,6 @@
 'use client';
 
-import { MagneticButton, MagneticButtonProps } from '@/components/input/Button/variants/Magnetic';
+import { MagneticButton, MagneticButtonProps } from '@/components/input/Button/Magnetic';
 import { DrawerTrigger } from '@/components/modules/Drawer';
 
 export type MenuDrawerTriggerClientProps = MagneticButtonProps;

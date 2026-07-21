@@ -1,8 +1,8 @@
 import data from './.data';
 
-import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
+import { MagneticButton } from '@/components/input/Button/Magnetic';
 import Drawer, { type DrawerProps } from '@/components/modules/Drawer';
-import { LocaleMenu } from '@/components/navigation/Menu/variants/Locale';
+import { LocaleMenu } from '@/components/navigation/Menu/Locale';
 
 import { MenuDrawerTrigger, MenuDrawerTriggerMobile } from './Trigger';
 

@@ -6,6 +6,7 @@ import { ComponentProps } from 'react';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { useLenis } from 'lenis/react';
+import { ScrollTrigger } from '@/hooks/useGSAP';
 
 export type LinkProps = MergeProps<{ disabled?: boolean }, ComponentProps<typeof NextLink>>;
 
@@ -30,7 +31,8 @@ export const Link = ({ href, disabled, className, ...props }: LinkProps) => {
         if (href.toString().startsWith('#')) {
           ev.preventDefault();
           lenis?.scrollTo(href.toString(), {
-            duration: 1.4
+            duration: 1.4,
+            onComplete: () => ScrollTrigger.refresh()
           });
         }
 
