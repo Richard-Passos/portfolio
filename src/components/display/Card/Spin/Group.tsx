@@ -11,23 +11,19 @@ export const SpinCardGroup = ({ className, ...props }: SpinCardGroupProps) => {
   return (
     <AnimateOnScroll
       config={(el) => {
-        const mm = gsap.matchMedia();
-
-        mm.add('(min-width: 768px)', () => {
-          gsap.from('li', {
-            opacity: 0,
-            y: 60,
-            scale: 0.8,
-            rotation: () => gsap.utils.random(-10, 10),
-            stagger: { amount: 0.8, from: 'random' },
-            ease: 'back.out(1.4)',
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 85%',
-              end: 'center center',
-              scrub: true
-            }
-          });
+        gsap.from('li', {
+          opacity: 0,
+          y: 60,
+          scale: 0.8,
+          rotation: () => gsap.utils.random(-10, 10),
+          stagger: { amount: 0.8, from: 'random' },
+          ease: 'back.out(1.4)',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            end: `+=${Math.min(el.offsetHeight, window.innerHeight) * 0.75}`,
+            scrub: true
+          }
         });
       }}
     >

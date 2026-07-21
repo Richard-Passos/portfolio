@@ -11,7 +11,7 @@ export const SpinCard = ({ className, ...props }: SpinCardProps) => {
       <SlotElement
         tag='li'
         className={cn(
-          'group/card relative isolate -mt-px -mr-px aspect-square w-full max-w-64 border border-transparent',
+          'group/card relative isolate -mt-px -mr-px aspect-square w-full max-w-48 border border-transparent sm:max-w-64',
           className
         )}
         {...props}

@@ -44,9 +44,12 @@ export const ButAnim = ({ className, ...props }: ButAnimProps) => {
               duration: 1
             },
             '>-0.2'
-          );
+          )
+
+          // Ensure the text holds the screen a little bit
+          .to('[data-text]', { duration: 0.5 }, '>');
       }}
-      className={cn('min-h-[calc(var(--h)*3)]', className)}
+      className={cn('min-h-[calc(var(--h)*3.25)]', className)}
       {...props}
     />
   );
