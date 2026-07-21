@@ -1,8 +1,9 @@
-/* import { usePathname, useRouter, useSearchParams } from '@/i18n/navigation';
- */ import { normId } from '@/utils/normId';
+import { normId } from '@/utils/normId';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 export const useSetSearchParams = () => {
-  /* const readOnlysearchParams = useSearchParams(),
+  const readOnlysearchParams = useSearchParams(),
     router = useRouter(),
     pathname = usePathname();
 
@@ -27,5 +28,4 @@ export const useSetSearchParams = () => {
   };
 
   return setSearchParams;
- */
 };
