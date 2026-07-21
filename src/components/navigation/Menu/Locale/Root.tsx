@@ -23,10 +23,13 @@ export const LocaleMenu = ({ wrapperProps, className, ...props }: LocaleMenuProp
       <Menu.Trigger asChild>
         <Button
           aria-label={data.label}
-          className={cn('min-w-32 justify-start border-border px-2.5 capitalize', className)}
+          className={cn(
+            'min-w-32 justify-start border-border px-2.5 text-sm capitalize',
+            className
+          )}
           {...props}
         >
-          <GlobeIcon className='size-6' />
+          <GlobeIcon className='size-[1.5em]' />
 
           {data.default.label}
         </Button>
