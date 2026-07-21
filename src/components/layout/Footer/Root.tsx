@@ -3,7 +3,6 @@ import data from './.data';
 import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
 import { Section, SectionProps } from '@/components/layout/Section';
 import { ScrollYLines } from '@/components/misc/Lines/variants/ScrollY';
-import { Link } from '@/components/navigation/Link';
 import { Logo } from '@/components/navigation/Logo';
 import { LocalTime } from '@/components/system/LocalTime';
 import { Text } from '@/components/system/Text';
@@ -66,22 +65,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
                 {data.location.country}, {data.location.state}, <LocalTime />
               </Title>
 
-              <section className='mt-2.5 flex flex-col gap-2'>{data.description}</section>
-
-              <Text
-                small
-                className='mt-4 block max-sm:hidden'
-              >
-                {data.legalPages.map(({ id, label }) => (
-                  <Link
-                    key={id}
-                    href={`/legal/${id}`}
-                    className='text-placeholder hover:underline'
-                  >
-                    {label}.&nbsp;
-                  </Link>
-                ))}
-              </Text>
+              <Text className='mt-2.5'>{data.description}</Text>
             </section>
           </section>
 

@@ -9,7 +9,7 @@ export type SectionProps = MergeProps<
   SlotElementProps<'section'>
 >;
 
-export const Section = ({ theme, forceTheme, className, ref, ...props }: SectionProps) => {
+export const Section = ({ theme, forceTheme, className, ...props }: SectionProps) => {
   return (
     <SectionClient
       theme={theme}

@@ -5,7 +5,6 @@ import { BoltIcon } from '@/components/system/Icon/Bolt';
 import { CapIcon } from '@/components/system/Icon/Cap';
 import { SmileIcon } from '@/components/system/Icon/Smile';
 import { HomeTemplateProps } from '@/components/templates/Home';
-import { FingerprintIcon } from '@/components/system/Icon/Fingerprint';
 import { LOCATION } from '@/common/LOCATION';
 import { GameControllerIcon } from '@/components/system/Icon/GameController';
 import { SparklesIcon } from '@/components/system/Icon/Sparkles';
@@ -110,8 +109,7 @@ export default {
       <>
         <span>Nem tudo</span> <span className='ml-auto'>é tecnologia</span>
       </>
-    ),
-    icon: <FingerprintIcon />
+    )
   },
   about: {
     title: (

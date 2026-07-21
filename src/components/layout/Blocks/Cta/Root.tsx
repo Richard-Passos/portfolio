@@ -22,7 +22,9 @@ export const Cta = ({ data, className, ...props }: CtaProps) => {
         {data.title}
       </Title>
 
-      <ReviewTextOnScroll className='mt-4 mr-auto text-7xl'>{data.text}</ReviewTextOnScroll>
+      <ReviewTextOnScroll className='mt-4 mr-auto text-4xl md:text-7xl'>
+        {data.text}
+      </ReviewTextOnScroll>
 
       <Lines className='-z-10 border-y' />
     </Section>

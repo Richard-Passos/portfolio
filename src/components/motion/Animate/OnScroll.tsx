@@ -15,7 +15,7 @@ export type AnimateOnScrollConfig = {
   end?: string | number | ScrollTrigger.StartEndFunc;
 };
 
-export type AnimateOnScrollCallback = (el: HTMLSlotElement) => () => void;
+export type AnimateOnScrollCallback = (el: HTMLSlotElement) => void;
 
 export type AnimateOnScrollProps = MergeProps<
   { config: AnimateOnScrollConfig | AnimateOnScrollCallback },

@@ -30,7 +30,7 @@ export const ProjectsCatalog = ({ className, ...props }: ProjectsCatalogProps) =
               />
 
               <ProjectCard.Header>
-                <div>
+                <div className='overflow-hidden'>
                   <ProjectCard.Title>{el.title}</ProjectCard.Title>
 
                   <ProjectCard.Extra

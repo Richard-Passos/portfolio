@@ -24,7 +24,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
         displayFont.className
       )}
     >
-      <body className='relative flex min-h-svh flex-col items-center overflow-x-clip bg-body'>
+      <body className='relative flex min-h-(--h) flex-col items-center overflow-x-clip bg-body [--h:min(100dvh,var(--max-height-bounds))]'>
         <StoreProvider>
           <SmoothScroll>
             <Header />

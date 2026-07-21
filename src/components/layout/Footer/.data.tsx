@@ -1,6 +1,5 @@
 import { CONTACT } from '@/common/CONTACT';
 import { LOCATION } from '@/common/LOCATION';
-import { PAGES } from '@/common/PAGES';
 import { PaperPlaneIcon } from '@/components/system/Icon/PaperPlane';
 
 export default {
@@ -24,6 +23,5 @@ export default {
     </>
   ),
   location: LOCATION,
-  socials: CONTACT.socials,
-  legalPages: PAGES.legal
+  socials: CONTACT.socials
 };

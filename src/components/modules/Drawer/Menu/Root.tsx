@@ -1,11 +1,8 @@
 import data from './.data';
-import { Fragment } from 'react';
 
 import { MagneticButton } from '@/components/input/Button/variants/Magnetic';
 import Drawer, { type DrawerProps } from '@/components/modules/Drawer';
-import { Link } from '@/components/navigation/Link';
 import { LocaleMenu } from '@/components/navigation/Menu/variants/Locale';
-import { Text } from '@/components/system/Text';
 
 import { MenuDrawerTrigger, MenuDrawerTriggerMobile } from './Trigger';
 
@@ -56,22 +53,6 @@ export const MenuDrawer = async ({ ...props }: MenuDrawerProps) => {
               </MagneticButton>
             ))}
           </div>
-
-          <Text
-            small
-            className='mt-4 block px-4'
-          >
-            {data.legalPages.map(({ id, label }) => (
-              <Fragment key={id}>
-                <Link
-                  href={`/legal/${id}`}
-                  className='text-placeholder hover:underline'
-                >
-                  {label}.
-                </Link>{' '}
-              </Fragment>
-            ))}
-          </Text>
         </Drawer.Content>
       </Drawer.Positioner>
     </Drawer>

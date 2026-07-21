@@ -1,58 +1,56 @@
 'use client';
 
 import { cn } from '@/utils/cn';
-import { Section, SectionProps } from '@/components/layout/Section';
-import { Title } from '@/components/system/Title';
 
-import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
-import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate';
-import { MergeProps } from '@/types/MergeProps';
-import { ReactNode, useRef } from 'react';
-import { ReviewTextOnScroll } from '@/components/system/Text/ReviewOnScroll';
-import { Slot } from '@/components/misc/Slot';
-import { gsap, useGSAP } from '@/hooks/useGSAP';
-import { setRefs } from '@/utils/setRefs';
+import { AnimateOnScroll, AnimateOnScrollProps } from '@/components/motion/Animate';
+import { gsap } from '@/hooks/useGSAP';
 
-export type ButProps = MergeProps<{ target: gsap.TweenTarget }, SectionProps>;
+export type ButAnimProps = Omit<AnimateOnScrollProps, 'config'>;
 
-export const ButAnimation = {
-  target: '[data-animate]',
-  from: {},
-  to: {
-    y: 0,
-    scale: 1,
-    filter: 'blur(0px)'
-  },
-  end: 'top top'
-} satisfies AnimateOnScrollConfig;
-
-export const But = ({ target, ref, ...props }: ButProps) => {
-  const innerRef = useRef<HTMLSlotElement>(null);
-
-  useGSAP(
-    () => {
-      const el = innerRef.current;
-      if (!el) return;
-
-      const tween = gsap.from(target, {
-        ease: 'none',
-        y: 100,
-        scale: 0.85,
-        filter: 'blur(20px)',
-        scrollTrigger: {
-          trigger: el,
-          scrub: true,
-          start: 'bottom bottom',
-          end: `+=`
-        }
-      });
-    },
-    { scope: innerRef, dependencies: [target] }
-  );
-
+export const ButAnim = ({ className, ...props }: ButAnimProps) => {
   return (
-    <Slot
-      ref={setRefs(ref, innerRef)}
+    <AnimateOnScroll
+      config={(el) => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: el,
+            start: '15% bottom',
+            end: `+=${el.offsetHeight * 0.85}`,
+            scrub: true
+          }
+        });
+
+        tl.from('[data-title]', {
+          y: '-150%',
+          duration: 2
+        })
+
+          .to(
+            '[data-badge]',
+            {
+              scale: 40,
+              opacity: 0,
+              duration: 1
+            },
+            '>+0.2'
+          )
+
+          .from(
+            '[data-text]',
+            {
+              opacity: 0,
+              y: 120,
+              clipPath: 'inset(100% 0 0 0)',
+              duration: 1
+            },
+            '>-0.2'
+          );
+
+        return () => {
+          tl.kill();
+        };
+      }}
+      className={cn('min-h-[calc(var(--h)*3)]', className)}
       {...props}
     />
   );

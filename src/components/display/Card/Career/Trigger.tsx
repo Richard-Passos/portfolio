@@ -13,7 +13,7 @@ export const CareerCardTrigger = ({ className, ...props }: CareerCardTriggerProp
       <Button
         iconOnly
         className={cn(
-          '-mt-px ml-auto h-auto rounded-none border-t-border border-l-border px-12 text-placeholder transition-none engaged:text-primary',
+          '-mt-px ml-auto h-auto rounded-none border-t-border border-l-border px-6 text-placeholder transition-none md:px-12 engaged:text-primary',
           className
         )}
         {...props}

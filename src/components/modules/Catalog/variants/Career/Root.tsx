@@ -29,7 +29,7 @@ export const CareerCatalog = ({ className, ...props }: CareerCatalogProps) => {
               <CareerCard.Header>
                 <CareerCard.Badge index={i} />
 
-                <div>
+                <div className='overflow-hidden'>
                   <CareerCard.Title>{el.title}</CareerCard.Title>
 
                   <CareerCard.Extra

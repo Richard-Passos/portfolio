@@ -13,7 +13,7 @@ export const ProjectCardTrigger = ({ className, ...props }: ProjectCardTriggerPr
     >
       <Link
         className={cn(
-          'ml-auto h-auto shrink-0 rounded-none border-l-border p-8 text-2xl transition-none engaged:text-primary',
+          'ml-auto h-auto shrink-0 rounded-none border-l-border p-4 text-2xl transition-none md:p-8 engaged:text-primary',
           className
         )}
         {...props}
