@@ -4,12 +4,12 @@ import { RocketIcon } from '@/components/system/Icon/Rocket';
 import { BoltIcon } from '@/components/system/Icon/Bolt';
 import { CapIcon } from '@/components/system/Icon/Cap';
 import { SmileIcon } from '@/components/system/Icon/Smile';
-import { HomeTemplateProps } from '@/components/templates/Home';
 import { LOCATION } from '@/common/LOCATION';
 import { GameControllerIcon } from '@/components/system/Icon/GameController';
 import { SparklesIcon } from '@/components/system/Icon/Sparkles';
 import { TrophyIcon } from '@/components/system/Icon/Trophy';
 import { SKILLS } from '@/common/SKILLS';
+import { HomePageData } from './page';
 
 const rotateAnimation = {
   from: {
@@ -206,4 +206,4 @@ export default {
     title: 'CTA',
     text: 'Vamos juntos transformar ideias em soluções eficientes. Vamos fazer acontecer.'
   }
-} satisfies HomeTemplateProps['data'];
+} satisfies HomePageData;
