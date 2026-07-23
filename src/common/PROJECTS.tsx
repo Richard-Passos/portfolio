@@ -11,7 +11,6 @@ export const PROJECTS = [
     prev: 'in-progress',
     next: 'richard-portfolio',
     thumbnail: '/images/portal-ead-thumbnail.png',
-    banner: '/images/portal-ead-banner.png',
     images: ['/images/portal-ead-00.png', '/images/portal-ead-01.png', '/images/portal-ead-02.png']
   },
   {
@@ -24,7 +23,6 @@ export const PROJECTS = [
     prev: 'portal-ead',
     next: 'figma-store',
     thumbnail: '/images/portfolio-pt-thumbnail.webp',
-    banner: '/images/portfolio-pt-banner.webp',
     images: [
       '/images/portfolio-pt-00.webp',
       '/images/portfolio-pt-01.webp',
@@ -43,7 +41,6 @@ export const PROJECTS = [
     prev: 'richard-portfolio',
     next: 'nextflix',
     thumbnail: '/images/store-pt-thumbnail.webp',
-    banner: '/images/store-pt-banner.webp',
     images: [
       '/images/store-pt-00.webp',
       '/images/store-pt-01.webp',
@@ -61,7 +58,6 @@ export const PROJECTS = [
     prev: 'figma-store',
     next: 'todo-list',
     thumbnail: '/images/nextflix-thumbnail.webp',
-    banner: '/images/nextflix-banner.webp',
     images: ['/images/nextflix-00.webp', '/images/nextflix-01.webp', '/images/nextflix-02.webp']
   },
   {
@@ -74,20 +70,18 @@ export const PROJECTS = [
     prev: 'nextflix',
     next: 'in-progress',
     thumbnail: '/images/todo-thumbnail.webp',
-    banner: '/images/todo-banner.webp',
     images: ['/images/todo-00.webp']
   },
   {
     id: 'in-progress',
-    url: null,
+    url: undefined,
     title: 'Em Progresso',
     roles: ['Desenvolvimento'],
-    year: null,
+    year: undefined,
     text: 'Desenvolvendo um projeto empolgante, refinando ideias e implementando novas funcionalidades. Fique atento para atualizações!',
     prev: 'todo-list',
     next: 'portal-ead',
     thumbnail: '/images/in-progress.webp',
-    banner: '/images/in-progress.webp',
-    images: null
+    images: undefined
   }
 ] satisfies Project[];

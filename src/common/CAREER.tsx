@@ -6,7 +6,7 @@ export const CAREER = [
     title: 'NAPEAD UFRGS — Produção Multimídia para a Educação',
     roles: ['Bolsista', 'Desenvolvedor Web', 'Ideias em soluções'],
     start: new Date('2025-09-22').getTime(),
-    end: null,
+    end: undefined,
     text: (
       <>
         <p>
@@ -45,7 +45,7 @@ export const CAREER = [
     title: 'UFRGS — Ciência da Computação',
     roles: ['Estudante', 'Formação acadêmica', 'Constante evolução'],
     start: new Date('2025-07-28').getTime(),
-    end: null,
+    end: undefined,
     text: (
       <>
         <p>

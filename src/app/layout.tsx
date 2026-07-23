@@ -1,8 +1,5 @@
 import { PropsWithChildren } from 'react';
 
-import { Footer } from '@/components/layout/Footer';
-import { Header } from '@/components/layout/Header';
-import { SmoothScroll } from '@/components/motion/SmoothScroll';
 import { StoreProvider } from '@/contexts/Store';
 import '@/styles/globals.css';
 import { cn } from '@/utils/cn';
@@ -22,17 +19,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
       className={cn('scrollbar-gutter-stable overflow-x-clip', displayFont.className)}
     >
       <body className='relative flex min-h-(--h) flex-col items-center overflow-x-clip bg-body [--h:min(100dvh,var(--max-height-bounds))]'>
-        <StoreProvider>
-          <SmoothScroll>
-            <Header />
-
-            <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
-              {children}
-            </main>
-
-            <Footer />
-          </SmoothScroll>
-        </StoreProvider>
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );

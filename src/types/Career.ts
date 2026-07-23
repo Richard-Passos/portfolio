@@ -7,5 +7,5 @@ export type Career = {
   text: ReactNode;
   roles: string[];
   start: Timestamp;
-  end?: Timestamp | null;
+  end?: Timestamp;
 };

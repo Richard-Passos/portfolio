@@ -17,7 +17,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
       <header
         className={cn(
           'relative isolate z-20 flex w-full max-w-bounds flex-wrap items-center justify-center gap-4 px-[5%] py-5 text-body-emphasis',
-          'before:absolute before:inset-y-0 before:-z-50 before:w-screen before:bg-body',
+          'before:absolute before:-inset-y-px before:-z-50 before:w-[200vw] before:bg-body',
           className
         )}
         {...props}

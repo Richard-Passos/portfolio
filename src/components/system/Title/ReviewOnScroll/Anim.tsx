@@ -75,11 +75,11 @@ export const ReviewTitleOnScrollAnim = ({ className, ...props }: ReviewTitleOnSc
 
         gsap.to(el, {
           ease: 'none',
-          y: '22%',
+          y: '21%',
           scrollTrigger: {
             trigger: el,
             start: 'bottom bottom',
-            end: `+=${elHeight * 0.22}`,
+            end: `+=${elHeight * 0.21}`,
             scrub: true
           }
         });

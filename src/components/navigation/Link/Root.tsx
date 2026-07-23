@@ -10,16 +10,16 @@ import { useLenis } from 'lenis/react';
 export type LinkProps = MergeProps<{ disabled?: boolean }, ComponentProps<typeof NextLink>>;
 
 export const Link = ({ href, disabled, className, ...props }: LinkProps) => {
-  const isExternal = !/^(\/|#)/.test(href.toString());
+  const isExternal = !disabled && !/^(\/|#)/.test(href.toString());
   const lenis = useLenis();
 
   return (
     <NextLink
       aria-disabled={disabled ? true : undefined}
-      href={disabled ? '' : href}
+      href={disabled ? '#' : href}
       tabIndex={disabled ? -1 : 0}
       className={cn(
-        'inline-flex aria-disabled:cursor-not-allowed aria-disabled:opacity-60',
+        'inline-flex aria-disabled:cursor-not-allowed aria-disabled:opacity-50',
         className
       )}
       {...(isExternal && { rel: 'noreferrer', target: '_blank' })}

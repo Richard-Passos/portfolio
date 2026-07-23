@@ -43,7 +43,7 @@ export const Button = ({
       tag='button'
       aria-disabled={props.disabled ? true : undefined}
       className={cn(
-        'group/button inline-flex h-(--h) shrink-0 cursor-pointer items-center justify-center gap-(--gap) rounded border border-transparent px-(--px) font-medium whitespace-nowrap transition-[background-color] disabled:pointer-events-none disabled:opacity-50 engaged:z-10',
+        'group/button inline-flex h-(--h) shrink-0 cursor-pointer items-center justify-center gap-(--gap) rounded border border-transparent px-(--px) font-medium whitespace-nowrap transition-[background-color] disabled:cursor-not-allowed disabled:opacity-50 engaged:z-10',
         buttonVariants({ size, variant }),
         iconOnly && 'aspect-square text-2xl [--px:0]',
         className

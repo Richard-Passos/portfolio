@@ -43,7 +43,7 @@ export const MagneticButton = ({
         </span>
       </Magnetic>
 
-      <span className='absolute inset-0 -z-10 rounded-inherit bg-(--hover) transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-engaged/button:[clip-path:inset(0_round_0)]' />
+      <span className='absolute inset-0 -z-10 rounded-inherit bg-(--hover) transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-aria-disabled/button:hidden group-engaged/button:[clip-path:inset(0_round_0)]' />
     </>
   );
 

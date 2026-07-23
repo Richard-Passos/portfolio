@@ -12,7 +12,7 @@ export type CarouselProps = MergeProps<
   {
     options?: Options;
     children: ReactNode;
-  },
+  } & ComponentProps<'section'>,
   ComponentProps<typeof Splide>
 >;
 

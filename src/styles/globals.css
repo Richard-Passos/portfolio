@@ -157,7 +157,7 @@
   }
 
   svg {
-    @apply inline-block size-[1em] fill-current;
+    @apply inline-block size-[0.8em] fill-current;
   }
 
   a {

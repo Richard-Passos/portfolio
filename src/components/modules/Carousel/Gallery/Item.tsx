@@ -18,7 +18,7 @@ export const GalleryCarouselItem = ({
 }: GalleryCarouselItemProps) => {
   return (
     <CarouselItem
-      className={cn('size-full', className)}
+      className={cn('size-full bg-muted', className)}
       {...props}
     >
       <Image
