@@ -8,7 +8,10 @@ import { cn } from '@/utils/cn';
 import { ReactNode } from 'react';
 import GradientCard from '@/components/display/Card/Gradient';
 import { Badge } from '@/components/display/Badge';
-import GalleryCarousel, { GalleryCarouselItemProps } from '@/components/modules/Carousel/Gallery';
+import {
+  GalleryCardsCarousel,
+  GalleryCardsCarouselProps
+} from '@/components/modules/Carousel/GalleryCards';
 
 export type AboutProps = MergeProps<
   {
@@ -20,7 +23,7 @@ export type AboutProps = MergeProps<
         better: { icon: ReactNode; text: ReactNode };
         location: { icon: ReactNode; title: ReactNode };
         hobbies: { icon: ReactNode; title: ReactNode; text: ReactNode };
-        gallery: { images: Pick<GalleryCarouselItemProps, 'src' | 'alt'>[] };
+        gallery: { images: GalleryCardsCarouselProps['items'] };
       };
     };
   },
@@ -122,19 +125,16 @@ export const About = ({ data, className, ...props }: AboutProps) => {
           </GradientCard>
         </BentoGrid.Item>
 
-        <BentoGrid.Item value='gallery'>
-          <GalleryCarousel className='border bg-body'>
-            {data.items.gallery.images.map((img) => (
-              <GalleryCarousel.Item
-                key={img.src.toString()}
-                src={img.src}
-                alt={img.alt}
-                width={600}
-                height={600}
-                className='aspect-square'
-              />
-            ))}
-          </GalleryCarousel>
+        <BentoGrid.Item
+          value='gallery'
+          className='aspect-square border bg-body'
+        >
+          <GalleryCardsCarousel
+            slideProps={{
+              className: 'aspect-square overflow-hidden'
+            }}
+            items={data.items.gallery.images}
+          />
         </BentoGrid.Item>
       </BentoGrid>
     </Section>

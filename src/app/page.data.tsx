@@ -178,22 +178,10 @@ export default {
       },
       gallery: {
         images: [
-          {
-            src: '/images/selfie_00.jpeg',
-            alt: ''
-          },
-          {
-            src: '/images/couple.jpeg',
-            alt: ''
-          },
-          {
-            src: '/images/selfie_01.jpeg',
-            alt: ''
-          },
-          {
-            src: '/images/lola.jpeg',
-            alt: ''
-          }
+          '/images/selfie_00.jpeg',
+          '/images/couple.jpeg',
+          '/images/selfie_01.jpeg',
+          '/images/lola.jpeg'
         ]
       }
     }

@@ -29,7 +29,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
             data-animate
             className='flex h-full w-9/10 grow flex-col items-center justify-center'
           >
-            <section className='flex h-24 w-full items-center'>
+            <section className='flex h-24 w-full flex-wrap items-center'>
               <MagneticButton
                 href={data.action.url}
                 color='primary'

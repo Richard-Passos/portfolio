@@ -5,7 +5,7 @@ import { Section, SectionProps } from '@/components/layout/Section';
 import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
 import { Text } from '@/components/system/Text';
 import { MagneticButton } from '@/components/input/Button/Magnetic';
-import GalleryCarousel from '@/components/modules/Carousel/Gallery';
+import { GalleryParallaxCarousel } from '@/components/modules/Carousel/GalleryParallax';
 import { MergeProps } from '@/types/MergeProps';
 import { Project } from '@/types/Project';
 
@@ -53,19 +53,11 @@ export const ProjectHero = ({ data, className, ...props }: ProjectHeroProps) => 
         </div>
       </section>
 
-      <GalleryCarousel className='mt-(--py)'>
-        {images?.map((src) => (
-          <GalleryCarousel.Item
-            alt=''
-            src={src}
-            key={src}
-            role='presentation'
-            width={1024}
-            height={683}
-            className='aspect-3/2 w-9/10 max-w-5xl'
-          />
-        ))}
-      </GalleryCarousel>
+      <GalleryParallaxCarousel
+        className='mt-(--py)'
+        items={data.images ?? []}
+        slideProps={{ className: 'w-9/10! max-w-5xl aspect-3/2' }}
+      />
     </Section>
   );
 };
