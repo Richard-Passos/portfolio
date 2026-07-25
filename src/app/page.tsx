@@ -48,7 +48,7 @@ export const Homepage = () => {
       <Projects
         theme='dark'
         data={data.projects}
-        className='rounded-b-4xl py-[calc(var(--py)*2)]'
+        className='py-[calc(var(--py)*2)]'
       />
 
       <But
@@ -59,7 +59,7 @@ export const Homepage = () => {
       <About
         theme='dark'
         data={data.about}
-        className='rounded-t-4xl pb-[calc(var(--py)*2)]'
+        className='pb-[calc(var(--py)*2)]'
       />
 
       <Skills

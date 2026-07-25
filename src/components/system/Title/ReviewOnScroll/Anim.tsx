@@ -56,8 +56,8 @@ export const ReviewTitleOnScrollAnim = ({ className, ...props }: ReviewTitleOnSc
           stagger: 0.1,
           scrollTrigger: {
             trigger: sticky,
-            start: '82% bottom',
-            end: `+=${stickyHeight * 0.18 + remainHeight + elHeight * 0.22}`,
+            start: '90% bottom',
+            end: `+=${stickyHeight * 0.1 + remainHeight + elHeight * 0.22}`,
             scrub: true
           }
         });

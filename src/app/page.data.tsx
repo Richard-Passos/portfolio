@@ -39,11 +39,11 @@ export default {
   hero: {
     title: (
       <>
-        <span>Além de tech</span>{' '}
-        <span className='ml-auto'>
+        <span className='sm:mr-auto'>Além de tech</span>{' '}
+        <span className='sm:ml-auto'>
           algoritmos <em>&</em>
         </span>{' '}
-        <span>resultados</span>
+        <span className='sm:mr-auto'>resultados</span>
       </>
     ),
     left: {

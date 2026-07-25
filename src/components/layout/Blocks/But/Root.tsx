@@ -18,7 +18,7 @@ export const But = ({ data, className, ...props }: ButProps) => {
         className={cn('z-10 w-full justify-start', className)}
         {...props}
       >
-        <div className='sticky top-0 flex h-(--h) w-full items-center justify-center overflow-hidden'>
+        <div className='sticky top-0 flex min-h-(--h) w-full items-center justify-center overflow-hidden'>
           <div
             data-badge
             className='absolute overflow-hidden rounded-full border px-4 py-12'
@@ -40,7 +40,7 @@ export const But = ({ data, className, ...props }: ButProps) => {
           </Text>
         </div>
 
-        <div className='absolute top-0 mt-px w-[calc(100vw-var(--radius-4xl))] -translate-y-full'>
+        <div className='absolute top-0 mt-px w-dvw -translate-y-full'>
           <AnimateOnScroll
             config={{
               from: {
@@ -63,7 +63,7 @@ export const But = ({ data, className, ...props }: ButProps) => {
           </AnimateOnScroll>
         </div>
 
-        <div className='absolute bottom-0 mb-px w-[calc(100vw-var(--radius-4xl))] translate-y-full rotate-180'>
+        <div className='absolute bottom-0 mb-px w-dvw translate-y-full rotate-180'>
           <AnimateOnScroll
             config={{
               from: {

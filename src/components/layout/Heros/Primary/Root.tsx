@@ -41,7 +41,7 @@ export const PrimaryHero = ({ data, ...props }: PrimaryHeroProps) => {
       >
         <StaggeredTitleOnView
           as='h1'
-          className='flex w-9/10 max-w-5xl flex-wrap gap-x-[.3em] wrap-break-word uppercase max-sm:text-center'
+          className='flex w-9/10 max-w-5xl flex-wrap justify-center gap-x-[.3em] wrap-break-word uppercase max-sm:text-center'
         >
           {data.title}
         </StaggeredTitleOnView>
