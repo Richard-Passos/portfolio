@@ -10,19 +10,21 @@ export const FooterAnim = ({ className, ...props }: FooterAnimProps) => {
   return (
     <AnimateOnScroll
       config={(el) => {
+        const height = Math.min(el.offsetHeight, window.innerHeight);
+
         gsap.from('[data-animate]', {
           ease: 'none',
-          y: '50%',
+          y: height,
           scrollTrigger: {
             trigger: el,
             scrub: true,
             start: 'top bottom',
-            end: `+=${Math.min(el.offsetHeight, window.innerHeight)}`
+            end: `+=${height}`
           }
         });
       }}
       className={cn(
-        '**:data-animate:will-change-transform **:data-animate:has-focus-visible:transform-[translateY(0)]!',
+        '**:data-animate:will-change-transform has-focus-visible:**:data-animate:transform-[translateY(0)]!',
         className
       )}
       {...props}

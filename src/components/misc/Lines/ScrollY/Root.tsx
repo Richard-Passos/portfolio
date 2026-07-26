@@ -17,12 +17,12 @@ export const ScrollYLinesAnimation = {
   end: 'bottom top'
 } satisfies AnimateOnScrollConfig;
 
-export const ScrollYLines = ({ className, ...props }: ScrollYLinesProps) => {
+export const ScrollYLines = ({ className, children, ...props }: ScrollYLinesProps) => {
   return (
     <AnimateOnScroll config={ScrollYLinesAnimation}>
       <div
         className={cn(
-          'pointer-events-none absolute flex items-center justify-center overflow-hidden rounded-2xl border bg-body dark:border-border/25',
+          'absolute flex items-center justify-center overflow-hidden rounded-2xl border bg-body dark:border-border/25',
           className
         )}
         {...props}
@@ -31,6 +31,8 @@ export const ScrollYLines = ({ className, ...props }: ScrollYLinesProps) => {
           data-lines
           className='top-auto h-[150dvh] bg-size-[83.333px_66.666px]'
         />
+
+        {children}
       </div>
     </AnimateOnScroll>
   );
