@@ -29,7 +29,7 @@ export const Logo = ({ variant = 'primary', ...props }: LogoProps) => {
         href='/'
         {...props}
         onClick={(ev) => {
-          lenis?.scrollTo('body');
+          lenis?.scrollTo('body', { immediate: true });
 
           return props?.onClick?.(ev);
         }}
