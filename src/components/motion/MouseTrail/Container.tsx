@@ -38,9 +38,9 @@ export const MouseTrailContainer = ({ step = 100, ref, ...props }: MouseTrailCon
         });
 
         gsap.to(node, {
-          scale: 0.85,
+          scale: 0.5,
           opacity: 0,
-          rotation: `+=${180}`,
+          rotation: `+=${90}`,
           delay: 0.8,
           duration: 0.8,
           ease: 'power2.out'
