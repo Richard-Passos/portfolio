@@ -11,6 +11,10 @@ import { MergeProps } from '@/types/MergeProps';
 import { Theme } from '@/types/Theme';
 import { cn } from '@/utils/cn';
 import { FooterAnim } from '@/components/layout/Footer/Anim';
+import Clipboard from '@/components/input/Clipboard';
+import { BoltIcon } from '@/components/system/Icon/Bolt';
+import { SmileIcon } from '@/components/system/Icon/Smile';
+import { EmailClipboard } from '@/components/input/Clipboard/Email';
 
 export type FooterProps = MergeProps<{ theme?: Theme }, SectionProps>;
 
@@ -30,13 +34,17 @@ export const Footer = ({ className, ...props }: FooterProps) => {
             className='flex h-full w-9/10 grow flex-col items-center justify-center'
           >
             <section className='flex h-24 w-full flex-wrap items-center'>
-              <MagneticButton
-                href={data.action.url}
-                color='primary'
-                className='mr-2.5'
-              >
-                {data.action.label}
-              </MagneticButton>
+              <div className='flex gap-0.5'>
+                <EmailClipboard value={data.action.email} />
+
+                <MagneticButton
+                  href={`mailto:${data.action.email}`}
+                  color='primary'
+                  className='mr-2.5'
+                >
+                  {data.action.label}
+                </MagneticButton>
+              </div>
 
               {data.socials.map(({ url, label, icon }) => (
                 <MagneticButton
@@ -44,6 +52,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
                   key={url}
                   href={url}
                   aria-label={label}
+                  className='bg-transparent!'
                 >
                   {icon}
                 </MagneticButton>

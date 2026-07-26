@@ -21,7 +21,7 @@
   --muted-emphasis: 240 9.62 6.08;
 
   --primary: 344 100 47;
-  --primary-hover: 344 100 51;
+  --primary-hover: 344 100 52;
   --primary-emphasis: 344 100 100;
 
   --success: 142 71 55;
@@ -50,7 +50,7 @@
   --muted-emphasis: 0 0 95;
 
   --primary: 344 100 47;
-  --primary-hover: 344 100 51;
+  --primary-hover: 344 100 52;
   --primary-emphasis: 344 100 100;
 
   --success: 142 71 55;
@@ -210,6 +210,38 @@
     }
     &[data-state='closed'] {
       animation: collapse 150ms ease-in-out;
+    }
+  }
+
+  @keyframes scale-fade-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scale-fade-out {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+  }
+
+  [data-scope='tooltip'][data-part='content'] {
+    &[data-state='open'] {
+      animation: scale-fade-in 0.15s ease-out;
+    }
+
+    &[data-state='closed'] {
+      animation: scale-fade-out 0.1s ease-in;
     }
   }
 

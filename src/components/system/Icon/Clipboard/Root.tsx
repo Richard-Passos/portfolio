@@ -1,0 +1,16 @@
+import { ComponentProps } from 'react';
+
+export type ClipboardIconProps = ComponentProps<'svg'>;
+
+export const ClipboardIcon = (props: ClipboardIconProps) => {
+  return (
+    <svg
+      aria-hidden
+      viewBox='0 0 24 24'
+      xmlns='http://www.w3.org/2000/svg'
+      {...props}
+    >
+      <path d='M20 8v10a2.652 2.652 0 0 1-3 3H7a2.652 2.652 0 0 1-3-3V8c0-1.742.752-2.723 2.265-2.943a.211.211 0 0 1 .235.2V5.5a2.814 2.814 0 0 0 3 3h5a2.814 2.814 0 0 0 3-3v-.238a.211.211 0 0 1 .235-.2C19.248 5.277 20 6.258 20 8ZM9.5 7h5A1.326 1.326 0 0 0 16 5.5v-1A1.326 1.326 0 0 0 14.5 3h-5A1.326 1.326 0 0 0 8 4.5v1A1.326 1.326 0 0 0 9.5 7Z' />
+    </svg>
+  );
+};

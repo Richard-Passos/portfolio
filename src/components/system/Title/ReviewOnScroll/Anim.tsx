@@ -34,7 +34,9 @@ export const ReviewTitleOnScrollAnim = ({ className, ...props }: ReviewTitleOnSc
         const elWidth = elRect.width;
         const elHeight = elRect.height;
         const stickyHeight = sticky.getBoundingClientRect().height;
-        const titleWidth = title.getBoundingClientRect().width;
+        const titleRect = title.getBoundingClientRect();
+        const titleWidth = titleRect.width;
+        const titleHeight = titleRect.height;
         const remainWidth = elWidth - titleWidth;
         const remainHeight = elHeight - stickyHeight;
 
@@ -75,11 +77,11 @@ export const ReviewTitleOnScrollAnim = ({ className, ...props }: ReviewTitleOnSc
 
         gsap.to(el, {
           ease: 'none',
-          y: '21%',
+          y: stickyHeight / 2 - titleHeight * 0.22,
           scrollTrigger: {
             trigger: el,
             start: 'bottom bottom',
-            end: `+=${elHeight * 0.21}`,
+            end: `+=${stickyHeight / 2 - titleHeight * 0.22}`,
             scrub: true
           }
         });

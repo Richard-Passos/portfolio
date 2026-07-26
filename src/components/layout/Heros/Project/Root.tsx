@@ -20,10 +20,10 @@ export const ProjectHero = ({ data, className, ...props }: ProjectHeroProps) => 
   return (
     <Section
       forceTheme
-      className={cn('w-full pb-[calc(var(--py)*2)]', className)}
+      className={cn('w-full pt-[calc(var(--py)/2)] pb-[calc(var(--py)*2)]', className)}
       {...props}
     >
-      <section className='flex min-h-[calc(var(--h)*0.55)] w-9/10 flex-wrap items-end justify-between gap-8'>
+      <section className='flex min-h-[calc(var(--h)*0.6)] w-9/10 flex-wrap items-end justify-between gap-8'>
         <div className='max-w-3xl'>
           <StaggeredTitleOnView
             as='h1'
@@ -40,13 +40,13 @@ export const ProjectHero = ({ data, className, ...props }: ProjectHeroProps) => 
           </Text>
         </div>
 
-        <div className='max-w-sm shrink grow'>
+        <div className='max-w-md shrink grow'>
           <Text>{data.text}</Text>
 
           <MagneticButton
             href={data.url}
             disabled={!data.url}
-            className='mt-24 size-48 rounded-full border-border text-center text-xl'
+            className='mt-16 size-40 rounded-full border-border text-center sm:mt-24 sm:size-48 sm:text-xl'
           >
             {RootData.view}
           </MagneticButton>
@@ -55,7 +55,7 @@ export const ProjectHero = ({ data, className, ...props }: ProjectHeroProps) => 
 
       <GalleryParallaxCarousel
         className='mt-(--py)'
-        items={data.images ?? []}
+        items={images}
         slideProps={{ className: 'w-9/10! max-w-5xl aspect-3/2' }}
       />
     </Section>

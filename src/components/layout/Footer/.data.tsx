@@ -6,7 +6,7 @@ import { PaperPlaneIcon } from '@/components/system/Icon/PaperPlane';
 
 export default {
   action: {
-    url: `mailto:${CONTACT.email}`,
+    email: CONTACT.email,
     label: (
       <>
         <PaperPlaneIcon /> Email

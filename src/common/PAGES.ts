@@ -1,15 +1,15 @@
 export const PAGES = {
   main: [
     {
-      url: '#work',
+      url: '/#work',
       label: 'Carreira'
     },
     {
-      url: '#about',
+      url: '/#about',
       label: 'Sobre'
     },
     {
-      url: '#contact',
+      url: '/#contact',
       label: 'Contato'
     }
   ] as { url: string; label: string }[]

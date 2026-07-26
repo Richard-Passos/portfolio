@@ -26,14 +26,6 @@ export const Link = ({ href, disabled, className, ...props }: LinkProps) => {
       {...props}
       onClick={(ev) => {
         props.onClick?.(ev);
-
-        if (href.toString().startsWith('#')) {
-          ev.preventDefault();
-
-          lenis?.scrollTo(href.toString(), {
-            duration: 1.4
-          });
-        }
       }}
     />
   );

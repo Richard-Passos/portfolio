@@ -29,25 +29,34 @@ export const GalleryParallaxCarousel = ({
   className,
   ...props
 }: GalleryParallaxCarouselProps) => {
+  // 4 slides minimum
+  if (items.length === 1) {
+    items = [...items, ...items, ...items, ...items];
+  } else if (items.length === 2) {
+    items = [...items, ...items];
+  } else if (items.length === 3) {
+    items = [...items, ...items];
+  }
+
   return (
     <Swiper
       loop
       parallax
       keyboard
       grabCursor
+      a11y={data}
       centeredSlides
       spaceBetween={16}
-      a11y={data}
       slidesPerView='auto'
       pagination={{ clickable: true }}
       className={cn('w-full', className)}
       modules={[Parallax, Pagination, Keyboard, A11y, ...(modules ?? [])]}
       {...props}
     >
-      {items.map((src) => (
+      {items.map((src, i) => (
         <SwiperSlide
           {...slideProps}
-          key={src}
+          key={`${i}${src}`}
           className={cn('overflow-hidden bg-muted select-none', slideProps?.className)}
         >
           <div

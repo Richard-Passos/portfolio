@@ -47,7 +47,7 @@ export const MagneticButton = ({
     </>
   );
 
-  className = cn('isolate gap-0 px-0 transition-none engaged:bg-(--bg)', className);
+  className = cn('isolate gap-0 overflow-hidden px-0 transition-none engaged:bg-(--bg)', className);
 
   return (
     <Magnetic {...magneticProps}>
