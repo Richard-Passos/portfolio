@@ -91,6 +91,11 @@ const config: IntlayerConfig = {
      */
     saveComponents: false
   },
+  content: {
+    codeDir: ['./src'],
+    contentDir: ['./src'],
+    fileExtensions: ['.data.ts', '.data.tsx']
+  },
   dictionary: {
     /**
      * Controls how dictionaries are imported.

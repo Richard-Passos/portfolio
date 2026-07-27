@@ -1,19 +1,26 @@
-import { NotFoundData } from '@/app/[locale]/not-found';
-import { MagneticButton } from '@/components/input/Button/Magnetic';
-import { ArrowUpRightIcon } from '@/components/system/Icon/ArrowUpRight';
+import { NotFoundData } from './not-found';
+import { Dictionary, t } from 'intlayer';
 
 export default {
-  hero: {
-    status: 'Erro 404',
-    title: 'Desculpe, esta página não foi encontrada!',
-    text: 'Vamos levar você de volta para um lugar familiar.',
-    action: {
-      url: '/',
-      label: (
-        <>
-          Página Inicial <ArrowUpRightIcon />
-        </>
-      )
+  key: 'not-found-page',
+  content: {
+    hero: {
+      status: t({
+        en: 'Error 404',
+        pt: 'Erro 404'
+      }),
+      title: t({
+        en: 'Sorry, the page was not found!',
+        pt: 'Desculpe, esta página não foi encontrada!'
+      }),
+      text: t({
+        en: 'Let’s get you back to somewhere familiar.',
+        pt: 'Vamos levar você de volta para um lugar familiar.'
+      }),
+      action: t({
+        en: 'Home page',
+        pt: 'Página Inicial'
+      })
     }
   }
-} satisfies NotFoundData;
+} satisfies Dictionary<NotFoundData>;

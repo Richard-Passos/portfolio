@@ -4,7 +4,7 @@ export default {
   label: {
     first: (
       <>
-        Mais <PlusIcon className='max-sm:hidden' />
+        Mais <PlusIcon className='size-[.8em] max-sm:hidden' />
       </>
     ),
     second: 'Projetos'

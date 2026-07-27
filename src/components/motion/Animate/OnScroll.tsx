@@ -35,7 +35,7 @@ export const AnimateOnScroll = ({ config, ref, ...props }: AnimateOnScrollProps)
         return;
       }
 
-      const { target, from, to, start, end } = config ?? {};
+      const { target, from, to, start, end } = config;
 
       gsap.fromTo(target ?? el, from ?? {}, {
         ease: 'none',

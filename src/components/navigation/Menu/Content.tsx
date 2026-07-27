@@ -11,7 +11,7 @@ export type MenuContentProps = UiMenuContentProps;
 
 export const MenuContent = ({ className, ...props }: MenuContentProps) => {
   return (
-    <MenuPositioner>
+    <MenuPositioner className='z-40'>
       <UiMenuContent
         className={cn(
           'flex flex-col gap-0.5 rounded border bg-muted p-1 text-sm shadow focus-visible:outline-hidden',

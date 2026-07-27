@@ -8,8 +8,12 @@ import { But, ButProps } from '@/components/layout/Blocks/But';
 import { About, AboutProps } from '@/components/layout/Blocks/About';
 import { Cta, CtaProps } from '@/components/layout/Blocks/Cta';
 import { Skills, SkillsProps } from '@/components/layout/Blocks/Skills';
+import { IntlayerServerProvider, useIntlayer } from 'next-intlayer/server';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { NextPageIntlayer } from 'next-intlayer';
 
-export type HomePageData = {
+export type HomeData = {
   hero: PrimaryHeroProps['data'];
   mission: MissionProps['data'];
   career: CareerProps['data'];
@@ -21,7 +25,7 @@ export type HomePageData = {
   cta: CtaProps['data'];
 };
 
-export const Homepage = () => {
+const HomeContent = () => {
   return (
     <>
       <PrimaryHero
@@ -76,4 +80,22 @@ export const Homepage = () => {
   );
 };
 
-export default Homepage;
+const HomePage: NextPageIntlayer = async ({ params }) => {
+  const { locale } = await params;
+
+  return (
+    <>
+      <IntlayerServerProvider locale={locale}>
+        <Header />
+
+        <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
+          <HomeContent />
+        </main>
+
+        <Footer />
+      </IntlayerServerProvider>
+    </>
+  );
+};
+
+export default HomePage;

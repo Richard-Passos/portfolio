@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 
 import { IntlayerClientProvider, NextLayoutIntlayer } from 'next-intlayer';
 import { getHTMLTextDir } from 'intlayer';
+import { SmoothScroll } from '@/components/motion/SmoothScroll';
 
 export { generateStaticParams } from 'next-intlayer';
 
@@ -14,6 +15,7 @@ const displayFont = localFont({
 
 const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
   const { locale } = await params;
+  console.log('Locale Layout: ', locale);
 
   return (
     <html
@@ -22,9 +24,11 @@ const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
       className={cn('scrollbar-gutter-stable overflow-x-clip', displayFont.className)}
     >
       <body className='relative flex min-h-(--h) flex-col items-center overflow-x-clip bg-body [--h:min(100dvh,var(--max-height-bounds))]'>
-        <StoreProvider>
-          <IntlayerClientProvider locale={locale}>{children}</IntlayerClientProvider>
-        </StoreProvider>
+        <SmoothScroll>
+          <StoreProvider>
+            <IntlayerClientProvider locale={locale}>{children}</IntlayerClientProvider>
+          </StoreProvider>
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -5,9 +5,9 @@ import { ComponentProps } from 'react';
 import { Theme } from '@/components/misc/Theme';
 import { MenuDrawer } from '@/components/modules/Drawer/Menu';
 import { Logo } from '@/components/navigation/Logo';
-import { LocaleMenu } from '@/components/navigation/Menu/Locale';
+import LocaleMenu from '@/components/navigation/Menu/Locale';
 import { cn } from '@/utils/cn';
-import { MagneticButton } from '@/components/input/Button/Magnetic';
+import { MagneticLink } from '@/components/navigation/Link/Magnetic';
 
 export type HeaderProps = ComponentProps<'header'>;
 
@@ -27,17 +27,21 @@ export const Header = ({ className, ...props }: HeaderProps) => {
         <div className='ml-auto flex items-center gap-3 max-md:hidden'>
           <nav className='flex flex-wrap'>
             {data.nav.map((el) => (
-              <MagneticButton
+              <MagneticLink
                 key={el.url}
                 href={el.url}
                 className='rounded-none'
               >
                 {el.label}
-              </MagneticButton>
+              </MagneticLink>
             ))}
           </nav>
 
-          <LocaleMenu />
+          <LocaleMenu>
+            <LocaleMenu.Trigger />
+
+            <LocaleMenu.Content />
+          </LocaleMenu>
         </div>
 
         <MenuDrawer />

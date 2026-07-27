@@ -4,7 +4,7 @@ import data from './.data';
 
 import { MagneticButton } from '@/components/input/Button/Magnetic';
 import Drawer, { type DrawerProps } from '@/components/modules/Drawer';
-import { LocaleMenu } from '@/components/navigation/Menu/Locale';
+import LocaleMenu from '@/components/navigation/Menu/Locale';
 
 import { MenuDrawerTrigger, MenuDrawerTriggerMobile } from './Trigger';
 import { useRef, useState } from 'react';
@@ -74,42 +74,44 @@ export const MenuDrawer = (props: MenuDrawerProps) => {
         className='will-change-[opacity]'
       />
 
-      <Drawer.Positioner>
-        <Drawer.Content
-          ref={contentRef}
-          className='max-w-xl border-l px-[6%] py-8 will-change-transform sm:pt-24 sm:pb-16'
-        >
-          <Drawer.Title className='border-b px-2 py-4'>{data.menu.label}</Drawer.Title>
+      <Drawer.Content
+        ref={contentRef}
+        className='max-w-xl border-l px-[6%] py-8 will-change-transform sm:pt-24 sm:pb-16'
+      >
+        <Drawer.Title className='border-b px-2 py-4'>{data.menu.label}</Drawer.Title>
 
-          <nav className='mx-4 my-8 flex flex-col'>
-            {data.nav.map((el) => (
-              <MagneticButton
-                key={el.url}
-                href={el.url}
-                className='h-16 w-fit rounded-none text-4xl'
-                onClick={() => toggleTl(false)}
-              >
-                {el.label}
-              </MagneticButton>
-            ))}
-          </nav>
+        <nav className='mx-4 my-8 flex flex-col'>
+          {data.nav.map((el) => (
+            <MagneticButton
+              key={el.url}
+              href={el.url}
+              className='h-16 w-fit rounded-none text-4xl'
+              onClick={() => toggleTl(false)}
+            >
+              {el.label}
+            </MagneticButton>
+          ))}
+        </nav>
 
-          <div className='mt-auto flex flex-wrap px-4'>
-            <LocaleMenu className='mr-2.5' />
+        <div className='mt-auto flex flex-wrap px-4'>
+          <LocaleMenu>
+            <LocaleMenu.Trigger className='mr-2.5' />
 
-            {data.socials.map(({ url, label, icon }) => (
-              <MagneticButton
-                key={url}
-                href={url}
-                iconOnly
-                aria-label={label}
-              >
-                {icon}
-              </MagneticButton>
-            ))}
-          </div>
-        </Drawer.Content>
-      </Drawer.Positioner>
+            <LocaleMenu.Content />
+          </LocaleMenu>
+
+          {data.socials.map(({ url, label, icon }) => (
+            <MagneticButton
+              key={url}
+              href={url}
+              iconOnly
+              aria-label={label}
+            >
+              {icon}
+            </MagneticButton>
+          ))}
+        </div>
+      </Drawer.Content>
     </Drawer>
   );
 };
