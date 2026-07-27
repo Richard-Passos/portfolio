@@ -1,4 +1,4 @@
-import { NotFoundData } from '@/app/not-found';
+import { NotFoundData } from '@/app/[locale]/not-found';
 import { MagneticButton } from '@/components/input/Button/Magnetic';
 import { ArrowUpRightIcon } from '@/components/system/Icon/ArrowUpRight';
 

@@ -1,0 +1,28 @@
+name: Intlayer Test
+# Fail the pull request when required locales are missing translations.
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: intlayer-test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v4
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+      - name: 📦 Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: ⚙️ Build dictionaries
+        run: yarn intlayer build
+      - name: 🧪 Test for missing translations
+        run: yarn intlayer test

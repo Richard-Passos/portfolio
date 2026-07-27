@@ -9,6 +9,8 @@ import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 
 import data from './Root.data';
+import { useLocale } from 'next-intlayer';
+import { getHTMLTextDir, getLocaleName, getLocalizedUrl } from 'intlayer';
 
 export type LocaleMenuProps = MergeProps<
   {
@@ -18,9 +20,11 @@ export type LocaleMenuProps = MergeProps<
 >;
 
 export const LocaleMenu = ({ wrapperProps, className, ...props }: LocaleMenuProps) => {
+  const { locale, pathWithoutLocale, availableLocales, setLocale } = useLocale();
+
   return (
     <Menu {...wrapperProps}>
-      <Menu.Trigger asChild>
+      <Menu.Trigger>
         <Button
           aria-label={data.label}
           className={cn(
@@ -31,36 +35,36 @@ export const LocaleMenu = ({ wrapperProps, className, ...props }: LocaleMenuProp
         >
           <GlobeIcon className='size-[1.5em]' />
 
-          {data.default.label}
+          {getLocaleName(locale)}
         </Button>
       </Menu.Trigger>
 
-      <Menu.Positioner>
-        <Menu.Content className='z-50 flex min-w-32 flex-col gap-0.5 rounded border bg-body p-1 shadow focus-visible:outline-hidden'>
-          {data.locales.map(({ key, label }) => (
-            <Menu.Item
+      <Menu.Content className='min-w-32'>
+        {availableLocales.map((localeItem) => (
+          <Menu.Item
+            key={localeItem}
+            value={localeItem}
+          >
+            <Button
               asChild
-              key={key}
-              value={key}
+              size='sm'
+              color='muted'
+              className='justify-start text-start capitalize transition-none'
             >
-              <Button
-                asChild
-                size='sm'
-                className='justify-start capitalize transition-none'
+              <Link
+                href={getLocalizedUrl(pathWithoutLocale, localeItem)}
+                hrefLang={localeItem}
+                dir={getHTMLTextDir(localeItem)}
+                onClick={() => setLocale(localeItem)}
               >
-                <Link
-                  href='/'
-                  lang={key}
-                >
-                  {label}
+                {getLocaleName(localeItem)}
 
-                  {key === data.default.key && <CheckIcon className='ml-auto' />}
-                </Link>
-              </Button>
-            </Menu.Item>
-          ))}
-        </Menu.Content>
-      </Menu.Positioner>
+                {localeItem === locale && <CheckIcon className='ml-auto size-[1em]' />}
+              </Link>
+            </Button>
+          </Menu.Item>
+        ))}
+      </Menu.Content>
     </Menu>
   );
 };
