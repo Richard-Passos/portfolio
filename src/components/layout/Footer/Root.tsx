@@ -1,6 +1,3 @@
-import data from './.data';
-
-import { MagneticButton } from '@/components/input/Button/Magnetic';
 import { Section, SectionProps } from '@/components/layout/Section';
 import { ScrollYLines } from '@/components/misc/Lines/ScrollY';
 import { Logo } from '@/components/navigation/Logo';
@@ -11,7 +8,7 @@ import { MergeProps } from '@/types/MergeProps';
 import { Theme } from '@/types/Theme';
 import { cn } from '@/utils/cn';
 import { FooterAnim } from '@/components/layout/Footer/Anim';
-import { EmailClipboard } from '@/components/input/Clipboard/Email';
+import EmailClipboard from '@/components/input/Clipboard/Email';
 import MouseTrail from '@/components/motion/MouseTrail';
 import { SmileIcon } from '@/components/system/Icon/Smile';
 import { RocketIcon } from '@/components/system/Icon/Rocket';
@@ -20,10 +17,16 @@ import { BoltIcon } from '@/components/system/Icon/Bolt';
 import { GlobeIcon } from '@/components/system/Icon/Globe';
 import { HeartIcon } from '@/components/system/Icon/Heart';
 import { TrophyIcon } from '@/components/system/Icon/Trophy';
+import { MagneticLink } from '@/components/navigation/Link/Magnetic';
+import { useIntlayer } from 'next-intlayer/server';
+import { Link } from '@/components/navigation/Link';
 
 export type FooterProps = MergeProps<{ theme?: Theme }, SectionProps>;
 
 export const Footer = ({ className, ...props }: FooterProps) => {
+  const t = useIntlayer('footer');
+  const contact = useIntlayer('contact');
+
   return (
     <FooterAnim>
       <Section
@@ -39,27 +42,31 @@ export const Footer = ({ className, ...props }: FooterProps) => {
             className='mr-auto flex h-24 w-fit flex-wrap items-center'
           >
             <div className='flex gap-0.5'>
-              <EmailClipboard value={data.action.email} />
+              <EmailClipboard value={t.action.email}>
+                <EmailClipboard.Trigger />
 
-              <MagneticButton
-                href={`mailto:${data.action.email}`}
+                <EmailClipboard.Tooltip />
+              </EmailClipboard>
+
+              <MagneticLink
                 color='primary'
                 className='mr-2.5'
+                href={`mailto:${t.action.email}`}
               >
-                {data.action.label}
-              </MagneticButton>
+                <PaperPlaneIcon /> {t.action.label}
+              </MagneticLink>
             </div>
 
-            {data.socials.map(({ url, label, icon }) => (
-              <MagneticButton
+            {t.socials.map(({ url, label }) => (
+              <MagneticLink
                 iconOnly
                 key={url}
                 href={url}
                 aria-label={label}
                 className='bg-transparent!'
               >
-                {icon}
-              </MagneticButton>
+                {label.at(0)}
+              </MagneticLink>
             ))}
           </section>
 
@@ -78,10 +85,10 @@ export const Footer = ({ className, ...props }: FooterProps) => {
                 as='h6'
                 className='font-semibold'
               >
-                {data.location.country}, {data.location.state}, <LocalTime />
+                {t.location.country}, {t.location.state}, <LocalTime />
               </Title>
 
-              <Text className='mt-2.5'>{data.description}</Text>
+              <Text className='mt-2.5'>{t.description}</Text>
             </section>
           </section>
 
@@ -93,14 +100,17 @@ export const Footer = ({ className, ...props }: FooterProps) => {
               small
               className='max-w-xs text-xs max-sm:text-center'
             >
-              {data.copyright}
+              {t.copyright({
+                year: new Date().getFullYear(),
+                link: <Link href={contact.creator.url}>{contact.creator.name}</Link>
+              })}
             </Text>
 
             <Text
               small
               className='max-w-xs text-center text-xs sm:text-end'
             >
-              {data.madeBy}
+              {t.madeBy({ link: <Link href={contact.creator.url}>{contact.creator.name}</Link> })}
             </Text>
           </section>
 

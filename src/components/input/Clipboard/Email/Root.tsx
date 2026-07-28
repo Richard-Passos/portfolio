@@ -1,39 +1,35 @@
-import data from './.data';
+'use client';
 
-import {
-  EmailClipboardClient,
-  EmailClipboardClientProps
-} from '@/components/input/Clipboard/Email/Client';
-import { ClipboardControl } from '@/components/input/Clipboard';
-import { MergeProps } from '@/types/MergeProps';
-import Tooltip from '@/components/feedback/Tooltip';
-import {
-  EmailClipboardTrigger,
-  EmailClipboardTriggerProps
-} from '@/components/input/Clipboard/Email/Trigger';
+import { Clipboard, ClipboardProps } from '@/components/input/Clipboard';
+import { Tooltip } from '@/components/feedback/Tooltip';
+import { useState } from 'react';
+import { cn } from '@/utils/cn';
 
-export type EmailClipboardProps = MergeProps<
-  Pick<EmailClipboardClientProps, 'value'>,
-  EmailClipboardTriggerProps
->;
+export type EmailClipboardProps = ClipboardProps;
 
-export const EmailClipboard = ({ value, ...props }: EmailClipboardProps) => {
+export const EmailClipboard = ({ className, ...props }: EmailClipboardProps) => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <EmailClipboardClient
-      value={value}
-      className='group/clipboard has-engaged:z-10'
+    <Tooltip
+      open={open}
+      onOpenChange={(ev) => {
+        setOpen(ev.open);
+      }}
+      closeOnClick={false}
+      positioning={{ placement: 'bottom' }}
     >
-      <ClipboardControl>
-        <EmailClipboardTrigger {...props} />
-      </ClipboardControl>
+      <Clipboard
+        className={cn('group/clipboard has-engaged:z-10', className)}
+        {...props}
+        onStatusChange={(ev) => {
+          if (!open) {
+            setOpen(ev.copied);
+          }
 
-      <Tooltip.Content>
-        <Tooltip.Arrow />
-
-        <span className='group-data-copied/clipboard:hidden'>{data.label}</span>
-
-        <span className='hidden group-data-copied/clipboard:inline'>{data.copied}</span>
-      </Tooltip.Content>
-    </EmailClipboardClient>
+          props.onStatusChange?.(ev);
+        }}
+      />
+    </Tooltip>
   );
 };

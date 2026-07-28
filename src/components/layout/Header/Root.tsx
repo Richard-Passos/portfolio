@@ -1,17 +1,18 @@
-import data from './.data';
-
 import { ComponentProps } from 'react';
 
 import { Theme } from '@/components/misc/Theme';
-import { MenuDrawer } from '@/components/modules/Drawer/Menu';
+import MenuDrawer from '@/components/modules/Drawer/Menu';
 import { Logo } from '@/components/navigation/Logo';
 import LocaleMenu from '@/components/navigation/Menu/Locale';
 import { cn } from '@/utils/cn';
 import { MagneticLink } from '@/components/navigation/Link/Magnetic';
+import { useIntlayer } from 'next-intlayer/server';
 
 export type HeaderProps = ComponentProps<'header'>;
 
 export const Header = ({ className, ...props }: HeaderProps) => {
+  const t = useIntlayer('header');
+
   return (
     <Theme>
       <header
@@ -26,7 +27,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
 
         <div className='ml-auto flex items-center gap-3 max-md:hidden'>
           <nav className='flex flex-wrap'>
-            {data.nav.map((el) => (
+            {t.nav.map((el) => (
               <MagneticLink
                 key={el.url}
                 href={el.url}
@@ -44,7 +45,13 @@ export const Header = ({ className, ...props }: HeaderProps) => {
           </LocaleMenu>
         </div>
 
-        <MenuDrawer />
+        <MenuDrawer>
+          <MenuDrawer.Trigger className='md:hidden' />
+
+          <MenuDrawer.ScrollTrigger />
+
+          <MenuDrawer.Content />
+        </MenuDrawer>
       </header>
     </Theme>
   );

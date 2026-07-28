@@ -1,12 +1,14 @@
-import { CONTACT } from '@/common/CONTACT';
-import { PAGES } from '@/common/PAGES';
+import { Dictionary, nest, t } from 'intlayer';
 
 export default {
-  menu: {
-    label: 'Menu',
-    open: 'Abrir menu',
-    close: 'Fechar menu'
-  },
-  socials: CONTACT.socials,
-  nav: PAGES.main
-};
+  key: 'menu-drawer',
+  content: {
+    menu: {
+      label: 'Menu',
+      open: t({ en: 'Open menu', pt: 'Abrir menu' }),
+      close: t({ en: 'Close menu', pt: 'Fechar menu' })
+    },
+    socials: nest('contact', 'socials'),
+    nav: nest('pages', 'main')
+  }
+} satisfies Dictionary;

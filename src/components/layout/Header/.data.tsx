@@ -1,5 +1,8 @@
-import { PAGES } from '@/common/PAGES';
+import { Dictionary, nest } from 'intlayer';
 
 export default {
-  nav: PAGES.main
-};
+  key: 'header',
+  content: {
+    nav: nest('pages', 'main')
+  }
+} satisfies Dictionary;

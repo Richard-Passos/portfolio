@@ -1,36 +1,22 @@
-import { CONTACT } from '@/common/CONTACT';
-import { LOCATION } from '@/common/LOCATION';
-import { Link } from '@/components/navigation/Link';
-import { HeartIcon } from '@/components/system/Icon/Heart';
-import { PaperPlaneIcon } from '@/components/system/Icon/PaperPlane';
+import { Dictionary, html, insert, nest, t } from 'intlayer';
 
 export default {
-  action: {
-    email: CONTACT.email,
-    label: (
-      <>
-        <PaperPlaneIcon /> Email
-      </>
-    )
-  },
-  description:
-    'O dev — que se preocupa em construir produtos sólidos, escaláveis e com uma ótima experiência de usuário.',
-  madeBy: (
-    <>
-      Feito com{' '}
-      <HeartIcon
-        aria-hidden={false}
-        aria-label='amor'
-        className='text-primary'
-      />{' '}
-      por <Link href={CONTACT.creator.url}>{CONTACT.creator.name}</Link>
-    </>
-  ),
-  copyright: (
-    <>
-      © {new Date().getFullYear()} <Link href={CONTACT.creator.url}>{CONTACT.creator.name}</Link>
-    </>
-  ),
-  location: LOCATION,
-  socials: CONTACT.socials
-};
+  key: 'footer',
+  content: {
+    action: {
+      email: nest('contact', 'email'),
+      label: 'Email'
+    },
+    description: t({
+      en: 'The dev — between algorithms, interfaces, and the pursuit of building something truly great.',
+      pt: 'O dev — entre algoritmos, interfaces e a busca por construir algo realmente bom.'
+    }),
+    madeBy: t({
+      en: insert('Made with ❤️ by {{link}}'),
+      pt: insert('Feito com ❤️ por {{link}}')
+    }),
+    copyright: insert('© {{year}} {{link}}'),
+    location: nest('location'),
+    socials: nest('contact', 'socials')
+  }
+} satisfies Dictionary;

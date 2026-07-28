@@ -4,7 +4,6 @@ import { RocketIcon } from '@/components/system/Icon/Rocket';
 import { BoltIcon } from '@/components/system/Icon/Bolt';
 import { CapIcon } from '@/components/system/Icon/Cap';
 import { SmileIcon } from '@/components/system/Icon/Smile';
-import { LOCATION } from '@/common/LOCATION';
 import { GameControllerIcon } from '@/components/system/Icon/GameController';
 import { SparklesIcon } from '@/components/system/Icon/Sparkles';
 import { TrophyIcon } from '@/components/system/Icon/Trophy';
@@ -154,7 +153,7 @@ export default {
       },
       location: {
         icon: <GlobeIcon />,
-        title: `Localizado no ${LOCATION.country} ${LOCATION.gmt}`
+        title: `Localizado no Brasil GTM-3`
       },
       hobbies: {
         icon: <TrophyIcon />,
