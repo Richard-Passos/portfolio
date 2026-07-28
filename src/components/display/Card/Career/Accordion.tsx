@@ -1,1 +1,4 @@
-export { Accordion as CareerCardAccordion } from '@/components/display/Accordion';
+export {
+  Accordion as CareerCardAccordion,
+  type AccordionProps as CareerCardAccordionProps
+} from '@/components/display/Accordion';

@@ -1,7 +1,5 @@
 'use client';
 
-import data from './.data';
-
 import { Pagination, Keyboard, A11y, EffectCards } from 'swiper/modules';
 import { Swiper, SwiperProps, SwiperSlide, SwiperSlideProps } from 'swiper/react';
 import { MergeProps } from '@/types/MergeProps';
@@ -10,6 +8,7 @@ import { cn } from '@/utils/cn';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-cards';
+import { useIntlayer } from 'next-intlayer';
 
 export type GalleryCardsCarouselProps = MergeProps<
   {
@@ -28,11 +27,23 @@ export const GalleryCardsCarousel = ({
   className,
   ...props
 }: GalleryCardsCarouselProps) => {
+  const t = useIntlayer('gallery-cards-carousel');
+
   return (
     <Swiper
       keyboard
       grabCursor
-      a11y={data}
+      a11y={{
+        prevSlideMessage: t.prevSlideMessage.value,
+        nextSlideMessage: t.nextSlideMessage.value,
+        firstSlideMessage: t.firstSlideMessage.value,
+        lastSlideMessage: t.lastSlideMessage.value,
+        paginationBulletMessage: t.paginationBulletMessage.value,
+        slideLabelMessage: t.slideLabelMessage.value,
+        containerMessage: t.containerMessage.value,
+        containerRoleDescriptionMessage: t.containerRoleDescriptionMessage.value,
+        itemRoleDescriptionMessage: t.itemRoleDescriptionMessage.value
+      }}
       effect='cards'
       centeredSlides
       pagination={{ clickable: true }}

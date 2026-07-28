@@ -1,7 +1,5 @@
 'use client';
 
-import data from './.data';
-
 import { Parallax, Pagination, Keyboard, A11y } from 'swiper/modules';
 import { Swiper, SwiperProps, SwiperSlide, SwiperSlideProps } from 'swiper/react';
 import 'swiper/css/parallax';
@@ -11,6 +9,7 @@ import { cn } from '@/utils/cn';
 import 'swiper/css';
 import 'swiper/css/parallax';
 import 'swiper/css/pagination';
+import { useIntlayer } from 'next-intlayer';
 
 export type GalleryParallaxCarouselProps = MergeProps<
   {
@@ -29,6 +28,8 @@ export const GalleryParallaxCarousel = ({
   className,
   ...props
 }: GalleryParallaxCarouselProps) => {
+  const t = useIntlayer('gallery-parallax-carousel');
+
   // 4 slides minimum
   if (items.length === 1) {
     items = [...items, ...items, ...items, ...items];
@@ -44,7 +45,17 @@ export const GalleryParallaxCarousel = ({
       parallax
       keyboard
       grabCursor
-      a11y={data}
+      a11y={{
+        prevSlideMessage: t.prevSlideMessage.value,
+        nextSlideMessage: t.nextSlideMessage.value,
+        firstSlideMessage: t.firstSlideMessage.value,
+        lastSlideMessage: t.lastSlideMessage.value,
+        paginationBulletMessage: t.paginationBulletMessage.value,
+        slideLabelMessage: t.slideLabelMessage.value,
+        containerMessage: t.containerMessage.value,
+        containerRoleDescriptionMessage: t.containerRoleDescriptionMessage.value,
+        itemRoleDescriptionMessage: t.itemRoleDescriptionMessage.value
+      }}
       centeredSlides
       spaceBetween={16}
       slidesPerView='auto'

@@ -1,6 +1,5 @@
 import { Badge, BadgeProps } from '@/components/display/Badge';
 import { MergeProps } from '@/types/MergeProps';
-import { cn } from '@/utils/cn';
 
 export type ProjectCardBadgeProps = MergeProps<{ index: number }, BadgeProps, 'children'>;
 

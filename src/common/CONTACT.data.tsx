@@ -5,8 +5,8 @@ export default {
   content: {
     email: 'richard.ac.passos12@gmail.com',
     creator: {
-      url: 'https://github.com/Richard-Passos',
-      name: 'Richard P.'
+      name: 'Richard P.',
+      url: 'https://github.com/Richard-Passos'
     },
     authors: [
       {
@@ -16,16 +16,16 @@ export default {
     ],
     socials: [
       {
-        url: 'https://github.com/Richard-Passos',
-        label: 'Github'
+        label: 'Github',
+        url: 'https://github.com/Richard-Passos'
       },
       {
-        url: 'https://www.instagram.com/richardp.dev/',
-        label: 'Instagram'
+        label: 'Instagram',
+        url: 'https://www.instagram.com/richardp.dev/'
       },
       {
-        url: 'https://www.linkedin.com/in/richardp-dev',
-        label: 'Linkedin'
+        label: 'Linkedin',
+        url: 'https://www.linkedin.com/in/richardp-dev'
       }
     ]
   }

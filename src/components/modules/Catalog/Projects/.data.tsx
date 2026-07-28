@@ -1,6 +1,9 @@
-import { PROJECTS } from '@/common/PROJECTS';
+import { Dictionary, nest, t } from 'intlayer';
 
 export default {
-  empty: 'Nenhuma projeto encontrada!',
-  items: PROJECTS
-};
+  key: 'projects-catalog',
+  content: {
+    empty: t({ en: 'None project found!', pt: 'Nenhuma projeto encontrada!' }),
+    items: nest('projects')
+  }
+} satisfies Dictionary;

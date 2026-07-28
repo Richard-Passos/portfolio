@@ -2,16 +2,20 @@ import { Button } from '@/components/input/Button';
 import { Link, LinkProps } from '@/components/navigation/Link';
 import { PlusIcon } from '@/components/system/Icon/Plus';
 import { cn } from '@/utils/cn';
+import { useIntlayer } from 'next-intlayer/server';
 
 export type ProjectCardTriggerProps = LinkProps;
 
 export const ProjectCardTrigger = ({ className, ...props }: ProjectCardTriggerProps) => {
+  const t = useIntlayer('project-card');
+
   return (
     <Button
       asChild
       iconOnly
     >
       <Link
+        aria-label={t.open.value}
         className={cn(
           'ml-auto h-auto shrink-0 rounded-none border-l-border p-4 text-2xl transition-none md:p-8 engaged:text-primary',
           className

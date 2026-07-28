@@ -1,19 +1,19 @@
-import { PROJECTS } from '@/common/PROJECTS';
 import { notFound } from 'next/navigation';
 import { AdjacentProjects } from '@/components/layout/Blocks/AdjacentProjects';
 import { ProjectHero } from '@/components/layout/Heros/Project';
 import { NextPageIntlayer } from 'next-intlayer';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { IntlayerServerProvider } from 'next-intlayer/server';
+import { IntlayerServerProvider, useIntlayer } from 'next-intlayer/server';
 
 const ProjectContent = ({ id }: { id: string }) => {
-  const project = PROJECTS.find((p) => p.id == id);
+  const projects = useIntlayer('projects');
+  const project = projects.find((p) => p.id == id);
 
   if (!project) notFound();
 
-  const prev = PROJECTS.find((p) => p.id == project.prev)!;
-  const next = PROJECTS.find((p) => p.id == project.next)!;
+  const prev = projects.find((p) => p.id == project.prev)!;
+  const next = projects.find((p) => p.id == project.next)!;
 
   return (
     <>

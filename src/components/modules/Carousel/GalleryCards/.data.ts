@@ -1,11 +1,43 @@
+import { Dictionary, t } from 'intlayer';
+
 export default {
-  prevSlideMessage: 'Ver imagem anterior',
-  nextSlideMessage: 'Ver próxima imagem',
-  firstSlideMessage: 'Você está na primeira imagem',
-  lastSlideMessage: 'Você está na última imagem',
-  paginationBulletMessage: 'Ir para a imagem {{index}}',
-  slideLabelMessage: 'Imagem {{index}} de {{slidesLength}}',
-  containerMessage: 'Galeria de imagens',
-  containerRoleDescriptionMessage: 'carrossel',
-  itemRoleDescriptionMessage: 'imagem'
-};
+  key: 'gallery-cards-carousel',
+  content: {
+    prevSlideMessage: t({
+      en: 'Go to previous image',
+      pt: 'Ver imagem anterior'
+    }),
+    nextSlideMessage: t({
+      en: 'Go to next image',
+      pt: 'Ver próxima imagem'
+    }),
+    firstSlideMessage: t({
+      en: 'You are viewing the first image',
+      pt: 'Você está na primeira imagem'
+    }),
+    lastSlideMessage: t({
+      en: 'You are viewing the last image',
+      pt: 'Você está na última imagem'
+    }),
+    paginationBulletMessage: t({
+      en: 'Go to image {{index}}',
+      pt: 'Ir para a imagem {{index}}'
+    }),
+    slideLabelMessage: t({
+      en: 'Image {{index}} of {{slidesLength}}',
+      pt: 'Imagem {{index}} de {{slidesLength}}'
+    }),
+    containerMessage: t({
+      en: 'Image gallery',
+      pt: 'Galeria de imagens'
+    }),
+    containerRoleDescriptionMessage: t({
+      en: 'carousel',
+      pt: 'carrossel'
+    }),
+    itemRoleDescriptionMessage: t({
+      en: 'image',
+      pt: 'imagem'
+    })
+  }
+} satisfies Dictionary;

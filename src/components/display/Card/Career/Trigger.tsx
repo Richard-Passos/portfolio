@@ -1,13 +1,14 @@
-import data from './.data';
-
 import { cn } from '@/utils/cn';
 import { AccordionIndicator, AccordionTrigger } from '@/components/display/Accordion';
 import { PlusIcon } from '@/components/system/Icon/Plus';
 import { Button, ButtonProps } from '@/components/input/Button';
+import { useIntlayer } from 'next-intlayer/server';
 
 export type CareerCardTriggerProps = Omit<ButtonProps, 'children'>;
 
 export const CareerCardTrigger = ({ className, ...props }: CareerCardTriggerProps) => {
+  const t = useIntlayer('career-card');
+
   return (
     <AccordionTrigger asChild>
       <Button
@@ -21,9 +22,9 @@ export const CareerCardTrigger = ({ className, ...props }: CareerCardTriggerProp
         <AccordionIndicator>
           <PlusIcon className='transition-[rotate] duration-700 ease-backOut group-data-[state=open]/button:rotate-405' />
 
-          <span className='sr-only data-[state=open]:hidden'>{data.open}</span>
+          <span className='sr-only data-[state=open]:hidden'>{t.open}</span>
 
-          <span className='sr-only data-[state=closed]:hidden'>{data.close}</span>
+          <span className='sr-only data-[state=closed]:hidden'>{t.close}</span>
         </AccordionIndicator>
       </Button>
     </AccordionTrigger>

@@ -36,7 +36,7 @@ export const SectionAnim = ({ theme, forceTheme, ref, ...props }: SectionAnimPro
       const el = innerRef.current;
       if (!el) return;
 
-      const trigger = ScrollTrigger.create({
+      ScrollTrigger.create({
         trigger: el,
         start: 'top 10%',
         end: 'bottom 10%',
