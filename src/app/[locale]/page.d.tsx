@@ -7,7 +7,6 @@ import { SmileIcon } from '@/components/system/Icon/Smile';
 import { GameControllerIcon } from '@/components/system/Icon/GameController';
 import { SparklesIcon } from '@/components/system/Icon/Sparkles';
 import { TrophyIcon } from '@/components/system/Icon/Trophy';
-import { SKILLS } from '@/common/SKILLS';
 import { HomeData } from './page';
 
 const rotateAnimation = {
@@ -187,7 +186,7 @@ export default {
   },
   skills: {
     title: 'Hard Skills',
-    items: SKILLS
+    items: []
   },
   cta: {
     title: 'CTA',

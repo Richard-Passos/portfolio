@@ -1,12 +1,11 @@
-import { PlusIcon } from '@/components/system/Icon/Plus';
+import { Dictionary, t } from 'intlayer';
 
 export default {
-  label: {
-    first: (
-      <>
-        Mais <PlusIcon className='size-[.8em] max-sm:hidden' />
-      </>
-    ),
-    second: 'Projetos'
+  key: 'adjacent-projects',
+  content: {
+    label: {
+      first: t({ en: 'More', pt: 'Mais' }),
+      second: t({ en: 'Projects', pt: 'Projetos' })
+    }
   }
-};
+} satisfies Dictionary;

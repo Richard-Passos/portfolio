@@ -1,5 +1,3 @@
-import RootData from './.data';
-
 import { cn } from '@/utils/cn';
 import { Section, SectionProps } from '@/components/layout/Section';
 import { MergeProps } from '@/types/MergeProps';
@@ -7,6 +5,8 @@ import { Project } from '@/types/Project';
 import ProjectCard from '@/components/display/Card/Project';
 import { Title } from '@/components/system/Title';
 import { Lines } from '@/components/misc/Lines';
+import { useIntlayer } from 'next-intlayer/server';
+import { PlusIcon } from '@/components/system/Icon/Plus';
 
 export type AdjacentProjectsProps = MergeProps<
   { data: { prev: Project; next: Project } },
@@ -14,13 +14,15 @@ export type AdjacentProjectsProps = MergeProps<
 >;
 
 export const AdjacentProjects = ({ data, className, ...props }: AdjacentProjectsProps) => {
+  const t = useIntlayer('adjacent-projects');
+
   return (
     <Section
       className={cn('min-h-(--h)', className)}
       {...props}
     >
       <Title className='sm:sr-only'>
-        {RootData.label.first} {RootData.label.second}
+        {t.label.first} {t.label.second}
       </Title>
 
       <section className='mt-8 grid w-full max-w-3xl gap-4 sm:grid-cols-2 sm:pt-32'>
@@ -29,7 +31,7 @@ export const AdjacentProjects = ({ data, className, ...props }: AdjacentProjects
             aria-hidden
             className='mb-4 max-sm:hidden'
           >
-            {RootData.label.first}
+            {t.label.first} <PlusIcon className='size-[.8em]' />
           </Title>
 
           <ProjectCard asChild>
@@ -60,7 +62,7 @@ export const AdjacentProjects = ({ data, className, ...props }: AdjacentProjects
             aria-hidden
             className='mb-4 max-sm:hidden'
           >
-            {RootData.label.second}
+            {t.label.second}
           </Title>
 
           <ProjectCard asChild>

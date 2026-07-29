@@ -1,5 +1,3 @@
-import RootData from './.data';
-
 import { cn } from '@/utils/cn';
 import { Section, SectionProps } from '@/components/layout/Section';
 import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
@@ -8,6 +6,8 @@ import { GalleryParallaxCarousel } from '@/components/modules/Carousel/GalleryPa
 import { MergeProps } from '@/types/MergeProps';
 import { Project } from '@/types/Project';
 import { MagneticLink } from '@/components/navigation/Link/Magnetic';
+import { useIntlayer } from 'next-intlayer/server';
+import { ArrowUpRightIcon } from '@/components/system/Icon/ArrowUpRight';
 
 export type ProjectHeroProps = MergeProps<
   { data: Pick<Project, 'title' | 'year' | 'roles' | 'text' | 'url' | 'thumbnail' | 'images'> },
@@ -15,6 +15,7 @@ export type ProjectHeroProps = MergeProps<
 >;
 
 export const ProjectHero = ({ data, className, ...props }: ProjectHeroProps) => {
+  const t = useIntlayer('project-hero');
   const images = [data.thumbnail, ...(data.images ?? [])];
 
   return (
@@ -48,7 +49,7 @@ export const ProjectHero = ({ data, className, ...props }: ProjectHeroProps) => 
             disabled={!data.url}
             className='mt-16 size-40 rounded-full border-border text-center sm:mt-24 sm:size-48 sm:text-xl'
           >
-            {RootData.view}
+            {t.view} <ArrowUpRightIcon />
           </MagneticLink>
         </div>
       </section>

@@ -1,7 +1,8 @@
-import { ReactNode } from 'react';
+import SKILLSMeta from '@/common/SKILLS.meta';
+import { ComponentType, SVGProps } from 'react';
 
 export type Skill = {
-  id: string;
-  icon: ReactNode;
+  id: keyof typeof SKILLSMeta;
   title: string;
+  Icon: ComponentType<SVGProps<SVGSVGElement>>;
 };

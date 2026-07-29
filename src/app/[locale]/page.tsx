@@ -1,4 +1,4 @@
-import data from './page.data';
+import data from './page.d';
 
 import { Mission, MissionProps } from '@/components/layout/Blocks/Mission';
 import { PrimaryHero, PrimaryHeroProps } from '@/components/layout/Heros/Primary';
@@ -12,6 +12,7 @@ import { IntlayerServerProvider, useIntlayer } from 'next-intlayer/server';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { NextPageIntlayer } from 'next-intlayer';
+import SKILLSMeta from '@/common/SKILLS.meta';
 
 export type HomeData = {
   hero: PrimaryHeroProps['data'];
@@ -26,6 +27,12 @@ export type HomeData = {
 };
 
 const HomeContent = () => {
+  const t = useIntlayer('skills');
+  const skills = t.map((s) => ({
+    ...s,
+    ...(SKILLSMeta[s.id as keyof typeof SKILLSMeta] ?? {})
+  }));
+
   return (
     <>
       <PrimaryHero
@@ -68,7 +75,7 @@ const HomeContent = () => {
 
       <Skills
         theme='dark'
-        data={data.skills}
+        data={{ ...data.skills, items: skills }}
         className='pb-[calc(var(--py)*2)]'
       />
 

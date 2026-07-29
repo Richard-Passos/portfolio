@@ -18,15 +18,17 @@ export const Skills = ({ data, ...props }: SkillsProps) => {
       </StaggeredTitleOnView>
 
       <SpinCard.Group className='mt-24'>
-        {data.items.map((el) => (
-          <SpinCard key={el.id}>
+        {data.items.map(({ id, title, Icon }) => (
+          <SpinCard key={id}>
             <SpinCard.Content>
               <SpinCard.Front>
-                <SpinCard.Icon>{el.icon}</SpinCard.Icon>
+                <SpinCard.Icon>
+                  <Icon />
+                </SpinCard.Icon>
               </SpinCard.Front>
 
               <SpinCard.Back>
-                <SpinCard.Title>{el.title}</SpinCard.Title>
+                <SpinCard.Title>{title}</SpinCard.Title>
               </SpinCard.Back>
             </SpinCard.Content>
 

@@ -1,3 +1,4 @@
+import SOCIALS from '@/common/CONTACT.meta';
 import { MagneticLink } from '@/components/navigation/Link/Magnetic';
 import Drawer, { DrawerContentProps } from '@/components/modules/Drawer';
 import LocaleMenu from '@/components/navigation/Menu/Locale';
@@ -9,6 +10,10 @@ export type MenuDrawerContentProps = DrawerContentProps;
 
 export const MenuDrawerContent = ({ className, ...props }: MenuDrawerContentProps) => {
   const t = useIntlayer('menu-drawer');
+  const socials = t.socials.map((s) => ({
+    ...s,
+    ...(SOCIALS[s.id as keyof typeof SOCIALS] ?? {})
+  }));
 
   return (
     <>
@@ -47,14 +52,14 @@ export const MenuDrawerContent = ({ className, ...props }: MenuDrawerContentProp
             <LocaleMenu.Content />
           </LocaleMenu>
 
-          {t.socials.map(({ url, label }) => (
+          {socials.map(({ id, url, label, Icon }) => (
             <MagneticLink
               iconOnly
-              key={url}
+              key={id}
               href={url}
               aria-label={label}
             >
-              {label.at(0)}
+              <Icon />
             </MagneticLink>
           ))}
         </div>

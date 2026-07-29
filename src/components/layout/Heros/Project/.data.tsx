@@ -1,9 +1,11 @@
-import { ArrowUpRightIcon } from '@/components/system/Icon/ArrowUpRight';
+import { Dictionary, t } from 'intlayer';
 
 export default {
-  view: (
-    <>
-      Site no ar <ArrowUpRightIcon />
-    </>
-  )
-};
+  key: 'project-hero',
+  content: {
+    view: t({
+      en: 'Live site',
+      pt: 'Site no ar'
+    })
+  }
+} satisfies Dictionary;

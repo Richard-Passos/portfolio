@@ -1,8 +1,8 @@
-import { Dictionary } from 'intlayer';
+import { Dictionary, t } from 'intlayer';
 
 export default {
   key: 'locale-menu',
   content: {
-    label: 'Sua localidade'
+    label: t({ en: 'Your locale', pt: 'Sua localidade' })
   }
 } satisfies Dictionary;

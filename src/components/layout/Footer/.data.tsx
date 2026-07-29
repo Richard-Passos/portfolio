@@ -1,4 +1,4 @@
-import { Dictionary, html, insert, nest, t } from 'intlayer';
+import { Dictionary, insert, nest, t } from 'intlayer';
 
 export default {
   key: 'footer',

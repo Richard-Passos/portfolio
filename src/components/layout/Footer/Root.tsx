@@ -7,6 +7,7 @@ import { Title } from '@/components/system/Title';
 import { MergeProps } from '@/types/MergeProps';
 import { Theme } from '@/types/Theme';
 import { cn } from '@/utils/cn';
+import SOCIALS from '@/common/CONTACT.meta';
 import { FooterAnim } from '@/components/layout/Footer/Anim';
 import EmailClipboard from '@/components/input/Clipboard/Email';
 import MouseTrail from '@/components/motion/MouseTrail';
@@ -26,6 +27,10 @@ export type FooterProps = MergeProps<{ theme?: Theme }, SectionProps>;
 export const Footer = ({ className, ...props }: FooterProps) => {
   const t = useIntlayer('footer');
   const contact = useIntlayer('contact');
+  const socials = t.socials.map((s) => ({
+    ...s,
+    ...(SOCIALS[s.id as keyof typeof SOCIALS] ?? {})
+  }));
 
   return (
     <FooterAnim>
@@ -57,15 +62,15 @@ export const Footer = ({ className, ...props }: FooterProps) => {
               </MagneticLink>
             </div>
 
-            {t.socials.map(({ url, label }) => (
+            {socials.map(({ id, url, label, Icon }) => (
               <MagneticLink
                 iconOnly
-                key={url}
+                key={id}
                 href={url}
                 aria-label={label}
                 className='bg-transparent!'
               >
-                {label.at(0)}
+                <Icon />
               </MagneticLink>
             ))}
           </section>
