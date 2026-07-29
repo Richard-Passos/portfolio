@@ -4,10 +4,10 @@ import { cn } from '@/utils/cn';
 import { Section, SectionProps } from '@/components/layout/Section';
 import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
 import { Text } from '@/components/system/Text';
-import { MagneticButton } from '@/components/input/Button/Magnetic';
 import { GalleryParallaxCarousel } from '@/components/modules/Carousel/GalleryParallax';
 import { MergeProps } from '@/types/MergeProps';
 import { Project } from '@/types/Project';
+import { MagneticLink } from '@/components/navigation/Link/Magnetic';
 
 export type ProjectHeroProps = MergeProps<
   { data: Pick<Project, 'title' | 'year' | 'roles' | 'text' | 'url' | 'thumbnail' | 'images'> },
@@ -43,13 +43,13 @@ export const ProjectHero = ({ data, className, ...props }: ProjectHeroProps) => 
         <div className='max-w-md shrink grow'>
           <Text>{data.text}</Text>
 
-          <MagneticButton
-            href={data.url}
+          <MagneticLink
+            href={data.url ?? ''}
             disabled={!data.url}
             className='mt-16 size-40 rounded-full border-border text-center sm:mt-24 sm:size-48 sm:text-xl'
           >
             {RootData.view}
-          </MagneticButton>
+          </MagneticLink>
         </div>
       </section>
 

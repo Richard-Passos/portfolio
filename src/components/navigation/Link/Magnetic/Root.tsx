@@ -7,7 +7,6 @@ import { cn } from '@/utils/cn';
 export type MagneticLinkProps = MergeProps<UseMagneticOptions['config'], ButtonLinkProps>;
 
 export const MagneticLink = ({
-  href,
   className,
   children,
   strength = 0.35,
@@ -24,7 +23,6 @@ export const MagneticLink = ({
   return (
     <Magnetic {...magneticProps}>
       <ButtonLink
-        href={href}
         className={cn(
           'isolate gap-0 overflow-hidden px-0 transition-none engaged:bg-(--bg)',
           className
