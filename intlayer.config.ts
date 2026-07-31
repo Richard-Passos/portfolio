@@ -111,7 +111,7 @@ const config: IntlayerConfig = {
      *
      * Minify the dictionaries to reduce the bundle size.
      */
-    minify: false,
+    minify: true,
 
     /**
      * (Experimental feature)
