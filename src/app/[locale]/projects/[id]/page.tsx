@@ -34,17 +34,15 @@ const ProjectPage: NextPageIntlayer<{ id: string }> = async ({ params }) => {
   const { locale, id } = await params;
 
   return (
-    <>
-      <IntlayerServerProvider locale={locale}>
-        <Header />
+    <IntlayerServerProvider locale={locale}>
+      <Header />
 
-        <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
-          <ProjectContent id={id} />
-        </main>
+      <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
+        <ProjectContent id={id} />
+      </main>
 
-        <Footer />
-      </IntlayerServerProvider>
-    </>
+      <Footer />
+    </IntlayerServerProvider>
   );
 };
 

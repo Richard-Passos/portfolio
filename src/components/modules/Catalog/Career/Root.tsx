@@ -48,7 +48,7 @@ export const CareerCatalog = ({ className, ...props }: CareerCatalogProps) => {
                   <CareerCard.Trigger />
                 </CareerCard.Header>
 
-                <CareerCard.Text>{el.text}</CareerCard.Text>
+                <CareerCard.Text asChild>{el.text}</CareerCard.Text>
               </CareerCard>
             ))}
           </CareerCard.Accordion>

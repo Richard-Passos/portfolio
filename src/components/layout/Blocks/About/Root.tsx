@@ -78,7 +78,12 @@ export const About = ({ data, className, ...props }: AboutProps) => {
               {data.items.about.badge}
             </Badge>
 
-            <GradientCard.Text className='mt-auto'>{data.items.about.text}</GradientCard.Text>
+            <GradientCard.Text
+              asChild
+              className='mt-auto'
+            >
+              {data.items.about.text}
+            </GradientCard.Text>
           </GradientCard>
         </BentoGrid.Item>
 
@@ -121,7 +126,7 @@ export const About = ({ data, className, ...props }: AboutProps) => {
 
             <GradientCard.Title>{data.items.hobbies.title}</GradientCard.Title>
 
-            <GradientCard.Text>{data.items.hobbies.text}</GradientCard.Text>
+            <GradientCard.Text asChild>{data.items.hobbies.text}</GradientCard.Text>
           </GradientCard>
         </BentoGrid.Item>
 

@@ -91,17 +91,15 @@ const HomePage: NextPageIntlayer = async ({ params }) => {
   const { locale } = await params;
 
   return (
-    <>
-      <IntlayerServerProvider locale={locale}>
-        <Header />
+    <IntlayerServerProvider locale={locale}>
+      <Header />
 
-        <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
-          <HomeContent />
-        </main>
+      <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
+        <HomeContent />
+      </main>
 
-        <Footer />
-      </IntlayerServerProvider>
-    </>
+      <Footer />
+    </IntlayerServerProvider>
   );
 };
 

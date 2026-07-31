@@ -103,11 +103,7 @@ export default {
   },
   but: {
     title: 'MAS',
-    text: (
-      <>
-        <span>Nem tudo</span> <span className='ml-auto'>é tecnologia</span>
-      </>
-    )
+    text: 'Nem tudo é tecnologia'
   },
   about: {
     title: (
@@ -119,7 +115,7 @@ export default {
       about: {
         badge: '#sobre',
         text: (
-          <>
+          <div>
             <p>
               <b>
                 <SparklesIcon className='text-warning' /> —
@@ -139,7 +135,7 @@ export default {
               Uma frase que sempre ficou comigo diz:{' '}
               <i>"Faça uma aposta de que o amor existe, e realize um ato de amor."</i>.
             </p>
-          </>
+          </div>
         )
       },
       better: {
@@ -158,7 +154,7 @@ export default {
         icon: <TrophyIcon />,
         title: 'Fora do Código',
         text: (
-          <>
+          <div>
             <p>
               Grande parte do meu tempo livre acaba nos videogames, principalmente aqueles que
               desafiam a paciência, a persistência e a vontade de melhorar. Também gosto de
@@ -171,7 +167,7 @@ export default {
               momentos simples como esses que me fazem desacelerar, recarregar as energias e lembrar
               que a vida acontece muito além da tela.
             </p>
-          </>
+          </div>
         )
       },
       gallery: {

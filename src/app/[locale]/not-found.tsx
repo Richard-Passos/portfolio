@@ -18,21 +18,19 @@ export const NotFoundContent = () => {
   const t = useIntlayer('not-found-page');
 
   return (
-    <>
-      <ErrorHero theme='dark'>
-        <ErrorHero.Status>{t.hero.status}</ErrorHero.Status>
+    <ErrorHero theme='dark'>
+      <ErrorHero.Status>{t.hero.status}</ErrorHero.Status>
 
-        <ErrorHero.Content>
-          <ErrorHero.Title>{t.hero.title}</ErrorHero.Title>
+      <ErrorHero.Content>
+        <ErrorHero.Title>{t.hero.title}</ErrorHero.Title>
 
-          <ErrorHero.Text>{t.hero.text}</ErrorHero.Text>
+        <ErrorHero.Text>{t.hero.text}</ErrorHero.Text>
 
-          <ErrorHero.Action href='/'>
-            {t.hero.action} <ArrowUpRightIcon />
-          </ErrorHero.Action>
-        </ErrorHero.Content>
-      </ErrorHero>
-    </>
+        <ErrorHero.Action href='/'>
+          {t.hero.action} <ArrowUpRightIcon />
+        </ErrorHero.Action>
+      </ErrorHero.Content>
+    </ErrorHero>
   );
 };
 
@@ -40,17 +38,15 @@ const NotFoundPage = async () => {
   const locale = await getLocale();
 
   return (
-    <>
-      <IntlayerServerProvider locale={locale}>
-        <Header />
+    <IntlayerServerProvider locale={locale}>
+      <Header />
 
-        <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
-          <NotFoundContent />
-        </main>
+      <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
+        <NotFoundContent />
+      </main>
 
-        <Footer />
-      </IntlayerServerProvider>
-    </>
+      <Footer />
+    </IntlayerServerProvider>
   );
 };
 
