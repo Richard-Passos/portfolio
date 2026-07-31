@@ -1,5 +1,5 @@
 import { ark } from '@ark-ui/react/factory';
-import { Children, ComponentProps, isValidElement } from 'react';
+import { Children, ComponentProps } from 'react';
 
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
@@ -7,7 +7,7 @@ import { cn } from '@/utils/cn';
 export type TextProps = MergeProps<{ small?: boolean }, ComponentProps<typeof ark.p>>;
 
 export const Text = ({ small, className, children, ...props }: TextProps) => {
-  const isPlainText = Children.toArray(children).every(
+  const isPlainText = Children.toArray(children?.toString()).every(
     (child) => typeof child === 'string' || typeof child === 'number'
   );
 

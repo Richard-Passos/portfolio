@@ -10,7 +10,14 @@ import { useLocale } from 'next-intlayer';
 
 export type LinkProps = MergeProps<{ disabled?: boolean }, ComponentProps<typeof NextLink>>;
 
-export const Link = ({ href, hrefLang, disabled, className, ...props }: LinkProps) => {
+export const Link = ({
+  href,
+  hrefLang,
+  disabled,
+  className,
+  tabIndex = 0,
+  ...props
+}: LinkProps) => {
   const { locale } = useLocale();
   const isExternal = !disabled && !/^(\/|#)/.test(href.toString());
   const hrefI18n = !hrefLang && !isExternal ? getLocalizedUrl(href.toString(), locale) : href;
@@ -19,16 +26,13 @@ export const Link = ({ href, hrefLang, disabled, className, ...props }: LinkProp
     <NextLink
       aria-disabled={disabled ? true : undefined}
       href={disabled ? '#' : hrefI18n}
-      tabIndex={disabled ? -1 : 0}
+      tabIndex={disabled ? -1 : tabIndex}
       className={cn(
         'inline-flex aria-disabled:cursor-not-allowed aria-disabled:opacity-50',
         className
       )}
       {...(isExternal && { rel: 'noreferrer', target: '_blank' })}
       {...props}
-      onClick={(ev) => {
-        props.onClick?.(ev);
-      }}
     />
   );
 };

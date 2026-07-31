@@ -15,7 +15,6 @@ const displayFont = localFont({
 
 const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
   const { locale } = await params;
-  console.log('Locale Layout: ', locale);
 
   return (
     <html
