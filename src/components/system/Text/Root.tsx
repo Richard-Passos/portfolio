@@ -7,7 +7,7 @@ import { cn } from '@/utils/cn';
 export type TextProps = MergeProps<{ small?: boolean }, ComponentProps<typeof ark.p>>;
 
 export const Text = ({ small, className, children, ...props }: TextProps) => {
-  const isPlainText = Children.toArray(children?.toString()).every(
+  const isPlainText = Children.toArray(children).every(
     (child) => typeof child === 'string' || typeof child === 'number'
   );
 
