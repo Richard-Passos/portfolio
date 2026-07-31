@@ -1474,13 +1474,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@intlayer/swc@npm:^9.0.2":
-  version: 9.0.2
-  resolution: "@intlayer/swc@npm:9.0.2"
-  checksum: 10c0/a080f41af9f87df9338ab4b9319affaccda8059e7edfcf98d25ad2e15a53fccfb017222b6c9aca3e38cee8168aced5ca2a8847c598f225b7bf05ef87117fadb5
-  languageName: node
-  linkType: hard
-
 "@intlayer/types@npm:9.0.1":
   version: 9.0.1
   resolution: "@intlayer/types@npm:9.0.1"
@@ -8230,7 +8223,6 @@ __metadata:
     "@ark-ui/react": "npm:^5.37.2"
     "@gsap/react": "npm:^2.1.2"
     "@hookform/resolvers": "npm:^5.4.0"
-    "@intlayer/swc": "npm:^9.0.2"
     "@radix-ui/react-slot": "npm:^1.3.0"
     "@reduxjs/toolkit": "npm:^2.12.0"
     "@tailwindcss/postcss": "npm:^4.3.2"
