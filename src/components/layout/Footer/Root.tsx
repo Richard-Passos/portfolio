@@ -123,7 +123,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
           </section>
 
           <MouseTrail.Container>
-            <ScrollYLines className='inset-x-[calc(var(--w)*-0.025)] top-24 bottom-[12%]'>
+            <ScrollYLines className='inset-x-[calc(var(--w)*0.025)] top-24 bottom-[12%]'>
               <MouseTrail
                 items={[
                   <SmileIcon key='smile' />,

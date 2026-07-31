@@ -23,7 +23,7 @@ const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
       dir={getHTMLTextDir(locale)}
       className={cn('scrollbar-gutter-stable overflow-x-clip', displayFont.className)}
     >
-      <body className='relative flex min-h-(--h) flex-col items-center overflow-x-clip bg-body [--h:min(100dvh,var(--max-height-bounds))]'>
+      <body className='relative flex min-h-(--h) flex-col items-center overflow-x-clip bg-body [--h:min(100dvh,var(--max-height-bounds))] [--w:min(100dvw,var(--max-width-bounds))]'>
         <SmoothScroll>
           <StoreProvider>
             <IntlayerClientProvider locale={locale}>{children}</IntlayerClientProvider>
