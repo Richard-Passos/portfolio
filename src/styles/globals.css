@@ -173,7 +173,7 @@
   }
 
   ::placeholder {
-    @apply placeholder-placeholder;
+    @apply text-placeholder;
   }
 
   .border,
