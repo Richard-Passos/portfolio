@@ -134,7 +134,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
                   <HeartIcon key='heart' />,
                   <TrophyIcon key='trophy' />
                 ]}
-                className='text-9xl'
+                className='text-8xl'
               />
             </ScrollYLines>
           </MouseTrail.Container>
