@@ -12,12 +12,12 @@ export const Skills = ({ data, ...props }: SkillsProps) => {
     <Section {...props}>
       <StaggeredTitleOnView
         as='h2'
-        className='max-w-5xl text-center'
+        className='max-w-xl text-center'
       >
         {data.title}
       </StaggeredTitleOnView>
 
-      <SpinCard.Group className='mt-24'>
+      <SpinCard.Group className='mt-12 max-w-7xl'>
         {data.items.map(({ id, title, Icon }) => (
           <SpinCard key={id}>
             <SpinCard.Content>

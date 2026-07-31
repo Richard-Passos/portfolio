@@ -12,7 +12,7 @@ export const ProjectsCatalog = ({ className, ...props }: ProjectsCatalogProps) =
 
   return (
     <Catalog
-      className={cn('w-full', className)}
+      className={cn('w-full max-w-7xl', className)}
       {...props}
     >
       {isEmpty && (

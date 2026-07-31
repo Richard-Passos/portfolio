@@ -25,7 +25,7 @@ export const MenuDrawerContent = ({ className, ...props }: MenuDrawerContentProp
       <Drawer.Content
         data-menu-drawer-content
         className={cn(
-          'max-w-xl border-l px-[6%] py-8 will-change-transform sm:pt-24 sm:pb-16',
+          'max-w-xl border-l px-[calc(var(--w)*0.05)] py-8 will-change-transform sm:pt-24 sm:pb-16',
           className
         )}
         {...props}

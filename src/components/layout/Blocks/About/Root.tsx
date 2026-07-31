@@ -58,7 +58,7 @@ export const About = ({ data, className, ...props }: AboutProps) => {
             'hobbies location gallery'
           ]
         }}
-        className='w-9/10'
+        className='w-9/10 max-w-7xl'
       >
         <BentoGrid.Item value='about'>
           <GradientCard

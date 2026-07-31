@@ -7,7 +7,7 @@ export const ErrorHeroContent = ({ className, ...props }: ErrorHeroContentProps)
   return (
     <SlotElement
       tag='div'
-      className={cn('relative mb-24 w-9/10 max-w-5xl border-b px-[5%] py-32', className)}
+      className={cn('relative mb-24 w-9/10 max-w-5xl border-b py-32', className)}
       {...props}
     />
   );

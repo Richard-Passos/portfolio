@@ -34,11 +34,11 @@ export const Mission = ({ data, className, ...props }: MissionProps) => {
         ))}
       </ScrollBands>
 
-      <Text className='mt-10 w-9/10 max-w-xl text-center leading-relaxed tracking-wide'>
+      <Text className='mt-12 w-9/10 max-w-xl text-center leading-relaxed tracking-wide'>
         {data.text}
       </Text>
 
-      <Lines className='-z-10 border-y' />
+      <Lines />
     </Section>
   );
 };

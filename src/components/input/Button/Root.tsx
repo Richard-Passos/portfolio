@@ -22,8 +22,8 @@ export const buttonVariants = cva('', {
     },
     variant: {
       default: 'bg-(--bg) text-(--color) engaged:bg-(--hover)',
-      subtle: 'bg-(--bg)/8 text-(--bg) engaged:bg-(--bg)/16',
-      ghost: 'text-(--bg) engaged:bg-(--bg)/16',
+      subtle: 'bg-(--bg)/8 text-(--bg) engaged:bg-(--hover)/16',
+      ghost: 'text-(--bg) engaged:bg-(--hover)/16',
       plain: 'text-(--color)'
     }
   }

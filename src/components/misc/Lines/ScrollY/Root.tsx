@@ -22,14 +22,14 @@ export const ScrollYLines = ({ className, children, ...props }: ScrollYLinesProp
     <AnimateOnScroll config={ScrollYLinesAnimation}>
       <div
         className={cn(
-          'absolute flex items-center justify-center overflow-hidden rounded-2xl border bg-body dark:border-border/25',
+          'absolute -z-10 flex items-center justify-center overflow-hidden rounded-2xl border border-border/50 bg-body',
           className
         )}
         {...props}
       >
         <Lines
           data-lines
-          className='top-auto h-[150dvh] bg-size-[83.333px_66.666px]'
+          className='top-auto z-0 h-[150dvh] border-y-0 bg-size-[83.333px_66.666px]'
         />
 
         {children}

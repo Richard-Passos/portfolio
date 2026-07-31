@@ -47,7 +47,7 @@ export const PrimaryHeroCards = ({ data, className, ...props }: PrimaryHeroCards
     <AnimateOnView config={PrimaryHeroCardsAnimation}>
       <section
         className={cn(
-          'mt-28 grid w-full items-end gap-4 md:grid-cols-12 [&_svg]:transition-transform [&_svg]:duration-700 [&_svg]:ease-backOut',
+          'mt-28 grid w-full max-w-7xl items-end gap-4 md:grid-cols-12 [&_svg]:transition-transform [&_svg]:duration-700 [&_svg]:ease-backOut',
           className
         )}
         {...props}

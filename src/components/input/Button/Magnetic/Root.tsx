@@ -3,8 +3,20 @@ import { Magnetic } from '@/components/motion/Magnetic';
 import { UseMagneticOptions } from '@/hooks/useMagnetic';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
+import { cva } from 'class-variance-authority';
 
 export type MagneticButtonProps = MergeProps<UseMagneticOptions['config'], ButtonProps, 'asChild'>;
+
+export const magneticButtonVariants = cva('', {
+  variants: {
+    variant: {
+      default: '*:data-bg:bg-(--hover) engaged:bg-(--bg)',
+      subtle: '*:data-bg:bg-(--hover)/16 engaged:bg-(--bg)/8',
+      ghost: '*:data-bg:bg-(--hover)/16 engaged:bg-transparent',
+      plain: ''
+    }
+  }
+});
 
 export const MagneticButton = ({
   className,
@@ -12,6 +24,7 @@ export const MagneticButton = ({
   strength = 0.35,
   duration,
   ease,
+  variant,
   ...props
 }: MagneticButtonProps) => {
   const magneticProps = {
@@ -24,7 +37,8 @@ export const MagneticButton = ({
     <Magnetic {...magneticProps}>
       <Button
         className={cn(
-          'isolate gap-0 overflow-hidden px-0 transition-none engaged:bg-(--bg)',
+          magneticButtonVariants({ variant }),
+          'isolate gap-0 overflow-hidden px-0 transition-none',
           className
         )}
         {...props}

@@ -12,7 +12,7 @@ export const CareerCatalog = ({ className, ...props }: CareerCatalogProps) => {
 
   return (
     <Catalog
-      className={cn('w-full max-w-5xl', className)}
+      className={cn('w-full max-w-6xl', className)}
       {...props}
     >
       {isEmpty && (
