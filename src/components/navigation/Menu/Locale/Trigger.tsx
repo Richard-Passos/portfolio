@@ -5,8 +5,7 @@ import { MenuTrigger } from '@/components/navigation/Menu';
 import { GlobeIcon } from '@/components/system/Icon/Globe';
 import { cn } from '@/utils/cn';
 import { getLocaleName } from 'intlayer';
-import { useLocale } from 'next-intlayer';
-import { useIntlayer } from 'next-intlayer/server';
+import { useLocale, useIntlayer } from 'next-intlayer';
 
 export type LocaleMenuTriggerProps = Omit<ButtonProps, 'children'>;
 

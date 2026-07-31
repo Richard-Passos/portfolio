@@ -25,7 +25,10 @@ export const LocaleMenuContent = ({
   const { locale, pathWithoutLocale, availableLocales, setLocale } = useLocale();
 
   return (
-    <MenuContent className='min-w-32'>
+    <MenuContent
+      {...wrapperProps}
+      className={cn('min-w-32', wrapperProps?.className)}
+    >
       {availableLocales.map((localeItem) => (
         <MenuItem
           key={localeItem}
