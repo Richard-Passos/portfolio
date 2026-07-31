@@ -30,7 +30,7 @@ export const ReviewTitleOnScroll = ({
             as={as}
             data-title
             className={cn(
-              'w-max px-[5%] text-[clamp(8rem,20vw,22rem)]/none font-black text-nowrap will-change-transform',
+              'w-max px-[calc(var(--w)*0.05)] text-[clamp(8rem,20vw,22rem)]/none font-black text-nowrap will-change-transform',
               className
             )}
           >

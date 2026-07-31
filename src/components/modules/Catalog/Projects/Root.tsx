@@ -12,7 +12,7 @@ export type ProjectsCatalogProps = Omit<CatalogProps<Project>, 'items'>;
 export const ProjectsCatalog = ({ className, ...props }: ProjectsCatalogProps) => {
   return (
     <Catalog
-      className={cn('w-full', className)}
+      className={cn('w-full max-w-7xl', className)}
       items={data.items}
       {...props}
     >

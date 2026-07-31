@@ -10,7 +10,7 @@ export type CareerCatalogProps = Omit<CatalogProps<Career>, 'items'>;
 export const CareerCatalog = ({ className, ...props }: CareerCatalogProps) => {
   return (
     <Catalog
-      className={cn('w-full max-w-5xl', className)}
+      className={cn('w-full max-w-6xl', className)}
       items={data.items}
       {...props}
     >

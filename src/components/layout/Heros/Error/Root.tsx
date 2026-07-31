@@ -30,7 +30,7 @@ export const ErrorHero = ({ data, className, ...props }: ErrorHeroProps) => {
     >
       <ReviewTitleOnScroll>{data.status}</ReviewTitleOnScroll>
 
-      <div className='relative mb-24 w-9/10 max-w-5xl border-b px-[5%] py-32'>
+      <div className='relative mb-24 w-9/10 max-w-5xl border-b py-32'>
         <Title
           as='h1'
           styleAs='h5'

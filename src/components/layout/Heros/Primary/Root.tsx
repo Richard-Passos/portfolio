@@ -51,7 +51,7 @@ export const PrimaryHero = ({ data, ...props }: PrimaryHeroProps) => {
           className='relative z-10'
         />
 
-        <ScrollYLines className='inset-x-[-2.5vw] top-0 bottom-[calc(var(--py)+(--spacing(32)))] -z-10 bg-size-[83.333px_66.666px]' />
+        <ScrollYLines className='inset-x-[calc(var(--w)*-0.025)] top-0 bottom-[calc(var(--py)+(--spacing(32)))] bg-size-[83.333px_66.666px]' />
 
         {/* Used to hide title when it bypass the lines. */}
         <div className='absolute inset-x-0 bottom-(--py) h-32 bg-body' />

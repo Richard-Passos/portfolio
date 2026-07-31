@@ -18,12 +18,12 @@ export const Projects = ({ data, ...props }: ProjectsProps) => {
     <Section {...props}>
       <StaggeredTitleOnView
         as='h2'
-        className='max-w-5xl text-center'
+        className='max-w-xl text-center'
       >
         {data.title}
       </StaggeredTitleOnView>
 
-      <ProjectsCatalog className='mt-24' />
+      <ProjectsCatalog className='mt-12' />
     </Section>
   );
 };

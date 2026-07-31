@@ -31,7 +31,10 @@ export const Footer = ({ className, ...props }: FooterProps) => {
         theme='light'
       >
         <footer
-          className={cn('min-h-(--h) w-full max-w-bounds overflow-hidden px-[5%] py-0', className)}
+          className={cn(
+            'min-h-(--h) w-full max-w-bounds overflow-hidden px-[calc(var(--w)*0.05)] py-0',
+            className
+          )}
           {...props}
         >
           <section
@@ -105,7 +108,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
           </section>
 
           <MouseTrail.Container>
-            <ScrollYLines className='inset-x-[2.5vw] top-24 bottom-[12%] -z-10'>
+            <ScrollYLines className='inset-x-[calc(var(--w)*-0.025)] top-24 bottom-[12%]'>
               <MouseTrail
                 items={[
                   <SmileIcon key='smile' />,

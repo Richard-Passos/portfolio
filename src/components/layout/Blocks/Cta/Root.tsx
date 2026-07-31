@@ -12,7 +12,7 @@ export type CtaProps = MergeProps<{ data: { title: ReactNode; text: ReactNode } 
 export const Cta = ({ data, className, ...props }: CtaProps) => {
   return (
     <Section
-      className={cn('min-h-[min(100dvh,var(--max-height-bounds))] max-w-5xl', className)}
+      className={cn('min-h-(--h) max-w-5xl', className)}
       {...props}
     >
       <Title
@@ -26,7 +26,7 @@ export const Cta = ({ data, className, ...props }: CtaProps) => {
         {data.text}
       </ReviewTextOnScroll>
 
-      <Lines className='-z-10 border-y' />
+      <Lines />
     </Section>
   );
 };

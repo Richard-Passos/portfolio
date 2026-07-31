@@ -87,7 +87,7 @@ export const AdjacentProjects = ({ data, className, ...props }: AdjacentProjects
         </div>
       </section>
 
-      <Lines className='-z-10 border-y' />
+      <Lines />
     </Section>
   );
 };

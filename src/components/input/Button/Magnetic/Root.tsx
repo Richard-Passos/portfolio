@@ -4,6 +4,7 @@ import { Link, LinkProps } from '@/components/navigation/Link';
 import { UseMagneticOptions } from '@/hooks/useMagnetic';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
+import { cva } from 'class-variance-authority';
 
 export type MagneticButtonProps = MergeProps<
   UseMagneticOptions['config'],
@@ -17,6 +18,17 @@ export type MagneticButtonProps = MergeProps<
   'asChild'
 >;
 
+export const magneticButtonVariants = cva('', {
+  variants: {
+    variant: {
+      default: '*:data-bg:bg-(--hover) engaged:bg-(--bg)',
+      subtle: '*:data-bg:bg-(--hover)/16 engaged:bg-(--bg)/8',
+      ghost: '*:data-bg:bg-(--hover)/16 engaged:bg-transparent',
+      plain: ''
+    }
+  }
+});
+
 export const MagneticButton = ({
   href,
   className,
@@ -24,6 +36,7 @@ export const MagneticButton = ({
   strength = 0.35,
   duration,
   ease,
+  variant,
   ...props
 }: MagneticButtonProps) => {
   const magneticProps = {
@@ -43,17 +56,25 @@ export const MagneticButton = ({
         </span>
       </Magnetic>
 
-      <span className='absolute inset-0 -z-10 rounded-inherit bg-(--hover) transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-aria-disabled/button:hidden group-engaged/button:[clip-path:inset(0_round_0)]' />
+      <span
+        data-bg
+        className='absolute inset-0 -z-10 rounded-inherit transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-aria-disabled/button:hidden group-engaged/button:[clip-path:inset(0_round_0)]'
+      />
     </>
   );
 
-  className = cn('isolate gap-0 overflow-hidden px-0 transition-none engaged:bg-(--bg)', className);
+  className = cn(
+    magneticButtonVariants({ variant }),
+    'isolate gap-0 overflow-hidden px-0 transition-none',
+    className
+  );
 
   return (
     <Magnetic {...magneticProps}>
       {href ? (
         <Button
           asChild
+          variant={variant}
           {...props}
         >
           <Link
@@ -65,6 +86,7 @@ export const MagneticButton = ({
         </Button>
       ) : (
         <Button
+          variant={variant}
           className={className}
           {...props}
         >
