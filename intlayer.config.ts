@@ -118,7 +118,7 @@ const config: IntlayerConfig = {
      *
      * Purge the unused keys in a dictionaries
      */
-    purge: false,
+    purge: true,
 
     /**
      * Indicates if the build should check TypeScript types
