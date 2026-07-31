@@ -45,7 +45,6 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@intlayer/swc": "^9.0.2",
     "@total-typescript/ts-reset": "^0.6.1",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/lodash": "^4.17.24",
@@ -59,8 +58,7 @@
     "install": "^0.13.0",
     "prettier": "^3.9.4",
     "prettier-plugin-tailwindcss": "^0.8.0",
-    "tailwindcss": "^4.3.2",
-    "webpack": "5.107.2"
+    "tailwindcss": "^4.3.2"
   },
   "packageManager": "yarn@4.17.0"
 }
