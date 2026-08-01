@@ -74,16 +74,12 @@ export const About = ({ data, className, ...props }: AboutProps) => {
             <Badge
               color='primary'
               variant='subtle'
+              className='mb-8'
             >
               {data.items.about.badge}
             </Badge>
 
-            <GradientCard.Text
-              asChild
-              className='mt-auto'
-            >
-              {data.items.about.text}
-            </GradientCard.Text>
+            <GradientCard.Text className='mt-auto'>{data.items.about.text}</GradientCard.Text>
           </GradientCard>
         </BentoGrid.Item>
 

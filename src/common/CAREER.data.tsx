@@ -18,7 +18,7 @@ export default {
       end: null,
       text: t({
         en: (
-          <div>
+          <>
             <p>
               My first professional experience as a developer was at NAPEAD, where I was hired to
               modernize the <b>Lúmina</b> platform, built on top of Moodle. The goal was to
@@ -47,10 +47,10 @@ export default {
               accessibility, maintainability, internationalization, and user experience stopped
               being abstract concepts and became part of my everyday work.
             </p>
-          </div>
+          </>
         ),
         pt: (
-          <div>
+          <>
             <p>
               Minha primeira experiência profissional como desenvolvedor foi no NAPEAD, onde fui
               contratado para modernizar a plataforma <b>Lúmina</b>, construída sobre o Moodle. O
@@ -79,7 +79,7 @@ export default {
               acessibilidade, manutenção, internacionalização e experiência do usuário deixaram de
               ser conceitos e passaram a fazer parte do meu dia a dia.
             </p>
-          </div>
+          </>
         )
       })
     },
@@ -97,7 +97,7 @@ export default {
       end: null,
       text: t({
         en: (
-          <div>
+          <>
             <p>
               Being accepted into <b>Computer Science at UFRGS</b> was a defining milestone in my
               journey. As the first person in my family to attend a public university, it reinforced
@@ -117,10 +117,10 @@ export default {
               and consistency. Much of the way I study, solve problems, and build software today was
               shaped by that routine.
             </p>
-          </div>
+          </>
         ),
         pt: (
-          <div>
+          <>
             <p>
               Ingressar na <b>Ciência da Computação da UFRGS</b> foi um marco importante na minha
               trajetória. Ser o primeiro da família a entrar em uma universidade pública reforçou
@@ -140,7 +140,7 @@ export default {
               constância. Hoje, boa parte da forma como estudo, resolvo problemas e desenvolvo
               software nasceu dessa rotina.
             </p>
-          </div>
+          </>
         )
       })
     },
@@ -159,7 +159,7 @@ export default {
       end: new Date('2025-07-31').getTime(),
       text: t({
         en: (
-          <div>
+          <>
             <p>
               Before transitioning into technology, I worked during the day as a credit recovery
               agent at <b>Hoepers</b> while spending Friday, Saturday, and Sunday nights working as
@@ -184,10 +184,10 @@ export default {
               was there that I learned collaborative environments consistently achieve better
               results than internal competition.
             </p>
-          </div>
+          </>
         ),
         pt: (
-          <div>
+          <>
             <p>
               Antes de entrar definitivamente na tecnologia, trabalhei durante o dia com recuperação
               de crédito na <b>Hoepers</b> e, nas madrugadas de sexta, sábado e domingo, conciliava
@@ -211,7 +211,7 @@ export default {
               aprendi que ambientes colaborativos produzem resultados muito melhores do que qualquer
               competição interna.
             </p>
-          </div>
+          </>
         )
       })
     },
@@ -230,7 +230,7 @@ export default {
       end: new Date('2025-09-22').getTime(),
       text: t({
         en: (
-          <div>
+          <>
             <p>
               It was an intense routine, balancing two jobs while preparing to start university
               behind the bar. It was exhausting, but it brought me closer to the future I wanted.
@@ -247,10 +247,10 @@ export default {
               people from all kinds of backgrounds. Those skills continue to make a difference years
               later, even in a completely different profession.
             </p>
-          </div>
+          </>
         ),
         pt: (
-          <div>
+          <>
             <p>
               Era uma rotina intensa, conciliando dois trabalhos enquanto atrás do balcão me
               preparava para iniciar a faculdade. Foi uma rotina cansativa, mas que me aproximou
@@ -268,7 +268,7 @@ export default {
               mais diferentes perfis. São habilidades que continuam fazendo diferença, mesmo anos
               depois e em uma profissão completamente diferente.
             </p>
-          </div>
+          </>
         )
       })
     },
@@ -287,7 +287,7 @@ export default {
       end: new Date('2025-02-21').getTime(),
       text: t({
         en: (
-          <div>
+          <>
             <p>
               My first full-time job was as a production assistant in a metalworking factory.
               Working every day with machinery, heat, sawdust, and protective equipment gave me a
@@ -306,10 +306,10 @@ export default {
               opportunities rarely arrive ready-made; more often, they begin the moment we decide to
               change direction.
             </p>
-          </div>
+          </>
         ),
         pt: (
-          <div>
+          <>
             <p>
               Meu primeiro emprego CLT foi como auxiliar de produção em uma serralheria. Trabalhando
               diariamente com máquinas, calor, serragem e muito equipamento de proteção, conheci de
@@ -328,7 +328,7 @@ export default {
               que oportunidades nem sempre aparecem prontas; muitas vezes, elas começam quando
               decidimos mudar de direção.
             </p>
-          </div>
+          </>
         )
       })
     }
