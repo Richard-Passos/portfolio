@@ -88,11 +88,7 @@ export default {
     },
     career: {
       title: t({
-        en: (
-          <h2>
-            Caree<em>r</em> <em>O</em>verview
-          </h2>
-        ),
+        en: <h2>Career Overview</h2>,
         pt: (
           <h2>
             Visão <em>da</em> Carreira
@@ -136,11 +132,7 @@ export default {
     },
     about: {
       title: t({
-        en: (
-          <h2>
-            Perso<em>n</em> <em>O</em>verview
-          </h2>
-        ),
+        en: <h2>Person Overview</h2>,
         pt: (
           <h2>
             Visão <em>da</em> Pessoa
