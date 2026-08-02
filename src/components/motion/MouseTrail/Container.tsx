@@ -41,7 +41,7 @@ export const MouseTrailContainer = ({ step = 100, ref, ...props }: MouseTrailCon
           scale: 0.5,
           opacity: 0,
           rotation: `+=${90}`,
-          delay: 0.8,
+          delay: 0.4,
           duration: 0.8,
           ease: 'power2.out'
         });

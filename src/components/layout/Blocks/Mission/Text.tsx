@@ -6,7 +6,10 @@ export type MissionTextProps = TextProps;
 export const MissionText = ({ className, ...props }: MissionTextProps) => {
   return (
     <Text
-      className={cn('mt-12 w-9/10 max-w-xl text-center leading-relaxed tracking-wide', className)}
+      className={cn(
+        'mt-12 w-9/10 max-w-xl text-justify leading-relaxed tracking-wide [text-align-last:center]',
+        className
+      )}
       {...props}
     />
   );

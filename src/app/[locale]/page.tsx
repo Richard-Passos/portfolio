@@ -85,7 +85,6 @@ const HomeContent = () => {
   const s = useIntlayer('skills');
   const location = useIntlayer('location');
 
-  console.log(t.mission.items);
   const mission = t.mission.items.map((m) => (
     <>
       {m.text} {MISSIONMeta[m.id.value]}

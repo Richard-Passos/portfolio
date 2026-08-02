@@ -8,7 +8,7 @@ export const GradientCardIcon = ({ className, ...props }: GradientCardIconProps)
     <SlotElement
       tag='div'
       className={cn(
-        'mb-6 flex aspect-square w-fit rounded border bg-muted p-2 text-2xl',
+        'mb-8 flex aspect-square w-fit rounded border bg-muted p-2 text-2xl',
         className
       )}
       {...props}
