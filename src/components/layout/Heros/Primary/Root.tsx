@@ -1,15 +1,9 @@
-import { ReactNode } from 'react';
-
 import { Section, SectionProps } from '@/components/layout/Section';
 import { ScrollYLines } from '@/components/misc/Lines/ScrollY';
 import { AnimateOnScroll, AnimateOnScrollConfig } from '@/components/motion/Animate/OnScroll';
-import { StaggeredTitleOnView } from '@/components/system/Title/StaggeredOnView';
-import { MergeProps } from '@/types/MergeProps';
-
-import { PrimaryHeroCards, PrimaryHeroCardsProps } from './Cards';
 
 export const PrimaryHeroAnimation = {
-  target: 'h1',
+  target: '[data-title]',
   from: {
     y: '0%',
     scale: 1,
@@ -23,33 +17,16 @@ export const PrimaryHeroAnimation = {
   start: 0
 } satisfies AnimateOnScrollConfig;
 
-export type PrimaryHeroProps = MergeProps<
-  {
-    data: {
-      title: ReactNode;
-    } & PrimaryHeroCardsProps['data'];
-  },
-  SectionProps
->;
+export type PrimaryHeroProps = SectionProps;
 
-export const PrimaryHero = ({ data, ...props }: PrimaryHeroProps) => {
+export const PrimaryHero = ({ children, ...props }: PrimaryHeroProps) => {
   return (
     <AnimateOnScroll config={PrimaryHeroAnimation}>
       <Section
         forceTheme
         {...props}
       >
-        <StaggeredTitleOnView
-          as='h1'
-          className='flex w-9/10 max-w-5xl flex-wrap justify-center gap-x-[.3em] wrap-break-word uppercase max-sm:text-center'
-        >
-          {data.title}
-        </StaggeredTitleOnView>
-
-        <PrimaryHeroCards
-          data={{ left: data.left, center: data.center, right: data.right }}
-          className='relative z-10'
-        />
+        {children}
 
         <ScrollYLines className='inset-x-[calc(var(--w)*-0.025)] top-0 bottom-[calc(var(--py)+(--spacing(32)))] bg-size-[83.333px_66.666px]' />
 

@@ -5,8 +5,10 @@ import { ComponentProps } from 'react';
 import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { Inter } from 'next/font/google';
+import { hasOnlyDirectTag } from '@/utils/hasOnlyDirectTag';
 
-export type TitleTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export const TITLE_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const;
+export type TitleTag = (typeof TITLE_TAGS)[number];
 
 export type TitleProps = MergeProps<
   { as?: TitleTag; styleAs?: TitleTag },
@@ -30,13 +32,16 @@ export const titleVariants = cva('', {
   }
 });
 
-export const Title = ({ as = 'h2', styleAs, className, ...props }: TitleProps) => {
+export const Title = ({ as = 'h2', styleAs, className, children, ...props }: TitleProps) => {
   const Comp = ark[as];
 
   return (
     <Comp
+      asChild={hasOnlyDirectTag(children, TITLE_TAGS as unknown as string[])}
       className={cn(titleVariants({ as: styleAs ?? as }), titleFont.className, className)}
       {...props}
-    />
+    >
+      {children}
+    </Comp>
   );
 };

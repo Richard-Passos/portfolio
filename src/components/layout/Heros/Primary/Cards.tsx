@@ -1,9 +1,8 @@
-import { ComponentProps, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
-import { MergeProps } from '@/types/MergeProps';
 import { cn } from '@/utils/cn';
 import { AnimateOnView, AnimateOnViewConfig } from '@/components/motion/Animate';
-import GradientCard from '@/components/display/Card/Gradient';
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
 
 export type PrimaryHeroCardProps = {
   icon: ReactNode;
@@ -11,19 +10,10 @@ export type PrimaryHeroCardProps = {
   text: ReactNode;
 };
 
-export type PrimaryHeroCardsProps = MergeProps<
-  {
-    data: {
-      left: PrimaryHeroCardProps;
-      center: PrimaryHeroCardProps;
-      right: PrimaryHeroCardProps;
-    };
-  },
-  ComponentProps<'section'>
->;
+export type PrimaryHeroCardsProps = SlotElementProps<'section'>;
 
 export const PrimaryHeroCardsAnimation = {
-  target: '.group',
+  target: '[data-card]',
   from: {
     y: 100,
     scale: 0.85,
@@ -42,74 +32,17 @@ export const PrimaryHeroCardsAnimation = {
   }
 } satisfies AnimateOnViewConfig;
 
-export const PrimaryHeroCards = ({ data, className, ...props }: PrimaryHeroCardsProps) => {
+export const PrimaryHeroCards = ({ className, ...props }: PrimaryHeroCardsProps) => {
   return (
     <AnimateOnView config={PrimaryHeroCardsAnimation}>
-      <section
+      <SlotElement
+        tag='section'
         className={cn(
-          'mt-28 grid w-full max-w-7xl items-end gap-4 md:grid-cols-12 [&_svg]:transition-transform [&_svg]:duration-700 [&_svg]:ease-backOut',
+          'relative z-10 mt-28 grid w-full max-w-7xl items-end gap-4 md:grid-cols-12',
           className
         )}
         {...props}
-      >
-        <GradientCard
-          className='group md:col-span-6 lg:col-span-3'
-          gradient='radial-gradient(
-            140% 140% at 0% 100%,
-            #411073 0%,
-            #0c1149 10%,
-            #f00040 20%,
-            transparent 60%
-          )'
-        >
-          <GradientCard.Icon className='group-hover:*:rotate-y-360'>
-            {data.left.icon}
-          </GradientCard.Icon>
-
-          <GradientCard.Title>{data.left.title}</GradientCard.Title>
-
-          <GradientCard.Text>{data.left.text}</GradientCard.Text>
-        </GradientCard>
-
-        <GradientCard
-          className='group min-h-64 md:col-span-full lg:col-span-6'
-          gradient='radial-gradient(
-            140% 140% at 50% 0%,
-            #f00040 0%,
-            #f00040 25%,
-            transparent 37.5%,
-            #411073 50%,
-            #0c1149 75%
-          )'
-        >
-          <GradientCard.Icon className='group-hover:*:rotate-x-360'>
-            {data.center.icon}
-          </GradientCard.Icon>
-
-          <GradientCard.Title>{data.center.title}</GradientCard.Title>
-
-          <GradientCard.Text>{data.center.text}</GradientCard.Text>
-        </GradientCard>
-
-        <GradientCard
-          className='group md:col-span-6 md:max-lg:row-start-1 lg:col-span-3'
-          gradient='radial-gradient(
-            140% 140% at 100% 0%,
-            #411073 0%,
-            #0c1149 10%,
-            #f00040 20%,
-            transparent 60%
-          )'
-        >
-          <GradientCard.Icon className='group-hover:*:-rotate-y-360'>
-            {data.right.icon}
-          </GradientCard.Icon>
-
-          <GradientCard.Title>{data.right.title}</GradientCard.Title>
-
-          <GradientCard.Text>{data.right.text}</GradientCard.Text>
-        </GradientCard>
-      </section>
+      />
     </AnimateOnView>
   );
 };
