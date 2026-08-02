@@ -4,7 +4,7 @@ import { Dictionary, insert, nest, t } from 'intlayer';
 export default {
   key: 'home-page',
   content: {
-    nodeType: 'object',
+    nodeType: 'null',
     hero: {
       title: t({
         en: (

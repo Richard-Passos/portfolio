@@ -9,12 +9,6 @@ export default {
       name: 'Richard P.',
       url: 'https://github.com/Richard-Passos'
     },
-    authors: [
-      {
-        name: 'Richard Passos',
-        url: 'https://github.com/Richard-Passos'
-      }
-    ],
     socials: [
       {
         id: 'github',

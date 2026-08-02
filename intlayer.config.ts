@@ -94,7 +94,7 @@ const config: IntlayerConfig = {
   content: {
     codeDir: ['./src'],
     contentDir: ['./src'],
-    fileExtensions: ['.data.ts', '.data.tsx']
+    fileExtensions: ['.data.ts', '.data.tsx', '.metadata.ts', '.metadata.tsx']
   },
   dictionary: {
     /**

@@ -2,9 +2,16 @@ import { StoreProvider } from '@/contexts/Store';
 import { cn } from '@/utils/cn';
 import localFont from 'next/font/local';
 
-import { IntlayerClientProvider, NextLayoutIntlayer } from 'next-intlayer';
-import { getHTMLTextDir } from 'intlayer';
+import {
+  getIntlayer,
+  IntlayerClientProvider,
+  LocalPromiseParams,
+  NextLayoutIntlayer
+} from 'next-intlayer';
+import { getHTMLTextDir, getMultilingualUrls } from 'intlayer';
 import { SmoothScroll } from '@/components/motion/SmoothScroll';
+import { Metadata } from 'next';
+import { BASE_URL } from '@/common/BASE_URL';
 
 export { generateStaticParams } from 'next-intlayer';
 
@@ -31,6 +38,27 @@ const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
       </body>
     </html>
   );
+};
+
+export const generateMetadata = async ({ params }: LocalPromiseParams): Promise<Metadata> => {
+  const { locale } = await params;
+  const metadata = getIntlayer('root-metadata', locale);
+
+  const multilingualUrls = getMultilingualUrls('/');
+  const localizedUrl = multilingualUrls[locale as keyof typeof multilingualUrls];
+
+  return {
+    ...metadata,
+    metadataBase: new URL(BASE_URL),
+    alternates: {
+      canonical: localizedUrl,
+      languages: { ...multilingualUrls, 'x-default': '/' }
+    },
+    openGraph: {
+      ...metadata.openGraph,
+      url: localizedUrl
+    }
+  };
 };
 
 export default LocaleLayout;
