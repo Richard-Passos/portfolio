@@ -4,7 +4,7 @@ import { ProjectHero } from '@/components/layout/Heros/Project';
 import { IntlayerClientProvider, NextPageIntlayer } from 'next-intlayer';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { IntlayerServerProvider, useIntlayer } from 'next-intlayer/server';
+import { IntlayerServerProvider, useIntlayer, useLocale } from 'next-intlayer/server';
 
 const ProjectContent = ({ id }: { id: string }) => {
   const projects = useIntlayer('projects');
@@ -62,6 +62,18 @@ const ProjectPage: NextPageIntlayer<{ id: string }> = async ({ params }) => {
         <Footer />
       </IntlayerServerProvider>
     </IntlayerClientProvider>
+  );
+};
+
+export const generateStaticParams = () => {
+  const { availableLocales } = useLocale();
+  const projects = useIntlayer('projects');
+
+  return availableLocales.flatMap((locale) =>
+    projects.map((p) => ({
+      locale,
+      id: p.id.value
+    }))
   );
 };
 
