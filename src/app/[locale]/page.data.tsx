@@ -168,7 +168,7 @@ export default {
           pt: (
             <div>
               <p>
-                tento não deixar a vida entrar no piloto automático. Afinal, só temos uma. Gosto de
+                Tento não deixar a vida entrar no piloto automático. Afinal, só temos uma. Gosto de
                 prestar atenção nas pequenas coisas, de aproveitar uma boa conversa, sentir o sol na
                 pele, aprender algo novo ou simplesmente parar para perceber detalhes que
                 normalmente passariam despercebidos.
