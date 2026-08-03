@@ -3,7 +3,7 @@ import { cn } from '@/utils/cn';
 import localFont from 'next/font/local';
 
 import { getIntlayer, LocalPromiseParams, NextLayoutIntlayer } from 'next-intlayer';
-import { getHTMLTextDir, getMultilingualUrls } from 'intlayer';
+import { __DeclaredLocalesRegistry, getHTMLTextDir, getMultilingualUrls } from 'intlayer';
 import { SmoothScroll } from '@/components/motion/SmoothScroll';
 import { Metadata } from 'next';
 import { el } from 'zod/v4/locales';
@@ -35,7 +35,7 @@ const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
 
 export const generateMetadata = async ({ params }: LocalPromiseParams): Promise<Metadata> => {
   const { locale } = await params;
-  const metadata = getIntlayer('root-metadata', locale as any);
+  const metadata = getIntlayer('root-metadata', locale as keyof __DeclaredLocalesRegistry); // __DeclaredLocalesRegistry to fix vercel build error
 
   const multilingualUrls = getMultilingualUrls('/');
   const localizedUrl = multilingualUrls[locale as keyof typeof multilingualUrls];
