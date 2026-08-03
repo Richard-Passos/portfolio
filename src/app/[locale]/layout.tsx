@@ -35,7 +35,7 @@ const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
 
 export const generateMetadata = async ({ params }: LocalPromiseParams): Promise<Metadata> => {
   const { locale } = await params;
-  const metadata = getIntlayer('root-metadata', locale);
+  const metadata = getIntlayer('root-metadata', locale as any);
 
   const multilingualUrls = getMultilingualUrls('/');
   const localizedUrl = multilingualUrls[locale as keyof typeof multilingualUrls];
