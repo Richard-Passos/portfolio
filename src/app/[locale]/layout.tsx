@@ -6,7 +6,6 @@ import { getIntlayer, LocalPromiseParams, NextLayoutIntlayer } from 'next-intlay
 import { __DeclaredLocalesRegistry, getHTMLTextDir, getMultilingualUrls } from 'intlayer';
 import { SmoothScroll } from '@/components/motion/SmoothScroll';
 import { Metadata } from 'next';
-import { el } from 'zod/v4/locales';
 
 export { generateStaticParams } from 'next-intlayer';
 
