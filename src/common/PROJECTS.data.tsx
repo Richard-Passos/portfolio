@@ -29,7 +29,7 @@ export default {
     {
       id: 'richard-portfolio',
       url: 'https://richardp.vercel.app',
-      title: 'Richard Portfolio',
+      title: t({ en: 'Richard Portfolio', pt: 'Richard Portfólio' }),
       roles: t({
         en: ['Design', 'Development'],
         pt: ['Design', 'Desenvolvimento']
