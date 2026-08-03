@@ -81,6 +81,7 @@ export const GalleryParallaxCarousel = ({
               width={1080}
               height={700}
               className='size-full object-cover'
+              loading={i === 0 ? 'eager' : undefined}
             />
           </div>
         </SwiperSlide>
