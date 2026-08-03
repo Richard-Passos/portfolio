@@ -2,6 +2,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import ErrorHero from '@/components/layout/Heros/Error';
 import { ArrowUpRightIcon } from '@/components/system/Icon/ArrowUpRight';
+import { IntlayerClientProvider } from 'next-intlayer';
 import { getLocale, IntlayerServerProvider, useIntlayer } from 'next-intlayer/server';
 import { ReactNode } from 'react';
 
@@ -38,15 +39,17 @@ const NotFoundPage = async () => {
   const locale = await getLocale();
 
   return (
-    <IntlayerServerProvider locale={locale}>
-      <Header />
+    <IntlayerClientProvider locale={locale}>
+      <IntlayerServerProvider locale={locale}>
+        <Header />
 
-      <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
-        <NotFoundContent />
-      </main>
+        <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
+          <NotFoundContent />
+        </main>
 
-      <Footer />
-    </IntlayerServerProvider>
+        <Footer />
+      </IntlayerServerProvider>
+    </IntlayerClientProvider>
   );
 };
 

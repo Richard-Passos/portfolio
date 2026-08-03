@@ -70,14 +70,6 @@ export default {
     ],
     openGraph: {
       type: 'website',
-      title: t({
-        en: 'Richard P. an awesome Developer',
-        pt: 'Richard P. um ótimo Desenvolvedor'
-      }),
-      description: t({
-        en: 'Beyond tech, algorithms and results. Web developer and Computer Science student passionate about building meaningful solutions, one line of code at a time.',
-        pt: 'Além de tech, algoritmos e resultados. Desenvolvedor web e estudante de Ciência da Computação apaixonado por construir soluções que fazem sentido, uma linha de código por vez.'
-      }),
       siteName: t({
         en: 'Richard Passos Portfolio',
         pt: 'Portfólio de Richard Passos'
@@ -96,26 +88,7 @@ export default {
     },
     twitter: {
       card: 'summary_large_image',
-      title: t({
-        en: 'Richard P. an awesome Developer',
-        pt: 'Richard P. um ótimo Desenvolvedor'
-      }),
-      description: t({
-        en: 'Beyond tech, algorithms and results. Web developer and Computer Science student passionate about building meaningful solutions, one line of code at a time.',
-        pt: 'Além de tech, algoritmos e resultados. Desenvolvedor web e estudante de Ciência da Computação apaixonado por construir soluções que fazem sentido, uma linha de código por vez.'
-      }),
       images: [t({ en: 'src/app/en/og-en.png', pt: 'src/app/pt/og-pt.png' })]
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-        'max-video-preview': -1
-      }
     }
   }
 } satisfies Dictionary<Metadata>;

@@ -1,5 +1,4 @@
-import { BASE_URL } from '@/common/BASE_URL';
-import { type IntlayerConfig, Locales } from 'intlayer';
+import { IntlayerConfig, Locales } from 'intlayer';
 
 /**
  * Intlayer configuration file documentation
@@ -31,17 +30,6 @@ const config: IntlayerConfig = {
      * Default: true
      */
     enableProxy: true
-  },
-  editor: {
-    /**
-     * Whether the visual editor is enabled.
-     */
-    enabled: false,
-
-    /**
-     * URL of your application for origin validation.
-     */
-    applicationURL: BASE_URL
   },
   compiler: {
     enabled: false,

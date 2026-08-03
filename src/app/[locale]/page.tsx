@@ -9,9 +9,9 @@ import Skills from '@/components/layout/Blocks/Skills';
 import { IntlayerServerProvider, useIntlayer } from 'next-intlayer/server';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { NextPageIntlayer } from 'next-intlayer';
+import { IntlayerClientProvider, NextPageIntlayer } from 'next-intlayer';
 import SKILLSMeta from '@/common/SKILLS.meta';
-import { Fragment, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { BoltIcon } from '@/components/system/Icon/Bolt';
 import { SmileIcon } from '@/components/system/Icon/Smile';
 import { CapIcon } from '@/components/system/Icon/Cap';
@@ -208,15 +208,17 @@ const HomePage: NextPageIntlayer = async ({ params }) => {
   const { locale } = await params;
 
   return (
-    <IntlayerServerProvider locale={locale}>
-      <Header />
+    <IntlayerClientProvider locale={locale}>
+      <IntlayerServerProvider locale={locale}>
+        <Header />
 
-      <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
-        <HomeContent />
-      </main>
+        <main className='z-10 flex w-full max-w-bounds grow flex-col items-center justify-center'>
+          <HomeContent />
+        </main>
 
-      <Footer />
-    </IntlayerServerProvider>
+        <Footer />
+      </IntlayerServerProvider>
+    </IntlayerClientProvider>
   );
 };
 
