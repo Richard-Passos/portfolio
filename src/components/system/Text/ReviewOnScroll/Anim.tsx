@@ -12,7 +12,8 @@ export const ReviewTextOnScrollAnim = (props: ReviewTextOnScrollAnimProps) => {
       config={(el) => {
         const split = SplitText.create(el, {
           type: 'words',
-          wordsClass: 'word'
+          wordsClass: 'word',
+          aria: 'hidden'
         });
 
         gsap.fromTo(

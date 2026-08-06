@@ -3,10 +3,14 @@ import { ReviewTextOnScrollAnim } from '@/components/system/Text/ReviewOnScroll/
 
 export type ReviewTextOnScrollProps = TextProps;
 
-export const ReviewTextOnScroll = (props: ReviewTextOnScrollProps) => {
+export const ReviewTextOnScroll = ({ children, ...props }: ReviewTextOnScrollProps) => {
   return (
     <ReviewTextOnScrollAnim>
-      <Text {...props} />
+      <Text {...props}>
+        <span className='sr-only'>{children}</span>
+
+        {children}
+      </Text>
     </ReviewTextOnScrollAnim>
   );
 };
