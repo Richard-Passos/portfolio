@@ -90,7 +90,8 @@ export const Footer = ({ className, ...props }: FooterProps) => {
 
             <section className='max-w-md'>
               <Title
-                as='h6'
+                as='h3'
+                styleAs='h6'
                 className='font-semibold'
               >
                 {t.location.country}, {t.location.state}, <LocalTime />
