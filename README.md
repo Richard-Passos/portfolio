@@ -48,7 +48,7 @@
 </p>
 
 <img
-  src="./public/demo.gif"
+  src="./public/images/demo.gif"
   alt="Portfolio demo"
 />
 
