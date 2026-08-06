@@ -76,7 +76,7 @@ export default {
       }),
       images: [
         {
-          url: t({ en: 'src/app/en/og-en.png', pt: 'src/app/pt/og-pt.png' }),
+          url: t({ en: '/og/en.png', pt: '/og/pt.png' }),
           width: 1200,
           height: 675,
           alt: t({
@@ -88,7 +88,7 @@ export default {
     },
     twitter: {
       card: 'summary_large_image',
-      images: [t({ en: 'src/app/en/og-en.png', pt: 'src/app/pt/og-pt.png' })]
+      images: [t({ en: '/og/en.png', pt: '/og/pt.png' })]
     }
   }
 } satisfies Dictionary<Metadata>;
