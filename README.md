@@ -48,7 +48,7 @@
 </p>
 
 <img
-  src="./demo.gif"
+  src="./public/demo.gif"
   alt="Portfolio demo"
 />
 
@@ -143,4 +143,3 @@
 <p>
   This project is open source and available under the <b>MIT License</b>.
 </p>
-
