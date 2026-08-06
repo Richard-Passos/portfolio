@@ -47,10 +47,6 @@
   Take a look at the live website: <a href="https://richardp.vercel.app"><b>🌐 richardp.vercel.app</b></a>
 </p>
 
-<h3>
-  Before:
-</h3>
-
 <img
   src="./demo.gif"
   alt="Portfolio demo"
