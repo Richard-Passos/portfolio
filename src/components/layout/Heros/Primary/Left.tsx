@@ -32,7 +32,7 @@ export const PrimaryHeroLeft = ({
         {icon}
       </GradientCard.Icon>
 
-      <GradientCard.Title>{title}</GradientCard.Title>
+      <GradientCard.Title as='h2'>{title}</GradientCard.Title>
 
       <GradientCard.Text>{text}</GradientCard.Text>
     </GradientCard>

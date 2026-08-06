@@ -262,10 +262,10 @@
   }
 
   .swiper-pagination-horizontal {
-    @apply left-1/2! flex size-fit! -translate-x-1/2 items-center justify-center gap-1 rounded-full! bg-body/75! p-1.5!;
+    @apply left-1/2! flex size-fit! -translate-x-1/2 items-center justify-center gap-1.5 rounded-full! bg-body/75! p-1.5!;
 
     .swiper-pagination-bullet {
-      @apply mx-px! block! size-2! bg-body-emphasis/16! opacity-100! hover:bg-body-emphasis/32!;
+      @apply mx-0! block! size-2! bg-body-emphasis/16! opacity-100! hover:bg-body-emphasis/32!;
 
       &.swiper-pagination-bullet-active {
         @apply bg-body-emphasis!;

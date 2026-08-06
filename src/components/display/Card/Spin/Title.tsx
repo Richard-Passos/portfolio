@@ -6,7 +6,7 @@ export type SpinCardTitleProps = TitleProps;
 export const SpinCardTitle = ({ className, ...props }: SpinCardTitleProps) => {
   return (
     <Title
-      as='h4'
+      as='h3'
       styleAs='h6'
       className={cn('text-center text-base wrap-break-word', className)}
       {...props}
