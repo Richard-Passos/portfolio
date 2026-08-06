@@ -9,6 +9,7 @@ export type ProjectsCatalogProps = ProjectsCatalogVariantProps;
 export const ProjectsCatalog = ({ className, ...props }: ProjectsCatalogProps) => {
   return (
     <ProjectsCatalogVariant
+      id='projects'
       className={cn('mt-12', className)}
       {...props}
     />

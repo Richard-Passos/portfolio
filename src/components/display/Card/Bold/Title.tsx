@@ -6,7 +6,8 @@ export type BoldCardTitleProps = TitleProps;
 export const BoldCardTitle = ({ className, ...props }: BoldCardTitleProps) => {
   return (
     <Title
-      as='h4'
+      as='h3'
+      styleAs='h4'
       className={cn('mt-8 leading-none', className)}
       {...props}
     />

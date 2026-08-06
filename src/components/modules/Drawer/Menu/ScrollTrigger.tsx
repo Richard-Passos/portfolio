@@ -37,9 +37,9 @@ export const MenuDrawerScrollTrigger = ({ className, ...props }: MenuDrawerScrol
 
           <TimesIcon className='absolute transition-[transform,opacity] duration-150 group-data-[state=closed]/button:scale-50 group-data-[state=closed]/button:opacity-0' />
 
-          <span className='sr-only data-[state=open]:hidden'>{t.menu.open}</span>
+          <span className='sr-only group-data-[state=open]/button:hidden'>{t.menu.open}</span>
 
-          <span className='sr-only data-[state=closed]:hidden'>{t.menu.close}</span>
+          <span className='sr-only group-data-[state=closed]/button:hidden'>{t.menu.close}</span>
         </MenuDrawerScrollTriggerClient>
       </div>
     </AnimateOnView>

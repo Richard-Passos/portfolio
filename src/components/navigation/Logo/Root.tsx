@@ -6,6 +6,7 @@ import { MergeProps } from '@/types/MergeProps';
 
 import { Link, LinkProps } from '../Link';
 import { useLenis } from 'lenis/react';
+import { useIntlayer } from 'next-intlayer';
 
 export type LogoProps = MergeProps<
   {
@@ -17,6 +18,7 @@ export type LogoProps = MergeProps<
 
 export const Logo = ({ variant = 'primary', ...props }: LogoProps) => {
   const lenis = useLenis();
+  const t = useIntlayer('logo');
 
   return (
     <Button
@@ -27,6 +29,7 @@ export const Logo = ({ variant = 'primary', ...props }: LogoProps) => {
     >
       <Link
         href='/'
+        aria-label={t.label.value}
         {...props}
         onClick={(ev) => {
           lenis?.scrollTo('body', { immediate: true });

@@ -1,0 +1,48 @@
+# Richard Passos Portfolio
+
+> A multilingual developer portfolio showcasing Richard Passos' projects, professional experience, technical skills, and education. Built with Next.js, TypeScript, Tailwind CSS, GSAP, and modern web technologies.
+
+Important notes:
+
+- This portfolio is a single-page application organized into sections rather than multiple pages.
+- Content is available in English and Portuguese.
+- Projects include descriptions, technologies used, links to source code, and live demos when available.
+- The portfolio focuses on frontend engineering, full-stack web development, software architecture, accessibility, and performance.
+
+## Experience
+
+- [/#work](https://richardp.vercel.app/#experience): Professional experience, internships, previous roles, responsibilities, and achievements.
+
+## Projects
+
+- [/#projects](https://richardp.vercel.app/#projects): Portfolio projects with descriptions, technology stack, and link to project's own page.
+
+## About
+
+- [/#about](https://richardp.vercel.app/#about): Personal introduction, background, interests, and development philosophy.
+
+## Skills
+
+- [/#skills](https://richardp.vercel.app/#skills): Technologies, frameworks, languages, tools, and areas of expertise.
+
+## Contact
+
+- [/#contact](https://richardp.vercel.app/#contact): Contact information and external profiles.
+
+## Repository
+
+- [GitHub repository](https://github.com/Richard-Passos/portfolio): Source code, setup instructions, architecture, and implementation details.
+
+## Technologies
+
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- GSAP
+- next-intlayer
+- Vercel
+
+## Audience
+
+This portfolio is intended for recruiters, hiring managers, developers, collaborators, and anyone interested in Richard Passos' work or technical background.
